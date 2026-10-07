@@ -29,7 +29,7 @@ concurrency:
 jobs:
   evaluate:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v6
@@ -41,7 +41,7 @@ jobs:
           REPO: ${{ inputs.repo }}
           FORCE: ${{ inputs.force }}
         run: |
-          args=()
+          args=(--jobs 4)
           if [ -n "$REPO" ]; then args+=(--only "$REPO"); fi
           if [ "$FORCE" = "true" ]; then args+=(--force); fi
           python archive.py evaluate "${args[@]}"

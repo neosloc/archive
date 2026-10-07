@@ -1,0 +1,875 @@
+{
+ "meta": {
+  "name": "spring-projects/spring-petclinic",
+  "url": "https://github.com/spring-projects/spring-petclinic",
+  "slug": "spring-projects-spring-petclinic",
+  "host": "github.com",
+  "commit": "500158f732419217507c7656904b8e6aa1bcc0d6",
+  "committed_at": "2026-09-29T16:37:54+01:00",
+  "evaluated_at": "2026-10-07T14:06:03+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/spring-projects/spring-petclinic",
+  "inventory": {
+   "files": 132,
+   "source_files": 30,
+   "source_tokens": 14954,
+   "languages": {
+    "java": 14954
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "detail": "spring/jax-rs: 18 route declarations"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [
+    {
+     "path": "src/main/resources/db/h2/schema.sql",
+     "detail": ""
+    },
+    {
+     "path": "src/main/resources/db/mysql/schema.sql",
+     "detail": ""
+    },
+    {
+     "path": "src/main/resources/db/postgres/schema.sql",
+     "detail": ""
+    }
+   ],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 1,
+    "rationale": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+    "evidence": [
+     {
+      "signal": "L1 routes",
+      "detail": "spring/jax-rs: 18 route declarations",
+      "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 18,
+     "routes_by_framework": {
+      "spring/jax-rs": 18
+     },
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "L2 A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026). (no machine-readable contract)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "contract",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "detail": "spring/jax-rs: 18 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable contract"
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": false,
+        "evidence": [],
+        "note": "no contract"
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": false,
+        "evidence": [],
+        "note": "only one programmatic surface"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "1 semver tags, latest 1.5.x",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "1 semver tags, latest 1.5.x"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": false,
+        "evidence": [],
+        "note": "no deprecation mechanism or API versioning"
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two tagged releases to compare"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 0,
+    "rationale": "Not yet: Internal events exist (signals, queues, an outbox, emitters).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal events exist (signals, queues, an outbox, emitters). (no internal events)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "internal-events",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": false,
+        "evidence": [],
+        "note": "no internal events"
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": false,
+        "evidence": [],
+        "note": "no outbound webhooks or streams"
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 0,
+    "rationale": "Not yet: Programmatic authentication (bearer tokens, API keys).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Programmatic authentication (bearer tokens, API keys). (no token auth)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "token-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": false,
+        "evidence": [],
+        "note": "no token auth"
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": false,
+        "evidence": [],
+        "note": "no scopes or permissions"
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": 1,
+    "rationale": "The data schema is explicit (migrations, DDL, schema files).",
+    "evidence": [
+     {
+      "signal": "L1 schema",
+      "detail": "",
+      "path": "src/main/resources/db/h2/schema.sql",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 An export exists (endpoint or command, not only the UI). (no export)"
+    ],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "export",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "schema",
+        "text": "The data schema is explicit (migrations, DDL, schema files).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/main/resources/db/h2/schema.sql",
+          "detail": ""
+         },
+         {
+          "path": "src/main/resources/db/mysql/schema.sql",
+          "detail": ""
+         },
+         {
+          "path": "src/main/resources/db/postgres/schema.sql",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "export",
+        "text": "An export exists (endpoint or command, not only the UI).",
+        "met": false,
+        "evidence": [],
+        "note": "no export"
+       },
+       {
+        "level": 3,
+        "id": "bulk-open",
+        "text": "A bulk export in an open format, and a bulk import.",
+        "met": false,
+        "evidence": [],
+        "note": "no open export format"
+       },
+       {
+        "level": 4,
+        "id": "documented-round-trip",
+        "text": "The export format is documented and the round trip is tested.",
+        "met": false,
+        "evidence": [],
+        "note": "the export format isn't documented"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 0,
+    "rationale": "Not yet: Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE). (no machine-readable errors)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "json-errors",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable errors"
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": false,
+        "evidence": [],
+        "note": "no request validation"
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 1,
+    "rationale": "Runnable from source with documented steps (a README with commands).",
+    "evidence": [
+     {
+      "signal": "L1 documented-run",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (configuration isn't read from the environment)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "env-config",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": false,
+        "evidence": [],
+        "note": "configuration isn't read from the environment"
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".devcontainer/Dockerfile",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docker-compose.yml",
+          "detail": ""
+         },
+         {
+          "path": "k8s/db.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": "k8s/petclinic.yml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 1,
+    "rationale": "A health or readiness endpoint, or a container healthcheck.",
+    "evidence": [
+     {
+      "signal": "L1 health",
+      "detail": "2 matches",
+      "path": "k8s/db.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Structured logs. (no structured logging)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "structured-logs",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "k8s/db.yml",
+          "detail": "2 matches"
+         },
+         {
+          "path": "k8s/petclinic.yml",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 1,
+    "rationale": "A README and some tests.",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 30,
+     "source_tokens": 14954,
+     "test_files": 20,
+     "test_tokens": 20331,
+     "test_ratio": 1.36,
+     "modules": 5,
+     "modules_within_budget": 1.0,
+     "oversized_files": [],
+     "largest_module": {
+      "path": "src/main/java/org/springframework/samples/petclinic/owner",
+      "tokens": 8710
+     },
+     "typed_ratio": 1.0,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 0,
+     "import_graph": false,
+     "max_fan_out": 0,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "java": 14954
+     }
+    },
+    "gaps": [
+     "L2 CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt). (no lockfile (applications should pin dependencies))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "ci-pinned",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+          "detail": "20 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": false,
+        "evidence": [],
+        "note": "no lockfile (applications should pin dependencies)"
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+          "detail": "test ratio 1.36, 100% typed, modules fit"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 0.6,
+   "assessed_dimensions": 10,
+   "not_applicable": [],
+   "retrofit_person_days": 34.8,
+   "retrofit_by_dimension": {
+    "interface": 4.8,
+    "stability": 1.6,
+    "events": 4.8,
+    "identity": 4.8,
+    "portability": 3.2,
+    "ergonomics": 3.6,
+    "embeddability": 1.6,
+    "extensibility": 4.8,
+    "observability": 1.6,
+    "legibility": 4.0
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.5,
+    "legibility_multiplier": 1.6,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 0.92,
+   "classic": {
+    "person_months": 2.2,
+    "schedule_months": 3.4,
+    "cost": 24781
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.25,
+    "docs": 1.0,
+    "capture": 0.81
+   },
+   "agent_factor": 0.19,
+   "reproduce_pm": 0.41,
+   "history": {
+    "commits": 962,
+    "fix_commits": 120,
+    "authors": 167,
+    "age_months": 164.6,
+    "months_since_last": 0.3
+   },
+   "knowledge_pm": 7.21,
+   "rediscover_pm": 1.37,
+   "replacement_pm": 1.78,
+   "leverage": 0.82,
+   "obsolescence": 0.9,
+   "value_pm": 1.32,
+   "value_cost": 14863,
+   "knowledge_at_risk": 0.77,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 17.2302,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 7262.89,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 106707,
+     "input": 2667675,
+     "cached_input": 2267523
+    },
+    "final_tokens": 35569,
+    "model_cost": 4.19,
+    "agent_hours": 1.19,
+    "human_days": 29.75,
+    "review_days": 0.98,
+    "rediscover_days": 28.77,
+    "calendar_days": 29.75,
+    "build_cost": 15952.52,
+    "yearly_cost": 2392.88,
+    "total_cost": 23131.15
+   },
+   "buy": {
+    "via": {
+     "install": "service",
+     "use": "service"
+    },
+    "adoption_minutes": {
+     "install": 240,
+     "first_use": 240.0,
+     "total": 480.0
+    },
+    "tokens": {
+     "output": 60000,
+     "input": 1500000,
+     "cached_input": 1275000
+    },
+    "model_cost": 2.35,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 538.4,
+    "yearly_cost": 268.02,
+    "total_cost": 1342.47
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

@@ -5,19 +5,36 @@
     change legibility last); hover a cell for its name and level. <a href="{{ "about/" | relURL }}">How to read it.</a></p>
 </section>
 {{ $repos := where site.RegularPages "Section" "repos" }}
+<div class="filters">
+  <input id="q" type="search" placeholder="Filter repositories…" aria-label="Filter repositories">
+  <select id="surface" aria-label="Surface">
+    <option value="">All surfaces</option>
+    <option>service</option><option>cli</option><option>library</option><option>desktop</option><option>frontend</option>
+  </select>
+  <span id="count" class="muted small"></span>
+</div>
 <div class="tablewrap">
-<table class="repos">
+<table class="repos" id="repos">
   <thead><tr>
-    <th>Repository</th><th>Surfaces</th><th>Dimensions</th><th class="num">Index</th><th>Make or buy</th><th>Evaluated</th>
+    <th data-sort="name">Repository</th><th>Surfaces</th><th>Dimensions</th>
+    <th class="num" data-sort="index" aria-sort="descending">Index</th>
+    <th class="num" data-sort="cocomo" title="sloccount's classic COCOMO: effort to write it by hand">Classic COCOMO</th>
+    <th class="num" data-sort="value" title="neoCOCOMO: replacement cost in the agent era, times integrability and obsolescence">neosloc value</th>
+    <th data-sort="ratio">Make or buy</th><th data-sort="date">Evaluated</th>
   </tr></thead>
   <tbody>
   {{ range sort $repos ".Params.index" "desc" }}
     {{ $r := index site.Data.reports .Params.slug }}
-    <tr>
+    <tr data-name="{{ lower .Title }}" data-surfaces="{{ delimit (.Params.surfaces | default (slice "none")) " " }}"
+        data-index="{{ .Params.index }}" data-ratio="{{ .Params.make_buy_ratio | default 0 }}" data-date="{{ .Date.Format "2006-01-02" }}"
+        data-cocomo="{{ .Params.cocomo_cost | default 0 }}" data-value="{{ .Params.value_cost | default 0 }}">
       <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
       <td class="muted">{{ delimit (.Params.surfaces | default (slice "none")) ", " }}</td>
       <td>{{ partial "levels.html" $r.report.dimensions }}</td>
       <td class="num"><strong>{{ printf "%.2f" .Params.index }}</strong> <span class="muted">/{{ .Params.assessed }}</span></td>
+      <td class="num">{{ with .Params.cocomo_cost }}{{ partial "usd.html" . }}{{ end }}</td>
+      <td class="num">{{ with .Params.value_cost }}<strong>{{ partial "usd.html" . }}</strong>{{ end }}
+        {{ if and .Params.cocomo_cost .Params.value_cost }}<span class="muted small">{{ printf "%.0f" (mul (div .Params.value_cost .Params.cocomo_cost) 100) }}%</span>{{ end }}</td>
       <td>{{ partial "verdict.html" .Params }}</td>
       <td class="muted">{{ .Date.Format "2006-01-02" }}</td>
     </tr>
@@ -25,5 +42,43 @@
   </tbody>
 </table>
 </div>
-<p class="muted small">{{ len $repos }} repositories · index = mean level over the applicable dimensions (the number after the slash).</p>
+<p class="muted small">{{ len $repos }} repositories · index = mean level over the applicable dimensions (the number after the slash) ·
+  classic COCOMO is what sloccount would say it cost to write by hand; neosloc value is what it is worth when agents can
+  rebuild it (the percentage is the share of the classic figure that survives) ·
+  make or buy: "buy" means adopting it is cheaper than rebuilding it with agents. Click a column to sort.</p>
+{{ $c := 0.0 }}{{ $v := 0.0 }}{{ range $repos }}{{ $c = add $c (float (.Params.cocomo_cost | default 0)) }}{{ $v = add $v (float (.Params.value_cost | default 0)) }}{{ end }}
+{{ if gt $c 0.0 }}<p class="small"><strong>All {{ len $repos }} repositories:</strong> classic COCOMO {{ partial "usd.html" $c }},
+  neosloc value {{ partial "usd.html" $v }} ({{ printf "%.0f" (mul (div $v $c) 100) }}% of it).</p>{{ end }}
+<script>
+(function () {
+  var table = document.getElementById("repos"), body = table.tBodies[0];
+  var q = document.getElementById("q"), surface = document.getElementById("surface"), count = document.getElementById("count");
+  function filter() {
+    var text = q.value.trim().toLowerCase(), s = surface.value, shown = 0;
+    Array.prototype.forEach.call(body.rows, function (r) {
+      var ok = (!text || r.dataset.name.indexOf(text) >= 0) && (!s || (" " + r.dataset.surfaces + " ").indexOf(" " + s + " ") >= 0);
+      r.hidden = !ok; if (ok) shown++;
+    });
+    count.textContent = shown + " shown";
+  }
+  var dir = {};
+  Array.prototype.forEach.call(table.tHead.rows[0].cells, function (th) {
+    var key = th.dataset.sort; if (!key) return;
+    th.style.cursor = "pointer";
+    th.addEventListener("click", function () {
+      dir[key] = dir[key] === "asc" ? "desc" : "asc";
+      var rows = Array.prototype.slice.call(body.rows), num = ["index", "ratio", "cocomo", "value"].indexOf(key) >= 0;
+      rows.sort(function (a, b) {
+        var x = a.dataset[key], y = b.dataset[key];
+        var c = num ? parseFloat(x) - parseFloat(y) : x.localeCompare(y);
+        return dir[key] === "asc" ? c : -c;
+      });
+      rows.forEach(function (r) { body.appendChild(r); });
+      Array.prototype.forEach.call(table.tHead.rows[0].cells, function (c) { c.removeAttribute("aria-sort"); });
+      th.setAttribute("aria-sort", dir[key] === "asc" ? "ascending" : "descending");
+    });
+  });
+  q.addEventListener("input", filter); surface.addEventListener("change", filter); filter();
+})();
+</script>
 {{ end }}

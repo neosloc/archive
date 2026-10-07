@@ -1,0 +1,1336 @@
+{
+ "meta": {
+  "name": "pydantic/pydantic",
+  "url": "https://github.com/pydantic/pydantic",
+  "slug": "pydantic-pydantic",
+  "host": "github.com",
+  "commit": "895c0c285c5cb4c0c7c7a4619a80941c12f2c75f",
+  "committed_at": "2026-10-06T18:51:28+00:00",
+  "evaluated_at": "2026-10-07T14:04:33+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/pydantic/pydantic",
+  "inventory": {
+   "files": 851,
+   "source_files": 261,
+   "source_tokens": 951230,
+   "languages": {
+    "python": 620299,
+    "rust": 329646,
+    "javascript": 810,
+    "shell": 475
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "library"
+   ],
+   "evidence": {
+    "library": [
+     {
+      "path": "pyproject.toml",
+      "detail": "Python package pydantic"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [
+    {
+     "path": "pyproject.toml",
+     "detail": "1 match"
+    }
+   ],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 4,
+    "rationale": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Python package pydantic",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L2 public-api",
+      "detail": "__all__",
+      "path": "pydantic/__init__.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "py.typed",
+      "path": "pydantic-core/python/pydantic_core/py.typed",
+      "weight": 1
+     },
+     {
+      "signal": "L4 api-reference",
+      "detail": "1 match",
+      "path": "mkdocs.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "Python package pydantic"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pydantic/__init__.py",
+          "detail": "__all__"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pydantic-core/python/pydantic_core/py.typed",
+          "detail": "py.typed"
+         },
+         {
+          "path": "pydantic/py.typed",
+          "detail": "py.typed"
+         },
+         {
+          "path": "pydantic/v1/py.typed",
+          "detail": "py.typed"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "mkdocs.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 3,
+    "rationale": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "194 semver tags, latest v2.14.0b2",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 changelog",
+      "detail": "marks breaking changes",
+      "path": "HISTORY.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 deprecation",
+      "detail": "25 matches",
+      "path": "pydantic-core/python/pydantic_core/core_schema.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L4 Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated. (removed without prior deprecation: symbol AmqpDsn (removed in v2.13.0b1), symbol AnyHttpUrl (removed in v2.13.0b1), symbol CockroachDsn (removed in v2.13.0b1))"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 3,
+      "first_missing": "clean-history",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "194 semver tags, latest v2.14.0b2"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "HISTORY.md",
+          "detail": "marks breaking changes"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pydantic-core/python/pydantic_core/core_schema.py",
+          "detail": "25 matches"
+         },
+         {
+          "path": "pydantic/main.py",
+          "detail": "20 matches"
+         },
+         {
+          "path": "pydantic/deprecated/config.py",
+          "detail": "11 matches"
+         },
+         {
+          "path": "pydantic/deprecated/tools.py",
+          "detail": "11 matches"
+         },
+         {
+          "path": "pydantic/_internal/_generate_schema.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "pydantic/warnings.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "pydantic/json_schema.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "pydantic/v1/main.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "pydantic/_internal/_model_construction.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "pydantic/deprecated/class_validators.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "pydantic/deprecated/json.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "pydantic/deprecated/parse.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "pydantic/v1/env_settings.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pydantic/v1/types.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pydantic/__init__.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/_internal/_config.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/_internal/_fields.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/deprecated/decorator.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/_internal/_utils.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/_migration.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/config.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/v1/class_validators.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/v1/utils.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "release/prepare.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic-core/src/errors/validation_exception.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/_internal/_dataclasses.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/_internal/_typing_extra.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/color.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/experimental/missing_sentinel.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/functional_validators.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/mypy.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/plugin/_loader.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/types.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/v1/mypy.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/v1/schema.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": false,
+        "evidence": [],
+        "note": "removed without prior deprecation: symbol AmqpDsn (removed in v2.13.0b1), symbol AnyHttpUrl (removed in v2.13.0b1), symbol CockroachDsn (removed in v2.13.0b1)"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": null,
+    "rationale": "Not applicable: no service and no long-running CLI mode (batch CLIs, libraries and desktop apps have no events).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": null,
+    "rationale": "Not applicable: uses no credentials and has no service surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": 0,
+    "rationale": "Not yet: The data schema is explicit (migrations, DDL, schema files).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 The data schema is explicit (migrations, DDL, schema files). (no migrations or schema files)"
+    ],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "schema",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "schema",
+        "text": "The data schema is explicit (migrations, DDL, schema files).",
+        "met": false,
+        "evidence": [],
+        "note": "no migrations or schema files"
+       },
+       {
+        "level": 2,
+        "id": "export",
+        "text": "An export exists (endpoint or command, not only the UI).",
+        "met": false,
+        "evidence": [],
+        "note": "no export"
+       },
+       {
+        "level": 3,
+        "id": "bulk-open",
+        "text": "A bulk export in an open format, and a bulk import.",
+        "met": false,
+        "evidence": [],
+        "note": "no open export format"
+       },
+       {
+        "level": 4,
+        "id": "documented-round-trip",
+        "text": "The export format is documented and the round trip is tested.",
+        "met": false,
+        "evidence": [],
+        "note": "the export format isn't documented"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 0,
+    "rationale": "Not yet: Errors are specific exception types, and library code never calls sys.exit.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Errors are specific exception types, and library code never calls sys.exit. (library code exits the process: .github/actions/people/people.py)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "library code exits the process: .github/actions/people/people.py"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pydantic/_internal/_validators.py",
+          "detail": "42 matches"
+         },
+         {
+          "path": "pydantic/_internal/_generate_schema.py",
+          "detail": "25 matches"
+         },
+         {
+          "path": "pydantic/main.py",
+          "detail": "21 matches"
+         },
+         {
+          "path": "pydantic/types.py",
+          "detail": "17 matches"
+         },
+         {
+          "path": "pydantic/_internal/_fields.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "pydantic/v1/main.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "pydantic/v1/utils.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "pydantic/json_schema.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "pydantic/v1/class_validators.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "pydantic/v1/fields.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "pydantic/networks.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "pydantic/_internal/_decorators.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "pydantic/_internal/_discriminated_union.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "pydantic/color.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "pydantic/fields.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "pydantic/_internal/_known_annotated_metadata.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "pydantic/validate_call_decorator.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "pydantic/deprecated/decorator.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "pydantic/v1/decorator.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "pydantic/deprecated/class_validators.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "pydantic/v1/env_settings.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "pydantic/v1/generics.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "pydantic/_internal/_model_construction.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pydantic/_internal/_utils.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pydantic/_migration.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pydantic/functional_validators.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pydantic/type_adapter.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pydantic/_internal/_config.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/_internal/_generics.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/deprecated/parse.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/experimental/pipeline.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/v1/parse.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pydantic/_internal/_decorators_v1.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/_internal/_schema_generation_shared.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/_internal/_typing_extra.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/config.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/dataclasses.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/functional_serializers.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/root_model.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/v1/_hypothesis_plugin.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/v1/annotated_types.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/v1/config.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/v1/datetime_parse.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/v1/schema.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic/v1/validators.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "release/push.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pydantic-core/python/pydantic_core/core_schema.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic-core/wasm-preview/worker.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/aliases.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/deprecated/config.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/deprecated/json.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/experimental/missing_sentinel.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/mypy.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/plugin/__init__.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/plugin/_schema_validator.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/v1/color.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/v1/error_wrappers.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/v1/json.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/v1/mypy.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/v1/networks.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/version.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no retry parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 4,
+    "rationale": "Optional features behind extras/features.",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Python package pydantic",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L3 published-minimal",
+      "detail": "2 matches",
+      "path": ".github/workflows/ci.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L4 optional-features",
+      "detail": "1 match",
+      "path": "pyproject.toml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "Python package pydantic"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/ci.yml",
+          "detail": "2 matches"
+         },
+         {
+          "path": null,
+          "detail": "1 runtime dependencies"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 0,
+    "rationale": "Not yet: Logs through a standard logger namespace and never prints from library code.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "levels: error, info"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/ci.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 261,
+     "source_tokens": 951230,
+     "test_files": 339,
+     "test_tokens": 955814,
+     "test_ratio": 1.0,
+     "modules": 22,
+     "modules_within_budget": 0.59,
+     "oversized_files": [
+      "pydantic-core/src/self_schema.py",
+      "pydantic-core/python/pydantic_core/core_schema.py",
+      "pydantic/json_schema.py",
+      "pydantic/_internal/_generate_schema.py",
+      "pydantic/types.py",
+      "pydantic/main.py",
+      "pydantic/fields.py",
+      "pydantic/mypy.py",
+      "pydantic/v1/fields.py",
+      "pydantic-core/python/pydantic_core/_pydantic_core/__init__.pyi"
+     ],
+     "largest_module": {
+      "path": "pydantic",
+      "tokens": 195904
+     },
+     "typed_ratio": 0.99,
+     "python_functions": 2125,
+     "python_annotated": 2098,
+     "import_edges": 586,
+     "import_graph": true,
+     "max_fan_out": 32,
+     "import_cycles": 3,
+     "largest_cycle": [
+      "pydantic/_internal/_config.py",
+      "pydantic/_internal/_dataclasses.py",
+      "pydantic/_internal/_decorators.py",
+      "pydantic/_internal/_discriminated_union.py",
+      "pydantic/_internal/_fields.py",
+      "pydantic/_internal/_forward_ref.py",
+      "pydantic/_internal/_generate_schema.py",
+      "pydantic/_internal/_generics.py",
+      "pydantic/_internal/_known_annotated_metadata.py",
+      "pydantic/_internal/_mock_val_ser.py",
+      "pydantic/_internal/_model_construction.py",
+      "pydantic/_internal/_namespace_utils.py",
+      "pydantic/_internal/_repr.py",
+      "pydantic/_internal/_signature.py",
+      "pydantic/_internal/_type_refs.py",
+      "pydantic/_internal/_typing_extra.py",
+      "pydantic/_internal/_utils.py",
+      "pydantic/_internal/_validators.py",
+      "pydantic/aliases.py",
+      "pydantic/color.py",
+      "pydantic/config.py",
+      "pydantic/dataclasses.py",
+      "pydantic/deprecated/json.py",
+      "pydantic/errors.py",
+      "pydantic/fields.py",
+      "pydantic/functional_validators.py",
+      "pydantic/json_schema.py",
+      "pydantic/main.py",
+      "pydantic/networks.py",
+      "pydantic/type_adapter.py",
+      "pydantic/types.py",
+      "pydantic/v1/annotated_types.py",
+      "pydantic/v1/class_validators.py",
+      "pydantic/v1/color.py",
+      "pydantic/v1/config.py",
+      "pydantic/v1/datetime_parse.py",
+      "pydantic/v1/error_wrappers.py",
+      "pydantic/v1/errors.py",
+      "pydantic/v1/fields.py",
+      "pydantic/v1/json.py",
+      "pydantic/v1/main.py",
+      "pydantic/v1/networks.py",
+      "pydantic/v1/parse.py",
+      "pydantic/v1/schema.py",
+      "pydantic/v1/types.py",
+      "pydantic/v1/typing.py",
+      "pydantic/v1/utils.py",
+      "pydantic/v1/validators.py"
+     ],
+     "languages": {
+      "python": 620299,
+      "rust": 329646,
+      "javascript": 810,
+      "shell": 475
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (59% of modules fit 32k tokens; 10 files over 12k)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "pydantic-core/tests/benchmarks/complete_schema.py",
+          "detail": "339 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/ci.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/codspeed.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/coverage.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/dependencies-check.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/docs-navigation.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/docs-update.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/enforce-issue-assignment.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/integration.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/third-party.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/update-pydantic-people.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/upload-previews.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "59% of modules fit 32k tokens; 10 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "3 import cycles (largest: pydantic/_internal/_config.py, pydantic/_internal/_dataclasses.py, pydantic/_internal/_decorators.py)"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.62,
+   "assessed_dimensions": 8,
+   "not_applicable": [
+    "events",
+    "identity"
+   ],
+   "retrofit_person_days": 45.9,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 0.0,
+    "portability": 11.7,
+    "ergonomics": 8.8,
+    "embeddability": 0.0,
+    "extensibility": 11.7,
+    "observability": 5.9,
+    "legibility": 7.8
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 1.95,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 79.64,
+   "classic": {
+    "person_months": 237.9,
+    "schedule_months": 20.0,
+    "cost": 2678081
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 1.0,
+    "docs": 1.0,
+    "capture": 1.0
+   },
+   "agent_factor": 0.1,
+   "reproduce_pm": 23.79,
+   "history": {
+    "commits": 5774,
+    "fix_commits": 1214,
+    "authors": 835,
+    "age_months": 113.1,
+    "months_since_last": 0.0
+   },
+   "knowledge_pm": 53.15,
+   "rediscover_pm": 0.0,
+   "replacement_pm": 23.79,
+   "leverage": 0.95,
+   "obsolescence": 0.95,
+   "value_pm": 21.54,
+   "value_cost": 242492,
+   "knowledge_at_risk": 0.0,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 288.5356,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 9955.82,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 5721132,
+     "input": 143028300,
+     "cached_input": 121574055
+    },
+    "final_tokens": 1907044,
+    "model_cost": 224.55,
+    "agent_hours": 63.57,
+    "human_days": 38.14,
+    "review_days": 38.14,
+    "rediscover_days": 0.0,
+    "calendar_days": 38.14,
+    "build_cost": 20669.88,
+    "yearly_cost": 3100.48,
+    "total_cost": 29971.33
+   },
+   "buy": {
+    "via": {
+     "install": "library",
+     "use": "library"
+    },
+    "adoption_minutes": {
+     "install": 1,
+     "first_use": 2.0,
+     "total": 3.0
+    },
+    "tokens": {
+     "output": 375,
+     "input": 9375,
+     "cached_input": 7968
+    },
+    "model_cost": 0.01,
+    "upgrade_minutes_per_year": 30,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 3.37,
+    "yearly_cost": 33.5,
+    "total_cost": 103.87
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

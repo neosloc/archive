@@ -1,0 +1,1164 @@
+{
+ "meta": {
+  "name": "developmentseed/titiler",
+  "url": "https://github.com/developmentseed/titiler",
+  "slug": "developmentseed-titiler",
+  "host": "github.com",
+  "commit": "ce7753e12a8285e9889df39995b04a6de6cdb89a",
+  "committed_at": "2026-09-28T18:09:06+02:00",
+  "evaluated_at": "2026-10-07T14:04:05+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/developmentseed/titiler",
+  "inventory": {
+   "files": 522,
+   "source_files": 52,
+   "source_tokens": 102569,
+   "languages": {
+    "python": 102569
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "src/titiler/application/titiler/application/main.py",
+      "detail": "fastapi/flask: 6 route declarations"
+     },
+     {
+      "path": "src/titiler/xarray/examples/local.py",
+      "detail": "2 matches"
+     },
+     {
+      "path": "src/titiler/application/titiler/application/main.py",
+      "detail": "1 match"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [
+    {
+     "path": "docs/src/migrations/v1_migration.md",
+     "detail": ""
+    },
+    {
+     "path": "docs/src/migrations/v2_migration.md",
+     "detail": ""
+    }
+   ],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 3,
+    "rationale": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+    "evidence": [
+     {
+      "signal": "L1 routes",
+      "detail": "fastapi/flask: 6 route declarations",
+      "path": "src/titiler/application/titiler/application/main.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 contract",
+      "detail": "FastAPI (auto OpenAPI)",
+      "path": "src/titiler/application/titiler/application/main.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 coverage",
+      "detail": "generated from code: FastAPI (auto OpenAPI)",
+      "path": "src/titiler/application/titiler/application/main.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 6,
+     "routes_by_framework": {
+      "fastapi/flask": 6
+     },
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "L4 A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK. (only one programmatic surface)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 3,
+      "first_missing": "second-surface",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/application/titiler/application/main.py",
+          "detail": "fastapi/flask: 6 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/application/titiler/application/main.py",
+          "detail": "FastAPI (auto OpenAPI)"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/application/titiler/application/main.py",
+          "detail": "generated from code: FastAPI (auto OpenAPI)"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": false,
+        "evidence": [],
+        "note": "only one programmatic surface"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 4,
+    "rationale": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "141 semver tags, latest 2.4.0",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 changelog",
+      "detail": "marks breaking changes",
+      "path": "CHANGES.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 deprecation",
+      "detail": "4 matches",
+      "path": "src/titiler/extensions/titiler/extensions/wmts.py",
+      "weight": 1
+     },
+     {
+      "signal": "L4 clean-history",
+      "detail": "20 tagged releases compared",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "141 semver tags, latest 2.4.0"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "CHANGES.md",
+          "detail": "marks breaking changes"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/extensions/titiler/extensions/wmts.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/titiler/mosaic/titiler/mosaic/extensions/wmts.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/titiler/xarray/titiler/xarray/extensions.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/factory.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/utils.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/titiler/xarray/titiler/xarray/factory.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 0,
+    "rationale": "Not yet: Internal events exist (signals, queues, an outbox, emitters).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal events exist (signals, queues, an outbox, emitters). (no internal events)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "internal-events",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": false,
+        "evidence": [],
+        "note": "no internal events"
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": false,
+        "evidence": [],
+        "note": "no outbound webhooks or streams"
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 0,
+    "rationale": "Not yet: Programmatic authentication (bearer tokens, API keys).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Programmatic authentication (bearer tokens, API keys). (no token auth)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "token-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": false,
+        "evidence": [],
+        "note": "no token auth"
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/core/titiler/core/middleware.py",
+          "detail": "15 matches"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/factory.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/routing.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "deployment/aws/app.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/utils.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": 1,
+    "rationale": "The data schema is explicit (migrations, DDL, schema files).",
+    "evidence": [
+     {
+      "signal": "L1 schema",
+      "detail": "",
+      "path": "docs/src/migrations/v1_migration.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 An export exists (endpoint or command, not only the UI). (no export)"
+    ],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "export",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "schema",
+        "text": "The data schema is explicit (migrations, DDL, schema files).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs/src/migrations/v1_migration.md",
+          "detail": ""
+         },
+         {
+          "path": "docs/src/migrations/v2_migration.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "export",
+        "text": "An export exists (endpoint or command, not only the UI).",
+        "met": false,
+        "evidence": [],
+        "note": "no export"
+       },
+       {
+        "level": 3,
+        "id": "bulk-open",
+        "text": "A bulk export in an open format, and a bulk import.",
+        "met": false,
+        "evidence": [],
+        "note": "no import"
+       },
+       {
+        "level": 4,
+        "id": "documented-round-trip",
+        "text": "The export format is documented and the round trip is tested.",
+        "met": false,
+        "evidence": [],
+        "note": "the export format isn't documented"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 1,
+    "rationale": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+    "evidence": [
+     {
+      "signal": "L1 json-errors",
+      "detail": "15 matches",
+      "path": "src/titiler/extensions/titiler/extensions/wms.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Field-level validation errors, and paginated lists. (no pagination)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "validation-pagination",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/extensions/titiler/extensions/wms.py",
+          "detail": "15 matches"
+         },
+         {
+          "path": "src/titiler/application/titiler/application/main.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/titiler/xarray/titiler/xarray/main.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/errors.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/titiler/xarray/examples/local.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/algorithm/__init__.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/dependencies.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/extensions/titiler/extensions/render.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/extensions/titiler/extensions/wmts.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/mosaic/titiler/mosaic/extensions/wmts.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/mosaic/titiler/mosaic/factory.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/xarray/titiler/xarray/extensions.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": false,
+        "evidence": [],
+        "note": "no pagination"
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 4,
+    "rationale": "Composition artifacts (compose, Helm, IaC).",
+    "evidence": [
+     {
+      "signal": "L1 documented-run",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 env-config",
+      "detail": "3 matches",
+      "path": "src/titiler/core/titiler/core/factory.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 container",
+      "detail": "",
+      "path": "deployment/aws/lambda/Dockerfile",
+      "weight": 1
+     },
+     {
+      "signal": "L4 composition",
+      "detail": "",
+      "path": "deployment/k8s/charts/Chart.yaml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/core/titiler/core/factory.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/titiler/mosaic/titiler/mosaic/factory.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "deployment/aws/app.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/application/titiler/application/settings.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/xarray/titiler/xarray/io.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/xarray/titiler/xarray/main.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "deployment/aws/.env.example",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "14 of 15 environment variables named in the docs"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "deployment/aws/lambda/Dockerfile",
+          "detail": ""
+         },
+         {
+          "path": "dockerfiles/Dockerfile",
+          "detail": ""
+         },
+         {
+          "path": "dockerfiles/Dockerfile.xarray",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "deployment/k8s/charts/Chart.yaml",
+          "detail": ""
+         },
+         {
+          "path": "docker-compose.yml",
+          "detail": ""
+         },
+         {
+          "path": "deployment/k8s/charts/templates/deployment.yaml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 1,
+    "rationale": "A health or readiness endpoint, or a container healthcheck.",
+    "evidence": [
+     {
+      "signal": "L1 health",
+      "detail": "1 match",
+      "path": "src/titiler/application/titiler/application/main.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Structured logs. (no structured logging)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "structured-logs",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/application/titiler/application/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/titiler/xarray/titiler/xarray/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "deployment/k8s/charts/templates/deployment.yaml",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/titiler/application/titiler/application/main.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/titiler/xarray/titiler/xarray/main.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/titiler/core/titiler/core/telemetry.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/titiler/core/pyproject.toml",
+          "detail": "5 matches"
+         },
+         {
+          "path": "src/titiler/xarray/pyproject.toml",
+          "detail": "5 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/benchmark.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 52,
+     "source_tokens": 102569,
+     "test_files": 43,
+     "test_tokens": 70563,
+     "test_ratio": 0.69,
+     "modules": 14,
+     "modules_within_budget": 0.93,
+     "oversized_files": [
+      "src/titiler/core/titiler/core/factory.py",
+      "src/titiler/mosaic/titiler/mosaic/factory.py"
+     ],
+     "largest_module": {
+      "path": "src/titiler/core/titiler/core",
+      "tokens": 37623
+     },
+     "typed_ratio": 0.68,
+     "python_functions": 243,
+     "python_annotated": 166,
+     "import_edges": 125,
+     "import_graph": true,
+     "max_fan_out": 15,
+     "import_cycles": 1,
+     "largest_cycle": [
+      "src/titiler/core/titiler/core/__init__.py",
+      "src/titiler/core/titiler/core/factory.py",
+      "src/titiler/core/titiler/core/telemetry.py"
+     ],
+     "languages": {
+      "python": 102569
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (93% of modules fit 32k tokens; 2 files over 12k; 68% of code is typed (< 70%))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "src/titiler/application/tests/conftest.py",
+          "detail": "43 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/benchmark.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/check_charts.yaml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/cicd.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/commitlint.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/deploy.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/docs.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/publish-docker.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/scorecard.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/upstream.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/zizmor.yml",
+          "detail": ""
+         },
+         {
+          "path": "deployment/aws/uv.lock",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "93% of modules fit 32k tokens; 2 files over 12k; 68% of code is typed (< 70%)"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "1 import cycles (largest: src/titiler/core/titiler/core/__init__.py, src/titiler/core/titiler/core/factory.py, src/titiler/core/titiler/core/telemetry.py)"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.6,
+   "assessed_dimensions": 10,
+   "not_applicable": [],
+   "retrofit_person_days": 19.8,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 0.0,
+    "events": 3.8,
+    "identity": 3.8,
+    "portability": 2.6,
+    "ergonomics": 1.9,
+    "embeddability": 0.0,
+    "extensibility": 3.8,
+    "observability": 1.3,
+    "legibility": 2.6
+   },
+   "wrappability": "moderate retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.64,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 9.48,
+   "classic": {
+    "person_months": 25.47,
+    "schedule_months": 8.6,
+    "cost": 286736
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.75,
+    "docs": 1.0,
+    "capture": 0.94
+   },
+   "agent_factor": 0.13,
+   "reproduce_pm": 3.23,
+   "history": {
+    "commits": 1041,
+    "fix_commits": 153,
+    "authors": 97,
+    "age_months": 81.8,
+    "months_since_last": 0.3
+   },
+   "knowledge_pm": 8.27,
+   "rediscover_pm": 0.5,
+   "replacement_pm": 3.73,
+   "leverage": 0.95,
+   "obsolescence": 0.95,
+   "value_pm": 3.37,
+   "value_cost": 37903,
+   "knowledge_at_risk": 0.13,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 334.0447,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 3727.5,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 521242,
+     "input": 13031050,
+     "cached_input": 11076392
+    },
+    "final_tokens": 173747,
+    "model_cost": 20.46,
+    "agent_hours": 5.79,
+    "human_days": 14.39,
+    "review_days": 3.89,
+    "rediscover_days": 10.5,
+    "calendar_days": 14.39,
+    "build_cost": 7735.23,
+    "yearly_cost": 1160.28,
+    "total_cost": 11216.08
+   },
+   "buy": {
+    "via": {
+     "install": "service",
+     "use": "service"
+    },
+    "adoption_minutes": {
+     "install": 5,
+     "first_use": 10.0,
+     "total": 15.0
+    },
+    "tokens": {
+     "output": 1875,
+     "input": 46875,
+     "cached_input": 39843
+    },
+    "model_cost": 0.07,
+    "upgrade_minutes_per_year": 5,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 16.83,
+    "yearly_cost": 5.58,
+    "total_cost": 33.58
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

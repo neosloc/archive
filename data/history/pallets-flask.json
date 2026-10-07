@@ -1,0 +1,67 @@
+{
+ "entries": [
+  {
+   "evaluated_at": "2026-10-07T13:11:57+00:00",
+   "commit": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+   "neosloc": "0.7.1",
+   "index": 1.3,
+   "assessed": 10,
+   "levels": {
+    "interface": 1,
+    "stability": 3,
+    "events": 0,
+    "identity": 0,
+    "portability": 1,
+    "ergonomics": 2,
+    "embeddability": 4,
+    "extensibility": 0,
+    "observability": 0,
+    "legibility": 2
+   },
+   "verdict": "buy",
+   "make_buy_ratio": 302.9284
+  },
+  {
+   "evaluated_at": "2026-10-07T13:20:49+00:00",
+   "commit": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+   "neosloc": "0.7.2",
+   "index": 1.3,
+   "assessed": 10,
+   "levels": {
+    "interface": 1,
+    "stability": 3,
+    "events": 0,
+    "identity": 0,
+    "portability": 1,
+    "ergonomics": 2,
+    "embeddability": 4,
+    "extensibility": 0,
+    "observability": 0,
+    "legibility": 2
+   },
+   "verdict": "buy",
+   "make_buy_ratio": 302.9284
+  },
+  {
+   "evaluated_at": "2026-10-07T14:03:47+00:00",
+   "commit": "d086db856be187255b8ec61ef409357393020f32",
+   "neosloc": "0.7.3",
+   "index": 1.3,
+   "assessed": 10,
+   "levels": {
+    "interface": 1,
+    "stability": 3,
+    "events": 0,
+    "identity": 0,
+    "portability": 1,
+    "ergonomics": 2,
+    "embeddability": 4,
+    "extensibility": 0,
+    "observability": 0,
+    "legibility": 2
+   },
+   "verdict": "buy",
+   "make_buy_ratio": 303.7991
+  }
+ ]
+}

@@ -7,8 +7,9 @@ body:
     attributes:
       value: |
         The repository is cloned and analysed with [neosloc](https://neosloc.github.io/neosloc/); its code is
-        only read, never executed. Requests from members of the organization run immediately; others run once a
-        maintainer adds the `approved` label.
+        only read, never executed. The evaluation starts as soon as the issue is created, and the summary is posted
+        here. Repositories over 500 MB wait for a maintainer's approval.
+        Any issue that contains a repository URL works too; this form just makes it easy.
   - type: input
     id: url
     attributes:

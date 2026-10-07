@@ -1,7 +1,7 @@
 {
  "title": "JustPlayBo/justplay-editor",
  "slug": "justplaybo-justplay-editor",
- "date": "2026-10-07T12:51:12+00:00",
+ "date": "2026-10-07T14:03:42+00:00",
  "repo_url": "https://github.com/JustPlayBo/justplay-editor",
  "index": 0.57,
  "assessed": 7,
@@ -14,5 +14,9 @@
   "typescript",
   "javascript",
   "rust"
- ]
+ ],
+ "cocomo_cost": 70353,
+ "cocomo_pm": 6.25,
+ "value_cost": 25949,
+ "value_pm": 2.31
 }

@@ -1,0 +1,1345 @@
+{
+ "meta": {
+  "name": "go-chi/chi",
+  "url": "https://github.com/go-chi/chi",
+  "slug": "go-chi-chi",
+  "host": "github.com",
+  "commit": "167e1e3bd039d060696b99c8da4e876ae04f42c1",
+  "committed_at": "2026-09-30T01:38:27+02:00",
+  "evaluated_at": "2026-10-07T14:05:06+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/go-chi/chi",
+  "inventory": {
+   "files": 105,
+   "source_files": 54,
+   "source_tokens": 39937,
+   "languages": {
+    "go": 39937
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service",
+    "cli",
+    "library"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "middleware/profiler.go",
+      "detail": "go-http: 68 route declarations"
+     },
+     {
+      "path": "_examples/custom-handler/main.go",
+      "detail": "1 match"
+     },
+     {
+      "path": "_examples/custom-method/main.go",
+      "detail": "1 match"
+     }
+    ],
+    "cli": [
+     {
+      "path": "_examples/custom-handler/main.go",
+      "detail": "go main"
+     },
+     {
+      "path": "_examples/custom-method/main.go",
+      "detail": "go main"
+     },
+     {
+      "path": "_examples/rest/main.go",
+      "detail": "2 matches"
+     }
+    ],
+    "library": [
+     {
+      "path": "go.mod",
+      "detail": "Go module with exported packages"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 3,
+    "rationale": "[library] The public API is statically typed (py.typed, type declarations, a typed language).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Go module with exported packages",
+      "path": "go.mod",
+      "weight": 1
+     },
+     {
+      "signal": "L2 public-api",
+      "detail": "exported identifiers",
+      "path": "go.mod",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "statically typed language",
+      "path": "go.mod",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 68,
+     "routes_by_framework": {
+      "go-http": 68
+     },
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[service] L2 A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026). (no machine-readable contract)",
+     "[cli] L3 Machine-readable output (--json/--format) and documented exit statuses. (no --json/--format option)",
+     "[library] L4 An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026). (no generated API reference)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "library",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "contract",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "middleware/profiler.go",
+          "detail": "go-http: 68 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable contract"
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": false,
+        "evidence": [],
+        "note": "no contract"
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": false,
+        "evidence": [],
+        "note": "only one programmatic surface"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "machine-output",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "non-interactive",
+        "text": "Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "help",
+        "text": "--help documents every option (at least 90% of options have help text).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "_examples/rest/main.go",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "machine-output",
+        "text": "Machine-readable output (--json/--format) and documented exit statuses.",
+        "met": false,
+        "evidence": [],
+        "note": "no --json/--format option"
+       },
+       {
+        "level": 4,
+        "id": "output-schema",
+        "text": "The output format is specified by a JSON Schema.",
+        "met": false,
+        "evidence": [],
+        "note": "no JSON Schema for the output"
+       }
+      ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "api-reference",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "Go module with exported packages"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "exported identifiers"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "statically typed language"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no generated API reference"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 4,
+    "rationale": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "60 semver tags, latest v5.3.2",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 changelog",
+      "detail": "marks breaking changes",
+      "path": "CHANGELOG.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 deprecation",
+      "detail": "10 matches",
+      "path": "_examples/versions/main.go",
+      "weight": 1
+     },
+     {
+      "signal": "L4 clean-history",
+      "detail": "20 tagged releases compared",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "60 semver tags, latest v5.3.2"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "CHANGELOG.md",
+          "detail": "marks breaking changes"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "_examples/versions/main.go",
+          "detail": "10 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 0,
+    "rationale": "Not yet: Internal events exist (signals, queues, an outbox, emitters).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal events exist (signals, queues, an outbox, emitters). (no internal events)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "internal-events",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": false,
+        "evidence": [],
+        "note": "no internal events"
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": false,
+        "evidence": [],
+        "note": "no outbound webhooks or streams"
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 0,
+    "rationale": "Not yet: Programmatic authentication (bearer tokens, API keys).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Programmatic authentication (bearer tokens, API keys). (no token auth)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "token-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": false,
+        "evidence": [],
+        "note": "no token auth"
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": false,
+        "evidence": [],
+        "note": "no scopes or permissions"
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 1,
+    "rationale": "[cli] Never blocks on a prompt when stdin is not a TTY.",
+    "evidence": [
+     {
+      "signal": "L1 never-blocks",
+      "detail": "no interactive prompts",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE). (no machine-readable errors)",
+     "[cli] L2 Data on stdout, diagnostics on stderr, non-zero exit on failure. (no non-zero exit on failure)",
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "json-errors",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable errors"
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": false,
+        "evidence": [],
+        "note": "no request validation"
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "streams-and-status",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "never-blocks",
+        "text": "Never blocks on a prompt when stdin is not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+        "met": false,
+        "evidence": [],
+        "note": "no non-zero exit on failure"
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+        "met": false,
+        "evidence": [],
+        "note": "exit statuses aren't documented"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no --dry-run"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "no exception classes"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": false,
+        "evidence": [],
+        "note": "no input validation errors"
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no timeout parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 2,
+    "rationale": "[cli] Installable as a package that provides the command.",
+    "evidence": [
+     {
+      "signal": "L1 runnable",
+      "detail": "go main",
+      "path": "_examples/custom-handler/main.go",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "go main",
+      "path": "_examples/custom-handler/main.go",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (configuration isn't read from the environment)",
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (not published to a registry)",
+     "[library] L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "env-config",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": false,
+        "evidence": [],
+        "note": "configuration isn't read from the environment"
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": false,
+        "evidence": [],
+        "note": "no Dockerfile"
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": false,
+        "evidence": [],
+        "note": "no compose/Helm/IaC"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "published",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "runnable",
+        "text": "Runnable from source (a declared entry point).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "_examples/custom-handler/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/custom-method/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/fileserver/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/graceful/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/hello-world/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/limits/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/logging/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/pathvalue/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/rest/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/router-walk/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/todos-resource/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/versions/main.go",
+          "detail": "go main"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package that provides the command.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "_examples/custom-handler/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/custom-method/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/fileserver/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/graceful/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/hello-world/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/limits/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/logging/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/pathvalue/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/rest/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/router-walk/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/todos-resource/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "_examples/versions/main.go",
+          "detail": "go main"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published",
+        "text": "Published to a public registry and run non-interactively in CI.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "container-or-binary",
+        "text": "Also shipped as a container image or a single binary.",
+        "met": false,
+        "evidence": [],
+        "note": "no container image or binary"
+       }
+      ]
+     },
+     "library": {
+      "level": 2,
+      "first_missing": "published-minimal",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "Go module with exported packages"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": false,
+        "evidence": [],
+        "note": "no optional extras"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "no lifecycle hooks"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 1,
+    "rationale": "[service] A health or readiness endpoint, or a container healthcheck.",
+    "evidence": [
+     {
+      "signal": "L1 health",
+      "detail": "1 match",
+      "path": "_examples/limits/main.go",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Structured logs. (no structured logging)",
+     "[cli] L1 Meaningful exit statuses, and errors on stderr. (no non-zero exit on failure)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "structured-logs",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "_examples/limits/main.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "_examples/rest/main.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "_examples/router-walk/main.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     },
+     "cli": {
+      "level": 0,
+      "first_missing": "exit-and-stderr",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "exit-and-stderr",
+        "text": "Meaningful exit statuses, and errors on stderr.",
+        "met": false,
+        "evidence": [],
+        "note": "no non-zero exit on failure"
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+        "met": false,
+        "evidence": [],
+        "note": "no --quiet or log-level control"
+       },
+       {
+        "level": 3,
+        "id": "structured-diagnostics",
+        "text": "Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured diagnostics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing hooks (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing hooks"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 3,
+    "rationale": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/ci.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L3 fits-and-verified",
+      "detail": "test ratio 1.22, 100% typed, modules fit",
+      "path": "context_test.go",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 54,
+     "source_tokens": 39937,
+     "test_files": 30,
+     "test_tokens": 48528,
+     "test_ratio": 1.22,
+     "modules": 18,
+     "modules_within_budget": 1.0,
+     "oversized_files": [],
+     "largest_module": {
+      "path": "middleware",
+      "tokens": 18312
+     },
+     "typed_ratio": 1.0,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 0,
+     "import_graph": false,
+     "max_fan_out": 0,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "go": 39937
+     }
+    },
+    "gaps": [
+     "L4 No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt). (no agent docs (AGENTS.md, CLAUDE.md, llms.txt))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 3,
+      "first_missing": "acyclic-documented",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "context_test.go",
+          "detail": "30 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/ci.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "context_test.go",
+          "detail": "test ratio 1.22, 100% typed, modules fit"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.56,
+   "assessed_dimensions": 9,
+   "not_applicable": [
+    "portability"
+   ],
+   "retrofit_person_days": 8.9,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 0.0,
+    "events": 2.2,
+    "identity": 2.2,
+    "ergonomics": 1.1,
+    "embeddability": 0.4,
+    "extensibility": 2.2,
+    "observability": 0.8,
+    "legibility": 0.0
+   },
+   "wrappability": "moderate retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.5,
+    "legibility_multiplier": 0.75,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 3.7,
+   "classic": {
+    "person_months": 9.48,
+    "schedule_months": 5.9,
+    "cost": 106722
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.75,
+    "docs": 1.0,
+    "capture": 0.94
+   },
+   "agent_factor": 0.13,
+   "reproduce_pm": 1.2,
+   "history": {
+    "commits": 764,
+    "fix_commits": 117,
+    "authors": 185,
+    "age_months": 131.5,
+    "months_since_last": 0.2
+   },
+   "knowledge_pm": 6.16,
+   "rediscover_pm": 0.37,
+   "replacement_pm": 1.57,
+   "leverage": 0.94,
+   "obsolescence": 1.0,
+   "value_pm": 1.49,
+   "value_cost": 16730,
+   "knowledge_at_risk": 0.23,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 169.6447,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 2518.05,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 266113,
+     "input": 6652825,
+     "cached_input": 5654901
+    },
+    "final_tokens": 88704,
+    "model_cost": 10.44,
+    "agent_hours": 2.96,
+    "human_days": 9.76,
+    "review_days": 1.99,
+    "rediscover_days": 7.77,
+    "calendar_days": 9.76,
+    "build_cost": 5240.65,
+    "yearly_cost": 786.1,
+    "total_cost": 7598.95
+   },
+   "buy": {
+    "via": {
+     "install": "cli",
+     "use": "library"
+    },
+    "adoption_minutes": {
+     "install": 15,
+     "first_use": 10.0,
+     "total": 25.0
+    },
+    "tokens": {
+     "output": 3125,
+     "input": 78125,
+     "cached_input": 66406
+    },
+    "model_cost": 0.12,
+    "upgrade_minutes_per_year": 5,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 28.04,
+    "yearly_cost": 5.58,
+    "total_cost": 44.79
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

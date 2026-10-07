@@ -1,0 +1,1462 @@
+{
+ "meta": {
+  "name": "honojs/hono",
+  "url": "https://github.com/honojs/hono",
+  "slug": "honojs-hono",
+  "host": "github.com",
+  "commit": "5f36607f67aa9357887337328ac84a1c1d48dc04",
+  "committed_at": "2026-10-05T18:29:52+09:00",
+  "evaluated_at": "2026-10-07T14:04:14+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/honojs/hono",
+  "inventory": {
+   "files": 573,
+   "source_files": 241,
+   "source_tokens": 215795,
+   "languages": {
+    "typescript": 215795
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service",
+    "library"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "runtime-tests/workerd/index.ts",
+      "detail": "express/koa/hono: 3 route declarations"
+     },
+     {
+      "path": "runtime-tests/workerd/index.ts",
+      "detail": "1 match"
+     }
+    ],
+    "library": [
+     {
+      "path": "package.json",
+      "detail": "npm package"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 3,
+    "rationale": "[library] The public API is statically typed (py.typed, type declarations, a typed language).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "npm package",
+      "path": "package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L2 public-api",
+      "detail": "package entry point",
+      "path": "package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "TypeScript types",
+      "path": "package.json",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 3,
+     "routes_by_framework": {
+      "express/koa/hono": 3
+     },
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[service] L2 A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026). (no machine-readable contract)",
+     "[library] L4 An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026). (no generated API reference)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "library",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "contract",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "runtime-tests/workerd/index.ts",
+          "detail": "express/koa/hono: 3 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable contract"
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": false,
+        "evidence": [],
+        "note": "no contract"
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "runtime-tests/workerd/index.ts",
+          "detail": "HTTP"
+         },
+         {
+          "path": "src/client/client.ts",
+          "detail": "SDK"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "api-reference",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "package.json",
+          "detail": "npm package"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "package.json",
+          "detail": "package entry point"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "package.json",
+          "detail": "TypeScript types"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no generated API reference"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "454 semver tags, latest v4.13.13",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "454 semver tags, latest v4.13.13"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": false,
+        "evidence": [],
+        "note": "no deprecation mechanism or API versioning"
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 2,
+    "rationale": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+    "evidence": [
+     {
+      "signal": "L1 internal-events",
+      "detail": "39 matches",
+      "path": "src/adapter/bun/websocket.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L2 outbound",
+      "detail": "39 matches",
+      "path": "src/adapter/bun/websocket.ts",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L3 Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker). (one delivery mechanism, or webhooks that are unsigned or not registrable through the API)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 2,
+      "first_missing": "robust-delivery",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/adapter/bun/websocket.ts",
+          "detail": "39 matches"
+         },
+         {
+          "path": "adapters/bun/src/websocket.ts",
+          "detail": "37 matches"
+         },
+         {
+          "path": "src/adapter/cloudflare-workers/websocket.ts",
+          "detail": "18 matches"
+         },
+         {
+          "path": "adapters/cloudflare-workers/src/websocket.ts",
+          "detail": "16 matches"
+         },
+         {
+          "path": "src/adapter/deno/websocket.ts",
+          "detail": "13 matches"
+         },
+         {
+          "path": "adapters/deno/src/websocket.ts",
+          "detail": "11 matches"
+         },
+         {
+          "path": "src/client/client.ts",
+          "detail": "9 matches"
+         },
+         {
+          "path": "src/helper/websocket/index.ts",
+          "detail": "8 matches"
+         },
+         {
+          "path": "adapters/bun/src/index.ts",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/adapter/bun/index.ts",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/utils/headers.ts",
+          "detail": "5 matches"
+         },
+         {
+          "path": "adapters/deno/src/deno.d.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/adapter/deno/deno.d.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/client/types.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "adapters/cloudflare-workers/src/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "adapters/deno/src/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/adapter/cloudflare-workers/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/adapter/deno/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/helper/streaming/sse.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/adapter/bun/websocket.ts",
+          "detail": "39 matches"
+         },
+         {
+          "path": "adapters/bun/src/websocket.ts",
+          "detail": "37 matches"
+         },
+         {
+          "path": "src/adapter/cloudflare-workers/websocket.ts",
+          "detail": "18 matches"
+         },
+         {
+          "path": "adapters/cloudflare-workers/src/websocket.ts",
+          "detail": "16 matches"
+         },
+         {
+          "path": "src/adapter/deno/websocket.ts",
+          "detail": "13 matches"
+         },
+         {
+          "path": "adapters/deno/src/websocket.ts",
+          "detail": "11 matches"
+         },
+         {
+          "path": "src/client/client.ts",
+          "detail": "9 matches"
+         },
+         {
+          "path": "src/helper/websocket/index.ts",
+          "detail": "8 matches"
+         },
+         {
+          "path": "adapters/bun/src/index.ts",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/adapter/bun/index.ts",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/utils/headers.ts",
+          "detail": "5 matches"
+         },
+         {
+          "path": "adapters/deno/src/deno.d.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/adapter/deno/deno.d.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/client/types.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "adapters/cloudflare-workers/src/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "adapters/deno/src/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/adapter/cloudflare-workers/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/adapter/deno/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/helper/streaming/sse.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 1,
+    "rationale": "Programmatic authentication (bearer tokens, API keys).",
+    "evidence": [
+     {
+      "signal": "L1 token-auth",
+      "detail": "2 matches",
+      "path": "src/middleware/bearer-auth/index.ts",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Per-client, revocable credentials (managed API keys, service accounts) or OAuth2. (no managed keys or OAuth)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "managed-credentials",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/middleware/bearer-auth/index.ts",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "adapters/aws-lambda/src/types.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/adapter/aws-lambda/types.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 1,
+    "rationale": "[service] Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+    "evidence": [
+     {
+      "signal": "L1 json-errors",
+      "detail": "15 matches",
+      "path": "src/jsx/dom/render.ts",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Field-level validation errors, and paginated lists. (no pagination)",
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "validation-pagination",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/jsx/dom/render.ts",
+          "detail": "15 matches"
+         },
+         {
+          "path": "src/hono-base.ts",
+          "detail": "11 matches"
+         },
+         {
+          "path": "src/middleware/bearer-auth/index.ts",
+          "detail": "6 matches"
+         },
+         {
+          "path": "src/middleware/timeout/index.ts",
+          "detail": "6 matches"
+         },
+         {
+          "path": "src/middleware/jwk/jwk.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/middleware/jwt/jwt.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/http-exception.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/middleware/ip-restriction/index.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/validator/validator.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/adapter/cloudflare-pages/handler.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/helper/proxy/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/middleware/basic-auth/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/middleware/body-limit/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/middleware/csrf/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/request.ts",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": false,
+        "evidence": [],
+        "note": "no pagination"
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "no exception classes"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/utils/cookie.ts",
+          "detail": "9 matches"
+         },
+         {
+          "path": "src/utils/jwt/jws.ts",
+          "detail": "5 matches"
+         },
+         {
+          "path": "src/middleware/ip-restriction/index.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/router/smart-router/router.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/utils/jwt/jwt.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/jsx/base.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/middleware/jwt/jwt.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/middleware/language/language.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "adapters/bun/src/conninfo.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/adapter/bun/conninfo.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/middleware/jwk/jwk.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/middleware/serve-static/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "adapters/bun/src/websocket.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "adapters/lambda-edge/src/handler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "perf-measures/type-check/scripts/process-results.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/adapter/bun/websocket.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/adapter/lambda-edge/handler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/compose.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/helper/ssg/ssg.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/helper/ssg/utils.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/helper/streaming/sse.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/helper/websocket/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/hono-base.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/jsx/children.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/jsx/dom/client.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/jsx/dom/css.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/jsx/dom/render.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/jsx/dom/server.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/jsx/hooks/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/middleware/basic-auth/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/middleware/bearer-auth/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/middleware/cache/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/middleware/combine/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/middleware/context-storage/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/middleware/jsx-renderer/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/router/reg-exp-router/prepared-router.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/router/reg-exp-router/router.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/utils/body.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "vite.config.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/middleware/timeout/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/helper/streaming/sse.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/jsx/dom/components.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/jsx/dom/render.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 2,
+    "rationale": "[library] Installable as a package (a package manifest).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "npm package",
+      "path": "package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "package.json",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (configuration isn't read from the environment)",
+     "[library] L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "library",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "env-config",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": false,
+        "evidence": [],
+        "note": "configuration isn't read from the environment"
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": false,
+        "evidence": [],
+        "note": "no Dockerfile"
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": false,
+        "evidence": [],
+        "note": "no compose/Helm/IaC"
+       }
+      ]
+     },
+     "library": {
+      "level": 2,
+      "first_missing": "published-minimal",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "package.json",
+          "detail": "npm package"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "package.json",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": false,
+        "evidence": [],
+        "note": "no optional extras"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 0,
+    "rationale": "[service] Not yet: A health or readiness endpoint, or a container healthcheck.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "health",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": false,
+        "evidence": [],
+        "note": "no health endpoint or healthcheck"
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/autofix.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 241,
+     "source_tokens": 215795,
+     "test_files": 163,
+     "test_tokens": 490205,
+     "test_ratio": 2.27,
+     "modules": 91,
+     "modules_within_budget": 0.99,
+     "oversized_files": [
+      "src/types.ts"
+     ],
+     "largest_module": {
+      "path": "src",
+      "tokens": 38209
+     },
+     "typed_ratio": 1.0,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 453,
+     "import_graph": true,
+     "max_fan_out": 10,
+     "import_cycles": 5,
+     "largest_cycle": [
+      "src/jsx/base.ts",
+      "src/jsx/children.ts",
+      "src/jsx/context.ts",
+      "src/jsx/dom/context.ts",
+      "src/jsx/intrinsic-element/common.ts",
+      "src/jsx/intrinsic-element/components.ts",
+      "src/jsx/types.ts"
+     ],
+     "languages": {
+      "typescript": 215795
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 1 files over 12k)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "adapters/aws-lambda/src/conninfo.test.ts",
+          "detail": "163 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/autofix.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/ci-adapters.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/ci.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/cr.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/no-response.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "99% of modules fit 32k tokens; 1 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "5 import cycles (largest: src/jsx/base.ts, src/jsx/children.ts, src/jsx/context.ts)"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.33,
+   "assessed_dimensions": 9,
+   "not_applicable": [
+    "portability"
+   ],
+   "retrofit_person_days": 23.3,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 1.9,
+    "events": 1.9,
+    "identity": 3.7,
+    "ergonomics": 2.8,
+    "embeddability": 0.9,
+    "extensibility": 5.6,
+    "observability": 2.8,
+    "legibility": 3.7
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.93,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 21.27,
+   "classic": {
+    "person_months": 59.48,
+    "schedule_months": 11.8,
+    "cost": 669539
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.75,
+    "docs": 0.18,
+    "capture": 0.73
+   },
+   "agent_factor": 0.22,
+   "reproduce_pm": 13.17,
+   "history": {
+    "commits": 2782,
+    "fix_commits": 893,
+    "authors": 380,
+    "age_months": 57.7,
+    "months_since_last": 0.1
+   },
+   "knowledge_pm": 31.77,
+   "rediscover_pm": 8.58,
+   "replacement_pm": 21.75,
+   "leverage": 0.92,
+   "obsolescence": 0.95,
+   "value_pm": 18.94,
+   "value_cost": 213238,
+   "knowledge_at_risk": 0.39,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 188.9297,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 52126.27,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 2135479,
+     "input": 53386975,
+     "cached_input": 45378928
+    },
+    "final_tokens": 711826,
+    "model_cost": 83.82,
+    "agent_hours": 23.73,
+    "human_days": 202.1,
+    "review_days": 21.92,
+    "rediscover_days": 180.18,
+    "calendar_days": 202.1,
+    "build_cost": 108421.32,
+    "yearly_cost": 16263.2,
+    "total_cost": 157210.92
+   },
+   "buy": {
+    "via": {
+     "install": "library",
+     "use": "library"
+    },
+    "adoption_minutes": {
+     "install": 15,
+     "first_use": 10.0,
+     "total": 25.0
+    },
+    "tokens": {
+     "output": 3125,
+     "input": 78125,
+     "cached_input": 66406
+    },
+    "model_cost": 0.12,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 28.04,
+    "yearly_cost": 268.02,
+    "total_cost": 832.11
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

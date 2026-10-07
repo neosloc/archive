@@ -11,3 +11,63 @@ https://github.com/GestaltBI/olap-cube-js
 https://github.com/GestaltBI/gestaltbi-core
 https://github.com/JustPlayBo/justplay-editor
 https://github.com/ohm-geocontext/geocontext-app
+
+# Selected open-source projects: every surface (service, CLI, library, desktop, frontend),
+# the main languages, standard-protocol servers and geo projects.
+# Python
+https://github.com/psf/requests
+https://github.com/pallets/flask
+https://github.com/fastapi/fastapi
+https://github.com/encode/httpx
+https://github.com/pallets/click
+https://github.com/Textualize/rich
+https://github.com/httpie/cli
+https://github.com/pydantic/pydantic
+https://github.com/geopython/pygeoapi
+https://github.com/developmentseed/titiler
+# JavaScript / TypeScript
+https://github.com/expressjs/express
+https://github.com/fastify/fastify
+https://github.com/axios/axios
+https://github.com/honojs/hono
+https://github.com/lodash/lodash
+https://github.com/chalk/chalk
+https://github.com/Leaflet/Leaflet
+https://github.com/excalidraw/excalidraw
+https://github.com/marktext/marktext
+https://github.com/protomaps/PMTiles
+# Go
+https://github.com/spf13/cobra
+https://github.com/gin-gonic/gin
+https://github.com/junegunn/fzf
+https://github.com/cli/cli
+https://github.com/caddyserver/caddy
+https://github.com/go-chi/chi
+https://github.com/charmbracelet/bubbletea
+https://github.com/nats-io/nats-server
+https://github.com/pocketbase/pocketbase
+# Rust
+https://github.com/BurntSushi/ripgrep
+https://github.com/sharkdp/bat
+https://github.com/sharkdp/fd
+https://github.com/tokio-rs/axum
+https://github.com/clap-rs/clap
+https://github.com/serde-rs/serde
+https://github.com/alacritty/alacritty
+# Swift
+https://github.com/Alamofire/Alamofire
+https://github.com/apple/swift-argument-parser
+https://github.com/vapor/vapor
+https://github.com/rxhanson/Rectangle
+https://github.com/p0deje/Maccy
+https://github.com/exelban/stats
+# JVM
+https://github.com/google/gson
+https://github.com/lysine-dev/okhttp
+https://github.com/spring-projects/spring-petclinic
+# C, Ruby, PHP, C#
+https://github.com/eclipse-mosquitto/mosquitto
+https://github.com/jqlang/jq
+https://github.com/sinatra/sinatra
+https://github.com/slimphp/Slim
+https://github.com/ShareX/ShareX

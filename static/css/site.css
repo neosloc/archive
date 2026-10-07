@@ -36,6 +36,11 @@ h4 { font-size: 14px; margin: 14px 0 6px; color: var(--muted); text-transform: u
 .meta { font-size: 14px; }
 .muted { color: var(--muted); }
 .small { font-size: 14px; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 12px; }
+.filters input, .filters select { font: inherit; color: var(--fg); background: var(--card); border: 1px solid var(--line);
+  border-radius: 8px; padding: 7px 10px; }
+.filters input { flex: 1 1 220px; max-width: 360px; }
+th[aria-sort="ascending"]::after { content: " ▲"; } th[aria-sort="descending"]::after { content: " ▼"; }
 .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
 table { border-collapse: collapse; width: 100%; font-size: 15px; }
 th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }

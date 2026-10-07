@@ -23,7 +23,7 @@ workflow clones each one (neosloc only reads the code; nothing from it is execut
 [published schema](https://neosloc.github.io/neosloc/schema/report-v2.json), commits it, and
 rebuilds this site. Every report can be downloaded as JSON from its page.
 
-**Adding a repository.** Open an
-[“Evaluate a repository” issue](https://github.com/neosloc/archive/issues/new?template=evaluate.yml),
-or a pull request adding its URL to `targets.txt`. Requests from organization members run
-immediately; others run once a maintainer approves them.
+**Adding a repository.** [Open an issue](https://github.com/neosloc/archive/issues/new?template=evaluate.yml)
+with its URL: the evaluation starts as soon as the issue is created, the summary is posted as
+a reply, and the repository joins the weekly re-evaluation. Repositories over 500 MB wait for
+a maintainer's approval. A pull request adding the URL to `targets.txt` works too.

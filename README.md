@@ -6,7 +6,7 @@ time and published at **<https://neosloc.github.io/archive/>**.
 ## How it works
 
 - `targets.txt` lists the repositories, one URL per line.
-- `archive.py evaluate` clones each one (file contents are fetched lazily; nothing from the
+- `archive.py evaluate` clones each one (files over 1 MB are fetched lazily; nothing from the
   repository is executed), runs `neosloc --json` at the version pinned in
   `requirements.txt`, validates the report against neosloc's JSON Schema, and writes:
   - `data/reports/<slug>.json`: the latest report, with metadata (commit, date, neosloc version);
@@ -21,7 +21,7 @@ time and published at **<https://neosloc.github.io/archive/>**.
 | Workflow | When | What |
 |---|---|---|
 | `evaluate` | weekly, on changes to `targets.txt`, `requirements.txt` or `archive.py`, or manually (optionally for one URL, optionally forced) | evaluates, commits the reports, redeploys the site |
-| `request` | an "Evaluate a repository" issue is opened by a member, or gets the `approved` label | validates the URL, adds it, evaluates it, replies and closes the issue |
+| `request` | any new issue containing a repository URL (or the `approved` label, for repositories over 500 MB) | validates the URL, adds it, evaluates it, stores the report, replies with the summary and closes the issue |
 | `site` | pushes to `main`, and after the other two | builds with Hugo 0.128 and deploys to GitHub Pages |
 
 ## Locally

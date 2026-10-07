@@ -1,0 +1,1557 @@
+{
+ "meta": {
+  "name": "httpie/cli",
+  "url": "https://github.com/httpie/cli",
+  "slug": "httpie-cli",
+  "host": "github.com",
+  "commit": "5b604c37c6c67e18e7c3e9aee6c88a8c22b98345",
+  "committed_at": "2024-12-17T09:30:35-08:00",
+  "evaluated_at": "2026-10-07T14:03:53+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/httpie/cli",
+  "inventory": {
+   "files": 264,
+   "source_files": 87,
+   "source_tokens": 81719,
+   "languages": {
+    "python": 81602,
+    "shell": 117
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service",
+    "cli",
+    "library"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "httpie/cli/options.py",
+      "detail": "drf: 2 route declarations"
+     }
+    ],
+    "cli": [
+     {
+      "path": "setup.cfg",
+      "detail": "console script"
+     },
+     {
+      "path": "httpie/cli/argparser.py",
+      "detail": "4 matches"
+     }
+    ],
+    "library": [
+     {
+      "path": "setup.cfg",
+      "detail": "Python package httpie"
+     }
+    ]
+   },
+   "long_running": [
+    {
+     "path": "httpie/internal/daemon_runner.py",
+     "detail": "2 matches"
+    }
+   ],
+   "owns_data": [],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 1,
+    "rationale": "[service] A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+    "evidence": [
+     {
+      "signal": "L1 routes",
+      "detail": "drf: 2 route declarations",
+      "path": "httpie/cli/options.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 2,
+     "routes_by_framework": {
+      "drf": 2
+     },
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[service] L2 A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026). (no machine-readable contract)",
+     "[cli] L2 --help documents every option (at least 90% of options have help text). (7 of 15 options have help text)",
+     "[library] L2 The public API is delimited (__all__, an exports map, exported identifiers). (no __all__/exports defining the public API)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "contract",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/cli/options.py",
+          "detail": "drf: 2 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable contract"
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": false,
+        "evidence": [],
+        "note": "no contract"
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/cli/options.py",
+          "detail": "HTTP"
+         },
+         {
+          "path": "extras/profiling/run.py",
+          "detail": "CLI JSON output"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "help",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "non-interactive",
+        "text": "Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/context.py",
+          "detail": "4 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "help",
+        "text": "--help documents every option (at least 90% of options have help text).",
+        "met": false,
+        "evidence": [],
+        "note": "7 of 15 options have help text"
+       },
+       {
+        "level": 3,
+        "id": "machine-output",
+        "text": "Machine-readable output (--json/--format) and documented exit statuses.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "extras/profiling/run.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/manager/cli.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "CHANGELOG.md",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs/README.md",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "output-schema",
+        "text": "The output format is specified by a JSON Schema.",
+        "met": false,
+        "evidence": [],
+        "note": "no JSON Schema for the output"
+       }
+      ]
+     },
+     "library": {
+      "level": 1,
+      "first_missing": "public-api",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.cfg",
+          "detail": "Python package httpie"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": false,
+        "evidence": [],
+        "note": "no __all__/exports defining the public API"
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": false,
+        "evidence": [],
+        "note": "no py.typed or type declarations"
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no generated API reference"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 4,
+    "rationale": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "50 semver tags, latest 3.2.4",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 changelog",
+      "detail": "marks breaking changes",
+      "path": "CHANGELOG.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 deprecation",
+      "detail": "1 match",
+      "path": "httpie/plugins/manager.py",
+      "weight": 1
+     },
+     {
+      "signal": "L4 clean-history",
+      "detail": "20 tagged releases compared",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "50 semver tags, latest 3.2.4"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "CHANGELOG.md",
+          "detail": "marks breaking changes"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/plugins/manager.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 2,
+    "rationale": "[service] Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+    "evidence": [
+     {
+      "signal": "L1 internal-events",
+      "detail": "1 match",
+      "path": "httpie/output/writer.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 outbound",
+      "detail": "1 match",
+      "path": "httpie/output/writer.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L3 Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker). (one delivery mechanism, or webhooks that are unsigned or not registrable through the API)",
+     "[cli] L2 A machine-readable event stream (NDJSON / JSON Lines). (no NDJSON/JSON Lines stream)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 2,
+      "first_missing": "robust-delivery",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/output/writer.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/output/writer.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "event-stream",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "progress",
+        "text": "Progress is reported while running.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/cli/argtypes.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/client.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "event-stream",
+        "text": "A machine-readable event stream (NDJSON / JSON Lines).",
+        "met": false,
+        "evidence": [],
+        "note": "no NDJSON/JSON Lines stream"
+       },
+       {
+        "level": 3,
+        "id": "event-hooks",
+        "text": "Hooks run commands or URLs on events (--on-\u2026, --exec, webhooks).",
+        "met": false,
+        "evidence": [],
+        "note": "no event hooks"
+       },
+       {
+        "level": 4,
+        "id": "event-format",
+        "text": "The event format is specified (a schema).",
+        "met": false,
+        "evidence": [],
+        "note": "no event schema"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 0,
+    "rationale": "Not yet: Programmatic authentication (bearer tokens, API keys).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Programmatic authentication (bearer tokens, API keys). (no token auth)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "token-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": false,
+        "evidence": [],
+        "note": "no token auth"
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": false,
+        "evidence": [],
+        "note": "no scopes or permissions"
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 2,
+    "rationale": "[cli] Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+    "evidence": [
+     {
+      "signal": "L1 never-blocks",
+      "detail": "4 matches",
+      "path": "httpie/context.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 streams-and-status",
+      "detail": "1 match",
+      "path": "httpie/cli/argtypes.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE). (no machine-readable errors)",
+     "[cli] L3 Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY. (errors aren't JSON in JSON mode)",
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (library code exits the process: extras/packaging/linux/scripts/http_cli.py, extras/packaging/linux/scripts/httpie_cli.py)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "json-errors",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable errors"
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": false,
+        "evidence": [],
+        "note": "no request validation"
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no ETags"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "typed-failures",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "never-blocks",
+        "text": "Never blocks on a prompt when stdin is not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/context.py",
+          "detail": "4 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/cli/argtypes.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/client.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/core.py",
+          "detail": "20 matches"
+         },
+         {
+          "path": "httpie/manager/tasks/plugins.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "httpie/__main__.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "httpie/manager/__main__.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "httpie/internal/daemons.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "httpie/cli/argparser.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/status.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+        "met": false,
+        "evidence": [],
+        "note": "errors aren't JSON in JSON mode"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no --dry-run"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "library code exits the process: extras/packaging/linux/scripts/http_cli.py, extras/packaging/linux/scripts/httpie_cli.py"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/cli/requestitems.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "httpie/downloads.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "httpie/cli/nested_json/parse.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "httpie/compat.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "httpie/config.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "httpie/manager/compat.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/models.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/output/utils.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/utils.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no retry parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 4,
+    "rationale": "[library] Optional features behind extras/features.",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Python package httpie",
+      "path": "setup.cfg",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "setup.cfg",
+      "weight": 1
+     },
+     {
+      "signal": "L3 published-minimal",
+      "detail": "1 match",
+      "path": ".github/workflows/release-pypi.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L4 optional-features",
+      "detail": "1 match",
+      "path": "setup.cfg",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (the environment variables aren't documented)",
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (the command isn't run in CI)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "library",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "env-config",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": false,
+        "evidence": [],
+        "note": "the environment variables aren't documented"
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "extras/packaging/linux/Dockerfile",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": false,
+        "evidence": [],
+        "note": "no compose/Helm/IaC"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "published",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "runnable",
+        "text": "Runnable from source (a declared entry point).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.cfg",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package that provides the command.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.cfg",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published",
+        "text": "Published to a public registry and run non-interactively in CI.",
+        "met": false,
+        "evidence": [],
+        "note": "the command isn't run in CI"
+       },
+       {
+        "level": 4,
+        "id": "container-or-binary",
+        "text": "Also shipped as a container image or a single binary.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "extras/packaging/linux/Dockerfile",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "library": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.cfg",
+          "detail": "Python package httpie"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.cfg",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/release-pypi.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "unknown number of runtime dependencies"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.cfg",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 1,
+    "rationale": "Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [
+     {
+      "signal": "L1 seams",
+      "detail": "1 match",
+      "path": "httpie/plugins/manager.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 The docs show how to add behaviour through those seams (even in-tree). (no registration functions to document)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "documented",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/plugins/manager.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/plugins/manager.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "httpie/manager/tasks/plugins.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 2,
+    "rationale": "[cli] Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+    "evidence": [
+     {
+      "signal": "L1 exit-and-stderr",
+      "detail": "1 match",
+      "path": "httpie/cli/argtypes.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 verbosity",
+      "detail": "2 matches",
+      "path": "httpie/core.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
+     "[cli] L3 Structured logs (e.g. --log-format json) or a machine-readable run summary. (no structured diagnostics)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "health",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": false,
+        "evidence": [],
+        "note": "no health endpoint or healthcheck"
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "structured-diagnostics",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "exit-and-stderr",
+        "text": "Meaningful exit statuses, and errors on stderr.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/cli/argtypes.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/client.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/core.py",
+          "detail": "20 matches"
+         },
+         {
+          "path": "httpie/manager/tasks/plugins.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "httpie/__main__.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "httpie/manager/__main__.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "httpie/internal/daemons.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "httpie/cli/argparser.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/status.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "httpie/core.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "extras/profiling/run.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "httpie/manager/cli.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "structured-diagnostics",
+        "text": "Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured diagnostics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing hooks (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing hooks"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 3,
+    "rationale": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/benchmark.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L3 fits-and-verified",
+      "detail": "test ratio 0.76, 72% typed, modules fit",
+      "path": "tests/conftest.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 87,
+     "source_tokens": 81719,
+     "test_files": 44,
+     "test_tokens": 62187,
+     "test_ratio": 0.76,
+     "modules": 18,
+     "modules_within_budget": 1.0,
+     "oversized_files": [],
+     "largest_module": {
+      "path": "httpie",
+      "tokens": 23037
+     },
+     "typed_ratio": 0.72,
+     "python_functions": 502,
+     "python_annotated": 361,
+     "import_edges": 210,
+     "import_graph": true,
+     "max_fan_out": 15,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "python": 81602,
+      "shell": 117
+     }
+    },
+    "gaps": [
+     "L4 No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt). (no agent docs (AGENTS.md, CLAUDE.md, llms.txt))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 3,
+      "first_missing": "acyclic-documented",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "tests/conftest.py",
+          "detail": "44 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/benchmark.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/code-style.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/content.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/coverage.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/docs-check-markdown.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/docs-deploy.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release-brew.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release-choco.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release-linux-standalone.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release-pypi.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release-snap.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/stale.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/test-package-linux-snap.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/test-package-mac-brew.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/tests.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "tests/conftest.py",
+          "detail": "test ratio 0.76, 72% typed, modules fit"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 2.11,
+   "assessed_dimensions": 9,
+   "not_applicable": [
+    "portability"
+   ],
+   "retrofit_person_days": 8.8,
+   "retrofit_by_dimension": {
+    "interface": 2.6,
+    "stability": 0.0,
+    "events": 0.9,
+    "identity": 2.6,
+    "ergonomics": 0.6,
+    "embeddability": 0.0,
+    "extensibility": 1.7,
+    "observability": 0.4,
+    "legibility": 0.0
+   },
+   "wrappability": "moderate retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.57,
+    "legibility_multiplier": 0.75,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 8.12,
+   "classic": {
+    "person_months": 21.64,
+    "schedule_months": 8.0,
+    "cost": 243630
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.25,
+    "docs": 1.0,
+    "capture": 0.81
+   },
+   "agent_factor": 0.19,
+   "reproduce_pm": 4.01,
+   "history": {
+    "commits": 1690,
+    "fix_commits": 273,
+    "authors": 174,
+    "age_months": 153.7,
+    "months_since_last": 21.6
+   },
+   "knowledge_pm": 13.91,
+   "rediscover_pm": 2.64,
+   "replacement_pm": 6.66,
+   "leverage": 1.01,
+   "obsolescence": 0.85,
+   "value_pm": 5.74,
+   "value_cost": 64588,
+   "knowledge_at_risk": 0.4,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 161.0631,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 15316.68,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 436375,
+     "input": 10909375,
+     "cached_input": 9272968
+    },
+    "final_tokens": 145458,
+    "model_cost": 17.13,
+    "agent_hours": 4.85,
+    "human_days": 59.45,
+    "review_days": 4.01,
+    "rediscover_days": 55.44,
+    "calendar_days": 59.45,
+    "build_cost": 31887.66,
+    "yearly_cost": 4783.15,
+    "total_cost": 46237.1
+   },
+   "buy": {
+    "via": {
+     "install": "library",
+     "use": "service"
+    },
+    "adoption_minutes": {
+     "install": 1,
+     "first_use": 240.0,
+     "total": 241.0
+    },
+    "tokens": {
+     "output": 30125,
+     "input": 753125,
+     "cached_input": 640156
+    },
+    "model_cost": 1.18,
+    "upgrade_minutes_per_year": 5,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 270.32,
+    "yearly_cost": 5.58,
+    "total_cost": 287.07
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

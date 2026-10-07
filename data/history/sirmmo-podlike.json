@@ -20,6 +20,48 @@
    },
    "verdict": "toss-up",
    "make_buy_ratio": 0.9432
+  },
+  {
+   "evaluated_at": "2026-10-07T13:20:43+00:00",
+   "commit": "5e394691e24d85920729051142db6227a92d62a2",
+   "neosloc": "0.7.2",
+   "index": 1.29,
+   "assessed": 7,
+   "levels": {
+    "interface": 3,
+    "stability": 0,
+    "events": null,
+    "identity": null,
+    "portability": null,
+    "ergonomics": 1,
+    "embeddability": 2,
+    "extensibility": 0,
+    "observability": 0,
+    "legibility": 3
+   },
+   "verdict": "toss-up",
+   "make_buy_ratio": 0.9432
+  },
+  {
+   "evaluated_at": "2026-10-07T14:03:40+00:00",
+   "commit": "5e394691e24d85920729051142db6227a92d62a2",
+   "neosloc": "0.7.3",
+   "index": 1.29,
+   "assessed": 7,
+   "levels": {
+    "interface": 3,
+    "stability": 0,
+    "events": null,
+    "identity": null,
+    "portability": null,
+    "ergonomics": 1,
+    "embeddability": 2,
+    "extensibility": 0,
+    "observability": 0,
+    "legibility": 3
+   },
+   "verdict": "toss-up",
+   "make_buy_ratio": 0.9432
   }
  ]
 }

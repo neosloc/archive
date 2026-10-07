@@ -4,10 +4,10 @@
   "url": "https://github.com/neosloc/neosloc",
   "slug": "neosloc-neosloc",
   "host": "github.com",
-  "commit": "161ea8761e1f350faef71e5be08723e5df0450f6",
-  "committed_at": "2026-10-07T13:51:59+02:00",
-  "evaluated_at": "2026-10-07T12:50:51+00:00",
-  "neosloc": "0.7.1"
+  "commit": "fc297b7cd812edafd6247a9676ed23153a4eda52",
+  "committed_at": "2026-10-07T16:01:25+02:00",
+  "evaluated_at": "2026-10-07T14:03:40+00:00",
+  "neosloc": "0.7.3"
  },
  "report": {
   "schema_version": 2,
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 63,
    "source_files": 27,
-   "source_tokens": 62205,
+   "source_tokens": 62678,
    "languages": {
-    "python": 62205
+    "python": 62678
    },
    "git": true
   },
@@ -223,7 +223,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "8 semver tags, latest v0.7.1",
+      "detail": "10 semver tags, latest v0.7.3",
       "path": null,
       "weight": 1
      },
@@ -253,7 +253,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "8 semver tags, latest v0.7.1"
+          "detail": "10 semver tags, latest v0.7.3"
          }
         ],
         "note": ""
@@ -287,7 +287,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "8 tagged releases compared"
+          "detail": "10 tagged releases compared"
          }
         ],
         "note": ""
@@ -1108,9 +1108,9 @@
     ],
     "metrics": {
      "source_files": 27,
-     "source_tokens": 62205,
+     "source_tokens": 62678,
      "test_files": 10,
-     "test_tokens": 24811,
+     "test_tokens": 25128,
      "test_ratio": 0.4,
      "modules": 2,
      "modules_within_budget": 0.5,
@@ -1119,18 +1119,18 @@
      ],
      "largest_module": {
       "path": "neosloc",
-      "tokens": 47130
+      "tokens": 47603
      },
      "typed_ratio": 0.92,
-     "python_functions": 272,
-     "python_annotated": 251,
+     "python_functions": 273,
+     "python_annotated": 252,
      "import_edges": 62,
      "import_graph": true,
      "max_fan_out": 11,
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "python": 62205
+      "python": 62678
      }
     },
     "gaps": [
@@ -1241,11 +1241,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 4.33,
+   "ksloc": 4.36,
    "classic": {
-    "person_months": 11.18,
+    "person_months": 11.25,
     "schedule_months": 6.3,
-    "cost": 125910
+    "cost": 126673
    },
    "capture": {
     "tests": 0.8,
@@ -1254,22 +1254,22 @@
     "capture": 0.9
    },
    "agent_factor": 0.14,
-   "reproduce_pm": 1.62,
+   "reproduce_pm": 1.63,
    "history": {
-    "commits": 16,
+    "commits": 19,
     "fix_commits": 0,
     "authors": 1,
     "age_months": 0.0,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 0.08,
+   "knowledge_pm": 0.1,
    "rediscover_pm": 0.01,
-   "replacement_pm": 1.63,
+   "replacement_pm": 1.64,
    "leverage": 1.11,
    "obsolescence": 0.95,
-   "value_pm": 1.72,
-   "value_cost": 19336,
-   "knowledge_at_risk": 0.0,
+   "value_pm": 1.73,
+   "value_cost": 19470,
+   "knowledge_at_risk": 0.01,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -1282,26 +1282,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 4.4722,
+   "make_buy_ratio": 4.5091,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 469.21,
+   "break_even_price_per_year": 474.2,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 262914,
-     "input": 6572850,
-     "cached_input": 5586922
+     "output": 265298,
+     "input": 6632450,
+     "cached_input": 5637582
     },
-    "final_tokens": 87638,
-    "model_cost": 10.32,
-    "agent_hours": 2.92,
-    "human_days": 2.31,
-    "review_days": 2.1,
+    "final_tokens": 88432,
+    "model_cost": 10.41,
+    "agent_hours": 2.95,
+    "human_days": 2.33,
+    "review_days": 2.12,
     "rediscover_days": 0.21,
-    "calendar_days": 2.31,
-    "build_cost": 1250.37,
-    "yearly_cost": 187.55,
-    "total_cost": 1813.03
+    "calendar_days": 2.33,
+    "build_cost": 1260.68,
+    "yearly_cost": 189.1,
+    "total_cost": 1827.99
    },
    "buy": {
     "via": {

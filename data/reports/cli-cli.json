@@ -1,0 +1,2055 @@
+{
+ "meta": {
+  "name": "cli/cli",
+  "url": "https://github.com/cli/cli",
+  "slug": "cli-cli",
+  "host": "github.com",
+  "commit": "996be976cad960a726aabb94be67dfc7e31e317b",
+  "committed_at": "2026-10-07T11:13:17+01:00",
+  "evaluated_at": "2026-10-07T14:05:08+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/cli/cli",
+  "inventory": {
+   "files": 1484,
+   "source_files": 570,
+   "source_tokens": 870091,
+   "languages": {
+    "go": 841609,
+    "javascript": 17066,
+    "shell": 11416
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service",
+    "cli",
+    "library"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "api/client.go",
+      "detail": "go-http: 27 route declarations"
+     },
+     {
+      "path": ".github/extensions/terminal-mockup/extension.mjs",
+      "detail": "1 match"
+     },
+     {
+      "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+      "detail": "WebSocket server"
+     }
+    ],
+    "cli": [
+     {
+      "path": ".github/skills/cli-exercise/tool/main.go",
+      "detail": "go main"
+     },
+     {
+      "path": "cmd/gen-docs/main.go",
+      "detail": "go main"
+     },
+     {
+      "path": "internal/ghcmd/cmd.go",
+      "detail": "5 matches"
+     }
+    ],
+    "library": [
+     {
+      "path": "go.mod",
+      "detail": "Go module with exported packages"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": [
+    {
+     "path": "internal/ghcmd/cmd.go",
+     "detail": "2 matches"
+    },
+    {
+     "path": "script/build.go",
+     "detail": "1 match"
+    }
+   ]
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 4,
+    "rationale": "[service] A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+    "evidence": [
+     {
+      "signal": "L1 routes",
+      "detail": "go-http: 27 route declarations",
+      "path": "api/client.go",
+      "weight": 1
+     },
+     {
+      "signal": "L2 contract",
+      "detail": "protobuf, 2 operations",
+      "path": "internal/codespaces/rpc/codespace/codespace_host_service.v1.proto",
+      "weight": 1
+     },
+     {
+      "signal": "L3 coverage",
+      "detail": "protobuf, 2 operations",
+      "path": "internal/codespaces/rpc/codespace/codespace_host_service.v1.proto",
+      "weight": 1
+     },
+     {
+      "signal": "L4 second-surface",
+      "detail": "HTTP",
+      "path": "api/client.go",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 27,
+     "routes_by_framework": {
+      "go-http": 27
+     },
+     "spec_files": 3,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[cli] L4 The output format is specified by a JSON Schema. (no JSON Schema for the output)",
+     "[library] L4 An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026). (no generated API reference)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "api/client.go",
+          "detail": "go-http: 27 route declarations"
+         },
+         {
+          "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+          "detail": "WebSocket server"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/codespaces/rpc/codespace/codespace_host_service.v1.proto",
+          "detail": "protobuf, 2 operations"
+         },
+         {
+          "path": "internal/codespaces/rpc/jupyter/jupyter_server_host_service.v1.proto",
+          "detail": "protobuf, 1 operations"
+         },
+         {
+          "path": "internal/codespaces/rpc/ssh/ssh_server_host_service.v1.proto",
+          "detail": "protobuf, 1 operations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/codespaces/rpc/codespace/codespace_host_service.v1.proto",
+          "detail": "protobuf, 2 operations"
+         },
+         {
+          "path": "internal/codespaces/rpc/jupyter/jupyter_server_host_service.v1.proto",
+          "detail": "protobuf, 1 operations"
+         },
+         {
+          "path": "internal/codespaces/rpc/ssh/ssh_server_host_service.v1.proto",
+          "detail": "protobuf, 1 operations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "api/client.go",
+          "detail": "HTTP"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "CLI JSON output"
+         },
+         {
+          "path": "pkg/cmd/discussion/client/client.go",
+          "detail": "SDK"
+         },
+         {
+          "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+          "detail": "WebSocket server"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "cli": {
+      "level": 3,
+      "first_missing": "output-schema",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "non-interactive",
+        "text": "Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "help",
+        "text": "--help documents every option (at least 90% of options have help text).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/ghcmd/cmd.go",
+          "detail": "5 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "machine-output",
+        "text": "Machine-readable output (--json/--format) and documented exit statuses.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "script/build.go",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/references/examples.md",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/references/prerequisites.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs/api-host-test-harness.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/cache/delete/delete.go",
+          "detail": "help text"
+         },
+         {
+          "path": "pkg/cmd/root/help.go",
+          "detail": "help text"
+         },
+         {
+          "path": "pkg/cmd/root/help_topic.go",
+          "detail": "help text"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "output-schema",
+        "text": "The output format is specified by a JSON Schema.",
+        "met": false,
+        "evidence": [],
+        "note": "no JSON Schema for the output"
+       }
+      ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "api-reference",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "Go module with exported packages"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "exported identifiers"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "statically typed language"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no generated API reference"
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "205 semver tags, latest v2.102.0",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "205 semver tags, latest v2.102.0"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": false,
+        "evidence": [],
+        "note": "no deprecation mechanism or API versioning"
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 2,
+    "rationale": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+    "evidence": [
+     {
+      "signal": "L1 internal-events",
+      "detail": "7 matches",
+      "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+      "weight": 1
+     },
+     {
+      "signal": "L2 outbound",
+      "detail": "7 matches",
+      "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L3 Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker). (one delivery mechanism, or webhooks that are unsigned or not registrable through the API)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 2,
+      "first_missing": "robust-delivery",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+          "detail": "7 matches"
+         },
+         {
+          "path": ".github/extensions/terminal-mockup/extension.mjs",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+          "detail": "7 matches"
+         },
+         {
+          "path": ".github/extensions/terminal-mockup/extension.mjs",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 3,
+    "rationale": "[cli] No output or log statement includes a credential.",
+    "evidence": [
+     {
+      "signal": "L1 credentials-env",
+      "detail": "2 matches",
+      "path": "internal/ghcmd/cmd.go",
+      "weight": 1
+     },
+     {
+      "signal": "L2 credentials-off-cli",
+      "detail": "4 matches",
+      "path": ".github/skills/vhs-demo/SKILL.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 secrets-not-logged",
+      "detail": "no credential in print/log statements",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 Programmatic authentication (bearer tokens, API keys). (no token auth)",
+     "[cli] L4 Several profiles or scoped credentials per target. (no credential profiles)",
+     "[library] L4 Several profiles or scoped credentials per target. (no credential profiles)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "token-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": false,
+        "evidence": [],
+        "note": "no token auth"
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/gh/gh.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/extensions/terminal-mockup/extension.mjs",
+          "detail": "13 matches"
+         },
+         {
+          "path": "pkg/cmd/skills/list/list.go",
+          "detail": "12 matches"
+         },
+         {
+          "path": ".github/extensions/terminal-mockup/assets/app.js",
+          "detail": "9 matches"
+         },
+         {
+          "path": "pkg/cmd/auth/shared/git_credential.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pkg/cmd/auth/status/status.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pkg/cmd/skills/search/search.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pkg/cmd/skills/update/update.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pkg/cmd/project/shared/queries/queries.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pkg/cmd/release/create/http.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "internal/authflow/flow.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/auth/refresh/refresh.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/auth/shared/login_flow.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/auth/shared/oauth_scopes.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/skills/install/install.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pkg/cmd/attestation/verification/policy.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/attestation/verify/verify.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "cli": {
+      "level": 3,
+      "first_missing": "profiles",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credentials-env",
+        "text": "Credentials can be supplied non-interactively (environment variables).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/ghcmd/cmd.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "credentials-off-cli",
+        "text": "Credentials never need to be on the command line, and their environment variables are documented.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/skills/vhs-demo/SKILL.md",
+          "detail": "4 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "profiles",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credentials-env",
+        "text": "Credentials can be supplied non-interactively (environment variables).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/ghcmd/cmd.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "credentials-documented",
+        "text": "The credential environment variables are documented.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/skills/vhs-demo/SKILL.md",
+          "detail": "4 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 3,
+    "rationale": "[cli] Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+    "evidence": [
+     {
+      "signal": "L1 never-blocks",
+      "detail": "no interactive prompts",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 streams-and-status",
+      "detail": "9 matches",
+      "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed-failures",
+      "detail": "1 match",
+      "path": ".github/skills/cli-exercise/references/examples.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Field-level validation errors, and paginated lists. (no request validation)",
+     "[cli] L4 --dry-run, limits for long or costly operations (timeouts, budgets), and agent docs. (no timeout/budget options)",
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "validation-pagination",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pkg/cmd/api/api.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pkg/httpmock/stub.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": false,
+        "evidence": [],
+        "note": "no request validation"
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no ETags"
+       }
+      ]
+     },
+     "cli": {
+      "level": 3,
+      "first_missing": "agent-ready",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "never-blocks",
+        "text": "Never blocks on a prompt when stdin is not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+          "detail": "9 matches"
+         },
+         {
+          "path": "script/api-host-gateway/gateway/main.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": "pkg/iostreams/iostreams.go",
+          "detail": "4 matches"
+         },
+         {
+          "path": "internal/codespaces/ssh.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pkg/cmd/codespace/ssh.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "cmd/gen-docs/main.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "internal/run/run.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "internal/update/update.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/main.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "internal/ghcmd/cmd.go",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/execution/cli.go",
+          "detail": "32 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/evidence/session.go",
+          "detail": "12 matches"
+         },
+         {
+          "path": "git/client.go",
+          "detail": "10 matches"
+         },
+         {
+          "path": "git/command.go",
+          "detail": "7 matches"
+         },
+         {
+          "path": "pkg/cmd/repo/create/create.go",
+          "detail": "7 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/evidence/main.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/preflight/main.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/preflight/probe.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": "internal/run/stub.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/engine/assertions.go",
+          "detail": "4 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/evidence/model.go",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pkg/cmd/repo/fork/fork.go",
+          "detail": "4 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/terminal/adapter.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/main.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "context/remote.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "git/objects.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/fontutil/font.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/scripts/terminal.mjs",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/engine/runtime.go",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/engine/screen.go",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/terminal/session.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "cmd/gen-docs/main.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "git/errors.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "internal/ghcmd/cmd.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/copilot/copilot.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/iostreams/iostreams.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "script/api-host-gateway/test.sh",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/skills/cli-exercise/references/examples.md",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/references/prerequisites.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs/api-host-test-harness.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/cache/delete/delete.go",
+          "detail": "help text"
+         },
+         {
+          "path": "pkg/cmd/root/help.go",
+          "detail": "help text"
+         },
+         {
+          "path": "pkg/cmd/root/help_topic.go",
+          "detail": "help text"
+         },
+         {
+          "path": null,
+          "detail": "4 documented exit statuses"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/execution/cli.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pkg/cmd/skills/publish/publish.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "internal/update/update.go",
+          "detail": "6 matches"
+         },
+         {
+          "path": "pkg/cmd/codespace/common.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/preflight/probe.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/iostreams/iostreams.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no timeout/budget options"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "no exception classes"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/extensions/terminal-mockup/assets/app.js",
+          "detail": "5 matches"
+         },
+         {
+          "path": ".github/extensions/terminal-mockup/extension.mjs",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no retry parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "examples don't run as tests"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 3,
+    "rationale": "[library] Published to a public registry, with at most 10 runtime dependencies.",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Go module with exported packages",
+      "path": "go.mod",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "go.mod",
+      "weight": 1
+     },
+     {
+      "signal": "L3 published-minimal",
+      "detail": "6 matches",
+      "path": ".github/workflows/deployment.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (the environment variables aren't documented)",
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (the command isn't run in CI)",
+     "[library] L4 Optional features behind extras/features. (no optional extras)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "library",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "env-config",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": false,
+        "evidence": [],
+        "note": "the environment variables aren't documented"
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": false,
+        "evidence": [],
+        "note": "no Dockerfile"
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": false,
+        "evidence": [],
+        "note": "no compose/Helm/IaC"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "published",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "runnable",
+        "text": "Runnable from source (a declared entry point).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/skills/cli-exercise/tool/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "cmd/gen-docs/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "cmd/gh/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "script/api-host-gateway/gateway/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "go main"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package that provides the command.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/skills/cli-exercise/tool/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "cmd/gen-docs/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "cmd/gh/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "script/api-host-gateway/gateway/main.go",
+          "detail": "go main"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "go main"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published",
+        "text": "Published to a public registry and run non-interactively in CI.",
+        "met": false,
+        "evidence": [],
+        "note": "the command isn't run in CI"
+       },
+       {
+        "level": 4,
+        "id": "container-or-binary",
+        "text": "Also shipped as a container image or a single binary.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".goreleaser.yml",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "optional-features",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "Go module with exported packages"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "go.mod",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/deployment.yml",
+          "detail": "6 matches"
+         },
+         {
+          "path": ".github/workflows/dependabot-triage.lock.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "1 runtime dependencies"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": false,
+        "evidence": [],
+        "note": "no optional extras"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "no lifecycle hooks"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 1,
+    "rationale": "[cli] Meaningful exit statuses, and errors on stderr.",
+    "evidence": [
+     {
+      "signal": "L1 exit-and-stderr",
+      "detail": "9 matches",
+      "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
+     "[cli] L2 Verbosity control for diagnostics (--quiet, --log-level, --debug). (no --quiet or log-level control)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "health",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": false,
+        "evidence": [],
+        "note": "no health endpoint or healthcheck"
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "verbosity",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "exit-and-stderr",
+        "text": "Meaningful exit statuses, and errors on stderr.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
+          "detail": "9 matches"
+         },
+         {
+          "path": "script/api-host-gateway/gateway/main.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": "pkg/iostreams/iostreams.go",
+          "detail": "4 matches"
+         },
+         {
+          "path": "internal/codespaces/ssh.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pkg/cmd/codespace/ssh.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "cmd/gen-docs/main.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "internal/run/run.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "internal/update/update.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/main.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "internal/ghcmd/cmd.go",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/execution/cli.go",
+          "detail": "32 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/evidence/session.go",
+          "detail": "12 matches"
+         },
+         {
+          "path": "git/client.go",
+          "detail": "10 matches"
+         },
+         {
+          "path": "git/command.go",
+          "detail": "7 matches"
+         },
+         {
+          "path": "pkg/cmd/repo/create/create.go",
+          "detail": "7 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/evidence/main.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/preflight/main.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/preflight/probe.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": "internal/run/stub.go",
+          "detail": "5 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/engine/assertions.go",
+          "detail": "4 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/evidence/model.go",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pkg/cmd/repo/fork/fork.go",
+          "detail": "4 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/terminal/adapter.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/main.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "context/remote.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": "git/objects.go",
+          "detail": "3 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/fontutil/font.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "script/build.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/scripts/terminal.mjs",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/engine/runtime.go",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/engine/screen.go",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/terminal/session.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "cmd/gen-docs/main.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "git/errors.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "internal/ghcmd/cmd.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/copilot/copilot.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/iostreams/iostreams.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "script/api-host-gateway/test.sh",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+        "met": false,
+        "evidence": [],
+        "note": "no --quiet or log-level control"
+       },
+       {
+        "level": 3,
+        "id": "structured-diagnostics",
+        "text": "Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured diagnostics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing hooks (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing hooks"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/acceptance.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 570,
+     "source_tokens": 870091,
+     "test_files": 436,
+     "test_tokens": 1269511,
+     "test_ratio": 1.46,
+     "modules": 316,
+     "modules_within_budget": 1.0,
+     "oversized_files": [
+      "pkg/cmd/project/shared/queries/queries.go",
+      "pkg/cmd/pr/create/create.go"
+     ],
+     "largest_module": {
+      "path": "api",
+      "tokens": 45531
+     },
+     "typed_ratio": 0.97,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 1,
+     "import_graph": true,
+     "max_fan_out": 1,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "go": 841609,
+      "javascript": 17066,
+      "shell": 11416
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (100% of modules fit 32k tokens; 2 files over 12k)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": ".github/codeql/tests/unsanitized-response-to-terminal/hits_base64_after_json.go",
+          "detail": "436 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/acceptance.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/agentics-maintenance.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/bump-go.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/codeql.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/copilot-setup-steps.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/dependabot-triage.lock.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/deployment.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/go.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/govulncheck.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/issue-triage.lock.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/lint.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/triage-issues.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/triage-pull-requests.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/triage-scheduled-tasks.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "100% of modules fit 32k tokens; 2 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "AGENTS.md",
+          "detail": ""
+         },
+         {
+          "path": "CLAUDE.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 2.11,
+   "assessed_dimensions": 9,
+   "not_applicable": [
+    "portability"
+   ],
+   "retrofit_person_days": 29.8,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 3.7,
+    "events": 3.7,
+    "identity": 0.0,
+    "ergonomics": 0.0,
+    "embeddability": 0.0,
+    "extensibility": 11.2,
+    "observability": 3.7,
+    "legibility": 7.5
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 1.87,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 95.22,
+   "classic": {
+    "person_months": 287.0,
+    "schedule_months": 21.5,
+    "cost": 3230843
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 1.0,
+    "docs": 0.89,
+    "capture": 0.97
+   },
+   "agent_factor": 0.11,
+   "reproduce_pm": 32.57,
+   "history": {
+    "commits": 8962,
+    "fix_commits": 1231,
+    "authors": 719,
+    "age_months": 84.1,
+    "months_since_last": 0.0
+   },
+   "knowledge_pm": 69.43,
+   "rediscover_pm": 2.08,
+   "replacement_pm": 34.66,
+   "leverage": 1.01,
+   "obsolescence": 0.95,
+   "value_pm": 33.38,
+   "value_cost": 375789,
+   "knowledge_at_risk": 0.06,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 86.0995,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 22935.97,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 6426636,
+     "input": 160665900,
+     "cached_input": 136566015
+    },
+    "final_tokens": 2142212,
+    "model_cost": 252.25,
+    "agent_hours": 71.41,
+    "human_days": 89.09,
+    "review_days": 45.41,
+    "rediscover_days": 43.68,
+    "calendar_days": 89.09,
+    "build_cost": 48011.35,
+    "yearly_cost": 7201.7,
+    "total_cost": 69616.46
+   },
+   "buy": {
+    "via": {
+     "install": "library",
+     "use": "service"
+    },
+    "adoption_minutes": {
+     "install": 2,
+     "first_use": 2.0,
+     "total": 4.0
+    },
+    "tokens": {
+     "output": 500,
+     "input": 12500,
+     "cached_input": 10625
+    },
+    "model_cost": 0.02,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 4.49,
+    "yearly_cost": 268.02,
+    "total_cost": 808.56
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

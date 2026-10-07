@@ -1,0 +1,1401 @@
+{
+ "meta": {
+  "name": "pallets/flask",
+  "url": "https://github.com/pallets/flask",
+  "slug": "pallets-flask",
+  "host": "github.com",
+  "commit": "d086db856be187255b8ec61ef409357393020f32",
+  "committed_at": "2026-10-07T07:02:54-07:00",
+  "evaluated_at": "2026-10-07T14:03:47+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/pallets/flask",
+  "inventory": {
+   "files": 236,
+   "source_files": 25,
+   "source_tokens": 87008,
+   "languages": {
+    "python": 86967,
+    "shell": 41
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service",
+    "cli",
+    "library"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "src/flask/app.py",
+      "detail": "1 match"
+     }
+    ],
+    "cli": [
+     {
+      "path": "pyproject.toml",
+      "detail": "console script"
+     },
+     {
+      "path": "src/flask/app.py",
+      "detail": "1 match"
+     }
+    ],
+    "library": [
+     {
+      "path": "pyproject.toml",
+      "detail": "Python package flask"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [
+    {
+     "path": "examples/tutorial/flaskr/schema.sql",
+     "detail": ""
+    }
+   ],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 1,
+    "rationale": "[cli] Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+    "evidence": [
+     {
+      "signal": "L1 non-interactive",
+      "detail": "no interactive prompts",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[service] L1 A network surface exists: HTTP routes, an MCP server, or a standard protocol listener. (no network surface)",
+     "[cli] L2 --help documents every option (at least 90% of options have help text). (6 of 11 options have help text)",
+     "[library] L2 The public API is delimited (__all__, an exports map, exported identifiers). (no __all__/exports defining the public API)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "routes",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": false,
+        "evidence": [],
+        "note": "no network surface"
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable contract"
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": false,
+        "evidence": [],
+        "note": "no contract"
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": false,
+        "evidence": [],
+        "note": "only one programmatic surface"
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "help",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "non-interactive",
+        "text": "Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "help",
+        "text": "--help documents every option (at least 90% of options have help text).",
+        "met": false,
+        "evidence": [],
+        "note": "6 of 11 options have help text"
+       },
+       {
+        "level": 3,
+        "id": "machine-output",
+        "text": "Machine-readable output (--json/--format) and documented exit statuses.",
+        "met": false,
+        "evidence": [],
+        "note": "no --json/--format option"
+       },
+       {
+        "level": 4,
+        "id": "output-schema",
+        "text": "The output format is specified by a JSON Schema.",
+        "met": false,
+        "evidence": [],
+        "note": "no JSON Schema for the output"
+       }
+      ]
+     },
+     "library": {
+      "level": 1,
+      "first_missing": "public-api",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "Python package flask"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": false,
+        "evidence": [],
+        "note": "no __all__/exports defining the public API"
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/flask/py.typed",
+          "detail": "py.typed"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs/conf.py",
+          "detail": "4 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 3,
+    "rationale": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "69 semver tags, latest 3.1.3",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 changelog",
+      "detail": "marks breaking changes",
+      "path": "CHANGES.rst",
+      "weight": 1
+     },
+     {
+      "signal": "L3 deprecation",
+      "detail": "4 matches",
+      "path": "src/flask/app.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L4 Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated. (removed without prior deprecation: option --all (removed in 1.0.x), option --browse (removed in 1.0.x), option --env (removed in 1.0.x))"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 3,
+      "first_missing": "clean-history",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "69 semver tags, latest 3.1.3"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "CHANGES.rst",
+          "detail": "marks breaking changes"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/flask/app.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/flask/ctx.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/flask/globals.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": false,
+        "evidence": [],
+        "note": "removed without prior deprecation: option --all (removed in 1.0.x), option --browse (removed in 1.0.x), option --env (removed in 1.0.x)"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 0,
+    "rationale": "Not yet: Internal events exist (signals, queues, an outbox, emitters).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal events exist (signals, queues, an outbox, emitters). (no internal events)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "internal-events",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": false,
+        "evidence": [],
+        "note": "no internal events"
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": false,
+        "evidence": [],
+        "note": "no outbound webhooks or streams"
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 0,
+    "rationale": "Not yet: Programmatic authentication (bearer tokens, API keys).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Programmatic authentication (bearer tokens, API keys). (no token auth)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "token-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": false,
+        "evidence": [],
+        "note": "no token auth"
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": false,
+        "evidence": [],
+        "note": "no scopes or permissions"
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": 1,
+    "rationale": "The data schema is explicit (migrations, DDL, schema files).",
+    "evidence": [
+     {
+      "signal": "L1 schema",
+      "detail": "",
+      "path": "examples/tutorial/flaskr/schema.sql",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 An export exists (endpoint or command, not only the UI). (no export)"
+    ],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "export",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "schema",
+        "text": "The data schema is explicit (migrations, DDL, schema files).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "examples/tutorial/flaskr/schema.sql",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "export",
+        "text": "An export exists (endpoint or command, not only the UI).",
+        "met": false,
+        "evidence": [],
+        "note": "no export"
+       },
+       {
+        "level": 3,
+        "id": "bulk-open",
+        "text": "A bulk export in an open format, and a bulk import.",
+        "met": false,
+        "evidence": [],
+        "note": "no import"
+       },
+       {
+        "level": 4,
+        "id": "documented-round-trip",
+        "text": "The export format is documented and the round trip is tested.",
+        "met": false,
+        "evidence": [],
+        "note": "the export format isn't documented"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 2,
+    "rationale": "[library] Inputs are validated with messages naming the bad argument.",
+    "evidence": [
+     {
+      "signal": "L1 typed-exceptions",
+      "detail": "1 match",
+      "path": "src/flask/debughelpers.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 validation",
+      "detail": "7 matches",
+      "path": "src/flask/ctx.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Field-level validation errors, and paginated lists. (no request validation)",
+     "[cli] L2 Data on stdout, diagnostics on stderr, non-zero exit on failure. (no non-zero exit on failure)",
+     "[library] L3 Timeouts and retries are configurable. (no timeout parameter)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "library",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "validation-pagination",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/flask/app.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "src/flask/ctx.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/flask/sansio/scaffold.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/flask/wrappers.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": false,
+        "evidence": [],
+        "note": "no request validation"
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "streams-and-status",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "never-blocks",
+        "text": "Never blocks on a prompt when stdin is not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+        "met": false,
+        "evidence": [],
+        "note": "no non-zero exit on failure"
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+        "met": false,
+        "evidence": [],
+        "note": "exit statuses aren't documented"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no --dry-run"
+       }
+      ]
+     },
+     "library": {
+      "level": 2,
+      "first_missing": "timeouts-retries",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/flask/debughelpers.py",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/flask/ctx.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/flask/sansio/blueprints.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "src/flask/sansio/app.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "src/flask/testing.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/flask/blueprints.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/flask/helpers.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/flask/json/provider.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/flask/config.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/flask/json/tag.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/flask/sessions.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no timeout parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 4,
+    "rationale": "[library] Optional features behind extras/features.",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Python package flask",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L3 published-minimal",
+      "detail": "1 match",
+      "path": ".github/workflows/publish.yaml",
+      "weight": 1
+     },
+     {
+      "signal": "L4 optional-features",
+      "detail": "1 match",
+      "path": "examples/javascript/pyproject.toml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L3 A container image. (no Dockerfile)",
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (the command isn't run in CI)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "library",
+    "surfaces": {
+     "service": {
+      "level": 2,
+      "first_missing": "container",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/flask/cli.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "src/flask/config.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "src/flask/app.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "src/flask/helpers.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": null,
+          "detail": "30 of 31 environment variables named in the docs"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": false,
+        "evidence": [],
+        "note": "no Dockerfile"
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": false,
+        "evidence": [],
+        "note": "no compose/Helm/IaC"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "published",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "runnable",
+        "text": "Runnable from source (a declared entry point).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package that provides the command.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published",
+        "text": "Published to a public registry and run non-interactively in CI.",
+        "met": false,
+        "evidence": [],
+        "note": "the command isn't run in CI"
+       },
+       {
+        "level": 4,
+        "id": "container-or-binary",
+        "text": "Also shipped as a container image or a single binary.",
+        "met": false,
+        "evidence": [],
+        "note": "no container image or binary"
+       }
+      ]
+     },
+     "library": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "Python package flask"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/publish.yaml",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "1 runtime dependencies"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "examples/javascript/pyproject.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "examples/tutorial/pyproject.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/flask/cli.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 0,
+    "rationale": "[service] Not yet: A health or readiness endpoint, or a container healthcheck.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
+     "[cli] L1 Meaningful exit statuses, and errors on stderr. (no non-zero exit on failure)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "health",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": false,
+        "evidence": [],
+        "note": "no health endpoint or healthcheck"
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     },
+     "cli": {
+      "level": 0,
+      "first_missing": "exit-and-stderr",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "exit-and-stderr",
+        "text": "Meaningful exit statuses, and errors on stderr.",
+        "met": false,
+        "evidence": [],
+        "note": "no non-zero exit on failure"
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+        "met": false,
+        "evidence": [],
+        "note": "no --quiet or log-level control"
+       },
+       {
+        "level": 3,
+        "id": "structured-diagnostics",
+        "text": "Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured diagnostics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing hooks (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing hooks"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/lock.yaml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 25,
+     "source_tokens": 87008,
+     "test_files": 48,
+     "test_tokens": 56247,
+     "test_ratio": 0.65,
+     "modules": 4,
+     "modules_within_budget": 0.75,
+     "oversized_files": [
+      "src/flask/app.py"
+     ],
+     "largest_module": {
+      "path": "src/flask",
+      "tokens": 57046
+     },
+     "typed_ratio": 1.0,
+     "python_functions": 389,
+     "python_annotated": 389,
+     "import_edges": 82,
+     "import_graph": true,
+     "max_fan_out": 10,
+     "import_cycles": 1,
+     "largest_cycle": [
+      "src/flask/json/__init__.py",
+      "src/flask/json/provider.py"
+     ],
+     "languages": {
+      "python": 86967,
+      "shell": 41
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (75% of modules fit 32k tokens; 1 files over 12k)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "examples/javascript/tests/conftest.py",
+          "detail": "48 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/lock.yaml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/pre-commit.yaml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/publish.yaml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/tests.yaml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/zizmor.yaml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "75% of modules fit 32k tokens; 1 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "1 import cycles (largest: src/flask/json/__init__.py, src/flask/json/provider.py)"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.3,
+   "assessed_dimensions": 10,
+   "not_applicable": [],
+   "retrofit_person_days": 21.5,
+   "retrofit_by_dimension": {
+    "interface": 3.5,
+    "stability": 0.0,
+    "events": 3.5,
+    "identity": 3.5,
+    "portability": 2.4,
+    "ergonomics": 0.9,
+    "embeddability": 0.0,
+    "extensibility": 3.5,
+    "observability": 1.8,
+    "legibility": 2.4
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.59,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 6.94,
+   "classic": {
+    "person_months": 18.34,
+    "schedule_months": 7.6,
+    "cost": 206477
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.25,
+    "docs": 1.0,
+    "capture": 0.81
+   },
+   "agent_factor": 0.19,
+   "reproduce_pm": 3.4,
+   "history": {
+    "commits": 3829,
+    "fix_commits": 808,
+    "authors": 871,
+    "age_months": 198.0,
+    "months_since_last": 0.0
+   },
+   "knowledge_pm": 35.31,
+   "rediscover_pm": 6.71,
+   "replacement_pm": 10.11,
+   "leverage": 0.91,
+   "obsolescence": 0.95,
+   "value_pm": 8.76,
+   "value_cost": 98663,
+   "knowledge_at_risk": 0.66,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 303.7991,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 37429.18,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 434724,
+     "input": 10868100,
+     "cached_input": 9237885
+    },
+    "final_tokens": 144908,
+    "model_cost": 17.06,
+    "agent_hours": 4.83,
+    "human_days": 144.91,
+    "review_days": 4.0,
+    "rediscover_days": 140.91,
+    "calendar_days": 144.91,
+    "build_cost": 77695.44,
+    "yearly_cost": 11654.32,
+    "total_cost": 112658.38
+   },
+   "buy": {
+    "via": {
+     "install": "library",
+     "use": "cli"
+    },
+    "adoption_minutes": {
+     "install": 1,
+     "first_use": 240.0,
+     "total": 241.0
+    },
+    "tokens": {
+     "output": 30125,
+     "input": 753125,
+     "cached_input": 640156
+    },
+    "model_cost": 1.18,
+    "upgrade_minutes_per_year": 30,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 270.32,
+    "yearly_cost": 33.5,
+    "total_cost": 370.83
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

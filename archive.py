@@ -2,7 +2,9 @@
 """Evaluate repositories with neosloc and store the results for the Hugo site.
 
     python archive.py evaluate [--only URL] [--force]   evaluate targets.txt (or one URL)
-    python archive.py add URL                           validate and append a target
+    python archive.py add URL [--max-mb N]              validate and append a target
+    python archive.py summary SLUG                      Markdown summary of a stored report
+    python archive.py pages                             regenerate content pages from stored reports
     python archive.py list                              print targets and their slugs
 
 For each target the repository is cloned (history included, file contents fetched
@@ -19,6 +21,7 @@ Standard library only (jsonschema is used when installed).
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import datetime
 import json
 import os
@@ -69,7 +72,24 @@ def read_targets() -> List[Dict[str, str]]:
     return out
 
 
-def cmd_add(url: str) -> int:
+def github_size_mb(t: Dict[str, str]) -> Optional[float]:
+    """Repository size from the GitHub API (None when unknown or not on GitHub)."""
+    if t["host"] != "github.com":
+        return None
+    import urllib.request
+    req = urllib.request.Request("https://api.github.com/repos/%s/%s" % (t["owner"], t["repo"]),
+                                 headers={"Accept": "application/vnd.github+json"})
+    if os.environ.get("GITHUB_TOKEN"):
+        req.add_header("Authorization", "Bearer " + os.environ["GITHUB_TOKEN"])
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.load(resp).get("size", 0) / 1024.0
+    except Exception:
+        return None
+
+
+def cmd_add(url: str, max_mb: float = 0) -> int:
+    """Exit 0 (prints the slug), 2 invalid URL, 3 unreachable, 4 larger than max_mb."""
     t = parse_url(url)
     if t is None:
         log("not a supported repository URL (https://github.com/OWNER/REPO): %s" % url)
@@ -83,6 +103,10 @@ def cmd_add(url: str) -> int:
     if r.returncode != 0:
         log("not a reachable public repository: %s" % t["url"])
         return 3
+    size = github_size_mb(t) if max_mb else None
+    if size is not None and size > max_mb:
+        log("%s is %.0f MB, over the %.0f MB limit for automatic evaluation" % (t["url"], size, max_mb))
+        return 4
     with open(TARGETS, "a") as fh:
         fh.write(t["url"] + "\n")
     print(t["slug"])
@@ -135,7 +159,7 @@ def evaluate(t: Dict[str, str], version: str, force: bool, check) -> Optional[st
     try:
         dest = os.path.join(work, t["repo"])
         log("cloning %s" % t["url"])
-        clone = run(["git", "clone", "--quiet", "--filter=blob:none", t["url"], dest], CLONE_TIMEOUT)
+        clone = run(["git", "clone", "--quiet", "--filter=blob:limit=1m", t["url"], dest], CLONE_TIMEOUT)
         if clone.returncode != 0:
             log("clone failed for %s: %s" % (t["url"], clone.stderr.decode(errors="replace").strip()[:300]))
             return None
@@ -201,6 +225,11 @@ def write_page(meta: Dict, report: Dict) -> None:
         "verdict": mb.get("verdict"),
         "make_buy_ratio": mb.get("make_buy_ratio"),
         "languages": list((report["inventory"].get("languages") or {}).keys())[:4],
+        # sloccount's classic COCOMO next to neosloc's value (neoCOCOMO), both in USD
+        "cocomo_cost": (report.get("value") or {}).get("classic", {}).get("cost"),
+        "cocomo_pm": (report.get("value") or {}).get("classic", {}).get("person_months"),
+        "value_cost": (report.get("value") or {}).get("value_cost"),
+        "value_pm": (report.get("value") or {}).get("value_pm"),
     }
     path = os.path.join(ROOT, "content", "repos", meta["slug"] + ".md")
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -208,7 +237,38 @@ def write_page(meta: Dict, report: Dict) -> None:
         fh.write(json.dumps(front, indent=1) + "\n")  # Hugo reads JSON front matter
 
 
-def cmd_evaluate(only: Optional[str], force: bool) -> int:
+BOXES = {0: "□□□□", 1: "■□□□", 2: "■■□□", 3: "■■■□", 4: "■■■■"}
+SITE = "https://neosloc.github.io/archive/"
+
+
+def cmd_summary(slug: str) -> int:
+    """Print a Markdown summary of a stored report (used for issue replies)."""
+    doc = load_json(os.path.join(ROOT, "data", "reports", slug + ".json"), None)
+    if doc is None:
+        log("no report for %s" % slug)
+        return 1
+    m, r = doc["meta"], doc["report"]
+    est, mb = r["estimate"], r.get("make_or_buy") or {}
+    surfaces = ", ".join((r.get("surfaces") or {}).get("kinds") or ["none detected"])
+    out = ["### neosloc evaluation of [%s](%s)" % (m["name"], m["url"]), "",
+           "**Integrability index:** %.2f over %d applicable dimensions · **Surfaces:** %s"
+           % (est["integrability_index"], est.get("assessed_dimensions", 10), surfaces)]
+    if mb:
+        out.append("**Make or buy:** %s (make costs %.2f× buying over %g years)"
+                   % (mb["verdict"].upper(), mb["make_buy_ratio"], mb["horizon_years"]))
+    out += ["", "| Dimension | Level | Next requirement |", "|---|---|---|"]
+    for d in r["dimensions"]:
+        level = "n/a" if d["level"] is None else "%s %d %s" % (BOXES[d["level"]], d["level"], d["level_name"])
+        nxt = d["gaps"][0] if d["gaps"] else ("–" if d["level"] is not None else d["rationale"])
+        out.append("| %s | %s | %s |" % (d["title"], level, nxt.replace("|", "\\|")))
+    out += ["", "[Full report](%srepos/%s/) · [JSON](%sreports/%s.json) · commit `%s`, neosloc %s. "
+            "Scores are uncalibrated rankings: read the next requirement, not the number."
+            % (SITE, slug, SITE, slug, m["commit"][:12], m["neosloc"])]
+    print("\n".join(out))
+    return 0
+
+
+def cmd_evaluate(only: Optional[str], force: bool, jobs: int = 1) -> int:
     targets = read_targets()
     if only:
         t = parse_url(only)
@@ -219,13 +279,18 @@ def cmd_evaluate(only: Optional[str], force: bool) -> int:
     version = neosloc_version()
     check = validator()
     results = {"updated": 0, "unchanged": 0, "failed": 0}
-    for t in targets:
+
+    def one(t):
         try:
-            outcome = evaluate(t, version, force, check)
+            return evaluate(t, version, force, check)
         except subprocess.TimeoutExpired:
             log("timed out: %s" % t["url"])
-            outcome = None
-        results[outcome or "failed"] += 1
+            return None
+
+    # Each target writes only its own files, so targets can run in parallel.
+    with concurrent.futures.ThreadPoolExecutor(max(1, jobs)) as pool:
+        for outcome in pool.map(one, targets):
+            results[outcome or "failed"] += 1
     log("%(updated)d updated, %(unchanged)d unchanged, %(failed)d failed" % results)
     return 1 if results["failed"] and not (results["updated"] or results["unchanged"]) else 0
 
@@ -236,14 +301,30 @@ def main(argv: Optional[List[str]] = None) -> int:
     ev = sub.add_parser("evaluate", help="evaluate targets.txt")
     ev.add_argument("--only", help="evaluate a single repository URL")
     ev.add_argument("--force", action="store_true", help="re-evaluate even if commit and neosloc version are unchanged")
+    ev.add_argument("--jobs", type=int, default=1, help="repositories to evaluate in parallel (default: 1)")
     ad = sub.add_parser("add", help="validate and append a repository URL to targets.txt")
     ad.add_argument("url")
+    ad.add_argument("--max-mb", type=float, default=0, help="refuse GitHub repositories larger than this (0: no limit)")
+    sub.add_parser("pages", help="regenerate content/repos pages from data/reports (no evaluation)")
+    su = sub.add_parser("summary", help="Markdown summary of a stored report")
+    su.add_argument("slug")
     sub.add_parser("list", help="print targets")
     args = ap.parse_args(argv)
     if args.cmd == "evaluate":
-        return cmd_evaluate(args.only, args.force)
+        return cmd_evaluate(args.only, args.force, args.jobs)
     if args.cmd == "add":
-        return cmd_add(args.url)
+        return cmd_add(args.url, args.max_mb)
+    if args.cmd == "summary":
+        return cmd_summary(args.slug)
+    if args.cmd == "pages":
+        n = 0
+        for name in sorted(os.listdir(os.path.join(ROOT, "data", "reports"))):
+            doc = load_json(os.path.join(ROOT, "data", "reports", name), None)
+            if doc:
+                write_page(doc["meta"], doc["report"])
+                n += 1
+        log("%d pages written" % n)
+        return 0
     for t in read_targets():
         print("%-45s %s" % (t["slug"], t["url"]))
     return 0

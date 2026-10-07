@@ -1,0 +1,3895 @@
+{
+ "meta": {
+  "name": "fastapi/fastapi",
+  "url": "https://github.com/fastapi/fastapi",
+  "slug": "fastapi-fastapi",
+  "host": "github.com",
+  "commit": "94918c1d40afb27065c64d523219ed2ad9822f76",
+  "committed_at": "2026-10-06T17:29:41+00:00",
+  "evaluated_at": "2026-10-07T14:04:07+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/fastapi/fastapi",
+  "inventory": {
+   "files": 3180,
+   "source_files": 540,
+   "source_tokens": 286747,
+   "languages": {
+    "python": 286340,
+    "javascript": 266,
+    "shell": 141
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service",
+    "cli",
+    "library"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "docs_src/stream_data/tutorial001_py310.py",
+      "detail": "fastapi/flask: 440 route declarations"
+     },
+     {
+      "path": "docs_src/debugging/tutorial001_py310.py",
+      "detail": "2 matches"
+     },
+     {
+      "path": "docs_src/sub_applications/tutorial001_py310.py",
+      "detail": "2 matches"
+     }
+    ],
+    "cli": [
+     {
+      "path": "pyproject.toml",
+      "detail": "console script"
+     },
+     {
+      "path": "scripts/docs.py",
+      "detail": "1 match"
+     }
+    ],
+    "library": [
+     {
+      "path": "pyproject.toml",
+      "detail": "Python package fastapi"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 3,
+    "rationale": "[service] A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+    "evidence": [
+     {
+      "signal": "L1 routes",
+      "detail": "fastapi/flask: 440 route declarations",
+      "path": "docs_src/stream_data/tutorial001_py310.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 contract",
+      "detail": "FastAPI (auto OpenAPI)",
+      "path": "docs_src/sub_applications/tutorial001_py310.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 coverage",
+      "detail": "generated from code: FastAPI (auto OpenAPI)",
+      "path": "docs_src/sub_applications/tutorial001_py310.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 440,
+     "routes_by_framework": {
+      "fastapi/flask": 440
+     },
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[service] L4 A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK. (only one programmatic surface)",
+     "[cli] L3 Machine-readable output (--json/--format) and documented exit statuses. (no --json/--format option)",
+     "[library] L2 The public API is delimited (__all__, an exports map, exported identifiers). (no __all__/exports defining the public API)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 3,
+      "first_missing": "second-surface",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs_src/stream_data/tutorial001_py310.py",
+          "detail": "fastapi/flask: 440 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs_src/sub_applications/tutorial001_py310.py",
+          "detail": "FastAPI (auto OpenAPI)"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "graphql server"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs_src/sub_applications/tutorial001_py310.py",
+          "detail": "generated from code: FastAPI (auto OpenAPI)"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "generated from code: graphql server"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": false,
+        "evidence": [],
+        "note": "only one programmatic surface"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "machine-output",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "non-interactive",
+        "text": "Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "help",
+        "text": "--help documents every option (at least 90% of options have help text).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "scripts/docs.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "machine-output",
+        "text": "Machine-readable output (--json/--format) and documented exit statuses.",
+        "met": false,
+        "evidence": [],
+        "note": "no --json/--format option"
+       },
+       {
+        "level": 4,
+        "id": "output-schema",
+        "text": "The output format is specified by a JSON Schema.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/openapi/models.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "library": {
+      "level": 1,
+      "first_missing": "public-api",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "Python package fastapi"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": false,
+        "evidence": [],
+        "note": "no __all__/exports defining the public API"
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/py.typed",
+          "detail": "py.typed"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs/en/mkdocs.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "308 semver tags, latest 0.142.2",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "308 semver tags, latest 0.142.2"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/params.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "fastapi/responses.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "fastapi/openapi/utils.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "fastapi/utils.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "fastapi/routing.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial010_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial010_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/applications.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/exceptions.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/wsgi/tutorial001_py310.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/behind_a_proxy/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/behind_a_proxy/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/behind_a_proxy/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/metadata/tutorial002_py310.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 2,
+    "rationale": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+    "evidence": [
+     {
+      "signal": "L1 internal-events",
+      "detail": "1 match",
+      "path": "docs_src/websockets_/tutorial003_py310.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 outbound",
+      "detail": "43 matches",
+      "path": "fastapi/routing.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L3 Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker). (one delivery mechanism, or webhooks that are unsigned or not registrable through the API)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 2,
+      "first_missing": "robust-delivery",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs_src/websockets_/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/telemetry/_api.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/telemetry/_asgi.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/routing.py",
+          "detail": "43 matches"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial003_py310.py",
+          "detail": "22 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_asgi.py",
+          "detail": "20 matches"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial002_an_py310.py",
+          "detail": "16 matches"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial002_py310.py",
+          "detail": "16 matches"
+         },
+         {
+          "path": "docs_src/app_testing/tutorial002_py310.py",
+          "detail": "15 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_api.py",
+          "detail": "13 matches"
+         },
+         {
+          "path": "fastapi/applications.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial001_py310.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "fastapi/dependencies/utils.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "fastapi/websockets.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "fastapi/__init__.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/exception_handlers.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/exceptions.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial005_py310.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial001_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial003_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial004_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "fastapi/sse.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "fastapi/responses.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/dependencies/models.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/openapi/utils.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/routing.py",
+          "detail": "43 matches"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial003_py310.py",
+          "detail": "22 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_asgi.py",
+          "detail": "20 matches"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial002_an_py310.py",
+          "detail": "16 matches"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial002_py310.py",
+          "detail": "16 matches"
+         },
+         {
+          "path": "docs_src/app_testing/tutorial002_py310.py",
+          "detail": "15 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_api.py",
+          "detail": "13 matches"
+         },
+         {
+          "path": "fastapi/applications.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial001_py310.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "fastapi/dependencies/utils.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "fastapi/websockets.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "fastapi/__init__.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/exception_handlers.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/exceptions.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial005_py310.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial001_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial003_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial004_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "fastapi/sse.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "fastapi/responses.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/dependencies/models.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/openapi/utils.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 3,
+    "rationale": "Credentials carry scopes or permissions.",
+    "evidence": [
+     {
+      "signal": "L1 token-auth",
+      "detail": "1 match",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L2 managed-credentials",
+      "detail": "1 match",
+      "path": "fastapi/openapi/models.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 scopes",
+      "detail": "68 matches",
+      "path": "fastapi/routing.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L4 Standard provisioning or federation (OIDC client credentials, SCIM). (no OIDC client credentials or SCIM)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 3,
+      "first_missing": "federation",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/security/__init__.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/authentication_error_status_code/tutorial001_an_py310.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/openapi/models.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/security/http.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/security/api_key.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/openapi/models.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/routing.py",
+          "detail": "68 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_asgi.py",
+          "detail": "17 matches"
+         },
+         {
+          "path": "fastapi/security/oauth2.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial005_an_py310.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial005_py310.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "fastapi/dependencies/utils.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "fastapi/applications.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "fastapi/dependencies/models.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "fastapi/param_functions.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "fastapi/middleware/asyncexitstack.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/params.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008e_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008e_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/openapi/models.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/telemetry/_api.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/telemetry/_runtime.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 2,
+    "rationale": "[service] Field-level validation errors, and paginated lists.",
+    "evidence": [
+     {
+      "signal": "L1 json-errors",
+      "detail": "23 matches",
+      "path": "fastapi/applications.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 validation-pagination",
+      "detail": "10 matches",
+      "path": "fastapi/_compat/v2.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L3 Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals. (no typed errors)",
+     "[cli] L3 Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY. (exit statuses aren't documented)",
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (library code exits the process: scripts/add_latest_release_date.py, scripts/notify_translations.py)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 2,
+      "first_missing": "safe-retries",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/applications.py",
+          "detail": "23 matches"
+         },
+         {
+          "path": "docs_src/handling_errors/tutorial006_py310.py",
+          "detail": "15 matches"
+         },
+         {
+          "path": "fastapi/routing.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "docs_src/handling_errors/tutorial004_py310.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "docs_src/app_testing/app_b_an_py310/main.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/app_testing/app_b_py310/main.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial003_an_py310.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial003_py310.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial005_an_py310.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial005_py310.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial004_an_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial004_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "docs_src/sql_databases/tutorial002_an_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "docs_src/sql_databases/tutorial002_py310.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "fastapi/exception_handlers.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "docs_src/authentication_error_status_code/tutorial001_an_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial006_an_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial006_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008b_an_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008b_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial012_an_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial012_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial007_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/sql_databases/tutorial001_an_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/sql_databases/tutorial001_py310.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "fastapi/exceptions.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/bigger_applications/app_an_py310/dependencies.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/bigger_applications/app_an_py310/routers/items.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/custom_request_and_route/tutorial002_an_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/custom_request_and_route/tutorial002_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008c_an_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008c_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008d_an_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008d_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial013_an_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial014_an_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/handling_errors/tutorial001_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/handling_errors/tutorial002_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/handling_errors/tutorial003_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/handling_errors/tutorial005_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial007_an_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial007_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "fastapi/security/api_key.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "fastapi/security/http.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "fastapi/security/oauth2.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "fastapi/security/open_id_connect_url.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/sub_applications/tutorial001_py310.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/__init__.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_api.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/additional_responses/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/additional_responses/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/additional_responses/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/additional_responses/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/additional_status_codes/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/additional_status_codes/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/advanced_middleware/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/advanced_middleware/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/advanced_middleware/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/app_testing/app_a_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/app_testing/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/app_testing/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/app_testing/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/app_testing/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/async_tests/app_a_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/background_tasks/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/background_tasks/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/background_tasks/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/behind_a_proxy/tutorial001_01_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/behind_a_proxy/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/behind_a_proxy/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/behind_a_proxy/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/behind_a_proxy/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/bigger_applications/app_an_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_fields/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_fields/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial007_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial008_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial009_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_updates/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_updates/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/conditional_openapi/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/configure_swagger_ui/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/configure_swagger_ui/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/configure_swagger_ui/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_params/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_params/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cors/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_docs_ui/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_docs_ui/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_request_and_route/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_request_and_route/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_request_and_route/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial001b_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial006b_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial006c_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial007_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial008_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial009_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial009b_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial009c_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial010_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dataclasses_/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dataclasses_/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dataclasses_/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/debugging/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial001_02_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008e_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008e_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial011_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial011_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependency_testing/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependency_testing/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/encoder/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/events/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/events/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/events/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extending_openapi/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_data_types/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_data_types/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/first_steps/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/first_steps/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/frontend/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/frontend/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/frontend/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/frontend/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/frontend/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/frontend/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/generate_clients/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/generate_clients/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/generate_clients/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/graphql_/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_params/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_params/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_params/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_params/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_params/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_params/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/json_base64_bytes/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/metadata/tutorial001_1_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/metadata/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/metadata/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/metadata/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/metadata/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/middleware/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/openapi_callbacks/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/openapi_webhooks/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/opentelemetry/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/opentelemetry/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/opentelemetry/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial002b_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params/tutorial003b_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial006_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_params_numeric_validations/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/pydantic_v1_in_v2/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/pydantic_v1_in_v2/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/pydantic_v1_in_v2/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial006_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial006c_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial006c_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial007_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial007_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial008_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial008_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial009_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial009_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial010_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial010_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial011_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial011_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial012_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial012_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial013_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial013_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial014_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial014_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial015_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial001_02_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial001_02_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial001_03_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial001_03_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_files/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_forms/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_forms/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_forms_and_files/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_forms_and_files/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_change_status_code/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_cookies/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_cookies/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_directly/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_directly/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_headers/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_headers/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial001_01_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial003_01_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial003_02_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial003_03_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial003_04_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial003_05_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_status_code/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_status_code/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial006_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/separate_openapi_schemas/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/separate_openapi_schemas/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/settings/app01_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/settings/app02_an_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/settings/app02_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/settings/app03_an_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/settings/app03_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/settings/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/static_files/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/stream_data/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/stream_data/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/stream_json_lines/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/strict_content_type/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/templates/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/using_request_directly/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/websockets_/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/wsgi/tutorial001_py310.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/_compat/v2.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "fastapi/_compat/shared.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "fastapi/encoders.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "docs_src/custom_response/tutorial006c_py310.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/pydantic_v1_in_v2/tutorial003_an_py310.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/dependencies/utils.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/openapi/models.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/params.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "fastapi/types.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/additional_responses/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/additional_responses/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/additional_responses/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/additional_responses/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/app_testing/app_b_an_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/app_testing/app_b_py310/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_fields/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_fields/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_multiple_params/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial007_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_nested_models/tutorial008_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_updates/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/body_updates/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dataclasses_/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/encoder/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/extra_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/generate_clients/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/generate_clients/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/generate_clients/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/handling_errors/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/json_base64_bytes/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/openapi_callbacks/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/openapi_webhooks/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_advanced_configuration/tutorial007_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/path_operation_configuration/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/pydantic_v1_in_v2/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/pydantic_v1_in_v2/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/pydantic_v1_in_v2/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/python_types/tutorial011_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial015_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial001_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_directly/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial001_01_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial003_01_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/response_model/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/schema_extra_example/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/security/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/separate_openapi_schemas/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/separate_openapi_schemas/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/stream_json_lines/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/strict_content_type/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/datastructures.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/exceptions.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/openapi/utils.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/param_functions.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/security/http.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/sse.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/utils.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/deploy_docs_status.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/label_approved.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/notify_translations.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/sponsors.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/topic_repos.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "12 matches"
+         },
+         {
+          "path": "scripts/notify_translations.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "scripts/sponsors.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no ETags"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "typed-failures",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "never-blocks",
+        "text": "Never blocks on a prompt when stdin is not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "scripts/notify_translations.py",
+          "detail": "29 matches"
+         },
+         {
+          "path": "scripts/sponsors.py",
+          "detail": "19 matches"
+         },
+         {
+          "path": "scripts/topic_repos.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "scripts/label_approved.py",
+          "detail": "11 matches"
+         },
+         {
+          "path": "scripts/docs.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "scripts/deploy_docs_status.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/logger.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/generate_clients/tutorial004.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/add_latest_release_date.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+        "met": false,
+        "evidence": [],
+        "note": "exit statuses aren't documented"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no --dry-run"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "library code exits the process: scripts/add_latest_release_date.py, scripts/notify_translations.py"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/routing.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "scripts/doc_parsing_utils.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_runtime.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "fastapi/sse.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "scripts/notify_translations.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008c_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008c_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008d_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/dependencies/tutorial008d_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_params_str_validations/tutorial015_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/datastructures.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/dependencies/utils.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/encoders.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/utils.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "scripts/notify_translations.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/sponsors.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/sse.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/routing.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 4,
+    "rationale": "[library] Optional features behind extras/features.",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Python package fastapi",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L3 published-minimal",
+      "detail": "1 match",
+      "path": ".github/workflows/publish.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L4 optional-features",
+      "detail": "1 match",
+      "path": "pyproject.toml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (the environment variables aren't documented)",
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (the command isn't run in CI)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "library",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "env-config",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": false,
+        "evidence": [],
+        "note": "the environment variables aren't documented"
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": false,
+        "evidence": [],
+        "note": "no Dockerfile"
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": false,
+        "evidence": [],
+        "note": "no compose/Helm/IaC"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "published",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "runnable",
+        "text": "Runnable from source (a declared entry point).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package that provides the command.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published",
+        "text": "Published to a public registry and run non-interactively in CI.",
+        "met": false,
+        "evidence": [],
+        "note": "the command isn't run in CI"
+       },
+       {
+        "level": 4,
+        "id": "container-or-binary",
+        "text": "Also shipped as a container image or a single binary.",
+        "met": false,
+        "evidence": [],
+        "note": "no container image or binary"
+       }
+      ]
+     },
+     "library": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "Python package fastapi"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/publish.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "6 runtime dependencies"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "no lifecycle hooks"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 1,
+    "rationale": "[cli] Meaningful exit statuses, and errors on stderr.",
+    "evidence": [
+     {
+      "signal": "L1 exit-and-stderr",
+      "detail": "29 matches",
+      "path": "scripts/notify_translations.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
+     "[cli] L2 Verbosity control for diagnostics (--quiet, --log-level, --debug). (no --quiet or log-level control)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (library code prints: scripts/doc_parsing_utils.py, scripts/translation_git.py, docs_src/custom_request_and_route/tutorial003_py310.py)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "health",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": false,
+        "evidence": [],
+        "note": "no health endpoint or healthcheck"
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/telemetry/_runtime.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_api.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_asgi.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "docs_src/opentelemetry/tutorial002_py310.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "13 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "verbosity",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "exit-and-stderr",
+        "text": "Meaningful exit statuses, and errors on stderr.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "scripts/notify_translations.py",
+          "detail": "29 matches"
+         },
+         {
+          "path": "scripts/sponsors.py",
+          "detail": "19 matches"
+         },
+         {
+          "path": "scripts/topic_repos.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "scripts/label_approved.py",
+          "detail": "11 matches"
+         },
+         {
+          "path": "scripts/docs.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "scripts/deploy_docs_status.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/logger.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs_src/generate_clients/tutorial004.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/add_latest_release_date.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+        "met": false,
+        "evidence": [],
+        "note": "no --quiet or log-level control"
+       },
+       {
+        "level": 3,
+        "id": "structured-diagnostics",
+        "text": "Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured diagnostics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing hooks (OpenTelemetry).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/telemetry/_runtime.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_api.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_asgi.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "docs_src/opentelemetry/tutorial002_py310.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pyproject.toml",
+          "detail": "13 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "library code prints: scripts/doc_parsing_utils.py, scripts/translation_git.py, docs_src/custom_request_and_route/tutorial003_py310.py"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "levels: debug, error, exception, info, warning"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "fastapi/telemetry/_runtime.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_api.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "fastapi/telemetry/_asgi.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "docs_src/opentelemetry/tutorial002_py310.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "13 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/add-to-project.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 540,
+     "source_tokens": 286747,
+     "test_files": 632,
+     "test_tokens": 752776,
+     "test_ratio": 2.63,
+     "modules": 107,
+     "modules_within_budget": 0.99,
+     "oversized_files": [
+      "fastapi/routing.py",
+      "fastapi/applications.py",
+      "fastapi/param_functions.py"
+     ],
+     "largest_module": {
+      "path": "fastapi",
+      "tokens": 147108
+     },
+     "typed_ratio": 0.83,
+     "python_functions": 1188,
+     "python_annotated": 985,
+     "import_edges": 580,
+     "import_graph": true,
+     "max_fan_out": 15,
+     "import_cycles": 2,
+     "largest_cycle": [
+      "fastapi/__init__.py",
+      "fastapi/applications.py",
+      "fastapi/dependencies/utils.py",
+      "fastapi/exception_handlers.py",
+      "fastapi/openapi/utils.py",
+      "fastapi/routing.py",
+      "fastapi/telemetry/_asgi.py",
+      "fastapi/utils.py"
+     ],
+     "languages": {
+      "python": 286340,
+      "javascript": 266,
+      "shell": 141
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 3 files over 12k)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "docs_src/app_testing/app_a_py310/test_main.py",
+          "detail": "632 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/add-to-project.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/build-docs.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/bump-pre-commit-hooks.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/create-draft-release.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/deploy-docs.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/detect-conflicts.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/guard-dependencies.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/issue-manager.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/label-approved.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/notify-translations.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/pre-commit.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/prepare-release.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/publish.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/smokeshow.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/sponsors.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/test-redistribute.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/test.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/topic-repos.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/translate.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/zizmor.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "99% of modules fit 32k tokens; 3 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "2 import cycles (largest: fastapi/__init__.py, fastapi/applications.py, fastapi/dependencies/utils.py)"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 2.0,
+   "assessed_dimensions": 9,
+   "not_applicable": [
+    "portability"
+   ],
+   "retrofit_person_days": 18.6,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 2.1,
+    "events": 2.1,
+    "identity": 0.0,
+    "ergonomics": 1.6,
+    "embeddability": 0.0,
+    "extensibility": 6.4,
+    "observability": 2.1,
+    "legibility": 4.3
+   },
+   "wrappability": "moderate retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 1.07,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 28.21,
+   "classic": {
+    "person_months": 80.02,
+    "schedule_months": 13.2,
+    "cost": 900769
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.75,
+    "docs": 1.0,
+    "capture": 0.94
+   },
+   "agent_factor": 0.13,
+   "reproduce_pm": 10.16,
+   "history": {
+    "commits": 7771,
+    "fix_commits": 553,
+    "authors": 919,
+    "age_months": 94.0,
+    "months_since_last": 0.0
+   },
+   "knowledge_pm": 49.92,
+   "rediscover_pm": 2.99,
+   "replacement_pm": 13.16,
+   "leverage": 1.0,
+   "obsolescence": 0.95,
+   "value_pm": 12.5,
+   "value_cost": 140706,
+   "knowledge_at_risk": 0.23,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 82.2031,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 22098.33,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 3123730,
+     "input": 78093250,
+     "cached_input": 66379262
+    },
+    "final_tokens": 1041243,
+    "model_cost": 122.61,
+    "agent_hours": 34.71,
+    "human_days": 86.11,
+    "review_days": 23.32,
+    "rediscover_days": 62.79,
+    "calendar_days": 86.11,
+    "build_cost": 46283.73,
+    "yearly_cost": 6942.56,
+    "total_cost": 67111.41
+   },
+   "buy": {
+    "via": {
+     "install": "library",
+     "use": "service"
+    },
+    "adoption_minutes": {
+     "install": 1,
+     "first_use": 10.0,
+     "total": 11.0
+    },
+    "tokens": {
+     "output": 1375,
+     "input": 34375,
+     "cached_input": 29218
+    },
+    "model_cost": 0.05,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 12.34,
+    "yearly_cost": 268.02,
+    "total_cost": 816.41
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

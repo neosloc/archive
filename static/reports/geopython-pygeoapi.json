@@ -1,0 +1,1918 @@
+{
+ "meta": {
+  "name": "geopython/pygeoapi",
+  "url": "https://github.com/geopython/pygeoapi",
+  "slug": "geopython-pygeoapi",
+  "host": "github.com",
+  "commit": "0b3838011d54d01189f9cf937c557c4de35d41cb",
+  "committed_at": "2026-09-21T21:57:47-04:00",
+  "evaluated_at": "2026-10-07T14:04:03+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/geopython/pygeoapi",
+  "inventory": {
+   "files": 481,
+   "source_files": 97,
+   "source_tokens": 289731,
+   "languages": {
+    "python": 288005,
+    "shell": 1328,
+    "javascript": 398
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service",
+    "cli"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "pygeoapi/flask_app.py",
+      "detail": "fastapi/flask: 51 route declarations"
+     },
+     {
+      "path": "pygeoapi/django_/urls.py",
+      "detail": "django: 30 route declarations"
+     },
+     {
+      "path": "pygeoapi/django_/settings.py",
+      "detail": "2 matches"
+     }
+    ],
+    "cli": [
+     {
+      "path": "setup.py",
+      "detail": "console script"
+     },
+     {
+      "path": "pygeoapi/__init__.py",
+      "detail": "1 match"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [
+    {
+     "path": "pygeoapi/process/manager/postgresql.py",
+     "detail": "1 match"
+    },
+    {
+     "path": "pygeoapi/provider/sqlite.py",
+     "detail": "1 match"
+    },
+    {
+     "path": "requirements-provider.txt",
+     "detail": "4 matches"
+    }
+   ],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 4,
+    "rationale": "[service] A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+    "evidence": [
+     {
+      "signal": "L1 routes",
+      "detail": "fastapi/flask: 51 route declarations",
+      "path": "pygeoapi/flask_app.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 contract",
+      "detail": "asyncapi, 0 operations",
+      "path": "pygeoapi/resources/schemas/asyncapi/asyncapi-3.0.0.json",
+      "weight": 1
+     },
+     {
+      "signal": "L3 coverage",
+      "detail": "asyncapi, 0 operations",
+      "path": "pygeoapi/resources/schemas/asyncapi/asyncapi-3.0.0.json",
+      "weight": 1
+     },
+     {
+      "signal": "L4 second-surface",
+      "detail": "HTTP",
+      "path": "pygeoapi/flask_app.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 81,
+     "routes_by_framework": {
+      "fastapi/flask": 51,
+      "django": 30
+     },
+     "spec_files": 3,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[cli] L2 --help documents every option (at least 90% of options have help text). (8 of 15 options have help text)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/flask_app.py",
+          "detail": "fastapi/flask: 51 route declarations"
+         },
+         {
+          "path": "pygeoapi/django_/urls.py",
+          "detail": "django: 30 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/resources/schemas/asyncapi/asyncapi-3.0.0.json",
+          "detail": "asyncapi, 0 operations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/resources/schemas/asyncapi/asyncapi-3.0.0.json",
+          "detail": "asyncapi, 0 operations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/flask_app.py",
+          "detail": "HTTP"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "CLI JSON output"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "help",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "non-interactive",
+        "text": "Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "help",
+        "text": "--help documents every option (at least 90% of options have help text).",
+        "met": false,
+        "evidence": [],
+        "note": "8 of 15 options have help text"
+       },
+       {
+        "level": 3,
+        "id": "machine-output",
+        "text": "Machine-readable output (--json/--format) and documented exit statuses.",
+        "met": false,
+        "evidence": [],
+        "note": "exit statuses aren't documented"
+       },
+       {
+        "level": 4,
+        "id": "output-schema",
+        "text": "The output format is specified by a JSON Schema.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/api/__init__.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/itemtypes.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "37 semver tags, latest 0.24.0",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "37 semver tags, latest 0.24.0"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": false,
+        "evidence": [],
+        "note": "no deprecation mechanism or API versioning"
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 1,
+    "rationale": "Internal events exist (signals, queues, an outbox, emitters).",
+    "evidence": [
+     {
+      "signal": "L1 internal-events",
+      "detail": "24 matches",
+      "path": "pygeoapi/api/__init__.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket). (no outbound webhooks or streams)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "outbound",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/api/__init__.py",
+          "detail": "24 matches"
+         },
+         {
+          "path": "pygeoapi/api/pubsub.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pygeoapi/plugin.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pygeoapi/api/itemtypes.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pygeoapi/api/processes.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pygeoapi/provider/oracle.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/mqtt.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sqlite.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/pubsub/http.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/pubsub/kafka.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": false,
+        "evidence": [],
+        "note": "no outbound webhooks or streams"
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/resources/schemas/asyncapi/asyncapi-3.0.0.json",
+          "detail": ""
+         },
+         {
+          "path": "pygeoapi/api/pubsub.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 0,
+    "rationale": "Not yet: Programmatic authentication (bearer tokens, API keys).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Programmatic authentication (bearer tokens, API keys). (no token auth)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "token-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": false,
+        "evidence": [],
+        "note": "no token auth"
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/starlette_app.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pygeoapi/api/__init__.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": 0,
+    "rationale": "Not yet: The data schema is explicit (migrations, DDL, schema files).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 The data schema is explicit (migrations, DDL, schema files). (no migrations or schema files)"
+    ],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "schema",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "schema",
+        "text": "The data schema is explicit (migrations, DDL, schema files).",
+        "met": false,
+        "evidence": [],
+        "note": "no migrations or schema files"
+       },
+       {
+        "level": 2,
+        "id": "export",
+        "text": "An export exists (endpoint or command, not only the UI).",
+        "met": false,
+        "evidence": [],
+        "note": "no export"
+       },
+       {
+        "level": 3,
+        "id": "bulk-open",
+        "text": "A bulk export in an open format, and a bulk import.",
+        "met": false,
+        "evidence": [],
+        "note": "no import"
+       },
+       {
+        "level": 4,
+        "id": "documented-round-trip",
+        "text": "The export format is documented and the round trip is tested.",
+        "met": false,
+        "evidence": [],
+        "note": "no round-trip test"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 2,
+    "rationale": "[cli] Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+    "evidence": [
+     {
+      "signal": "L1 never-blocks",
+      "detail": "no interactive prompts",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 streams-and-status",
+      "detail": "14 matches",
+      "path": "pygeoapi/log.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE). (no machine-readable errors)",
+     "[cli] L3 Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY. (exit statuses aren't documented)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "json-errors",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable errors"
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/models/provider/base.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "pygeoapi/models/config.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pygeoapi/models/openapi.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pygeoapi/models/provider/mvt.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "pygeoapi/api/admin.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/config.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/openapi.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/validator/geojson.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "requirements.txt",
+          "detail": "2 matches"
+         },
+         {
+          "path": "requirements-django.txt",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/provider/oracle.py",
+          "detail": "47 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sqlite.py",
+          "detail": "18 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "typed-failures",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "never-blocks",
+        "text": "Never blocks on a prompt when stdin is not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/log.py",
+          "detail": "14 matches"
+         },
+         {
+          "path": "pygeoapi/api/__init__.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/admin.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/collection.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/coverages.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/environmental_data_retrieval.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/itemtypes.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/maps.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/processes.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/pubsub.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/stac.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/tiles.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/config.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/crs.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/formatter/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/formatter/csv_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/l10n.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/linked_data.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/openapi.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/plugin.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/echo.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/hello_world.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/dummy.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/mongodb_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/postgresql.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/tinydb_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/shapely_functions.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/__init__.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/azure_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/base_edr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/base_mvt.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/csv_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/csw_facade.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/elasticsearch_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/erddap.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/esri.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/filesystem.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/geojson.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/hateoas.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mapscript_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mongo.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mvt_elastic.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mvt_postgresql.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mvt_proxy.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mvt_tippecanoe.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/ogr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/opensearch_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/oracle.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/parquet.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/rasterio_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sensorthings.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sensorthings_edr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/socrata.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sql.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sqlite.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/tile.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/tinydb_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/wms_facade.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/wmts_facade.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/xarray_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/xarray_edr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/http.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/kafka.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/mqtt.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/util.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/validator/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/validator/geojson.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "setup.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+        "met": false,
+        "evidence": [],
+        "note": "exit statuses aren't documented"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no --dry-run"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 2,
+    "rationale": "[cli] Installable as a package that provides the command.",
+    "evidence": [
+     {
+      "signal": "L1 runnable",
+      "detail": "console script",
+      "path": "setup.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "console script",
+      "path": "setup.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 Runnable from source with documented steps (a README with commands). (no documented run steps)",
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (not published to a registry)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "documented-run",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": false,
+        "evidence": [],
+        "note": "no documented run steps"
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/api/admin.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/config.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/azure_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/ogr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/oracle.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/django_/wsgi.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/django_app.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/openapi.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/provider/sqlite.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/starlette_app.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/util.py",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "8 of 14 environment variables named in the docs"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "Dockerfile",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": false,
+        "evidence": [],
+        "note": "no compose/Helm/IaC"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "published",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "runnable",
+        "text": "Runnable from source (a declared entry point).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.py",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package that provides the command.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.py",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published",
+        "text": "Published to a public registry and run non-interactively in CI.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "container-or-binary",
+        "text": "Also shipped as a container image or a single binary.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "Dockerfile",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/__init__.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "no lifecycle hooks"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 2,
+    "rationale": "[cli] Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+    "evidence": [
+     {
+      "signal": "L1 exit-and-stderr",
+      "detail": "14 matches",
+      "path": "pygeoapi/log.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 verbosity",
+      "detail": "1 match",
+      "path": "pygeoapi/flask_app.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
+     "[cli] L3 Structured logs (e.g. --log-format json) or a machine-readable run summary. (no structured diagnostics)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "health",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": false,
+        "evidence": [],
+        "note": "no health endpoint or healthcheck"
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "structured-diagnostics",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "exit-and-stderr",
+        "text": "Meaningful exit statuses, and errors on stderr.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/log.py",
+          "detail": "14 matches"
+         },
+         {
+          "path": "pygeoapi/api/__init__.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/admin.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/collection.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/coverages.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/environmental_data_retrieval.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/itemtypes.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/maps.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/processes.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/pubsub.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/stac.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/api/tiles.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/config.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/crs.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/formatter/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/formatter/csv_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/l10n.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/linked_data.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/openapi.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/plugin.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/echo.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/hello_world.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/dummy.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/mongodb_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/postgresql.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/manager/tinydb_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/process/shapely_functions.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/__init__.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/azure_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/base_edr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/base_mvt.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/csv_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/csw_facade.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/elasticsearch_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/erddap.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/esri.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/filesystem.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/geojson.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/hateoas.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mapscript_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mongo.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mvt_elastic.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mvt_postgresql.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mvt_proxy.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/mvt_tippecanoe.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/ogr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/opensearch_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/oracle.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/parquet.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/rasterio_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sensorthings.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sensorthings_edr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/socrata.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sql.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/sqlite.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/tile.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/tinydb_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/wms_facade.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/wmts_facade.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/xarray_.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/provider/xarray_edr.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/http.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/kafka.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/pubsub/mqtt.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/util.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/validator/base.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/validator/geojson.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "pygeoapi/asyncapi.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "setup.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pygeoapi/flask_app.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pygeoapi/starlette_app.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "structured-diagnostics",
+        "text": "Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured diagnostics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing hooks (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing hooks"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 1,
+    "rationale": "A README and some tests.",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 97,
+     "source_tokens": 289731,
+     "test_files": 73,
+     "test_tokens": 155243,
+     "test_ratio": 0.54,
+     "modules": 14,
+     "modules_within_budget": 0.79,
+     "oversized_files": [
+      "pygeoapi/api/itemtypes.py",
+      "pygeoapi/provider/oracle.py"
+     ],
+     "largest_module": {
+      "path": "pygeoapi/provider",
+      "tokens": 124722
+     },
+     "typed_ratio": 0.45,
+     "python_functions": 806,
+     "python_annotated": 362,
+     "import_edges": 288,
+     "import_graph": true,
+     "max_fan_out": 14,
+     "import_cycles": 1,
+     "largest_cycle": [
+      "pygeoapi/__init__.py",
+      "pygeoapi/api/__init__.py",
+      "pygeoapi/api/collection.py",
+      "pygeoapi/asyncapi.py",
+      "pygeoapi/config.py",
+      "pygeoapi/error.py",
+      "pygeoapi/linked_data.py",
+      "pygeoapi/openapi.py",
+      "pygeoapi/process/base.py",
+      "pygeoapi/process/manager/base.py",
+      "pygeoapi/provider/__init__.py",
+      "pygeoapi/provider/base.py",
+      "pygeoapi/pubsub/base.py",
+      "pygeoapi/pubsub/http.py",
+      "pygeoapi/util.py"
+     ],
+     "languages": {
+      "python": 288005,
+      "shell": 1328,
+      "javascript": 398
+     }
+    },
+    "gaps": [
+     "L2 CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt). (no lockfile (applications should pin dependencies))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "ci-pinned",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "tests/api/test_admin.py",
+          "detail": "73 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": false,
+        "evidence": [],
+        "note": "no lockfile (applications should pin dependencies)"
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "79% of modules fit 32k tokens; 2 files over 12k; 45% of code is typed (< 70%)"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "1 import cycles (largest: pygeoapi/__init__.py, pygeoapi/api/__init__.py, pygeoapi/api/collection.py)"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.3,
+   "assessed_dimensions": 10,
+   "not_applicable": [],
+   "retrofit_person_days": 55.8,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 3.4,
+    "events": 6.9,
+    "identity": 10.3,
+    "portability": 10.3,
+    "ergonomics": 2.6,
+    "embeddability": 1.7,
+    "extensibility": 10.3,
+    "observability": 1.7,
+    "legibility": 8.6
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 1.08,
+    "legibility_multiplier": 1.6,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 23.47,
+   "classic": {
+    "person_months": 65.95,
+    "schedule_months": 12.3,
+    "cost": 742439
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 1.0,
+    "docs": 1.0,
+    "capture": 1.0
+   },
+   "agent_factor": 0.1,
+   "reproduce_pm": 6.6,
+   "history": {
+    "commits": 1528,
+    "fix_commits": 366,
+    "authors": 147,
+    "age_months": 103.2,
+    "months_since_last": 0.5
+   },
+   "knowledge_pm": 14.96,
+   "rediscover_pm": 0.0,
+   "replacement_pm": 6.6,
+   "leverage": 0.91,
+   "obsolescence": 0.9,
+   "value_pm": 5.42,
+   "value_cost": 60973,
+   "knowledge_at_risk": 0.0,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 8.4958,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 2056.71,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 1334922,
+     "input": 33373050,
+     "cached_input": 28367092
+    },
+    "final_tokens": 444974,
+    "model_cost": 52.4,
+    "agent_hours": 14.83,
+    "human_days": 8.9,
+    "review_days": 8.9,
+    "rediscover_days": 0.0,
+    "calendar_days": 8.9,
+    "build_cost": 4822.94,
+    "yearly_cost": 723.44,
+    "total_cost": 6993.26
+   },
+   "buy": {
+    "via": {
+     "install": "cli",
+     "use": "service"
+    },
+    "adoption_minutes": {
+     "install": 15,
+     "first_use": 2.0,
+     "total": 17.0
+    },
+    "tokens": {
+     "output": 2125,
+     "input": 53125,
+     "cached_input": 45156
+    },
+    "model_cost": 0.08,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 19.07,
+    "yearly_cost": 268.02,
+    "total_cost": 823.14
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

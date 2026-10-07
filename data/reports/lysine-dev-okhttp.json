@@ -1,0 +1,476 @@
+{
+ "meta": {
+  "name": "lysine-dev/okhttp",
+  "url": "https://github.com/lysine-dev/okhttp",
+  "slug": "lysine-dev-okhttp",
+  "host": "github.com",
+  "commit": "42e5888d45623662c138ed27e80ea28bbe0aa5cc",
+  "committed_at": "2026-10-06T20:42:02-04:00",
+  "evaluated_at": "2026-10-07T14:06:14+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/lysine-dev/okhttp",
+  "inventory": {
+   "files": 842,
+   "source_files": 358,
+   "source_tokens": 478644,
+   "languages": {
+    "kotlin": 476424,
+    "java": 1460,
+    "shell": 760
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [],
+   "evidence": {},
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 0,
+    "rationale": "Not yet: A programmatic surface exists (routes, a CLI or a library).",
+    "evidence": [],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "L1 A programmatic surface exists (routes, a CLI or a library). (no service, CLI, library or frontend detected)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "none",
+    "surfaces": {
+     "none": {
+      "level": 0,
+      "first_missing": "surface",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "surface",
+        "text": "A programmatic surface exists (routes, a CLI or a library).",
+        "met": false,
+        "evidence": [],
+        "note": "no service, CLI, library or frontend detected"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": null,
+    "rationale": "Not applicable: no service, cli, library, desktop surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": null,
+    "rationale": "Not applicable: no service and no long-running CLI mode (batch CLIs, libraries and desktop apps have no events).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": null,
+    "rationale": "Not applicable: uses no credentials and has no service surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": null,
+    "rationale": "Not applicable: no service or cli or library or desktop surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": null,
+    "rationale": "Not applicable: no service or cli or library or desktop surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": null,
+    "rationale": "Not applicable: no service or cli or library or desktop surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/build.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 358,
+     "source_tokens": 478644,
+     "test_files": 215,
+     "test_tokens": 623881,
+     "test_ratio": 1.3,
+     "modules": 92,
+     "modules_within_budget": 0.97,
+     "oversized_files": [
+      "okhttp/src/commonJvmAndroid/kotlin/okhttp3/HttpUrl.kt",
+      "okhttp/src/commonJvmAndroid/kotlin/okhttp3/OkHttpClient.kt"
+     ],
+     "largest_module": {
+      "path": "okhttp/src/commonJvmAndroid/kotlin/okhttp3",
+      "tokens": 118893
+     },
+     "typed_ratio": 1.0,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 0,
+     "import_graph": false,
+     "max_fan_out": 0,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "kotlin": 476424,
+      "java": 1460,
+      "shell": 760
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (97% of modules fit 32k tokens; 2 files over 12k)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "android-test-app/src/androidTest/kotlin/okhttp/android/testapp/IdnaTest.kt",
+          "detail": "215 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/build.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/docs.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/publish.yml",
+          "detail": ""
+         },
+         {
+          "path": "kotlin-js-store/yarn.lock",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "97% of modules fit 32k tokens; 2 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 0.67,
+   "assessed_dimensions": 3,
+   "not_applicable": [
+    "stability",
+    "events",
+    "identity",
+    "portability",
+    "ergonomics",
+    "embeddability",
+    "observability"
+   ],
+   "retrofit_person_days": 26.3,
+   "retrofit_by_dimension": {
+    "interface": 12.5,
+    "extensibility": 8.3,
+    "legibility": 5.5
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 1.38,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 38.13,
+   "classic": {
+    "person_months": 109.77,
+    "schedule_months": 14.9,
+    "cost": 1235731
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.0,
+    "docs": 1.0,
+    "capture": 0.75
+   },
+   "agent_factor": 0.21,
+   "reproduce_pm": 23.33,
+   "history": {
+    "commits": 4572,
+    "fix_commits": 507,
+    "authors": 366,
+    "age_months": 184.4,
+    "months_since_last": 0.0
+   },
+   "knowledge_pm": 33.0,
+   "rediscover_pm": 8.25,
+   "replacement_pm": 31.58,
+   "leverage": 0.83,
+   "obsolescence": 0.95,
+   "value_pm": 25.0,
+   "value_cost": 281410,
+   "knowledge_at_risk": 0.26,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 41.8587,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 52332.5,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 3343473,
+     "input": 83586825,
+     "cached_input": 71048801
+    },
+    "final_tokens": 1114491,
+    "model_cost": 131.23,
+    "agent_hours": 37.15,
+    "human_days": 206.68,
+    "review_days": 33.43,
+    "rediscover_days": 173.25,
+    "calendar_days": 206.68,
+    "build_cost": 110924.09,
+    "yearly_cost": 16638.61,
+    "total_cost": 160839.93
+   },
+   "buy": {
+    "via": {
+     "install": null,
+     "use": "none"
+    },
+    "adoption_minutes": {
+     "install": 60,
+     "first_use": 3320.84,
+     "total": 3380.84
+    },
+    "tokens": {
+     "output": 422604,
+     "input": 10565100,
+     "cached_input": 8980335
+    },
+    "model_cost": 16.59,
+    "upgrade_minutes_per_year": 15,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 3792.19,
+    "yearly_cost": 16.75,
+    "total_cost": 3842.44
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

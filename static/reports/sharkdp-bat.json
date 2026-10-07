@@ -1,0 +1,769 @@
+{
+ "meta": {
+  "name": "sharkdp/bat",
+  "url": "https://github.com/sharkdp/bat",
+  "slug": "sharkdp-bat",
+  "host": "github.com",
+  "commit": "4608fc959aa8abf80d32198836511a570b7ae9ea",
+  "committed_at": "2026-10-01T02:13:09+00:00",
+  "evaluated_at": "2026-10-07T14:05:32+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/sharkdp/bat",
+  "inventory": {
+   "files": 909,
+   "source_files": 43,
+   "source_tokens": 105639,
+   "languages": {
+    "rust": 103604,
+    "shell": 2035
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "library"
+   ],
+   "evidence": {
+    "library": [
+     {
+      "path": "src/lib.rs",
+      "detail": "Rust library crate"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 3,
+    "rationale": "The public API is statically typed (py.typed, type declarations, a typed language).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Rust library crate",
+      "path": "src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L2 public-api",
+      "detail": "pub items",
+      "path": "src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "statically typed language",
+      "path": "src/lib.rs",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "L4 An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026). (no generated API reference)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 3,
+      "first_missing": "api-reference",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/lib.rs",
+          "detail": "Rust library crate"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/lib.rs",
+          "detail": "pub items"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/lib.rs",
+          "detail": "statically typed language"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no generated API reference"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 4,
+    "rationale": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "43 semver tags, latest v0.26.1",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 changelog",
+      "detail": "marks breaking changes",
+      "path": "CHANGELOG.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 deprecation",
+      "detail": "2 matches",
+      "path": "src/assets.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L4 clean-history",
+      "detail": "20 tagged releases compared",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "43 semver tags, latest v0.26.1"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "CHANGELOG.md",
+          "detail": "marks breaking changes"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/assets.rs",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": null,
+    "rationale": "Not applicable: no service and no long-running CLI mode (batch CLIs, libraries and desktop apps have no events).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": null,
+    "rationale": "Not applicable: uses no credentials and has no service surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 0,
+    "rationale": "Not yet: Errors are specific exception types, and library code never calls sys.exit.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "no exception classes"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": false,
+        "evidence": [],
+        "note": "no input validation errors"
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no timeout parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 2,
+    "rationale": "Installable as a package (a package manifest).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Rust library crate",
+      "path": "src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "src/lib.rs",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 2,
+      "first_missing": "published-minimal",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/lib.rs",
+          "detail": "Rust library crate"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/lib.rs",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "Cargo.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 0,
+    "rationale": "Not yet: Logs through a standard logger namespace and never prints from library code.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/CICD.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 43,
+     "source_tokens": 105639,
+     "test_files": 87,
+     "test_tokens": 340985,
+     "test_ratio": 3.23,
+     "modules": 7,
+     "modules_within_budget": 0.86,
+     "oversized_files": [],
+     "largest_module": {
+      "path": "src",
+      "tokens": 74198
+     },
+     "typed_ratio": 0.98,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 0,
+     "import_graph": false,
+     "max_fan_out": 0,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "rust": 103604,
+      "shell": 2035
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (86% of modules fit 32k tokens; 0 files over 12k)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "tests/assets.rs",
+          "detail": "87 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/CICD.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/require-changelog-for-PRs.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "86% of modules fit 32k tokens; 0 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.57,
+   "assessed_dimensions": 7,
+   "not_applicable": [
+    "events",
+    "identity",
+    "portability"
+   ],
+   "retrofit_person_days": 12.1,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 0.0,
+    "ergonomics": 2.9,
+    "embeddability": 0.7,
+    "extensibility": 3.9,
+    "observability": 2.0,
+    "legibility": 2.6
+   },
+   "wrappability": "moderate retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.65,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 9.6,
+   "classic": {
+    "person_months": 25.8,
+    "schedule_months": 8.6,
+    "cost": 290420
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.75,
+    "docs": 1.0,
+    "capture": 0.94
+   },
+   "agent_factor": 0.13,
+   "reproduce_pm": 3.28,
+   "history": {
+    "commits": 3506,
+    "fix_commits": 421,
+    "authors": 513,
+    "age_months": 101.3,
+    "months_since_last": 0.2
+   },
+   "knowledge_pm": 25.95,
+   "rediscover_pm": 1.56,
+   "replacement_pm": 4.83,
+   "leverage": 0.95,
+   "obsolescence": 0.95,
+   "value_pm": 4.35,
+   "value_cost": 48921,
+   "knowledge_at_risk": 0.32,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 744.0138,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 11094.01,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 1341773,
+     "input": 33544325,
+     "cached_input": 28512676
+    },
+    "final_tokens": 447257,
+    "model_cost": 52.66,
+    "agent_hours": 14.91,
+    "human_days": 42.78,
+    "review_days": 10.02,
+    "rediscover_days": 32.76,
+    "calendar_days": 42.78,
+    "build_cost": 22984.02,
+    "yearly_cost": 3447.6,
+    "total_cost": 33326.83
+   },
+   "buy": {
+    "via": {
+     "install": "library",
+     "use": "library"
+    },
+    "adoption_minutes": {
+     "install": 15,
+     "first_use": 10.0,
+     "total": 25.0
+    },
+    "tokens": {
+     "output": 3125,
+     "input": 78125,
+     "cached_input": 66406
+    },
+    "model_cost": 0.12,
+    "upgrade_minutes_per_year": 5,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 28.04,
+    "yearly_cost": 5.58,
+    "total_cost": 44.79
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

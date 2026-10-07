@@ -21,6 +21,10 @@
     <span class="label">integrability index over {{ $r.estimate.assessed_dimensions }} applicable dimensions</span></div>
   <div class="stat"><span class="big small-big">{{ delimit ($r.surfaces.kinds | default (slice "none")) ", " }}</span>
     <span class="label">surfaces{{ with $r.surfaces }}{{ if .long_running }} · long-running{{ end }}{{ if .owns_data }} · owns data{{ end }}{{ if .uses_credentials }} · uses credentials{{ end }}{{ end }}</span></div>
+  {{ with $r.value }}
+  <div class="stat"><span class="big">{{ partial "usd.html" .classic.cost }} → {{ partial "usd.html" .value_cost }}</span>
+    <span class="label">classic COCOMO → neosloc value{{ if gt .classic.cost 0.0 }} ({{ printf "%.0f" (mul (div .value_cost .classic.cost) 100) }}% survives){{ end }}</span></div>
+  {{ end }}
   {{ with $r.make_or_buy }}
   <div class="stat"><span class="big">{{ partial "verdict.html" . }}</span>
     <span class="label">make / buy = {{ printf "%.2f" .make_buy_ratio }} over {{ .horizon_years }} years</span></div>
@@ -84,11 +88,27 @@
 {{ end }}
 
 {{ with $r.value }}
-<h2>Value (neoCOCOMO)</h2>
+<h2>Classic COCOMO vs neosloc value</h2>
 <div class="cols">
-  <div class="card"><h3>Classic COCOMO</h3><p>{{ .ksloc }} KSLOC → {{ printf "%.1f" .classic.person_months }} person-months, ${{ lang.FormatNumber 0 .classic.cost }}.</p></div>
-  <div class="card"><h3>Captured behaviour</h3><p>{{ printf "%.0f" (mul .capture.capture 100) }}% (tests {{ .capture.tests }}, contract {{ .capture.contract }}, docs {{ .capture.docs }}).</p></div>
-  <div class="card"><h3>History</h3><p>{{ .history.commits }} commits, {{ .history.fix_commits }} fixes, {{ .history.authors }} authors; {{ printf "%.0f" (mul .knowledge_at_risk 100) }}% of replacement cost lives only in code and history.</p></div>
+  <div class="card">
+    <h3>Classic COCOMO (sloccount)</h3>
+    <p>{{ .ksloc }} KSLOC → {{ printf "%.1f" .classic.person_months }} person-months over {{ printf "%.1f" .classic.schedule_months }} months.</p>
+    <p class="cost">{{ partial "usd.html" .classic.cost }}</p>
+    <p class="muted small">The effort to write it by hand, as COCOMO priced it in 1981.</p>
+  </div>
+  <div class="card">
+    <h3>neosloc value (neoCOCOMO)</h3>
+    <p>Reproduce with agents: {{ printf "%.1f" .reproduce_pm }} PM (×{{ .agent_factor }} of classic; {{ printf "%.0f" (mul .capture.capture 100) }}% of behaviour captured by tests, contract and docs).</p>
+    <p>Rediscover uncaptured history: {{ printf "%.1f" .rediscover_pm }} PM ({{ .history.fix_commits }} fixes in {{ .history.commits }} commits by {{ .history.authors }} authors).</p>
+    <p>× leverage {{ .leverage }} (integrability) × obsolescence {{ .obsolescence }}.</p>
+    <p class="cost">{{ partial "usd.html" .value_cost }} <span class="muted small">({{ printf "%.1f" .value_pm }} PM)</span></p>
+  </div>
+  <div class="card">
+    <h3>What survives</h3>
+    <p class="cost">{{ if gt .classic.cost 0.0 }}{{ printf "%.0f" (mul (div .value_cost .classic.cost) 100) }}% of the classic figure{{ else }}no source code measured{{ end }}</p>
+    <p>{{ printf "%.0f" (mul .knowledge_at_risk 100) }}% of the replacement cost lives only in code and history.</p>
+    <p class="muted small"><a href="https://neosloc.github.io/neosloc/value/">How the value is estimated.</a></p>
+  </div>
 </div>
 {{ end }}
 

@@ -1,0 +1,514 @@
+{
+ "meta": {
+  "name": "eclipse-mosquitto/mosquitto",
+  "url": "https://github.com/eclipse-mosquitto/mosquitto",
+  "slug": "eclipse-mosquitto-mosquitto",
+  "host": "github.com",
+  "commit": "83f2620f0b955b89aadce32cceb96a8e81950f5e",
+  "committed_at": "2026-10-04T10:31:29+01:00",
+  "evaluated_at": "2026-10-07T14:06:14+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/eclipse-mosquitto/mosquitto",
+  "inventory": {
+   "files": 1942,
+   "source_files": 352,
+   "source_tokens": 641059,
+   "languages": {
+    "c": 578406,
+    "python": 27048,
+    "javascript": 18564,
+    "cpp": 14049,
+    "shell": 2184,
+    "perl": 808
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [],
+   "evidence": {},
+   "long_running": [],
+   "owns_data": [
+    {
+     "path": "plugins/persist-sqlite/migrate_to_persist_sqlite.py",
+     "detail": "1 match"
+    }
+   ],
+   "uses_credentials": [
+    {
+     "path": "plugins/dynamic-security/config_init.c",
+     "detail": "2 matches"
+    }
+   ]
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 0,
+    "rationale": "Not yet: A programmatic surface exists (routes, a CLI or a library).",
+    "evidence": [],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "L1 A programmatic surface exists (routes, a CLI or a library). (no service, CLI, library or frontend detected)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "none",
+    "surfaces": {
+     "none": {
+      "level": 0,
+      "first_missing": "surface",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "surface",
+        "text": "A programmatic surface exists (routes, a CLI or a library).",
+        "met": false,
+        "evidence": [],
+        "note": "no service, CLI, library or frontend detected"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": null,
+    "rationale": "Not applicable: no service, cli, library, desktop surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": null,
+    "rationale": "Not applicable: no service and no long-running CLI mode (batch CLIs, libraries and desktop apps have no events).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": null,
+    "rationale": "Not applicable: uses no credentials and has no service surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": 0,
+    "rationale": "Not yet: The data schema is explicit (migrations, DDL, schema files).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 The data schema is explicit (migrations, DDL, schema files). (no migrations or schema files)"
+    ],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "schema",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "schema",
+        "text": "The data schema is explicit (migrations, DDL, schema files).",
+        "met": false,
+        "evidence": [],
+        "note": "no migrations or schema files"
+       },
+       {
+        "level": 2,
+        "id": "export",
+        "text": "An export exists (endpoint or command, not only the UI).",
+        "met": false,
+        "evidence": [],
+        "note": "no export"
+       },
+       {
+        "level": 3,
+        "id": "bulk-open",
+        "text": "A bulk export in an open format, and a bulk import.",
+        "met": false,
+        "evidence": [],
+        "note": "no open export format"
+       },
+       {
+        "level": 4,
+        "id": "documented-round-trip",
+        "text": "The export format is documented and the round trip is tested.",
+        "met": false,
+        "evidence": [],
+        "note": "the export format isn't documented"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": null,
+    "rationale": "Not applicable: no service or cli or library or desktop surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": null,
+    "rationale": "Not applicable: no service or cli or library or desktop surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": null,
+    "rationale": "Not applicable: no service or cli or library or desktop surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 1,
+    "rationale": "A README and some tests.",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 352,
+     "source_tokens": 641059,
+     "test_files": 687,
+     "test_tokens": 532183,
+     "test_ratio": 0.83,
+     "modules": 43,
+     "modules_within_budget": 0.84,
+     "oversized_files": [
+      "src/conf.c",
+      "deps/utlist.h",
+      "deps/uthash.h",
+      "www/conf.py",
+      "dashboard/src/app/dashboard.js",
+      "client/client_shared.c"
+     ],
+     "largest_module": {
+      "path": "src",
+      "tokens": 202027
+     },
+     "typed_ratio": 0.94,
+     "python_functions": 49,
+     "python_annotated": 24,
+     "import_edges": 0,
+     "import_graph": true,
+     "max_fan_out": 0,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "c": 578406,
+      "python": 27048,
+      "javascript": 18564,
+      "cpp": 14049,
+      "shell": 2184,
+      "perl": 808
+     }
+    },
+    "gaps": [
+     "L2 CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt). (no lockfile (applications should pin dependencies))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "ci-pinned",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "test/apps/ctrl/ctrl-args.py",
+          "detail": "687 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": false,
+        "evidence": [],
+        "note": "no lockfile (applications should pin dependencies)"
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "84% of modules fit 32k tokens; 6 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 0.25,
+   "assessed_dimensions": 4,
+   "not_applicable": [
+    "stability",
+    "events",
+    "identity",
+    "ergonomics",
+    "embeddability",
+    "observability"
+   ],
+   "retrofit_person_days": 66.7,
+   "retrofit_by_dimension": {
+    "interface": 23.1,
+    "portability": 15.4,
+    "extensibility": 15.4,
+    "legibility": 12.8
+   },
+   "wrappability": "replace or wrap externally",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 1.6,
+    "legibility_multiplier": 1.6,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 57.79,
+   "classic": {
+    "person_months": 169.88,
+    "schedule_months": 17.6,
+    "cost": 1912367
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 0.0,
+    "docs": 1.0,
+    "capture": 0.75
+   },
+   "agent_factor": 0.21,
+   "reproduce_pm": 36.1,
+   "history": {
+    "commits": 4599,
+    "fix_commits": 1601,
+    "authors": 195,
+    "age_months": 148.9,
+    "months_since_last": 0.1
+   },
+   "knowledge_pm": 55.02,
+   "rediscover_pm": 13.75,
+   "replacement_pm": 49.85,
+   "leverage": 0.78,
+   "obsolescence": 0.9,
+   "value_pm": 35.05,
+   "value_cost": 394598,
+   "knowledge_at_risk": 0.28,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 56.99,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 82647.53,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 3567805,
+     "input": 89195125,
+     "cached_input": 75815856
+    },
+    "final_tokens": 1189268,
+    "model_cost": 140.04,
+    "agent_hours": 39.64,
+    "human_days": 324.43,
+    "review_days": 35.68,
+    "rediscover_days": 288.75,
+    "calendar_days": 324.43,
+    "build_cost": 174048.92,
+    "yearly_cost": 26107.34,
+    "total_cost": 252370.94
+   },
+   "buy": {
+    "via": {
+     "install": null,
+     "use": "none"
+    },
+    "adoption_minutes": {
+     "install": 60,
+     "first_use": 3843.18,
+     "total": 3903.18
+    },
+    "tokens": {
+     "output": 487896,
+     "input": 12197400,
+     "cached_input": 10367790
+    },
+    "model_cost": 19.15,
+    "upgrade_minutes_per_year": 15,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 4378.08,
+    "yearly_cost": 16.75,
+    "total_cost": 4428.34
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

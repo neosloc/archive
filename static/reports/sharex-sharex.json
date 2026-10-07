@@ -1,0 +1,704 @@
+{
+ "meta": {
+  "name": "ShareX/ShareX",
+  "url": "https://github.com/ShareX/ShareX",
+  "slug": "sharex-sharex",
+  "host": "github.com",
+  "commit": "0f316c89a5b36b6e60250d38223d21b85291ad7e",
+  "committed_at": "2026-10-06T16:29:37+03:00",
+  "evaluated_at": "2026-10-07T14:06:58+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/ShareX/ShareX",
+  "inventory": {
+   "files": 1790,
+   "source_files": 1208,
+   "source_tokens": 2110455,
+   "languages": {
+    "csharp": 2110455
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "desktop"
+   ],
+   "evidence": {
+    "desktop": [
+     {
+      "path": "ShareX.ImageEditor/ShareX.ImageEditor.csproj",
+      "detail": "Avalonia"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 0,
+    "rationale": "Not yet: Launchable by other programs with input: command-line arguments, a URL scheme or file associations.",
+    "evidence": [],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "L1 Launchable by other programs with input: command-line arguments, a URL scheme or file associations. (no arguments, URL scheme or file associations)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 0,
+      "first_missing": "launch",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "launch",
+        "text": "Launchable by other programs with input: command-line arguments, a URL scheme or file associations.",
+        "met": false,
+        "evidence": [],
+        "note": "no arguments, URL scheme or file associations"
+       },
+       {
+        "level": 2,
+        "id": "automation",
+        "text": "An automation interface: AppleScript, App Intents/Shortcuts, D-Bus, COM, IPC commands, or a local API.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "ShareX.HelpersLib/Native/WshShell.cs",
+          "detail": "2 matches"
+         },
+         {
+          "path": "ShareX.ScreenRecordingLib/Native/SampleReleaseCallback.cs",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "headless",
+        "text": "Its functions run without the GUI (a headless/batch mode or a companion CLI).",
+        "met": false,
+        "evidence": [],
+        "note": "nothing runs without the GUI"
+       },
+       {
+        "level": 4,
+        "id": "automation-contract",
+        "text": "The automation interface is specified machine-readably (an AppleScript sdef, D-Bus introspection XML, App Intents, an OpenAPI spec, MCP).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable automation contract"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "94 semver tags, latest v21.0.0",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "94 semver tags, latest v21.0.0"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "ShareX.HelpersLib/Native/NativeEnums.cs",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": null,
+    "rationale": "Not applicable: no service and no long-running CLI mode (batch CLIs, libraries and desktop apps have no events).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": null,
+    "rationale": "Not applicable: uses no credentials and has no service surface.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 0,
+    "rationale": "Not yet: In headless mode, failures end with a non-zero exit status instead of a dialog.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 In headless mode, failures end with a non-zero exit status instead of a dialog. (no headless mode for automated callers)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 0,
+      "first_missing": "headless-failures",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "headless-failures",
+        "text": "In headless mode, failures end with a non-zero exit status instead of a dialog.",
+        "met": false,
+        "evidence": [],
+        "note": "no headless mode for automated callers"
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "In headless mode, data goes to stdout and diagnostics to stderr.",
+        "met": false,
+        "evidence": [],
+        "note": "no headless mode for automated callers"
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, and headless output is machine-readable (JSON).",
+        "met": false,
+        "evidence": [],
+        "note": "no headless mode for automated callers"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run for side-effecting operations, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no headless mode for automated callers"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 0,
+    "rationale": "Not yet: Buildable from source with documented steps (a README with commands).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Buildable from source with documented steps (a README with commands). (no documented build steps)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 0,
+      "first_missing": "build-documented",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "build-documented",
+        "text": "Buildable from source with documented steps (a README with commands).",
+        "met": false,
+        "evidence": [],
+        "note": "no documented build steps"
+       },
+       {
+        "level": 2,
+        "id": "installer",
+        "text": "Packaged as an installer (dmg/pkg, MSI/MSIX, AppImage/Flatpak/Snap, electron-builder, Tauri bundle, PyInstaller).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "ShareX.Setup/InnoSetup/ShareX-setup.iss",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "unattended-install",
+        "text": "Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/build.yml",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "managed-settings",
+        "text": "Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies.",
+        "met": false,
+        "evidence": [],
+        "note": "settings only change through the GUI"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 1,
+    "rationale": "Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [
+     {
+      "signal": "L1 seams",
+      "detail": "1 match",
+      "path": "ShareX.ImageEditor/Presentation/Effects/DiscoveredEffectRegistry.cs",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 The docs show how to add behaviour through those seams (even in-tree). (no registration functions to document)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "documented",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "ShareX.ImageEditor/Presentation/Effects/DiscoveredEffectRegistry.cs",
+          "detail": "1 match"
+         },
+         {
+          "path": "ShareX.ImageEditor/Presentation/Views/Dialogs/EffectDialogRegistry.cs",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "no lifecycle hooks"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 0,
+    "rationale": "Not yet: Writes logs through a standard logger (os_log/Logger, electron-log, logging, Qt categories).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Writes logs through a standard logger (os_log/Logger, electron-log, logging, Qt categories). (no standard logging)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 0,
+      "first_missing": "logs",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "logs",
+        "text": "Writes logs through a standard logger (os_log/Logger, electron-log, logging, Qt categories).",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logging"
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Log verbosity can be raised for diagnosis (--verbose/--debug, a log-level setting).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "ShareX.ImageEditor/Integration/LinuxDesktopWallpaperService.cs",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "crash-reports",
+        "text": "Crashes are reported (Sentry, Crashpad/Breakpad, Crashlytics, MetricKit).",
+        "met": false,
+        "evidence": [],
+        "note": "no crash reporting"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing or metrics (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 0,
+    "rationale": "Not yet: A README and some tests.",
+    "evidence": [],
+    "metrics": {
+     "source_files": 1208,
+     "source_tokens": 2110455,
+     "test_files": 0,
+     "test_tokens": 0,
+     "test_ratio": 0.0,
+     "modules": 169,
+     "modules_within_budget": 0.92,
+     "oversized_files": [
+      "ShareX.HelpersLib/Native/NativeEnums.cs",
+      "ShareX/TaskHelpers.cs",
+      "ShareX.Avalonia/Theming/LucideIcons.cs",
+      "ShareX/Presentation/TaskSettings/TaskSettingsPageBuilder.cs",
+      "ShareX.ImageEditor/Presentation/Views/EditorView.axaml.cs",
+      "ShareX.HelpersLib/Helpers/SkiaImageHelpers.Operations.cs",
+      "ShareX/Presentation/MainWindow/MainWindow.axaml.cs",
+      "ShareX.ImageEditor/Presentation/Controllers/EditorInputController.cs",
+      "ShareX.ImageEditor/Presentation/Controllers/EditorSelectionController.cs",
+      "ShareX.ScreenCaptureLib/Presentation/RegionCapture/RegionCaptureWindow.axaml.cs",
+      "ShareX.HelpersLib/MimeTypes.cs",
+      "ShareX.ImageEditor/Presentation/ViewModels/MainViewModel.ToolOptions.cs",
+      "ShareX.UploadersLib/Presentation/DestinationSettings/DestinationSettingsPageBuilder.cs",
+      "ShareX.ImageEditor/Core/Editor/EditorCore.cs"
+     ],
+     "largest_module": {
+      "path": "ShareX.ImageEditor/Core/ImageEffects/Filters",
+      "tokens": 257592
+     },
+     "typed_ratio": 1.0,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 0,
+     "import_graph": false,
+     "max_fan_out": 0,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "csharp": 2110455
+     }
+    },
+    "gaps": [
+     "L1 A README and some tests. (no tests)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "readme-tests",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": false,
+        "evidence": [],
+        "note": "no tests"
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": false,
+        "evidence": [],
+        "note": "no lockfile (applications should pin dependencies)"
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "92% of modules fit 32k tokens; 14 files over 12k; test/source token ratio 0.00 < 0.3"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 0.29,
+   "assessed_dimensions": 7,
+   "not_applicable": [
+    "events",
+    "identity",
+    "portability"
+   ],
+   "retrofit_person_days": 220.2,
+   "retrofit_by_dimension": {
+    "interface": 65.4,
+    "stability": 14.5,
+    "ergonomics": 32.7,
+    "embeddability": 21.8,
+    "extensibility": 29.1,
+    "observability": 21.8,
+    "legibility": 34.9
+   },
+   "wrappability": "replace or wrap externally",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 2.91,
+    "legibility_multiplier": 2.5,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 173.76,
+   "classic": {
+    "person_months": 539.71,
+    "schedule_months": 27.3,
+    "cost": 6075596
+   },
+   "capture": {
+    "tests": 0.0,
+    "contract": 0.0,
+    "docs": 0.19,
+    "capture": 0.05
+   },
+   "agent_factor": 0.53,
+   "reproduce_pm": 284.7,
+   "history": {
+    "commits": 8649,
+    "fix_commits": 1332,
+    "authors": 313,
+    "age_months": 155.9,
+    "months_since_last": 0.0
+   },
+   "knowledge_pm": 69.89,
+   "rediscover_pm": 66.39,
+   "replacement_pm": 351.09,
+   "leverage": 0.79,
+   "obsolescence": 0.85,
+   "value_pm": 234.48,
+   "value_cost": 2639539,
+   "knowledge_at_risk": 0.19,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 902.6803,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 405179.79,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 8832254,
+     "input": 220806350,
+     "cached_input": 187685397
+    },
+    "final_tokens": 2944084,
+    "model_cost": 346.67,
+    "agent_hours": 98.14,
+    "human_days": 1564.95,
+    "review_days": 170.76,
+    "rediscover_days": 1394.19,
+    "calendar_days": 1564.95,
+    "build_cost": 839232.73,
+    "yearly_cost": 125884.91,
+    "total_cost": 1216887.46
+   },
+   "buy": {
+    "via": {
+     "install": "desktop",
+     "use": "desktop UI"
+    },
+    "adoption_minutes": {
+     "install": 480,
+     "first_use": 5,
+     "total": 485
+    },
+    "tokens": {
+     "output": 60625,
+     "input": 1515625,
+     "cached_input": 1288281
+    },
+    "model_cost": 2.38,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 544.01,
+    "yearly_cost": 268.02,
+    "total_cost": 1348.08
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

@@ -1,0 +1,2105 @@
+{
+ "meta": {
+  "name": "marktext/marktext",
+  "url": "https://github.com/marktext/marktext",
+  "slug": "marktext-marktext",
+  "host": "github.com",
+  "commit": "20ae0b9051c516029ff64f352ce882ac2c59bf73",
+  "committed_at": "2026-10-07T20:34:57+08:00",
+  "evaluated_at": "2026-10-07T14:05:26+00:00",
+  "neosloc": "0.7.3"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/marktext/marktext",
+  "inventory": {
+   "files": 2034,
+   "source_files": 677,
+   "source_tokens": 926585,
+   "languages": {
+    "typescript": 630713,
+    "javascript": 199166,
+    "vue": 96706
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "library",
+    "desktop"
+   ],
+   "evidence": {
+    "library": [
+     {
+      "path": "packages/desktop/package.json",
+      "detail": "npm package"
+     },
+     {
+      "path": "packages/muya/package.json",
+      "detail": "npm package"
+     }
+    ],
+    "desktop": [
+     {
+      "path": "package.json",
+      "detail": "Electron"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": [
+    {
+     "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+     "detail": "1 match"
+    }
+   ]
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 4,
+    "rationale": "[library] An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "npm package",
+      "path": "packages/desktop/package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L2 public-api",
+      "detail": "package entry point",
+      "path": "packages/desktop/package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "TypeScript types",
+      "path": "packages/desktop/package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L4 api-reference",
+      "detail": "16 matches",
+      "path": "pnpm-lock.yaml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[desktop] L2 An automation interface: AppleScript, App Intents/Shortcuts, D-Bus, COM, IPC commands, or a local API. (no automation interface)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "packages/muya/package.json",
+          "detail": "npm package"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "packages/muya/package.json",
+          "detail": "package entry point"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "packages/muya/package.json",
+          "detail": "TypeScript types"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pnpm-lock.yaml",
+          "detail": "16 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "desktop": {
+      "level": 1,
+      "first_missing": "automation",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "launch",
+        "text": "Launchable by other programs with input: command-line arguments, a URL scheme or file associations.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/main/cli/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/cli/parser.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/website/scripts/build-docs-index.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "automation",
+        "text": "An automation interface: AppleScript, App Intents/Shortcuts, D-Bus, COM, IPC commands, or a local API.",
+        "met": false,
+        "evidence": [],
+        "note": "no automation interface"
+       },
+       {
+        "level": 3,
+        "id": "headless",
+        "text": "Its functions run without the GUI (a headless/batch mode or a companion CLI).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/playwright.config.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "automation-contract",
+        "text": "The automation interface is specified machine-readably (an AppleScript sdef, D-Bus introspection XML, App Intents, an OpenAPI spec, MCP).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable automation contract"
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "54 semver tags, latest v0.20.0",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "54 semver tags, latest v0.20.0"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": false,
+        "evidence": [],
+        "note": "no deprecation mechanism or API versioning"
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": null,
+    "rationale": "Not applicable: no service and no long-running CLI mode (batch CLIs, libraries and desktop apps have no events).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 3,
+    "rationale": "[library] No output or log statement includes a credential.",
+    "evidence": [
+     {
+      "signal": "L1 credentials-env",
+      "detail": "1 match",
+      "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L2 credentials-documented",
+      "detail": "1 match",
+      "path": "packages/website/content/docs/end-user/ENVIRONMENT.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 secrets-not-logged",
+      "detail": "no credential in print/log statements",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[library] L4 Several profiles or scoped credentials per target. (no credential profiles)",
+     "[desktop] L4 Several profiles or scoped credentials per target. (no credential profiles)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 3,
+      "first_missing": "profiles",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credentials-env",
+        "text": "Credentials can be supplied non-interactively (environment variables).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "credentials-documented",
+        "text": "The credential environment variables are documented.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/website/content/docs/end-user/ENVIRONMENT.md",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
+     },
+     "desktop": {
+      "level": 3,
+      "first_missing": "profiles",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credential-store",
+        "text": "Credentials are kept in the OS credential store (Keychain, Credential Manager, Secret Service), not in plain files.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/main/dataCenter/index.ts",
+          "detail": "5 matches"
+         },
+         {
+          "path": "packages/desktop/package.json",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "automation-auth",
+        "text": "Automation and headless runs can authenticate without the GUI (credentials from the environment).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 2,
+    "rationale": "[desktop] In headless mode, data goes to stdout and diagnostics to stderr.",
+    "evidence": [
+     {
+      "signal": "L1 headless-failures",
+      "detail": "3 matches",
+      "path": "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js",
+      "weight": 1
+     },
+     {
+      "signal": "L2 streams-and-status",
+      "detail": "12 matches",
+      "path": "packages/desktop/src/renderer/src/store/editor.ts",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)",
+     "[desktop] L3 Documented exit statuses distinguish error classes, and headless output is machine-readable (JSON). (exit statuses aren't documented)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "no exception classes"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js",
+          "detail": "11 matches"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/util/diagramExport.ts",
+          "detail": "6 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/core.js",
+          "detail": "5 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/uploader.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/windows/editor.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/tableBlockCtrl.js",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/commands/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/editorBufferStore/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/store/editor.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/arrowCtrl.js",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/tabCtrl.js",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/parser/marked/index.js",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/parser/marked/inlineLexer.js",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/common/envPaths.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/common/i18n.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/filesystem/markdown.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/actions/file.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/preferences/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/utils/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/bootstrap.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/commands/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/commands/quickOpen.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/mediaViewer/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/search/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/node/paths.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/spellchecker/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/store/commandCenter.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/store/treeCtrl.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/block/extra/diagram/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/block/extra/math/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/ui/baseFloat/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/utils/diagram/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/utils/diagram/plantuml/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/paragraphCtrl.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/pasteCtrl.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/parser/marked/lexer.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/parser/marked/parser.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/parser/render/plantuml.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/renderers/index.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/selection/index.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/utils/index.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/website/src/components/docs/sidebar-context.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/website/src/lib/docs-nav.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/website/src/lib/docs-search.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/postinstall.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/muya/src/utils/index.ts",
+          "detail": "4 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/utils/index.js",
+          "detail": "4 matches"
+         },
+         {
+          "path": "packages/muya/e2e/playwright.config.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/playwright.config.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/commands/quickOpen.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/e2e/playwright.config.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "AGENTS.md",
+          "detail": ""
+         },
+         {
+          "path": "packages/muya/AGENTS.md",
+          "detail": ""
+         },
+         {
+          "path": "packages/desktop/test/e2e/crash-range-offset.spec.ts",
+          "detail": "doctest"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "desktop": {
+      "level": 2,
+      "first_missing": "typed-failures",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "headless-failures",
+        "text": "In headless mode, failures end with a non-zero exit status instead of a dialog.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/exceptionHandler.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "scripts/thirdPartyChecker.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/util/zoomPan.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/website/scripts/build-docs-index.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "In headless mode, data goes to stdout and diagnostics to stderr.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/renderer/src/store/editor.ts",
+          "detail": "12 matches"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/prefComponents/image/components/uploader/index.vue",
+          "detail": "6 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/editorBufferStore/index.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/codeMirror/loadmode.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/bootstrap.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/node/ripgrepSearcher.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/paragraphCtrl.js",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/pasteCtrl.js",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/common/i18n.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/app/windowManager.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/commands/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/exceptionHandler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/filesystem/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/filesystem/markdown.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/filesystem/watcher.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/actions/file.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/preload/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/editorWithTabs/notifications.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/editorWithTabs/tabs.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/exportSettings/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/contextMenu/popupMenu.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/i18n/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/store/bufferedState.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/codeBlockCtrl.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/dragDropCtrl.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/contentState/linkCtrl.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/parser/marked/parser.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/parser/render/renderBlock/renderIcon.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muyajs/lib/ui/imageSelector/index.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/website/scripts/build-docs-index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/postinstall.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/exceptionHandler.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "scripts/thirdPartyChecker.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/util/zoomPan.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/website/scripts/build-docs-index.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, and headless output is machine-readable (JSON).",
+        "met": false,
+        "evidence": [],
+        "note": "exit statuses aren't documented"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run for side-effecting operations, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 3,
+    "rationale": "[desktop] Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI.",
+    "evidence": [
+     {
+      "signal": "L1 build-documented",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installer",
+      "detail": "",
+      "path": "packages/desktop/electron-builder.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L3 unattended-install",
+      "detail": "2 matches",
+      "path": ".github/workflows/release.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[library] L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)",
+     "[desktop] L4 Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies. (settings only change through the GUI)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "library": {
+      "level": 2,
+      "first_missing": "published-minimal",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "packages/muya/package.json",
+          "detail": "npm package"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "packages/muya/package.json",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": false,
+        "evidence": [],
+        "note": "no optional extras"
+       }
+      ]
+     },
+     "desktop": {
+      "level": 3,
+      "first_missing": "managed-settings",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "build-documented",
+        "text": "Buildable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installer",
+        "text": "Packaged as an installer (dmg/pkg, MSI/MSIX, AppImage/Flatpak/Snap, electron-builder, Tauri bundle, PyInstaller).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/electron-builder.yml",
+          "detail": ""
+         },
+         {
+          "path": "pnpm-lock.yaml",
+          "detail": "18 matches"
+         },
+         {
+          "path": "packages/desktop/package.json",
+          "detail": "8 matches"
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/website/public/docs-index.json",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "unattended-install",
+        "text": "Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": "2 matches"
+         },
+         {
+          "path": "README.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-ar.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-bn.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-de.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-es.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-fr.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-jp.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-kr.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-pt.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-tr.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-zh_cn.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "docs/i18n/README-zh_tw.md",
+          "detail": "14 matches"
+         },
+         {
+          "path": "packages/website/content/docs/end-user/INSTALLATION.md",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "managed-settings",
+        "text": "Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies.",
+        "met": false,
+        "evidence": [],
+        "note": "settings only change through the GUI"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 3,
+    "rationale": "[desktop] Crashes are reported (Sentry, Crashpad/Breakpad, Crashlytics, MetricKit).",
+    "evidence": [
+     {
+      "signal": "L1 logs",
+      "detail": "1 match",
+      "path": "packages/desktop/src/main/app/index.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L2 verbosity",
+      "detail": "3 matches",
+      "path": "packages/desktop/src/main/cli/parser.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L3 crash-reports",
+      "detail": "1 match",
+      "path": "packages/desktop/src/main/exceptionHandler.ts",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[library] L3 Optional metrics or tracing hooks. (no metrics or tracing hooks)",
+     "[desktop] L4 Tracing or metrics (OpenTelemetry). (no tracing)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "library": {
+      "level": 2,
+      "first_missing": "hooks",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/main/app/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/app/windowManager.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/contextMenu/editor/spellcheck.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/dataCenter/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/exceptionHandler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/filesystem/markdown.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/filesystem/watcher.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/diagram.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/dialog.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/fonts.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/ripgrep.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/shell.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/window.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/keyboard/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/actions/edit.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/actions/file.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/preferences/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/spellchecker/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/utils/imagePathAutoComplement.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/windows/editor.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/windows/setting.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/bootstrap.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/commandPalette/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/sideBar/search.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/prefComponents/keybindings/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/prefComponents/spellchecker/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/store/commandCenter.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no print() in library code"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "levels: error, info, warn"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     },
+     "desktop": {
+      "level": 3,
+      "first_missing": "tracing",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "logs",
+        "text": "Writes logs through a standard logger (os_log/Logger, electron-log, logging, Qt categories).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/main/app/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/app/windowManager.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/contextMenu/editor/spellcheck.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/dataCenter/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/exceptionHandler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/filesystem/markdown.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/filesystem/watcher.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/diagram.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/dialog.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/fonts.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/ripgrep.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/shell.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/window.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/keyboard/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/actions/edit.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/actions/file.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/menu/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/preferences/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/spellchecker/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/utils/imagePathAutoComplement.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/windows/editor.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/windows/setting.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/bootstrap.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/commandPalette/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/components/sideBar/search.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/prefComponents/keybindings/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/prefComponents/spellchecker/index.vue",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/store/commandCenter.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/package.json",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Log verbosity can be raised for diagnosis (--verbose/--debug, a log-level setting).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/main/cli/parser.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/utils/index.ts",
+          "detail": "3 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/app/env.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/app/env.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/cli/parser.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "crash-reports",
+        "text": "Crashes are reported (Sentry, Crashpad/Breakpad, Crashlytics, MetricKit).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/desktop/src/main/exceptionHandler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/index.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing or metrics (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/build.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 677,
+     "source_tokens": 926585,
+     "test_files": 590,
+     "test_tokens": 738789,
+     "test_ratio": 0.8,
+     "modules": 197,
+     "modules_within_budget": 0.99,
+     "oversized_files": [
+      "packages/muya/src/config/emojis.ts",
+      "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
+      "packages/desktop/src/renderer/src/store/editor.ts",
+      "packages/muya/src/muya.ts",
+      "packages/muya/src/block/base/format.ts",
+      "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js"
+     ],
+     "largest_module": {
+      "path": "packages/muya/src/config",
+      "tokens": 80035
+     },
+     "typed_ratio": 0.68,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 1912,
+     "import_graph": true,
+     "max_fan_out": 39,
+     "import_cycles": 4,
+     "largest_cycle": [
+      "packages/muya/src/block/base/content.ts",
+      "packages/muya/src/block/base/format.ts",
+      "packages/muya/src/block/base/parent.ts",
+      "packages/muya/src/block/base/treeNode.ts",
+      "packages/muya/src/block/blockTransforms.ts",
+      "packages/muya/src/block/commonMark/atxHeading/index.ts",
+      "packages/muya/src/block/commonMark/blockQuote/index.ts",
+      "packages/muya/src/block/commonMark/bulletList/index.ts",
+      "packages/muya/src/block/commonMark/codeBlock/code.ts",
+      "packages/muya/src/block/commonMark/codeBlock/index.ts",
+      "packages/muya/src/block/commonMark/headingCopyLink/index.ts",
+      "packages/muya/src/block/commonMark/html/htmlContainer.ts",
+      "packages/muya/src/block/commonMark/html/htmlPreview.ts",
+      "packages/muya/src/block/commonMark/html/index.ts",
+      "packages/muya/src/block/commonMark/listItem/index.ts",
+      "packages/muya/src/block/commonMark/orderList/index.ts",
+      "packages/muya/src/block/commonMark/paragraph/index.ts",
+      "packages/muya/src/block/commonMark/setextHeading/index.ts",
+      "packages/muya/src/block/commonMark/thematicBreak/index.ts",
+      "packages/muya/src/block/content/atxHeadingContent/index.ts",
+      "packages/muya/src/block/content/codeBlockContent/index.ts",
+      "packages/muya/src/block/content/langInputContent/escape.ts",
+      "packages/muya/src/block/content/langInputContent/index.ts",
+      "packages/muya/src/block/content/paragraphContent/index.ts",
+      "packages/muya/src/block/content/setextHeadingContent/index.ts",
+      "packages/muya/src/block/content/tableCell/index.ts",
+      "packages/muya/src/block/content/thematicBreakContent/index.ts",
+      "packages/muya/src/block/extra/diagram/diagramContainer.ts",
+      "packages/muya/src/block/extra/diagram/diagramPreview.ts",
+      "packages/muya/src/block/extra/diagram/index.ts",
+      "packages/muya/src/block/extra/footnote/index.ts",
+      "packages/muya/src/block/extra/frontmatter/index.ts",
+      "packages/muya/src/block/extra/math/index.ts",
+      "packages/muya/src/block/extra/math/mathContainer.ts",
+      "packages/muya/src/block/extra/math/mathPreview.ts",
+      "packages/muya/src/block/gfm/table/cell.ts",
+      "packages/muya/src/block/gfm/table/index.ts",
+      "packages/muya/src/block/gfm/table/row.ts",
+      "packages/muya/src/block/gfm/table/table.ts",
+      "packages/muya/src/block/gfm/taskList/index.ts",
+      "packages/muya/src/block/gfm/taskListCheckbox/index.ts",
+      "packages/muya/src/block/gfm/taskListItem/index.ts",
+      "packages/muya/src/block/index.ts",
+      "packages/muya/src/block/mixins/containerQueryBlock.ts",
+      "packages/muya/src/block/mixins/leafQueryBlock.ts",
+      "packages/muya/src/block/scrollPage/index.ts",
+      "packages/muya/src/block/types.ts",
+      "packages/muya/src/clipboard/copyData.ts",
+      "packages/muya/src/clipboard/cut.ts",
+      "packages/muya/src/clipboard/index.ts",
+      "packages/muya/src/clipboard/mergePasteIntoHeading.ts",
+      "packages/muya/src/clipboard/paste.ts",
+      "packages/muya/src/clipboard/pasteImage.ts",
+      "packages/muya/src/editor/dragDropImage.ts",
+      "packages/muya/src/editor/index.ts",
+      "packages/muya/src/editor/linkMouseEvents.ts",
+      "packages/muya/src/history/index.ts",
+      "packages/muya/src/i18n/index.ts",
+      "packages/muya/src/inlineRenderer/emphasis.ts",
+      "packages/muya/src/inlineRenderer/index.ts",
+      "packages/muya/src/inlineRenderer/lexer.ts",
+      "packages/muya/src/inlineRenderer/renderer/autoLink.ts",
+      "packages/muya/src/inlineRenderer/renderer/autoLinkExtension.ts",
+      "packages/muya/src/inlineRenderer/renderer/backlash.ts",
+      "packages/muya/src/inlineRenderer/renderer/backlashInToken.ts",
+      "packages/muya/src/inlineRenderer/renderer/codeFence.ts",
+      "packages/muya/src/inlineRenderer/renderer/del.ts",
+      "packages/muya/src/inlineRenderer/renderer/delEmStrongFactory.ts",
+      "packages/muya/src/inlineRenderer/renderer/em.ts",
+      "packages/muya/src/inlineRenderer/renderer/emoji.ts",
+      "packages/muya/src/inlineRenderer/renderer/footnoteIdentifier.ts",
+      "packages/muya/src/inlineRenderer/renderer/hardLineBreak.ts",
+      "packages/muya/src/inlineRenderer/renderer/header.ts",
+      "packages/muya/src/inlineRenderer/renderer/highlight.ts",
+      "packages/muya/src/inlineRenderer/renderer/hr.ts",
+      "packages/muya/src/inlineRenderer/renderer/htmlEscape.ts",
+      "packages/muya/src/inlineRenderer/renderer/htmlRuby.ts",
+      "packages/muya/src/inlineRenderer/renderer/htmlTag.ts",
+      "packages/muya/src/inlineRenderer/renderer/image.ts",
+      "packages/muya/src/inlineRenderer/renderer/index.ts",
+      "packages/muya/src/inlineRenderer/renderer/inlineCode.ts",
+      "packages/muya/src/inlineRenderer/renderer/inlineMath.ts",
+      "packages/muya/src/inlineRenderer/renderer/link.ts",
+      "packages/muya/src/inlineRenderer/renderer/loadImageAsync.ts",
+      "packages/muya/src/inlineRenderer/renderer/multipleMath.ts",
+      "packages/muya/src/inlineRenderer/renderer/referenceDefinition.ts",
+      "packages/muya/src/inlineRenderer/renderer/referenceImage.ts",
+      "packages/muya/src/inlineRenderer/renderer/referenceLink.ts",
+      "packages/muya/src/inlineRenderer/renderer/softLineBreak.ts",
+      "packages/muya/src/inlineRenderer/renderer/strong.ts",
+      "packages/muya/src/inlineRenderer/renderer/superSubScript.ts",
+      "packages/muya/src/inlineRenderer/renderer/tailHeader.ts",
+      "packages/muya/src/inlineRenderer/renderer/text.ts",
+      "packages/muya/src/inlineRenderer/types.ts",
+      "packages/muya/src/inlineRenderer/utils.ts",
+      "packages/muya/src/muya.ts",
+      "packages/muya/src/search/index.ts",
+      "packages/muya/src/search/types.ts",
+      "packages/muya/src/selection/ImageSelection.ts",
+      "packages/muya/src/selection/TableRectSelection.ts",
+      "packages/muya/src/selection/TextSelection.ts",
+      "packages/muya/src/selection/affiliation.ts",
+      "packages/muya/src/selection/cursorCoords.ts",
+      "packages/muya/src/selection/dom.ts",
+      "packages/muya/src/selection/index.ts",
+      "packages/muya/src/selection/offsetCursor.ts",
+      "packages/muya/src/selection/types.ts",
+      "packages/muya/src/state/getTOC.ts",
+      "packages/muya/src/state/htmlToMarkdown.ts",
+      "packages/muya/src/state/index.ts",
+      "packages/muya/src/state/markdownToState.ts",
+      "packages/muya/src/state/stateToMarkdown.ts",
+      "packages/muya/src/ui/baseFloat/index.ts",
+      "packages/muya/src/ui/ui.ts",
+      "packages/muya/src/utils/dom.ts",
+      "packages/muya/src/utils/highlightHTML.ts",
+      "packages/muya/src/utils/image.ts",
+      "packages/muya/src/utils/index.ts",
+      "packages/muya/src/utils/paste.ts",
+      "packages/muya/src/utils/search.ts",
+      "packages/muya/src/utils/turndownService/index.ts"
+     ],
+     "languages": {
+      "typescript": 630713,
+      "javascript": 199166,
+      "vue": 96706
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 6 files over 12k; 68% of code is typed (< 70%))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "packages/desktop/test/e2e/all-blocks-roundtrip.spec.ts",
+          "detail": "590 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/build.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/claude.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/e2e.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/lint.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/muya-build.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/muya-circular.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/muya-e2e.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/muya-lint.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/muya-spec.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/muya-test.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/test.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/validate-licenses.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/website-deploy.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "99% of modules fit 32k tokens; 6 files over 12k; 68% of code is typed (< 70%)"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "4 import cycles (largest: packages/muya/src/block/base/content.ts, packages/muya/src/block/base/format.ts, packages/muya/src/block/base/parent.ts)"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 2.25,
+   "assessed_dimensions": 8,
+   "not_applicable": [
+    "events",
+    "portability"
+   ],
+   "retrofit_person_days": 26.1,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 3.9,
+    "identity": 0.0,
+    "ergonomics": 2.9,
+    "embeddability": 0.0,
+    "extensibility": 11.6,
+    "observability": 0.0,
+    "legibility": 7.7
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 1.93,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 99.03,
+   "classic": {
+    "person_months": 299.05,
+    "schedule_months": 21.8,
+    "cost": 3366498
+   },
+   "capture": {
+    "tests": 1.0,
+    "contract": 1.0,
+    "docs": 0.62,
+    "capture": 0.9
+   },
+   "agent_factor": 0.14,
+   "reproduce_pm": 43.36,
+   "history": {
+    "commits": 2207,
+    "fix_commits": 1003,
+    "authors": 211,
+    "age_months": 106.8,
+    "months_since_last": 0.0
+   },
+   "knowledge_pm": 31.1,
+   "rediscover_pm": 3.11,
+   "replacement_pm": 46.47,
+   "leverage": 1.03,
+   "obsolescence": 0.95,
+   "value_pm": 45.53,
+   "value_cost": 512520,
+   "knowledge_at_risk": 0.07,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 101.7724,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 27160.1,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 5023919,
+     "input": 125597975,
+     "cached_input": 106758278
+    },
+    "final_tokens": 1674639,
+    "model_cost": 197.19,
+    "agent_hours": 55.82,
+    "human_days": 105.5,
+    "review_days": 40.19,
+    "rediscover_days": 65.31,
+    "calendar_days": 105.5,
+    "build_cost": 56750.94,
+    "yearly_cost": 8512.64,
+    "total_cost": 82288.86
+   },
+   "buy": {
+    "via": {
+     "install": "desktop",
+     "use": "library"
+    },
+    "adoption_minutes": {
+     "install": 2,
+     "first_use": 2.0,
+     "total": 4.0
+    },
+    "tokens": {
+     "output": 500,
+     "input": 12500,
+     "cached_input": 10625
+    },
+    "model_cost": 0.02,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 4.49,
+    "yearly_cost": 268.02,
+    "total_cost": 808.56
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

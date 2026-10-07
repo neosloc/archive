@@ -1,2 +1,2 @@
-neosloc==0.7.1
+neosloc==0.7.3
 jsonschema>=4

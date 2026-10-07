@@ -1,9 +1,13 @@
 name: request
 
-# Handles "Evaluate a repository" issues: validates the URL, adds it to
-# targets.txt, evaluates it, comments with the link and closes the issue.
-# Issues from members run right away; others when a maintainer adds `approved`.
-# The issue body is untrusted: it reaches the scripts only through env vars.
+# Responds to new issues: if the title or body contains a repository URL, the
+# repository is evaluated with neosloc, the report is stored (and added to
+# targets.txt for weekly re-evaluation), and the issue gets the summary as a
+# reply and is closed. Issues without a URL are left alone.
+#
+# Guard rails, since anyone can open an issue: GitHub repositories over
+# MAX_MB wait for a maintainer to add the `approved` label; the URL must match
+# a strict pattern; the issue text reaches the scripts only through env vars.
 
 on:
   issues:
@@ -17,60 +21,83 @@ concurrency:
   group: archive-data
   cancel-in-progress: false
 
+env:
+  MAX_MB: "500"
+
 jobs:
   evaluate:
-    if: >-
-      contains(github.event.issue.labels.*.name, 'evaluate') && (
-        (github.event.action == 'opened' && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)) ||
-        (github.event.action == 'labeled' && github.event.label.name == 'approved'))
+    if: github.event.action == 'opened' || github.event.label.name == 'approved'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 45
     outputs:
       evaluated: ${{ steps.eval.outputs.evaluated }}
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-      - run: pip install -r requirements.txt
-      - name: Read the requested URL
+      - name: Find a repository URL in the issue
         id: url
         env:
+          TITLE: ${{ github.event.issue.title }}
           BODY: ${{ github.event.issue.body }}
         run: |
-          python - <<'PY' >> "$GITHUB_OUTPUT"
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import os, re
-          m = re.search(r"https://[^\s)>\]]+", os.environ.get("BODY", ""))
-          print("url=" + (m.group(0) if m else ""))
+          text = os.environ.get("TITLE", "") + "\n" + os.environ.get("BODY", "")
+          m = re.search(r"https://(?:github\.com|gitlab\.com|codeberg\.org|bitbucket\.org)/[\w.-]+/[\w.-]+", text)
+          print("url=" + (m.group(0).rstrip(".") if m else ""))
           PY
+      - uses: actions/checkout@v7
+        if: steps.url.outputs.url != ''
+      - uses: actions/setup-python@v6
+        if: steps.url.outputs.url != ''
+        with:
+          python-version: "3.12"
+      - if: steps.url.outputs.url != ''
+        run: pip install -r requirements.txt
       - name: Add and evaluate
         id: eval
+        if: steps.url.outputs.url != ''
         env:
           URL: ${{ steps.url.outputs.url }}
+          APPROVED: ${{ github.event.label.name == 'approved' }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          slug=$(python archive.py add "$URL") || { echo "evaluated=" >> "$GITHUB_OUTPUT"; exit 0; }
+          limit="$MAX_MB"; if [ "$APPROVED" = "true" ]; then limit=0; fi
+          set +e
+          slug=$(python archive.py add "$URL" --max-mb "$limit"); status=$?
+          set -e
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          if [ "$status" -ne 0 ]; then exit 0; fi
           python archive.py evaluate --only "$URL"
           echo "evaluated=$slug" >> "$GITHUB_OUTPUT"
-      - name: Commit
+      - name: Store the report
         if: steps.eval.outputs.evaluated != ''
+        env:
+          SLUG: ${{ steps.eval.outputs.evaluated }}
+          ISSUE: ${{ github.event.issue.number }}
         run: |
           git config user.name "neosloc-archive[bot]"
           git config user.email "neosloc-archive@users.noreply.github.com"
           git add targets.txt data static/reports content/repos
-          git diff --cached --quiet || git commit -m "Evaluate ${{ steps.eval.outputs.evaluated }} (#${{ github.event.issue.number }})"
+          git diff --cached --quiet || git commit -m "Evaluate $SLUG (#$ISSUE)"
           git pull --rebase --quiet origin main
           git push
       - name: Reply
+        if: steps.url.outputs.url != ''
         env:
           GH_TOKEN: ${{ github.token }}
           SLUG: ${{ steps.eval.outputs.evaluated }}
+          STATUS: ${{ steps.eval.outputs.status }}
           ISSUE: ${{ github.event.issue.number }}
         run: |
           if [ -n "$SLUG" ]; then
-            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "Evaluated. The report will be at https://neosloc.github.io/archive/repos/$SLUG/ in a few minutes."
-            gh issue close "$ISSUE" --repo "$GITHUB_REPOSITORY"
+            python archive.py summary "$SLUG" > reply.md
+            printf '\n\nThe page will be live in a few minutes. The repository is now re-evaluated weekly.\n' >> reply.md
+            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body-file reply.md
+            gh issue close "$ISSUE" --repo "$GITHUB_REPOSITORY" --reason completed
+          elif [ "$STATUS" = "4" ]; then
+            gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" --add-label needs-approval
+            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "This repository is over ${MAX_MB} MB, so it waits for a maintainer to add the \`approved\` label before it's evaluated."
           else
-            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "I couldn't use that URL: it must be a reachable public repository like https://github.com/OWNER/REPO."
+            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "I couldn't evaluate that URL: it must be a reachable public repository such as https://github.com/OWNER/REPO."
           fi
 
   site:
