@@ -71,3 +71,4 @@ https://github.com/jqlang/jq
 https://github.com/sinatra/sinatra
 https://github.com/slimphp/Slim
 https://github.com/ShareX/ShareX
+https://github.com/sindresorhus/ky
