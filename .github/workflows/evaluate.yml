@@ -1,0 +1,64 @@
+name: evaluate
+
+# Re-evaluates the targets weekly, when targets.txt or the neosloc pin changes,
+# or on demand, commits the reports, and redeploys the site.
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  push:
+    branches: [main]
+    paths: [targets.txt, requirements.txt, archive.py]
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "Evaluate only this repository URL (default: all targets)"
+        required: false
+      force:
+        description: "Re-evaluate even if commit and neosloc version are unchanged"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-data
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Evaluate
+        env:
+          REPO: ${{ inputs.repo }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          args=()
+          if [ -n "$REPO" ]; then args+=(--only "$REPO"); fi
+          if [ "$FORCE" = "true" ]; then args+=(--force); fi
+          python archive.py evaluate "${args[@]}"
+      - name: Commit reports
+        run: |
+          git config user.name "neosloc-archive[bot]"
+          git config user.email "neosloc-archive@users.noreply.github.com"
+          git add data static/reports content/repos
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Evaluate repositories ($(date -u +%Y-%m-%d))"
+          git pull --rebase --quiet origin main
+          git push
+
+  site:
+    needs: evaluate
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/site.yml

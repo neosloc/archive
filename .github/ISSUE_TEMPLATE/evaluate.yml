@@ -1,0 +1,19 @@
+name: Evaluate a repository
+description: Add a public repository to the neosloc archive.
+title: "Evaluate: "
+labels: [evaluate]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The repository is cloned and analysed with [neosloc](https://neosloc.github.io/neosloc/); its code is
+        only read, never executed. Requests from members of the organization run immediately; others run once a
+        maintainer adds the `approved` label.
+  - type: input
+    id: url
+    attributes:
+      label: Repository URL
+      description: "https://github.com/OWNER/REPO (GitHub, GitLab, Codeberg or Bitbucket)"
+      placeholder: https://github.com/OWNER/REPO
+    validations:
+      required: true

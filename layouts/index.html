@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="intro">
+  <h1>Repositories</h1>
+  <p>{{ site.Params.description }} Each row shows the ten dimensions as a strip (interface first,
+    change legibility last); hover a cell for its name and level. <a href="{{ "about/" | relURL }}">How to read it.</a></p>
+</section>
+{{ $repos := where site.RegularPages "Section" "repos" }}
+<div class="tablewrap">
+<table class="repos">
+  <thead><tr>
+    <th>Repository</th><th>Surfaces</th><th>Dimensions</th><th class="num">Index</th><th>Make or buy</th><th>Evaluated</th>
+  </tr></thead>
+  <tbody>
+  {{ range sort $repos ".Params.index" "desc" }}
+    {{ $r := index site.Data.reports .Params.slug }}
+    <tr>
+      <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+      <td class="muted">{{ delimit (.Params.surfaces | default (slice "none")) ", " }}</td>
+      <td>{{ partial "levels.html" $r.report.dimensions }}</td>
+      <td class="num"><strong>{{ printf "%.2f" .Params.index }}</strong> <span class="muted">/{{ .Params.assessed }}</span></td>
+      <td>{{ partial "verdict.html" .Params }}</td>
+      <td class="muted">{{ .Date.Format "2006-01-02" }}</td>
+    </tr>
+  {{ end }}
+  </tbody>
+</table>
+</div>
+<p class="muted small">{{ len $repos }} repositories · index = mean level over the applicable dimensions (the number after the slash).</p>
+{{ end }}

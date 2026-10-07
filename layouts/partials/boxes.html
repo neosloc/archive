@@ -1,0 +1,2 @@
+{{- /* ■■□□ for one level (0..4) */ -}}
+<span class="boxes">{{ range seq 4 }}<span class="{{ if le . $ }}on{{ else }}off{{ end }}"></span>{{ end }}</span>

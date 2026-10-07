@@ -1,0 +1,1344 @@
+{
+ "meta": {
+  "name": "neosloc/neosloc",
+  "url": "https://github.com/neosloc/neosloc",
+  "slug": "neosloc-neosloc",
+  "host": "github.com",
+  "commit": "161ea8761e1f350faef71e5be08723e5df0450f6",
+  "committed_at": "2026-10-07T13:51:59+02:00",
+  "evaluated_at": "2026-10-07T12:50:51+00:00",
+  "neosloc": "0.7.1"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/neosloc/neosloc",
+  "inventory": {
+   "files": 63,
+   "source_files": 27,
+   "source_tokens": 62205,
+   "languages": {
+    "python": 62205
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "cli",
+    "library"
+   ],
+   "evidence": {
+    "cli": [
+     {
+      "path": "pyproject.toml",
+      "detail": "console script"
+     },
+     {
+      "path": "neosloc/cli.py",
+      "detail": "1 match"
+     }
+    ],
+    "library": [
+     {
+      "path": "pyproject.toml",
+      "detail": "Python package neosloc"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": [
+    {
+     "path": "neosloc/agentic/llm.py",
+     "detail": "1 match"
+    },
+    {
+     "path": "neosloc/cli.py",
+     "detail": "1 match"
+    }
+   ]
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 4,
+    "rationale": "[cli] The output format is specified by a JSON Schema.",
+    "evidence": [
+     {
+      "signal": "L1 non-interactive",
+      "detail": "no interactive prompts",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 help",
+      "detail": "options with help text",
+      "path": "neosloc/cli.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 machine-output",
+      "detail": "2 matches",
+      "path": "neosloc/cli.py",
+      "weight": 1
+     },
+     {
+      "signal": "L4 output-schema",
+      "detail": "2 matches",
+      "path": "neosloc/schema.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[library] L2 The public API is delimited (__all__, an exports map, exported identifiers). (no __all__/exports defining the public API)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "cli",
+    "surfaces": {
+     "cli": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "non-interactive",
+        "text": "Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "help",
+        "text": "--help documents every option (at least 90% of options have help text).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/cli.py",
+          "detail": "options with help text"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "machine-output",
+        "text": "Machine-readable output (--json/--format) and documented exit statuses.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/cli.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "docs/json.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "neosloc/cli.py",
+          "detail": "help text"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "output-schema",
+        "text": "The output format is specified by a JSON Schema.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/schema.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "library": {
+      "level": 1,
+      "first_missing": "public-api",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "Python package neosloc"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": false,
+        "evidence": [],
+        "note": "no __all__/exports defining the public API"
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": false,
+        "evidence": [],
+        "note": "no py.typed or type declarations"
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no generated API reference"
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 2,
+    "rationale": "A changelog exists and marks breaking changes.",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "8 semver tags, latest v0.7.1",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 changelog",
+      "detail": "marks breaking changes",
+      "path": "CHANGELOG.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L3 A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned. (no deprecation mechanism or API versioning)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "deprecation",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "8 semver tags, latest v0.7.1"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "CHANGELOG.md",
+          "detail": "marks breaking changes"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": false,
+        "evidence": [],
+        "note": "no deprecation mechanism or API versioning"
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "8 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": null,
+    "rationale": "Not applicable: no service and no long-running CLI mode (batch CLIs, libraries and desktop apps have no events).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 3,
+    "rationale": "[library] No output or log statement includes a credential.",
+    "evidence": [
+     {
+      "signal": "L1 credentials-env",
+      "detail": "1 match",
+      "path": "neosloc/agentic/llm.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 credentials-documented",
+      "detail": "1 match",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 secrets-not-logged",
+      "detail": "no credential in print/log statements",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[cli] L2 Credentials never need to be on the command line, and their environment variables are documented. (--auth-header takes a secret on the command line (visible in shell history and ps))",
+     "[library] L4 Several profiles or scoped credentials per target. (no credential profiles)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "library",
+    "surfaces": {
+     "cli": {
+      "level": 1,
+      "first_missing": "credentials-off-cli",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credentials-env",
+        "text": "Credentials can be supplied non-interactively (environment variables).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/agentic/llm.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "credentials-off-cli",
+        "text": "Credentials never need to be on the command line, and their environment variables are documented.",
+        "met": false,
+        "evidence": [],
+        "note": "--auth-header takes a secret on the command line (visible in shell history and ps)"
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "profiles",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credentials-env",
+        "text": "Credentials can be supplied non-interactively (environment variables).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/agentic/llm.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "credentials-documented",
+        "text": "The credential environment variables are documented.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs/evaluators.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs/getting-started.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs/openrouter.md",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 3,
+    "rationale": "[cli] Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+    "evidence": [
+     {
+      "signal": "L1 never-blocks",
+      "detail": "no interactive prompts",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 streams-and-status",
+      "detail": "11 matches",
+      "path": "neosloc/log.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed-failures",
+      "detail": "1 match",
+      "path": "docs/json.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[cli] L4 --dry-run, limits for long or costly operations (timeouts, budgets), and agent docs. (no --dry-run)",
+     "[library] L4 Agent docs, and examples that run as tests (doctests). (examples don't run as tests)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "cli",
+    "surfaces": {
+     "cli": {
+      "level": 3,
+      "first_missing": "agent-ready",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "never-blocks",
+        "text": "Never blocks on a prompt when stdin is not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/log.py",
+          "detail": "11 matches"
+         },
+         {
+          "path": "neosloc/errors.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "neosloc/cli.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "neosloc/agentic/runner.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "neosloc/schema.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "neosloc/value.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs/json.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "neosloc/cli.py",
+          "detail": "help text"
+         },
+         {
+          "path": null,
+          "detail": "3 documented exit statuses"
+         },
+         {
+          "path": "neosloc/cli.py",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no colored output"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no --dry-run"
+       }
+      ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "agent-ready",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/errors.py",
+          "detail": "5 matches"
+         },
+         {
+          "path": "neosloc/agentic/llm.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "neosloc/agentic/workspace.py",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/agentic/llm.py",
+          "detail": "13 matches"
+         },
+         {
+          "path": "neosloc/agentic/workspace.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "neosloc/agentic/loop.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "neosloc/agentic/tasks.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/agentic/llm.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "neosloc/agentic/workspace.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "neosloc/agentic/llm.py",
+          "detail": "3 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "examples don't run as tests"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 4,
+    "rationale": "[library] Optional features behind extras/features.",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Python package neosloc",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "pyproject.toml",
+      "weight": 1
+     },
+     {
+      "signal": "L3 published-minimal",
+      "detail": "1 match",
+      "path": ".github/workflows/release.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L4 optional-features",
+      "detail": "1 match",
+      "path": "pyproject.toml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[cli] L4 Also shipped as a container image or a single binary. (no container image or binary)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "library",
+    "surfaces": {
+     "cli": {
+      "level": 3,
+      "first_missing": "container-or-binary",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "runnable",
+        "text": "Runnable from source (a declared entry point).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package that provides the command.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published",
+        "text": "Published to a public registry and run non-interactively in CI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/workflows/ci.yml",
+          "detail": "6 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "container-or-binary",
+        "text": "Also shipped as a container image or a single binary.",
+        "met": false,
+        "evidence": [],
+        "note": "no container image or binary"
+       }
+      ]
+     },
+     "library": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "Python package neosloc"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "0 runtime dependencies"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 2,
+    "rationale": "The docs show how to add behaviour through those seams (even in-tree).",
+    "evidence": [
+     {
+      "signal": "L1 seams",
+      "detail": "1 match",
+      "path": "neosloc/ladder.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 documented",
+      "detail": "3 matches",
+      "path": "docs/extending.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L3 Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package. (extensions must be added inside the package)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "out-of-tree",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/ladder.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docs/extending.md",
+          "detail": "3 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 3,
+    "rationale": "[cli] Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+    "evidence": [
+     {
+      "signal": "L1 exit-and-stderr",
+      "detail": "11 matches",
+      "path": "neosloc/log.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 verbosity",
+      "detail": "3 matches",
+      "path": "neosloc/cli.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 structured-diagnostics",
+      "detail": "1 match",
+      "path": "neosloc/cli.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[cli] L4 Tracing hooks (OpenTelemetry). (no tracing hooks)",
+     "[library] L2 Log levels are used meaningfully (at least two levels). (fewer than two log levels used)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "cli",
+    "surfaces": {
+     "cli": {
+      "level": 3,
+      "first_missing": "tracing",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "exit-and-stderr",
+        "text": "Meaningful exit statuses, and errors on stderr.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/log.py",
+          "detail": "11 matches"
+         },
+         {
+          "path": "neosloc/errors.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "neosloc/cli.py",
+          "detail": "6 matches"
+         },
+         {
+          "path": "neosloc/agentic/runner.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "neosloc/schema.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "neosloc/value.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/cli.py",
+          "detail": "3 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "structured-diagnostics",
+        "text": "Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/cli.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "neosloc/log.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing hooks (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing hooks"
+       }
+      ]
+     },
+     "library": {
+      "level": 1,
+      "first_missing": "log-levels",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "neosloc/log.py",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no print() in library code"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/ci.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 27,
+     "source_tokens": 62205,
+     "test_files": 10,
+     "test_tokens": 24811,
+     "test_ratio": 0.4,
+     "modules": 2,
+     "modules_within_budget": 0.5,
+     "oversized_files": [
+      "neosloc/facts.py"
+     ],
+     "largest_module": {
+      "path": "neosloc",
+      "tokens": 47130
+     },
+     "typed_ratio": 0.92,
+     "python_functions": 272,
+     "python_annotated": 251,
+     "import_edges": 62,
+     "import_graph": true,
+     "max_fan_out": 11,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "python": 62205
+     }
+    },
+    "gaps": [
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (50% of modules fit 32k tokens; 1 files over 12k)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 2,
+      "first_missing": "fits-and-verified",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "tests/test_agentic.py",
+          "detail": "10 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/ci.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/docs.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "50% of modules fit 32k tokens; 1 files over 12k"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "AGENTS.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 2.88,
+   "assessed_dimensions": 8,
+   "not_applicable": [
+    "events",
+    "portability"
+   ],
+   "retrofit_person_days": 3.5,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 0.5,
+    "identity": 0.0,
+    "ergonomics": 0.0,
+    "embeddability": 0.0,
+    "extensibility": 1.0,
+    "observability": 0.0,
+    "legibility": 2.0
+   },
+   "wrappability": "cheap to wrap",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.5,
+    "legibility_multiplier": 1.0,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 4.33,
+   "classic": {
+    "person_months": 11.18,
+    "schedule_months": 6.3,
+    "cost": 125910
+   },
+   "capture": {
+    "tests": 0.8,
+    "contract": 1.0,
+    "docs": 1.0,
+    "capture": 0.9
+   },
+   "agent_factor": 0.14,
+   "reproduce_pm": 1.62,
+   "history": {
+    "commits": 16,
+    "fix_commits": 0,
+    "authors": 1,
+    "age_months": 0.0,
+    "months_since_last": 0.0
+   },
+   "knowledge_pm": 0.08,
+   "rediscover_pm": 0.01,
+   "replacement_pm": 1.63,
+   "leverage": 1.11,
+   "obsolescence": 0.95,
+   "value_pm": 1.72,
+   "value_cost": 19336,
+   "knowledge_at_risk": 0.0,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 4.4722,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 469.21,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 262914,
+     "input": 6572850,
+     "cached_input": 5586922
+    },
+    "final_tokens": 87638,
+    "model_cost": 10.32,
+    "agent_hours": 2.92,
+    "human_days": 2.31,
+    "review_days": 2.1,
+    "rediscover_days": 0.21,
+    "calendar_days": 2.31,
+    "build_cost": 1250.37,
+    "yearly_cost": 187.55,
+    "total_cost": 1813.03
+   },
+   "buy": {
+    "via": {
+     "install": "library",
+     "use": "cli"
+    },
+    "adoption_minutes": {
+     "install": 1,
+     "first_use": 2.0,
+     "total": 3.0
+    },
+    "tokens": {
+     "output": 375,
+     "input": 9375,
+     "cached_input": 7968
+    },
+    "model_cost": 0.01,
+    "upgrade_minutes_per_year": 120,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 3.37,
+    "yearly_cost": 134.01,
+    "total_cost": 405.4
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

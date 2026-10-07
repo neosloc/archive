@@ -1,0 +1,10 @@
+{{- /* A strip of ten boxes, one per dimension: filled by level, hatched when n/a. */ -}}
+<span class="strip" aria-label="dimension levels">
+{{- range . -}}
+  {{- if eq .level nil -}}
+    <span class="cell na" title="{{ .title }}: n/a"></span>
+  {{- else -}}
+    <span class="cell l{{ .level }}" title="{{ .title }}: {{ .level }} ({{ .level_name }})"></span>
+  {{- end -}}
+{{- end -}}
+</span>

@@ -1,0 +1,1379 @@
+{
+ "meta": {
+  "name": "sirmmo/datapackage-pipelines",
+  "url": "https://github.com/sirmmo/datapackage-pipelines",
+  "slug": "sirmmo-datapackage-pipelines",
+  "host": "github.com",
+  "commit": "06c8ccbd44be420233b73563cfb5bd3eb37de7cc",
+  "committed_at": "2025-01-28T16:30:11+02:00",
+  "evaluated_at": "2026-10-07T12:51:03+00:00",
+  "neosloc": "0.7.1"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/sirmmo/datapackage-pipelines",
+  "inventory": {
+   "files": 193,
+   "source_files": 93,
+   "source_tokens": 46794,
+   "languages": {
+    "python": 45860,
+    "shell": 934
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service",
+    "cli"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "datapackage_pipelines/web/server.py",
+      "detail": "fastapi/flask: 9 route declarations"
+     },
+     {
+      "path": "datapackage_pipelines/web/server.py",
+      "detail": "1 match"
+     }
+    ],
+    "cli": [
+     {
+      "path": "setup.py",
+      "detail": "console script"
+     },
+     {
+      "path": "datapackage_pipelines/cli.py",
+      "detail": "1 match"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [
+    {
+     "path": "datapackage_pipelines/status/backend_sqlite.py",
+     "detail": "4 matches"
+    },
+    {
+     "path": "setup.py",
+     "detail": "1 match"
+    }
+   ],
+   "uses_credentials": [
+    {
+     "path": "datapackage_pipelines/web/server.py",
+     "detail": "2 matches"
+    }
+   ]
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 1,
+    "rationale": "[service] A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+    "evidence": [
+     {
+      "signal": "L1 routes",
+      "detail": "fastapi/flask: 9 route declarations",
+      "path": "datapackage_pipelines/web/server.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 9,
+     "routes_by_framework": {
+      "fastapi/flask": 9
+     },
+     "spec_files": 1,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "[service] L2 A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026). (no machine-readable contract)",
+     "[cli] L2 --help documents every option (at least 90% of options have help text). (3 of 7 options have help text)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "contract",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "datapackage_pipelines/web/server.py",
+          "detail": "fastapi/flask: 9 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable contract"
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": false,
+        "evidence": [],
+        "note": "no contract"
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": false,
+        "evidence": [],
+        "note": "only one programmatic surface"
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "help",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "non-interactive",
+        "text": "Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "help",
+        "text": "--help documents every option (at least 90% of options have help text).",
+        "met": false,
+        "evidence": [],
+        "note": "3 of 7 options have help text"
+       },
+       {
+        "level": 3,
+        "id": "machine-output",
+        "text": "Machine-readable output (--json/--format) and documented exit statuses.",
+        "met": false,
+        "evidence": [],
+        "note": "no --json/--format option"
+       },
+       {
+        "level": 4,
+        "id": "output-schema",
+        "text": "The output format is specified by a JSON Schema.",
+        "met": false,
+        "evidence": [],
+        "note": "no JSON Schema for the output"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 0,
+    "rationale": "Not yet: Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Releases are versioned (semver tags or versioned changelog sections). (no semver tags or versioned releases)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "versioned-releases",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": false,
+        "evidence": [],
+        "note": "no semver tags or versioned releases"
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "datapackage_pipelines/lib/add_metadata.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/dump/to_path.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/dump/to_sql.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/dump/to_zip.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two tagged releases to compare"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 1,
+    "rationale": "Internal events exist (signals, queues, an outbox, emitters).",
+    "evidence": [
+     {
+      "signal": "L1 internal-events",
+      "detail": "15 matches",
+      "path": "docker/run.sh",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket). (no outbound webhooks or streams)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "outbound",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docker/run.sh",
+          "detail": "15 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/celery_common.py",
+          "detail": "11 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/celery_app.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/celery_tasks.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "datapackage_pipelines/status/backend_sqlite.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "datapackage_pipelines/app.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "setup.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": false,
+        "evidence": [],
+        "note": "no outbound webhooks or streams"
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 3,
+    "rationale": "[cli] No output or log statement includes a credential.",
+    "evidence": [
+     {
+      "signal": "L1 credentials-env",
+      "detail": "2 matches",
+      "path": "datapackage_pipelines/web/server.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 credentials-off-cli",
+      "detail": "2 matches",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 secrets-not-logged",
+      "detail": "no credential in print/log statements",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 Programmatic authentication (bearer tokens, API keys). (no token auth)",
+     "[cli] L4 Several profiles or scoped credentials per target. (no credential profiles)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "token-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": false,
+        "evidence": [],
+        "note": "no token auth"
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": false,
+        "evidence": [],
+        "note": "no scopes or permissions"
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     },
+     "cli": {
+      "level": 3,
+      "first_missing": "profiles",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credentials-env",
+        "text": "Credentials can be supplied non-interactively (environment variables).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "datapackage_pipelines/web/server.py",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "credentials-off-cli",
+        "text": "Credentials never need to be on the command line, and their environment variables are documented.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": 0,
+    "rationale": "Not yet: The data schema is explicit (migrations, DDL, schema files).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 The data schema is explicit (migrations, DDL, schema files). (no migrations or schema files)"
+    ],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "schema",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "schema",
+        "text": "The data schema is explicit (migrations, DDL, schema files).",
+        "met": false,
+        "evidence": [],
+        "note": "no migrations or schema files"
+       },
+       {
+        "level": 2,
+        "id": "export",
+        "text": "An export exists (endpoint or command, not only the UI).",
+        "met": false,
+        "evidence": [],
+        "note": "no export"
+       },
+       {
+        "level": 3,
+        "id": "bulk-open",
+        "text": "A bulk export in an open format, and a bulk import.",
+        "met": false,
+        "evidence": [],
+        "note": "no import"
+       },
+       {
+        "level": 4,
+        "id": "documented-round-trip",
+        "text": "The export format is documented and the round trip is tested.",
+        "met": false,
+        "evidence": [],
+        "note": "the export format isn't documented"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 2,
+    "rationale": "[cli] Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+    "evidence": [
+     {
+      "signal": "L1 never-blocks",
+      "detail": "no interactive prompts",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 streams-and-status",
+      "detail": "19 matches",
+      "path": "datapackage_pipelines/manager/tasks.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE). (no machine-readable errors)",
+     "[cli] L3 Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY. (exit statuses aren't documented)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "json-errors",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable errors"
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "datapackage_pipelines/generators/generator_base.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "datapackage_pipelines/specs/schemas/validator.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "datapackage_pipelines/status/backend_sqlite.py",
+          "detail": "13 matches"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "typed-failures",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "never-blocks",
+        "text": "Never blocks on a prompt when stdin is not a TTY.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no interactive prompts"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "Data on stdout, diagnostics on stderr, non-zero exit on failure.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "datapackage_pipelines/manager/tasks.py",
+          "detail": "19 matches"
+         },
+         {
+          "path": "datapackage_pipelines/wrapper/wrapper.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/celery_tasks.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "datapackage_pipelines/wrapper/input_processor.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/stream_remote_resources.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "datapackage_pipelines/manager/logging_config.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/dump/dumper_base.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/internal/sink.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "datapackage_pipelines/status/pipeline_status.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/celery_app.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/dependency_manager.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/cli.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/manager/runner.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/status/hook_sender.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/utilities/dirtools.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/utilities/lib_test_helpers.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/dump/file_formats.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/lib/load_resource.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/specs/resolver.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/status/backend_redis.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/web/server.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/cli.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/wrapper/wrapper.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+        "met": false,
+        "evidence": [],
+        "note": "exit statuses aren't documented"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no --dry-run"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 2,
+    "rationale": "[cli] Installable as a package that provides the command.",
+    "evidence": [
+     {
+      "signal": "L1 runnable",
+      "detail": "console script",
+      "path": "setup.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "console script",
+      "path": "setup.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (the environment variables aren't documented)",
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (not published to a registry)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "env-config",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": false,
+        "evidence": [],
+        "note": "the environment variables aren't documented"
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "Dockerfile",
+          "detail": ""
+         },
+         {
+          "path": "Dockerfile.slim",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": false,
+        "evidence": [],
+        "note": "no compose/Helm/IaC"
+       }
+      ]
+     },
+     "cli": {
+      "level": 2,
+      "first_missing": "published",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "runnable",
+        "text": "Runnable from source (a declared entry point).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.py",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package that provides the command.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "setup.py",
+          "detail": "console script"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published",
+        "text": "Published to a public registry and run non-interactively in CI.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "container-or-binary",
+        "text": "Also shipped as a container image or a single binary.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "Dockerfile",
+          "detail": ""
+         },
+         {
+          "path": "Dockerfile.slim",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 1,
+    "rationale": "Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [
+     {
+      "signal": "L1 seams",
+      "detail": "1 match",
+      "path": "datapackage_pipelines/specs/specs.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 The docs show how to add behaviour through those seams (even in-tree). (the docs don't show how to use register_all_pipelines)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "documented",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "datapackage_pipelines/specs/specs.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "the docs don't show how to use register_all_pipelines"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 1,
+    "rationale": "[cli] Meaningful exit statuses, and errors on stderr.",
+    "evidence": [
+     {
+      "signal": "L1 exit-and-stderr",
+      "detail": "19 matches",
+      "path": "datapackage_pipelines/manager/tasks.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
+     "[cli] L2 Verbosity control for diagnostics (--quiet, --log-level, --debug). (no --quiet or log-level control)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "cli",
+    "surfaces": {
+     "service": {
+      "level": 0,
+      "first_missing": "health",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": false,
+        "evidence": [],
+        "note": "no health endpoint or healthcheck"
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     },
+     "cli": {
+      "level": 1,
+      "first_missing": "verbosity",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "exit-and-stderr",
+        "text": "Meaningful exit statuses, and errors on stderr.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "datapackage_pipelines/manager/tasks.py",
+          "detail": "19 matches"
+         },
+         {
+          "path": "datapackage_pipelines/wrapper/wrapper.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/celery_tasks.py",
+          "detail": "9 matches"
+         },
+         {
+          "path": "datapackage_pipelines/wrapper/input_processor.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/stream_remote_resources.py",
+          "detail": "7 matches"
+         },
+         {
+          "path": "datapackage_pipelines/manager/logging_config.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/dump/dumper_base.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/internal/sink.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "datapackage_pipelines/status/pipeline_status.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/celery_app.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/celery_tasks/dependency_manager.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/cli.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/manager/runner.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/status/hook_sender.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/utilities/dirtools.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/utilities/lib_test_helpers.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "datapackage_pipelines/lib/dump/file_formats.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/lib/load_resource.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/specs/resolver.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/status/backend_redis.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/web/server.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/cli.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "datapackage_pipelines/wrapper/wrapper.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
+        "met": false,
+        "evidence": [],
+        "note": "no --quiet or log-level control"
+       },
+       {
+        "level": 3,
+        "id": "structured-diagnostics",
+        "text": "Structured logs (e.g. --log-format json) or a machine-readable run summary.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured diagnostics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing hooks (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing hooks"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 1,
+    "rationale": "A README and some tests.",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 93,
+     "source_tokens": 46794,
+     "test_files": 20,
+     "test_tokens": 3423,
+     "test_ratio": 0.07,
+     "modules": 18,
+     "modules_within_budget": 1.0,
+     "oversized_files": [],
+     "largest_module": {
+      "path": "datapackage_pipelines/utilities",
+      "tokens": 7409
+     },
+     "typed_ratio": 0.04,
+     "python_functions": 367,
+     "python_annotated": 16,
+     "import_edges": 154,
+     "import_graph": true,
+     "max_fan_out": 8,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "python": 45860,
+      "shell": 934
+     }
+    },
+    "gaps": [
+     "L2 CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt). (no lockfile (applications should pin dependencies))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "ci-pinned",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "tests/cli/custom_formatters/xlsx_format.py",
+          "detail": "20 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": false,
+        "evidence": [],
+        "note": "no lockfile (applications should pin dependencies)"
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "test/source token ratio 0.07 < 0.3; 4% of code is typed (< 70%)"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.2,
+   "assessed_dimensions": 10,
+   "not_applicable": [],
+   "retrofit_person_days": 26.0,
+   "retrofit_by_dimension": {
+    "interface": 4.8,
+    "stability": 2.4,
+    "events": 3.2,
+    "identity": 0.0,
+    "portability": 4.8,
+    "ergonomics": 1.2,
+    "embeddability": 0.8,
+    "extensibility": 3.2,
+    "observability": 1.6,
+    "legibility": 4.0
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.5,
+    "legibility_multiplier": 1.6,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 4.56,
+   "classic": {
+    "person_months": 11.8,
+    "schedule_months": 6.4,
+    "cost": 132787
+   },
+   "capture": {
+    "tests": 0.14,
+    "contract": 0.25,
+    "docs": 1.0,
+    "capture": 0.38
+   },
+   "agent_factor": 0.38,
+   "reproduce_pm": 4.47,
+   "history": {
+    "commits": 474,
+    "fix_commits": 102,
+    "authors": 19,
+    "age_months": 100.9,
+    "months_since_last": 20.3
+   },
+   "knowledge_pm": 4.41,
+   "rediscover_pm": 2.73,
+   "replacement_pm": 7.2,
+   "leverage": 0.9,
+   "obsolescence": 0.77,
+   "value_pm": 4.96,
+   "value_cost": 55841,
+   "knowledge_at_risk": 0.38,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 24.7027,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 14965.62,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 191200,
+     "input": 4780000,
+     "cached_input": 4063000
+    },
+    "final_tokens": 63733,
+    "model_cost": 7.5,
+    "agent_hours": 2.12,
+    "human_days": 60.19,
+    "review_days": 2.86,
+    "rediscover_days": 57.33,
+    "calendar_days": 60.19,
+    "build_cost": 32269.67,
+    "yearly_cost": 4840.45,
+    "total_cost": 46791.02
+   },
+   "buy": {
+    "via": {
+     "install": "cli",
+     "use": "service"
+    },
+    "adoption_minutes": {
+     "install": 15,
+     "first_use": 240.0,
+     "total": 255.0
+    },
+    "tokens": {
+     "output": 31875,
+     "input": 796875,
+     "cached_input": 677343
+    },
+    "model_cost": 1.25,
+    "upgrade_minutes_per_year": 480,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 286.03,
+    "yearly_cost": 536.05,
+    "total_cost": 1894.17
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

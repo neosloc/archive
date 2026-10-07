@@ -1,0 +1,763 @@
+{
+ "meta": {
+  "name": "ohm-geocontext/geocontext-app",
+  "url": "https://github.com/ohm-geocontext/geocontext-app",
+  "slug": "ohm-geocontext-geocontext-app",
+  "host": "github.com",
+  "commit": "b2551339fdc62e96aa28c24891e2dfe4af7f7075",
+  "committed_at": "2026-05-20T15:50:04+02:00",
+  "evaluated_at": "2026-10-07T12:51:15+00:00",
+  "neosloc": "0.7.1"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/ohm-geocontext/geocontext-app",
+  "inventory": {
+   "files": 63,
+   "source_files": 28,
+   "source_tokens": 57302,
+   "languages": {
+    "svelte": 30251,
+    "rust": 19990,
+    "typescript": 6962,
+    "javascript": 99
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "desktop"
+   ],
+   "evidence": {
+    "desktop": [
+     {
+      "path": "src-tauri/tauri.conf.json",
+      "detail": "Tauri"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": []
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 0,
+    "rationale": "Not yet: Launchable by other programs with input: command-line arguments, a URL scheme or file associations.",
+    "evidence": [],
+    "metrics": {
+     "route_declarations": 0,
+     "routes_by_framework": {},
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "L1 Launchable by other programs with input: command-line arguments, a URL scheme or file associations. (no arguments, URL scheme or file associations)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 0,
+      "first_missing": "launch",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "launch",
+        "text": "Launchable by other programs with input: command-line arguments, a URL scheme or file associations.",
+        "met": false,
+        "evidence": [],
+        "note": "no arguments, URL scheme or file associations"
+       },
+       {
+        "level": 2,
+        "id": "automation",
+        "text": "An automation interface: AppleScript, App Intents/Shortcuts, D-Bus, COM, IPC commands, or a local API.",
+        "met": false,
+        "evidence": [],
+        "note": "no automation interface"
+       },
+       {
+        "level": 3,
+        "id": "headless",
+        "text": "Its functions run without the GUI (a headless/batch mode or a companion CLI).",
+        "met": false,
+        "evidence": [],
+        "note": "nothing runs without the GUI"
+       },
+       {
+        "level": 4,
+        "id": "automation-contract",
+        "text": "The automation interface is specified machine-readably (an AppleScript sdef, D-Bus introspection XML, App Intents, an OpenAPI spec, MCP).",
+        "met": false,
+        "evidence": [],
+        "note": "no machine-readable automation contract"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "16 semver tags, latest v0.9.3",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "16 semver tags, latest v0.9.3"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": false,
+        "evidence": [],
+        "note": "no deprecation mechanism or API versioning"
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "16 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": null,
+    "rationale": "Not applicable: no service and no long-running CLI mode (batch CLIs, libraries and desktop apps have no events).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 1,
+    "rationale": "Credentials are kept in the OS credential store (Keychain, Credential Manager, Secret Service), not in plain files.",
+    "evidence": [
+     {
+      "signal": "L1 credential-store",
+      "detail": "8 matches",
+      "path": "src-tauri/src/git.rs",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Automation and headless runs can authenticate without the GUI (credentials from the environment). (only the GUI can authenticate)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 1,
+      "first_missing": "automation-auth",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credential-store",
+        "text": "Credentials are kept in the OS credential store (Keychain, Credential Manager, Secret Service), not in plain files.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src-tauri/src/git.rs",
+          "detail": "8 matches"
+         },
+         {
+          "path": "src-tauri/Cargo.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "automation-auth",
+        "text": "Automation and headless runs can authenticate without the GUI (credentials from the environment).",
+        "met": false,
+        "evidence": [],
+        "note": "only the GUI can authenticate"
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 0,
+    "rationale": "Not yet: In headless mode, failures end with a non-zero exit status instead of a dialog.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 In headless mode, failures end with a non-zero exit status instead of a dialog. (no headless mode for automated callers)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 0,
+      "first_missing": "headless-failures",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "headless-failures",
+        "text": "In headless mode, failures end with a non-zero exit status instead of a dialog.",
+        "met": false,
+        "evidence": [],
+        "note": "no headless mode for automated callers"
+       },
+       {
+        "level": 2,
+        "id": "streams-and-status",
+        "text": "In headless mode, data goes to stdout and diagnostics to stderr.",
+        "met": false,
+        "evidence": [],
+        "note": "no headless mode for automated callers"
+       },
+       {
+        "level": 3,
+        "id": "typed-failures",
+        "text": "Documented exit statuses distinguish error classes, and headless output is machine-readable (JSON).",
+        "met": false,
+        "evidence": [],
+        "note": "no headless mode for automated callers"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run for side-effecting operations, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no headless mode for automated callers"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 3,
+    "rationale": "Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI.",
+    "evidence": [
+     {
+      "signal": "L1 build-documented",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installer",
+      "detail": "1 match",
+      "path": "src-tauri/tauri.conf.json",
+      "weight": 1
+     },
+     {
+      "signal": "L3 unattended-install",
+      "detail": "1 match",
+      "path": ".github/workflows/release.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L4 Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies. (settings only change through the GUI)"
+    ],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 3,
+      "first_missing": "managed-settings",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "build-documented",
+        "text": "Buildable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installer",
+        "text": "Packaged as an installer (dmg/pkg, MSI/MSIX, AppImage/Flatpak/Snap, electron-builder, Tauri bundle, PyInstaller).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "src-tauri/tauri.conf.json",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "unattended-install",
+        "text": "Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "managed-settings",
+        "text": "Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies.",
+        "met": false,
+        "evidence": [],
+        "note": "settings only change through the GUI"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 0,
+    "rationale": "Not yet: Writes logs through a standard logger (os_log/Logger, electron-log, logging, Qt categories).",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Writes logs through a standard logger (os_log/Logger, electron-log, logging, Qt categories). (no standard logging)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "desktop",
+    "surfaces": {
+     "desktop": {
+      "level": 0,
+      "first_missing": "logs",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "logs",
+        "text": "Writes logs through a standard logger (os_log/Logger, electron-log, logging, Qt categories).",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logging"
+       },
+       {
+        "level": 2,
+        "id": "verbosity",
+        "text": "Log verbosity can be raised for diagnosis (--verbose/--debug, a log-level setting).",
+        "met": false,
+        "evidence": [],
+        "note": "no verbosity control"
+       },
+       {
+        "level": 3,
+        "id": "crash-reports",
+        "text": "Crashes are reported (Sentry, Crashpad/Breakpad, Crashlytics, MetricKit).",
+        "met": false,
+        "evidence": [],
+        "note": "no crash reporting"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Tracing or metrics (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 0,
+    "rationale": "Not yet: A README and some tests.",
+    "evidence": [],
+    "metrics": {
+     "source_files": 28,
+     "source_tokens": 57302,
+     "test_files": 0,
+     "test_tokens": 0,
+     "test_ratio": 0.0,
+     "modules": 6,
+     "modules_within_budget": 1.0,
+     "oversized_files": [],
+     "largest_module": {
+      "path": "src/lib/components",
+      "tokens": 26910
+     },
+     "typed_ratio": 0.47,
+     "python_functions": 0,
+     "python_annotated": 0,
+     "import_edges": 2,
+     "import_graph": true,
+     "max_fan_out": 1,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "svelte": 30251,
+      "rust": 19990,
+      "typescript": 6962,
+      "javascript": 99
+     }
+    },
+    "gaps": [
+     "L1 A README and some tests. (no tests)"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "readme-tests",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": false,
+        "evidence": [],
+        "note": "no tests"
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/ci.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": ""
+         },
+         {
+          "path": "package-lock.json",
+          "detail": ""
+         },
+         {
+          "path": "src-tauri/Cargo.lock",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "test/source token ratio 0.00 < 0.3; 47% of code is typed (< 70%)"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 0.62,
+   "assessed_dimensions": 8,
+   "not_applicable": [
+    "events",
+    "portability"
+   ],
+   "retrofit_person_days": 41.6,
+   "retrofit_by_dimension": {
+    "interface": 11.2,
+    "stability": 2.5,
+    "identity": 5.0,
+    "ergonomics": 5.6,
+    "embeddability": 0.0,
+    "extensibility": 7.5,
+    "observability": 3.8,
+    "legibility": 6.0
+   },
+   "wrappability": "expensive retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.5,
+    "legibility_multiplier": 2.5,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 5.96,
+   "classic": {
+    "person_months": 15.65,
+    "schedule_months": 7.1,
+    "cost": 176149
+   },
+   "capture": {
+    "tests": 0.0,
+    "contract": 0.0,
+    "docs": 0.19,
+    "capture": 0.05
+   },
+   "agent_factor": 0.53,
+   "reproduce_pm": 8.25,
+   "history": {
+    "commits": 18,
+    "fix_commits": 1,
+    "authors": 1,
+    "age_months": 0.2,
+    "months_since_last": 4.6
+   },
+   "knowledge_pm": 0.11,
+   "rediscover_pm": 0.1,
+   "replacement_pm": 8.36,
+   "leverage": 0.83,
+   "obsolescence": 0.85,
+   "value_pm": 5.88,
+   "value_cost": 66234,
+   "knowledge_at_risk": 0.01,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 6.4656,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 1479.22,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 239808,
+     "input": 5995200,
+     "cached_input": 5095920
+    },
+    "final_tokens": 79936,
+    "model_cost": 9.41,
+    "agent_hours": 2.66,
+    "human_days": 6.74,
+    "review_days": 4.64,
+    "rediscover_days": 2.1,
+    "calendar_days": 6.74,
+    "build_cost": 3620.39,
+    "yearly_cost": 543.06,
+    "total_cost": 5249.57
+   },
+   "buy": {
+    "via": {
+     "install": "desktop",
+     "use": "desktop UI"
+    },
+    "adoption_minutes": {
+     "install": 2,
+     "first_use": 5,
+     "total": 7
+    },
+    "tokens": {
+     "output": 875,
+     "input": 21875,
+     "cached_input": 18593
+    },
+    "model_cost": 0.03,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 7.85,
+    "yearly_cost": 268.02,
+    "total_cost": 811.92
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

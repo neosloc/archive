@@ -1,0 +1,25 @@
+{
+ "entries": [
+  {
+   "evaluated_at": "2026-10-07T12:51:10+00:00",
+   "commit": "7244651fa10ee9ad83e848ad34cc3eb7f758a064",
+   "neosloc": "0.7.1",
+   "index": 1.29,
+   "assessed": 7,
+   "levels": {
+    "interface": 3,
+    "stability": 1,
+    "events": null,
+    "identity": null,
+    "portability": null,
+    "ergonomics": 0,
+    "embeddability": 2,
+    "extensibility": 1,
+    "observability": 0,
+    "legibility": 2
+   },
+   "verdict": "buy",
+   "make_buy_ratio": 9.7773
+  }
+ ]
+}

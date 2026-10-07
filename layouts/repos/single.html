@@ -1,0 +1,118 @@
+{{ define "main" }}
+{{ $doc := index site.Data.reports .Params.slug }}
+{{ $r := $doc.report }}{{ $m := $doc.meta }}
+{{ $hist := (index site.Data.history .Params.slug).entries }}
+{{ $blob := printf "%s/blob/%s/" $m.url $m.commit }}
+{{ if ne $m.host "github.com" }}{{ $blob = printf "%s/-/blob/%s/" $m.url $m.commit }}{{ end }}
+
+<section class="intro">
+  <p class="crumbs"><a href="{{ "" | relURL }}">Repositories</a> /</p>
+  <h1>{{ .Title }}</h1>
+  <p class="meta">
+    <a href="{{ $m.url }}">{{ $m.url }}</a> ·
+    commit <a href="{{ $m.url }}/commit/{{ $m.commit }}"><code>{{ substr $m.commit 0 12 }}</code></a> ·
+    evaluated {{ (time $m.evaluated_at).Format "2006-01-02" }} with neosloc {{ $m.neosloc }} ·
+    <a href="{{ printf "reports/%s.json" .Params.slug | relURL }}">JSON</a>
+  </p>
+</section>
+
+<section class="summary">
+  <div class="stat"><span class="big">{{ printf "%.2f" $r.estimate.integrability_index }}</span>
+    <span class="label">integrability index over {{ $r.estimate.assessed_dimensions }} applicable dimensions</span></div>
+  <div class="stat"><span class="big small-big">{{ delimit ($r.surfaces.kinds | default (slice "none")) ", " }}</span>
+    <span class="label">surfaces{{ with $r.surfaces }}{{ if .long_running }} · long-running{{ end }}{{ if .owns_data }} · owns data{{ end }}{{ if .uses_credentials }} · uses credentials{{ end }}{{ end }}</span></div>
+  {{ with $r.make_or_buy }}
+  <div class="stat"><span class="big">{{ partial "verdict.html" . }}</span>
+    <span class="label">make / buy = {{ printf "%.2f" .make_buy_ratio }} over {{ .horizon_years }} years</span></div>
+  {{ end }}
+</section>
+
+<h2>Dimensions</h2>
+<div class="dims">
+{{ range $r.dimensions }}
+  <details class="dim">
+    <summary>
+      <span class="dname">{{ .title }}</span>
+      {{ if eq .level nil }}<span class="na-label">n/a</span>{{ else }}{{ partial "boxes.html" .level }}<span class="lname">{{ .level }} {{ .level_name }}</span>{{ end }}
+      <span class="why">{{ .rationale }}</span>
+    </summary>
+    <div class="dbody">
+      <p class="question">{{ .question }}</p>
+      {{ with .gaps }}<ul class="gaps">{{ range . }}<li><strong>next:</strong> {{ . }}</li>{{ end }}</ul>{{ end }}
+      {{ range $surface, $ladder := .surfaces }}
+        <h4>{{ $surface }} ladder · level {{ $ladder.level }}</h4>
+        <ul class="ladder">
+        {{ range $ladder.requirements }}
+          <li class="{{ if .met }}met{{ else }}unmet{{ end }}">
+            <span class="tick">{{ if .met }}✓{{ else }}✗{{ end }}</span>
+            <span class="rl">L{{ .level }}</span>
+            <span>{{ .text }}
+              {{ if .met }}{{ range first 2 .evidence }}<span class="ev">{{ if .path }}<a href="{{ $blob }}{{ .path }}">{{ .path }}</a>{{ end }}{{ with .detail }} {{ . }}{{ end }}</span>{{ end }}
+              {{ else }}{{ with .note }}<span class="ev">{{ . }}</span>{{ end }}{{ end }}
+            </span>
+          </li>
+        {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+  </details>
+{{ end }}
+</div>
+
+{{ with $r.make_or_buy }}
+<h2>Make or buy</h2>
+{{ $mk := .make }}{{ $by := .buy }}
+<div class="cols">
+  <div class="card">
+    <h3>Make with agents</h3>
+    <p>{{ lang.FormatNumber 0 $mk.tokens.output }} output + {{ lang.FormatNumber 0 $mk.tokens.input }} input tokens
+      on <code>{{ $mk.model }}</code>{{ with $mk.model_cost }} ≈ ${{ printf "%.0f" . }}{{ end }}.</p>
+    <p>{{ printf "%.1f" $mk.agent_hours }} agent-hours · {{ printf "%.1f" $mk.human_days }} human days
+      ({{ printf "%.1f" $mk.review_days }} steering + {{ printf "%.1f" $mk.rediscover_days }} rediscovering history).</p>
+    <p class="cost">${{ lang.FormatNumber 0 $mk.total_cost }} over {{ $.Params.horizon | default 3 }} years</p>
+  </div>
+  <div class="card">
+    <h3>Buy (adopt as is)</h3>
+    <p>{{ printf "%.0f" $by.adoption_minutes.install }} min to running (via {{ $by.via.install | default "–" }}) +
+      {{ printf "%.0f" $by.adoption_minutes.first_use }} min to first use (via {{ $by.via.use | default "–" }}).</p>
+    <p>{{ $by.upgrade_minutes_per_year }} min/year of upgrades; price ${{ $by.price_per_year }}/year.</p>
+    <p class="cost">${{ lang.FormatNumber 0 $by.total_cost }} over {{ $.Params.horizon | default 3 }} years</p>
+  </div>
+</div>
+<p>{{ if le .break_even_price_per_year 0.0 }}Rebuilding wins even if the product is free.{{ else }}Buying wins below ${{ lang.FormatNumber 0 .break_even_price_per_year }} per year.{{ end }}
+  <a href="https://neosloc.github.io/neosloc/makebuy/">How this is estimated.</a></p>
+{{ end }}
+
+{{ with $r.value }}
+<h2>Value (neoCOCOMO)</h2>
+<div class="cols">
+  <div class="card"><h3>Classic COCOMO</h3><p>{{ .ksloc }} KSLOC → {{ printf "%.1f" .classic.person_months }} person-months, ${{ lang.FormatNumber 0 .classic.cost }}.</p></div>
+  <div class="card"><h3>Captured behaviour</h3><p>{{ printf "%.0f" (mul .capture.capture 100) }}% (tests {{ .capture.tests }}, contract {{ .capture.contract }}, docs {{ .capture.docs }}).</p></div>
+  <div class="card"><h3>History</h3><p>{{ .history.commits }} commits, {{ .history.fix_commits }} fixes, {{ .history.authors }} authors; {{ printf "%.0f" (mul .knowledge_at_risk 100) }}% of replacement cost lives only in code and history.</p></div>
+</div>
+{{ end }}
+
+{{ with $hist }}
+<h2>History</h2>
+{{ $n := len . }}{{ $w := 320.0 }}{{ $h := 48.0 }}
+<svg class="spark" viewBox="0 0 {{ $w }} {{ add $h 8 }}" width="{{ $w }}" height="{{ add $h 8 }}" role="img" aria-label="integrability index over time">
+  <line x1="0" y1="{{ add $h 4 }}" x2="{{ $w }}" y2="{{ add $h 4 }}" class="axis"/>
+  {{ $pts := slice }}
+  {{ range $i, $e := . }}
+    {{ $x := div $w 2 }}
+    {{ if gt $n 1 }}{{ $x = div (mul (float $i) $w) (float (sub $n 1)) }}{{ end }}
+    {{ $y := add 4 (sub $h (div (mul (float $e.index) $h) 4.0)) }}
+    {{ $pts = $pts | append (printf "%.1f,%.1f" $x $y) }}
+    <circle cx="{{ printf "%.1f" $x }}" cy="{{ printf "%.1f" $y }}" r="3"><title>{{ (time $e.evaluated_at).Format "2006-01-02" }}: {{ $e.index }}</title></circle>
+  {{ end }}
+  {{ if gt $n 1 }}<polyline points="{{ delimit $pts " " }}"/>{{ end }}
+</svg>
+<div class="tablewrap"><table class="hist">
+  <thead><tr><th>Evaluated</th><th>Commit</th><th>neosloc</th><th class="num">Index</th><th>Make or buy</th></tr></thead>
+  <tbody>{{ range sort . "evaluated_at" "desc" }}<tr>
+    <td>{{ (time .evaluated_at).Format "2006-01-02" }}</td><td><code>{{ substr .commit 0 12 }}</code></td>
+    <td>{{ .neosloc }}</td><td class="num">{{ printf "%.2f" .index }}</td><td>{{ partial "verdict.html" . }}</td>
+  </tr>{{ end }}</tbody>
+</table></div>
+{{ end }}
+{{ end }}

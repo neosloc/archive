@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+<link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="{{ "" | relURL }}">neo<span>sloc</span> archive</a>
+  <nav>
+    <a href="{{ "" | relURL }}">Repositories</a>
+    <a href="{{ "about/" | relURL }}">About</a>
+    <a href="{{ site.Params.docs }}">Docs</a>
+    <a href="{{ site.Params.repo }}">GitHub</a>
+  </nav>
+</header>
+<main>
+{{ block "main" . }}{{ end }}
+</main>
+<footer>Assessed with <a href="{{ site.Params.docs }}">neosloc</a>. Scores are uncalibrated rankings;
+read the evidence. <a href="https://neosloc.github.io/">neosloc.github.io</a></footer>
+</body>
+</html>

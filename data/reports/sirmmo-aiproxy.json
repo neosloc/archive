@@ -1,0 +1,965 @@
+{
+ "meta": {
+  "name": "sirmmo/aiproxy",
+  "url": "https://github.com/sirmmo/aiproxy",
+  "slug": "sirmmo-aiproxy",
+  "host": "github.com",
+  "commit": "b002c6eb98f47a896a06be37b44559204c899aa1",
+  "committed_at": "2026-09-15T19:39:01+02:00",
+  "evaluated_at": "2026-10-07T12:50:56+00:00",
+  "neosloc": "0.7.1"
+ },
+ "report": {
+  "schema_version": 2,
+  "target": "https://github.com/sirmmo/aiproxy",
+  "inventory": {
+   "files": 61,
+   "source_files": 22,
+   "source_tokens": 26412,
+   "languages": {
+    "python": 26412
+   },
+   "git": true
+  },
+  "surfaces": {
+   "kinds": [
+    "service"
+   ],
+   "evidence": {
+    "service": [
+     {
+      "path": "app/routes/admin.py",
+      "detail": "fastapi/flask: 15 route declarations"
+     },
+     {
+      "path": "app/main.py",
+      "detail": "1 match"
+     }
+    ]
+   },
+   "long_running": [],
+   "owns_data": [],
+   "uses_credentials": [
+    {
+     "path": "app/auth.py",
+     "detail": "1 match"
+    },
+    {
+     "path": "evals/two_model_ontorag/judge.py",
+     "detail": "1 match"
+    }
+   ]
+  },
+  "dimensions": [
+   {
+    "key": "interface",
+    "title": "Interface surface",
+    "level": 3,
+    "rationale": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+    "evidence": [
+     {
+      "signal": "L1 routes",
+      "detail": "fastapi/flask: 15 route declarations",
+      "path": "app/routes/admin.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 contract",
+      "detail": "FastAPI (auto OpenAPI)",
+      "path": "app/main.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 coverage",
+      "detail": "generated from code: FastAPI (auto OpenAPI)",
+      "path": "app/main.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "route_declarations": 15,
+     "routes_by_framework": {
+      "fastapi/flask": 15
+     },
+     "spec_files": 0,
+     "spec_operations": 0,
+     "spec_coverage": null
+    },
+    "gaps": [
+     "L4 A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK. (only one programmatic surface)"
+    ],
+    "question": "Can another program use it through a documented, machine-readable surface?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 3,
+      "first_missing": "second-surface",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "routes",
+        "text": "A network surface exists: HTTP routes, an MCP server, or a standard protocol listener.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/routes/admin.py",
+          "detail": "fastapi/flask: 15 route declarations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "contract",
+        "text": "A contract exists: a checked-in OpenAPI/GraphQL/protobuf/AsyncAPI spec, a framework-generated spec, MCP tool schemas, or a standard application protocol that off-the-shelf clients speak (RESP, MQTT, gRPC, PostgreSQL wire, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/main.py",
+          "detail": "FastAPI (auto OpenAPI)"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "coverage",
+        "text": "A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/main.py",
+          "detail": "generated from code: FastAPI (auto OpenAPI)"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "second-surface",
+        "text": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+        "met": false,
+        "evidence": [],
+        "note": "only one programmatic surface"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
+   },
+   {
+    "key": "stability",
+    "title": "Contract stability",
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "1 semver tags, latest v0.1.0",
+      "path": null,
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
+    "question": "Can integrators rely on it not changing under them?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "1 semver tags, latest v0.1.0"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/routes/chat.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "app/main.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two tagged releases to compare"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "events",
+    "title": "Events",
+    "level": 2,
+    "rationale": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+    "evidence": [
+     {
+      "signal": "L1 internal-events",
+      "detail": "1 match",
+      "path": "app/routes/chat.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 outbound",
+      "detail": "1 match",
+      "path": "app/routes/chat.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L3 Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker). (one delivery mechanism, or webhooks that are unsigned or not registrable through the API)"
+    ],
+    "question": "Can others react to state changes without polling?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 2,
+      "first_missing": "robust-delivery",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "internal-events",
+        "text": "Internal events exist (signals, queues, an outbox, emitters).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/routes/chat.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "outbound",
+        "text": "Webhooks sent by this system, or a streaming endpoint (SSE, WebSocket).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/routes/chat.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "robust-delivery",
+        "text": "Signed webhooks registrable through the API, or two mechanisms (webhooks, streams, a broker).",
+        "met": false,
+        "evidence": [],
+        "note": "one delivery mechanism, or webhooks that are unsigned or not registrable through the API"
+       },
+       {
+        "level": 4,
+        "id": "event-contract",
+        "text": "Events are described by AsyncAPI or CloudEvents.",
+        "met": false,
+        "evidence": [],
+        "note": "no AsyncAPI or CloudEvents contract"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
+   },
+   {
+    "key": "identity",
+    "title": "Identity",
+    "level": 1,
+    "rationale": "Programmatic authentication (bearer tokens, API keys).",
+    "evidence": [
+     {
+      "signal": "L1 token-auth",
+      "detail": "1 match",
+      "path": "app/auth.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Per-client, revocable credentials (managed API keys, service accounts) or OAuth2. (no managed keys or OAuth)"
+    ],
+    "question": "Can a machine act with its own revocable, least-privilege identity?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "managed-credentials",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "token-auth",
+        "text": "Programmatic authentication (bearer tokens, API keys).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/auth.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "app/backends/anthropic_backend.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "app/config.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "managed-credentials",
+        "text": "Per-client, revocable credentials (managed API keys, service accounts) or OAuth2.",
+        "met": false,
+        "evidence": [],
+        "note": "no managed keys or OAuth"
+       },
+       {
+        "level": 3,
+        "id": "scopes",
+        "text": "Credentials carry scopes or permissions.",
+        "met": false,
+        "evidence": [],
+        "note": "no scopes or permissions"
+       },
+       {
+        "level": 4,
+        "id": "federation",
+        "text": "Standard provisioning or federation (OIDC client credentials, SCIM).",
+        "met": false,
+        "evidence": [],
+        "note": "no OIDC client credentials or SCIM"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "portability",
+    "title": "Data portability",
+    "level": null,
+    "rationale": "Not applicable: owns no persistent data.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
+   },
+   {
+    "key": "ergonomics",
+    "title": "Agent ergonomics",
+    "level": 1,
+    "rationale": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+    "evidence": [
+     {
+      "signal": "L1 json-errors",
+      "detail": "12 matches",
+      "path": "app/routes/admin.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Field-level validation errors, and paginated lists. (no pagination)"
+    ],
+    "question": "Can an automated caller use it without guessing, and recover from failure?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "validation-pagination",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "json-errors",
+        "text": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/routes/admin.py",
+          "detail": "12 matches"
+         },
+         {
+          "path": "app/routes/chat.py",
+          "detail": "8 matches"
+         },
+         {
+          "path": "app/auth.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "app/main.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation-pagination",
+        "text": "Field-level validation errors, and paginated lists.",
+        "met": false,
+        "evidence": [],
+        "note": "no pagination"
+       },
+       {
+        "level": 3,
+        "id": "safe-retries",
+        "text": "Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals.",
+        "met": false,
+        "evidence": [],
+        "note": "no typed errors"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Dry-run or validate-only, conditional requests, and agent docs.",
+        "met": false,
+        "evidence": [],
+        "note": "no dry-run"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "embeddability",
+    "title": "Embeddability",
+    "level": 4,
+    "rationale": "Composition artifacts (compose, Helm, IaC).",
+    "evidence": [
+     {
+      "signal": "L1 documented-run",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 env-config",
+      "detail": "3 matches",
+      "path": "evals/two_model_ontorag/judge.py",
+      "weight": 1
+     },
+     {
+      "signal": "L3 container",
+      "detail": "",
+      "path": "Dockerfile",
+      "weight": 1
+     },
+     {
+      "signal": "L4 composition",
+      "detail": "",
+      "path": "docker-compose.yml",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [],
+    "question": "Can another system run and compose it without a human?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "documented-run",
+        "text": "Runnable from source with documented steps (a README with commands).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "env-config",
+        "text": "Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "evals/two_model_ontorag/judge.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "app/config.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "app/main.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "app/mcp_manager.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "app/auth.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "evals/two_model_ontorag/collect.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "evals/two_model_ontorag/score_ares.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "evals/two_model_ontorag/score_ragas.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "evals/two_model_ontorag/score_trulens.py",
+          "detail": "1 match"
+         },
+         {
+          "path": ".env.example",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "5 of 8 environment variables named in the docs"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "container",
+        "text": "A container image.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "Dockerfile",
+          "detail": ""
+         },
+         {
+          "path": "evals/two_model_ontorag/Dockerfile",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "composition",
+        "text": "Composition artifacts (compose, Helm, IaC).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "docker-compose.yml",
+          "detail": ""
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "exemplary",
+    "applicable": true
+   },
+   {
+    "key": "extensibility",
+    "title": "Extensibility",
+    "level": 0,
+    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [],
+    "metrics": {},
+    "gaps": [
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+    ],
+    "question": "Can behaviour be added without modifying the code?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "seams",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "seams",
+        "text": "Internal seams: a registry, registration function or plugin manager.",
+        "met": false,
+        "evidence": [],
+        "note": "no registry or registration function"
+       },
+       {
+        "level": 2,
+        "id": "documented",
+        "text": "The docs show how to add behaviour through those seams (even in-tree).",
+        "met": false,
+        "evidence": [],
+        "note": "no registration functions to document"
+       },
+       {
+        "level": 3,
+        "id": "out-of-tree",
+        "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
+        "met": false,
+        "evidence": [],
+        "note": "extensions must be added inside the package"
+       },
+       {
+        "level": 4,
+        "id": "versioned-api",
+        "text": "The extension API is versioned, has lifecycle hooks, and has example extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the extension API isn't versioned"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
+   },
+   {
+    "key": "observability",
+    "title": "Observability",
+    "level": 1,
+    "rationale": "A health or readiness endpoint, or a container healthcheck.",
+    "evidence": [
+     {
+      "signal": "L1 health",
+      "detail": "1 match",
+      "path": "app/main.py",
+      "weight": 1
+     }
+    ],
+    "metrics": {},
+    "gaps": [
+     "L2 Structured logs. (no structured logging)"
+    ],
+    "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
+    "best_surface": "service",
+    "surfaces": {
+     "service": {
+      "level": 1,
+      "first_missing": "structured-logs",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "health",
+        "text": "A health or readiness endpoint, or a container healthcheck.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "app/main.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "Dockerfile",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "structured-logs",
+        "text": "Structured logs.",
+        "met": false,
+        "evidence": [],
+        "note": "no structured logging"
+       },
+       {
+        "level": 3,
+        "id": "metrics",
+        "text": "Metrics.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics"
+       },
+       {
+        "level": 4,
+        "id": "tracing",
+        "text": "Distributed tracing (OpenTelemetry).",
+        "met": false,
+        "evidence": [],
+        "note": "no tracing"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   },
+   {
+    "key": "legibility",
+    "title": "Change legibility",
+    "level": 1,
+    "rationale": "A README and some tests.",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "README.md",
+      "weight": 1
+     }
+    ],
+    "metrics": {
+     "source_files": 22,
+     "source_tokens": 26412,
+     "test_files": 2,
+     "test_tokens": 5490,
+     "test_ratio": 0.21,
+     "modules": 4,
+     "modules_within_budget": 1.0,
+     "oversized_files": [],
+     "largest_module": {
+      "path": "app",
+      "tokens": 14186
+     },
+     "typed_ratio": 0.93,
+     "python_functions": 138,
+     "python_annotated": 129,
+     "import_edges": 30,
+     "import_graph": true,
+     "max_fan_out": 4,
+     "import_cycles": 0,
+     "largest_cycle": [],
+     "languages": {
+      "python": 26412
+     }
+    },
+    "gaps": [
+     "L2 CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt). (no lockfile (applications should pin dependencies))"
+    ],
+    "question": "Can an agent change it safely with limited context?",
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "ci-pinned",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "readme-tests",
+        "text": "A README and some tests.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "README.md",
+          "detail": ""
+         },
+         {
+          "path": "scripts/smoke_test.py",
+          "detail": "2 test files"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "ci-pinned",
+        "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+        "met": false,
+        "evidence": [],
+        "note": "no lockfile (applications should pin dependencies)"
+       },
+       {
+        "level": 3,
+        "id": "fits-and-verified",
+        "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
+        "met": false,
+        "evidence": [],
+        "note": "test/source token ratio 0.21 < 0.3"
+       },
+       {
+        "level": 4,
+        "id": "acyclic-documented",
+        "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
+   }
+  ],
+  "estimate": {
+   "integrability_index": 1.56,
+   "assessed_dimensions": 9,
+   "not_applicable": [
+    "portability"
+   ],
+   "retrofit_person_days": 19.2,
+   "retrofit_by_dimension": {
+    "interface": 0.0,
+    "stability": 1.6,
+    "events": 1.6,
+    "identity": 3.2,
+    "ergonomics": 2.4,
+    "embeddability": 0.0,
+    "extensibility": 4.8,
+    "observability": 1.6,
+    "legibility": 4.0
+   },
+   "wrappability": "moderate retrofit",
+   "assumptions": {
+    "target_level": 3,
+    "size_factor": 0.5,
+    "legibility_multiplier": 1.6,
+    "reference_tokens": 250000
+   }
+  },
+  "not_implemented": [],
+  "value": {
+   "ksloc": 2.07,
+   "classic": {
+    "person_months": 5.14,
+    "schedule_months": 4.7,
+    "cost": 57909
+   },
+   "capture": {
+    "tests": 0.42,
+    "contract": 0.75,
+    "docs": 1.0,
+    "capture": 0.65
+   },
+   "agent_factor": 0.26,
+   "reproduce_pm": 1.32,
+   "history": {
+    "commits": 20,
+    "fix_commits": 2,
+    "authors": 1,
+    "age_months": 2.5,
+    "months_since_last": 0.7
+   },
+   "knowledge_pm": 0.14,
+   "rediscover_pm": 0.05,
+   "replacement_pm": 1.37,
+   "leverage": 0.94,
+   "obsolescence": 0.9,
+   "value_pm": 1.17,
+   "value_cost": 13144,
+   "knowledge_at_risk": 0.04,
+   "assumptions": {
+    "salary": 56286,
+    "overhead": 2.4,
+    "cost_per_pm": 11257,
+    "floor": 0.1,
+    "rediscover_share": 0.5,
+    "fix_pm": 0.025,
+    "change_pm": 0.005
+   }
+  },
+  "make_or_buy": {
+   "verdict": "buy",
+   "make_buy_ratio": 2.1367,
+   "horizon_years": 3.0,
+   "break_even_price_per_year": 311.03,
+   "make": {
+    "model": "anthropic:claude-opus-5-5",
+    "tokens": {
+     "output": 105780,
+     "input": 2644500,
+     "cached_input": 2247825
+    },
+    "final_tokens": 35260,
+    "model_cost": 4.15,
+    "agent_hours": 1.18,
+    "human_days": 2.25,
+    "review_days": 1.2,
+    "rediscover_days": 1.05,
+    "calendar_days": 2.25,
+    "build_cost": 1209.64,
+    "yearly_cost": 181.45,
+    "total_cost": 1753.97
+   },
+   "buy": {
+    "via": {
+     "install": "service",
+     "use": "service"
+    },
+    "adoption_minutes": {
+     "install": 5,
+     "first_use": 10.0,
+     "total": 15.0
+    },
+    "tokens": {
+     "output": 1875,
+     "input": 46875,
+     "cached_input": 39843
+    },
+    "model_cost": 0.07,
+    "upgrade_minutes_per_year": 240,
+    "measured": null,
+    "price_per_year": 0.0,
+    "fixed_cost": 16.83,
+    "yearly_cost": 268.02,
+    "total_cost": 820.9
+   },
+   "assumptions": {
+    "day_rate": 536.05,
+    "draft_factor": 3.0,
+    "context_ratio": 25.0,
+    "cached_share": 0.85,
+    "review_tokens_per_day": 50000,
+    "spec_difficulty": 2.0,
+    "maintenance_share": 0.15,
+    "model_priced": true
+   }
+  },
+  "agentic": null,
+  "review": null,
+  "spend": null
+ }
+}

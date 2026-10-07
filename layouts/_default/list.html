@@ -1,0 +1,4 @@
+{{ define "main" }}
+<section class="intro"><h1>{{ .Title | default "Repositories" }}</h1></section>
+<ul>{{ range .Pages.ByTitle }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+{{ end }}

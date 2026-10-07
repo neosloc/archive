@@ -1,0 +1,25 @@
+{
+ "entries": [
+  {
+   "evaluated_at": "2026-10-07T12:50:57+00:00",
+   "commit": "fd5856789926d06350a6e8a8e38739b26dca754c",
+   "neosloc": "0.7.1",
+   "index": 0.86,
+   "assessed": 7,
+   "levels": {
+    "interface": 2,
+    "stability": 0,
+    "events": null,
+    "identity": null,
+    "portability": null,
+    "ergonomics": 1,
+    "embeddability": 2,
+    "extensibility": 0,
+    "observability": 0,
+    "legibility": 1
+   },
+   "verdict": "make",
+   "make_buy_ratio": 0.2665
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+baseURL = "https://neosloc.github.io/archive/"
+languageCode = "en"
+title = "neosloc archive"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+enableRobotsTXT = true
+
+[params]
+description = "Integrability, value and make-or-buy assessments of open-source repositories, by neosloc."
+docs = "https://neosloc.github.io/neosloc/"
+repo = "https://github.com/neosloc/archive"

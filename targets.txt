@@ -1,0 +1,13 @@
+# Repositories evaluated by the archive, one URL per line.
+# Add one with `python archive.py add URL`, or open an "Evaluate a repository" issue.
+
+https://github.com/neosloc/neosloc
+https://github.com/openfantasymap/geomqtt
+https://github.com/sirmmo/aiproxy
+https://github.com/sirmmo/deploykit
+https://github.com/sirmmo/podlike
+https://github.com/sirmmo/datapackage-pipelines
+https://github.com/GestaltBI/olap-cube-js
+https://github.com/GestaltBI/gestaltbi-core
+https://github.com/JustPlayBo/justplay-editor
+https://github.com/ohm-geocontext/geocontext-app

@@ -1,0 +1,83 @@
+name: request
+
+# Handles "Evaluate a repository" issues: validates the URL, adds it to
+# targets.txt, evaluates it, comments with the link and closes the issue.
+# Issues from members run right away; others when a maintainer adds `approved`.
+# The issue body is untrusted: it reaches the scripts only through env vars.
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: archive-data
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    if: >-
+      contains(github.event.issue.labels.*.name, 'evaluate') && (
+        (github.event.action == 'opened' && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)) ||
+        (github.event.action == 'labeled' && github.event.label.name == 'approved'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      evaluated: ${{ steps.eval.outputs.evaluated }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Read the requested URL
+        id: url
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import os, re
+          m = re.search(r"https://[^\s)>\]]+", os.environ.get("BODY", ""))
+          print("url=" + (m.group(0) if m else ""))
+          PY
+      - name: Add and evaluate
+        id: eval
+        env:
+          URL: ${{ steps.url.outputs.url }}
+        run: |
+          slug=$(python archive.py add "$URL") || { echo "evaluated=" >> "$GITHUB_OUTPUT"; exit 0; }
+          python archive.py evaluate --only "$URL"
+          echo "evaluated=$slug" >> "$GITHUB_OUTPUT"
+      - name: Commit
+        if: steps.eval.outputs.evaluated != ''
+        run: |
+          git config user.name "neosloc-archive[bot]"
+          git config user.email "neosloc-archive@users.noreply.github.com"
+          git add targets.txt data static/reports content/repos
+          git diff --cached --quiet || git commit -m "Evaluate ${{ steps.eval.outputs.evaluated }} (#${{ github.event.issue.number }})"
+          git pull --rebase --quiet origin main
+          git push
+      - name: Reply
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.eval.outputs.evaluated }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          if [ -n "$SLUG" ]; then
+            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "Evaluated. The report will be at https://neosloc.github.io/archive/repos/$SLUG/ in a few minutes."
+            gh issue close "$ISSUE" --repo "$GITHUB_REPOSITORY"
+          else
+            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "I couldn't use that URL: it must be a reachable public repository like https://github.com/OWNER/REPO."
+          fi
+
+  site:
+    needs: evaluate
+    if: needs.evaluate.outputs.evaluated != ''
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/site.yml
