@@ -4,22 +4,22 @@
   "url": "https://github.com/marktext/marktext",
   "slug": "marktext-marktext",
   "host": "github.com",
-  "commit": "20ae0b9051c516029ff64f352ce882ac2c59bf73",
-  "committed_at": "2026-10-07T20:34:57+08:00",
-  "evaluated_at": "2026-10-07T14:05:26+00:00",
+  "commit": "b31790169e7cc8e7200a06249b4447d096c005e6",
+  "committed_at": "2026-10-07T22:08:19+08:00",
+  "evaluated_at": "2026-10-07T14:09:36+00:00",
   "neosloc": "0.7.3"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/marktext/marktext",
   "inventory": {
-   "files": 2034,
-   "source_files": 677,
-   "source_tokens": 926585,
+   "files": 2037,
+   "source_files": 679,
+   "source_tokens": 927834,
    "languages": {
-    "typescript": 630713,
+    "typescript": 631829,
     "javascript": 199166,
-    "vue": 96706
+    "vue": 96839
    },
    "git": true
   },
@@ -1700,10 +1700,10 @@
      }
     ],
     "metrics": {
-     "source_files": 677,
-     "source_tokens": 926585,
-     "test_files": 590,
-     "test_tokens": 738789,
+     "source_files": 679,
+     "source_tokens": 927834,
+     "test_files": 591,
+     "test_tokens": 740399,
      "test_ratio": 0.8,
      "modules": 197,
      "modules_within_budget": 0.99,
@@ -1717,14 +1717,14 @@
      ],
      "largest_module": {
       "path": "packages/muya/src/config",
-      "tokens": 80035
+      "tokens": 80045
      },
      "typed_ratio": 0.68,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 1912,
+     "import_edges": 1917,
      "import_graph": true,
-     "max_fan_out": 39,
+     "max_fan_out": 40,
      "import_cycles": 4,
      "largest_cycle": [
       "packages/muya/src/block/base/content.ts",
@@ -1811,6 +1811,7 @@
       "packages/muya/src/inlineRenderer/renderer/inlineMath.ts",
       "packages/muya/src/inlineRenderer/renderer/link.ts",
       "packages/muya/src/inlineRenderer/renderer/loadImageAsync.ts",
+      "packages/muya/src/inlineRenderer/renderer/mark.ts",
       "packages/muya/src/inlineRenderer/renderer/multipleMath.ts",
       "packages/muya/src/inlineRenderer/renderer/referenceDefinition.ts",
       "packages/muya/src/inlineRenderer/renderer/referenceImage.ts",
@@ -1850,9 +1851,9 @@
       "packages/muya/src/utils/turndownService/index.ts"
      ],
      "languages": {
-      "typescript": 630713,
+      "typescript": 631829,
       "javascript": 199166,
-      "vue": 96706
+      "vue": 96839
      }
     },
     "gaps": [
@@ -1877,7 +1878,7 @@
          },
          {
           "path": "packages/desktop/test/e2e/all-blocks-roundtrip.spec.ts",
-          "detail": "590 test files"
+          "detail": "591 test files"
          }
         ],
         "note": ""
@@ -2002,11 +2003,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 99.03,
+   "ksloc": 99.16,
    "classic": {
-    "person_months": 299.05,
+    "person_months": 299.49,
     "schedule_months": 21.8,
-    "cost": 3366498
+    "cost": 3371388
    },
    "capture": {
     "tests": 1.0,
@@ -2015,9 +2016,9 @@
     "capture": 0.9
    },
    "agent_factor": 0.14,
-   "reproduce_pm": 43.36,
+   "reproduce_pm": 43.43,
    "history": {
-    "commits": 2207,
+    "commits": 2208,
     "fix_commits": 1003,
     "authors": 211,
     "age_months": 106.8,
@@ -2025,11 +2026,11 @@
    },
    "knowledge_pm": 31.1,
    "rediscover_pm": 3.11,
-   "replacement_pm": 46.47,
+   "replacement_pm": 46.54,
    "leverage": 1.03,
    "obsolescence": 0.95,
-   "value_pm": 45.53,
-   "value_cost": 512520,
+   "value_pm": 45.59,
+   "value_cost": 513220,
    "knowledge_at_risk": 0.07,
    "assumptions": {
     "salary": 56286,
@@ -2043,26 +2044,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 101.7724,
+   "make_buy_ratio": 101.8392,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 27160.1,
+   "break_even_price_per_year": 27178.12,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5023919,
-     "input": 125597975,
-     "cached_input": 106758278
+     "output": 5032534,
+     "input": 125813350,
+     "cached_input": 106941347
     },
-    "final_tokens": 1674639,
-    "model_cost": 197.19,
-    "agent_hours": 55.82,
-    "human_days": 105.5,
-    "review_days": 40.19,
+    "final_tokens": 1677511,
+    "model_cost": 197.53,
+    "agent_hours": 55.92,
+    "human_days": 105.57,
+    "review_days": 40.26,
     "rediscover_days": 65.31,
-    "calendar_days": 105.5,
-    "build_cost": 56750.94,
-    "yearly_cost": 8512.64,
-    "total_cost": 82288.86
+    "calendar_days": 105.57,
+    "build_cost": 56788.22,
+    "yearly_cost": 8518.23,
+    "total_cost": 82342.92
    },
    "buy": {
     "via": {
