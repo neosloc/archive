@@ -1,7 +1,7 @@
 {
  "title": "pydantic/pydantic",
  "slug": "pydantic-pydantic",
- "date": "2026-10-07T14:04:33+00:00",
+ "date": "2026-10-07T14:28:10+00:00",
  "repo_url": "https://github.com/pydantic/pydantic",
  "index": 1.62,
  "assessed": 8,

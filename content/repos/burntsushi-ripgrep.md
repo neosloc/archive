@@ -1,7 +1,7 @@
 {
  "title": "BurntSushi/ripgrep",
  "slug": "burntsushi-ripgrep",
- "date": "2026-10-07T14:05:28+00:00",
+ "date": "2026-10-07T14:29:04+00:00",
  "repo_url": "https://github.com/BurntSushi/ripgrep",
  "index": 2.14,
  "assessed": 7,

@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "6693a89cca77e0151437da1c7f890090b9ebf04c",
   "committed_at": "2026-09-21T20:41:57-07:00",
-  "evaluated_at": "2026-10-07T14:05:45+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:21+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -22,8 +22,25 @@
    "git": true
   },
   "surfaces": {
-   "kinds": [],
-   "evidence": {},
+   "kinds": [
+    "library"
+   ],
+   "evidence": {
+    "library": [
+     {
+      "path": "serde/src/lib.rs",
+      "detail": "Rust library crate"
+     },
+     {
+      "path": "serde_core/src/lib.rs",
+      "detail": "Rust library crate"
+     },
+     {
+      "path": "serde_derive/src/lib.rs",
+      "detail": "Rust library crate"
+     }
+    ]
+   },
    "long_running": [],
    "owns_data": [],
    "uses_credentials": []
@@ -32,9 +49,34 @@
    {
     "key": "interface",
     "title": "Interface surface",
-    "level": 0,
-    "rationale": "Not yet: A programmatic surface exists (routes, a CLI or a library).",
-    "evidence": [],
+    "level": 4,
+    "rationale": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Rust library crate",
+      "path": "serde/src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L2 public-api",
+      "detail": "pub items",
+      "path": "serde/src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "statically typed language",
+      "path": "serde/src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L4 api-reference",
+      "detail": "1 match",
+      "path": "serde/Cargo.toml",
+      "weight": 1
+     }
+    ],
     "metrics": {
      "route_declarations": 0,
      "routes_by_framework": {},
@@ -42,43 +84,200 @@
      "spec_operations": 0,
      "spec_coverage": null
     },
-    "gaps": [
-     "L1 A programmatic surface exists (routes, a CLI or a library). (no service, CLI, library or frontend detected)"
-    ],
+    "gaps": [],
     "question": "Can another program use it through a documented, machine-readable surface?",
-    "best_surface": "none",
+    "best_surface": "library",
     "surfaces": {
-     "none": {
-      "level": 0,
-      "first_missing": "surface",
+     "library": {
+      "level": 4,
+      "first_missing": null,
       "requirements": [
        {
         "level": 1,
-        "id": "surface",
-        "text": "A programmatic surface exists (routes, a CLI or a library).",
-        "met": false,
-        "evidence": [],
-        "note": "no service, CLI, library or frontend detected"
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "serde_core/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "serde_derive/src/lib.rs",
+          "detail": "Rust library crate"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "serde_core/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "serde_derive/src/lib.rs",
+          "detail": "pub items"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "serde_core/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "serde_derive/src/lib.rs",
+          "detail": "statically typed language"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde_core/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde_derive/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde_derive_internals/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde_core/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde_derive/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde_derive_internals/Cargo.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
        }
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "exemplary",
     "applicable": true
    },
    {
     "key": "stability",
     "title": "Contract stability",
-    "level": null,
-    "rationale": "Not applicable: no service, cli, library, desktop surface.",
-    "evidence": [],
+    "level": 1,
+    "rationale": "Releases are versioned (semver tags or versioned changelog sections).",
+    "evidence": [
+     {
+      "signal": "L1 versioned-releases",
+      "detail": "323 semver tags, latest v1.0.229",
+      "path": null,
+      "weight": 1
+     }
+    ],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "L2 A changelog exists and marks breaking changes. (no changelog)"
+    ],
     "question": "Can integrators rely on it not changing under them?",
-    "best_surface": null,
-    "surfaces": {},
-    "level_name": "n/a",
-    "applicable": false
+    "best_surface": "all",
+    "surfaces": {
+     "all": {
+      "level": 1,
+      "first_missing": "changelog",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "323 semver tags, latest v1.0.229"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde/src/integer128.rs",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "20 tagged releases compared"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
    },
    {
     "key": "events",
@@ -125,30 +324,184 @@
    {
     "key": "ergonomics",
     "title": "Agent ergonomics",
-    "level": null,
-    "rationale": "Not applicable: no service or cli or library or desktop surface.",
-    "evidence": [],
+    "level": 1,
+    "rationale": "Errors are specific exception types, and library code never calls sys.exit.",
+    "evidence": [
+     {
+      "signal": "L1 typed-exceptions",
+      "detail": "1 match",
+      "path": "serde_derive/src/internals/case.rs",
+      "weight": 1
+     }
+    ],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "L2 Inputs are validated with messages naming the bad argument. (no input validation errors)"
+    ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
-    "best_surface": null,
-    "surfaces": {},
-    "level_name": "n/a",
-    "applicable": false
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 1,
+      "first_missing": "validation",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde_derive/src/internals/case.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": false,
+        "evidence": [],
+        "note": "no input validation errors"
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no timeout parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "ad hoc",
+    "applicable": true
    },
    {
     "key": "embeddability",
     "title": "Embeddability",
-    "level": null,
-    "rationale": "Not applicable: no service or cli or library or desktop surface.",
-    "evidence": [],
+    "level": 2,
+    "rationale": "Installable as a package (a package manifest).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Rust library crate",
+      "path": "serde/src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "serde/src/lib.rs",
+      "weight": 1
+     }
+    ],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
+    ],
     "question": "Can another system run and compose it without a human?",
-    "best_surface": null,
-    "surfaces": {},
-    "level_name": "n/a",
-    "applicable": false
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 2,
+      "first_missing": "published-minimal",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "serde_core/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "serde_derive/src/lib.rs",
+          "detail": "Rust library crate"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "serde_core/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "serde_derive/src/lib.rs",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "serde/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde_core/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "serde_derive/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "test_suite/Cargo.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
    },
    {
     "key": "extensibility",
@@ -208,27 +561,74 @@
    {
     "key": "observability",
     "title": "Observability",
-    "level": null,
-    "rationale": "Not applicable: no service or cli or library or desktop surface.",
+    "level": 0,
+    "rationale": "Not yet: Logs through a standard logger namespace and never prints from library code.",
     "evidence": [],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
+    ],
     "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
-    "best_surface": null,
-    "surfaces": {},
-    "level_name": "n/a",
-    "applicable": false
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
    },
    {
     "key": "legibility",
     "title": "Change legibility",
-    "level": 1,
-    "rationale": "A README and some tests.",
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
     "evidence": [
      {
       "signal": "L1 readme-tests",
       "detail": "",
       "path": "README.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/ci.yml",
       "weight": 1
      }
     ],
@@ -265,14 +665,14 @@
      }
     },
     "gaps": [
-     "L2 CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt). (no lockfile (applications should pin dependencies))"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (86% of modules fit 32k tokens; 6 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
     "surfaces": {
      "all": {
-      "level": 1,
-      "first_missing": "ci-pinned",
+      "level": 2,
+      "first_missing": "fits-and-verified",
       "requirements": [
        {
         "level": 1,
@@ -295,9 +695,18 @@
         "level": 2,
         "id": "ci-pinned",
         "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
-        "met": false,
-        "evidence": [],
-        "note": "no lockfile (applications should pin dependencies)"
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/ci.yml",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 3,
@@ -318,33 +727,33 @@
       ]
      }
     },
-    "level_name": "ad hoc",
+    "level_name": "partial",
     "applicable": true
    }
   ],
   "estimate": {
-   "integrability_index": 0.33,
-   "assessed_dimensions": 3,
+   "integrability_index": 1.43,
+   "assessed_dimensions": 7,
    "not_applicable": [
-    "stability",
     "events",
     "identity",
-    "portability",
-    "ergonomics",
-    "embeddability",
-    "observability"
+    "portability"
    ],
-   "retrofit_person_days": 29.6,
+   "retrofit_person_days": 17.7,
    "retrofit_by_dimension": {
-    "interface": 13.3,
-    "extensibility": 8.9,
-    "legibility": 7.4
+    "interface": 0.0,
+    "stability": 1.9,
+    "ergonomics": 2.8,
+    "embeddability": 0.9,
+    "extensibility": 5.6,
+    "observability": 2.8,
+    "legibility": 3.7
    },
-   "wrappability": "expensive retrofit",
+   "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
     "size_factor": 0.93,
-    "legibility_multiplier": 1.6,
+    "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
@@ -358,12 +767,12 @@
    },
    "capture": {
     "tests": 0.92,
-    "contract": 0.0,
+    "contract": 1.0,
     "docs": 0.14,
-    "capture": 0.5
+    "capture": 0.75
    },
-   "agent_factor": 0.33,
-   "reproduce_pm": 16.47,
+   "agent_factor": 0.21,
+   "reproduce_pm": 10.77,
    "history": {
     "commits": 3542,
     "fix_commits": 375,
@@ -372,13 +781,13 @@
     "months_since_last": 0.5
    },
    "knowledge_pm": 25.21,
-   "rediscover_pm": 12.61,
-   "replacement_pm": 29.07,
-   "leverage": 0.79,
-   "obsolescence": 0.9,
-   "value_pm": 20.71,
-   "value_cost": 233181,
-   "knowledge_at_risk": 0.43,
+   "rediscover_pm": 6.3,
+   "replacement_pm": 17.07,
+   "leverage": 0.93,
+   "obsolescence": 0.95,
+   "value_pm": 15.06,
+   "value_cost": 169508,
+   "knowledge_at_risk": 0.37,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -391,49 +800,49 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 82.7773,
+   "make_buy_ratio": 133.9683,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 71097.39,
+   "break_even_price_per_year": 36483.82,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 966533,
-     "input": 24163325,
-     "cached_input": 20538826
+     "output": 950483,
+     "input": 23762075,
+     "cached_input": 20197763
     },
-    "final_tokens": 322177,
-    "model_cost": 37.94,
-    "agent_hours": 10.74,
-    "human_days": 277.7,
-    "review_days": 12.89,
-    "rediscover_days": 264.81,
-    "calendar_days": 277.7,
-    "build_cost": 148896.82,
-    "yearly_cost": 22334.52,
-    "total_cost": 215900.38
+    "final_tokens": 316827,
+    "model_cost": 37.31,
+    "agent_hours": 10.56,
+    "human_days": 141.8,
+    "review_days": 9.5,
+    "rediscover_days": 132.3,
+    "calendar_days": 141.8,
+    "build_cost": 76051.45,
+    "yearly_cost": 11407.72,
+    "total_cost": 110274.61
    },
    "buy": {
     "via": {
-     "install": null,
-     "use": "none"
+     "install": "library",
+     "use": "library"
     },
     "adoption_minutes": {
-     "install": 60,
-     "first_use": 2220.48,
-     "total": 2280.48
+     "install": 15,
+     "first_use": 2.0,
+     "total": 17.0
     },
     "tokens": {
-     "output": 285060,
-     "input": 7126500,
-     "cached_input": 6057525
+     "output": 2125,
+     "input": 53125,
+     "cached_input": 45156
     },
-    "model_cost": 11.19,
-    "upgrade_minutes_per_year": 15,
+    "model_cost": 0.08,
+    "upgrade_minutes_per_year": 240,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 2557.95,
-    "yearly_cost": 16.75,
-    "total_cost": 2608.21
+    "fixed_cost": 19.07,
+    "yearly_cost": 268.02,
+    "total_cost": 823.14
    },
    "assumptions": {
     "day_rate": 536.05,

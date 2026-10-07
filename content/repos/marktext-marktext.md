@@ -1,7 +1,7 @@
 {
  "title": "marktext/marktext",
  "slug": "marktext-marktext",
- "date": "2026-10-07T14:09:36+00:00",
+ "date": "2026-10-07T14:28:58+00:00",
  "repo_url": "https://github.com/marktext/marktext",
  "index": 2.25,
  "assessed": 8,

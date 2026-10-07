@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "bf77fc69b1426dd297c78938349e0c7468be56be",
   "committed_at": "2026-10-04T22:51:55+01:00",
-  "evaluated_at": "2026-10-07T14:06:00+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:35+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -677,6 +677,10 @@
           "detail": "2 matches"
          },
          {
+          "path": "Sources/Development/routes.swift",
+          "detail": "1 match"
+         },
+         {
           "path": "Sources/Vapor/Application+AddressConfiguration.swift",
           "detail": "1 match"
          },
@@ -698,6 +702,10 @@
          },
          {
           "path": "Sources/Vapor/Middleware/FileMiddleware.swift",
+          "detail": "1 match"
+         },
+         {
+          "path": "Sources/Vapor/Middleware/MetricsMiddleware.swift",
           "detail": "1 match"
          },
          {

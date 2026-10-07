@@ -1,7 +1,7 @@
 {
  "title": "sharkdp/fd",
  "slug": "sharkdp-fd",
- "date": "2026-10-07T14:05:31+00:00",
+ "date": "2026-10-07T14:29:06+00:00",
  "repo_url": "https://github.com/sharkdp/fd",
  "index": 1.71,
  "assessed": 7,

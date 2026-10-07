@@ -1,7 +1,7 @@
 {
  "title": "google/gson",
  "slug": "google-gson",
- "date": "2026-10-07T14:06:04+00:00",
+ "date": "2026-10-07T14:29:38+00:00",
  "repo_url": "https://github.com/google/gson",
  "index": 0.33,
  "assessed": 3,

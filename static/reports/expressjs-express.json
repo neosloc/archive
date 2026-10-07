@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "9efc29e280018dafc1f0617f3a3d28f4e463b7be",
   "committed_at": "2026-10-06T23:19:38+02:00",
-  "evaluated_at": "2026-10-07T14:04:05+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:27:39+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -538,23 +538,28 @@
     ],
     "metrics": {},
     "gaps": [
-     "[service] L1 Runnable from source with documented steps (a README with commands). (no documented run steps)",
+     "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (the environment variables aren't documented)",
      "[library] L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
     ],
     "question": "Can another system run and compose it without a human?",
     "best_surface": "library",
     "surfaces": {
      "service": {
-      "level": 0,
-      "first_missing": "documented-run",
+      "level": 1,
+      "first_missing": "env-config",
       "requirements": [
        {
         "level": 1,
         "id": "documented-run",
         "text": "Runnable from source with documented steps (a README with commands).",
-        "met": false,
-        "evidence": [],
-        "note": "no documented run steps"
+        "met": true,
+        "evidence": [
+         {
+          "path": "Readme.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -806,9 +811,22 @@
    {
     "key": "legibility",
     "title": "Change legibility",
-    "level": 0,
-    "rationale": "Not yet: A README and some tests.",
-    "evidence": [],
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "Readme.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/ci.yml",
+      "weight": 1
+     }
+    ],
     "metrics": {
      "source_files": 7,
      "source_tokens": 15563,
@@ -835,22 +853,31 @@
      }
     },
     "gaps": [
-     "L1 A README and some tests. (no README)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (0% of code is typed (< 70%))"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
     "surfaces": {
      "all": {
-      "level": 0,
-      "first_missing": "readme-tests",
+      "level": 2,
+      "first_missing": "fits-and-verified",
       "requirements": [
        {
         "level": 1,
         "id": "readme-tests",
         "text": "A README and some tests.",
-        "met": false,
-        "evidence": [],
-        "note": "no README"
+        "met": true,
+        "evidence": [
+         {
+          "path": "Readme.md",
+          "detail": ""
+         },
+         {
+          "path": "test/Route.js",
+          "detail": "91 test files"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -904,33 +931,33 @@
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "partial",
     "applicable": true
    }
   ],
   "estimate": {
-   "integrability_index": 0.89,
+   "integrability_index": 1.11,
    "assessed_dimensions": 9,
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 40.3,
+   "retrofit_person_days": 15.7,
    "retrofit_by_dimension": {
-    "interface": 3.8,
-    "stability": 1.2,
-    "events": 5.0,
-    "identity": 7.5,
-    "ergonomics": 5.6,
-    "embeddability": 1.2,
-    "extensibility": 7.5,
-    "observability": 2.5,
-    "legibility": 6.0
+    "interface": 1.5,
+    "stability": 0.5,
+    "events": 2.0,
+    "identity": 3.0,
+    "ergonomics": 2.2,
+    "embeddability": 0.5,
+    "extensibility": 3.0,
+    "observability": 1.0,
+    "legibility": 2.0
    },
-   "wrappability": "expensive retrofit",
+   "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
     "size_factor": 0.5,
-    "legibility_multiplier": 2.5,
+    "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
@@ -960,10 +987,10 @@
    "knowledge_pm": 41.4,
    "rediscover_pm": 4.97,
    "replacement_pm": 5.39,
-   "leverage": 0.86,
-   "obsolescence": 0.85,
-   "value_pm": 3.95,
-   "value_cost": 44432,
+   "leverage": 0.89,
+   "obsolescence": 0.95,
+   "value_pm": 4.55,
+   "value_cost": 51262,
    "knowledge_at_risk": 0.92,
    "assumptions": {
     "salary": 56286,

@@ -1,7 +1,7 @@
 {
  "title": "excalidraw/excalidraw",
  "slug": "excalidraw-excalidraw",
- "date": "2026-10-07T14:04:46+00:00",
+ "date": "2026-10-07T14:28:23+00:00",
  "repo_url": "https://github.com/excalidraw/excalidraw",
  "index": 1.29,
  "assessed": 7,

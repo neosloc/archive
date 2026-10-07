@@ -1,7 +1,7 @@
 {
  "title": "pallets/flask",
  "slug": "pallets-flask",
- "date": "2026-10-07T14:03:47+00:00",
+ "date": "2026-10-07T14:27:22+00:00",
  "repo_url": "https://github.com/pallets/flask",
  "index": 1.3,
  "assessed": 10,

@@ -1,7 +1,7 @@
 {
  "title": "Textualize/rich",
  "slug": "textualize-rich",
- "date": "2026-10-07T14:03:57+00:00",
+ "date": "2026-10-07T14:27:32+00:00",
  "repo_url": "https://github.com/Textualize/rich",
  "index": 2.0,
  "assessed": 7,

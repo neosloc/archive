@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "9d8f9a372cc5916fd4781fec207ced7ddac2f08f",
   "committed_at": "2026-06-23T10:10:17+07:00",
-  "evaluated_at": "2026-10-07T14:03:57+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:27:32+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,

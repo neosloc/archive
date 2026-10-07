@@ -1,7 +1,7 @@
 {
  "title": "encode/httpx",
  "slug": "encode-httpx",
- "date": "2026-10-07T14:03:48+00:00",
+ "date": "2026-10-07T14:27:22+00:00",
  "repo_url": "https://github.com/encode/httpx",
  "index": 1.86,
  "assessed": 7,

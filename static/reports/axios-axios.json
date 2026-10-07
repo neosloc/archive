@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "2b169bbb0cf67e6539e4cec222ced5ac8a923e00",
   "committed_at": "2026-10-06T16:59:02+02:00",
-  "evaluated_at": "2026-10-07T14:04:11+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:27:46+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -422,16 +422,29 @@
    {
     "key": "ergonomics",
     "title": "Agent ergonomics",
-    "level": 0,
-    "rationale": "[service] Not yet: Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
-    "evidence": [],
+    "level": 2,
+    "rationale": "[library] Inputs are validated with messages naming the bad argument.",
+    "evidence": [
+     {
+      "signal": "L1 typed-exceptions",
+      "detail": "1 match",
+      "path": "lib/cancel/CanceledError.js",
+      "weight": 1
+     },
+     {
+      "signal": "L2 validation",
+      "detail": "4 matches",
+      "path": "lib/helpers/toFormData.js",
+      "weight": 1
+     }
+    ],
     "metrics": {},
     "gaps": [
      "[service] L1 Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE). (no machine-readable errors)",
-     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+     "[library] L3 Timeouts and retries are configurable. (no retry parameter)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
-    "best_surface": "service",
+    "best_surface": "library",
     "surfaces": {
      "service": {
       "level": 0,
@@ -472,16 +485,33 @@
       ]
      },
      "library": {
-      "level": 0,
-      "first_missing": "typed-exceptions",
+      "level": 2,
+      "first_missing": "timeouts-retries",
       "requirements": [
        {
         "level": 1,
         "id": "typed-exceptions",
         "text": "Errors are specific exception types, and library code never calls sys.exit.",
-        "met": false,
-        "evidence": [],
-        "note": "no exception classes"
+        "met": true,
+        "evidence": [
+         {
+          "path": "lib/cancel/CanceledError.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "lib/core/AxiosError.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "lib/helpers/formDataToBlob.js",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -527,7 +557,7 @@
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "partial",
     "applicable": true
    },
    {
@@ -953,18 +983,18 @@
    }
   ],
   "estimate": {
-   "integrability_index": 1.11,
+   "integrability_index": 1.33,
    "assessed_dimensions": 9,
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 16.4,
+   "retrofit_person_days": 14.7,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.6,
     "events": 2.2,
     "identity": 3.3,
-    "ergonomics": 2.5,
+    "ergonomics": 0.8,
     "embeddability": 0.6,
     "extensibility": 3.3,
     "observability": 1.7,
@@ -1004,10 +1034,10 @@
    "knowledge_pm": 20.04,
    "rediscover_pm": 1.2,
    "replacement_pm": 3.73,
-   "leverage": 0.89,
+   "leverage": 0.92,
    "obsolescence": 0.95,
-   "value_pm": 3.15,
-   "value_cost": 35495,
+   "value_pm": 3.25,
+   "value_cost": 36604,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,

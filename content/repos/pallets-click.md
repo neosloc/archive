@@ -1,7 +1,7 @@
 {
  "title": "pallets/click",
  "slug": "pallets-click",
- "date": "2026-10-07T14:03:50+00:00",
+ "date": "2026-10-07T14:27:23+00:00",
  "repo_url": "https://github.com/pallets/click",
  "index": 1.43,
  "assessed": 7,

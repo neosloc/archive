@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "e24a4a64b17a6118f1a6e94fc6419b68c459b8e2",
   "committed_at": "2026-05-12T17:43:19+02:00",
-  "evaluated_at": "2026-10-07T14:03:39+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:27:13+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -27,7 +27,8 @@
   },
   "surfaces": {
    "kinds": [
-    "service"
+    "service",
+    "library"
    ],
    "evidence": {
     "service": [
@@ -43,6 +44,20 @@
       "path": "crates/geomqtt-server/Cargo.toml",
       "detail": "RESP (Redis wire protocol)"
      }
+    ],
+    "library": [
+     {
+      "path": "clients/geomqtt-core/package.json",
+      "detail": "npm package"
+     },
+     {
+      "path": "clients/geomqtt-leaflet/package.json",
+      "detail": "npm package"
+     },
+     {
+      "path": "clients/geomqtt-maplibre/package.json",
+      "detail": "npm package"
+     }
     ]
    },
    "long_running": [],
@@ -54,7 +69,7 @@
     "key": "interface",
     "title": "Interface surface",
     "level": 4,
-    "rationale": "A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
+    "rationale": "[service] A second surface: another transport (HTTP and a protocol, two protocols), an MCP server, a CLI with JSON output, or an SDK.",
     "evidence": [
      {
       "signal": "L1 routes",
@@ -90,7 +105,9 @@
      "spec_operations": 0,
      "spec_coverage": null
     },
-    "gaps": [],
+    "gaps": [
+     "[library] L4 An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026). (no generated API reference)"
+    ],
     "question": "Can another program use it through a documented, machine-readable surface?",
     "best_surface": "service",
     "surfaces": {
@@ -185,6 +202,83 @@
          }
         ],
         "note": ""
+       }
+      ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "api-reference",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "clients/geomqtt-core/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "clients/geomqtt-leaflet/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "clients/geomqtt-maplibre/package.json",
+          "detail": "npm package"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "clients/geomqtt-core/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "clients/geomqtt-leaflet/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "clients/geomqtt-maplibre/package.json",
+          "detail": "package entry point"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "clients/geomqtt-core/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "clients/geomqtt-leaflet/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "clients/geomqtt-maplibre/package.json",
+          "detail": "TypeScript types"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no generated API reference"
        }
       ]
      }
@@ -482,7 +576,7 @@
     "key": "ergonomics",
     "title": "Agent ergonomics",
     "level": 1,
-    "rationale": "Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+    "rationale": "[service] Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
     "evidence": [
      {
       "signal": "L1 json-errors",
@@ -493,7 +587,8 @@
     ],
     "metrics": {},
     "gaps": [
-     "L2 Field-level validation errors, and paginated lists. (no request validation)"
+     "[service] L2 Field-level validation errors, and paginated lists. (no request validation)",
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
     "best_surface": "service",
@@ -544,6 +639,49 @@
         "note": "no dry-run"
        }
       ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "no exception classes"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "clients/geomqtt-core/src/config.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no timeout parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "examples don't run as tests"
+       }
+      ]
      }
     },
     "level_name": "ad hoc",
@@ -553,7 +691,7 @@
     "key": "embeddability",
     "title": "Embeddability",
     "level": 4,
-    "rationale": "Composition artifacts (compose, Helm, IaC).",
+    "rationale": "[service] Composition artifacts (compose, Helm, IaC).",
     "evidence": [
      {
       "signal": "L1 documented-run",
@@ -581,7 +719,9 @@
      }
     ],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "[library] L4 Optional features behind extras/features. (no optional extras)"
+    ],
     "question": "Can another system run and compose it without a human?",
     "best_surface": "service",
     "surfaces": {
@@ -666,6 +806,83 @@
         "note": ""
        }
       ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "optional-features",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "clients/geomqtt-core/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "clients/geomqtt-leaflet/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "clients/geomqtt-maplibre/package.json",
+          "detail": "npm package"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "clients/geomqtt-core/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "clients/geomqtt-leaflet/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "clients/geomqtt-maplibre/package.json",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/npm.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "1 runtime dependencies"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": false,
+        "evidence": [],
+        "note": "no optional extras"
+       }
+      ]
      }
     },
     "level_name": "exemplary",
@@ -730,7 +947,7 @@
     "key": "observability",
     "title": "Observability",
     "level": 1,
-    "rationale": "A health or readiness endpoint, or a container healthcheck.",
+    "rationale": "[service] A health or readiness endpoint, or a container healthcheck.",
     "evidence": [
      {
       "signal": "L1 health",
@@ -741,7 +958,8 @@
     ],
     "metrics": {},
     "gaps": [
-     "L2 Structured logs. (no structured logging)"
+     "[service] L2 Structured logs. (no structured logging)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
     ],
     "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
     "best_surface": "service",
@@ -798,6 +1016,44 @@
         "met": false,
         "evidence": [],
         "note": "no tracing"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
        }
       ]
      }
@@ -907,12 +1163,8 @@
           "detail": ""
          },
          {
-          "path": "Cargo.lock",
-          "detail": ""
-         },
-         {
-          "path": "clients/package-lock.json",
-          "detail": ""
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
          }
         ],
         "note": ""

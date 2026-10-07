@@ -1,7 +1,7 @@
 {
  "title": "sinatra/sinatra",
  "slug": "sinatra-sinatra",
- "date": "2026-10-07T14:06:11+00:00",
+ "date": "2026-10-07T14:29:45+00:00",
  "repo_url": "https://github.com/sinatra/sinatra",
  "index": 0.33,
  "assessed": 3,

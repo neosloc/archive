@@ -1,7 +1,7 @@
 {
  "title": "httpie/cli",
  "slug": "httpie-cli",
- "date": "2026-10-07T14:03:53+00:00",
+ "date": "2026-10-07T14:27:27+00:00",
  "repo_url": "https://github.com/httpie/cli",
  "index": 2.11,
  "assessed": 9,

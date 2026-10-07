@@ -1,7 +1,7 @@
 {
  "title": "pocketbase/pocketbase",
  "slug": "pocketbase-pocketbase",
- "date": "2026-10-07T14:05:42+00:00",
+ "date": "2026-10-07T14:29:18+00:00",
  "repo_url": "https://github.com/pocketbase/pocketbase",
  "index": 2.1,
  "assessed": 10,

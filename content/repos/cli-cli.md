@@ -1,7 +1,7 @@
 {
  "title": "cli/cli",
  "slug": "cli-cli",
- "date": "2026-10-07T14:05:08+00:00",
+ "date": "2026-10-07T14:28:44+00:00",
  "repo_url": "https://github.com/cli/cli",
  "index": 2.11,
  "assessed": 9,

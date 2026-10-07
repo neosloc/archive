@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "167e1e3bd039d060696b99c8da4e876ae04f42c1",
   "committed_at": "2026-09-30T01:38:27+02:00",
-  "evaluated_at": "2026-10-07T14:05:06+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:28:43+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -58,6 +58,10 @@
     ],
     "library": [
      {
+      "path": "_examples/versions/go.mod",
+      "detail": "Go module with exported packages"
+     },
+     {
       "path": "go.mod",
       "detail": "Go module with exported packages"
      }
@@ -77,19 +81,19 @@
      {
       "signal": "L1 importable",
       "detail": "Go module with exported packages",
-      "path": "go.mod",
+      "path": "_examples/versions/go.mod",
       "weight": 1
      },
      {
       "signal": "L2 public-api",
       "detail": "exported identifiers",
-      "path": "go.mod",
+      "path": "_examples/versions/go.mod",
       "weight": 1
      },
      {
       "signal": "L3 typed",
       "detail": "statically typed language",
-      "path": "go.mod",
+      "path": "_examples/versions/go.mod",
       "weight": 1
      }
     ],
@@ -212,6 +216,10 @@
         "met": true,
         "evidence": [
          {
+          "path": "_examples/versions/go.mod",
+          "detail": "Go module with exported packages"
+         },
+         {
           "path": "go.mod",
           "detail": "Go module with exported packages"
          }
@@ -225,6 +233,10 @@
         "met": true,
         "evidence": [
          {
+          "path": "_examples/versions/go.mod",
+          "detail": "exported identifiers"
+         },
+         {
           "path": "go.mod",
           "detail": "exported identifiers"
          }
@@ -237,6 +249,10 @@
         "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
         "met": true,
         "evidence": [
+         {
+          "path": "_examples/versions/go.mod",
+          "detail": "statically typed language"
+         },
          {
           "path": "go.mod",
           "detail": "statically typed language"
@@ -843,6 +859,10 @@
         "met": true,
         "evidence": [
          {
+          "path": "_examples/versions/go.mod",
+          "detail": "Go module with exported packages"
+         },
+         {
           "path": "go.mod",
           "detail": "Go module with exported packages"
          }
@@ -855,6 +875,10 @@
         "text": "Installable as a package (a package manifest).",
         "met": true,
         "evidence": [
+         {
+          "path": "_examples/versions/go.mod",
+          "detail": "package manifest"
+         },
          {
           "path": "go.mod",
           "detail": "package manifest"
@@ -1261,7 +1285,7 @@
     "fix_commits": 117,
     "authors": 185,
     "age_months": 131.5,
-    "months_since_last": 0.2
+    "months_since_last": 0.3
    },
    "knowledge_pm": 6.16,
    "rediscover_pm": 0.37,

@@ -1,7 +1,7 @@
 {
  "title": "lodash/lodash",
  "slug": "lodash-lodash",
- "date": "2026-10-07T14:04:21+00:00",
+ "date": "2026-10-07T14:27:55+00:00",
  "repo_url": "https://github.com/lodash/lodash",
  "index": 0.67,
  "assessed": 3,

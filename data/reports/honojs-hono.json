@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "5f36607f67aa9357887337328ac84a1c1d48dc04",
   "committed_at": "2026-10-05T18:29:52+09:00",
-  "evaluated_at": "2026-10-07T14:04:14+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:27:48+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -39,7 +39,15 @@
     ],
     "library": [
      {
-      "path": "package.json",
+      "path": "adapters/aws-lambda/package.json",
+      "detail": "npm package"
+     },
+     {
+      "path": "adapters/bun/package.json",
+      "detail": "npm package"
+     },
+     {
+      "path": "adapters/cloudflare-workers/package.json",
       "detail": "npm package"
      }
     ]
@@ -58,19 +66,19 @@
      {
       "signal": "L1 importable",
       "detail": "npm package",
-      "path": "package.json",
+      "path": "adapters/aws-lambda/package.json",
       "weight": 1
      },
      {
       "signal": "L2 public-api",
       "detail": "package entry point",
-      "path": "package.json",
+      "path": "adapters/aws-lambda/package.json",
       "weight": 1
      },
      {
       "signal": "L3 typed",
       "detail": "TypeScript types",
-      "path": "package.json",
+      "path": "adapters/aws-lambda/package.json",
       "weight": 1
      }
     ],
@@ -153,6 +161,38 @@
         "met": true,
         "evidence": [
          {
+          "path": "adapters/aws-lambda/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/bun/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/cloudflare-workers/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/deno/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/lambda-edge/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/netlify/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/service-worker/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/vercel/package.json",
+          "detail": "npm package"
+         },
+         {
           "path": "package.json",
           "detail": "npm package"
          }
@@ -166,6 +206,38 @@
         "met": true,
         "evidence": [
          {
+          "path": "adapters/aws-lambda/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "adapters/bun/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "adapters/cloudflare-workers/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "adapters/deno/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "adapters/lambda-edge/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "adapters/netlify/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "adapters/service-worker/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "adapters/vercel/package.json",
+          "detail": "package entry point"
+         },
+         {
           "path": "package.json",
           "detail": "package entry point"
          }
@@ -178,6 +250,38 @@
         "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
         "met": true,
         "evidence": [
+         {
+          "path": "adapters/aws-lambda/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "adapters/bun/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "adapters/cloudflare-workers/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "adapters/deno/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "adapters/lambda-edge/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "adapters/netlify/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "adapters/service-worker/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "adapters/vercel/package.json",
+          "detail": "TypeScript types"
+         },
          {
           "path": "package.json",
           "detail": "TypeScript types"
@@ -586,23 +690,35 @@
    {
     "key": "ergonomics",
     "title": "Agent ergonomics",
-    "level": 1,
-    "rationale": "[service] Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE).",
+    "level": 3,
+    "rationale": "[library] Timeouts and retries are configurable.",
     "evidence": [
      {
-      "signal": "L1 json-errors",
+      "signal": "L1 typed-exceptions",
       "detail": "15 matches",
-      "path": "src/jsx/dom/render.ts",
+      "path": "src/utils/jwt/types.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L2 validation",
+      "detail": "9 matches",
+      "path": "src/utils/cookie.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L3 timeouts-retries",
+      "detail": "1 match",
+      "path": "src/middleware/timeout/index.ts",
       "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
      "[service] L2 Field-level validation errors, and paginated lists. (no pagination)",
-     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+     "[library] L4 Agent docs, and examples that run as tests (doctests). (no agent docs)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
-    "best_surface": "service",
+    "best_surface": "library",
     "surfaces": {
      "service": {
       "level": 1,
@@ -704,16 +820,37 @@
       ]
      },
      "library": {
-      "level": 0,
-      "first_missing": "typed-exceptions",
+      "level": 3,
+      "first_missing": "agent-ready",
       "requirements": [
        {
         "level": 1,
         "id": "typed-exceptions",
         "text": "Errors are specific exception types, and library code never calls sys.exit.",
-        "met": false,
-        "evidence": [],
-        "note": "no exception classes"
+        "met": true,
+        "evidence": [
+         {
+          "path": "src/utils/jwt/types.ts",
+          "detail": "15 matches"
+         },
+         {
+          "path": "src/client/fetch-result-please.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/http-exception.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/router.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -916,7 +1053,7 @@
       ]
      }
     },
-    "level_name": "ad hoc",
+    "level_name": "solid",
     "applicable": true
    },
    {
@@ -928,13 +1065,13 @@
      {
       "signal": "L1 importable",
       "detail": "npm package",
-      "path": "package.json",
+      "path": "adapters/aws-lambda/package.json",
       "weight": 1
      },
      {
       "signal": "L2 installable",
       "detail": "package manifest",
-      "path": "package.json",
+      "path": "adapters/aws-lambda/package.json",
       "weight": 1
      }
     ],
@@ -1000,6 +1137,38 @@
         "met": true,
         "evidence": [
          {
+          "path": "adapters/aws-lambda/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/bun/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/cloudflare-workers/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/deno/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/lambda-edge/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/netlify/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/service-worker/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "adapters/vercel/package.json",
+          "detail": "npm package"
+         },
+         {
           "path": "package.json",
           "detail": "npm package"
          }
@@ -1012,6 +1181,38 @@
         "text": "Installable as a package (a package manifest).",
         "met": true,
         "evidence": [
+         {
+          "path": "adapters/aws-lambda/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "adapters/bun/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "adapters/cloudflare-workers/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "adapters/deno/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "adapters/lambda-edge/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "adapters/netlify/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "adapters/service-worker/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "adapters/vercel/package.json",
+          "detail": "package manifest"
+         },
          {
           "path": "package.json",
           "detail": "package manifest"
@@ -1332,18 +1533,18 @@
    }
   ],
   "estimate": {
-   "integrability_index": 1.33,
+   "integrability_index": 1.56,
    "assessed_dimensions": 9,
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 23.3,
+   "retrofit_person_days": 20.5,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 1.9,
     "events": 1.9,
     "identity": 3.7,
-    "ergonomics": 2.8,
+    "ergonomics": 0.0,
     "embeddability": 0.9,
     "extensibility": 5.6,
     "observability": 2.8,
@@ -1383,10 +1584,10 @@
    "knowledge_pm": 31.77,
    "rediscover_pm": 8.58,
    "replacement_pm": 21.75,
-   "leverage": 0.92,
+   "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 18.94,
-   "value_cost": 213238,
+   "value_pm": 19.52,
+   "value_cost": 219699,
    "knowledge_at_risk": 0.39,
    "assumptions": {
     "salary": 56286,

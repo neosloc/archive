@@ -1,7 +1,7 @@
 {
  "title": "spf13/cobra",
  "slug": "spf13-cobra",
- "date": "2026-10-07T14:04:28+00:00",
+ "date": "2026-10-07T14:28:02+00:00",
  "repo_url": "https://github.com/spf13/cobra",
  "index": 1.14,
  "assessed": 7,

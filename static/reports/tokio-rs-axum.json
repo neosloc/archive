@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "618496288c41da835683ec149432c4869722779f",
   "committed_at": "2026-10-07T16:03:50+02:00",
-  "evaluated_at": "2026-10-07T14:05:39+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:13+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -25,7 +25,8 @@
   "surfaces": {
    "kinds": [
     "service",
-    "cli"
+    "cli",
+    "library"
    ],
    "evidence": {
     "service": [
@@ -51,6 +52,20 @@
       "path": "axum/benches/benches.rs",
       "detail": "1 match"
      }
+    ],
+    "library": [
+     {
+      "path": "axum-core/src/lib.rs",
+      "detail": "Rust library crate"
+     },
+     {
+      "path": "axum-extra/src/lib.rs",
+      "detail": "Rust library crate"
+     },
+     {
+      "path": "axum-macros/src/lib.rs",
+      "detail": "Rust library crate"
+     }
     ]
    },
    "long_running": [],
@@ -74,25 +89,31 @@
    {
     "key": "interface",
     "title": "Interface surface",
-    "level": 3,
-    "rationale": "[service] A contract covers its transport: an HTTP contract covers at least 80% of declared routes (generated contracts do), or the application layer over a standard protocol (commands, topics, payloads) is specified in a protocol document or AsyncAPI.",
+    "level": 4,
+    "rationale": "[library] An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
     "evidence": [
      {
-      "signal": "L1 routes",
-      "detail": "rust-axum/actix: 198 route declarations",
-      "path": "axum/src/extract/path/mod.rs",
+      "signal": "L1 importable",
+      "detail": "Rust library crate",
+      "path": "axum-core/src/lib.rs",
       "weight": 1
      },
      {
-      "signal": "L2 contract",
-      "detail": "graphql server",
-      "path": "examples/Cargo.toml",
+      "signal": "L2 public-api",
+      "detail": "pub items",
+      "path": "axum-core/src/lib.rs",
       "weight": 1
      },
      {
-      "signal": "L3 coverage",
-      "detail": "generated from code: graphql server",
-      "path": "examples/Cargo.toml",
+      "signal": "L3 typed",
+      "detail": "statically typed language",
+      "path": "axum-core/src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L4 api-reference",
+      "detail": "2 matches",
+      "path": ".github/workflows/CI.yml",
       "weight": 1
      }
     ],
@@ -110,7 +131,7 @@
      "[cli] L3 Machine-readable output (--json/--format) and documented exit statuses. (no --json/--format option)"
     ],
     "question": "Can another program use it through a documented, machine-readable surface?",
-    "best_surface": "service",
+    "best_surface": "library",
     "surfaces": {
      "service": {
       "level": 3,
@@ -212,9 +233,103 @@
         "note": "no JSON Schema for the output"
        }
       ]
+     },
+     "library": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "axum-core/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "axum-extra/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "axum-macros/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "axum/src/lib.rs",
+          "detail": "Rust library crate"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "axum-core/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "axum-extra/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "axum-macros/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "axum/src/lib.rs",
+          "detail": "pub items"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "axum-core/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "axum-extra/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "axum-macros/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "axum/src/lib.rs",
+          "detail": "statically typed language"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/CI.yml",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
+       }
+      ]
      }
     },
-    "level_name": "solid",
+    "level_name": "exemplary",
     "applicable": true
    },
    {
@@ -571,7 +686,8 @@
     "metrics": {},
     "gaps": [
      "[service] L2 Field-level validation errors, and paginated lists. (no request validation)",
-     "[cli] L2 Data on stdout, diagnostics on stderr, non-zero exit on failure. (no non-zero exit on failure)"
+     "[cli] L2 Data on stdout, diagnostics on stderr, non-zero exit on failure. (no non-zero exit on failure)",
+     "[library] L2 Inputs are validated with messages naming the bad argument. (no input validation errors)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
     "best_surface": "service",
@@ -665,6 +781,102 @@
         "note": "no --dry-run"
        }
       ]
+     },
+     "library": {
+      "level": 1,
+      "first_missing": "validation",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "axum-core/src/extract/rejection.rs",
+          "detail": "2 matches"
+         },
+         {
+          "path": "axum-extra/src/extract/json_deserializer.rs",
+          "detail": "2 matches"
+         },
+         {
+          "path": "axum/src/extract/rejection.rs",
+          "detail": "2 matches"
+         },
+         {
+          "path": "axum-core/src/response/into_response_parts.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum-extra/src/extract/multipart.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum-extra/src/protobuf.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum-extra/src/response/error_response.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum/src/error_handling/mod.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum/src/extract/multipart.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum/src/extract/path/mod.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": false,
+        "evidence": [],
+        "note": "no input validation errors"
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "axum/src/handler/mod.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum/src/routing/method_routing.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum/src/response/sse.rs",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
      }
     },
     "level_name": "ad hoc",
@@ -692,7 +904,8 @@
     "metrics": {},
     "gaps": [
      "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (the environment variables aren't documented)",
-     "[cli] L3 Published to a public registry and run non-interactively in CI. (not published to a registry)"
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (not published to a registry)",
+     "[library] L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
     ],
     "question": "Can another system run and compose it without a human?",
     "best_surface": "cli",
@@ -1227,6 +1440,95 @@
         "note": "no container image or binary"
        }
       ]
+     },
+     "library": {
+      "level": 2,
+      "first_missing": "published-minimal",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "axum-core/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "axum-extra/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "axum-macros/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "axum/src/lib.rs",
+          "detail": "Rust library crate"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "axum-core/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "axum-extra/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "axum-macros/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "axum/src/lib.rs",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "axum-core/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum-extra/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum-macros/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum/Cargo.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
      }
     },
     "level_name": "partial",
@@ -1296,7 +1598,8 @@
     "metrics": {},
     "gaps": [
      "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
-     "[cli] L1 Meaningful exit statuses, and errors on stderr. (no non-zero exit on failure)"
+     "[cli] L1 Meaningful exit statuses, and errors on stderr. (no non-zero exit on failure)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
     ],
     "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
     "best_surface": "service",
@@ -1379,6 +1682,44 @@
         "met": false,
         "evidence": [],
         "note": "no tracing hooks"
+       }
+      ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "no standard logger"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
        }
       ]
      }
@@ -1476,12 +1817,8 @@
           "detail": ""
          },
          {
-          "path": "Cargo.lock",
-          "detail": ""
-         },
-         {
-          "path": "examples/Cargo.lock",
-          "detail": ""
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
          }
         ],
         "note": ""
@@ -1510,7 +1847,7 @@
    }
   ],
   "estimate": {
-   "integrability_index": 1.3,
+   "integrability_index": 1.4,
    "assessed_dimensions": 10,
    "not_applicable": [],
    "retrofit_person_days": 29.9,
@@ -1544,12 +1881,12 @@
    },
    "capture": {
     "tests": 0.26,
-    "contract": 0.75,
+    "contract": 1.0,
     "docs": 1.0,
-    "capture": 0.57
+    "capture": 0.63
    },
-   "agent_factor": 0.29,
-   "reproduce_pm": 17.46,
+   "agent_factor": 0.27,
+   "reproduce_pm": 15.85,
    "history": {
     "commits": 2003,
     "fix_commits": 296,
@@ -1558,13 +1895,13 @@
     "months_since_last": 0.0
    },
    "knowledge_pm": 15.94,
-   "rediscover_pm": 6.85,
-   "replacement_pm": 24.31,
-   "leverage": 0.91,
+   "rediscover_pm": 5.9,
+   "replacement_pm": 21.75,
+   "leverage": 0.93,
    "obsolescence": 0.95,
-   "value_pm": 21.07,
-   "value_cost": 237207,
-   "knowledge_at_risk": 0.28,
+   "value_pm": 19.11,
+   "value_cost": 215114,
+   "knowledge_at_risk": 0.27,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -1577,49 +1914,49 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 146.9799,
+   "make_buy_ratio": 128.873,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 40490.61,
+   "break_even_price_per_year": 35085.79,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1082386,
-     "input": 27059650,
-     "cached_input": 23000702
+     "output": 1077551,
+     "input": 26938775,
+     "cached_input": 22897958
     },
-    "final_tokens": 360795,
-    "model_cost": 42.48,
-    "agent_hours": 12.03,
-    "human_days": 157.27,
-    "review_days": 13.42,
-    "rediscover_days": 143.85,
-    "calendar_days": 157.27,
-    "build_cost": 84347.55,
-    "yearly_cost": 12652.13,
-    "total_cost": 122303.95
+    "final_tokens": 359183,
+    "model_cost": 42.29,
+    "agent_hours": 11.97,
+    "human_days": 136.4,
+    "review_days": 12.5,
+    "rediscover_days": 123.9,
+    "calendar_days": 136.4,
+    "build_cost": 73158.97,
+    "yearly_cost": 10973.85,
+    "total_cost": 106080.51
    },
    "buy": {
     "via": {
      "install": "cli",
-     "use": "service"
+     "use": "library"
     },
     "adoption_minutes": {
      "install": 15,
-     "first_use": 10.0,
-     "total": 25.0
+     "first_use": 2.0,
+     "total": 17.0
     },
     "tokens": {
-     "output": 3125,
-     "input": 78125,
-     "cached_input": 66406
+     "output": 2125,
+     "input": 53125,
+     "cached_input": 45156
     },
-    "model_cost": 0.12,
+    "model_cost": 0.08,
     "upgrade_minutes_per_year": 240,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 28.04,
+    "fixed_cost": 19.07,
     "yearly_cost": 268.02,
-    "total_cost": 832.11
+    "total_cost": 823.14
    },
    "assumptions": {
     "day_rate": 536.05,

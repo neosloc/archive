@@ -1,7 +1,7 @@
 {
  "title": "junegunn/fzf",
  "slug": "junegunn-fzf",
- "date": "2026-10-07T14:05:13+00:00",
+ "date": "2026-10-07T14:28:48+00:00",
  "repo_url": "https://github.com/junegunn/fzf",
  "index": 2.12,
  "assessed": 8,

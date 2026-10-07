@@ -1,7 +1,7 @@
 {
  "title": "Alamofire/Alamofire",
  "slug": "alamofire-alamofire",
- "date": "2026-10-07T14:05:55+00:00",
+ "date": "2026-10-07T14:29:33+00:00",
  "repo_url": "https://github.com/Alamofire/Alamofire",
  "index": 2.0,
  "assessed": 7,

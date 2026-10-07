@@ -1,7 +1,7 @@
 {
  "title": "eclipse-mosquitto/mosquitto",
  "slug": "eclipse-mosquitto-mosquitto",
- "date": "2026-10-07T14:06:14+00:00",
+ "date": "2026-10-07T14:29:48+00:00",
  "repo_url": "https://github.com/eclipse-mosquitto/mosquitto",
  "index": 0.25,
  "assessed": 4,

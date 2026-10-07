@@ -1,7 +1,7 @@
 {
  "title": "charmbracelet/bubbletea",
  "slug": "charmbracelet-bubbletea",
- "date": "2026-10-07T14:05:08+00:00",
+ "date": "2026-10-07T14:28:45+00:00",
  "repo_url": "https://github.com/charmbracelet/bubbletea",
  "index": 1.29,
  "assessed": 7,

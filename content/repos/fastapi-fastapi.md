@@ -1,7 +1,7 @@
 {
  "title": "fastapi/fastapi",
  "slug": "fastapi-fastapi",
- "date": "2026-10-07T14:04:07+00:00",
+ "date": "2026-10-07T14:27:41+00:00",
  "repo_url": "https://github.com/fastapi/fastapi",
  "index": 2.0,
  "assessed": 9,

@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "ccc89b83875474399e9d9d70841163f6319d1a41",
   "committed_at": "2026-10-06T16:19:07+00:00",
-  "evaluated_at": "2026-10-07T14:05:42+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:16+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -29,7 +29,15 @@
    "evidence": {
     "library": [
      {
-      "path": "src/lib.rs",
+      "path": "clap_bench/src/lib.rs",
+      "detail": "Rust library crate"
+     },
+     {
+      "path": "clap_builder/src/lib.rs",
+      "detail": "Rust library crate"
+     },
+     {
+      "path": "clap_complete/src/lib.rs",
       "detail": "Rust library crate"
      }
     ]
@@ -48,19 +56,19 @@
      {
       "signal": "L1 importable",
       "detail": "Rust library crate",
-      "path": "src/lib.rs",
+      "path": "clap_bench/src/lib.rs",
       "weight": 1
      },
      {
       "signal": "L2 public-api",
       "detail": "pub items",
-      "path": "src/lib.rs",
+      "path": "clap_bench/src/lib.rs",
       "weight": 1
      },
      {
       "signal": "L3 typed",
       "detail": "statically typed language",
-      "path": "src/lib.rs",
+      "path": "clap_bench/src/lib.rs",
       "weight": 1
      },
      {
@@ -92,6 +100,34 @@
         "met": true,
         "evidence": [
          {
+          "path": "clap_bench/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_builder/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_complete/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_complete_nushell/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_derive/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_lex/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_mangen/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
           "path": "src/lib.rs",
           "detail": "Rust library crate"
          }
@@ -105,6 +141,34 @@
         "met": true,
         "evidence": [
          {
+          "path": "clap_bench/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "clap_builder/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "clap_complete/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "clap_complete_nushell/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "clap_derive/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "clap_lex/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "clap_mangen/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
           "path": "src/lib.rs",
           "detail": "pub items"
          }
@@ -117,6 +181,34 @@
         "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
         "met": true,
         "evidence": [
+         {
+          "path": "clap_bench/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "clap_builder/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "clap_complete/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "clap_complete_nushell/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "clap_derive/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "clap_lex/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "clap_mangen/src/lib.rs",
+          "detail": "statically typed language"
+         },
          {
           "path": "src/lib.rs",
           "detail": "statically typed language"
@@ -330,27 +422,43 @@
    {
     "key": "ergonomics",
     "title": "Agent ergonomics",
-    "level": 0,
-    "rationale": "Not yet: Errors are specific exception types, and library code never calls sys.exit.",
-    "evidence": [],
+    "level": 1,
+    "rationale": "Errors are specific exception types, and library code never calls sys.exit.",
+    "evidence": [
+     {
+      "signal": "L1 typed-exceptions",
+      "detail": "1 match",
+      "path": "clap_builder/src/parser/error.rs",
+      "weight": 1
+     }
+    ],
     "metrics": {},
     "gaps": [
-     "L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+     "L2 Inputs are validated with messages naming the bad argument. (no input validation errors)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
     "best_surface": "library",
     "surfaces": {
      "library": {
-      "level": 0,
-      "first_missing": "typed-exceptions",
+      "level": 1,
+      "first_missing": "validation",
       "requirements": [
        {
         "level": 1,
         "id": "typed-exceptions",
         "text": "Errors are specific exception types, and library code never calls sys.exit.",
-        "met": false,
-        "evidence": [],
-        "note": "no exception classes"
+        "met": true,
+        "evidence": [
+         {
+          "path": "clap_builder/src/parser/error.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -379,7 +487,7 @@
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "ad hoc",
     "applicable": true
    },
    {
@@ -391,13 +499,13 @@
      {
       "signal": "L1 importable",
       "detail": "Rust library crate",
-      "path": "src/lib.rs",
+      "path": "clap_bench/src/lib.rs",
       "weight": 1
      },
      {
       "signal": "L2 installable",
       "detail": "package manifest",
-      "path": "src/lib.rs",
+      "path": "clap_bench/src/lib.rs",
       "weight": 1
      }
     ],
@@ -419,6 +527,34 @@
         "met": true,
         "evidence": [
          {
+          "path": "clap_bench/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_builder/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_complete/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_complete_nushell/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_derive/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_lex/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "clap_mangen/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
           "path": "src/lib.rs",
           "detail": "Rust library crate"
          }
@@ -431,6 +567,34 @@
         "text": "Installable as a package (a package manifest).",
         "met": true,
         "evidence": [
+         {
+          "path": "clap_bench/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "clap_builder/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "clap_complete/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "clap_complete_nushell/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "clap_derive/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "clap_lex/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "clap_mangen/src/lib.rs",
+          "detail": "package manifest"
+         },
          {
           "path": "src/lib.rs",
           "detail": "package manifest"
@@ -743,18 +907,18 @@
    }
   ],
   "estimate": {
-   "integrability_index": 1.71,
+   "integrability_index": 1.86,
    "assessed_dimensions": 7,
    "not_applicable": [
     "events",
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 22.2,
+   "retrofit_person_days": 20.4,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.0,
-    "ergonomics": 5.4,
+    "ergonomics": 3.6,
     "embeddability": 1.2,
     "extensibility": 7.2,
     "observability": 3.6,
@@ -794,10 +958,10 @@
    "knowledge_pm": 71.36,
    "rediscover_pm": 0.0,
    "replacement_pm": 6.76,
-   "leverage": 0.96,
+   "leverage": 0.98,
    "obsolescence": 0.95,
-   "value_pm": 6.19,
-   "value_cost": 69684,
+   "value_pm": 6.3,
+   "value_cost": 70975,
    "knowledge_at_risk": 0.0,
    "assumptions": {
     "salary": 56286,

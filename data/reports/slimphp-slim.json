@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "3675bf6baac66b07032575b7bef4200b60b7974b",
   "committed_at": "2026-09-01T18:11:05+01:00",
-  "evaluated_at": "2026-10-07T14:06:12+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:48+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -70,7 +70,7 @@
     "key": "stability",
     "title": "Contract stability",
     "level": null,
-    "rationale": "Not applicable: no service, cli, library, desktop surface.",
+    "rationale": "Not applicable: no service, cli, library, desktop or format surface.",
     "evidence": [],
     "metrics": {},
     "gaps": [],

@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "efd239f0055b3d6b6cc122a786c46a0ea8d0235b",
   "committed_at": "2026-10-05T04:25:17+00:00",
-  "evaluated_at": "2026-10-07T14:05:50+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:26+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -463,6 +463,10 @@
         "met": true,
         "evidence": [
          {
+          "path": "Sources/ArgumentParser/Validators/CodingKeyValidator.swift",
+          "detail": "3 matches"
+         },
+         {
           "path": "Sources/ArgumentParser/Parsing/ParserError.swift",
           "detail": "2 matches"
          },
@@ -471,7 +475,7 @@
           "detail": "1 match"
          },
          {
-          "path": "Sources/ArgumentParser/Validators/CodingKeyValidator.swift",
+          "path": "Sources/ArgumentParser/Utilities/Platform.swift",
           "detail": "1 match"
          },
          {

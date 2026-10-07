@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
   "committed_at": "2026-08-04T10:00:08-04:00",
-  "evaluated_at": "2026-10-07T14:05:28+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:04+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -496,7 +496,7 @@
     "metrics": {},
     "gaps": [
      "[cli] L3 Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY. (errors aren't JSON in JSON mode)",
-     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (library code exits the process: crates/core/messages.rs)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
     "best_surface": "cli",
@@ -571,7 +571,7 @@
         "text": "Errors are specific exception types, and library code never calls sys.exit.",
         "met": false,
         "evidence": [],
-        "note": "no exception classes"
+        "note": "library code exits the process: crates/core/messages.rs"
        },
        {
         "level": 2,

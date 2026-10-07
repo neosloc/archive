@@ -1,7 +1,7 @@
 {
  "title": "jqlang/jq",
  "slug": "jqlang-jq",
- "date": "2026-10-07T14:06:09+00:00",
+ "date": "2026-10-07T14:29:43+00:00",
  "repo_url": "https://github.com/jqlang/jq",
  "index": 0.67,
  "assessed": 3,

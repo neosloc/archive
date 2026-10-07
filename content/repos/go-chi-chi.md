@@ -1,7 +1,7 @@
 {
  "title": "go-chi/chi",
  "slug": "go-chi-chi",
- "date": "2026-10-07T14:05:06+00:00",
+ "date": "2026-10-07T14:28:43+00:00",
  "repo_url": "https://github.com/go-chi/chi",
  "index": 1.56,
  "assessed": 9,

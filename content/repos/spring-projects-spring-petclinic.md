@@ -1,7 +1,7 @@
 {
  "title": "spring-projects/spring-petclinic",
  "slug": "spring-projects-spring-petclinic",
- "date": "2026-10-07T14:06:03+00:00",
+ "date": "2026-10-07T14:29:38+00:00",
  "repo_url": "https://github.com/spring-projects/spring-petclinic",
  "index": 0.6,
  "assessed": 10,

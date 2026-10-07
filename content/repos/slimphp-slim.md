@@ -1,7 +1,7 @@
 {
  "title": "slimphp/Slim",
  "slug": "slimphp-slim",
- "date": "2026-10-07T14:06:12+00:00",
+ "date": "2026-10-07T14:29:48+00:00",
  "repo_url": "https://github.com/slimphp/Slim",
  "index": 0.33,
  "assessed": 3,

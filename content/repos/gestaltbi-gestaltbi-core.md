@@ -1,7 +1,7 @@
 {
  "title": "GestaltBI/gestaltbi-core",
  "slug": "gestaltbi-gestaltbi-core",
- "date": "2026-10-07T14:03:44+00:00",
+ "date": "2026-10-07T14:27:18+00:00",
  "repo_url": "https://github.com/GestaltBI/gestaltbi-core",
  "index": 1.29,
  "assessed": 7,

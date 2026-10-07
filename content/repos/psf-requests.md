@@ -1,7 +1,7 @@
 {
  "title": "psf/requests",
  "slug": "psf-requests",
- "date": "2026-10-07T14:03:46+00:00",
+ "date": "2026-10-07T14:27:19+00:00",
  "repo_url": "https://github.com/psf/requests",
  "index": 2.0,
  "assessed": 7,

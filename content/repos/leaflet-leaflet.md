@@ -1,7 +1,7 @@
 {
  "title": "Leaflet/Leaflet",
  "slug": "leaflet-leaflet",
- "date": "2026-10-07T14:04:21+00:00",
+ "date": "2026-10-07T14:27:54+00:00",
  "repo_url": "https://github.com/Leaflet/Leaflet",
  "index": 1.29,
  "assessed": 7,

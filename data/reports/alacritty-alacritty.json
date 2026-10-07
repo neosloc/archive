@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "29dc55375da817d53540f4caefbe708703c57b07",
   "committed_at": "2026-10-05T12:48:26+00:00",
-  "evaluated_at": "2026-10-07T14:05:57+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:30+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -24,7 +24,8 @@
   },
   "surfaces": {
    "kinds": [
-    "cli"
+    "cli",
+    "library"
    ],
    "evidence": {
     "cli": [
@@ -35,6 +36,20 @@
      {
       "path": "alacritty/src/cli.rs",
       "detail": "39 matches"
+     }
+    ],
+    "library": [
+     {
+      "path": "alacritty_config/src/lib.rs",
+      "detail": "Rust library crate"
+     },
+     {
+      "path": "alacritty_config_derive/src/lib.rs",
+      "detail": "Rust library crate"
+     },
+     {
+      "path": "alacritty_terminal/src/lib.rs",
+      "detail": "Rust library crate"
      }
     ]
    },
@@ -51,9 +66,28 @@
    {
     "key": "interface",
     "title": "Interface surface",
-    "level": 0,
-    "rationale": "Not yet: Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option.",
-    "evidence": [],
+    "level": 3,
+    "rationale": "[library] The public API is statically typed (py.typed, type declarations, a typed language).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "Rust library crate",
+      "path": "alacritty_config/src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L2 public-api",
+      "detail": "pub items",
+      "path": "alacritty_config/src/lib.rs",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "statically typed language",
+      "path": "alacritty_config/src/lib.rs",
+      "weight": 1
+     }
+    ],
     "metrics": {
      "route_declarations": 0,
      "routes_by_framework": {},
@@ -62,10 +96,11 @@
      "spec_coverage": null
     },
     "gaps": [
-     "L1 Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option. (prompts without a non-TTY guard: alacritty_terminal/src/term/mod.rs)"
+     "[cli] L1 Invocable non-interactively: no prompts, or prompts guarded by a TTY check or a --yes/--no-input option. (prompts without a non-TTY guard: alacritty_terminal/src/term/mod.rs)",
+     "[library] L4 An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026). (no generated API reference)"
     ],
     "question": "Can another program use it through a documented, machine-readable surface?",
-    "best_surface": "cli",
+    "best_surface": "library",
     "surfaces": {
      "cli": {
       "level": 0,
@@ -109,9 +144,86 @@
         "note": "no JSON Schema for the output"
        }
       ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "api-reference",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty_config/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "alacritty_config_derive/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "alacritty_terminal/src/lib.rs",
+          "detail": "Rust library crate"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty_config/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "alacritty_config_derive/src/lib.rs",
+          "detail": "pub items"
+         },
+         {
+          "path": "alacritty_terminal/src/lib.rs",
+          "detail": "pub items"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty_config/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "alacritty_config_derive/src/lib.rs",
+          "detail": "statically typed language"
+         },
+         {
+          "path": "alacritty_terminal/src/lib.rs",
+          "detail": "statically typed language"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": false,
+        "evidence": [],
+        "note": "no generated API reference"
+       }
+      ]
      }
     },
-    "level_name": "absent",
+    "level_name": "solid",
     "applicable": true
    },
    {
@@ -215,7 +327,7 @@
     "key": "identity",
     "title": "Identity",
     "level": 3,
-    "rationale": "No output or log statement includes a credential.",
+    "rationale": "[cli] No output or log statement includes a credential.",
     "evidence": [
      {
       "signal": "L1 credentials-env",
@@ -238,7 +350,8 @@
     ],
     "metrics": {},
     "gaps": [
-     "L4 Several profiles or scoped credentials per target. (no credential profiles)"
+     "[cli] L4 Several profiles or scoped credentials per target. (no credential profiles)",
+     "[library] L4 Several profiles or scoped credentials per target. (no credential profiles)"
     ],
     "question": "Can a machine act with its own revocable, least-privilege identity?",
     "best_surface": "cli",
@@ -295,6 +408,59 @@
         "note": "no credential profiles"
        }
       ]
+     },
+     "library": {
+      "level": 3,
+      "first_missing": "profiles",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "credentials-env",
+        "text": "Credentials can be supplied non-interactively (environment variables).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty/src/main.rs",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "credentials-documented",
+        "text": "The credential environment variables are documented.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty_terminal/CHANGELOG.md",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "secrets-not-logged",
+        "text": "No output or log statement includes a credential.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "no credential in print/log statements"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "profiles",
+        "text": "Several profiles or scoped credentials per target.",
+        "met": false,
+        "evidence": [],
+        "note": "no credential profiles"
+       }
+      ]
      }
     },
     "level_name": "solid",
@@ -318,11 +484,12 @@
     "key": "ergonomics",
     "title": "Agent ergonomics",
     "level": 0,
-    "rationale": "Not yet: Never blocks on a prompt when stdin is not a TTY.",
+    "rationale": "[cli] Not yet: Never blocks on a prompt when stdin is not a TTY.",
     "evidence": [],
     "metrics": {},
     "gaps": [
-     "L1 Never blocks on a prompt when stdin is not a TTY. (prompts without a non-TTY guard: alacritty_terminal/src/term/mod.rs)"
+     "[cli] L1 Never blocks on a prompt when stdin is not a TTY. (prompts without a non-TTY guard: alacritty_terminal/src/term/mod.rs)",
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (library code exits the process: alacritty/src/migrate/mod.rs, alacritty_terminal/src/tty/unix.rs)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
     "best_surface": "cli",
@@ -393,6 +560,44 @@
         "note": "no timeout/budget options"
        }
       ]
+     },
+     "library": {
+      "level": 0,
+      "first_missing": "typed-exceptions",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": false,
+        "evidence": [],
+        "note": "library code exits the process: alacritty/src/migrate/mod.rs, alacritty_terminal/src/tty/unix.rs"
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": false,
+        "evidence": [],
+        "note": "no input validation errors"
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no retry parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
      }
     },
     "level_name": "absent",
@@ -402,7 +607,7 @@
     "key": "embeddability",
     "title": "Embeddability",
     "level": 2,
-    "rationale": "Installable as a package that provides the command.",
+    "rationale": "[cli] Installable as a package that provides the command.",
     "evidence": [
      {
       "signal": "L1 runnable",
@@ -419,7 +624,8 @@
     ],
     "metrics": {},
     "gaps": [
-     "L3 Published to a public registry and run non-interactively in CI. (not published to a registry)"
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (not published to a registry)",
+     "[library] L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
     ],
     "question": "Can another system run and compose it without a human?",
     "best_surface": "cli",
@@ -469,6 +675,79 @@
         "met": false,
         "evidence": [],
         "note": "no container image or binary"
+       }
+      ]
+     },
+     "library": {
+      "level": 2,
+      "first_missing": "published-minimal",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty_config/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "alacritty_config_derive/src/lib.rs",
+          "detail": "Rust library crate"
+         },
+         {
+          "path": "alacritty_terminal/src/lib.rs",
+          "detail": "Rust library crate"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty_config/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "alacritty_config_derive/src/lib.rs",
+          "detail": "package manifest"
+         },
+         {
+          "path": "alacritty_terminal/src/lib.rs",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty/Cargo.toml",
+          "detail": "1 match"
+         },
+         {
+          "path": "alacritty_terminal/Cargo.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
        }
       ]
      }
@@ -535,7 +814,7 @@
     "key": "observability",
     "title": "Observability",
     "level": 1,
-    "rationale": "Meaningful exit statuses, and errors on stderr.",
+    "rationale": "[cli] Meaningful exit statuses, and errors on stderr.",
     "evidence": [
      {
       "signal": "L1 exit-and-stderr",
@@ -546,7 +825,8 @@
     ],
     "metrics": {},
     "gaps": [
-     "L2 Verbosity control for diagnostics (--quiet, --log-level, --debug). (no --quiet or log-level control)"
+     "[cli] L2 Verbosity control for diagnostics (--quiet, --log-level, --debug). (no --quiet or log-level control)",
+     "[library] L2 Log levels are used meaningfully (at least two levels). (fewer than two log levels used)"
     ],
     "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
     "best_surface": "cli",
@@ -615,6 +895,89 @@
         "met": false,
         "evidence": [],
         "note": "no tracing hooks"
+       }
+      ]
+     },
+     "library": {
+      "level": 1,
+      "first_missing": "log-levels",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "alacritty/src/display/window.rs",
+          "detail": "2 matches"
+         },
+         {
+          "path": "alacritty/src/main.rs",
+          "detail": "2 matches"
+         },
+         {
+          "path": "alacritty_config_derive/src/config_deserialize/de_struct.rs",
+          "detail": "2 matches"
+         },
+         {
+          "path": "alacritty/src/input/mod.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "alacritty/src/macos/locale.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "alacritty/src/renderer/platform.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "alacritty/src/renderer/rects.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "alacritty/src/renderer/text/gles2.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "alacritty/src/renderer/text/glsl3.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "alacritty/src/window_context.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no print() in library code"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
        }
       ]
      }
@@ -715,8 +1078,8 @@
           "detail": ""
          },
          {
-          "path": "Cargo.lock",
-          "detail": ""
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
          }
         ],
         "note": ""
@@ -745,15 +1108,15 @@
    }
   ],
   "estimate": {
-   "integrability_index": 1.25,
+   "integrability_index": 1.62,
    "assessed_dimensions": 8,
    "not_applicable": [
     "events",
     "portability"
    ],
-   "retrofit_person_days": 29.4,
+   "retrofit_person_days": 19.8,
    "retrofit_by_dimension": {
-    "interface": 9.6,
+    "interface": 0.0,
     "stability": 1.1,
     "identity": 0.0,
     "ergonomics": 4.8,
@@ -762,7 +1125,7 @@
     "observability": 2.1,
     "legibility": 4.3
    },
-   "wrappability": "expensive retrofit",
+   "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
     "size_factor": 1.07,
@@ -780,12 +1143,12 @@
    },
    "capture": {
     "tests": 0.02,
-    "contract": 0.0,
+    "contract": 0.75,
     "docs": 0.71,
-    "capture": 0.19
+    "capture": 0.37
    },
-   "agent_factor": 0.46,
-   "reproduce_pm": 30.46,
+   "agent_factor": 0.38,
+   "reproduce_pm": 25.14,
    "history": {
     "commits": 2455,
     "fix_commits": 771,
@@ -794,13 +1157,13 @@
     "months_since_last": 0.1
    },
    "knowledge_pm": 27.7,
-   "rediscover_pm": 22.43,
-   "replacement_pm": 52.89,
-   "leverage": 0.91,
+   "rediscover_pm": 17.45,
+   "replacement_pm": 42.59,
+   "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 45.53,
-   "value_cost": 512580,
-   "knowledge_at_risk": 0.42,
+   "value_pm": 38.57,
+   "value_cost": 434146,
+   "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -813,49 +1176,49 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 116.0119,
+   "make_buy_ratio": 694.1993,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 126312.66,
+   "break_even_price_per_year": 99376.48,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1182093,
-     "input": 29552325,
-     "cached_input": 25119476
+     "output": 1166685,
+     "input": 29167125,
+     "cached_input": 24792056
     },
-    "final_tokens": 394031,
-    "model_cost": 46.4,
-    "agent_hours": 13.13,
-    "human_days": 491.68,
-    "review_days": 20.65,
-    "rediscover_days": 471.03,
-    "calendar_days": 491.68,
-    "build_cost": 263608.8,
-    "yearly_cost": 39541.32,
-    "total_cost": 382232.77
+    "final_tokens": 388895,
+    "model_cost": 45.79,
+    "agent_hours": 12.96,
+    "human_days": 384.03,
+    "review_days": 17.58,
+    "rediscover_days": 366.45,
+    "calendar_days": 384.03,
+    "build_cost": 205903.12,
+    "yearly_cost": 30885.47,
+    "total_cost": 298559.53
    },
    "buy": {
     "via": {
      "install": "cli",
-     "use": "cli"
+     "use": "library"
     },
     "adoption_minutes": {
      "install": 15,
-     "first_use": 2563.95,
-     "total": 2578.95
+     "first_use": 10.0,
+     "total": 25.0
     },
     "tokens": {
-     "output": 322368,
-     "input": 8059200,
-     "cached_input": 6850320
+     "output": 3125,
+     "input": 78125,
+     "cached_input": 66406
     },
-    "model_cost": 12.65,
+    "model_cost": 0.12,
     "upgrade_minutes_per_year": 120,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 2892.74,
+    "fixed_cost": 28.04,
     "yearly_cost": 134.01,
-    "total_cost": 3294.77
+    "total_cost": 430.08
    },
    "assumptions": {
     "day_rate": 536.05,

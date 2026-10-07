@@ -1,7 +1,7 @@
 {
  "title": "developmentseed/titiler",
  "slug": "developmentseed-titiler",
- "date": "2026-10-07T14:04:05+00:00",
+ "date": "2026-10-07T14:27:40+00:00",
  "repo_url": "https://github.com/developmentseed/titiler",
  "index": 1.6,
  "assessed": 10,

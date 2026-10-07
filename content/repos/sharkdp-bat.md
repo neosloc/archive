@@ -1,7 +1,7 @@
 {
  "title": "sharkdp/bat",
  "slug": "sharkdp-bat",
- "date": "2026-10-07T14:05:32+00:00",
+ "date": "2026-10-07T14:29:04+00:00",
  "repo_url": "https://github.com/sharkdp/bat",
  "index": 1.57,
  "assessed": 7,

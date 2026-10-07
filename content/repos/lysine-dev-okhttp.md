@@ -1,7 +1,7 @@
 {
  "title": "lysine-dev/okhttp",
  "slug": "lysine-dev-okhttp",
- "date": "2026-10-07T14:06:14+00:00",
+ "date": "2026-10-07T14:29:49+00:00",
  "repo_url": "https://github.com/lysine-dev/okhttp",
  "index": 0.67,
  "assessed": 3,

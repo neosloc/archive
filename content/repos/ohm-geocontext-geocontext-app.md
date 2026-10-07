@@ -1,7 +1,7 @@
 {
  "title": "ohm-geocontext/geocontext-app",
  "slug": "ohm-geocontext-geocontext-app",
- "date": "2026-10-07T14:03:44+00:00",
+ "date": "2026-10-07T14:27:18+00:00",
  "repo_url": "https://github.com/ohm-geocontext/geocontext-app",
  "index": 0.62,
  "assessed": 8,

@@ -1,7 +1,7 @@
 {
  "title": "p0deje/Maccy",
  "slug": "p0deje-maccy",
- "date": "2026-10-07T14:06:01+00:00",
+ "date": "2026-10-07T14:29:36+00:00",
  "repo_url": "https://github.com/p0deje/Maccy",
  "index": 0.75,
  "assessed": 8,

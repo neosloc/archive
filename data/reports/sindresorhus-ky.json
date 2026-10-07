@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "0d59458a0a58e1c3d7c6db0ab17ed5c7cd671e47",
   "committed_at": "2026-09-14T15:16:48+02:00",
-  "evaluated_at": "2026-10-07T14:11:54+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:29:49+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -250,27 +250,79 @@
    {
     "key": "ergonomics",
     "title": "Agent ergonomics",
-    "level": 0,
-    "rationale": "Not yet: Errors are specific exception types, and library code never calls sys.exit.",
-    "evidence": [],
+    "level": 3,
+    "rationale": "Timeouts and retries are configurable.",
+    "evidence": [
+     {
+      "signal": "L1 typed-exceptions",
+      "detail": "1 match",
+      "path": "source/errors/ForceRetryError.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L2 validation",
+      "detail": "11 matches",
+      "path": "source/core/Ky.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L3 timeouts-retries",
+      "detail": "6 matches",
+      "path": "source/core/Ky.ts",
+      "weight": 1
+     }
+    ],
     "metrics": {},
     "gaps": [
-     "L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
+     "L4 Agent docs, and examples that run as tests (doctests). (examples don't run as tests)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
     "best_surface": "library",
     "surfaces": {
      "library": {
-      "level": 0,
-      "first_missing": "typed-exceptions",
+      "level": 3,
+      "first_missing": "agent-ready",
       "requirements": [
        {
         "level": 1,
         "id": "typed-exceptions",
         "text": "Errors are specific exception types, and library code never calls sys.exit.",
-        "met": false,
-        "evidence": [],
-        "note": "no exception classes"
+        "met": true,
+        "evidence": [
+         {
+          "path": "source/errors/ForceRetryError.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "source/errors/KyError.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "source/errors/NetworkError.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "source/errors/NonError.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "source/errors/ResponseSizeError.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "source/errors/SchemaValidationError.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "source/errors/TimeoutError.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -369,7 +421,7 @@
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "solid",
     "applicable": true
    },
    {
@@ -563,9 +615,34 @@
    {
     "key": "legibility",
     "title": "Change legibility",
-    "level": 0,
-    "rationale": "Not yet: A README and some tests.",
-    "evidence": [],
+    "level": 4,
+    "rationale": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "readme.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/main.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L3 fits-and-verified",
+      "detail": "test ratio 3.43, 100% typed, modules fit",
+      "path": "test/base-url.ts",
+      "weight": 1
+     },
+     {
+      "signal": "L4 acyclic-documented",
+      "detail": "",
+      "path": "AGENTS.md",
+      "weight": 1
+     }
+    ],
     "metrics": {
      "source_files": 51,
      "source_tokens": 43067,
@@ -591,23 +668,30 @@
       "typescript": 43067
      }
     },
-    "gaps": [
-     "L1 A README and some tests. (no README)"
-    ],
+    "gaps": [],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
     "surfaces": {
      "all": {
-      "level": 0,
-      "first_missing": "readme-tests",
+      "level": 4,
+      "first_missing": null,
       "requirements": [
        {
         "level": 1,
         "id": "readme-tests",
         "text": "A README and some tests.",
-        "met": false,
-        "evidence": [],
-        "note": "no README"
+        "met": true,
+        "evidence": [
+         {
+          "path": "readme.md",
+          "detail": ""
+         },
+         {
+          "path": "test/base-url.ts",
+          "detail": "36 test files"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -655,33 +739,33 @@
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "exemplary",
     "applicable": true
    }
   ],
   "estimate": {
-   "integrability_index": 0.86,
+   "integrability_index": 1.86,
    "assessed_dimensions": 7,
    "not_applicable": [
     "events",
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 26.6,
+   "retrofit_person_days": 3.0,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 2.5,
-    "ergonomics": 5.6,
-    "embeddability": 1.2,
-    "extensibility": 7.5,
-    "observability": 3.8,
-    "legibility": 6.0
+    "stability": 0.5,
+    "ergonomics": 0.0,
+    "embeddability": 0.2,
+    "extensibility": 1.5,
+    "observability": 0.8,
+    "legibility": 0.0
    },
-   "wrappability": "expensive retrofit",
+   "wrappability": "cheap to wrap",
    "assumptions": {
     "target_level": 3,
     "size_factor": 0.5,
-    "legibility_multiplier": 2.5,
+    "legibility_multiplier": 0.5,
     "reference_tokens": 250000
    }
   },
@@ -711,10 +795,10 @@
    "knowledge_pm": 5.84,
    "rediscover_pm": 0.35,
    "replacement_pm": 1.48,
-   "leverage": 0.86,
-   "obsolescence": 0.85,
-   "value_pm": 1.08,
-   "value_cost": 12166,
+   "leverage": 0.98,
+   "obsolescence": 1.05,
+   "value_pm": 1.53,
+   "value_cost": 17221,
    "knowledge_at_risk": 0.24,
    "assumptions": {
     "salary": 56286,

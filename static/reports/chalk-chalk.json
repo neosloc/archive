@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "47fc05abd46171b235e24174cd2dba83d25bf037",
   "committed_at": "2026-09-27T10:37:26+07:00",
-  "evaluated_at": "2026-10-07T14:04:13+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:27:47+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -499,9 +499,22 @@
    {
     "key": "legibility",
     "title": "Change legibility",
-    "level": 0,
-    "rationale": "Not yet: A README and some tests.",
-    "evidence": [],
+    "level": 2,
+    "rationale": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
+    "evidence": [
+     {
+      "signal": "L1 readme-tests",
+      "detail": "",
+      "path": "readme.md",
+      "weight": 1
+     },
+     {
+      "signal": "L2 ci-pinned",
+      "detail": "",
+      "path": ".github/workflows/main.yml",
+      "weight": 1
+     }
+    ],
     "metrics": {
      "source_files": 4,
      "source_tokens": 5248,
@@ -529,22 +542,31 @@
      }
     },
     "gaps": [
-     "L1 A README and some tests. (no README)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (48% of code is typed (< 70%))"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
     "surfaces": {
      "all": {
-      "level": 0,
-      "first_missing": "readme-tests",
+      "level": 2,
+      "first_missing": "fits-and-verified",
       "requirements": [
        {
         "level": 1,
         "id": "readme-tests",
         "text": "A README and some tests.",
-        "met": false,
-        "evidence": [],
-        "note": "no README"
+        "met": true,
+        "evidence": [
+         {
+          "path": "readme.md",
+          "detail": ""
+         },
+         {
+          "path": "test/_fixture.js",
+          "detail": "8 test files"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -582,33 +604,33 @@
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "partial",
     "applicable": true
    }
   ],
   "estimate": {
-   "integrability_index": 0.86,
+   "integrability_index": 1.14,
    "assessed_dimensions": 7,
    "not_applicable": [
     "events",
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 26.6,
+   "retrofit_person_days": 10.2,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 2.5,
-    "ergonomics": 5.6,
-    "embeddability": 1.2,
-    "extensibility": 7.5,
-    "observability": 3.8,
-    "legibility": 6.0
+    "stability": 1.0,
+    "ergonomics": 2.2,
+    "embeddability": 0.5,
+    "extensibility": 3.0,
+    "observability": 1.5,
+    "legibility": 2.0
    },
-   "wrappability": "expensive retrofit",
+   "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
     "size_factor": 0.5,
-    "legibility_multiplier": 2.5,
+    "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
@@ -638,10 +660,10 @@
    "knowledge_pm": 2.74,
    "rediscover_pm": 0.16,
    "replacement_pm": 0.31,
-   "leverage": 0.86,
-   "obsolescence": 0.85,
-   "value_pm": 0.23,
-   "value_cost": 2571,
+   "leverage": 0.89,
+   "obsolescence": 0.95,
+   "value_pm": 0.27,
+   "value_cost": 2993,
    "knowledge_at_risk": 0.52,
    "assumptions": {
     "salary": 56286,

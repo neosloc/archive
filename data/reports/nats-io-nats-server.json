@@ -4,10 +4,10 @@
   "url": "https://github.com/nats-io/nats-server",
   "slug": "nats-io-nats-server",
   "host": "github.com",
-  "commit": "eed238891948174d107df8a2dde1c89d9a90a184",
-  "committed_at": "2026-10-07T12:28:58+01:00",
-  "evaluated_at": "2026-10-07T14:05:53+00:00",
-  "neosloc": "0.7.3"
+  "commit": "7f6b195c6c9b7d24e3c851076b601d5f64369258",
+  "committed_at": "2026-10-07T15:11:46+01:00",
+  "evaluated_at": "2026-10-07T14:29:30+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 598,
    "source_files": 130,
-   "source_tokens": 1146684,
+   "source_tokens": 1147023,
    "languages": {
-    "go": 1144142,
+    "go": 1144481,
     "shell": 2542
    },
    "git": true
@@ -1445,9 +1445,9 @@
     ],
     "metrics": {
      "source_files": 130,
-     "source_tokens": 1146684,
+     "source_tokens": 1147023,
      "test_files": 135,
-     "test_tokens": 2361995,
+     "test_tokens": 2366363,
      "test_ratio": 2.06,
      "modules": 21,
      "modules_within_budget": 0.95,
@@ -1456,8 +1456,8 @@
       "server/filestore.go",
       "server/stream.go",
       "server/mqtt.go",
-      "server/consumer.go",
       "server/client.go",
+      "server/consumer.go",
       "server/opts.go",
       "server/jetstream_api.go",
       "server/raft.go",
@@ -1477,7 +1477,7 @@
      ],
      "largest_module": {
       "path": "server",
-      "tokens": 1072961
+      "tokens": 1073300
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -1488,7 +1488,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 1144142,
+      "go": 1144481,
       "shell": 2542
      }
     },
@@ -1601,15 +1601,15 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 46.0,
+   "retrofit_person_days": 46.2,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 4.3,
     "events": 0.0,
-    "identity": 12.8,
+    "identity": 12.9,
     "ergonomics": 3.2,
     "embeddability": 0.0,
-    "extensibility": 12.8,
+    "extensibility": 12.9,
     "observability": 4.3,
     "legibility": 8.6
    },
@@ -1623,11 +1623,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 113.32,
+   "ksloc": 113.34,
    "classic": {
-    "person_months": 344.54,
+    "person_months": 344.61,
     "schedule_months": 23.0,
-    "cost": 3878605
+    "cost": 3879288
    },
    "capture": {
     "tests": 1.0,
@@ -1636,21 +1636,21 @@
     "capture": 0.7
    },
    "agent_factor": 0.24,
-   "reproduce_pm": 80.97,
+   "reproduce_pm": 80.98,
    "history": {
-    "commits": 8619,
-    "fix_commits": 2504,
-    "authors": 283,
+    "commits": 8620,
+    "fix_commits": 2505,
+    "authors": 284,
     "age_months": 167.2,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 93.17,
-   "rediscover_pm": 27.95,
-   "replacement_pm": 108.92,
+   "knowledge_pm": 93.2,
+   "rediscover_pm": 27.96,
+   "replacement_pm": 108.94,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 99.16,
-   "value_cost": 1116298,
+   "value_pm": 99.18,
+   "value_cost": 1116520,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -1664,26 +1664,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 666.5782,
+   "make_buy_ratio": 666.9223,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 181377.04,
+   "break_even_price_per_year": 181470.82,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 10629238,
-     "input": 265730950,
-     "cached_input": 225871307
+     "output": 10643390,
+     "input": 266084750,
+     "cached_input": 226172037
     },
-    "final_tokens": 3543079,
-    "model_cost": 417.2,
-    "agent_hours": 118.1,
-    "human_days": 700.33,
-    "review_days": 113.38,
-    "rediscover_days": 586.95,
-    "calendar_days": 700.33,
-    "build_cost": 375826.65,
-    "yearly_cost": 56374.0,
-    "total_cost": 544948.64
+    "final_tokens": 3547796,
+    "model_cost": 417.75,
+    "agent_hours": 118.26,
+    "human_days": 700.69,
+    "review_days": 113.53,
+    "rediscover_days": 587.16,
+    "calendar_days": 700.69,
+    "build_cost": 376020.69,
+    "yearly_cost": 56403.1,
+    "total_cost": 545230.0
    },
    "buy": {
     "via": {

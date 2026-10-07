@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "aec8fa1341222fdddb3318e9ffa8e18e19b312f7",
   "committed_at": "2026-09-16T14:34:10-04:00",
-  "evaluated_at": "2026-10-07T14:04:25+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:27:59+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -25,8 +25,36 @@
    "git": true
   },
   "surfaces": {
-   "kinds": [],
-   "evidence": {},
+   "kinds": [
+    "library",
+    "format"
+   ],
+   "evidence": {
+    "library": [
+     {
+      "path": "js/package.json",
+      "detail": "npm package"
+     },
+     {
+      "path": "openlayers/package.json",
+      "detail": "npm package"
+     },
+     {
+      "path": "python/pmtiles/setup.py",
+      "detail": "Python package pmtiles"
+     }
+    ],
+    "format": [
+     {
+      "path": "spec/v2/spec.md",
+      "detail": "format specification (byte, bytes, header, little-endian)"
+     },
+     {
+      "path": "spec/v3/spec.md",
+      "detail": "format specification (byte, bytes, compression, encoding)"
+     }
+    ]
+   },
    "long_running": [],
    "owns_data": [
     {
@@ -40,9 +68,34 @@
    {
     "key": "interface",
     "title": "Interface surface",
-    "level": 0,
-    "rationale": "Not yet: A programmatic surface exists (routes, a CLI or a library).",
-    "evidence": [],
+    "level": 4,
+    "rationale": "[library] An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "npm package",
+      "path": "js/package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L2 public-api",
+      "detail": "package entry point",
+      "path": "js/package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "py.typed",
+      "path": "python/pmtiles/pmtiles/py.typed",
+      "weight": 1
+     },
+     {
+      "signal": "L4 api-reference",
+      "detail": "9 matches",
+      "path": "js/package-lock.json",
+      "weight": 1
+     }
+    ],
     "metrics": {
      "route_declarations": 0,
      "routes_by_framework": {},
@@ -50,43 +103,313 @@
      "spec_operations": 0,
      "spec_coverage": null
     },
-    "gaps": [
-     "L1 A programmatic surface exists (routes, a CLI or a library). (no service, CLI, library or frontend detected)"
-    ],
+    "gaps": [],
     "question": "Can another program use it through a documented, machine-readable surface?",
-    "best_surface": "none",
+    "best_surface": "library",
     "surfaces": {
-     "none": {
-      "level": 0,
-      "first_missing": "surface",
+     "library": {
+      "level": 4,
+      "first_missing": null,
       "requirements": [
        {
         "level": 1,
-        "id": "surface",
-        "text": "A programmatic surface exists (routes, a CLI or a library).",
-        "met": false,
-        "evidence": [],
-        "note": "no service, CLI, library or frontend detected"
+        "id": "importable",
+        "text": "An importable, packaged API exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "js/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "openlayers/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "python/pmtiles/setup.py",
+          "detail": "Python package pmtiles"
+         },
+         {
+          "path": "python/rio-pmtiles/pyproject.toml",
+          "detail": "Python package rio_pmtiles"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "public-api",
+        "text": "The public API is delimited (__all__, an exports map, exported identifiers).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "js/package.json",
+          "detail": "package entry point"
+         },
+         {
+          "path": "openlayers/package.json",
+          "detail": "package entry point"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "typed",
+        "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "python/pmtiles/pmtiles/py.typed",
+          "detail": "py.typed"
+         },
+         {
+          "path": "js/package.json",
+          "detail": "TypeScript types"
+         },
+         {
+          "path": "openlayers/package.json",
+          "detail": "TypeScript types"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "api-reference",
+        "text": "An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "js/package-lock.json",
+          "detail": "9 matches"
+         },
+         {
+          "path": ".github/workflows/actions.yml",
+          "detail": "2 matches"
+         },
+         {
+          "path": "js/package.json",
+          "detail": "1 match"
+         },
+         {
+          "path": "js/package.json",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     },
+     "format": {
+      "level": 4,
+      "first_missing": null,
+      "requirements": [
+       {
+        "level": 1,
+        "id": "specification",
+        "text": "A specification document describes the format (layout, header, encoding), or a machine-readable definition exists.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "spec/v2/spec.md",
+          "detail": "format specification (byte, bytes, header, little-endian)"
+         },
+         {
+          "path": "spec/v3/spec.md",
+          "detail": "format specification (byte, bytes, compression, encoding)"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "versioned-spec",
+        "text": "The specification is versioned (versioned spec documents, or a version field in the format).",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "versioned specifications: spec/v2, spec/v3"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "reference-implementations",
+        "text": "Reference implementations exist in at least two languages.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "js/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "openlayers/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "python/pmtiles/setup.py",
+          "detail": "Python package pmtiles"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "conformance",
+        "text": "Conformance material: sample files including invalid ones, or a machine-readable definition (Kaitai Struct, ABNF, JSON Schema).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "js/test/data/empty.pmtiles",
+          "detail": "7 sample files"
+         },
+         {
+          "path": "js/test/data/invalid.pmtiles",
+          "detail": "invalid-input fixture"
+         }
+        ],
+        "note": ""
        }
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "exemplary",
     "applicable": true
    },
    {
     "key": "stability",
     "title": "Contract stability",
-    "level": null,
-    "rationale": "Not applicable: no service, cli, library, desktop surface.",
-    "evidence": [],
+    "level": 3,
+    "rationale": "[format] The specification states compatibility rules (what readers and writers must do across versions, deprecations).",
+    "evidence": [
+     {
+      "signal": "L1 format-version",
+      "detail": "versioned specifications: spec/v2, spec/v3",
+      "path": null,
+      "weight": 1
+     },
+     {
+      "signal": "L2 spec-changes",
+      "detail": "",
+      "path": "spec/v3/CHANGELOG.md",
+      "weight": 1
+     },
+     {
+      "signal": "L3 compatibility-rules",
+      "detail": "compatibility rules",
+      "path": "spec/v2/spec.md",
+      "weight": 1
+     }
+    ],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "L1 Releases are versioned (semver tags or versioned changelog sections). (no semver tags or versioned releases)",
+     "[format] L4 Old versions can be migrated or converted (documented tooling). (no migration from old versions)"
+    ],
     "question": "Can integrators rely on it not changing under them?",
-    "best_surface": null,
-    "surfaces": {},
-    "level_name": "n/a",
-    "applicable": false
+    "best_surface": "format",
+    "surfaces": {
+     "all": {
+      "level": 0,
+      "first_missing": "versioned-releases",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "versioned-releases",
+        "text": "Releases are versioned (semver tags or versioned changelog sections).",
+        "met": false,
+        "evidence": [],
+        "note": "no semver tags or versioned releases"
+       },
+       {
+        "level": 2,
+        "id": "changelog",
+        "text": "A changelog exists and marks breaking changes.",
+        "met": false,
+        "evidence": [],
+        "note": "no changelog"
+       },
+       {
+        "level": 3,
+        "id": "deprecation",
+        "text": "A deprecation mechanism is used in code (warnings, @deprecated, Deprecation/Sunset headers) or the API is versioned.",
+        "met": false,
+        "evidence": [],
+        "note": "no deprecation mechanism or API versioning"
+       },
+       {
+        "level": 4,
+        "id": "clean-history",
+        "text": "Across tagged releases, no OpenAPI operation, CLI option or __all__ symbol was removed without first being deprecated.",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two tagged releases to compare"
+       }
+      ]
+     },
+     "format": {
+      "level": 3,
+      "first_missing": "migration",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "format-version",
+        "text": "The format carries a version.",
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "versioned specifications: spec/v2, spec/v3"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "spec-changes",
+        "text": "Changes between format versions are documented (a spec changelog or per-version specifications).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "spec/v3/CHANGELOG.md",
+          "detail": ""
+         },
+         {
+          "path": null,
+          "detail": "per-version specifications"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "compatibility-rules",
+        "text": "The specification states compatibility rules (what readers and writers must do across versions, deprecations).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "spec/v2/spec.md",
+          "detail": "compatibility rules"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "migration",
+        "text": "Old versions can be migrated or converted (documented tooling).",
+        "met": false,
+        "evidence": [],
+        "note": "no migration from old versions"
+       }
+      ]
+     }
+    },
+    "level_name": "solid",
+    "applicable": true
    },
    {
     "key": "events",
@@ -119,98 +442,250 @@
    {
     "key": "portability",
     "title": "Data portability",
-    "level": 0,
-    "rationale": "Not yet: The data schema is explicit (migrations, DDL, schema files).",
+    "level": null,
+    "rationale": "Not applicable: a file format is itself the portability layer (its conversions count under Interface).",
     "evidence": [],
     "metrics": {},
-    "gaps": [
-     "L1 The data schema is explicit (migrations, DDL, schema files). (no migrations or schema files)"
-    ],
+    "gaps": [],
     "question": "Can its data get in and out, in bulk, in open formats, with an explicit schema?",
-    "best_surface": "all",
-    "surfaces": {
-     "all": {
-      "level": 0,
-      "first_missing": "schema",
-      "requirements": [
-       {
-        "level": 1,
-        "id": "schema",
-        "text": "The data schema is explicit (migrations, DDL, schema files).",
-        "met": false,
-        "evidence": [],
-        "note": "no migrations or schema files"
-       },
-       {
-        "level": 2,
-        "id": "export",
-        "text": "An export exists (endpoint or command, not only the UI).",
-        "met": false,
-        "evidence": [],
-        "note": "no export"
-       },
-       {
-        "level": 3,
-        "id": "bulk-open",
-        "text": "A bulk export in an open format, and a bulk import.",
-        "met": false,
-        "evidence": [],
-        "note": "no import"
-       },
-       {
-        "level": 4,
-        "id": "documented-round-trip",
-        "text": "The export format is documented and the round trip is tested.",
-        "met": false,
-        "evidence": [],
-        "note": "no round-trip test"
-       }
-      ]
-     }
-    },
-    "level_name": "absent",
-    "applicable": true
+    "best_surface": null,
+    "surfaces": {},
+    "level_name": "n/a",
+    "applicable": false
    },
    {
     "key": "ergonomics",
     "title": "Agent ergonomics",
-    "level": null,
-    "rationale": "Not applicable: no service or cli or library or desktop surface.",
-    "evidence": [],
+    "level": 2,
+    "rationale": "Inputs are validated with messages naming the bad argument.",
+    "evidence": [
+     {
+      "signal": "L1 typed-exceptions",
+      "detail": "2 matches",
+      "path": "python/pmtiles/pmtiles/tile.py",
+      "weight": 1
+     },
+     {
+      "signal": "L2 validation",
+      "detail": "13 matches",
+      "path": "js/src/index.ts",
+      "weight": 1
+     }
+    ],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "L3 Timeouts and retries are configurable. (no timeout parameter)"
+    ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
-    "best_surface": null,
-    "surfaces": {},
-    "level_name": "n/a",
-    "applicable": false
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 2,
+      "first_missing": "timeouts-retries",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "typed-exceptions",
+        "text": "Errors are specific exception types, and library code never calls sys.exit.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "python/pmtiles/pmtiles/tile.py",
+          "detail": "2 matches"
+         },
+         {
+          "path": "js/src/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "serverless/cloudflare/src/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": null,
+          "detail": "no sys.exit in library code"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "validation",
+        "text": "Inputs are validated with messages naming the bad argument.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "js/src/index.ts",
+          "detail": "13 matches"
+         },
+         {
+          "path": "python/pmtiles/pmtiles/tile.py",
+          "detail": "4 matches"
+         },
+         {
+          "path": "js/src/adapters.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "serverless/aws/src/index.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "serverless/cloudflare/src/index.ts",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "timeouts-retries",
+        "text": "Timeouts and retries are configurable.",
+        "met": false,
+        "evidence": [],
+        "note": "no timeout parameter"
+       },
+       {
+        "level": 4,
+        "id": "agent-ready",
+        "text": "Agent docs, and examples that run as tests (doctests).",
+        "met": false,
+        "evidence": [],
+        "note": "no agent docs"
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
    },
    {
     "key": "embeddability",
     "title": "Embeddability",
-    "level": null,
-    "rationale": "Not applicable: no service or cli or library or desktop surface.",
-    "evidence": [],
+    "level": 2,
+    "rationale": "Installable as a package (a package manifest).",
+    "evidence": [
+     {
+      "signal": "L1 importable",
+      "detail": "npm package",
+      "path": "js/package.json",
+      "weight": 1
+     },
+     {
+      "signal": "L2 installable",
+      "detail": "package manifest",
+      "path": "js/package.json",
+      "weight": 1
+     }
+    ],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
+    ],
     "question": "Can another system run and compose it without a human?",
-    "best_surface": null,
-    "surfaces": {},
-    "level_name": "n/a",
-    "applicable": false
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 2,
+      "first_missing": "published-minimal",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "importable",
+        "text": "Importable from source.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "js/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "openlayers/package.json",
+          "detail": "npm package"
+         },
+         {
+          "path": "python/pmtiles/setup.py",
+          "detail": "Python package pmtiles"
+         },
+         {
+          "path": "python/rio-pmtiles/pyproject.toml",
+          "detail": "Python package rio_pmtiles"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "installable",
+        "text": "Installable as a package (a package manifest).",
+        "met": true,
+        "evidence": [
+         {
+          "path": "js/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "openlayers/package.json",
+          "detail": "package manifest"
+         },
+         {
+          "path": "python/pmtiles/setup.py",
+          "detail": "package manifest"
+         },
+         {
+          "path": "python/rio-pmtiles/pyproject.toml",
+          "detail": "package manifest"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 3,
+        "id": "published-minimal",
+        "text": "Published to a public registry, with at most 10 runtime dependencies.",
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
+       },
+       {
+        "level": 4,
+        "id": "optional-features",
+        "text": "Optional features behind extras/features.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "python/rio-pmtiles/setup.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
+       }
+      ]
+     }
+    },
+    "level_name": "partial",
+    "applicable": true
    },
    {
     "key": "extensibility",
     "title": "Extensibility",
-    "level": 0,
-    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
-    "evidence": [],
+    "level": 1,
+    "rationale": "[format] The specification defines free-form metadata or custom fields.",
+    "evidence": [
+     {
+      "signal": "L1 metadata",
+      "detail": "metadata or custom fields",
+      "path": "spec/v2/spec.md",
+      "weight": 1
+     }
+    ],
     "metrics": {},
     "gaps": [
-     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)",
+     "[format] L2 Readers are told how to treat unknown fields or values (forward compatibility), or values are reserved. (the specification doesn't say: unknown or reserved fields)"
     ],
     "question": "Can behaviour be added without modifying the code?",
-    "best_surface": "all",
+    "best_surface": "format",
     "surfaces": {
      "all": {
       "level": 0,
@@ -249,24 +724,113 @@
         "note": "the extension API isn't versioned"
        }
       ]
+     },
+     "format": {
+      "level": 1,
+      "first_missing": "unknown-fields",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "metadata",
+        "text": "The specification defines free-form metadata or custom fields.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "spec/v2/spec.md",
+          "detail": "metadata or custom fields"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 2,
+        "id": "unknown-fields",
+        "text": "Readers are told how to treat unknown fields or values (forward compatibility), or values are reserved.",
+        "met": false,
+        "evidence": [],
+        "note": "the specification doesn't say: unknown or reserved fields"
+       },
+       {
+        "level": 3,
+        "id": "registered-values",
+        "text": "Enumerations (types, compressions) are extensible, with reserved or registered values.",
+        "met": true,
+        "evidence": [
+         {
+          "path": "spec/v3/spec.md",
+          "detail": "extensible enumerations"
+         }
+        ],
+        "note": ""
+       },
+       {
+        "level": 4,
+        "id": "extension-process",
+        "text": "A documented process or registry for adding extensions.",
+        "met": false,
+        "evidence": [],
+        "note": "the specification doesn't say: an extension process"
+       }
+      ]
      }
     },
-    "level_name": "absent",
+    "level_name": "ad hoc",
     "applicable": true
    },
    {
     "key": "observability",
     "title": "Observability",
-    "level": null,
-    "rationale": "Not applicable: no service or cli or library or desktop surface.",
+    "level": 0,
+    "rationale": "Not yet: Logs through a standard logger namespace and never prints from library code.",
     "evidence": [],
     "metrics": {},
-    "gaps": [],
+    "gaps": [
+     "L1 Logs through a standard logger namespace and never prints from library code. (library code prints: python/pmtiles/pmtiles/convert.py, .github/check_examples.py)"
+    ],
     "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
-    "best_surface": null,
-    "surfaces": {},
-    "level_name": "n/a",
-    "applicable": false
+    "best_surface": "library",
+    "surfaces": {
+     "library": {
+      "level": 0,
+      "first_missing": "standard-logger",
+      "requirements": [
+       {
+        "level": 1,
+        "id": "standard-logger",
+        "text": "Logs through a standard logger namespace and never prints from library code.",
+        "met": false,
+        "evidence": [],
+        "note": "library code prints: python/pmtiles/pmtiles/convert.py, .github/check_examples.py"
+       },
+       {
+        "level": 2,
+        "id": "log-levels",
+        "text": "Log levels are used meaningfully (at least two levels).",
+        "met": false,
+        "evidence": [],
+        "note": "fewer than two log levels used"
+       },
+       {
+        "level": 3,
+        "id": "hooks",
+        "text": "Optional metrics or tracing hooks.",
+        "met": false,
+        "evidence": [],
+        "note": "no metrics or tracing hooks"
+       },
+       {
+        "level": 4,
+        "id": "otel",
+        "text": "OpenTelemetry instrumentation available.",
+        "met": false,
+        "evidence": [],
+        "note": "no OpenTelemetry instrumentation"
+       }
+      ]
+     }
+    },
+    "level_name": "absent",
+    "applicable": true
    },
    {
     "key": "legibility",
@@ -359,24 +923,8 @@
           "detail": ""
          },
          {
-          "path": "app/package-lock.json",
-          "detail": ""
-         },
-         {
-          "path": "js/package-lock.json",
-          "detail": ""
-         },
-         {
-          "path": "openlayers/package-lock.json",
-          "detail": ""
-         },
-         {
-          "path": "serverless/aws/package-lock.json",
-          "detail": ""
-         },
-         {
-          "path": "serverless/cloudflare/package-lock.json",
-          "detail": ""
+          "path": null,
+          "detail": "library or zero-dependency project: lockfile not required"
          }
         ],
         "note": ""
@@ -410,24 +958,24 @@
    }
   ],
   "estimate": {
-   "integrability_index": 0.75,
-   "assessed_dimensions": 4,
+   "integrability_index": 2.14,
+   "assessed_dimensions": 7,
    "not_applicable": [
-    "stability",
     "events",
     "identity",
-    "ergonomics",
-    "embeddability",
-    "observability"
+    "portability"
    ],
-   "retrofit_person_days": 7.8,
+   "retrofit_person_days": 3.6,
    "retrofit_by_dimension": {
-    "interface": 3.4,
-    "portability": 2.2,
-    "extensibility": 2.2,
+    "interface": 0.0,
+    "stability": 0.0,
+    "ergonomics": 0.6,
+    "embeddability": 0.4,
+    "extensibility": 1.5,
+    "observability": 1.1,
     "legibility": 0.0
    },
-   "wrappability": "moderate retrofit",
+   "wrappability": "cheap to wrap",
    "assumptions": {
     "target_level": 3,
     "size_factor": 0.5,
@@ -445,12 +993,12 @@
    },
    "capture": {
     "tests": 0.6,
-    "contract": 0.0,
+    "contract": 1.0,
     "docs": 0.99,
-    "capture": 0.55
+    "capture": 0.8
    },
-   "agent_factor": 0.3,
-   "reproduce_pm": 5.21,
+   "agent_factor": 0.19,
+   "reproduce_pm": 3.28,
    "history": {
     "commits": 734,
     "fix_commits": 86,
@@ -459,13 +1007,13 @@
     "months_since_last": 0.7
    },
    "knowledge_pm": 5.39,
-   "rediscover_pm": 2.43,
-   "replacement_pm": 7.64,
-   "leverage": 0.84,
+   "rediscover_pm": 1.08,
+   "replacement_pm": 4.35,
+   "leverage": 1.02,
    "obsolescence": 1.0,
-   "value_pm": 6.45,
-   "value_cost": 72568,
-   "knowledge_at_risk": 0.32,
+   "value_pm": 4.43,
+   "value_cost": 49881,
+   "knowledge_at_risk": 0.25,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -478,49 +1026,49 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 28.6582,
+   "make_buy_ratio": 161.2341,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 13493.14,
+   "break_even_price_per_year": 6386.79,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 230141,
-     "input": 5753525,
-     "cached_input": 4890496
+     "output": 225876,
+     "input": 5646900,
+     "cached_input": 4799865
     },
-    "final_tokens": 76713,
-    "model_cost": 9.03,
-    "agent_hours": 2.56,
-    "human_days": 53.95,
-    "review_days": 2.92,
-    "rediscover_days": 51.03,
-    "calendar_days": 53.95,
-    "build_cost": 28926.19,
-    "yearly_cost": 4338.93,
-    "total_cost": 41942.97
+    "final_tokens": 75292,
+    "model_cost": 8.87,
+    "agent_hours": 2.51,
+    "human_days": 24.79,
+    "review_days": 2.11,
+    "rediscover_days": 22.68,
+    "calendar_days": 24.79,
+    "build_cost": 13296.51,
+    "yearly_cost": 1994.48,
+    "total_cost": 19279.94
    },
    "buy": {
     "via": {
-     "install": null,
-     "use": "none"
+     "install": "library",
+     "use": "library"
     },
     "adoption_minutes": {
-     "install": 60,
-     "first_use": 1200.0,
-     "total": 1260.0
+     "install": 15,
+     "first_use": 2.0,
+     "total": 17.0
     },
     "tokens": {
-     "output": 157500,
-     "input": 3937500,
-     "cached_input": 3346875
+     "output": 2125,
+     "input": 53125,
+     "cached_input": 45156
     },
-    "model_cost": 6.18,
-    "upgrade_minutes_per_year": 15,
+    "model_cost": 0.08,
+    "upgrade_minutes_per_year": 30,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 1413.31,
-    "yearly_cost": 16.75,
-    "total_cost": 1463.56
+    "fixed_cost": 19.07,
+    "yearly_cost": 33.5,
+    "total_cost": 119.58
    },
    "assumptions": {
     "day_rate": 536.05,

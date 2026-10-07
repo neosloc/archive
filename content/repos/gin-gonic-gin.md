@@ -1,7 +1,7 @@
 {
  "title": "gin-gonic/gin",
  "slug": "gin-gonic-gin",
- "date": "2026-10-07T14:04:32+00:00",
+ "date": "2026-10-07T14:28:06+00:00",
  "repo_url": "https://github.com/gin-gonic/gin",
  "index": 1.2,
  "assessed": 10,

@@ -41,6 +41,48 @@
    },
    "verdict": "buy",
    "make_buy_ratio": 52.8562
+  },
+  {
+   "evaluated_at": "2026-10-07T14:17:47+00:00",
+   "commit": "14dcd92fb76ca0ebc2e82671a275f67c790d25fc",
+   "neosloc": "0.7.4",
+   "index": 1.71,
+   "assessed": 7,
+   "levels": {
+    "interface": 2,
+    "stability": 2,
+    "events": null,
+    "identity": null,
+    "portability": null,
+    "ergonomics": 2,
+    "embeddability": 2,
+    "extensibility": 0,
+    "observability": 1,
+    "legibility": 3
+   },
+   "verdict": "buy",
+   "make_buy_ratio": 52.8562
+  },
+  {
+   "evaluated_at": "2026-10-07T14:29:06+00:00",
+   "commit": "14dcd92fb76ca0ebc2e82671a275f67c790d25fc",
+   "neosloc": "0.8.0",
+   "index": 1.71,
+   "assessed": 7,
+   "levels": {
+    "interface": 2,
+    "stability": 2,
+    "events": null,
+    "identity": null,
+    "portability": null,
+    "ergonomics": 2,
+    "embeddability": 2,
+    "extensibility": 0,
+    "observability": 1,
+    "legibility": 3
+   },
+   "verdict": "buy",
+   "make_buy_ratio": 52.8562
   }
  ]
 }

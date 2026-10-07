@@ -1,12 +1,13 @@
 {
  "title": "openfantasymap/geomqtt",
  "slug": "openfantasymap-geomqtt",
- "date": "2026-10-07T14:03:39+00:00",
+ "date": "2026-10-07T14:27:13+00:00",
  "repo_url": "https://github.com/openfantasymap/geomqtt",
  "index": 1.78,
  "assessed": 9,
  "surfaces": [
-  "service"
+  "service",
+  "library"
  ],
  "verdict": "buy",
  "make_buy_ratio": 3.4601,

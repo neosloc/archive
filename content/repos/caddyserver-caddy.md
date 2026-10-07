@@ -1,7 +1,7 @@
 {
  "title": "caddyserver/caddy",
  "slug": "caddyserver-caddy",
- "date": "2026-10-07T14:05:03+00:00",
+ "date": "2026-10-07T14:28:41+00:00",
  "repo_url": "https://github.com/caddyserver/caddy",
  "index": 1.67,
  "assessed": 9,

@@ -1,7 +1,7 @@
 {
  "title": "ShareX/ShareX",
  "slug": "sharex-sharex",
- "date": "2026-10-07T14:06:58+00:00",
+ "date": "2026-10-07T14:30:30+00:00",
  "repo_url": "https://github.com/ShareX/ShareX",
  "index": 0.29,
  "assessed": 7,

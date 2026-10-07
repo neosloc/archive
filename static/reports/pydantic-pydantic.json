@@ -6,8 +6,8 @@
   "host": "github.com",
   "commit": "895c0c285c5cb4c0c7c7a4619a80941c12f2c75f",
   "committed_at": "2026-10-06T18:51:28+00:00",
-  "evaluated_at": "2026-10-07T14:04:33+00:00",
-  "neosloc": "0.7.3"
+  "evaluated_at": "2026-10-07T14:28:10+00:00",
+  "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
@@ -33,6 +33,10 @@
      {
       "path": "pyproject.toml",
       "detail": "Python package pydantic"
+     },
+     {
+      "path": "pydantic-core/src/lib.rs",
+      "detail": "Rust library crate"
      }
     ]
    },
@@ -101,6 +105,10 @@
          {
           "path": "pyproject.toml",
           "detail": "Python package pydantic"
+         },
+         {
+          "path": "pydantic-core/src/lib.rs",
+          "detail": "Rust library crate"
          }
         ],
         "note": ""
@@ -114,6 +122,10 @@
          {
           "path": "pydantic/__init__.py",
           "detail": "__all__"
+         },
+         {
+          "path": "pydantic-core/src/lib.rs",
+          "detail": "pub items"
          }
         ],
         "note": ""
@@ -135,6 +147,10 @@
          {
           "path": "pydantic/v1/py.typed",
           "detail": "py.typed"
+         },
+         {
+          "path": "pydantic-core/src/lib.rs",
+          "detail": "statically typed language"
          }
         ],
         "note": ""
@@ -823,6 +839,10 @@
          {
           "path": "pyproject.toml",
           "detail": "Python package pydantic"
+         },
+         {
+          "path": "pydantic-core/src/lib.rs",
+          "detail": "Rust library crate"
          }
         ],
         "note": ""
@@ -835,6 +855,10 @@
         "evidence": [
          {
           "path": "pyproject.toml",
+          "detail": "package manifest"
+         },
+         {
+          "path": "pydantic-core/src/lib.rs",
           "detail": "package manifest"
          }
         ],

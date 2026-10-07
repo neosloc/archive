@@ -1,7 +1,7 @@
 {
  "title": "GestaltBI/olap-cube-js",
  "slug": "gestaltbi-olap-cube-js",
- "date": "2026-10-07T14:03:41+00:00",
+ "date": "2026-10-07T14:27:15+00:00",
  "repo_url": "https://github.com/GestaltBI/olap-cube-js",
  "index": 0.86,
  "assessed": 7,
