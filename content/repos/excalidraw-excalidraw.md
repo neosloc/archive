@@ -1,7 +1,7 @@
 {
  "title": "excalidraw/excalidraw",
  "slug": "excalidraw-excalidraw",
- "date": "2026-10-07T14:28:23+00:00",
+ "date": "2026-10-12T12:01:37+00:00",
  "repo_url": "https://github.com/excalidraw/excalidraw",
  "index": 1.29,
  "assessed": 7,
@@ -9,13 +9,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 490.6532,
+ "make_buy_ratio": 492.1833,
  "languages": [
   "typescript",
   "javascript"
  ],
- "cocomo_cost": 4114546,
- "cocomo_pm": 365.5,
- "value_cost": 827791,
- "value_pm": 73.53
+ "cocomo_cost": 4131017,
+ "cocomo_pm": 366.97,
+ "value_cost": 830859,
+ "value_pm": 73.81
 }

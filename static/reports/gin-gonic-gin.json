@@ -4,9 +4,9 @@
   "url": "https://github.com/gin-gonic/gin",
   "slug": "gin-gonic-gin",
   "host": "github.com",
-  "commit": "43fe48e8a0f44af783116cdb010725e6bb50255f",
-  "committed_at": "2026-09-29T21:14:45+08:00",
-  "evaluated_at": "2026-10-07T14:28:06+00:00",
+  "commit": "0f09c3a9b4626d9fe9979cf4d0521d6ae32ab646",
+  "committed_at": "2026-10-10T12:20:35+08:00",
+  "evaluated_at": "2026-10-12T12:01:04+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 130,
    "source_files": 58,
-   "source_tokens": 56301,
+   "source_tokens": 56252,
    "languages": {
-    "go": 56301
+    "go": 56252
    },
    "git": true
   },
@@ -863,10 +863,10 @@
     ],
     "metrics": {
      "source_files": 58,
-     "source_tokens": 56301,
+     "source_tokens": 56252,
      "test_files": 40,
-     "test_tokens": 117643,
-     "test_ratio": 2.09,
+     "test_tokens": 117951,
+     "test_ratio": 2.1,
      "modules": 7,
      "modules_within_budget": 0.86,
      "oversized_files": [
@@ -874,7 +874,7 @@
      ],
      "largest_module": {
       "path": ".",
-      "tokens": 39372
+      "tokens": 39323
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -885,7 +885,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 56301
+      "go": 56252
      }
     },
     "gaps": [
@@ -996,9 +996,9 @@
   "value": {
    "ksloc": 5.36,
    "classic": {
-    "person_months": 13.99,
+    "person_months": 13.98,
     "schedule_months": 6.8,
-    "cost": 157463
+    "cost": 157402
    },
    "capture": {
     "tests": 1.0,
@@ -1009,19 +1009,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 1.78,
    "history": {
-    "commits": 1804,
-    "fix_commits": 391,
-    "authors": 550,
-    "age_months": 147.4,
-    "months_since_last": 0.3
+    "commits": 1807,
+    "fix_commits": 392,
+    "authors": 552,
+    "age_months": 147.7,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 16.84,
+   "knowledge_pm": 16.88,
    "rediscover_pm": 1.01,
    "replacement_pm": 2.79,
    "leverage": 0.9,
    "obsolescence": 0.95,
    "value_pm": 2.38,
-   "value_cost": 26823,
+   "value_cost": 26837,
    "knowledge_at_risk": 0.36,
    "assumptions": {
     "salary": 56286,
@@ -1035,26 +1035,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 47.0523,
+   "make_buy_ratio": 47.0632,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 6378.18,
+   "break_even_price_per_year": 6379.69,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 522845,
-     "input": 13071125,
-     "cached_input": 11110456
+     "output": 523621,
+     "input": 13090525,
+     "cached_input": 11126946
     },
-    "final_tokens": 174281,
-    "model_cost": 20.52,
-    "agent_hours": 5.81,
-    "human_days": 25.11,
-    "review_days": 3.9,
+    "final_tokens": 174540,
+    "model_cost": 20.55,
+    "agent_hours": 5.82,
+    "human_days": 25.12,
+    "review_days": 3.91,
     "rediscover_days": 21.21,
-    "calendar_days": 25.11,
-    "build_cost": 13482.77,
-    "yearly_cost": 2022.42,
-    "total_cost": 19550.02
+    "calendar_days": 25.12,
+    "build_cost": 13485.91,
+    "yearly_cost": 2022.89,
+    "total_cost": 19554.57
    },
    "buy": {
     "via": {

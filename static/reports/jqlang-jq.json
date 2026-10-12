@@ -4,20 +4,20 @@
   "url": "https://github.com/jqlang/jq",
   "slug": "jqlang-jq",
   "host": "github.com",
-  "commit": "a19efdd45dfe91329a7d266efb2ac0a64279a938",
-  "committed_at": "2026-10-06T16:48:28+09:00",
-  "evaluated_at": "2026-10-07T14:29:43+00:00",
+  "commit": "80fc7a169d3a3942a07f587abc4346d119fc525d",
+  "committed_at": "2026-10-12T13:40:40+09:00",
+  "evaluated_at": "2026-10-12T12:03:04+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/jqlang/jq",
   "inventory": {
-   "files": 398,
-   "source_files": 44,
-   "source_tokens": 192042,
+   "files": 401,
+   "source_files": 46,
+   "source_tokens": 194939,
    "languages": {
-    "c": 190985,
+    "c": 193882,
     "shell": 807,
     "python": 250
    },
@@ -236,13 +236,13 @@
      {
       "signal": "L2 ci-pinned",
       "detail": "",
-      "path": ".github/workflows/ci.yml",
+      "path": ".github/workflows/bsd.yml",
       "weight": 1
      }
     ],
     "metrics": {
-     "source_files": 44,
-     "source_tokens": 192042,
+     "source_files": 46,
+     "source_tokens": 194939,
      "test_files": 8,
      "test_tokens": 3372,
      "test_ratio": 0.02,
@@ -257,7 +257,7 @@
      ],
      "largest_module": {
       "path": "src",
-      "tokens": 190985
+      "tokens": 193882
      },
      "typed_ratio": 0.99,
      "python_functions": 2,
@@ -268,7 +268,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "c": 190985,
+      "c": 193882,
       "shell": 807,
       "python": 250
      }
@@ -306,6 +306,10 @@
         "text": "CI runs the tests; applications pin dependencies (libraries and zero-dependency projects are exempt).",
         "met": true,
         "evidence": [
+         {
+          "path": ".github/workflows/bsd.yml",
+          "detail": ""
+         },
          {
           "path": ".github/workflows/ci.yml",
           "detail": ""
@@ -392,11 +396,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 18.34,
+   "ksloc": 18.59,
    "classic": {
-    "person_months": 50.9,
-    "schedule_months": 11.1,
-    "cost": 573009
+    "person_months": 51.62,
+    "schedule_months": 11.2,
+    "cost": 581148
    },
    "capture": {
     "tests": 0.04,
@@ -405,21 +409,21 @@
     "capture": 0.27
    },
    "agent_factor": 0.43,
-   "reproduce_pm": 21.81,
+   "reproduce_pm": 22.12,
    "history": {
-    "commits": 1866,
-    "fix_commits": 577,
-    "authors": 265,
-    "age_months": 170.6,
+    "commits": 1876,
+    "fix_commits": 579,
+    "authors": 269,
+    "age_months": 170.8,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 20.87,
-   "rediscover_pm": 15.24,
-   "replacement_pm": 37.05,
+   "knowledge_pm": 20.96,
+   "rediscover_pm": 15.3,
+   "replacement_pm": 37.42,
    "leverage": 0.83,
    "obsolescence": 0.95,
-   "value_pm": 29.33,
-   "value_cost": 330156,
+   "value_pm": 29.63,
+   "value_cost": 333502,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -433,26 +437,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 104.5168,
+   "make_buy_ratio": 104.2278,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 85469.51,
+   "break_even_price_per_year": 85840.99,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 791020,
-     "input": 19775500,
-     "cached_input": 16809175
+     "output": 802953,
+     "input": 20073825,
+     "cached_input": 17062751
     },
-    "final_tokens": 263673,
-    "model_cost": 31.05,
-    "agent_hours": 8.79,
-    "human_days": 333.01,
-    "review_days": 12.97,
-    "rediscover_days": 320.04,
-    "calendar_days": 333.01,
-    "build_cost": 178541.74,
-    "yearly_cost": 26781.26,
-    "total_cost": 258885.52
+    "final_tokens": 267651,
+    "model_cost": 31.52,
+    "agent_hours": 8.92,
+    "human_days": 334.47,
+    "review_days": 13.17,
+    "rediscover_days": 321.3,
+    "calendar_days": 334.47,
+    "build_cost": 179322.53,
+    "yearly_cost": 26898.38,
+    "total_cost": 260017.66
    },
    "buy": {
     "via": {
@@ -461,21 +465,21 @@
     },
     "adoption_minutes": {
      "install": 60,
-     "first_use": 2103.48,
-     "total": 2163.48
+     "first_use": 2119.29,
+     "total": 2179.29
     },
     "tokens": {
-     "output": 270435,
-     "input": 6760875,
-     "cached_input": 5746743
+     "output": 272411,
+     "input": 6810275,
+     "cached_input": 5788733
     },
-    "model_cost": 10.61,
+    "model_cost": 10.69,
     "upgrade_minutes_per_year": 15,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 2426.72,
+    "fixed_cost": 2444.45,
     "yearly_cost": 16.75,
-    "total_cost": 2476.97
+    "total_cost": 2494.7
    },
    "assumptions": {
     "day_rate": 536.05,

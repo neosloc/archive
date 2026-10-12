@@ -4,20 +4,20 @@
   "url": "https://github.com/nats-io/nats-server",
   "slug": "nats-io-nats-server",
   "host": "github.com",
-  "commit": "7f6b195c6c9b7d24e3c851076b601d5f64369258",
-  "committed_at": "2026-10-07T15:11:46+01:00",
-  "evaluated_at": "2026-10-07T14:29:30+00:00",
+  "commit": "64dda80fdd87b41b2afcdc5faf5d846db6c189b0",
+  "committed_at": "2026-10-09T12:27:53-04:00",
+  "evaluated_at": "2026-10-12T12:03:07+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/nats-io/nats-server",
   "inventory": {
-   "files": 598,
+   "files": 599,
    "source_files": 130,
-   "source_tokens": 1147023,
+   "source_tokens": 1147130,
    "languages": {
-    "go": 1144481,
+    "go": 1144588,
     "shell": 2542
    },
    "git": true
@@ -259,7 +259,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "310 semver tags, latest v2.14.8-RC.2",
+      "detail": "312 semver tags, latest v2.15.1",
       "path": null,
       "weight": 1
      }
@@ -283,7 +283,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "310 semver tags, latest v2.14.8-RC.2"
+          "detail": "312 semver tags, latest v2.15.1"
          }
         ],
         "note": ""
@@ -406,12 +406,12 @@
           "detail": "19 matches"
          },
          {
-          "path": "server/monitor.go",
+          "path": "server/auth.go",
           "detail": "15 matches"
          },
          {
-          "path": "server/auth.go",
-          "detail": "14 matches"
+          "path": "server/monitor.go",
+          "detail": "15 matches"
          },
          {
           "path": "server/reload.go",
@@ -463,12 +463,12 @@
           "detail": "19 matches"
          },
          {
-          "path": "server/monitor.go",
+          "path": "server/auth.go",
           "detail": "15 matches"
          },
          {
-          "path": "server/auth.go",
-          "detail": "14 matches"
+          "path": "server/monitor.go",
+          "detail": "15 matches"
          },
          {
           "path": "server/reload.go",
@@ -1445,10 +1445,10 @@
     ],
     "metrics": {
      "source_files": 130,
-     "source_tokens": 1147023,
+     "source_tokens": 1147130,
      "test_files": 135,
-     "test_tokens": 2366363,
-     "test_ratio": 2.06,
+     "test_tokens": 2371575,
+     "test_ratio": 2.07,
      "modules": 21,
      "modules_within_budget": 0.95,
      "oversized_files": [
@@ -1463,8 +1463,8 @@
       "server/raft.go",
       "server/monitor.go",
       "server/jetstream_errors_generated.go",
-      "server/accounts.go",
       "server/server.go",
+      "server/accounts.go",
       "server/leafnode.go",
       "server/events.go",
       "server/gateway.go",
@@ -1477,7 +1477,7 @@
      ],
      "largest_module": {
       "path": "server",
-      "tokens": 1073300
+      "tokens": 1073394
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -1488,7 +1488,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 1144481,
+      "go": 1144588,
       "shell": 2542
      }
     },
@@ -1623,11 +1623,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 113.34,
+   "ksloc": 113.33,
    "classic": {
-    "person_months": 344.61,
+    "person_months": 344.57,
     "schedule_months": 23.0,
-    "cost": 3879288
+    "cost": 3878929
    },
    "capture": {
     "tests": 1.0,
@@ -1636,21 +1636,21 @@
     "capture": 0.7
    },
    "agent_factor": 0.24,
-   "reproduce_pm": 80.98,
+   "reproduce_pm": 80.97,
    "history": {
-    "commits": 8620,
-    "fix_commits": 2505,
+    "commits": 8631,
+    "fix_commits": 2511,
     "authors": 284,
-    "age_months": 167.2,
-    "months_since_last": 0.0
+    "age_months": 167.3,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 93.2,
-   "rediscover_pm": 27.96,
-   "replacement_pm": 108.94,
+   "knowledge_pm": 93.38,
+   "rediscover_pm": 28.01,
+   "replacement_pm": 108.99,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 99.18,
-   "value_cost": 1116520,
+   "value_pm": 99.22,
+   "value_cost": 1116982,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -1664,26 +1664,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 666.9223,
+   "make_buy_ratio": 668.0836,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 181470.82,
+   "break_even_price_per_year": 181787.29,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 10643390,
-     "input": 266084750,
-     "cached_input": 226172037
+     "output": 10659356,
+     "input": 266483900,
+     "cached_input": 226511315
     },
-    "final_tokens": 3547796,
-    "model_cost": 417.75,
-    "agent_hours": 118.26,
-    "human_days": 700.69,
-    "review_days": 113.53,
-    "rediscover_days": 587.16,
-    "calendar_days": 700.69,
-    "build_cost": 376020.69,
-    "yearly_cost": 56403.1,
-    "total_cost": 545230.0
+    "final_tokens": 3553118,
+    "model_cost": 418.38,
+    "agent_hours": 118.44,
+    "human_days": 701.91,
+    "review_days": 113.7,
+    "rediscover_days": 588.21,
+    "calendar_days": 701.91,
+    "build_cost": 376675.46,
+    "yearly_cost": 56501.32,
+    "total_cost": 546179.42
    },
    "buy": {
     "via": {

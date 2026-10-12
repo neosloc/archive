@@ -4,22 +4,23 @@
   "url": "https://github.com/marktext/marktext",
   "slug": "marktext-marktext",
   "host": "github.com",
-  "commit": "b31790169e7cc8e7200a06249b4447d096c005e6",
-  "committed_at": "2026-10-07T22:08:19+08:00",
-  "evaluated_at": "2026-10-07T14:28:58+00:00",
+  "commit": "8e57365ead4c71df9472f80d13941b8431483169",
+  "committed_at": "2026-10-12T19:28:42+08:00",
+  "evaluated_at": "2026-10-12T12:02:21+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/marktext/marktext",
   "inventory": {
-   "files": 2037,
-   "source_files": 679,
-   "source_tokens": 927834,
+   "files": 1693,
+   "source_files": 551,
+   "source_tokens": 769017,
    "languages": {
-    "typescript": 631829,
-    "javascript": 199166,
-    "vue": 96839
+    "typescript": 651276,
+    "vue": 99095,
+    "javascript": 17778,
+    "python": 868
    },
    "git": true
   },
@@ -195,6 +196,10 @@
          {
           "path": "packages/website/scripts/build-docs-index.ts",
           "detail": "1 match"
+         },
+         {
+          "path": "scripts/merge-release-artifacts.py",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -242,7 +247,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "54 semver tags, latest v0.20.0",
+      "detail": "57 semver tags, latest v0.21.2",
       "path": null,
       "weight": 1
      }
@@ -266,7 +271,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "54 semver tags, latest v0.20.0"
+          "detail": "57 semver tags, latest v0.21.2"
          }
         ],
         "note": ""
@@ -535,8 +540,8 @@
           "detail": "6 matches"
          },
          {
-          "path": "packages/muyajs/lib/contentState/core.js",
-          "detail": "5 matches"
+          "path": "packages/website/src/lib/project-info.ts",
+          "detail": "4 matches"
          },
          {
           "path": "packages/desktop/src/main/ipc/uploader.ts",
@@ -544,10 +549,6 @@
          },
          {
           "path": "packages/desktop/src/main/windows/editor.ts",
-          "detail": "3 matches"
-         },
-         {
-          "path": "packages/muyajs/lib/contentState/tableBlockCtrl.js",
           "detail": "3 matches"
          },
          {
@@ -564,22 +565,6 @@
          },
          {
           "path": "packages/desktop/src/renderer/src/store/editor.ts",
-          "detail": "2 matches"
-         },
-         {
-          "path": "packages/muyajs/lib/contentState/arrowCtrl.js",
-          "detail": "2 matches"
-         },
-         {
-          "path": "packages/muyajs/lib/contentState/tabCtrl.js",
-          "detail": "2 matches"
-         },
-         {
-          "path": "packages/muyajs/lib/parser/marked/index.js",
-          "detail": "2 matches"
-         },
-         {
-          "path": "packages/muyajs/lib/parser/marked/inlineLexer.js",
           "detail": "2 matches"
          },
          {
@@ -671,38 +656,6 @@
           "detail": "1 match"
          },
          {
-          "path": "packages/muyajs/lib/contentState/paragraphCtrl.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/contentState/pasteCtrl.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/parser/marked/lexer.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/parser/marked/parser.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/parser/render/plantuml.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/renderers/index.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/selection/index.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/utils/index.js",
-          "detail": "1 match"
-         },
-         {
           "path": "packages/website/src/components/docs/sidebar-context.ts",
           "detail": "1 match"
          },
@@ -732,10 +685,6 @@
           "detail": "4 matches"
          },
          {
-          "path": "packages/muyajs/lib/utils/index.js",
-          "detail": "4 matches"
-         },
-         {
           "path": "packages/muya/e2e/playwright.config.ts",
           "detail": "3 matches"
          },
@@ -745,6 +694,10 @@
          },
          {
           "path": "packages/desktop/src/renderer/src/commands/quickOpen.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/website/src/components/ProjectInfoProvider.tsx",
           "detail": "1 match"
          },
          {
@@ -770,6 +723,10 @@
          },
          {
           "path": "packages/desktop/test/e2e/crash-range-offset.spec.ts",
+          "detail": "doctest"
+         },
+         {
+          "path": "packages/muya/src/search/__tests__/searchSurvivesRerender.spec.ts",
           "detail": "doctest"
          }
         ],
@@ -849,14 +806,6 @@
           "detail": "2 matches"
          },
          {
-          "path": "packages/muyajs/lib/contentState/paragraphCtrl.js",
-          "detail": "2 matches"
-         },
-         {
-          "path": "packages/muyajs/lib/contentState/pasteCtrl.js",
-          "detail": "2 matches"
-         },
-         {
           "path": "packages/desktop/src/common/i18n.ts",
           "detail": "1 match"
          },
@@ -918,30 +867,6 @@
          },
          {
           "path": "packages/desktop/src/renderer/src/store/bufferedState.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/contentState/codeBlockCtrl.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/contentState/dragDropCtrl.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/contentState/linkCtrl.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/parser/marked/parser.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/parser/render/renderBlock/renderIcon.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/muyajs/lib/ui/imageSelector/index.js",
           "detail": "1 match"
          },
          {
@@ -1131,7 +1056,7 @@
          },
          {
           "path": "packages/website/public/docs-index.json",
-          "detail": "1 match"
+          "detail": "2 matches"
          },
          {
           "path": ".github/workflows/release.yml",
@@ -1346,6 +1271,10 @@
           "detail": "1 match"
          },
          {
+          "path": "packages/desktop/src/main/ipc/cmd.ts",
+          "detail": "1 match"
+         },
+         {
           "path": "packages/desktop/src/main/ipc/diagram.ts",
           "detail": "1 match"
          },
@@ -1515,6 +1444,10 @@
          },
          {
           "path": "packages/desktop/src/main/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/cmd.ts",
           "detail": "1 match"
          },
          {
@@ -1700,31 +1633,31 @@
      }
     ],
     "metrics": {
-     "source_files": 679,
-     "source_tokens": 927834,
-     "test_files": 591,
-     "test_tokens": 740399,
-     "test_ratio": 0.8,
-     "modules": 197,
+     "source_files": 551,
+     "source_tokens": 769017,
+     "test_files": 616,
+     "test_tokens": 767415,
+     "test_ratio": 1.0,
+     "modules": 167,
      "modules_within_budget": 0.99,
      "oversized_files": [
       "packages/muya/src/config/emojis.ts",
       "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
+      "packages/muya/src/block/base/format.ts",
       "packages/desktop/src/renderer/src/store/editor.ts",
       "packages/muya/src/muya.ts",
-      "packages/muya/src/block/base/format.ts",
       "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js"
      ],
      "largest_module": {
       "path": "packages/muya/src/config",
-      "tokens": 80045
+      "tokens": 80064
      },
-     "typed_ratio": 0.68,
-     "python_functions": 0,
-     "python_annotated": 0,
-     "import_edges": 1917,
+     "typed_ratio": 0.85,
+     "python_functions": 1,
+     "python_annotated": 1,
+     "import_edges": 1508,
      "import_graph": true,
-     "max_fan_out": 40,
+     "max_fan_out": 42,
      "import_cycles": 4,
      "largest_cycle": [
       "packages/muya/src/block/base/content.ts",
@@ -1808,7 +1741,9 @@
       "packages/muya/src/inlineRenderer/renderer/image.ts",
       "packages/muya/src/inlineRenderer/renderer/index.ts",
       "packages/muya/src/inlineRenderer/renderer/inlineCode.ts",
+      "packages/muya/src/inlineRenderer/renderer/inlineDiff.ts",
       "packages/muya/src/inlineRenderer/renderer/inlineMath.ts",
+      "packages/muya/src/inlineRenderer/renderer/lineBreakHighlights.ts",
       "packages/muya/src/inlineRenderer/renderer/link.ts",
       "packages/muya/src/inlineRenderer/renderer/loadImageAsync.ts",
       "packages/muya/src/inlineRenderer/renderer/mark.ts",
@@ -1851,13 +1786,14 @@
       "packages/muya/src/utils/turndownService/index.ts"
      ],
      "languages": {
-      "typescript": 631829,
-      "javascript": 199166,
-      "vue": 96839
+      "typescript": 651276,
+      "vue": 99095,
+      "javascript": 17778,
+      "python": 868
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 6 files over 12k; 68% of code is typed (< 70%))"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 6 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1878,7 +1814,7 @@
          },
          {
           "path": "packages/desktop/test/e2e/all-blocks-roundtrip.spec.ts",
-          "detail": "591 test files"
+          "detail": "616 test files"
          }
         ],
         "note": ""
@@ -1891,10 +1827,6 @@
         "evidence": [
          {
           "path": ".github/workflows/build.yml",
-          "detail": ""
-         },
-         {
-          "path": ".github/workflows/claude.yml",
           "detail": ""
          },
          {
@@ -1958,7 +1890,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "99% of modules fit 32k tokens; 6 files over 12k; 68% of code is typed (< 70%)"
+        "note": "99% of modules fit 32k tokens; 6 files over 12k"
        },
        {
         "level": 4,
@@ -1982,56 +1914,56 @@
     "events",
     "portability"
    ],
-   "retrofit_person_days": 26.1,
+   "retrofit_person_days": 23.6,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 3.9,
+    "stability": 3.5,
     "identity": 0.0,
-    "ergonomics": 2.9,
+    "ergonomics": 2.6,
     "embeddability": 0.0,
-    "extensibility": 11.6,
+    "extensibility": 10.5,
     "observability": 0.0,
-    "legibility": 7.7
+    "legibility": 7.0
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.93,
+    "size_factor": 1.75,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 99.16,
+   "ksloc": 81.32,
    "classic": {
-    "person_months": 299.49,
-    "schedule_months": 21.8,
-    "cost": 3371388
+    "person_months": 243.18,
+    "schedule_months": 20.2,
+    "cost": 2737538
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.62,
-    "capture": 0.9
+    "docs": 0.72,
+    "capture": 0.93
    },
-   "agent_factor": 0.14,
-   "reproduce_pm": 43.43,
+   "agent_factor": 0.13,
+   "reproduce_pm": 31.98,
    "history": {
-    "commits": 2208,
-    "fix_commits": 1003,
-    "authors": 211,
-    "age_months": 106.8,
+    "commits": 2246,
+    "fix_commits": 1023,
+    "authors": 217,
+    "age_months": 107.0,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 31.1,
-   "rediscover_pm": 3.11,
-   "replacement_pm": 46.54,
+   "knowledge_pm": 31.69,
+   "rediscover_pm": 2.22,
+   "replacement_pm": 34.2,
    "leverage": 1.03,
    "obsolescence": 0.95,
-   "value_pm": 45.59,
-   "value_cost": 513220,
-   "knowledge_at_risk": 0.07,
+   "value_pm": 33.5,
+   "value_cost": 377139,
+   "knowledge_at_risk": 0.06,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -2044,26 +1976,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 101.8392,
+   "make_buy_ratio": 78.9345,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 27178.12,
+   "break_even_price_per_year": 21004.87,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5032534,
-     "input": 125813350,
-     "cached_input": 106941347
+     "output": 4625445,
+     "input": 115636125,
+     "cached_input": 98290706
     },
-    "final_tokens": 1677511,
-    "model_cost": 197.53,
-    "agent_hours": 55.92,
-    "human_days": 105.57,
-    "review_days": 40.26,
-    "rediscover_days": 65.31,
-    "calendar_days": 105.57,
-    "build_cost": 56788.22,
-    "yearly_cost": 8518.23,
-    "total_cost": 82342.92
+    "final_tokens": 1541815,
+    "model_cost": 181.55,
+    "agent_hours": 51.39,
+    "human_days": 81.77,
+    "review_days": 35.15,
+    "rediscover_days": 46.62,
+    "calendar_days": 81.77,
+    "build_cost": 44015.98,
+    "yearly_cost": 6602.4,
+    "total_cost": 63823.17
    },
    "buy": {
     "via": {

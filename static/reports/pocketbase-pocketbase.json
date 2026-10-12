@@ -4,22 +4,22 @@
   "url": "https://github.com/pocketbase/pocketbase",
   "slug": "pocketbase-pocketbase",
   "host": "github.com",
-  "commit": "5cec579da984436a258602a46a96302fbd31f77c",
-  "committed_at": "2026-09-12T15:27:58+03:00",
-  "evaluated_at": "2026-10-07T14:29:18+00:00",
+  "commit": "6f370ea741f33adf889eef02e3c1b884a47aa522",
+  "committed_at": "2026-10-08T19:21:49+03:00",
+  "evaluated_at": "2026-10-12T12:02:54+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/pocketbase/pocketbase",
   "inventory": {
-   "files": 828,
+   "files": 829,
    "source_files": 448,
-   "source_tokens": 934699,
+   "source_tokens": 935043,
    "languages": {
-    "go": 411549,
-    "javascript": 322567,
-    "typescript": 200583
+    "go": 411732,
+    "javascript": 322669,
+    "typescript": 200642
    },
    "git": true
   },
@@ -273,7 +273,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "292 semver tags, latest v0.40.4",
+      "detail": "294 semver tags, latest v0.22.56",
       "path": null,
       "weight": 1
      },
@@ -303,7 +303,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "292 semver tags, latest v0.40.4"
+          "detail": "294 semver tags, latest v0.22.56"
          }
         ],
         "note": ""
@@ -1761,9 +1761,9 @@
     ],
     "metrics": {
      "source_files": 448,
-     "source_tokens": 934699,
-     "test_files": 194,
-     "test_tokens": 496204,
+     "source_tokens": 935043,
+     "test_files": 195,
+     "test_tokens": 496515,
      "test_ratio": 0.53,
      "modules": 71,
      "modules_within_budget": 0.9,
@@ -1776,7 +1776,7 @@
      ],
      "largest_module": {
       "path": "plugins/jsvm/internal/types/generated",
-      "tokens": 200602
+      "tokens": 200661
      },
      "typed_ratio": 0.65,
      "python_functions": 0,
@@ -1787,9 +1787,9 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 411549,
-      "javascript": 322567,
-      "typescript": 200583
+      "go": 411732,
+      "javascript": 322669,
+      "typescript": 200642
      }
     },
     "gaps": [
@@ -1814,7 +1814,7 @@
          },
          {
           "path": "apis/backup_test.go",
-          "detail": "194 test files"
+          "detail": "195 test files"
          }
         ],
         "note": ""
@@ -1886,34 +1886,34 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 75.41,
+   "ksloc": 75.44,
    "classic": {
-    "person_months": 224.66,
+    "person_months": 224.76,
     "schedule_months": 19.6,
-    "cost": 2529066
+    "cost": 2530158
    },
    "capture": {
     "tests": 1.0,
     "contract": 0.75,
-    "docs": 0.31,
+    "docs": 0.32,
     "capture": 0.77
    },
    "agent_factor": 0.2,
-   "reproduce_pm": 45.72,
+   "reproduce_pm": 45.74,
    "history": {
-    "commits": 2401,
-    "fix_commits": 373,
+    "commits": 2420,
+    "fix_commits": 375,
     "authors": 45,
-    "age_months": 50.2,
-    "months_since_last": 0.8
+    "age_months": 51.1,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 19.47,
-   "rediscover_pm": 4.48,
-   "replacement_pm": 50.2,
+   "knowledge_pm": 19.6,
+   "rediscover_pm": 4.51,
+   "replacement_pm": 50.25,
    "leverage": 1.01,
    "obsolescence": 0.95,
-   "value_pm": 48.28,
-   "value_cost": 543520,
+   "value_pm": 48.33,
+   "value_cost": 544070,
    "knowledge_at_risk": 0.09,
    "assumptions": {
     "salary": 56286,
@@ -1927,26 +1927,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 255.9292,
+   "make_buy_ratio": 257.1443,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 35307.34,
+   "break_even_price_per_year": 35475.62,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 4357203,
-     "input": 108930075,
-     "cached_input": 92590563
+     "output": 4359191,
+     "input": 108979775,
+     "cached_input": 92632808
     },
-    "final_tokens": 1452401,
-    "model_cost": 171.02,
-    "agent_hours": 48.41,
-    "human_days": 136.49,
-    "review_days": 42.41,
-    "rediscover_days": 94.08,
-    "calendar_days": 136.49,
-    "build_cost": 73336.22,
-    "yearly_cost": 11000.43,
-    "total_cost": 106337.52
+    "final_tokens": 1453063,
+    "model_cost": 171.1,
+    "agent_hours": 48.44,
+    "human_days": 137.14,
+    "review_days": 42.43,
+    "rediscover_days": 94.71,
+    "calendar_days": 137.14,
+    "build_cost": 73684.38,
+    "yearly_cost": 11052.66,
+    "total_cost": 106842.36
    },
    "buy": {
     "via": {

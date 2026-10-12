@@ -4,20 +4,20 @@
   "url": "https://github.com/axios/axios",
   "slug": "axios-axios",
   "host": "github.com",
-  "commit": "2b169bbb0cf67e6539e4cec222ced5ac8a923e00",
-  "committed_at": "2026-10-06T16:59:02+02:00",
-  "evaluated_at": "2026-10-07T14:27:46+00:00",
+  "commit": "f694ecd6ac49bb1917e086b5e532e1627c62d43a",
+  "committed_at": "2026-10-09T19:04:00+02:00",
+  "evaluated_at": "2026-10-12T12:00:35+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/axios/axios",
   "inventory": {
-   "files": 490,
+   "files": 491,
    "source_files": 80,
-   "source_tokens": 76593,
+   "source_tokens": 77423,
    "languages": {
-    "javascript": 70633,
+    "javascript": 71463,
     "typescript": 5960
    },
    "git": true
@@ -852,9 +852,9 @@
     ],
     "metrics": {
      "source_files": 80,
-     "source_tokens": 76593,
-     "test_files": 170,
-     "test_tokens": 257849,
+     "source_tokens": 77423,
+     "test_files": 171,
+     "test_tokens": 261250,
      "test_ratio": 3.37,
      "modules": 15,
      "modules_within_budget": 1.0,
@@ -868,13 +868,13 @@
      "typed_ratio": 0.08,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 176,
+     "import_edges": 177,
      "import_graph": true,
      "max_fan_out": 22,
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "javascript": 70633,
+      "javascript": 71463,
       "typescript": 5960
      }
     },
@@ -900,7 +900,7 @@
          },
          {
           "path": "docs/.vitepress/tokenizeSearchText.test.js",
-          "detail": "170 test files"
+          "detail": "171 test files"
          }
         ],
         "note": ""
@@ -1003,18 +1003,18 @@
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 0.55,
+    "size_factor": 0.56,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 7.51,
+   "ksloc": 7.54,
    "classic": {
-    "person_months": 19.93,
+    "person_months": 20.03,
     "schedule_months": 7.8,
-    "cost": 224390
+    "cost": 225488
    },
    "capture": {
     "tests": 1.0,
@@ -1023,21 +1023,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 2.53,
+   "reproduce_pm": 2.54,
    "history": {
-    "commits": 2008,
-    "fix_commits": 500,
-    "authors": 683,
-    "age_months": 145.6,
-    "months_since_last": 0.0
+    "commits": 2017,
+    "fix_commits": 502,
+    "authors": 685,
+    "age_months": 145.7,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 20.04,
-   "rediscover_pm": 1.2,
-   "replacement_pm": 3.73,
+   "knowledge_pm": 20.12,
+   "rediscover_pm": 1.21,
+   "replacement_pm": 3.75,
    "leverage": 0.92,
    "obsolescence": 0.95,
-   "value_pm": 3.25,
-   "value_cost": 36604,
+   "value_pm": 3.27,
+   "value_cost": 36775,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,
@@ -1051,26 +1051,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 59.2341,
+   "make_buy_ratio": 59.7868,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 8348.4,
+   "break_even_price_per_year": 8427.63,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1004704,
-     "input": 25117600,
-     "cached_input": 21349960
+     "output": 1017412,
+     "input": 25435300,
+     "cached_input": 21620005
     },
-    "final_tokens": 334901,
-    "model_cost": 39.43,
-    "agent_hours": 11.16,
-    "human_days": 32.7,
-    "review_days": 7.5,
-    "rediscover_days": 25.2,
-    "calendar_days": 32.7,
-    "build_cost": 17569.15,
-    "yearly_cost": 2635.37,
-    "total_cost": 25475.27
+    "final_tokens": 339137,
+    "model_cost": 39.93,
+    "agent_hours": 11.3,
+    "human_days": 33.01,
+    "review_days": 7.6,
+    "rediscover_days": 25.41,
+    "calendar_days": 33.01,
+    "build_cost": 17733.09,
+    "yearly_cost": 2659.96,
+    "total_cost": 25712.97
    },
    "buy": {
     "via": {

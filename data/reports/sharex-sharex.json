@@ -4,20 +4,20 @@
   "url": "https://github.com/ShareX/ShareX",
   "slug": "sharex-sharex",
   "host": "github.com",
-  "commit": "0f316c89a5b36b6e60250d38223d21b85291ad7e",
-  "committed_at": "2026-10-06T16:29:37+03:00",
-  "evaluated_at": "2026-10-07T14:30:30+00:00",
+  "commit": "63f7e3ec5329654c4509ff43394fc018af8ea03a",
+  "committed_at": "2026-10-11T18:52:53+03:00",
+  "evaluated_at": "2026-10-12T12:03:40+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/ShareX/ShareX",
   "inventory": {
-   "files": 1790,
-   "source_files": 1208,
-   "source_tokens": 2110455,
+   "files": 1797,
+   "source_files": 1224,
+   "source_tokens": 2163644,
    "languages": {
-    "csharp": 2110455
+    "csharp": 2163644
    },
    "git": true
   },
@@ -76,11 +76,19 @@
         "met": true,
         "evidence": [
          {
+          "path": "ShareX.Tools/Controls/Media/WindowsVideoOnlySource.cs",
+          "detail": "6 matches"
+         },
+         {
           "path": "ShareX.HelpersLib/Native/WshShell.cs",
           "detail": "2 matches"
          },
          {
           "path": "ShareX.ScreenRecordingLib/Native/SampleReleaseCallback.cs",
+          "detail": "2 matches"
+         },
+         {
+          "path": "ShareX.ScreenRecordingLib/Native/SourceReaderCallback.cs",
           "detail": "2 matches"
          }
         ],
@@ -485,18 +493,18 @@
     "rationale": "Not yet: A README and some tests.",
     "evidence": [],
     "metrics": {
-     "source_files": 1208,
-     "source_tokens": 2110455,
+     "source_files": 1224,
+     "source_tokens": 2163644,
      "test_files": 0,
      "test_tokens": 0,
      "test_ratio": 0.0,
-     "modules": 169,
+     "modules": 172,
      "modules_within_budget": 0.92,
      "oversized_files": [
       "ShareX.HelpersLib/Native/NativeEnums.cs",
       "ShareX/TaskHelpers.cs",
-      "ShareX.Avalonia/Theming/LucideIcons.cs",
       "ShareX/Presentation/TaskSettings/TaskSettingsPageBuilder.cs",
+      "ShareX.Avalonia/Theming/LucideIcons.cs",
       "ShareX.ImageEditor/Presentation/Views/EditorView.axaml.cs",
       "ShareX.HelpersLib/Helpers/SkiaImageHelpers.Operations.cs",
       "ShareX/Presentation/MainWindow/MainWindow.axaml.cs",
@@ -510,7 +518,7 @@
      ],
      "largest_module": {
       "path": "ShareX.ImageEditor/Core/ImageEffects/Filters",
-      "tokens": 257592
+      "tokens": 257591
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -521,7 +529,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "csharp": 2110455
+      "csharp": 2163644
      }
     },
     "gaps": [
@@ -581,54 +589,54 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 220.2,
+   "retrofit_person_days": 222.9,
    "retrofit_by_dimension": {
-    "interface": 65.4,
-    "stability": 14.5,
-    "ergonomics": 32.7,
-    "embeddability": 21.8,
-    "extensibility": 29.1,
-    "observability": 21.8,
-    "legibility": 34.9
+    "interface": 66.2,
+    "stability": 14.7,
+    "ergonomics": 33.1,
+    "embeddability": 22.1,
+    "extensibility": 29.4,
+    "observability": 22.1,
+    "legibility": 35.3
    },
    "wrappability": "replace or wrap externally",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.91,
+    "size_factor": 2.94,
     "legibility_multiplier": 2.5,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 173.76,
+   "ksloc": 177.43,
    "classic": {
-    "person_months": 539.71,
-    "schedule_months": 27.3,
-    "cost": 6075596
+    "person_months": 551.7,
+    "schedule_months": 27.5,
+    "cost": 6210554
    },
    "capture": {
     "tests": 0.0,
     "contract": 0.0,
-    "docs": 0.19,
-    "capture": 0.05
+    "docs": 0.16,
+    "capture": 0.04
    },
    "agent_factor": 0.53,
-   "reproduce_pm": 284.7,
+   "reproduce_pm": 293.5,
    "history": {
-    "commits": 8649,
-    "fix_commits": 1332,
+    "commits": 8701,
+    "fix_commits": 1334,
     "authors": 313,
-    "age_months": 155.9,
+    "age_months": 156.1,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 69.89,
-   "rediscover_pm": 66.39,
-   "replacement_pm": 351.09,
+   "knowledge_pm": 70.19,
+   "rediscover_pm": 67.38,
+   "replacement_pm": 360.88,
    "leverage": 0.79,
    "obsolescence": 0.85,
-   "value_pm": 234.48,
-   "value_cost": 2639539,
+   "value_pm": 241.02,
+   "value_cost": 2713168,
    "knowledge_at_risk": 0.19,
    "assumptions": {
     "salary": 56286,
@@ -642,26 +650,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 902.6803,
+   "make_buy_ratio": 917.9272,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 405179.79,
+   "break_even_price_per_year": 412031.15,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 8832254,
-     "input": 220806350,
-     "cached_input": 187685397
+     "output": 9061341,
+     "input": 226533525,
+     "cached_input": 192553496
     },
-    "final_tokens": 2944084,
-    "model_cost": 346.67,
-    "agent_hours": 98.14,
-    "human_days": 1564.95,
-    "review_days": 170.76,
-    "rediscover_days": 1394.19,
-    "calendar_days": 1564.95,
-    "build_cost": 839232.73,
-    "yearly_cost": 125884.91,
-    "total_cost": 1216887.46
+    "final_tokens": 3020447,
+    "model_cost": 355.66,
+    "agent_hours": 100.68,
+    "human_days": 1591.37,
+    "review_days": 176.39,
+    "rediscover_days": 1414.98,
+    "calendar_days": 1591.37,
+    "build_cost": 853407.96,
+    "yearly_cost": 128011.19,
+    "total_cost": 1237441.54
    },
    "buy": {
     "via": {

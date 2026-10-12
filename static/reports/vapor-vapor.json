@@ -4,9 +4,9 @@
   "url": "https://github.com/vapor/vapor",
   "slug": "vapor-vapor",
   "host": "github.com",
-  "commit": "bf77fc69b1426dd297c78938349e0c7468be56be",
-  "committed_at": "2026-10-04T22:51:55+01:00",
-  "evaluated_at": "2026-10-07T14:29:35+00:00",
+  "commit": "efbf8e203521884cfacbc2b114b486bb05f637ea",
+  "committed_at": "2026-10-12T12:58:27+01:00",
+  "evaluated_at": "2026-10-12T12:02:47+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -1340,11 +1340,11 @@
    "agent_factor": 0.1,
    "reproduce_pm": 4.21,
    "history": {
-    "commits": 4709,
+    "commits": 4710,
     "fix_commits": 799,
     "authors": 295,
-    "age_months": 128.5,
-    "months_since_last": 0.1
+    "age_months": 128.8,
+    "months_since_last": 0.0
    },
    "knowledge_pm": 39.53,
    "rediscover_pm": 0.0,

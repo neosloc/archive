@@ -4,9 +4,9 @@
   "url": "https://github.com/expressjs/express",
   "slug": "expressjs-express",
   "host": "github.com",
-  "commit": "9efc29e280018dafc1f0617f3a3d28f4e463b7be",
-  "committed_at": "2026-10-06T23:19:38+02:00",
-  "evaluated_at": "2026-10-07T14:27:39+00:00",
+  "commit": "a419aa7350389a275ab45fde2e849ed1f02449ef",
+  "committed_at": "2026-10-09T11:24:38-05:00",
+  "evaluated_at": "2026-10-12T12:00:29+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 214,
    "source_files": 7,
-   "source_tokens": 15563,
+   "source_tokens": 15570,
    "languages": {
-    "javascript": 15563
+    "javascript": 15570
    },
    "git": true
   },
@@ -187,7 +187,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "305 semver tags, latest v4.22.3",
+      "detail": "306 semver tags, latest v5.3.0",
       "path": null,
       "weight": 1
      },
@@ -217,7 +217,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "305 semver tags, latest v4.22.3"
+          "detail": "306 semver tags, latest v5.3.0"
          }
         ],
         "note": ""
@@ -829,7 +829,7 @@
     ],
     "metrics": {
      "source_files": 7,
-     "source_tokens": 15563,
+     "source_tokens": 15570,
      "test_files": 91,
      "test_tokens": 109289,
      "test_ratio": 7.02,
@@ -838,7 +838,7 @@
      "oversized_files": [],
      "largest_module": {
       "path": "lib",
-      "tokens": 15507
+      "tokens": 15514
      },
      "typed_ratio": 0.0,
      "python_functions": 0,
@@ -849,7 +849,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "javascript": 15563
+      "javascript": 15570
      }
     },
     "gaps": [
@@ -978,19 +978,19 @@
    "agent_factor": 0.15,
    "reproduce_pm": 0.42,
    "history": {
-    "commits": 5692,
-    "fix_commits": 647,
-    "authors": 397,
-    "age_months": 207.3,
-    "months_since_last": 0.0
+    "commits": 5696,
+    "fix_commits": 649,
+    "authors": 399,
+    "age_months": 207.4,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 41.4,
-   "rediscover_pm": 4.97,
-   "replacement_pm": 5.39,
+   "knowledge_pm": 41.46,
+   "rediscover_pm": 4.98,
+   "replacement_pm": 5.4,
    "leverage": 0.89,
    "obsolescence": 0.95,
-   "value_pm": 4.55,
-   "value_cost": 51262,
+   "value_pm": 4.56,
+   "value_cost": 51330,
    "knowledge_at_risk": 0.92,
    "assumptions": {
     "salary": 56286,
@@ -1004,26 +1004,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 171.8673,
+   "make_buy_ratio": 172.2033,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 27689.68,
+   "break_even_price_per_year": 27744.13,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 375116,
-     "input": 9377900,
-     "cached_input": 7971215
+     "output": 375137,
+     "input": 9378425,
+     "cached_input": 7971661
     },
-    "final_tokens": 125038,
+    "final_tokens": 125045,
     "model_cost": 14.72,
     "agent_hours": 4.17,
-    "human_days": 107.47,
+    "human_days": 107.68,
     "review_days": 3.1,
-    "rediscover_days": 104.37,
-    "calendar_days": 107.47,
-    "build_cost": 57624.28,
-    "yearly_cost": 8643.64,
-    "total_cost": 83555.2
+    "rediscover_days": 104.58,
+    "calendar_days": 107.68,
+    "build_cost": 57736.94,
+    "yearly_cost": 8660.54,
+    "total_cost": 83718.56
    },
    "buy": {
     "via": {

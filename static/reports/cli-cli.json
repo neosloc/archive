@@ -4,22 +4,22 @@
   "url": "https://github.com/cli/cli",
   "slug": "cli-cli",
   "host": "github.com",
-  "commit": "996be976cad960a726aabb94be67dfc7e31e317b",
-  "committed_at": "2026-10-07T11:13:17+01:00",
-  "evaluated_at": "2026-10-07T14:28:44+00:00",
+  "commit": "ec5b512045db67e5a2a4ff4a1b02660b2fb24390",
+  "committed_at": "2026-10-09T16:47:44+02:00",
+  "evaluated_at": "2026-10-12T12:02:11+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/cli/cli",
   "inventory": {
-   "files": 1484,
-   "source_files": 570,
-   "source_tokens": 870091,
+   "files": 1487,
+   "source_files": 571,
+   "source_tokens": 871511,
    "languages": {
-    "go": 841609,
+    "go": 843045,
     "javascript": 17066,
-    "shell": 11416
+    "shell": 11400
    },
    "git": true
   },
@@ -1036,6 +1036,10 @@
           "detail": "1 match"
          },
          {
+          "path": "pkg/cmd/extension/browse/model.go",
+          "detail": "1 match"
+         },
+         {
           "path": "pkg/iostreams/iostreams.go",
           "detail": "1 match"
          },
@@ -1669,6 +1673,10 @@
           "detail": "1 match"
          },
          {
+          "path": "pkg/cmd/extension/browse/model.go",
+          "detail": "1 match"
+         },
+         {
           "path": "pkg/iostreams/iostreams.go",
           "detail": "1 match"
          },
@@ -1767,10 +1775,10 @@
      }
     ],
     "metrics": {
-     "source_files": 570,
-     "source_tokens": 870091,
-     "test_files": 436,
-     "test_tokens": 1269511,
+     "source_files": 571,
+     "source_tokens": 871511,
+     "test_files": 437,
+     "test_tokens": 1275724,
      "test_ratio": 1.46,
      "modules": 316,
      "modules_within_budget": 1.0,
@@ -1791,9 +1799,9 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 841609,
+      "go": 843045,
       "javascript": 17066,
-      "shell": 11416
+      "shell": 11400
      }
     },
     "gaps": [
@@ -1818,7 +1826,7 @@
          },
          {
           "path": ".github/codeql/tests/unsanitized-response-to-terminal/hits_base64_after_json.go",
-          "detail": "436 test files"
+          "detail": "437 test files"
          }
         ],
         "note": ""
@@ -1952,35 +1960,35 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 95.22,
+   "ksloc": 95.47,
    "classic": {
-    "person_months": 287.0,
+    "person_months": 287.8,
     "schedule_months": 21.5,
-    "cost": 3230843
+    "cost": 3239821
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.89,
-    "capture": 0.97
+    "docs": 0.91,
+    "capture": 0.98
    },
    "agent_factor": 0.11,
-   "reproduce_pm": 32.57,
+   "reproduce_pm": 31.37,
    "history": {
-    "commits": 8962,
+    "commits": 8971,
     "fix_commits": 1231,
     "authors": 719,
-    "age_months": 84.1,
-    "months_since_last": 0.0
+    "age_months": 84.2,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 69.43,
-   "rediscover_pm": 2.08,
-   "replacement_pm": 34.66,
+   "knowledge_pm": 69.48,
+   "rediscover_pm": 1.39,
+   "replacement_pm": 32.76,
    "leverage": 1.01,
    "obsolescence": 0.95,
-   "value_pm": 33.38,
-   "value_cost": 375789,
-   "knowledge_at_risk": 0.06,
+   "value_pm": 31.55,
+   "value_cost": 355209,
+   "knowledge_at_risk": 0.04,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -1993,26 +2001,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 86.0995,
+   "make_buy_ratio": 71.4832,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 22935.97,
+   "break_even_price_per_year": 18996.6,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 6426636,
-     "input": 160665900,
-     "cached_input": 136566015
+     "output": 6446934,
+     "input": 161173350,
+     "cached_input": 136997347
     },
-    "final_tokens": 2142212,
-    "model_cost": 252.25,
-    "agent_hours": 71.41,
-    "human_days": 89.09,
-    "review_days": 45.41,
-    "rediscover_days": 43.68,
-    "calendar_days": 89.09,
-    "build_cost": 48011.35,
-    "yearly_cost": 7201.7,
-    "total_cost": 69616.46
+    "final_tokens": 2148978,
+    "model_cost": 253.04,
+    "agent_hours": 71.63,
+    "human_days": 73.89,
+    "review_days": 44.7,
+    "rediscover_days": 29.19,
+    "calendar_days": 73.89,
+    "build_cost": 39860.93,
+    "yearly_cost": 5979.14,
+    "total_cost": 57798.34
    },
    "buy": {
     "via": {

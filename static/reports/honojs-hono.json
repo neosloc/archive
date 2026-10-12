@@ -4,20 +4,20 @@
   "url": "https://github.com/honojs/hono",
   "slug": "honojs-hono",
   "host": "github.com",
-  "commit": "5f36607f67aa9357887337328ac84a1c1d48dc04",
-  "committed_at": "2026-10-05T18:29:52+09:00",
-  "evaluated_at": "2026-10-07T14:27:48+00:00",
+  "commit": "552ea024250093a48071b3ded9710de4c6e05f14",
+  "committed_at": "2026-10-11T15:02:40+09:00",
+  "evaluated_at": "2026-10-12T12:00:50+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/honojs/hono",
   "inventory": {
-   "files": 573,
+   "files": 571,
    "source_files": 241,
-   "source_tokens": 215795,
+   "source_tokens": 217752,
    "languages": {
-    "typescript": 215795
+    "typescript": 217752
    },
    "git": true
   },
@@ -311,7 +311,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "454 semver tags, latest v4.13.13",
+      "detail": "456 semver tags, latest v5.0.0-rc.1",
       "path": null,
       "weight": 1
      }
@@ -335,7 +335,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "454 semver tags, latest v4.13.13"
+          "detail": "456 semver tags, latest v5.0.0-rc.1"
          }
         ],
         "note": ""
@@ -486,6 +486,10 @@
          {
           "path": "src/helper/streaming/sse.ts",
           "detail": "1 match"
+         },
+         {
+          "path": "vite.config.ts",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -570,6 +574,10 @@
          },
          {
           "path": "src/helper/streaming/sse.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "vite.config.ts",
           "detail": "1 match"
          }
         ],
@@ -1412,10 +1420,10 @@
     ],
     "metrics": {
      "source_files": 241,
-     "source_tokens": 215795,
+     "source_tokens": 217752,
      "test_files": 163,
      "test_tokens": 490205,
-     "test_ratio": 2.27,
+     "test_ratio": 2.25,
      "modules": 91,
      "modules_within_budget": 0.99,
      "oversized_files": [
@@ -1428,7 +1436,7 @@
      "typed_ratio": 1.0,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 453,
+     "import_edges": 451,
      "import_graph": true,
      "max_fan_out": 10,
      "import_cycles": 5,
@@ -1442,7 +1450,7 @@
       "src/jsx/types.ts"
      ],
      "languages": {
-      "typescript": 215795
+      "typescript": 217752
      }
     },
     "gaps": [
@@ -1560,34 +1568,34 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 21.27,
+   "ksloc": 21.51,
    "classic": {
-    "person_months": 59.48,
-    "schedule_months": 11.8,
-    "cost": 669539
+    "person_months": 60.2,
+    "schedule_months": 11.9,
+    "cost": 677640
    },
    "capture": {
     "tests": 1.0,
     "contract": 0.75,
-    "docs": 0.18,
+    "docs": 0.17,
     "capture": 0.73
    },
    "agent_factor": 0.22,
-   "reproduce_pm": 13.17,
+   "reproduce_pm": 13.33,
    "history": {
-    "commits": 2782,
-    "fix_commits": 893,
+    "commits": 2793,
+    "fix_commits": 894,
     "authors": 380,
-    "age_months": 57.7,
-    "months_since_last": 0.1
+    "age_months": 57.9,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 31.77,
-   "rediscover_pm": 8.58,
-   "replacement_pm": 21.75,
+   "knowledge_pm": 31.85,
+   "rediscover_pm": 8.6,
+   "replacement_pm": 21.93,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 19.52,
-   "value_cost": 219699,
+   "value_pm": 19.68,
+   "value_cost": 221514,
    "knowledge_at_risk": 0.39,
    "assumptions": {
     "salary": 56286,
@@ -1601,26 +1609,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 188.9297,
+   "make_buy_ratio": 189.3803,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 52126.27,
+   "break_even_price_per_year": 52251.24,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 2135479,
-     "input": 53386975,
-     "cached_input": 45378928
+     "output": 2141508,
+     "input": 53537700,
+     "cached_input": 45507045
     },
-    "final_tokens": 711826,
-    "model_cost": 83.82,
-    "agent_hours": 23.73,
-    "human_days": 202.1,
-    "review_days": 21.92,
-    "rediscover_days": 180.18,
-    "calendar_days": 202.1,
-    "build_cost": 108421.32,
-    "yearly_cost": 16263.2,
-    "total_cost": 157210.92
+    "final_tokens": 713836,
+    "model_cost": 84.05,
+    "agent_hours": 23.79,
+    "human_days": 202.59,
+    "review_days": 21.99,
+    "rediscover_days": 180.6,
+    "calendar_days": 202.59,
+    "build_cost": 108679.88,
+    "yearly_cost": 16301.98,
+    "total_cost": 157585.83
    },
    "buy": {
     "via": {

@@ -4,20 +4,20 @@
   "url": "https://github.com/excalidraw/excalidraw",
   "slug": "excalidraw-excalidraw",
   "host": "github.com",
-  "commit": "53973c3a423fbd75a4ce68107786b4fcb90e4968",
-  "committed_at": "2026-10-06T17:31:23+02:00",
-  "evaluated_at": "2026-10-07T14:28:23+00:00",
+  "commit": "4f310b799613d6b506a40e9334f40f941001f425",
+  "committed_at": "2026-10-12T13:28:00+02:00",
+  "evaluated_at": "2026-10-12T12:01:37+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/excalidraw/excalidraw",
   "inventory": {
-   "files": 1309,
-   "source_files": 534,
-   "source_tokens": 1094611,
+   "files": 1314,
+   "source_files": 537,
+   "source_tokens": 1099570,
    "languages": {
-    "typescript": 1072488,
+    "typescript": 1077447,
     "javascript": 22123
    },
    "git": true
@@ -815,10 +815,10 @@
      }
     ],
     "metrics": {
-     "source_files": 534,
-     "source_tokens": 1094611,
-     "test_files": 153,
-     "test_tokens": 534808,
+     "source_files": 537,
+     "source_tokens": 1099570,
+     "test_files": 155,
+     "test_tokens": 544236,
      "test_ratio": 0.49,
      "modules": 78,
      "modules_within_budget": 0.94,
@@ -834,16 +834,17 @@
       "packages/element/src/bucketFill.ts",
       "packages/element/src/elbowArrow.ts",
       "packages/excalidraw/renderer/interactiveScene.ts",
-      "packages/excalidraw/types.ts"
+      "packages/excalidraw/types.ts",
+      "packages/excalidraw/components/App.selectionTool.ts"
      ],
      "largest_module": {
       "path": "packages/excalidraw/components",
-      "tokens": 273886
+      "tokens": 279878
      },
      "typed_ratio": 0.98,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 2024,
+     "import_edges": 2046,
      "import_graph": true,
      "max_fan_out": 210,
      "import_cycles": 5,
@@ -880,6 +881,7 @@
       "packages/excalidraw/components/App.duplicate.ts",
       "packages/excalidraw/components/App.flowchart.ts",
       "packages/excalidraw/components/App.pan.ts",
+      "packages/excalidraw/components/App.selection.ts",
       "packages/excalidraw/components/App.selectionTool.ts",
       "packages/excalidraw/components/App.text.ts",
       "packages/excalidraw/components/App.textTool.ts",
@@ -887,6 +889,7 @@
       "packages/excalidraw/components/App.tsx",
       "packages/excalidraw/components/App.viewport.ts",
       "packages/excalidraw/components/App.wheel.ts",
+      "packages/excalidraw/components/App.wrap.ts",
       "packages/excalidraw/components/AppStateObserver.ts",
       "packages/excalidraw/components/ColorPicker/ColorInput.tsx",
       "packages/excalidraw/components/ColorPicker/ColorPicker.tsx",
@@ -1036,12 +1039,12 @@
       "packages/excalidraw/wysiwyg/textWysiwyg.tsx"
      ],
      "languages": {
-      "typescript": 1072488,
+      "typescript": 1077447,
       "javascript": 22123
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (94% of modules fit 32k tokens; 12 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (94% of modules fit 32k tokens; 13 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1062,7 +1065,7 @@
          },
          {
           "path": "excalidraw-app/tests/LanguageList.test.tsx",
-          "detail": "153 test files"
+          "detail": "155 test files"
          }
         ],
         "note": ""
@@ -1130,7 +1133,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "94% of modules fit 32k tokens; 12 files over 12k"
+        "note": "94% of modules fit 32k tokens; 13 files over 12k"
        },
        {
         "level": 4,
@@ -1168,18 +1171,18 @@
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.09,
+    "size_factor": 2.1,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 119.88,
+   "ksloc": 120.34,
    "classic": {
-    "person_months": 365.5,
-    "schedule_months": 23.5,
-    "cost": 4114546
+    "person_months": 366.97,
+    "schedule_months": 23.6,
+    "cost": 4131017
    },
    "capture": {
     "tests": 0.98,
@@ -1188,21 +1191,21 @@
     "capture": 0.77
    },
    "agent_factor": 0.2,
-   "reproduce_pm": 74.38,
+   "reproduce_pm": 74.68,
    "history": {
-    "commits": 4081,
-    "fix_commits": 1287,
+    "commits": 4088,
+    "fix_commits": 1289,
     "authors": 399,
-    "age_months": 81.1,
+    "age_months": 81.3,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 46.15,
-   "rediscover_pm": 10.61,
-   "replacement_pm": 84.99,
+   "knowledge_pm": 46.22,
+   "rediscover_pm": 10.63,
+   "replacement_pm": 85.31,
    "leverage": 0.91,
    "obsolescence": 0.95,
-   "value_pm": 73.53,
-   "value_cost": 827791,
+   "value_pm": 73.81,
+   "value_cost": 830859,
    "knowledge_at_risk": 0.12,
    "assumptions": {
     "salary": 56286,
@@ -1216,26 +1219,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 490.6532,
+   "make_buy_ratio": 492.1833,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 70196.28,
+   "break_even_price_per_year": 70415.63,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 4963785,
-     "input": 124094625,
-     "cached_input": 105480431
+     "output": 5007288,
+     "input": 125182200,
+     "cached_input": 106404870
     },
-    "final_tokens": 1654595,
-    "model_cost": 194.83,
-    "agent_hours": 55.15,
-    "human_days": 271.12,
-    "review_days": 48.31,
-    "rediscover_days": 222.81,
-    "calendar_days": 271.12,
-    "build_cost": 145530.3,
-    "yearly_cost": 21829.54,
-    "total_cost": 211018.93
+    "final_tokens": 1669096,
+    "model_cost": 196.54,
+    "agent_hours": 55.64,
+    "human_days": 271.97,
+    "review_days": 48.74,
+    "rediscover_days": 223.23,
+    "calendar_days": 271.97,
+    "build_cost": 145984.12,
+    "yearly_cost": 21897.62,
+    "total_cost": 211676.98
    },
    "buy": {
     "via": {

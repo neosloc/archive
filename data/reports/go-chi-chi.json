@@ -4,9 +4,9 @@
   "url": "https://github.com/go-chi/chi",
   "slug": "go-chi-chi",
   "host": "github.com",
-  "commit": "167e1e3bd039d060696b99c8da4e876ae04f42c1",
-  "committed_at": "2026-09-30T01:38:27+02:00",
-  "evaluated_at": "2026-10-07T14:28:43+00:00",
+  "commit": "7f9b7448f51d28804fac98c0a17bc2a7cec1079f",
+  "committed_at": "2026-10-12T13:22:20+02:00",
+  "evaluated_at": "2026-10-12T12:01:55+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 105,
    "source_files": 54,
-   "source_tokens": 39937,
+   "source_tokens": 40637,
    "languages": {
-    "go": 39937
+    "go": 40637
    },
    "git": true
   },
@@ -282,7 +282,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "60 semver tags, latest v5.3.2",
+      "detail": "61 semver tags, latest v5.4.0",
       "path": null,
       "weight": 1
      },
@@ -322,7 +322,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "60 semver tags, latest v5.3.2"
+          "detail": "61 semver tags, latest v5.4.0"
          }
         ],
         "note": ""
@@ -1143,16 +1143,16 @@
     ],
     "metrics": {
      "source_files": 54,
-     "source_tokens": 39937,
+     "source_tokens": 40637,
      "test_files": 30,
-     "test_tokens": 48528,
+     "test_tokens": 49553,
      "test_ratio": 1.22,
      "modules": 18,
      "modules_within_budget": 1.0,
      "oversized_files": [],
      "largest_module": {
       "path": "middleware",
-      "tokens": 18312
+      "tokens": 19012
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -1163,7 +1163,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 39937
+      "go": 40637
      }
     },
     "gaps": [
@@ -1266,11 +1266,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 3.7,
+   "ksloc": 3.73,
    "classic": {
-    "person_months": 9.48,
+    "person_months": 9.57,
     "schedule_months": 5.9,
-    "cost": 106722
+    "cost": 107691
    },
    "capture": {
     "tests": 1.0,
@@ -1279,21 +1279,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 1.2,
+   "reproduce_pm": 1.21,
    "history": {
-    "commits": 764,
+    "commits": 765,
     "fix_commits": 117,
     "authors": 185,
-    "age_months": 131.5,
-    "months_since_last": 0.3
+    "age_months": 131.9,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 6.16,
+   "knowledge_pm": 6.17,
    "rediscover_pm": 0.37,
-   "replacement_pm": 1.57,
+   "replacement_pm": 1.58,
    "leverage": 0.94,
    "obsolescence": 1.0,
-   "value_pm": 1.49,
-   "value_cost": 16730,
+   "value_pm": 1.5,
+   "value_cost": 16850,
    "knowledge_at_risk": 0.23,
    "assumptions": {
     "salary": 56286,
@@ -1307,26 +1307,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 169.6447,
+   "make_buy_ratio": 170.3235,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 2518.05,
+   "break_even_price_per_year": 2528.19,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 266113,
-     "input": 6652825,
-     "cached_input": 5654901
+     "output": 271301,
+     "input": 6782525,
+     "cached_input": 5765146
     },
-    "final_tokens": 88704,
-    "model_cost": 10.44,
-    "agent_hours": 2.96,
-    "human_days": 9.76,
-    "review_days": 1.99,
+    "final_tokens": 90433,
+    "model_cost": 10.65,
+    "agent_hours": 3.01,
+    "human_days": 9.8,
+    "review_days": 2.03,
     "rediscover_days": 7.77,
-    "calendar_days": 9.76,
-    "build_cost": 5240.65,
-    "yearly_cost": 786.1,
-    "total_cost": 7598.95
+    "calendar_days": 9.8,
+    "build_cost": 5261.62,
+    "yearly_cost": 789.24,
+    "total_cost": 7629.35
    },
    "buy": {
     "via": {

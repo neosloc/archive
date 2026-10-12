@@ -4,22 +4,22 @@
   "url": "https://github.com/exelban/stats",
   "slug": "exelban-stats",
   "host": "github.com",
-  "commit": "3a07eb6eac67376d28bb77118e076ca49492bca8",
-  "committed_at": "2026-10-06T22:06:54+02:00",
-  "evaluated_at": "2026-10-07T14:29:46+00:00",
+  "commit": "0c0e551e199938a92af963c25a15a3ca1aef7764",
+  "committed_at": "2026-10-11T18:12:33+02:00",
+  "evaluated_at": "2026-10-12T12:03:03+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/exelban/stats",
   "inventory": {
-   "files": 306,
-   "source_files": 145,
-   "source_tokens": 473369,
+   "files": 307,
+   "source_files": 146,
+   "source_tokens": 475854,
    "languages": {
-    "swift": 436162,
+    "swift": 438608,
     "c": 20258,
-    "python": 13364,
+    "python": 13403,
     "shell": 3585
    },
    "git": true
@@ -138,7 +138,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "358 semver tags, latest v3.0.20",
+      "detail": "359 semver tags, latest v3.0.21",
       "path": null,
       "weight": 1
      }
@@ -162,7 +162,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "358 semver tags, latest v3.0.20"
+          "detail": "359 semver tags, latest v3.0.21"
          }
         ],
         "note": ""
@@ -600,8 +600,8 @@
      }
     ],
     "metrics": {
-     "source_files": 145,
-     "source_tokens": 473369,
+     "source_files": 146,
+     "source_tokens": 475854,
      "test_files": 4,
      "test_tokens": 13125,
      "test_ratio": 0.03,
@@ -612,11 +612,12 @@
       "Kit/plugins/Charts.swift",
       "Kit/plugins/SystemStats.swift",
       "Modules/Sensors/popup.swift",
-      "Modules/Net/readers.swift"
+      "Modules/Net/readers.swift",
+      "Kit/plugins/SystemKit.swift"
      ],
      "largest_module": {
       "path": "Kit/plugins",
-      "tokens": 49847
+      "tokens": 50270
      },
      "typed_ratio": 0.96,
      "python_functions": 48,
@@ -627,9 +628,9 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 436162,
+      "swift": 438608,
       "c": 20258,
-      "python": 13364,
+      "python": 13403,
       "shell": 3585
      }
     },
@@ -674,7 +675,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "75% of modules fit 32k tokens; 5 files over 12k; test/source token ratio 0.03 < 0.3"
+        "note": "75% of modules fit 32k tokens; 6 files over 12k; test/source token ratio 0.03 < 0.3"
        },
        {
         "level": 4,
@@ -719,35 +720,35 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 38.25,
+   "ksloc": 38.39,
    "classic": {
-    "person_months": 110.14,
+    "person_months": 110.58,
     "schedule_months": 14.9,
-    "cost": 1239815
+    "cost": 1244819
    },
    "capture": {
     "tests": 0.06,
     "contract": 0.25,
-    "docs": 0.04,
+    "docs": 0.03,
     "capture": 0.1
    },
    "agent_factor": 0.51,
-   "reproduce_pm": 55.62,
+   "reproduce_pm": 55.84,
    "history": {
-    "commits": 2438,
-    "fix_commits": 683,
+    "commits": 2447,
+    "fix_commits": 688,
     "authors": 204,
-    "age_months": 88.3,
+    "age_months": 88.4,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 25.85,
-   "rediscover_pm": 23.27,
-   "replacement_pm": 78.88,
+   "knowledge_pm": 25.99,
+   "rediscover_pm": 23.4,
+   "replacement_pm": 79.24,
    "leverage": 0.86,
    "obsolescence": 0.9,
-   "value_pm": 61.01,
-   "value_cost": 686817,
-   "knowledge_at_risk": 0.29,
+   "value_pm": 61.29,
+   "value_cost": 689907,
+   "knowledge_at_risk": 0.3,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -760,26 +761,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 503.2256,
+   "make_buy_ratio": 506.0249,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 135922.85,
+   "break_even_price_per_year": 136680.48,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1973948,
-     "input": 49348700,
-     "cached_input": 41946395
+     "output": 1984311,
+     "input": 49607775,
+     "cached_input": 42166608
     },
-    "final_tokens": 657982,
-    "model_cost": 77.48,
-    "agent_hours": 21.93,
-    "human_days": 525.52,
-    "review_days": 36.85,
-    "rediscover_days": 488.67,
-    "calendar_days": 525.52,
-    "build_cost": 281779.64,
-    "yearly_cost": 42266.95,
-    "total_cost": 408580.47
+    "final_tokens": 661437,
+    "model_cost": 77.88,
+    "agent_hours": 22.05,
+    "human_days": 528.44,
+    "review_days": 37.04,
+    "rediscover_days": 491.4,
+    "calendar_days": 528.44,
+    "build_cost": 283347.14,
+    "yearly_cost": 42502.07,
+    "total_cost": 410853.36
    },
    "buy": {
     "via": {

@@ -4,16 +4,16 @@
   "url": "https://github.com/neosloc/neosloc",
   "slug": "neosloc-neosloc",
   "host": "github.com",
-  "commit": "21f4c243437cf5727c1c7a0c5e3fe0e58302efed",
-  "committed_at": "2026-10-07T16:24:41+02:00",
-  "evaluated_at": "2026-10-07T14:27:14+00:00",
+  "commit": "7c115da643ab1e93e2ed4f2fab08c9e8eb2bc657",
+  "committed_at": "2026-10-07T16:35:03+02:00",
+  "evaluated_at": "2026-10-12T12:00:21+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/neosloc/neosloc",
   "inventory": {
-   "files": 63,
+   "files": 64,
    "source_files": 27,
    "source_tokens": 65279,
    "languages": {
@@ -1256,19 +1256,19 @@
    "agent_factor": 0.14,
    "reproduce_pm": 1.68,
    "history": {
-    "commits": 21,
+    "commits": 22,
     "fix_commits": 0,
     "authors": 1,
     "age_months": 0.0,
-    "months_since_last": 0.0
+    "months_since_last": 0.2
    },
-   "knowledge_pm": 0.1,
+   "knowledge_pm": 0.11,
    "rediscover_pm": 0.01,
    "replacement_pm": 1.69,
    "leverage": 1.11,
    "obsolescence": 0.95,
    "value_pm": 1.78,
-   "value_cost": 20085,
+   "value_cost": 20091,
    "knowledge_at_risk": 0.01,
    "assumptions": {
     "salary": 56286,

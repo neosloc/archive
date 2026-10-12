@@ -4,20 +4,20 @@
   "url": "https://github.com/rxhanson/Rectangle",
   "slug": "rxhanson-rectangle",
   "host": "github.com",
-  "commit": "4003736040e0ba870b32b2f8a6855a7665f02515",
-  "committed_at": "2026-10-06T09:16:06-04:00",
-  "evaluated_at": "2026-10-07T14:29:37+00:00",
+  "commit": "810ee5ba6ee14bc71a8feef132228c7b62cf4c0f",
+  "committed_at": "2026-10-09T17:01:44-04:00",
+  "evaluated_at": "2026-10-12T12:02:46+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/rxhanson/Rectangle",
   "inventory": {
-   "files": 454,
-   "source_files": 195,
-   "source_tokens": 273685,
+   "files": 469,
+   "source_files": 210,
+   "source_tokens": 299205,
    "languages": {
-    "swift": 273633,
+    "swift": 299153,
     "c": 52
    },
    "git": true
@@ -523,21 +523,22 @@
      }
     ],
     "metrics": {
-     "source_files": 195,
-     "source_tokens": 273685,
+     "source_files": 210,
+     "source_tokens": 299205,
      "test_files": 5,
-     "test_tokens": 110693,
-     "test_ratio": 0.4,
-     "modules": 14,
-     "modules_within_budget": 0.86,
+     "test_tokens": 113723,
+     "test_ratio": 0.38,
+     "modules": 15,
+     "modules_within_budget": 0.8,
      "oversized_files": [
       "Rectangle/WindowManager+CooperativeCornerResize.swift",
       "Rectangle/CooperativeCornerResize.swift",
-      "Rectangle/WindowAction.swift"
+      "Rectangle/WindowAction.swift",
+      "Rectangle/WindowAnimation/DirectWindowAnimator.swift"
      ],
      "largest_module": {
       "path": "Rectangle",
-      "tokens": 104701
+      "tokens": 104472
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -548,7 +549,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 273633,
+      "swift": 299153,
       "c": 52
      }
     },
@@ -593,7 +594,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "86% of modules fit 32k tokens; 3 files over 12k"
+        "note": "80% of modules fit 32k tokens; 4 files over 12k"
        },
        {
         "level": 4,
@@ -618,55 +619,55 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 42.5,
+   "retrofit_person_days": 44.7,
    "retrofit_by_dimension": {
-    "interface": 10.0,
-    "stability": 3.3,
-    "ergonomics": 7.5,
+    "interface": 10.5,
+    "stability": 3.5,
+    "ergonomics": 7.9,
     "embeddability": 0.0,
-    "extensibility": 10.0,
-    "observability": 3.3,
-    "legibility": 8.4
+    "extensibility": 10.5,
+    "observability": 3.5,
+    "legibility": 8.8
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.05,
+    "size_factor": 1.09,
     "legibility_multiplier": 1.6,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 20.77,
+   "ksloc": 22.5,
    "classic": {
-    "person_months": 58.02,
-    "schedule_months": 11.7,
-    "cost": 653088
+    "person_months": 63.1,
+    "schedule_months": 12.1,
+    "cost": 710352
    },
    "capture": {
-    "tests": 0.8,
+    "tests": 0.76,
     "contract": 0.25,
-    "docs": 0.26,
-    "capture": 0.53
+    "docs": 0.23,
+    "capture": 0.5
    },
-   "agent_factor": 0.31,
-   "reproduce_pm": 18.07,
+   "agent_factor": 0.33,
+   "reproduce_pm": 20.51,
    "history": {
-    "commits": 1203,
+    "commits": 1206,
     "fix_commits": 171,
     "authors": 198,
-    "age_months": 87.5,
-    "months_since_last": 0.0
+    "age_months": 87.6,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 9.44,
-   "rediscover_pm": 4.43,
-   "replacement_pm": 22.51,
+   "knowledge_pm": 9.45,
+   "rediscover_pm": 4.72,
+   "replacement_pm": 25.23,
    "leverage": 0.89,
    "obsolescence": 0.9,
-   "value_pm": 18.09,
-   "value_cost": 203590,
-   "knowledge_at_risk": 0.2,
+   "value_pm": 20.28,
+   "value_cost": 228258,
+   "knowledge_at_risk": 0.19,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -679,26 +680,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 103.898,
+   "make_buy_ratio": 111.3644,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 27848.42,
+   "break_even_price_per_year": 29869.14,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1191723,
-     "input": 29793075,
-     "cached_input": 25324113
+     "output": 1283664,
+     "input": 32091600,
+     "cached_input": 27277860
     },
-    "final_tokens": 397241,
-    "model_cost": 46.78,
-    "agent_hours": 13.24,
-    "human_days": 108.44,
-    "review_days": 15.41,
-    "rediscover_days": 93.03,
-    "calendar_days": 108.44,
-    "build_cost": 58177.36,
-    "yearly_cost": 8726.6,
-    "total_cost": 84357.18
+    "final_tokens": 427888,
+    "model_cost": 50.38,
+    "agent_hours": 14.26,
+    "human_days": 116.24,
+    "review_days": 17.12,
+    "rediscover_days": 99.12,
+    "calendar_days": 116.24,
+    "build_cost": 62358.16,
+    "yearly_cost": 9353.72,
+    "total_cost": 90419.34
    },
    "buy": {
     "via": {

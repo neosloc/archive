@@ -4,20 +4,20 @@
   "url": "https://github.com/junegunn/fzf",
   "slug": "junegunn-fzf",
   "host": "github.com",
-  "commit": "b1be3a8be1b833ce5b92fbbac11637643d60a046",
-  "committed_at": "2026-09-14T12:16:10+09:00",
-  "evaluated_at": "2026-10-07T14:28:48+00:00",
+  "commit": "c0a193e031f01fb50bf6f7be4381990a3753f7cf",
+  "committed_at": "2026-10-11T11:29:16+09:00",
+  "evaluated_at": "2026-10-12T12:01:53+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/junegunn/fzf",
   "inventory": {
-   "files": 161,
+   "files": 162,
    "source_files": 61,
-   "source_tokens": 180709,
+   "source_tokens": 182680,
    "languages": {
-    "go": 179159,
+    "go": 181130,
     "shell": 1550
    },
    "git": true
@@ -211,7 +211,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "179 semver tags, latest v0.74.4",
+      "detail": "180 semver tags, latest v0.74.5",
       "path": null,
       "weight": 1
      },
@@ -241,7 +241,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "179 semver tags, latest v0.74.4"
+          "detail": "180 semver tags, latest v0.74.5"
          }
         ],
         "note": ""
@@ -1042,19 +1042,19 @@
     ],
     "metrics": {
      "source_files": 61,
-     "source_tokens": 180709,
-     "test_files": 41,
-     "test_tokens": 129162,
-     "test_ratio": 0.71,
+     "source_tokens": 182680,
+     "test_files": 42,
+     "test_tokens": 132608,
+     "test_ratio": 0.73,
      "modules": 8,
-     "modules_within_budget": 0.88,
+     "modules_within_budget": 0.75,
      "oversized_files": [
       "src/terminal.go",
       "src/options.go"
      ],
      "largest_module": {
       "path": "src",
-      "tokens": 123698
+      "tokens": 123996
      },
      "typed_ratio": 0.99,
      "python_functions": 0,
@@ -1065,12 +1065,12 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 179159,
+      "go": 181130,
       "shell": 1550
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (88% of modules fit 32k tokens; 2 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (75% of modules fit 32k tokens; 2 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1091,7 +1091,7 @@
          },
          {
           "path": "src/algo/algo_test.go",
-          "detail": "41 test files"
+          "detail": "42 test files"
          }
         ],
         "note": ""
@@ -1147,7 +1147,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "88% of modules fit 32k tokens; 2 files over 12k"
+        "note": "75% of modules fit 32k tokens; 2 files over 12k"
        },
        {
         "level": 4,
@@ -1192,11 +1192,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 22.79,
+   "ksloc": 22.92,
    "classic": {
-    "person_months": 63.94,
-    "schedule_months": 12.1,
-    "cost": 719835
+    "person_months": 64.33,
+    "schedule_months": 12.2,
+    "cost": 724181
    },
    "capture": {
     "tests": 1.0,
@@ -1205,21 +1205,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 8.12,
+   "reproduce_pm": 8.17,
    "history": {
-    "commits": 3640,
-    "fix_commits": 736,
+    "commits": 3649,
+    "fix_commits": 737,
     "authors": 347,
-    "age_months": 154.7,
-    "months_since_last": 0.8
+    "age_months": 155.6,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 32.92,
+   "knowledge_pm": 32.98,
    "rediscover_pm": 1.98,
-   "replacement_pm": 10.1,
+   "replacement_pm": 10.15,
    "leverage": 1.02,
    "obsolescence": 0.95,
-   "value_pm": 9.74,
-   "value_cost": 109659,
+   "value_pm": 9.79,
+   "value_cost": 110233,
    "knowledge_at_risk": 0.2,
    "assumptions": {
     "salary": 56286,
@@ -1233,26 +1233,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 91.188,
+   "make_buy_ratio": 91.4183,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 12457.18,
+   "break_even_price_per_year": 12489.0,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 932865,
-     "input": 23321625,
-     "cached_input": 19823381
+     "output": 949152,
+     "input": 23728800,
+     "cached_input": 20169480
     },
-    "final_tokens": 310955,
-    "model_cost": 36.61,
-    "agent_hours": 10.37,
-    "human_days": 48.55,
-    "review_days": 6.97,
+    "final_tokens": 316384,
+    "model_cost": 37.25,
+    "agent_hours": 10.55,
+    "human_days": 48.67,
+    "review_days": 7.09,
     "rediscover_days": 41.58,
-    "calendar_days": 48.55,
-    "build_cost": 26059.26,
-    "yearly_cost": 3908.89,
-    "total_cost": 37785.93
+    "calendar_days": 48.67,
+    "build_cost": 26125.09,
+    "yearly_cost": 3918.76,
+    "total_cost": 37881.37
    },
    "buy": {
     "via": {

@@ -4,20 +4,20 @@
   "url": "https://github.com/fastapi/fastapi",
   "slug": "fastapi-fastapi",
   "host": "github.com",
-  "commit": "94918c1d40afb27065c64d523219ed2ad9822f76",
-  "committed_at": "2026-10-06T17:29:41+00:00",
-  "evaluated_at": "2026-10-07T14:27:41+00:00",
+  "commit": "f5c6e9b4f9cadc1bf0f9a1fd672e621206b63007",
+  "committed_at": "2026-10-08T14:25:54+02:00",
+  "evaluated_at": "2026-10-12T12:00:58+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/fastapi/fastapi",
   "inventory": {
-   "files": 3180,
+   "files": 3181,
    "source_files": 540,
-   "source_tokens": 286747,
+   "source_tokens": 286950,
    "languages": {
-    "python": 286340,
+    "python": 286543,
     "javascript": 266,
     "shell": 141
    },
@@ -295,7 +295,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "308 semver tags, latest 0.142.2",
+      "detail": "311 semver tags, latest 0.143.0",
       "path": null,
       "weight": 1
      }
@@ -319,7 +319,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "308 semver tags, latest 0.142.2"
+          "detail": "311 semver tags, latest 0.143.0"
          }
         ],
         "note": ""
@@ -3583,9 +3583,9 @@
     ],
     "metrics": {
      "source_files": 540,
-     "source_tokens": 286747,
-     "test_files": 632,
-     "test_tokens": 752776,
+     "source_tokens": 286950,
+     "test_files": 633,
+     "test_tokens": 755151,
      "test_ratio": 2.63,
      "modules": 107,
      "modules_within_budget": 0.99,
@@ -3596,11 +3596,11 @@
      ],
      "largest_module": {
       "path": "fastapi",
-      "tokens": 147108
+      "tokens": 147125
      },
      "typed_ratio": 0.83,
-     "python_functions": 1188,
-     "python_annotated": 985,
+     "python_functions": 1189,
+     "python_annotated": 986,
      "import_edges": 580,
      "import_graph": true,
      "max_fan_out": 15,
@@ -3616,7 +3616,7 @@
       "fastapi/utils.py"
      ],
      "languages": {
-      "python": 286340,
+      "python": 286543,
       "javascript": 266,
       "shell": 141
      }
@@ -3643,7 +3643,7 @@
          },
          {
           "path": "docs_src/app_testing/app_a_py310/test_main.py",
-          "detail": "632 test files"
+          "detail": "633 test files"
          }
         ],
         "note": ""
@@ -3792,11 +3792,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 28.21,
+   "ksloc": 28.23,
    "classic": {
-    "person_months": 80.02,
+    "person_months": 80.06,
     "schedule_months": 13.2,
-    "cost": 900769
+    "cost": 901238
    },
    "capture": {
     "tests": 1.0,
@@ -3805,21 +3805,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 10.16,
+   "reproduce_pm": 10.17,
    "history": {
-    "commits": 7771,
+    "commits": 7780,
     "fix_commits": 553,
     "authors": 919,
-    "age_months": 94.0,
-    "months_since_last": 0.0
+    "age_months": 94.1,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 49.92,
-   "rediscover_pm": 2.99,
-   "replacement_pm": 13.16,
+   "knowledge_pm": 49.96,
+   "rediscover_pm": 3.0,
+   "replacement_pm": 13.17,
    "leverage": 1.0,
    "obsolescence": 0.95,
-   "value_pm": 12.5,
-   "value_cost": 140706,
+   "value_pm": 12.51,
+   "value_cost": 140792,
    "knowledge_at_risk": 0.23,
    "assumptions": {
     "salary": 56286,
@@ -3833,26 +3833,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 82.2031,
+   "make_buy_ratio": 82.4586,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 22098.33,
+   "break_even_price_per_year": 22167.86,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3123730,
-     "input": 78093250,
-     "cached_input": 66379262
+     "output": 3131468,
+     "input": 78286700,
+     "cached_input": 66543695
     },
-    "final_tokens": 1041243,
-    "model_cost": 122.61,
-    "agent_hours": 34.71,
-    "human_days": 86.11,
-    "review_days": 23.32,
-    "rediscover_days": 62.79,
-    "calendar_days": 86.11,
-    "build_cost": 46283.73,
-    "yearly_cost": 6942.56,
-    "total_cost": 67111.41
+    "final_tokens": 1043822,
+    "model_cost": 122.91,
+    "agent_hours": 34.79,
+    "human_days": 86.38,
+    "review_days": 23.38,
+    "rediscover_days": 63.0,
+    "calendar_days": 86.38,
+    "build_cost": 46427.58,
+    "yearly_cost": 6964.14,
+    "total_cost": 67319.99
    },
    "buy": {
     "via": {

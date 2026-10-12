@@ -4,9 +4,9 @@
   "url": "https://github.com/fastify/fastify",
   "slug": "fastify-fastify",
   "host": "github.com",
-  "commit": "b7eb53e41e1db355ddd2a04f2fbbfca7962a7bd9",
-  "committed_at": "2026-10-07T12:03:17+02:00",
-  "evaluated_at": "2026-10-07T14:27:44+00:00",
+  "commit": "3ad5a426371ed652e3ddc759d6b389b76fb86eaa",
+  "committed_at": "2026-10-12T12:23:41+02:00",
+  "evaluated_at": "2026-10-12T12:00:36+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 390,
    "source_files": 53,
-   "source_tokens": 111933,
+   "source_tokens": 112900,
    "languages": {
-    "javascript": 71925,
+    "javascript": 72892,
     "typescript": 39781,
     "shell": 227
    },
@@ -998,10 +998,10 @@
     ],
     "metrics": {
      "source_files": 53,
-     "source_tokens": 111933,
+     "source_tokens": 112900,
      "test_files": 226,
-     "test_tokens": 440427,
-     "test_ratio": 3.93,
+     "test_tokens": 442394,
+     "test_ratio": 3.92,
      "modules": 6,
      "modules_within_budget": 0.67,
      "oversized_files": [
@@ -1009,9 +1009,9 @@
      ],
      "largest_module": {
       "path": "lib",
-      "tokens": 61048
+      "tokens": 62015
      },
-     "typed_ratio": 0.36,
+     "typed_ratio": 0.35,
      "python_functions": 0,
      "python_annotated": 0,
      "import_edges": 114,
@@ -1028,13 +1028,13 @@
       "lib/route.js"
      ],
      "languages": {
-      "javascript": 71925,
+      "javascript": 72892,
       "typescript": 39781,
       "shell": 227
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (67% of modules fit 32k tokens; 1 files over 12k; 36% of code is typed (< 70%))"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (67% of modules fit 32k tokens; 1 files over 12k; 35% of code is typed (< 70%))"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1159,7 +1159,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "67% of modules fit 32k tokens; 1 files over 12k; 36% of code is typed (< 70%)"
+        "note": "67% of modules fit 32k tokens; 1 files over 12k; 35% of code is typed (< 70%)"
        },
        {
         "level": 4,
@@ -1204,11 +1204,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 10.2,
+   "ksloc": 10.24,
    "classic": {
-    "person_months": 27.49,
+    "person_months": 27.6,
     "schedule_months": 8.8,
-    "cost": 309444
+    "cost": 310751
    },
    "capture": {
     "tests": 1.0,
@@ -1217,21 +1217,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 3.49,
+   "reproduce_pm": 3.51,
    "history": {
-    "commits": 4453,
-    "fix_commits": 882,
-    "authors": 949,
-    "age_months": 120.3,
+    "commits": 4462,
+    "fix_commits": 885,
+    "authors": 953,
+    "age_months": 120.4,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 39.91,
-   "rediscover_pm": 2.39,
-   "replacement_pm": 5.89,
+   "knowledge_pm": 40.01,
+   "rediscover_pm": 2.4,
+   "replacement_pm": 5.91,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 5.28,
-   "value_cost": 59443,
+   "value_pm": 5.3,
+   "value_cost": 59656,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -1245,26 +1245,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 58.5669,
+   "make_buy_ratio": 58.8252,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 15967.39,
+   "break_even_price_per_year": 16039.03,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1659094,
-     "input": 41477350,
-     "cached_input": 35255747
+     "output": 1667914,
+     "input": 41697850,
+     "cached_input": 35443172
     },
-    "final_tokens": 553031,
-    "model_cost": 65.12,
-    "agent_hours": 18.43,
-    "human_days": 62.58,
-    "review_days": 12.39,
-    "rediscover_days": 50.19,
-    "calendar_days": 62.58,
-    "build_cost": 33609.86,
-    "yearly_cost": 5041.48,
-    "total_cost": 48734.29
+    "final_tokens": 555971,
+    "model_cost": 65.47,
+    "agent_hours": 18.53,
+    "human_days": 62.85,
+    "review_days": 12.45,
+    "rediscover_days": 50.4,
+    "calendar_days": 62.85,
+    "build_cost": 33758.07,
+    "yearly_cost": 5063.71,
+    "total_cost": 48949.21
    },
    "buy": {
     "via": {

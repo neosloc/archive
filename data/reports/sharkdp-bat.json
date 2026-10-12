@@ -4,9 +4,9 @@
   "url": "https://github.com/sharkdp/bat",
   "slug": "sharkdp-bat",
   "host": "github.com",
-  "commit": "4608fc959aa8abf80d32198836511a570b7ae9ea",
-  "committed_at": "2026-10-01T02:13:09+00:00",
-  "evaluated_at": "2026-10-07T14:29:04+00:00",
+  "commit": "d9559c69f541873f8c47ac8ad81d985f4441edf6",
+  "committed_at": "2026-10-07T22:49:03+03:00",
+  "evaluated_at": "2026-10-12T12:02:19+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 909,
    "source_files": 43,
-   "source_tokens": 105639,
+   "source_tokens": 105804,
    "languages": {
-    "rust": 103604,
+    "rust": 103769,
     "shell": 2035
    },
    "git": true
@@ -543,9 +543,9 @@
     ],
     "metrics": {
      "source_files": 43,
-     "source_tokens": 105639,
+     "source_tokens": 105804,
      "test_files": 87,
-     "test_tokens": 340985,
+     "test_tokens": 341624,
      "test_ratio": 3.23,
      "modules": 7,
      "modules_within_budget": 0.86,
@@ -563,7 +563,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 103604,
+      "rust": 103769,
       "shell": 2035
      }
     },
@@ -666,11 +666,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 9.6,
+   "ksloc": 9.62,
    "classic": {
-    "person_months": 25.8,
+    "person_months": 25.86,
     "schedule_months": 8.6,
-    "cost": 290420
+    "cost": 291151
    },
    "capture": {
     "tests": 1.0,
@@ -681,19 +681,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 3.28,
    "history": {
-    "commits": 3506,
-    "fix_commits": 421,
-    "authors": 513,
-    "age_months": 101.3,
-    "months_since_last": 0.2
+    "commits": 3508,
+    "fix_commits": 422,
+    "authors": 515,
+    "age_months": 101.4,
+    "months_since_last": 0.3
    },
-   "knowledge_pm": 25.95,
+   "knowledge_pm": 25.98,
    "rediscover_pm": 1.56,
-   "replacement_pm": 4.83,
+   "replacement_pm": 4.84,
    "leverage": 0.95,
    "obsolescence": 0.95,
    "value_pm": 4.35,
-   "value_cost": 48921,
+   "value_cost": 49023,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,
@@ -707,26 +707,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 744.0138,
+   "make_buy_ratio": 744.3297,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 11094.01,
+   "break_even_price_per_year": 11098.73,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1341773,
-     "input": 33544325,
-     "cached_input": 28512676
+     "output": 1344188,
+     "input": 33604700,
+     "cached_input": 28563995
     },
-    "final_tokens": 447257,
-    "model_cost": 52.66,
-    "agent_hours": 14.91,
-    "human_days": 42.78,
-    "review_days": 10.02,
+    "final_tokens": 448062,
+    "model_cost": 52.76,
+    "agent_hours": 14.94,
+    "human_days": 42.8,
+    "review_days": 10.04,
     "rediscover_days": 32.76,
-    "calendar_days": 42.78,
-    "build_cost": 22984.02,
-    "yearly_cost": 3447.6,
-    "total_cost": 33326.83
+    "calendar_days": 42.8,
+    "build_cost": 22993.78,
+    "yearly_cost": 3449.07,
+    "total_cost": 33340.98
    },
    "buy": {
     "via": {

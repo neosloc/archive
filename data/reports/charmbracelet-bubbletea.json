@@ -4,20 +4,20 @@
   "url": "https://github.com/charmbracelet/bubbletea",
   "slug": "charmbracelet-bubbletea",
   "host": "github.com",
-  "commit": "96d69d2f7eb182bb311be08fc56ed2c208239aff",
-  "committed_at": "2026-10-02T15:07:33+04:00",
-  "evaluated_at": "2026-10-07T14:28:45+00:00",
+  "commit": "f9df43c4f2c021d8740a2628d59cd810a862eb98",
+  "committed_at": "2026-10-08T21:38:55+04:00",
+  "evaluated_at": "2026-10-12T12:01:57+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/charmbracelet/bubbletea",
   "inventory": {
-   "files": 230,
-   "source_files": 35,
-   "source_tokens": 33447,
+   "files": 233,
+   "source_files": 36,
+   "source_tokens": 34443,
    "languages": {
-    "go": 33447
+    "go": 34443
    },
    "git": true
   },
@@ -141,7 +141,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "108 semver tags, latest v2.0.10",
+      "detail": "109 semver tags, latest v2.1.0",
       "path": null,
       "weight": 1
      }
@@ -165,7 +165,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "108 semver tags, latest v2.0.10"
+          "detail": "109 semver tags, latest v2.1.0"
          }
         ],
         "note": ""
@@ -525,17 +525,17 @@
      }
     ],
     "metrics": {
-     "source_files": 35,
-     "source_tokens": 33447,
-     "test_files": 10,
-     "test_tokens": 10617,
-     "test_ratio": 0.32,
+     "source_files": 36,
+     "source_tokens": 34443,
+     "test_files": 11,
+     "test_tokens": 11256,
+     "test_ratio": 0.33,
      "modules": 3,
      "modules_within_budget": 0.67,
      "oversized_files": [],
      "largest_module": {
       "path": ".",
-      "tokens": 32683
+      "tokens": 33679
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -546,7 +546,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 33447
+      "go": 34443
      }
     },
     "gaps": [
@@ -571,7 +571,7 @@
          },
          {
           "path": "commands_test.go",
-          "detail": "10 test files"
+          "detail": "11 test files"
          }
         ],
         "note": ""
@@ -668,35 +668,35 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 2.59,
+   "ksloc": 2.64,
    "classic": {
-    "person_months": 6.51,
+    "person_months": 6.65,
     "schedule_months": 5.1,
-    "cost": 73266
+    "cost": 74903
    },
    "capture": {
-    "tests": 0.64,
+    "tests": 0.66,
     "contract": 0.75,
     "docs": 1.0,
-    "capture": 0.76
+    "capture": 0.77
    },
-   "agent_factor": 0.21,
+   "agent_factor": 0.2,
    "reproduce_pm": 1.35,
    "history": {
-    "commits": 1794,
+    "commits": 1796,
     "fix_commits": 533,
     "authors": 178,
-    "age_months": 80.7,
-    "months_since_last": 0.2
+    "age_months": 80.9,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 19.63,
-   "rediscover_pm": 4.71,
-   "replacement_pm": 6.06,
+   "knowledge_pm": 19.64,
+   "rediscover_pm": 4.52,
+   "replacement_pm": 5.87,
    "leverage": 0.91,
    "obsolescence": 0.95,
-   "value_pm": 5.25,
-   "value_cost": 59069,
-   "knowledge_at_risk": 0.78,
+   "value_pm": 5.08,
+   "value_cost": 57183,
+   "knowledge_at_risk": 0.77,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -709,26 +709,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 95.3108,
+   "make_buy_ratio": 91.5457,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 25700.69,
+   "break_even_price_per_year": 24674.65,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 134600,
-     "input": 3365000,
-     "cached_input": 2860250
+     "output": 139473,
+     "input": 3486825,
+     "cached_input": 2963801
     },
-    "final_tokens": 44866,
-    "model_cost": 5.28,
-    "agent_hours": 1.5,
-    "human_days": 100.24,
-    "review_days": 1.33,
-    "rediscover_days": 98.91,
-    "calendar_days": 100.24,
-    "build_cost": 53737.65,
-    "yearly_cost": 8060.65,
-    "total_cost": 77919.6
+    "final_tokens": 46491,
+    "model_cost": 5.47,
+    "agent_hours": 1.55,
+    "human_days": 96.28,
+    "review_days": 1.36,
+    "rediscover_days": 94.92,
+    "calendar_days": 96.28,
+    "build_cost": 51614.82,
+    "yearly_cost": 7742.22,
+    "total_cost": 74841.49
    },
    "buy": {
     "via": {

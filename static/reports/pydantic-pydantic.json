@@ -4,21 +4,21 @@
   "url": "https://github.com/pydantic/pydantic",
   "slug": "pydantic-pydantic",
   "host": "github.com",
-  "commit": "895c0c285c5cb4c0c7c7a4619a80941c12f2c75f",
-  "committed_at": "2026-10-06T18:51:28+00:00",
-  "evaluated_at": "2026-10-07T14:28:10+00:00",
+  "commit": "3eca5695dabc5a451ccfc0f4afa802166e61e27a",
+  "committed_at": "2026-10-11T19:40:11Z",
+  "evaluated_at": "2026-10-12T12:01:19+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/pydantic/pydantic",
   "inventory": {
-   "files": 851,
+   "files": 849,
    "source_files": 261,
-   "source_tokens": 951230,
+   "source_tokens": 953784,
    "languages": {
-    "python": 620299,
-    "rust": 329646,
+    "python": 621753,
+    "rust": 330746,
     "javascript": 810,
     "shell": 475
    },
@@ -190,7 +190,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "194 semver tags, latest v2.14.0b2",
+      "detail": "196 semver tags, latest v2.14.1",
       "path": null,
       "weight": 1
      },
@@ -226,7 +226,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "194 semver tags, latest v2.14.0b2"
+          "detail": "196 semver tags, latest v2.14.1"
          }
         ],
         "note": ""
@@ -259,16 +259,16 @@
           "detail": "20 matches"
          },
          {
+          "path": "pydantic/_internal/_generate_schema.py",
+          "detail": "11 matches"
+         },
+         {
           "path": "pydantic/deprecated/config.py",
           "detail": "11 matches"
          },
          {
           "path": "pydantic/deprecated/tools.py",
           "detail": "11 matches"
-         },
-         {
-          "path": "pydantic/_internal/_generate_schema.py",
-          "detail": "10 matches"
          },
          {
           "path": "pydantic/warnings.py",
@@ -323,6 +323,10 @@
           "detail": "3 matches"
          },
          {
+          "path": "release/prepare.py",
+          "detail": "3 matches"
+         },
+         {
           "path": "pydantic/_internal/_utils.py",
           "detail": "2 matches"
          },
@@ -340,10 +344,6 @@
          },
          {
           "path": "pydantic/v1/utils.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "release/prepare.py",
           "detail": "2 matches"
          },
          {
@@ -523,7 +523,7 @@
         "evidence": [
          {
           "path": "pydantic/_internal/_validators.py",
-          "detail": "42 matches"
+          "detail": "43 matches"
          },
          {
           "path": "pydantic/_internal/_generate_schema.py",
@@ -1036,9 +1036,9 @@
     ],
     "metrics": {
      "source_files": 261,
-     "source_tokens": 951230,
+     "source_tokens": 953784,
      "test_files": 339,
-     "test_tokens": 955814,
+     "test_tokens": 958135,
      "test_ratio": 1.0,
      "modules": 22,
      "modules_within_budget": 0.59,
@@ -1056,12 +1056,12 @@
      ],
      "largest_module": {
       "path": "pydantic",
-      "tokens": 195904
+      "tokens": 195883
      },
      "typed_ratio": 0.99,
-     "python_functions": 2125,
-     "python_annotated": 2098,
-     "import_edges": 586,
+     "python_functions": 2128,
+     "python_annotated": 2101,
+     "import_edges": 587,
      "import_graph": true,
      "max_fan_out": 32,
      "import_cycles": 3,
@@ -1116,8 +1116,8 @@
       "pydantic/v1/validators.py"
      ],
      "languages": {
-      "python": 620299,
-      "rust": 329646,
+      "python": 621753,
+      "rust": 330746,
       "javascript": 810,
       "shell": 475
      }
@@ -1168,15 +1168,7 @@
           "detail": ""
          },
          {
-          "path": ".github/workflows/dependencies-check.yml",
-          "detail": ""
-         },
-         {
           "path": ".github/workflows/docs-navigation.yml",
-          "detail": ""
-         },
-         {
-          "path": ".github/workflows/docs-update.yml",
           "detail": ""
          },
          {
@@ -1257,11 +1249,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 79.64,
+   "ksloc": 79.8,
    "classic": {
-    "person_months": 237.9,
+    "person_months": 238.39,
     "schedule_months": 20.0,
-    "cost": 2678081
+    "cost": 2683660
    },
    "capture": {
     "tests": 1.0,
@@ -1270,21 +1262,21 @@
     "capture": 1.0
    },
    "agent_factor": 0.1,
-   "reproduce_pm": 23.79,
+   "reproduce_pm": 23.84,
    "history": {
-    "commits": 5774,
-    "fix_commits": 1214,
+    "commits": 5793,
+    "fix_commits": 1219,
     "authors": 835,
-    "age_months": 113.1,
+    "age_months": 113.3,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 53.15,
+   "knowledge_pm": 53.34,
    "rediscover_pm": 0.0,
-   "replacement_pm": 23.79,
+   "replacement_pm": 23.84,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 21.54,
-   "value_cost": 242492,
+   "value_pm": 21.59,
+   "value_cost": 242997,
    "knowledge_at_risk": 0.0,
    "assumptions": {
     "salary": 56286,
@@ -1298,26 +1290,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 288.5356,
+   "make_buy_ratio": 289.2732,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 9955.82,
+   "break_even_price_per_year": 9981.36,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5721132,
-     "input": 143028300,
-     "cached_input": 121574055
+     "output": 5735757,
+     "input": 143393925,
+     "cached_input": 121884836
     },
-    "final_tokens": 1907044,
-    "model_cost": 224.55,
-    "agent_hours": 63.57,
-    "human_days": 38.14,
-    "review_days": 38.14,
+    "final_tokens": 1911919,
+    "model_cost": 225.13,
+    "agent_hours": 63.73,
+    "human_days": 38.24,
+    "review_days": 38.24,
     "rediscover_days": 0.0,
-    "calendar_days": 38.14,
-    "build_cost": 20669.88,
-    "yearly_cost": 3100.48,
-    "total_cost": 29971.33
+    "calendar_days": 38.24,
+    "build_cost": 20722.72,
+    "yearly_cost": 3108.41,
+    "total_cost": 30047.95
    },
    "buy": {
     "via": {
