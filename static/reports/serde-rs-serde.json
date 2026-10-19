@@ -4,9 +4,9 @@
   "url": "https://github.com/serde-rs/serde",
   "slug": "serde-rs-serde",
   "host": "github.com",
-  "commit": "6693a89cca77e0151437da1c7f890090b9ebf04c",
-  "committed_at": "2026-09-21T20:41:57-07:00",
-  "evaluated_at": "2026-10-07T14:29:21+00:00",
+  "commit": "0db9b3b504bcb0a7fa9cf001429869519afd3e9a",
+  "committed_at": "2026-10-15T23:31:33-04:00",
+  "evaluated_at": "2026-10-19T09:57:27+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 359,
    "source_files": 58,
-   "source_tokens": 213999,
+   "source_tokens": 214007,
    "languages": {
-    "rust": 213999
+    "rust": 214007
    },
    "git": true
   },
@@ -634,9 +634,9 @@
     ],
     "metrics": {
      "source_files": 58,
-     "source_tokens": 213999,
+     "source_tokens": 214007,
      "test_files": 150,
-     "test_tokens": 97479,
+     "test_tokens": 97493,
      "test_ratio": 0.46,
      "modules": 14,
      "modules_within_budget": 0.86,
@@ -661,7 +661,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 213999
+      "rust": 214007
      }
     },
     "gaps": [
@@ -761,9 +761,9 @@
   "value": {
    "ksloc": 18.26,
    "classic": {
-    "person_months": 50.67,
+    "person_months": 50.68,
     "schedule_months": 11.1,
-    "cost": 570384
+    "cost": 570483
    },
    "capture": {
     "tests": 0.92,
@@ -774,19 +774,19 @@
    "agent_factor": 0.21,
    "reproduce_pm": 10.77,
    "history": {
-    "commits": 3542,
+    "commits": 3544,
     "fix_commits": 375,
     "authors": 216,
-    "age_months": 148.2,
-    "months_since_last": 0.5
+    "age_months": 149.0,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 25.21,
+   "knowledge_pm": 25.22,
    "rediscover_pm": 6.3,
    "replacement_pm": 17.07,
    "leverage": 0.93,
    "obsolescence": 0.95,
    "value_pm": 15.06,
-   "value_cost": 169508,
+   "value_cost": 169552,
    "knowledge_at_risk": 0.37,
    "assumptions": {
     "salary": 56286,
@@ -800,26 +800,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 133.9683,
+   "make_buy_ratio": 133.9689,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 36483.82,
+   "break_even_price_per_year": 36484.0,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 950483,
-     "input": 23762075,
-     "cached_input": 20197763
+     "output": 950550,
+     "input": 23763750,
+     "cached_input": 20199187
     },
-    "final_tokens": 316827,
+    "final_tokens": 316850,
     "model_cost": 37.31,
     "agent_hours": 10.56,
-    "human_days": 141.8,
-    "review_days": 9.5,
+    "human_days": 141.81,
+    "review_days": 9.51,
     "rediscover_days": 132.3,
-    "calendar_days": 141.8,
-    "build_cost": 76051.45,
-    "yearly_cost": 11407.72,
-    "total_cost": 110274.61
+    "calendar_days": 141.81,
+    "build_cost": 76051.81,
+    "yearly_cost": 11407.77,
+    "total_cost": 110275.13
    },
    "buy": {
     "via": {

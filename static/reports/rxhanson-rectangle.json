@@ -4,20 +4,20 @@
   "url": "https://github.com/rxhanson/Rectangle",
   "slug": "rxhanson-rectangle",
   "host": "github.com",
-  "commit": "810ee5ba6ee14bc71a8feef132228c7b62cf4c0f",
-  "committed_at": "2026-10-09T17:01:44-04:00",
-  "evaluated_at": "2026-10-12T12:02:46+00:00",
+  "commit": "ed1bcf7d62ad08014bb051b7ee894c511c8e2a46",
+  "committed_at": "2026-10-18T22:17:46-04:00",
+  "evaluated_at": "2026-10-19T09:57:40+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/rxhanson/Rectangle",
   "inventory": {
-   "files": 469,
-   "source_files": 210,
-   "source_tokens": 299205,
+   "files": 486,
+   "source_files": 215,
+   "source_tokens": 308362,
    "languages": {
-    "swift": 299153,
+    "swift": 308310,
     "c": 52
    },
    "git": true
@@ -307,7 +307,7 @@
      },
      {
       "signal": "L4 managed-settings",
-      "detail": "76 matches",
+      "detail": "78 matches",
       "path": "TerminalCommands.md",
       "weight": 1
      }
@@ -360,6 +360,10 @@
          {
           "path": "README.md",
           "detail": "1 match"
+         },
+         {
+          "path": "README.zh-Hans.md",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -372,10 +376,14 @@
         "evidence": [
          {
           "path": "TerminalCommands.md",
-          "detail": "76 matches"
+          "detail": "78 matches"
          },
          {
           "path": "README.md",
+          "detail": "1 match"
+         },
+         {
+          "path": "README.zh-Hans.md",
           "detail": "1 match"
          }
         ],
@@ -523,11 +531,11 @@
      }
     ],
     "metrics": {
-     "source_files": 210,
-     "source_tokens": 299205,
+     "source_files": 215,
+     "source_tokens": 308362,
      "test_files": 5,
-     "test_tokens": 113723,
-     "test_ratio": 0.38,
+     "test_tokens": 130195,
+     "test_ratio": 0.42,
      "modules": 15,
      "modules_within_budget": 0.8,
      "oversized_files": [
@@ -538,7 +546,7 @@
      ],
      "largest_module": {
       "path": "Rectangle",
-      "tokens": 104472
+      "tokens": 108725
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -549,7 +557,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 299153,
+      "swift": 308310,
       "c": 52
      }
     },
@@ -619,55 +627,55 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 44.7,
+   "retrofit_person_days": 45.5,
    "retrofit_by_dimension": {
-    "interface": 10.5,
-    "stability": 3.5,
-    "ergonomics": 7.9,
+    "interface": 10.7,
+    "stability": 3.6,
+    "ergonomics": 8.0,
     "embeddability": 0.0,
-    "extensibility": 10.5,
-    "observability": 3.5,
-    "legibility": 8.8
+    "extensibility": 10.7,
+    "observability": 3.6,
+    "legibility": 8.9
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.09,
+    "size_factor": 1.11,
     "legibility_multiplier": 1.6,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 22.5,
+   "ksloc": 23.05,
    "classic": {
-    "person_months": 63.1,
-    "schedule_months": 12.1,
-    "cost": 710352
+    "person_months": 64.73,
+    "schedule_months": 12.2,
+    "cost": 728660
    },
    "capture": {
-    "tests": 0.76,
+    "tests": 0.84,
     "contract": 0.25,
-    "docs": 0.23,
-    "capture": 0.5
+    "docs": 0.28,
+    "capture": 0.55
    },
-   "agent_factor": 0.33,
-   "reproduce_pm": 20.51,
+   "agent_factor": 0.3,
+   "reproduce_pm": 19.58,
    "history": {
-    "commits": 1206,
+    "commits": 1220,
     "fix_commits": 171,
-    "authors": 198,
-    "age_months": 87.6,
-    "months_since_last": 0.1
+    "authors": 205,
+    "age_months": 87.9,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 9.45,
-   "rediscover_pm": 4.72,
-   "replacement_pm": 25.23,
+   "knowledge_pm": 9.52,
+   "rediscover_pm": 4.28,
+   "replacement_pm": 23.86,
    "leverage": 0.89,
    "obsolescence": 0.9,
-   "value_pm": 20.28,
-   "value_cost": 228258,
-   "knowledge_at_risk": 0.19,
+   "value_pm": 19.18,
+   "value_cost": 215876,
+   "knowledge_at_risk": 0.18,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -680,26 +688,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 111.3644,
+   "make_buy_ratio": 102.5976,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 29869.14,
+   "break_even_price_per_year": 27496.48,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1283664,
-     "input": 32091600,
-     "cached_input": 27277860
+     "output": 1357299,
+     "input": 33932475,
+     "cached_input": 28842603
     },
-    "final_tokens": 427888,
-    "model_cost": 50.38,
-    "agent_hours": 14.26,
-    "human_days": 116.24,
-    "review_days": 17.12,
-    "rediscover_days": 99.12,
-    "calendar_days": 116.24,
-    "build_cost": 62358.16,
-    "yearly_cost": 9353.72,
-    "total_cost": 90419.34
+    "final_tokens": 452433,
+    "model_cost": 53.27,
+    "agent_hours": 15.08,
+    "human_days": 107.07,
+    "review_days": 17.19,
+    "rediscover_days": 89.88,
+    "calendar_days": 107.07,
+    "build_cost": 57449.21,
+    "yearly_cost": 8617.38,
+    "total_cost": 83301.36
    },
    "buy": {
     "via": {

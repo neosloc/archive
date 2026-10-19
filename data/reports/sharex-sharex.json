@@ -4,20 +4,20 @@
   "url": "https://github.com/ShareX/ShareX",
   "slug": "sharex-sharex",
   "host": "github.com",
-  "commit": "63f7e3ec5329654c4509ff43394fc018af8ea03a",
-  "committed_at": "2026-10-11T18:52:53+03:00",
-  "evaluated_at": "2026-10-12T12:03:40+00:00",
+  "commit": "82f892ef7a85a64230ecdb8c33acc9845f006626",
+  "committed_at": "2026-10-19T00:45:52+03:00",
+  "evaluated_at": "2026-10-19T09:58:35+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/ShareX/ShareX",
   "inventory": {
-   "files": 1797,
-   "source_files": 1224,
-   "source_tokens": 2163644,
+   "files": 1800,
+   "source_files": 1227,
+   "source_tokens": 2165543,
    "languages": {
-    "csharp": 2163644
+    "csharp": 2165543
    },
    "git": true
   },
@@ -493,8 +493,8 @@
     "rationale": "Not yet: A README and some tests.",
     "evidence": [],
     "metrics": {
-     "source_files": 1224,
-     "source_tokens": 2163644,
+     "source_files": 1227,
+     "source_tokens": 2165543,
      "test_files": 0,
      "test_tokens": 0,
      "test_ratio": 0.0,
@@ -511,8 +511,8 @@
       "ShareX.ImageEditor/Presentation/Controllers/EditorInputController.cs",
       "ShareX.ImageEditor/Presentation/Controllers/EditorSelectionController.cs",
       "ShareX.ScreenCaptureLib/Presentation/RegionCapture/RegionCaptureWindow.axaml.cs",
-      "ShareX.HelpersLib/MimeTypes.cs",
       "ShareX.ImageEditor/Presentation/ViewModels/MainViewModel.ToolOptions.cs",
+      "ShareX.HelpersLib/MimeTypes.cs",
       "ShareX.UploadersLib/Presentation/DestinationSettings/DestinationSettingsPageBuilder.cs",
       "ShareX.ImageEditor/Core/Editor/EditorCore.cs"
      ],
@@ -529,7 +529,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "csharp": 2163644
+      "csharp": 2165543
      }
     },
     "gaps": [
@@ -609,11 +609,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 177.43,
+   "ksloc": 177.57,
    "classic": {
-    "person_months": 551.7,
+    "person_months": 552.14,
     "schedule_months": 27.5,
-    "cost": 6210554
+    "cost": 6215515
    },
    "capture": {
     "tests": 0.0,
@@ -622,21 +622,21 @@
     "capture": 0.04
    },
    "agent_factor": 0.53,
-   "reproduce_pm": 293.5,
+   "reproduce_pm": 293.74,
    "history": {
-    "commits": 8701,
-    "fix_commits": 1334,
+    "commits": 8709,
+    "fix_commits": 1338,
     "authors": 313,
-    "age_months": 156.1,
+    "age_months": 156.3,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 70.19,
-   "rediscover_pm": 67.38,
-   "replacement_pm": 360.88,
+   "knowledge_pm": 70.31,
+   "rediscover_pm": 67.49,
+   "replacement_pm": 361.23,
    "leverage": 0.79,
    "obsolescence": 0.85,
-   "value_pm": 241.02,
-   "value_cost": 2713168,
+   "value_pm": 241.25,
+   "value_cost": 2715797,
    "knowledge_at_risk": 0.19,
    "assumptions": {
     "salary": 56286,
@@ -650,26 +650,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 917.9272,
+   "make_buy_ratio": 919.3487,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 412031.15,
+   "break_even_price_per_year": 412669.91,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 9061341,
-     "input": 226533525,
-     "cached_input": 192553496
+     "output": 9069294,
+     "input": 226732350,
+     "cached_input": 192722497
     },
-    "final_tokens": 3020447,
-    "model_cost": 355.66,
-    "agent_hours": 100.68,
-    "human_days": 1591.37,
-    "review_days": 176.39,
-    "rediscover_days": 1414.98,
-    "calendar_days": 1591.37,
-    "build_cost": 853407.96,
-    "yearly_cost": 128011.19,
-    "total_cost": 1237441.54
+    "final_tokens": 3023098,
+    "model_cost": 355.97,
+    "agent_hours": 100.77,
+    "human_days": 1593.84,
+    "review_days": 176.55,
+    "rediscover_days": 1417.29,
+    "calendar_days": 1593.84,
+    "build_cost": 854729.53,
+    "yearly_cost": 128209.43,
+    "total_cost": 1239357.82
    },
    "buy": {
     "via": {

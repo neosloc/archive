@@ -4,21 +4,21 @@
   "url": "https://github.com/axios/axios",
   "slug": "axios-axios",
   "host": "github.com",
-  "commit": "f694ecd6ac49bb1917e086b5e532e1627c62d43a",
-  "committed_at": "2026-10-09T19:04:00+02:00",
-  "evaluated_at": "2026-10-12T12:00:35+00:00",
+  "commit": "8d8e84401d38c2a9c62acd18b3df17478a0caf6b",
+  "committed_at": "2026-10-19T11:47:20+02:00",
+  "evaluated_at": "2026-10-19T09:55:37+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/axios/axios",
   "inventory": {
-   "files": 491,
-   "source_files": 80,
-   "source_tokens": 77423,
+   "files": 503,
+   "source_files": 81,
+   "source_tokens": 80509,
    "languages": {
-    "javascript": 71463,
-    "typescript": 5960
+    "javascript": 74462,
+    "typescript": 6047
    },
    "git": true
   },
@@ -851,11 +851,11 @@
      }
     ],
     "metrics": {
-     "source_files": 80,
-     "source_tokens": 77423,
-     "test_files": 171,
-     "test_tokens": 261250,
-     "test_ratio": 3.37,
+     "source_files": 81,
+     "source_tokens": 80509,
+     "test_files": 182,
+     "test_tokens": 284289,
+     "test_ratio": 3.53,
      "modules": 15,
      "modules_within_budget": 1.0,
      "oversized_files": [
@@ -863,19 +863,19 @@
      ],
      "largest_module": {
       "path": "lib/adapters",
-      "tokens": 23301
+      "tokens": 24284
      },
      "typed_ratio": 0.08,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 177,
+     "import_edges": 178,
      "import_graph": true,
      "max_fan_out": 22,
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "javascript": 71463,
-      "typescript": 5960
+      "javascript": 74462,
+      "typescript": 6047
      }
     },
     "gaps": [
@@ -900,7 +900,7 @@
          },
          {
           "path": "docs/.vitepress/tokenizeSearchText.test.js",
-          "detail": "171 test files"
+          "detail": "182 test files"
          }
         ],
         "note": ""
@@ -988,33 +988,33 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 14.7,
+   "retrofit_person_days": 15.2,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.6,
-    "events": 2.2,
-    "identity": 3.3,
-    "ergonomics": 0.8,
+    "events": 2.3,
+    "identity": 3.4,
+    "ergonomics": 0.9,
     "embeddability": 0.6,
-    "extensibility": 3.3,
+    "extensibility": 3.4,
     "observability": 1.7,
-    "legibility": 2.2
+    "legibility": 2.3
    },
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 0.56,
+    "size_factor": 0.57,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 7.54,
+   "ksloc": 7.81,
    "classic": {
-    "person_months": 20.03,
-    "schedule_months": 7.8,
-    "cost": 225488
+    "person_months": 20.78,
+    "schedule_months": 7.9,
+    "cost": 233938
    },
    "capture": {
     "tests": 1.0,
@@ -1023,21 +1023,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 2.54,
+   "reproduce_pm": 2.64,
    "history": {
-    "commits": 2017,
-    "fix_commits": 502,
-    "authors": 685,
-    "age_months": 145.7,
-    "months_since_last": 0.1
+    "commits": 2033,
+    "fix_commits": 508,
+    "authors": 696,
+    "age_months": 146.0,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 20.12,
-   "rediscover_pm": 1.21,
-   "replacement_pm": 3.75,
+   "knowledge_pm": 20.33,
+   "rediscover_pm": 1.22,
+   "replacement_pm": 3.86,
    "leverage": 0.92,
    "obsolescence": 0.95,
-   "value_pm": 3.27,
-   "value_cost": 36775,
+   "value_pm": 3.36,
+   "value_cost": 37827,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,
@@ -1051,26 +1051,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 59.7868,
+   "make_buy_ratio": 61.2351,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 8427.63,
+   "break_even_price_per_year": 8635.26,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1017412,
-     "input": 25435300,
-     "cached_input": 21620005
+     "output": 1095843,
+     "input": 27396075,
+     "cached_input": 23286663
     },
-    "final_tokens": 339137,
-    "model_cost": 39.93,
-    "agent_hours": 11.3,
-    "human_days": 33.01,
-    "review_days": 7.6,
-    "rediscover_days": 25.41,
-    "calendar_days": 33.01,
-    "build_cost": 17733.09,
-    "yearly_cost": 2659.96,
-    "total_cost": 25712.97
+    "final_tokens": 365281,
+    "model_cost": 43.01,
+    "agent_hours": 12.18,
+    "human_days": 33.8,
+    "review_days": 8.18,
+    "rediscover_days": 25.62,
+    "calendar_days": 33.8,
+    "build_cost": 18162.65,
+    "yearly_cost": 2724.4,
+    "total_cost": 26335.85
    },
    "buy": {
     "via": {

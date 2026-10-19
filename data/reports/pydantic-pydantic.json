@@ -4,21 +4,21 @@
   "url": "https://github.com/pydantic/pydantic",
   "slug": "pydantic-pydantic",
   "host": "github.com",
-  "commit": "3eca5695dabc5a451ccfc0f4afa802166e61e27a",
-  "committed_at": "2026-10-11T19:40:11Z",
-  "evaluated_at": "2026-10-12T12:01:19+00:00",
+  "commit": "5adfeaaaea947f81f0f01868604f219084ec151a",
+  "committed_at": "2026-10-15T14:13:37Z",
+  "evaluated_at": "2026-10-19T09:56:15+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/pydantic/pydantic",
   "inventory": {
-   "files": 849,
+   "files": 850,
    "source_files": 261,
-   "source_tokens": 953784,
+   "source_tokens": 954944,
    "languages": {
-    "python": 621753,
-    "rust": 330746,
+    "python": 622403,
+    "rust": 331256,
     "javascript": 810,
     "shell": 475
    },
@@ -1036,10 +1036,10 @@
     ],
     "metrics": {
      "source_files": 261,
-     "source_tokens": 953784,
+     "source_tokens": 954944,
      "test_files": 339,
-     "test_tokens": 958135,
-     "test_ratio": 1.0,
+     "test_tokens": 960481,
+     "test_ratio": 1.01,
      "modules": 22,
      "modules_within_budget": 0.59,
      "oversized_files": [
@@ -1056,7 +1056,7 @@
      ],
      "largest_module": {
       "path": "pydantic",
-      "tokens": 195883
+      "tokens": 196465
      },
      "typed_ratio": 0.99,
      "python_functions": 2128,
@@ -1116,8 +1116,8 @@
       "pydantic/v1/validators.py"
      ],
      "languages": {
-      "python": 621753,
-      "rust": 330746,
+      "python": 622403,
+      "rust": 331256,
       "javascript": 810,
       "shell": 475
      }
@@ -1249,11 +1249,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 79.8,
+   "ksloc": 79.84,
    "classic": {
-    "person_months": 238.39,
+    "person_months": 238.52,
     "schedule_months": 20.0,
-    "cost": 2683660
+    "cost": 2685037
    },
    "capture": {
     "tests": 1.0,
@@ -1262,21 +1262,21 @@
     "capture": 1.0
    },
    "agent_factor": 0.1,
-   "reproduce_pm": 23.84,
+   "reproduce_pm": 23.85,
    "history": {
-    "commits": 5793,
-    "fix_commits": 1219,
-    "authors": 835,
-    "age_months": 113.3,
-    "months_since_last": 0.0
+    "commits": 5804,
+    "fix_commits": 1222,
+    "authors": 837,
+    "age_months": 113.4,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 53.34,
+   "knowledge_pm": 53.46,
    "rediscover_pm": 0.0,
-   "replacement_pm": 23.84,
+   "replacement_pm": 23.85,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 21.59,
-   "value_cost": 242997,
+   "value_pm": 21.6,
+   "value_cost": 243122,
    "knowledge_at_risk": 0.0,
    "assumptions": {
     "salary": 56286,
@@ -1290,26 +1290,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 289.2732,
+   "make_buy_ratio": 289.8036,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 9981.36,
+   "break_even_price_per_year": 9999.72,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5735757,
-     "input": 143393925,
-     "cached_input": 121884836
+     "output": 5746275,
+     "input": 143656875,
+     "cached_input": 122108343
     },
-    "final_tokens": 1911919,
-    "model_cost": 225.13,
-    "agent_hours": 63.73,
-    "human_days": 38.24,
-    "review_days": 38.24,
+    "final_tokens": 1915425,
+    "model_cost": 225.54,
+    "agent_hours": 63.85,
+    "human_days": 38.31,
+    "review_days": 38.31,
     "rediscover_days": 0.0,
-    "calendar_days": 38.24,
-    "build_cost": 20722.72,
-    "yearly_cost": 3108.41,
-    "total_cost": 30047.95
+    "calendar_days": 38.31,
+    "build_cost": 20760.72,
+    "yearly_cost": 3114.11,
+    "total_cost": 30103.05
    },
    "buy": {
     "via": {

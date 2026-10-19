@@ -4,20 +4,20 @@
   "url": "https://github.com/fastapi/fastapi",
   "slug": "fastapi-fastapi",
   "host": "github.com",
-  "commit": "f5c6e9b4f9cadc1bf0f9a1fd672e621206b63007",
-  "committed_at": "2026-10-08T14:25:54+02:00",
-  "evaluated_at": "2026-10-12T12:00:58+00:00",
+  "commit": "f63265848ef3caa5be5deba05ec6eabb169d9fb2",
+  "committed_at": "2026-10-19T11:46:01+02:00",
+  "evaluated_at": "2026-10-19T09:55:46+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/fastapi/fastapi",
   "inventory": {
-   "files": 3181,
-   "source_files": 540,
-   "source_tokens": 286950,
+   "files": 3191,
+   "source_files": 541,
+   "source_tokens": 287550,
    "languages": {
-    "python": 286543,
+    "python": 287143,
     "javascript": 266,
     "shell": 141
    },
@@ -33,7 +33,7 @@
     "service": [
      {
       "path": "docs_src/stream_data/tutorial001_py310.py",
-      "detail": "fastapi/flask: 440 route declarations"
+      "detail": "fastapi/flask: 441 route declarations"
      },
      {
       "path": "docs_src/debugging/tutorial001_py310.py",
@@ -74,7 +74,7 @@
     "evidence": [
      {
       "signal": "L1 routes",
-      "detail": "fastapi/flask: 440 route declarations",
+      "detail": "fastapi/flask: 441 route declarations",
       "path": "docs_src/stream_data/tutorial001_py310.py",
       "weight": 1
      },
@@ -92,9 +92,9 @@
      }
     ],
     "metrics": {
-     "route_declarations": 440,
+     "route_declarations": 441,
      "routes_by_framework": {
-      "fastapi/flask": 440
+      "fastapi/flask": 441
      },
      "spec_files": 0,
      "spec_operations": 0,
@@ -120,7 +120,7 @@
         "evidence": [
          {
           "path": "docs_src/stream_data/tutorial001_py310.py",
-          "detail": "fastapi/flask: 440 route declarations"
+          "detail": "fastapi/flask: 441 route declarations"
          }
         ],
         "note": ""
@@ -295,7 +295,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "311 semver tags, latest 0.143.0",
+      "detail": "320 semver tags, latest 0.147.0",
       "path": null,
       "weight": 1
      }
@@ -319,7 +319,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "311 semver tags, latest 0.143.0"
+          "detail": "320 semver tags, latest 0.147.0"
          }
         ],
         "note": ""
@@ -347,6 +347,10 @@
           "detail": "5 matches"
          },
          {
+          "path": "fastapi/applications.py",
+          "detail": "4 matches"
+         },
+         {
           "path": "fastapi/openapi/utils.py",
           "detail": "4 matches"
          },
@@ -371,10 +375,6 @@
           "detail": "1 match"
          },
          {
-          "path": "fastapi/applications.py",
-          "detail": "1 match"
-         },
-         {
           "path": "fastapi/exceptions.py",
           "detail": "1 match"
          },
@@ -384,14 +384,6 @@
          },
          {
           "path": "docs_src/behind_a_proxy/tutorial002_py310.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "docs_src/behind_a_proxy/tutorial003_py310.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "docs_src/behind_a_proxy/tutorial004_py310.py",
           "detail": "1 match"
          },
          {
@@ -2288,6 +2280,10 @@
           "detail": "1 match"
          },
          {
+          "path": "docs_src/templates/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
           "path": "docs_src/using_request_directly/tutorial001_py310.py",
           "detail": "1 match"
          },
@@ -3582,11 +3578,11 @@
      }
     ],
     "metrics": {
-     "source_files": 540,
-     "source_tokens": 286950,
-     "test_files": 633,
-     "test_tokens": 755151,
-     "test_ratio": 2.63,
+     "source_files": 541,
+     "source_tokens": 287550,
+     "test_files": 641,
+     "test_tokens": 781326,
+     "test_ratio": 2.72,
      "modules": 107,
      "modules_within_budget": 0.99,
      "oversized_files": [
@@ -3596,12 +3592,12 @@
      ],
      "largest_module": {
       "path": "fastapi",
-      "tokens": 147125
+      "tokens": 147165
      },
      "typed_ratio": 0.83,
-     "python_functions": 1189,
-     "python_annotated": 986,
-     "import_edges": 580,
+     "python_functions": 1191,
+     "python_annotated": 988,
+     "import_edges": 583,
      "import_graph": true,
      "max_fan_out": 15,
      "import_cycles": 2,
@@ -3616,7 +3612,7 @@
       "fastapi/utils.py"
      ],
      "languages": {
-      "python": 286543,
+      "python": 287143,
       "javascript": 266,
       "shell": 141
      }
@@ -3643,7 +3639,7 @@
          },
          {
           "path": "docs_src/app_testing/app_a_py310/test_main.py",
-          "detail": "633 test files"
+          "detail": "641 test files"
          }
         ],
         "note": ""
@@ -3792,11 +3788,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 28.23,
+   "ksloc": 28.28,
    "classic": {
-    "person_months": 80.06,
+    "person_months": 80.23,
     "schedule_months": 13.2,
-    "cost": 901238
+    "cost": 903149
    },
    "capture": {
     "tests": 1.0,
@@ -3805,21 +3801,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 10.17,
+   "reproduce_pm": 10.19,
    "history": {
-    "commits": 7780,
-    "fix_commits": 553,
-    "authors": 919,
-    "age_months": 94.1,
-    "months_since_last": 0.1
+    "commits": 7841,
+    "fix_commits": 557,
+    "authors": 920,
+    "age_months": 94.5,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 49.96,
-   "rediscover_pm": 3.0,
-   "replacement_pm": 13.17,
+   "knowledge_pm": 50.34,
+   "rediscover_pm": 3.02,
+   "replacement_pm": 13.21,
    "leverage": 1.0,
    "obsolescence": 0.95,
-   "value_pm": 12.51,
-   "value_cost": 140792,
+   "value_pm": 12.55,
+   "value_cost": 141269,
    "knowledge_at_risk": 0.23,
    "assumptions": {
     "salary": 56286,
@@ -3833,26 +3829,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 82.4586,
+   "make_buy_ratio": 83.4351,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 22167.86,
+   "break_even_price_per_year": 22433.61,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3131468,
-     "input": 78286700,
-     "cached_input": 66543695
+     "output": 3211803,
+     "input": 80295075,
+     "cached_input": 68250813
     },
-    "final_tokens": 1043822,
-    "model_cost": 122.91,
-    "agent_hours": 34.79,
-    "human_days": 86.38,
-    "review_days": 23.38,
-    "rediscover_days": 63.0,
-    "calendar_days": 86.38,
-    "build_cost": 46427.58,
-    "yearly_cost": 6964.14,
-    "total_cost": 67319.99
+    "final_tokens": 1070601,
+    "model_cost": 126.06,
+    "agent_hours": 35.69,
+    "human_days": 87.4,
+    "review_days": 23.98,
+    "rediscover_days": 63.42,
+    "calendar_days": 87.4,
+    "build_cost": 46977.41,
+    "yearly_cost": 7046.61,
+    "total_cost": 68117.25
    },
    "buy": {
     "via": {

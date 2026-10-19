@@ -4,20 +4,20 @@
   "url": "https://github.com/cli/cli",
   "slug": "cli-cli",
   "host": "github.com",
-  "commit": "ec5b512045db67e5a2a4ff4a1b02660b2fb24390",
-  "committed_at": "2026-10-09T16:47:44+02:00",
-  "evaluated_at": "2026-10-12T12:02:11+00:00",
+  "commit": "fa92838bef95fe4a29c1587693885d5e9bdb6cf1",
+  "committed_at": "2026-10-16T14:43:26-07:00",
+  "evaluated_at": "2026-10-19T09:57:12+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/cli/cli",
   "inventory": {
-   "files": 1487,
-   "source_files": 571,
-   "source_tokens": 871511,
+   "files": 1511,
+   "source_files": 583,
+   "source_tokens": 900654,
    "languages": {
-    "go": 843045,
+    "go": 872188,
     "javascript": 17066,
     "shell": 11400
    },
@@ -1775,12 +1775,12 @@
      }
     ],
     "metrics": {
-     "source_files": 571,
-     "source_tokens": 871511,
-     "test_files": 437,
-     "test_tokens": 1275724,
-     "test_ratio": 1.46,
-     "modules": 316,
+     "source_files": 583,
+     "source_tokens": 900654,
+     "test_files": 449,
+     "test_tokens": 1376814,
+     "test_ratio": 1.53,
+     "modules": 325,
      "modules_within_budget": 1.0,
      "oversized_files": [
       "pkg/cmd/project/shared/queries/queries.go",
@@ -1799,7 +1799,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 843045,
+      "go": 872188,
       "javascript": 17066,
       "shell": 11400
      }
@@ -1826,7 +1826,7 @@
          },
          {
           "path": ".github/codeql/tests/unsanitized-response-to-terminal/hits_base64_after_json.go",
-          "detail": "437 test files"
+          "detail": "449 test files"
          }
         ],
         "note": ""
@@ -1917,10 +1917,6 @@
          {
           "path": "AGENTS.md",
           "detail": ""
-         },
-         {
-          "path": "CLAUDE.md",
-          "detail": ""
          }
         ],
         "note": ""
@@ -1938,57 +1934,57 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 29.8,
+   "retrofit_person_days": 30.4,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 3.7,
-    "events": 3.7,
+    "stability": 3.8,
+    "events": 3.8,
     "identity": 0.0,
     "ergonomics": 0.0,
     "embeddability": 0.0,
-    "extensibility": 11.2,
-    "observability": 3.7,
-    "legibility": 7.5
+    "extensibility": 11.4,
+    "observability": 3.8,
+    "legibility": 7.6
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.87,
+    "size_factor": 1.9,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 95.47,
+   "ksloc": 97.86,
    "classic": {
-    "person_months": 287.8,
-    "schedule_months": 21.5,
-    "cost": 3239821
+    "person_months": 295.34,
+    "schedule_months": 21.7,
+    "cost": 3324710
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.91,
-    "capture": 0.98
+    "docs": 0.89,
+    "capture": 0.97
    },
    "agent_factor": 0.11,
-   "reproduce_pm": 31.37,
+   "reproduce_pm": 33.52,
    "history": {
-    "commits": 8971,
-    "fix_commits": 1231,
-    "authors": 719,
-    "age_months": 84.2,
+    "commits": 9058,
+    "fix_commits": 1233,
+    "authors": 722,
+    "age_months": 84.4,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 69.48,
-   "rediscover_pm": 1.39,
-   "replacement_pm": 32.76,
+   "knowledge_pm": 69.95,
+   "rediscover_pm": 2.1,
+   "replacement_pm": 35.62,
    "leverage": 1.01,
    "obsolescence": 0.95,
-   "value_pm": 31.55,
-   "value_cost": 355209,
-   "knowledge_at_risk": 0.04,
+   "value_pm": 34.31,
+   "value_cost": 386220,
+   "knowledge_at_risk": 0.06,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -2001,26 +1997,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 71.4832,
+   "make_buy_ratio": 89.3439,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 18996.6,
+   "break_even_price_per_year": 23810.4,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 6446934,
-     "input": 161173350,
-     "cached_input": 136997347
+     "output": 6840509,
+     "input": 171012725,
+     "cached_input": 145360816
     },
-    "final_tokens": 2148978,
-    "model_cost": 253.04,
-    "agent_hours": 71.63,
-    "human_days": 73.89,
-    "review_days": 44.7,
-    "rediscover_days": 29.19,
-    "calendar_days": 73.89,
-    "build_cost": 39860.93,
-    "yearly_cost": 5979.14,
-    "total_cost": 57798.34
+    "final_tokens": 2280169,
+    "model_cost": 268.49,
+    "agent_hours": 76.01,
+    "human_days": 92.44,
+    "review_days": 48.34,
+    "rediscover_days": 44.1,
+    "calendar_days": 92.44,
+    "build_cost": 49820.52,
+    "yearly_cost": 7473.08,
+    "total_cost": 72239.75
    },
    "buy": {
     "via": {

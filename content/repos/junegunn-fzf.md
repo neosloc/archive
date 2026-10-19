@@ -1,7 +1,7 @@
 {
  "title": "junegunn/fzf",
  "slug": "junegunn-fzf",
- "date": "2026-10-12T12:01:53+00:00",
+ "date": "2026-10-19T09:56:49+00:00",
  "repo_url": "https://github.com/junegunn/fzf",
  "index": 2.12,
  "assessed": 8,
@@ -10,13 +10,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 91.4183,
+ "make_buy_ratio": 91.4941,
  "languages": [
   "go",
   "shell"
  ],
- "cocomo_cost": 724181,
- "cocomo_pm": 64.33,
- "value_cost": 110233,
- "value_pm": 9.79
+ "cocomo_cost": 724247,
+ "cocomo_pm": 64.34,
+ "value_cost": 110274,
+ "value_pm": 9.8
 }

@@ -4,20 +4,20 @@
   "url": "https://github.com/lysine-dev/okhttp",
   "slug": "lysine-dev-okhttp",
   "host": "github.com",
-  "commit": "42e5888d45623662c138ed27e80ea28bbe0aa5cc",
-  "committed_at": "2026-10-06T20:42:02-04:00",
-  "evaluated_at": "2026-10-07T14:29:49+00:00",
+  "commit": "aab431214cd0da8b74f6a288b6a2bb137a8d982e",
+  "committed_at": "2026-10-17T18:49:42+01:00",
+  "evaluated_at": "2026-10-19T09:57:58+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/lysine-dev/okhttp",
   "inventory": {
-   "files": 842,
+   "files": 841,
    "source_files": 358,
-   "source_tokens": 478644,
+   "source_tokens": 478691,
    "languages": {
-    "kotlin": 476424,
+    "kotlin": 476471,
     "java": 1460,
     "shell": 760
    },
@@ -242,10 +242,10 @@
     ],
     "metrics": {
      "source_files": 358,
-     "source_tokens": 478644,
+     "source_tokens": 478691,
      "test_files": 215,
-     "test_tokens": 623881,
-     "test_ratio": 1.3,
+     "test_tokens": 624822,
+     "test_ratio": 1.31,
      "modules": 92,
      "modules_within_budget": 0.97,
      "oversized_files": [
@@ -265,7 +265,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "kotlin": 476424,
+      "kotlin": 476471,
       "java": 1460,
       "shell": 760
      }
@@ -375,9 +375,9 @@
   "value": {
    "ksloc": 38.13,
    "classic": {
-    "person_months": 109.77,
+    "person_months": 109.79,
     "schedule_months": 14.9,
-    "cost": 1235731
+    "cost": 1235969
    },
    "capture": {
     "tests": 1.0,
@@ -388,19 +388,19 @@
    "agent_factor": 0.21,
    "reproduce_pm": 23.33,
    "history": {
-    "commits": 4572,
-    "fix_commits": 507,
-    "authors": 366,
-    "age_months": 184.4,
-    "months_since_last": 0.0
+    "commits": 4584,
+    "fix_commits": 509,
+    "authors": 368,
+    "age_months": 184.8,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 33.0,
-   "rediscover_pm": 8.25,
-   "replacement_pm": 31.58,
+   "knowledge_pm": 33.1,
+   "rediscover_pm": 8.28,
+   "replacement_pm": 31.61,
    "leverage": 0.83,
    "obsolescence": 0.95,
-   "value_pm": 25.0,
-   "value_cost": 281410,
+   "value_pm": 25.02,
+   "value_cost": 281672,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -414,26 +414,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 41.8587,
+   "make_buy_ratio": 41.9902,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 52332.5,
+   "break_even_price_per_year": 52503.41,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3343473,
-     "input": 83586825,
-     "cached_input": 71048801
+     "output": 3346440,
+     "input": 83661000,
+     "cached_input": 71111850
     },
-    "final_tokens": 1114491,
-    "model_cost": 131.23,
-    "agent_hours": 37.15,
-    "human_days": 206.68,
-    "review_days": 33.43,
-    "rediscover_days": 173.25,
-    "calendar_days": 206.68,
-    "build_cost": 110924.09,
-    "yearly_cost": 16638.61,
-    "total_cost": 160839.93
+    "final_tokens": 1115480,
+    "model_cost": 131.35,
+    "agent_hours": 37.18,
+    "human_days": 207.34,
+    "review_days": 33.46,
+    "rediscover_days": 173.88,
+    "calendar_days": 207.34,
+    "build_cost": 111277.82,
+    "yearly_cost": 16691.67,
+    "total_cost": 161352.84
    },
    "buy": {
     "via": {
@@ -442,21 +442,21 @@
     },
     "adoption_minutes": {
      "install": 60,
-     "first_use": 3320.84,
-     "total": 3380.84
+     "first_use": 3321.0,
+     "total": 3381.0
     },
     "tokens": {
-     "output": 422604,
-     "input": 10565100,
-     "cached_input": 8980335
+     "output": 422624,
+     "input": 10565600,
+     "cached_input": 8980760
     },
     "model_cost": 16.59,
     "upgrade_minutes_per_year": 15,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 3792.19,
+    "fixed_cost": 3792.37,
     "yearly_cost": 16.75,
-    "total_cost": 3842.44
+    "total_cost": 3842.63
    },
    "assumptions": {
     "day_rate": 536.05,

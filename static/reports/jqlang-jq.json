@@ -4,9 +4,9 @@
   "url": "https://github.com/jqlang/jq",
   "slug": "jqlang-jq",
   "host": "github.com",
-  "commit": "80fc7a169d3a3942a07f587abc4346d119fc525d",
-  "committed_at": "2026-10-12T13:40:40+09:00",
-  "evaluated_at": "2026-10-12T12:03:04+00:00",
+  "commit": "633ae6058a05b0240c798f6b7b60d3b0a87cab8e",
+  "committed_at": "2026-10-16T21:50:47+09:00",
+  "evaluated_at": "2026-10-19T09:57:55+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 401,
    "source_files": 46,
-   "source_tokens": 194939,
+   "source_tokens": 195002,
    "languages": {
-    "c": 193882,
+    "c": 193945,
     "shell": 807,
     "python": 250
    },
@@ -242,7 +242,7 @@
     ],
     "metrics": {
      "source_files": 46,
-     "source_tokens": 194939,
+     "source_tokens": 195002,
      "test_files": 8,
      "test_tokens": 3372,
      "test_ratio": 0.02,
@@ -257,7 +257,7 @@
      ],
      "largest_module": {
       "path": "src",
-      "tokens": 193882
+      "tokens": 193945
      },
      "typed_ratio": 0.99,
      "python_functions": 2,
@@ -268,7 +268,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "c": 193882,
+      "c": 193945,
       "shell": 807,
       "python": 250
      }
@@ -398,9 +398,9 @@
   "value": {
    "ksloc": 18.59,
    "classic": {
-    "person_months": 51.62,
+    "person_months": 51.63,
     "schedule_months": 11.2,
-    "cost": 581148
+    "cost": 581247
    },
    "capture": {
     "tests": 0.04,
@@ -411,19 +411,19 @@
    "agent_factor": 0.43,
    "reproduce_pm": 22.12,
    "history": {
-    "commits": 1876,
-    "fix_commits": 579,
-    "authors": 269,
-    "age_months": 170.8,
-    "months_since_last": 0.0
+    "commits": 1878,
+    "fix_commits": 580,
+    "authors": 271,
+    "age_months": 170.9,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 20.96,
-   "rediscover_pm": 15.3,
-   "replacement_pm": 37.42,
+   "knowledge_pm": 20.99,
+   "rediscover_pm": 15.32,
+   "replacement_pm": 37.45,
    "leverage": 0.83,
    "obsolescence": 0.95,
-   "value_pm": 29.63,
-   "value_cost": 333502,
+   "value_pm": 29.65,
+   "value_cost": 333731,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -437,26 +437,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 104.2278,
+   "make_buy_ratio": 104.344,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 85840.99,
+   "break_even_price_per_year": 85950.78,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 802953,
-     "input": 20073825,
-     "cached_input": 17062751
+     "output": 803213,
+     "input": 20080325,
+     "cached_input": 17068276
     },
-    "final_tokens": 267651,
-    "model_cost": 31.52,
+    "final_tokens": 267737,
+    "model_cost": 31.53,
     "agent_hours": 8.92,
-    "human_days": 334.47,
+    "human_days": 334.89,
     "review_days": 13.17,
-    "rediscover_days": 321.3,
-    "calendar_days": 334.47,
-    "build_cost": 179322.53,
-    "yearly_cost": 26898.38,
-    "total_cost": 260017.66
+    "rediscover_days": 321.72,
+    "calendar_days": 334.89,
+    "build_cost": 179549.96,
+    "yearly_cost": 26932.49,
+    "total_cost": 260347.44
    },
    "buy": {
     "via": {
@@ -465,21 +465,21 @@
     },
     "adoption_minutes": {
      "install": 60,
-     "first_use": 2119.29,
-     "total": 2179.29
+     "first_use": 2119.63,
+     "total": 2179.63
     },
     "tokens": {
-     "output": 272411,
-     "input": 6810275,
-     "cached_input": 5788733
+     "output": 272454,
+     "input": 6811350,
+     "cached_input": 5789647
     },
     "model_cost": 10.69,
     "upgrade_minutes_per_year": 15,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 2444.45,
+    "fixed_cost": 2444.83,
     "yearly_cost": 16.75,
-    "total_cost": 2494.7
+    "total_cost": 2495.09
    },
    "assumptions": {
     "day_rate": 536.05,

@@ -4,20 +4,20 @@
   "url": "https://github.com/excalidraw/excalidraw",
   "slug": "excalidraw-excalidraw",
   "host": "github.com",
-  "commit": "4f310b799613d6b506a40e9334f40f941001f425",
-  "committed_at": "2026-10-12T13:28:00+02:00",
-  "evaluated_at": "2026-10-12T12:01:37+00:00",
+  "commit": "e1b7aacb356a492aa1e0fc6eb57b8896124027f0",
+  "committed_at": "2026-10-18T20:24:17+02:00",
+  "evaluated_at": "2026-10-19T09:56:36+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/excalidraw/excalidraw",
   "inventory": {
-   "files": 1314,
-   "source_files": 537,
-   "source_tokens": 1099570,
+   "files": 1312,
+   "source_files": 536,
+   "source_tokens": 1104464,
    "languages": {
-    "typescript": 1077447,
+    "typescript": 1082341,
     "javascript": 22123
    },
    "git": true
@@ -266,6 +266,10 @@
          {
           "path": "packages/excalidraw/CHANGELOG.md",
           "detail": "marks breaking changes"
+         },
+         {
+          "path": "packages/utils/CHANGELOG.md",
+          "detail": "marks breaking changes"
          }
         ],
         "note": ""
@@ -391,15 +395,15 @@
           "detail": "6 matches"
          },
          {
+          "path": "packages/excalidraw/scene/export.ts",
+          "detail": "5 matches"
+         },
+         {
           "path": "excalidraw-app/components/AI.tsx",
           "detail": "4 matches"
          },
          {
           "path": "packages/element/src/transform.ts",
-          "detail": "4 matches"
-         },
-         {
-          "path": "packages/excalidraw/scene/export.ts",
           "detail": "4 matches"
          },
          {
@@ -520,10 +524,6 @@
          },
          {
           "path": "packages/laser-pointer/src/state.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/utils/src/export.ts",
           "detail": "1 match"
          },
          {
@@ -815,11 +815,11 @@
      }
     ],
     "metrics": {
-     "source_files": 537,
-     "source_tokens": 1099570,
+     "source_files": 536,
+     "source_tokens": 1104464,
      "test_files": 155,
-     "test_tokens": 544236,
-     "test_ratio": 0.49,
+     "test_tokens": 549456,
+     "test_ratio": 0.5,
      "modules": 78,
      "modules_within_budget": 0.94,
      "oversized_files": [
@@ -839,12 +839,12 @@
      ],
      "largest_module": {
       "path": "packages/excalidraw/components",
-      "tokens": 279878
+      "tokens": 279908
      },
      "typed_ratio": 0.98,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 2046,
+     "import_edges": 2051,
      "import_graph": true,
      "max_fan_out": 210,
      "import_cycles": 5,
@@ -1039,7 +1039,7 @@
       "packages/excalidraw/wysiwyg/textWysiwyg.tsx"
      ],
      "languages": {
-      "typescript": 1077447,
+      "typescript": 1082341,
       "javascript": 22123
      }
     },
@@ -1158,11 +1158,11 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 40.9,
+   "retrofit_person_days": 41.0,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 2.1,
-    "ergonomics": 9.4,
+    "ergonomics": 9.5,
     "embeddability": 2.1,
     "extensibility": 12.6,
     "observability": 6.3,
@@ -1178,34 +1178,34 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 120.34,
+   "ksloc": 120.57,
    "classic": {
-    "person_months": 366.97,
+    "person_months": 367.71,
     "schedule_months": 23.6,
-    "cost": 4131017
+    "cost": 4139344
    },
    "capture": {
-    "tests": 0.98,
+    "tests": 1.0,
     "contract": 0.75,
     "docs": 0.38,
-    "capture": 0.77
+    "capture": 0.78
    },
    "agent_factor": 0.2,
-   "reproduce_pm": 74.68,
+   "reproduce_pm": 73.17,
    "history": {
-    "commits": 4088,
-    "fix_commits": 1289,
-    "authors": 399,
-    "age_months": 81.3,
+    "commits": 4091,
+    "fix_commits": 1291,
+    "authors": 400,
+    "age_months": 81.5,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 46.22,
-   "rediscover_pm": 10.63,
-   "replacement_pm": 85.31,
+   "knowledge_pm": 46.27,
+   "rediscover_pm": 10.18,
+   "replacement_pm": 83.35,
    "leverage": 0.91,
    "obsolescence": 0.95,
-   "value_pm": 73.81,
-   "value_cost": 830859,
+   "value_pm": 72.12,
+   "value_cost": 811826,
    "knowledge_at_risk": 0.12,
    "assumptions": {
     "salary": 56286,
@@ -1219,26 +1219,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 492.1833,
+   "make_buy_ratio": 474.3764,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 70415.63,
+   "break_even_price_per_year": 67862.84,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5007288,
-     "input": 125182200,
-     "cached_input": 106404870
+     "output": 5034654,
+     "input": 125866350,
+     "cached_input": 106986397
     },
-    "final_tokens": 1669096,
-    "model_cost": 196.54,
-    "agent_hours": 55.64,
-    "human_days": 271.97,
-    "review_days": 48.74,
-    "rediscover_days": 223.23,
-    "calendar_days": 271.97,
-    "build_cost": 145984.12,
-    "yearly_cost": 21897.62,
-    "total_cost": 211676.98
+    "final_tokens": 1678218,
+    "model_cost": 197.61,
+    "agent_hours": 55.94,
+    "human_days": 262.11,
+    "review_days": 48.33,
+    "rediscover_days": 213.78,
+    "calendar_days": 262.11,
+    "build_cost": 140702.49,
+    "yearly_cost": 21105.37,
+    "total_cost": 204018.61
    },
    "buy": {
     "via": {

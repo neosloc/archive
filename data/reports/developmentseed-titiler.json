@@ -4,20 +4,20 @@
   "url": "https://github.com/developmentseed/titiler",
   "slug": "developmentseed-titiler",
   "host": "github.com",
-  "commit": "ce7753e12a8285e9889df39995b04a6de6cdb89a",
-  "committed_at": "2026-09-28T18:09:06+02:00",
-  "evaluated_at": "2026-10-07T14:27:40+00:00",
+  "commit": "a10ff79809772dbb9929b36b6b6b2b1b4e403b8e",
+  "committed_at": "2026-10-13T14:01:16+02:00",
+  "evaluated_at": "2026-10-19T09:55:24+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/developmentseed/titiler",
   "inventory": {
-   "files": 522,
+   "files": 526,
    "source_files": 52,
-   "source_tokens": 102569,
+   "source_tokens": 102578,
    "languages": {
-    "python": 102569
+    "python": 102578
    },
    "git": true
   },
@@ -897,7 +897,7 @@
     ],
     "metrics": {
      "source_files": 52,
-     "source_tokens": 102569,
+     "source_tokens": 102578,
      "test_files": 43,
      "test_tokens": 70563,
      "test_ratio": 0.69,
@@ -909,7 +909,7 @@
      ],
      "largest_module": {
       "path": "src/titiler/core/titiler/core",
-      "tokens": 37623
+      "tokens": 37626
      },
      "typed_ratio": 0.68,
      "python_functions": 243,
@@ -924,7 +924,7 @@
       "src/titiler/core/titiler/core/telemetry.py"
      ],
      "languages": {
-      "python": 102569
+      "python": 102578
      }
     },
     "gaps": [
@@ -1076,19 +1076,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 3.23,
    "history": {
-    "commits": 1041,
-    "fix_commits": 153,
+    "commits": 1046,
+    "fix_commits": 154,
     "authors": 97,
-    "age_months": 81.8,
-    "months_since_last": 0.3
+    "age_months": 82.3,
+    "months_since_last": 0.2
    },
-   "knowledge_pm": 8.27,
+   "knowledge_pm": 8.31,
    "rediscover_pm": 0.5,
    "replacement_pm": 3.73,
    "leverage": 0.95,
    "obsolescence": 0.95,
    "value_pm": 3.37,
-   "value_cost": 37903,
+   "value_cost": 37931,
    "knowledge_at_risk": 0.13,
    "assumptions": {
     "salary": 56286,
@@ -1102,26 +1102,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 334.0447,
+   "make_buy_ratio": 334.0494,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 3727.5,
+   "break_even_price_per_year": 3727.55,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 521242,
-     "input": 13031050,
-     "cached_input": 11076392
+     "output": 521269,
+     "input": 13031725,
+     "cached_input": 11076966
     },
-    "final_tokens": 173747,
+    "final_tokens": 173756,
     "model_cost": 20.46,
     "agent_hours": 5.79,
     "human_days": 14.39,
     "review_days": 3.89,
     "rediscover_days": 10.5,
     "calendar_days": 14.39,
-    "build_cost": 7735.23,
-    "yearly_cost": 1160.28,
-    "total_cost": 11216.08
+    "build_cost": 7735.33,
+    "yearly_cost": 1160.3,
+    "total_cost": 11216.24
    },
    "buy": {
     "via": {

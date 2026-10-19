@@ -1,7 +1,7 @@
 {
  "title": "vapor/vapor",
  "slug": "vapor-vapor",
- "date": "2026-10-12T12:02:47+00:00",
+ "date": "2026-10-19T09:57:44+00:00",
  "repo_url": "https://github.com/vapor/vapor",
  "index": 1.44,
  "assessed": 9,
@@ -11,13 +11,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 8.2441,
+ "make_buy_ratio": 8.6738,
  "languages": [
   "swift",
   "shell"
  ],
- "cocomo_cost": 473542,
- "cocomo_pm": 42.07,
- "value_cost": 41862,
- "value_pm": 3.72
+ "cocomo_cost": 491343,
+ "cocomo_pm": 43.65,
+ "value_cost": 43436,
+ "value_pm": 3.86
 }

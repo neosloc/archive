@@ -1,7 +1,7 @@
 {
  "title": "axios/axios",
  "slug": "axios-axios",
- "date": "2026-10-12T12:00:35+00:00",
+ "date": "2026-10-19T09:55:37+00:00",
  "repo_url": "https://github.com/axios/axios",
  "index": 1.33,
  "assessed": 9,
@@ -10,13 +10,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 59.7868,
+ "make_buy_ratio": 61.2351,
  "languages": [
   "javascript",
   "typescript"
  ],
- "cocomo_cost": 225488,
- "cocomo_pm": 20.03,
- "value_cost": 36775,
- "value_pm": 3.27
+ "cocomo_cost": 233938,
+ "cocomo_pm": 20.78,
+ "value_cost": 37827,
+ "value_pm": 3.36
 }

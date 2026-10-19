@@ -1,7 +1,7 @@
 {
  "title": "rxhanson/Rectangle",
  "slug": "rxhanson-rectangle",
- "date": "2026-10-12T12:02:46+00:00",
+ "date": "2026-10-19T09:57:40+00:00",
  "repo_url": "https://github.com/rxhanson/Rectangle",
  "index": 1.14,
  "assessed": 7,
@@ -9,13 +9,13 @@
   "desktop"
  ],
  "verdict": "buy",
- "make_buy_ratio": 111.3644,
+ "make_buy_ratio": 102.5976,
  "languages": [
   "swift",
   "c"
  ],
- "cocomo_cost": 710352,
- "cocomo_pm": 63.1,
- "value_cost": 228258,
- "value_pm": 20.28
+ "cocomo_cost": 728660,
+ "cocomo_pm": 64.73,
+ "value_cost": 215876,
+ "value_pm": 19.18
 }

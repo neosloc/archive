@@ -4,21 +4,21 @@
   "url": "https://github.com/fastify/fastify",
   "slug": "fastify-fastify",
   "host": "github.com",
-  "commit": "3ad5a426371ed652e3ddc759d6b389b76fb86eaa",
-  "committed_at": "2026-10-12T12:23:41+02:00",
-  "evaluated_at": "2026-10-12T12:00:36+00:00",
+  "commit": "2cbb98e25f75e23cf8dafedc9a111943f2888669",
+  "committed_at": "2026-10-18T17:01:52+02:00",
+  "evaluated_at": "2026-10-19T09:55:36+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/fastify/fastify",
   "inventory": {
-   "files": 390,
+   "files": 391,
    "source_files": 53,
-   "source_tokens": 112900,
+   "source_tokens": 113445,
    "languages": {
-    "javascript": 72892,
-    "typescript": 39781,
+    "javascript": 73431,
+    "typescript": 39787,
     "shell": 227
    },
    "git": true
@@ -198,7 +198,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "333 semver tags, latest v6.0.0-alpha.4",
+      "detail": "336 semver tags, latest v5.12.7",
       "path": null,
       "weight": 1
      }
@@ -222,7 +222,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "333 semver tags, latest v6.0.0-alpha.4"
+          "detail": "336 semver tags, latest v5.12.7"
          }
         ],
         "note": ""
@@ -998,10 +998,10 @@
     ],
     "metrics": {
      "source_files": 53,
-     "source_tokens": 112900,
-     "test_files": 226,
-     "test_tokens": 442394,
-     "test_ratio": 3.92,
+     "source_tokens": 113445,
+     "test_files": 227,
+     "test_tokens": 447110,
+     "test_ratio": 3.94,
      "modules": 6,
      "modules_within_budget": 0.67,
      "oversized_files": [
@@ -1009,12 +1009,12 @@
      ],
      "largest_module": {
       "path": "lib",
-      "tokens": 62015
+      "tokens": 62486
      },
      "typed_ratio": 0.35,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 114,
+     "import_edges": 115,
      "import_graph": true,
      "max_fan_out": 18,
      "import_cycles": 1,
@@ -1028,8 +1028,8 @@
       "lib/route.js"
      ],
      "languages": {
-      "javascript": 72892,
-      "typescript": 39781,
+      "javascript": 73431,
+      "typescript": 39787,
       "shell": 227
      }
     },
@@ -1055,7 +1055,7 @@
          },
          {
           "path": "test/404s.test.js",
-          "detail": "226 test files"
+          "detail": "227 test files"
          }
         ],
         "note": ""
@@ -1204,11 +1204,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 10.24,
+   "ksloc": 10.3,
    "classic": {
-    "person_months": 27.6,
+    "person_months": 27.77,
     "schedule_months": 8.8,
-    "cost": 310751
+    "cost": 312567
    },
    "capture": {
     "tests": 1.0,
@@ -1217,21 +1217,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 3.51,
+   "reproduce_pm": 3.53,
    "history": {
-    "commits": 4462,
-    "fix_commits": 885,
-    "authors": 953,
-    "age_months": 120.4,
+    "commits": 4471,
+    "fix_commits": 888,
+    "authors": 958,
+    "age_months": 120.6,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 40.01,
-   "rediscover_pm": 2.4,
-   "replacement_pm": 5.91,
+   "knowledge_pm": 40.12,
+   "rediscover_pm": 2.41,
+   "replacement_pm": 5.93,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 5.3,
-   "value_cost": 59656,
+   "value_pm": 5.32,
+   "value_cost": 59926,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -1245,26 +1245,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 58.8252,
+   "make_buy_ratio": 59.1326,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 16039.03,
+   "break_even_price_per_year": 16124.29,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1667914,
-     "input": 41697850,
-     "cached_input": 35443172
+     "output": 1683707,
+     "input": 42092675,
+     "cached_input": 35778773
     },
-    "final_tokens": 555971,
-    "model_cost": 65.47,
-    "agent_hours": 18.53,
-    "human_days": 62.85,
-    "review_days": 12.45,
-    "rediscover_days": 50.4,
-    "calendar_days": 62.85,
-    "build_cost": 33758.07,
-    "yearly_cost": 5063.71,
-    "total_cost": 48949.21
+    "final_tokens": 561235,
+    "model_cost": 66.09,
+    "agent_hours": 18.71,
+    "human_days": 63.18,
+    "review_days": 12.57,
+    "rediscover_days": 50.61,
+    "calendar_days": 63.18,
+    "build_cost": 33934.47,
+    "yearly_cost": 5090.17,
+    "total_cost": 49204.99
    },
    "buy": {
     "via": {

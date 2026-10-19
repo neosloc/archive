@@ -4,9 +4,9 @@
   "url": "https://github.com/p0deje/Maccy",
   "slug": "p0deje-maccy",
   "host": "github.com",
-  "commit": "a92c11ae3e7a86a57dc6359bad59e330e4625ede",
-  "committed_at": "2026-10-06T22:24:18+02:00",
-  "evaluated_at": "2026-10-07T14:29:36+00:00",
+  "commit": "7e14eb8d4578f1509f9a02e7bfd5c465550695cd",
+  "committed_at": "2026-10-15T16:51:02-07:00",
+  "evaluated_at": "2026-10-19T09:57:43+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 561,
    "source_files": 120,
-   "source_tokens": 69345,
+   "source_tokens": 69740,
    "languages": {
-    "swift": 69345
+    "swift": 69740
    },
    "git": true
   },
@@ -591,16 +591,16 @@
     ],
     "metrics": {
      "source_files": 120,
-     "source_tokens": 69345,
+     "source_tokens": 69740,
      "test_files": 11,
-     "test_tokens": 20018,
+     "test_tokens": 20294,
      "test_ratio": 0.29,
      "modules": 8,
      "modules_within_budget": 1.0,
      "oversized_files": [],
      "largest_module": {
       "path": "Maccy/Views",
-      "tokens": 21873
+      "tokens": 21955
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -611,7 +611,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 69345
+      "swift": 69740
      }
     },
     "gaps": [
@@ -700,11 +700,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 7.8,
+   "ksloc": 7.84,
    "classic": {
-    "person_months": 20.76,
+    "person_months": 20.85,
     "schedule_months": 7.9,
-    "cost": 233686
+    "cost": 234724
    },
    "capture": {
     "tests": 0.58,
@@ -713,21 +713,21 @@
     "capture": 0.47
    },
    "agent_factor": 0.34,
-   "reproduce_pm": 7.03,
+   "reproduce_pm": 7.06,
    "history": {
-    "commits": 1138,
-    "fix_commits": 192,
-    "authors": 96,
-    "age_months": 104.2,
-    "months_since_last": 0.0
+    "commits": 1146,
+    "fix_commits": 194,
+    "authors": 99,
+    "age_months": 104.5,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 9.53,
-   "rediscover_pm": 5.05,
-   "replacement_pm": 12.08,
+   "knowledge_pm": 9.61,
+   "rediscover_pm": 5.09,
+   "replacement_pm": 12.15,
    "leverage": 0.84,
    "obsolescence": 0.9,
-   "value_pm": 9.17,
-   "value_cost": 103246,
+   "value_pm": 9.23,
+   "value_cost": 103875,
    "knowledge_at_risk": 0.42,
    "assumptions": {
     "salary": 56286,
@@ -741,26 +741,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 90.4921,
+   "make_buy_ratio": 91.2018,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 28168.56,
+   "break_even_price_per_year": 28391.93,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 281471,
-     "input": 7036775,
-     "cached_input": 5981258
+     "output": 283074,
+     "input": 7076850,
+     "cached_input": 6015322
     },
-    "final_tokens": 93823,
-    "model_cost": 11.05,
-    "agent_hours": 3.13,
-    "human_days": 109.92,
-    "review_days": 3.87,
-    "rediscover_days": 106.05,
-    "calendar_days": 109.92,
-    "build_cost": 58931.01,
-    "yearly_cost": 8839.65,
-    "total_cost": 85449.97
+    "final_tokens": 94358,
+    "model_cost": 11.11,
+    "agent_hours": 3.15,
+    "human_days": 110.78,
+    "review_days": 3.89,
+    "rediscover_days": 106.89,
+    "calendar_days": 110.78,
+    "build_cost": 59393.16,
+    "yearly_cost": 8908.97,
+    "total_cost": 86120.08
    },
    "buy": {
     "via": {

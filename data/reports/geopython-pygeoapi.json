@@ -4,9 +4,9 @@
   "url": "https://github.com/geopython/pygeoapi",
   "slug": "geopython-pygeoapi",
   "host": "github.com",
-  "commit": "0b3838011d54d01189f9cf937c557c4de35d41cb",
-  "committed_at": "2026-09-21T21:57:47-04:00",
-  "evaluated_at": "2026-10-07T14:27:36+00:00",
+  "commit": "a57abd90055098f90ed5ddfaa44bb6c559297c1d",
+  "committed_at": "2026-10-18T10:45:33-04:00",
+  "evaluated_at": "2026-10-19T09:55:29+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -1830,13 +1830,13 @@
    "agent_factor": 0.1,
    "reproduce_pm": 6.6,
    "history": {
-    "commits": 1528,
-    "fix_commits": 366,
+    "commits": 1530,
+    "fix_commits": 367,
     "authors": 147,
-    "age_months": 103.2,
-    "months_since_last": 0.5
+    "age_months": 104.1,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 14.96,
+   "knowledge_pm": 14.99,
    "rediscover_pm": 0.0,
    "replacement_pm": 6.6,
    "leverage": 0.91,

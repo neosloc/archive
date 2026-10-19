@@ -4,9 +4,9 @@
   "url": "https://github.com/honojs/hono",
   "slug": "honojs-hono",
   "host": "github.com",
-  "commit": "552ea024250093a48071b3ded9710de4c6e05f14",
-  "committed_at": "2026-10-11T15:02:40+09:00",
-  "evaluated_at": "2026-10-12T12:00:50+00:00",
+  "commit": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "committed_at": "2026-10-17T22:08:26+09:00",
+  "evaluated_at": "2026-10-19T09:55:50+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 571,
    "source_files": 241,
-   "source_tokens": 217752,
+   "source_tokens": 218069,
    "languages": {
-    "typescript": 217752
+    "typescript": 218069
    },
    "git": true
   },
@@ -1420,10 +1420,10 @@
     ],
     "metrics": {
      "source_files": 241,
-     "source_tokens": 217752,
+     "source_tokens": 218069,
      "test_files": 163,
-     "test_tokens": 490205,
-     "test_ratio": 2.25,
+     "test_tokens": 492068,
+     "test_ratio": 2.26,
      "modules": 91,
      "modules_within_budget": 0.99,
      "oversized_files": [
@@ -1431,12 +1431,12 @@
      ],
      "largest_module": {
       "path": "src",
-      "tokens": 38209
+      "tokens": 38327
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 451,
+     "import_edges": 452,
      "import_graph": true,
      "max_fan_out": 10,
      "import_cycles": 5,
@@ -1450,7 +1450,7 @@
       "src/jsx/types.ts"
      ],
      "languages": {
-      "typescript": 217752
+      "typescript": 218069
      }
     },
     "gaps": [
@@ -1568,11 +1568,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 21.51,
+   "ksloc": 21.53,
    "classic": {
-    "person_months": 60.2,
+    "person_months": 60.25,
     "schedule_months": 11.9,
-    "cost": 677640
+    "cost": 678235
    },
    "capture": {
     "tests": 1.0,
@@ -1581,21 +1581,21 @@
     "capture": 0.73
    },
    "agent_factor": 0.22,
-   "reproduce_pm": 13.33,
+   "reproduce_pm": 13.35,
    "history": {
-    "commits": 2793,
-    "fix_commits": 894,
-    "authors": 380,
-    "age_months": 57.9,
-    "months_since_last": 0.0
+    "commits": 2803,
+    "fix_commits": 904,
+    "authors": 385,
+    "age_months": 58.1,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 31.85,
-   "rediscover_pm": 8.6,
-   "replacement_pm": 21.93,
+   "knowledge_pm": 32.09,
+   "rediscover_pm": 8.67,
+   "replacement_pm": 22.01,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 19.68,
-   "value_cost": 221514,
+   "value_pm": 19.75,
+   "value_cost": 222314,
    "knowledge_at_risk": 0.39,
    "assumptions": {
     "salary": 56286,
@@ -1609,26 +1609,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 189.3803,
+   "make_buy_ratio": 190.8168,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 52251.24,
+   "break_even_price_per_year": 52649.69,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 2141508,
-     "input": 53537700,
-     "cached_input": 45507045
+     "output": 2148074,
+     "input": 53701850,
+     "cached_input": 45646572
     },
-    "final_tokens": 713836,
-    "model_cost": 84.05,
-    "agent_hours": 23.79,
-    "human_days": 202.59,
-    "review_days": 21.99,
-    "rediscover_days": 180.6,
-    "calendar_days": 202.59,
-    "build_cost": 108679.88,
-    "yearly_cost": 16301.98,
-    "total_cost": 157585.83
+    "final_tokens": 716024,
+    "model_cost": 84.31,
+    "agent_hours": 23.87,
+    "human_days": 204.12,
+    "review_days": 22.05,
+    "rediscover_days": 182.07,
+    "calendar_days": 204.12,
+    "build_cost": 109504.26,
+    "yearly_cost": 16425.64,
+    "total_cost": 158781.18
    },
    "buy": {
     "via": {

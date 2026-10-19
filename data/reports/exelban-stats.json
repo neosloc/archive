@@ -4,23 +4,23 @@
   "url": "https://github.com/exelban/stats",
   "slug": "exelban-stats",
   "host": "github.com",
-  "commit": "0c0e551e199938a92af963c25a15a3ca1aef7764",
-  "committed_at": "2026-10-11T18:12:33+02:00",
-  "evaluated_at": "2026-10-12T12:03:03+00:00",
+  "commit": "573145558badb690728e39f3b2dcdb490e2ea731",
+  "committed_at": "2026-10-18T11:42:40+02:00",
+  "evaluated_at": "2026-10-19T09:57:58+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/exelban/stats",
   "inventory": {
-   "files": 307,
+   "files": 310,
    "source_files": 146,
-   "source_tokens": 475854,
+   "source_tokens": 481007,
    "languages": {
-    "swift": 438608,
+    "swift": 442420,
     "c": 20258,
     "python": 13403,
-    "shell": 3585
+    "shell": 4926
    },
    "git": true
   },
@@ -138,7 +138,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "359 semver tags, latest v3.0.21",
+      "detail": "360 semver tags, latest v3.0.22",
       "path": null,
       "weight": 1
      }
@@ -162,7 +162,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "359 semver tags, latest v3.0.21"
+          "detail": "360 semver tags, latest v3.0.22"
          }
         ],
         "note": ""
@@ -601,9 +601,9 @@
     ],
     "metrics": {
      "source_files": 146,
-     "source_tokens": 475854,
-     "test_files": 4,
-     "test_tokens": 13125,
+     "source_tokens": 481007,
+     "test_files": 5,
+     "test_tokens": 14053,
      "test_ratio": 0.03,
      "modules": 24,
      "modules_within_budget": 0.75,
@@ -617,7 +617,7 @@
      ],
      "largest_module": {
       "path": "Kit/plugins",
-      "tokens": 50270
+      "tokens": 50145
      },
      "typed_ratio": 0.96,
      "python_functions": 48,
@@ -628,10 +628,10 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 438608,
+      "swift": 442420,
       "c": 20258,
       "python": 13403,
-      "shell": 3585
+      "shell": 4926
      }
     },
     "gaps": [
@@ -656,7 +656,7 @@
          },
          {
           "path": "Tests/Bluetooth.swift",
-          "detail": "4 test files"
+          "detail": "5 test files"
          }
         ],
         "note": ""
@@ -699,32 +699,32 @@
     "events",
     "portability"
    ],
-   "retrofit_person_days": 67.1,
+   "retrofit_person_days": 67.7,
    "retrofit_by_dimension": {
-    "interface": 13.2,
+    "interface": 13.3,
     "stability": 4.4,
-    "identity": 8.8,
-    "ergonomics": 9.9,
+    "identity": 8.9,
+    "ergonomics": 10.0,
     "embeddability": 0.0,
-    "extensibility": 13.2,
-    "observability": 6.6,
-    "legibility": 11.0
+    "extensibility": 13.3,
+    "observability": 6.7,
+    "legibility": 11.1
    },
    "wrappability": "replace or wrap externally",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.38,
+    "size_factor": 1.39,
     "legibility_multiplier": 1.6,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 38.39,
+   "ksloc": 38.84,
    "classic": {
-    "person_months": 110.58,
-    "schedule_months": 14.9,
-    "cost": 1244819
+    "person_months": 111.94,
+    "schedule_months": 15.0,
+    "cost": 1260075
    },
    "capture": {
     "tests": 0.06,
@@ -733,22 +733,22 @@
     "capture": 0.1
    },
    "agent_factor": 0.51,
-   "reproduce_pm": 55.84,
+   "reproduce_pm": 56.53,
    "history": {
-    "commits": 2447,
-    "fix_commits": 688,
+    "commits": 2459,
+    "fix_commits": 694,
     "authors": 204,
-    "age_months": 88.4,
+    "age_months": 88.7,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 25.99,
-   "rediscover_pm": 23.4,
-   "replacement_pm": 79.24,
+   "knowledge_pm": 26.18,
+   "rediscover_pm": 23.56,
+   "replacement_pm": 80.08,
    "leverage": 0.86,
    "obsolescence": 0.9,
-   "value_pm": 61.29,
-   "value_cost": 689907,
-   "knowledge_at_risk": 0.3,
+   "value_pm": 61.94,
+   "value_cost": 697277,
+   "knowledge_at_risk": 0.29,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -761,26 +761,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 506.0249,
+   "make_buy_ratio": 509.627,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 136680.48,
+   "break_even_price_per_year": 137655.35,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1984311,
-     "input": 49607775,
-     "cached_input": 42166608
+     "output": 2005799,
+     "input": 50144975,
+     "cached_input": 42623228
     },
-    "final_tokens": 661437,
-    "model_cost": 77.88,
-    "agent_hours": 22.05,
-    "human_days": 528.44,
-    "review_days": 37.04,
-    "rediscover_days": 491.4,
-    "calendar_days": 528.44,
-    "build_cost": 283347.14,
-    "yearly_cost": 42502.07,
-    "total_cost": 410853.36
+    "final_tokens": 668599,
+    "model_cost": 78.73,
+    "agent_hours": 22.29,
+    "human_days": 532.2,
+    "review_days": 37.44,
+    "rediscover_days": 494.76,
+    "calendar_days": 532.2,
+    "build_cost": 285364.12,
+    "yearly_cost": 42804.62,
+    "total_cost": 413777.97
    },
    "buy": {
     "via": {

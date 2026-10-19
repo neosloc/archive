@@ -4,23 +4,23 @@
   "url": "https://github.com/marktext/marktext",
   "slug": "marktext-marktext",
   "host": "github.com",
-  "commit": "8e57365ead4c71df9472f80d13941b8431483169",
-  "committed_at": "2026-10-12T19:28:42+08:00",
-  "evaluated_at": "2026-10-12T12:02:21+00:00",
+  "commit": "5f3dbb9fa6222a7ca47f034b79fa54c612bfc0f1",
+  "committed_at": "2026-10-19T15:45:17+08:00",
+  "evaluated_at": "2026-10-19T09:57:17+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/marktext/marktext",
   "inventory": {
-   "files": 1693,
-   "source_files": 551,
-   "source_tokens": 769017,
+   "files": 1746,
+   "source_files": 566,
+   "source_tokens": 789671,
    "languages": {
-    "typescript": 651276,
-    "vue": 99095,
-    "javascript": 17778,
-    "python": 868
+    "typescript": 666436,
+    "vue": 102958,
+    "javascript": 19141,
+    "python": 1136
    },
    "git": true
   },
@@ -52,6 +52,10 @@
    "uses_credentials": [
     {
      "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+     "detail": "1 match"
+    },
+    {
+     "path": "scripts/update-current-sponsors.mjs",
      "detail": "1 match"
     }
    ]
@@ -182,6 +186,10 @@
         "met": true,
         "evidence": [
          {
+          "path": "scripts/update-current-sponsors.mjs",
+          "detail": "2 matches"
+         },
+         {
           "path": "packages/desktop/src/main/cli/index.ts",
           "detail": "1 match"
          },
@@ -199,6 +207,10 @@
          },
          {
           "path": "scripts/merge-release-artifacts.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/select-release-base.py",
           "detail": "1 match"
          }
         ],
@@ -247,7 +259,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "57 semver tags, latest v0.21.2",
+      "detail": "58 semver tags, latest v0.22.0",
       "path": null,
       "weight": 1
      }
@@ -271,7 +283,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "57 semver tags, latest v0.21.2"
+          "detail": "58 semver tags, latest v0.22.0"
          }
         ],
         "note": ""
@@ -371,6 +383,10 @@
          {
           "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
           "detail": "1 match"
+         },
+         {
+          "path": "scripts/update-current-sponsors.mjs",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -440,6 +456,10 @@
         "evidence": [
          {
           "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "scripts/update-current-sponsors.mjs",
           "detail": "1 match"
          }
         ],
@@ -565,6 +585,10 @@
          },
          {
           "path": "packages/desktop/src/renderer/src/store/editor.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "scripts/select-release-base.py",
           "detail": "2 matches"
          },
          {
@@ -1048,7 +1072,7 @@
          },
          {
           "path": "packages/desktop/package.json",
-          "detail": "8 matches"
+          "detail": "10 matches"
          },
          {
           "path": ".github/workflows/release.yml",
@@ -1147,27 +1171,43 @@
    {
     "key": "extensibility",
     "title": "Extensibility",
-    "level": 0,
-    "rationale": "Not yet: Internal seams: a registry, registration function or plugin manager.",
-    "evidence": [],
+    "level": 1,
+    "rationale": "Internal seams: a registry, registration function or plugin manager.",
+    "evidence": [
+     {
+      "signal": "L1 seams",
+      "detail": "2 matches",
+      "path": "packages/muya/src/utils/dompurify.ts",
+      "weight": 1
+     }
+    ],
     "metrics": {},
     "gaps": [
-     "L1 Internal seams: a registry, registration function or plugin manager. (no registry or registration function)"
+     "L2 The docs show how to add behaviour through those seams (even in-tree). (no registration functions to document)"
     ],
     "question": "Can behaviour be added without modifying the code?",
     "best_surface": "all",
     "surfaces": {
      "all": {
-      "level": 0,
-      "first_missing": "seams",
+      "level": 1,
+      "first_missing": "documented",
       "requirements": [
        {
         "level": 1,
         "id": "seams",
         "text": "Internal seams: a registry, registration function or plugin manager.",
-        "met": false,
-        "evidence": [],
-        "note": "no registry or registration function"
+        "met": true,
+        "evidence": [
+         {
+          "path": "packages/muya/src/utils/dompurify.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/muya/src/utils/sanitizeExportHtml.ts",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 2,
@@ -1196,7 +1236,7 @@
       ]
      }
     },
-    "level_name": "absent",
+    "level_name": "ad hoc",
     "applicable": true
    },
    {
@@ -1226,152 +1266,23 @@
     ],
     "metrics": {},
     "gaps": [
-     "[library] L3 Optional metrics or tracing hooks. (no metrics or tracing hooks)",
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (library code prints: scripts/select-release-base.py)",
      "[desktop] L4 Tracing or metrics (OpenTelemetry). (no tracing)"
     ],
     "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
     "best_surface": "desktop",
     "surfaces": {
      "library": {
-      "level": 2,
-      "first_missing": "hooks",
+      "level": 0,
+      "first_missing": "standard-logger",
       "requirements": [
        {
         "level": 1,
         "id": "standard-logger",
         "text": "Logs through a standard logger namespace and never prints from library code.",
-        "met": true,
-        "evidence": [
-         {
-          "path": "packages/desktop/src/main/app/index.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/app/windowManager.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/contextMenu/editor/spellcheck.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/dataCenter/index.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/exceptionHandler.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/filesystem/markdown.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/filesystem/watcher.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/ipc/cmd.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/ipc/diagram.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/ipc/dialog.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/ipc/fonts.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/ipc/ripgrep.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/ipc/shell.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/ipc/window.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/keyboard/index.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/menu/actions/edit.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/menu/actions/file.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/menu/index.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/preferences/index.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/spellchecker/index.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/utils/imagePathAutoComplement.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/windows/editor.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/main/windows/setting.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/renderer/src/bootstrap.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/renderer/src/components/commandPalette/index.vue",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/renderer/src/components/sideBar/search.vue",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/renderer/src/prefComponents/keybindings/index.vue",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/renderer/src/prefComponents/spellchecker/index.vue",
-          "detail": "1 match"
-         },
-         {
-          "path": "packages/desktop/src/renderer/src/store/commandCenter.ts",
-          "detail": "1 match"
-         },
-         {
-          "path": null,
-          "detail": "no print() in library code"
-         }
-        ],
-        "note": ""
+        "met": false,
+        "evidence": [],
+        "note": "library code prints: scripts/select-release-base.py"
        },
        {
         "level": 2,
@@ -1633,12 +1544,12 @@
      }
     ],
     "metrics": {
-     "source_files": 551,
-     "source_tokens": 769017,
-     "test_files": 616,
-     "test_tokens": 767415,
-     "test_ratio": 1.0,
-     "modules": 167,
+     "source_files": 566,
+     "source_tokens": 789671,
+     "test_files": 647,
+     "test_tokens": 811699,
+     "test_ratio": 1.03,
+     "modules": 170,
      "modules_within_budget": 0.99,
      "oversized_files": [
       "packages/muya/src/config/emojis.ts",
@@ -1650,27 +1561,32 @@
      ],
      "largest_module": {
       "path": "packages/muya/src/config",
-      "tokens": 80064
+      "tokens": 80086
      },
      "typed_ratio": 0.85,
-     "python_functions": 1,
-     "python_annotated": 1,
-     "import_edges": 1508,
+     "python_functions": 2,
+     "python_annotated": 2,
+     "import_edges": 1582,
      "import_graph": true,
      "max_fan_out": 42,
      "import_cycles": 4,
      "largest_cycle": [
       "packages/muya/src/block/base/content.ts",
       "packages/muya/src/block/base/format.ts",
+      "packages/muya/src/block/base/linkedList/linkedList.ts",
+      "packages/muya/src/block/base/linkedList/linkedNode.ts",
       "packages/muya/src/block/base/parent.ts",
+      "packages/muya/src/block/base/quoteContainer.ts",
       "packages/muya/src/block/base/treeNode.ts",
       "packages/muya/src/block/blockTransforms.ts",
+      "packages/muya/src/block/commonMark/atxHeading/foldSection.ts",
       "packages/muya/src/block/commonMark/atxHeading/index.ts",
       "packages/muya/src/block/commonMark/blockQuote/index.ts",
       "packages/muya/src/block/commonMark/bulletList/index.ts",
       "packages/muya/src/block/commonMark/codeBlock/code.ts",
       "packages/muya/src/block/commonMark/codeBlock/index.ts",
       "packages/muya/src/block/commonMark/headingCopyLink/index.ts",
+      "packages/muya/src/block/commonMark/headingFoldToggle/index.ts",
       "packages/muya/src/block/commonMark/html/htmlContainer.ts",
       "packages/muya/src/block/commonMark/html/htmlPreview.ts",
       "packages/muya/src/block/commonMark/html/index.ts",
@@ -1692,9 +1608,11 @@
       "packages/muya/src/block/extra/diagram/index.ts",
       "packages/muya/src/block/extra/footnote/index.ts",
       "packages/muya/src/block/extra/frontmatter/index.ts",
+      "packages/muya/src/block/extra/githubAlert/index.ts",
       "packages/muya/src/block/extra/math/index.ts",
       "packages/muya/src/block/extra/math/mathContainer.ts",
       "packages/muya/src/block/extra/math/mathPreview.ts",
+      "packages/muya/src/block/folding.ts",
       "packages/muya/src/block/gfm/table/cell.ts",
       "packages/muya/src/block/gfm/table/index.ts",
       "packages/muya/src/block/gfm/table/row.ts",
@@ -1702,6 +1620,7 @@
       "packages/muya/src/block/gfm/taskList/index.ts",
       "packages/muya/src/block/gfm/taskListCheckbox/index.ts",
       "packages/muya/src/block/gfm/taskListItem/index.ts",
+      "packages/muya/src/block/githubAlerts.ts",
       "packages/muya/src/block/index.ts",
       "packages/muya/src/block/mixins/containerQueryBlock.ts",
       "packages/muya/src/block/mixins/leafQueryBlock.ts",
@@ -1713,6 +1632,8 @@
       "packages/muya/src/clipboard/mergePasteIntoHeading.ts",
       "packages/muya/src/clipboard/paste.ts",
       "packages/muya/src/clipboard/pasteImage.ts",
+      "packages/muya/src/clipboard/pasteUrl.ts",
+      "packages/muya/src/config/emptyStates.ts",
       "packages/muya/src/editor/dragDropImage.ts",
       "packages/muya/src/editor/index.ts",
       "packages/muya/src/editor/linkMouseEvents.ts",
@@ -1775,21 +1696,27 @@
       "packages/muya/src/state/index.ts",
       "packages/muya/src/state/markdownToState.ts",
       "packages/muya/src/state/stateToMarkdown.ts",
+      "packages/muya/src/state/types.ts",
+      "packages/muya/src/types.ts",
       "packages/muya/src/ui/baseFloat/index.ts",
       "packages/muya/src/ui/ui.ts",
+      "packages/muya/src/utils/diagram/fence.ts",
       "packages/muya/src/utils/dom.ts",
+      "packages/muya/src/utils/githubAlerts.ts",
       "packages/muya/src/utils/highlightHTML.ts",
       "packages/muya/src/utils/image.ts",
       "packages/muya/src/utils/index.ts",
+      "packages/muya/src/utils/marked/extensions/githubAlerts.ts",
+      "packages/muya/src/utils/marked/types.ts",
       "packages/muya/src/utils/paste.ts",
       "packages/muya/src/utils/search.ts",
       "packages/muya/src/utils/turndownService/index.ts"
      ],
      "languages": {
-      "typescript": 651276,
-      "vue": 99095,
-      "javascript": 17778,
-      "python": 868
+      "typescript": 666436,
+      "vue": 102958,
+      "javascript": 19141,
+      "python": 1136
      }
     },
     "gaps": [
@@ -1814,7 +1741,7 @@
          },
          {
           "path": "packages/desktop/test/e2e/all-blocks-roundtrip.spec.ts",
-          "detail": "616 test files"
+          "detail": "647 test files"
          }
         ],
         "note": ""
@@ -1827,6 +1754,10 @@
         "evidence": [
          {
           "path": ".github/workflows/build.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/current-sponsors.yml",
           "detail": ""
          },
          {
@@ -1898,7 +1829,7 @@
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
         "met": false,
         "evidence": [],
-        "note": "4 import cycles (largest: packages/muya/src/block/base/content.ts, packages/muya/src/block/base/format.ts, packages/muya/src/block/base/parent.ts)"
+        "note": "4 import cycles (largest: packages/muya/src/block/base/content.ts, packages/muya/src/block/base/format.ts, packages/muya/src/block/base/linkedList/linkedList.ts)"
        }
       ]
      }
@@ -1908,61 +1839,61 @@
    }
   ],
   "estimate": {
-   "integrability_index": 2.25,
+   "integrability_index": 2.38,
    "assessed_dimensions": 8,
    "not_applicable": [
     "events",
     "portability"
    ],
-   "retrofit_person_days": 23.6,
+   "retrofit_person_days": 20.5,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 3.5,
+    "stability": 3.6,
     "identity": 0.0,
-    "ergonomics": 2.6,
+    "ergonomics": 2.7,
     "embeddability": 0.0,
-    "extensibility": 10.5,
+    "extensibility": 7.1,
     "observability": 0.0,
-    "legibility": 7.0
+    "legibility": 7.1
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.75,
+    "size_factor": 1.78,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 81.32,
+   "ksloc": 83.14,
    "classic": {
-    "person_months": 243.18,
-    "schedule_months": 20.2,
-    "cost": 2737538
+    "person_months": 248.88,
+    "schedule_months": 20.3,
+    "cost": 2801655
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.72,
+    "docs": 0.73,
     "capture": 0.93
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 31.98,
+   "reproduce_pm": 32.73,
    "history": {
-    "commits": 2246,
-    "fix_commits": 1023,
-    "authors": 217,
-    "age_months": 107.0,
+    "commits": 2276,
+    "fix_commits": 1041,
+    "authors": 222,
+    "age_months": 107.2,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 31.69,
-   "rediscover_pm": 2.22,
-   "replacement_pm": 34.2,
-   "leverage": 1.03,
+   "knowledge_pm": 32.2,
+   "rediscover_pm": 2.25,
+   "replacement_pm": 34.98,
+   "leverage": 1.05,
    "obsolescence": 0.95,
-   "value_pm": 33.5,
-   "value_cost": 377139,
+   "value_pm": 34.79,
+   "value_cost": 391638,
    "knowledge_at_risk": 0.06,
    "assumptions": {
     "salary": 56286,
@@ -1976,26 +1907,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 78.9345,
+   "make_buy_ratio": 80.9804,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 21004.87,
+   "break_even_price_per_year": 21556.26,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 4625445,
-     "input": 115636125,
-     "cached_input": 98290706
+     "output": 4820693,
+     "input": 120517325,
+     "cached_input": 102439726
     },
-    "final_tokens": 1541815,
-    "model_cost": 181.55,
-    "agent_hours": 51.39,
-    "human_days": 81.77,
-    "review_days": 35.15,
-    "rediscover_days": 46.62,
-    "calendar_days": 81.77,
-    "build_cost": 44015.98,
-    "yearly_cost": 6602.4,
-    "total_cost": 63823.17
+    "final_tokens": 1606897,
+    "model_cost": 189.21,
+    "agent_hours": 53.56,
+    "human_days": 83.89,
+    "review_days": 36.64,
+    "rediscover_days": 47.25,
+    "calendar_days": 83.89,
+    "build_cost": 45156.78,
+    "yearly_cost": 6773.52,
+    "total_cost": 65477.33
    },
    "buy": {
     "via": {

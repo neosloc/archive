@@ -1,7 +1,7 @@
 {
  "title": "honojs/hono",
  "slug": "honojs-hono",
- "date": "2026-10-12T12:00:50+00:00",
+ "date": "2026-10-19T09:55:50+00:00",
  "repo_url": "https://github.com/honojs/hono",
  "index": 1.56,
  "assessed": 9,
@@ -10,12 +10,12 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 189.3803,
+ "make_buy_ratio": 190.8168,
  "languages": [
   "typescript"
  ],
- "cocomo_cost": 677640,
- "cocomo_pm": 60.2,
- "value_cost": 221514,
- "value_pm": 19.68
+ "cocomo_cost": 678235,
+ "cocomo_pm": 60.25,
+ "value_cost": 222314,
+ "value_pm": 19.75
 }

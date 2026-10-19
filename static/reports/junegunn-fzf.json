@@ -4,20 +4,20 @@
   "url": "https://github.com/junegunn/fzf",
   "slug": "junegunn-fzf",
   "host": "github.com",
-  "commit": "c0a193e031f01fb50bf6f7be4381990a3753f7cf",
-  "committed_at": "2026-10-11T11:29:16+09:00",
-  "evaluated_at": "2026-10-12T12:01:53+00:00",
+  "commit": "55c122f1a0e1340546c8709682bea5561fe0e8fd",
+  "committed_at": "2026-10-17T11:10:52+09:00",
+  "evaluated_at": "2026-10-19T09:56:49+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/junegunn/fzf",
   "inventory": {
-   "files": 162,
+   "files": 163,
    "source_files": 61,
-   "source_tokens": 182680,
+   "source_tokens": 182691,
    "languages": {
-    "go": 181130,
+    "go": 181141,
     "shell": 1550
    },
    "git": true
@@ -1042,10 +1042,10 @@
     ],
     "metrics": {
      "source_files": 61,
-     "source_tokens": 182680,
-     "test_files": 42,
-     "test_tokens": 132608,
-     "test_ratio": 0.73,
+     "source_tokens": 182691,
+     "test_files": 43,
+     "test_tokens": 134384,
+     "test_ratio": 0.74,
      "modules": 8,
      "modules_within_budget": 0.75,
      "oversized_files": [
@@ -1065,7 +1065,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 181130,
+      "go": 181141,
       "shell": 1550
      }
     },
@@ -1091,7 +1091,7 @@
          },
          {
           "path": "src/algo/algo_test.go",
-          "detail": "42 test files"
+          "detail": "43 test files"
          }
         ],
         "note": ""
@@ -1194,9 +1194,9 @@
   "value": {
    "ksloc": 22.92,
    "classic": {
-    "person_months": 64.33,
+    "person_months": 64.34,
     "schedule_months": 12.2,
-    "cost": 724181
+    "cost": 724247
    },
    "capture": {
     "tests": 1.0,
@@ -1207,19 +1207,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 8.17,
    "history": {
-    "commits": 3649,
-    "fix_commits": 737,
-    "authors": 347,
-    "age_months": 155.6,
-    "months_since_last": 0.0
+    "commits": 3651,
+    "fix_commits": 739,
+    "authors": 348,
+    "age_months": 155.8,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 32.98,
+   "knowledge_pm": 33.04,
    "rediscover_pm": 1.98,
    "replacement_pm": 10.15,
    "leverage": 1.02,
    "obsolescence": 0.95,
-   "value_pm": 9.79,
-   "value_cost": 110233,
+   "value_pm": 9.8,
+   "value_cost": 110274,
    "knowledge_at_risk": 0.2,
    "assumptions": {
     "salary": 56286,
@@ -1233,26 +1233,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 91.4183,
+   "make_buy_ratio": 91.4941,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 12489.0,
+   "break_even_price_per_year": 12499.47,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 949152,
-     "input": 23728800,
-     "cached_input": 20169480
+     "output": 954513,
+     "input": 23862825,
+     "cached_input": 20283401
     },
-    "final_tokens": 316384,
-    "model_cost": 37.25,
-    "agent_hours": 10.55,
-    "human_days": 48.67,
-    "review_days": 7.09,
+    "final_tokens": 318171,
+    "model_cost": 37.46,
+    "agent_hours": 10.61,
+    "human_days": 48.71,
+    "review_days": 7.13,
     "rediscover_days": 41.58,
-    "calendar_days": 48.67,
-    "build_cost": 26125.09,
-    "yearly_cost": 3918.76,
-    "total_cost": 37881.37
+    "calendar_days": 48.71,
+    "build_cost": 26146.75,
+    "yearly_cost": 3922.01,
+    "total_cost": 37912.79
    },
    "buy": {
     "via": {

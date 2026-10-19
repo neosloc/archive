@@ -4,9 +4,9 @@
   "url": "https://github.com/alacritty/alacritty",
   "slug": "alacritty-alacritty",
   "host": "github.com",
-  "commit": "29dc55375da817d53540f4caefbe708703c57b07",
-  "committed_at": "2026-10-05T12:48:26+00:00",
-  "evaluated_at": "2026-10-07T14:29:30+00:00",
+  "commit": "542147067dd016fc5f49120ef0ba605a98a4e3a7",
+  "committed_at": "2026-10-16T05:47:54Z",
+  "evaluated_at": "2026-10-19T09:57:37+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 334,
    "source_files": 91,
-   "source_tokens": 285323,
+   "source_tokens": 285325,
    "languages": {
-    "rust": 283197,
+    "rust": 283199,
     "shell": 2126
    },
    "git": true
@@ -1006,7 +1006,7 @@
     ],
     "metrics": {
      "source_files": 91,
-     "source_tokens": 285323,
+     "source_tokens": 285325,
      "test_files": 2,
      "test_tokens": 2498,
      "test_ratio": 0.01,
@@ -1021,7 +1021,7 @@
      ],
      "largest_module": {
       "path": "alacritty_terminal/src/term",
-      "tokens": 42363
+      "tokens": 42365
      },
      "typed_ratio": 0.99,
      "python_functions": 0,
@@ -1032,7 +1032,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 283197,
+      "rust": 283199,
       "shell": 2126
      }
     },
@@ -1150,19 +1150,19 @@
    "agent_factor": 0.38,
    "reproduce_pm": 25.14,
    "history": {
-    "commits": 2455,
-    "fix_commits": 771,
+    "commits": 2456,
+    "fix_commits": 772,
     "authors": 496,
-    "age_months": 127.4,
+    "age_months": 127.8,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 27.7,
-   "rediscover_pm": 17.45,
-   "replacement_pm": 42.59,
+   "knowledge_pm": 27.72,
+   "rediscover_pm": 17.46,
+   "replacement_pm": 42.61,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 38.57,
-   "value_cost": 434146,
+   "value_pm": 38.58,
+   "value_cost": 434306,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -1176,26 +1176,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 694.1993,
+   "make_buy_ratio": 694.5791,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 99376.48,
+   "break_even_price_per_year": 99430.92,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1166685,
-     "input": 29167125,
-     "cached_input": 24792056
+     "output": 1166693,
+     "input": 29167325,
+     "cached_input": 24792226
     },
-    "final_tokens": 388895,
+    "final_tokens": 388897,
     "model_cost": 45.79,
     "agent_hours": 12.96,
-    "human_days": 384.03,
+    "human_days": 384.24,
     "review_days": 17.58,
-    "rediscover_days": 366.45,
-    "calendar_days": 384.03,
-    "build_cost": 205903.12,
-    "yearly_cost": 30885.47,
-    "total_cost": 298559.53
+    "rediscover_days": 366.66,
+    "calendar_days": 384.24,
+    "build_cost": 206015.76,
+    "yearly_cost": 30902.36,
+    "total_cost": 298722.85
    },
    "buy": {
     "via": {
