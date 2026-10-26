@@ -4,9 +4,9 @@
   "url": "https://github.com/pydantic/pydantic",
   "slug": "pydantic-pydantic",
   "host": "github.com",
-  "commit": "5adfeaaaea947f81f0f01868604f219084ec151a",
-  "committed_at": "2026-10-15T14:13:37Z",
-  "evaluated_at": "2026-10-19T09:56:15+00:00",
+  "commit": "2d39ff8c492c8aa71851b2df3989c9752e5c0f81",
+  "committed_at": "2026-10-26T10:57:37+01:00",
+  "evaluated_at": "2026-10-26T10:09:37+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,11 +15,11 @@
   "inventory": {
    "files": 850,
    "source_files": 261,
-   "source_tokens": 954944,
+   "source_tokens": 956774,
    "languages": {
-    "python": 622403,
-    "rust": 331256,
-    "javascript": 810,
+    "python": 623122,
+    "rust": 332085,
+    "javascript": 1092,
     "shell": 475
    },
    "git": true
@@ -598,6 +598,10 @@
           "detail": "6 matches"
          },
          {
+          "path": "pydantic-core/wasm-preview/worker.js",
+          "detail": "5 matches"
+         },
+         {
           "path": "pydantic/deprecated/class_validators.py",
           "detail": "5 matches"
          },
@@ -707,10 +711,6 @@
          },
          {
           "path": "pydantic-core/python/pydantic_core/core_schema.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic-core/wasm-preview/worker.js",
           "detail": "1 match"
          },
          {
@@ -1036,9 +1036,9 @@
     ],
     "metrics": {
      "source_files": 261,
-     "source_tokens": 954944,
+     "source_tokens": 956774,
      "test_files": 339,
-     "test_tokens": 960481,
+     "test_tokens": 964245,
      "test_ratio": 1.01,
      "modules": 22,
      "modules_within_budget": 0.59,
@@ -1056,12 +1056,12 @@
      ],
      "largest_module": {
       "path": "pydantic",
-      "tokens": 196465
+      "tokens": 196520
      },
      "typed_ratio": 0.99,
-     "python_functions": 2128,
-     "python_annotated": 2101,
-     "import_edges": 587,
+     "python_functions": 2132,
+     "python_annotated": 2105,
+     "import_edges": 588,
      "import_graph": true,
      "max_fan_out": 32,
      "import_cycles": 3,
@@ -1116,9 +1116,9 @@
       "pydantic/v1/validators.py"
      ],
      "languages": {
-      "python": 622403,
-      "rust": 331256,
-      "javascript": 810,
+      "python": 623122,
+      "rust": 332085,
+      "javascript": 1092,
       "shell": 475
      }
     },
@@ -1242,18 +1242,18 @@
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.95,
+    "size_factor": 1.96,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 79.84,
+   "ksloc": 79.89,
    "classic": {
-    "person_months": 238.52,
+    "person_months": 238.68,
     "schedule_months": 20.0,
-    "cost": 2685037
+    "cost": 2686838
    },
    "capture": {
     "tests": 1.0,
@@ -1262,21 +1262,21 @@
     "capture": 1.0
    },
    "agent_factor": 0.1,
-   "reproduce_pm": 23.85,
+   "reproduce_pm": 23.87,
    "history": {
-    "commits": 5804,
-    "fix_commits": 1222,
-    "authors": 837,
-    "age_months": 113.4,
-    "months_since_last": 0.1
+    "commits": 5825,
+    "fix_commits": 1230,
+    "authors": 841,
+    "age_months": 113.7,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 53.46,
+   "knowledge_pm": 53.73,
    "rediscover_pm": 0.0,
-   "replacement_pm": 23.85,
+   "replacement_pm": 23.87,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 21.6,
-   "value_cost": 243122,
+   "value_pm": 21.61,
+   "value_cost": 243285,
    "knowledge_at_risk": 0.0,
    "assumptions": {
     "salary": 56286,
@@ -1290,26 +1290,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 289.8036,
+   "make_buy_ratio": 290.65,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 9999.72,
+   "break_even_price_per_year": 10029.03,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5746275,
-     "input": 143656875,
-     "cached_input": 122108343
+     "output": 5763057,
+     "input": 144076425,
+     "cached_input": 122464961
     },
-    "final_tokens": 1915425,
-    "model_cost": 225.54,
-    "agent_hours": 63.85,
-    "human_days": 38.31,
-    "review_days": 38.31,
+    "final_tokens": 1921019,
+    "model_cost": 226.2,
+    "agent_hours": 64.03,
+    "human_days": 38.42,
+    "review_days": 38.42,
     "rediscover_days": 0.0,
-    "calendar_days": 38.31,
-    "build_cost": 20760.72,
-    "yearly_cost": 3114.11,
-    "total_cost": 30103.05
+    "calendar_days": 38.42,
+    "build_cost": 20821.35,
+    "yearly_cost": 3123.2,
+    "total_cost": 30190.96
    },
    "buy": {
     "via": {

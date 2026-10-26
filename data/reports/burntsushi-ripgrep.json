@@ -4,20 +4,20 @@
   "url": "https://github.com/BurntSushi/ripgrep",
   "slug": "burntsushi-ripgrep",
   "host": "github.com",
-  "commit": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
-  "committed_at": "2026-08-04T10:00:08-04:00",
-  "evaluated_at": "2026-10-07T14:29:04+00:00",
+  "commit": "6892bc2b7efe5909cbbeec8f757ed2c4c76b1d30",
+  "committed_at": "2026-10-23T16:00:21-04:00",
+  "evaluated_at": "2026-10-26T10:10:58+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/BurntSushi/ripgrep",
   "inventory": {
-   "files": 236,
-   "source_files": 93,
-   "source_tokens": 421827,
+   "files": 225,
+   "source_files": 88,
+   "source_tokens": 416113,
    "languages": {
-    "rust": 420725,
+    "rust": 415011,
     "shell": 853,
     "ruby": 201,
     "lua": 48
@@ -183,10 +183,6 @@
           "detail": "Rust library crate"
          },
          {
-          "path": "crates/index/src/lib.rs",
-          "detail": "Rust library crate"
-         },
-         {
           "path": "crates/matcher/src/lib.rs",
           "detail": "Rust library crate"
          },
@@ -232,10 +228,6 @@
           "detail": "pub items"
          },
          {
-          "path": "crates/index/src/lib.rs",
-          "detail": "pub items"
-         },
-         {
           "path": "crates/matcher/src/lib.rs",
           "detail": "pub items"
          },
@@ -278,10 +270,6 @@
          },
          {
           "path": "crates/ignore/src/lib.rs",
-          "detail": "statically typed language"
-         },
-         {
-          "path": "crates/index/src/lib.rs",
           "detail": "statically typed language"
          },
          {
@@ -530,7 +518,7 @@
          },
          {
           "path": "crates/core/main.rs",
-          "detail": "16 matches"
+          "detail": "15 matches"
          },
          {
           "path": "ci/utils.sh",
@@ -713,10 +701,6 @@
           "detail": "Rust library crate"
          },
          {
-          "path": "crates/index/src/lib.rs",
-          "detail": "Rust library crate"
-         },
-         {
           "path": "crates/matcher/src/lib.rs",
           "detail": "Rust library crate"
          },
@@ -759,10 +743,6 @@
          },
          {
           "path": "crates/ignore/src/lib.rs",
-          "detail": "package manifest"
-         },
-         {
-          "path": "crates/index/src/lib.rs",
           "detail": "package manifest"
          },
          {
@@ -927,7 +907,7 @@
          },
          {
           "path": "crates/core/main.rs",
-          "detail": "16 matches"
+          "detail": "15 matches"
          },
          {
           "path": "ci/utils.sh",
@@ -1101,26 +1081,26 @@
      }
     ],
     "metrics": {
-     "source_files": 93,
-     "source_tokens": 421827,
-     "test_files": 18,
-     "test_tokens": 53575,
+     "source_files": 88,
+     "source_tokens": 416113,
+     "test_files": 15,
+     "test_tokens": 52267,
      "test_ratio": 0.13,
-     "modules": 22,
+     "modules": 21,
      "modules_within_budget": 0.86,
      "oversized_files": [
       "crates/core/flags/defs.rs",
       "crates/printer/src/standard.rs",
       "crates/ignore/src/walk.rs",
       "crates/globset/src/glob.rs",
-      "crates/core/flags/hiargs.rs",
       "crates/ignore/src/dir.rs",
-      "crates/searcher/src/searcher/glue.rs",
-      "crates/ignore/src/incremental.rs"
+      "crates/core/flags/hiargs.rs",
+      "crates/ignore/src/incremental.rs",
+      "crates/searcher/src/searcher/glue.rs"
      ],
      "largest_module": {
       "path": "crates/core/flags",
-      "tokens": 91472
+      "tokens": 88287
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -1131,7 +1111,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 420725,
+      "rust": 415011,
       "shell": 853,
       "ruby": 201,
       "lua": 48
@@ -1159,7 +1139,7 @@
          },
          {
           "path": "crates/ignore/tests/gitignore_matched_path_or_any_parents_tests.rs",
-          "detail": "18 test files"
+          "detail": "15 test files"
          }
         ],
         "note": ""
@@ -1216,55 +1196,55 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 18.8,
+   "retrofit_person_days": 18.7,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.0,
     "ergonomics": 1.9,
     "embeddability": 1.3,
-    "extensibility": 7.8,
+    "extensibility": 7.7,
     "observability": 2.6,
     "legibility": 5.2
    },
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.3,
+    "size_factor": 1.29,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 34.78,
+   "ksloc": 34.03,
    "classic": {
-    "person_months": 99.68,
-    "schedule_months": 14.4,
-    "cost": 1122116
+    "person_months": 97.43,
+    "schedule_months": 14.2,
+    "cost": 1096824
    },
    "capture": {
     "tests": 0.26,
     "contract": 1.0,
-    "docs": 0.96,
-    "capture": 0.62
+    "docs": 0.99,
+    "capture": 0.63
    },
    "agent_factor": 0.27,
-   "reproduce_pm": 27.01,
+   "reproduce_pm": 25.97,
    "history": {
-    "commits": 2225,
-    "fix_commits": 301,
-    "authors": 497,
-    "age_months": 125.2,
-    "months_since_last": 2.1
+    "commits": 2236,
+    "fix_commits": 302,
+    "authors": 501,
+    "age_months": 127.8,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 17.15,
-   "rediscover_pm": 6.52,
-   "replacement_pm": 33.53,
+   "knowledge_pm": 17.22,
+   "rediscover_pm": 6.37,
+   "replacement_pm": 32.34,
    "leverage": 1.02,
    "obsolescence": 0.95,
-   "value_pm": 32.42,
-   "value_cost": 364966,
-   "knowledge_at_risk": 0.19,
+   "value_pm": 31.27,
+   "value_cost": 352002,
+   "knowledge_at_risk": 0.2,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -1277,26 +1257,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 3404.8679,
+   "make_buy_ratio": 3325.4901,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 40642.09,
+   "break_even_price_per_year": 39694.32,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1693213,
-     "input": 42330325,
-     "cached_input": 35980776
+     "output": 1669029,
+     "input": 41725725,
+     "cached_input": 35466866
     },
-    "final_tokens": 564404,
-    "model_cost": 66.46,
-    "agent_hours": 18.81,
-    "human_days": 156.79,
-    "review_days": 19.87,
-    "rediscover_days": 136.92,
-    "calendar_days": 156.79,
-    "build_cost": 84111.78,
-    "yearly_cost": 12616.77,
-    "total_cost": 121962.08
+    "final_tokens": 556343,
+    "model_cost": 65.51,
+    "agent_hours": 18.54,
+    "human_days": 153.13,
+    "review_days": 19.36,
+    "rediscover_days": 133.77,
+    "calendar_days": 153.13,
+    "build_cost": 82150.88,
+    "yearly_cost": 12322.63,
+    "total_cost": 119118.77
    },
    "buy": {
     "via": {

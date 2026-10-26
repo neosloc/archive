@@ -1,7 +1,7 @@
 {
  "title": "ShareX/ShareX",
  "slug": "sharex-sharex",
- "date": "2026-10-19T09:58:35+00:00",
+ "date": "2026-10-26T10:12:15+00:00",
  "repo_url": "https://github.com/ShareX/ShareX",
  "index": 0.29,
  "assessed": 7,
@@ -9,12 +9,12 @@
   "desktop"
  ],
  "verdict": "buy",
- "make_buy_ratio": 919.3487,
+ "make_buy_ratio": 922.7169,
  "languages": [
   "csharp"
  ],
- "cocomo_cost": 6215515,
- "cocomo_pm": 552.14,
- "value_cost": 2715797,
- "value_pm": 241.25
+ "cocomo_cost": 6248156,
+ "cocomo_pm": 555.04,
+ "value_cost": 2729091,
+ "value_pm": 242.43
 }

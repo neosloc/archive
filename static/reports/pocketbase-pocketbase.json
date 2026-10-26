@@ -4,21 +4,21 @@
   "url": "https://github.com/pocketbase/pocketbase",
   "slug": "pocketbase-pocketbase",
   "host": "github.com",
-  "commit": "6f370ea741f33adf889eef02e3c1b884a47aa522",
-  "committed_at": "2026-10-08T19:21:49+03:00",
-  "evaluated_at": "2026-10-12T12:02:54+00:00",
+  "commit": "9d281ccaba65f2686eb7b0b614ccda72d1116a1b",
+  "committed_at": "2026-10-23T13:44:14+03:00",
+  "evaluated_at": "2026-10-26T10:11:21+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/pocketbase/pocketbase",
   "inventory": {
-   "files": 829,
-   "source_files": 448,
-   "source_tokens": 935043,
+   "files": 833,
+   "source_files": 450,
+   "source_tokens": 938810,
    "languages": {
-    "go": 411732,
-    "javascript": 322669,
+    "go": 415500,
+    "javascript": 322668,
     "typescript": 200642
    },
    "git": true
@@ -273,7 +273,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "294 semver tags, latest v0.22.56",
+      "detail": "296 semver tags, latest v0.40.6",
       "path": null,
       "weight": 1
      },
@@ -303,7 +303,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "294 semver tags, latest v0.22.56"
+          "detail": "296 semver tags, latest v0.40.6"
          }
         ],
         "note": ""
@@ -1129,6 +1129,10 @@
           "detail": "1 match"
          },
          {
+          "path": "plugins/update/update.go",
+          "detail": "1 match"
+         },
+         {
           "path": "tools/filesystem/internal/s3blob/s3/uploader.go",
           "detail": "1 match"
          },
@@ -1634,6 +1638,10 @@
           "detail": "1 match"
          },
          {
+          "path": "plugins/update/update.go",
+          "detail": "1 match"
+         },
+         {
           "path": "tools/filesystem/internal/s3blob/s3/uploader.go",
           "detail": "1 match"
          },
@@ -1760,12 +1768,12 @@
      }
     ],
     "metrics": {
-     "source_files": 448,
-     "source_tokens": 935043,
-     "test_files": 195,
-     "test_tokens": 496515,
+     "source_files": 450,
+     "source_tokens": 938810,
+     "test_files": 197,
+     "test_tokens": 497137,
      "test_ratio": 0.53,
-     "modules": 71,
+     "modules": 72,
      "modules_within_budget": 0.9,
      "oversized_files": [
       "plugins/jsvm/internal/types/generated/types.d.ts",
@@ -1778,7 +1786,7 @@
       "path": "plugins/jsvm/internal/types/generated",
       "tokens": 200661
      },
-     "typed_ratio": 0.65,
+     "typed_ratio": 0.66,
      "python_functions": 0,
      "python_annotated": 0,
      "import_edges": 117,
@@ -1787,13 +1795,13 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 411732,
-      "javascript": 322669,
+      "go": 415500,
+      "javascript": 322668,
       "typescript": 200642
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (90% of modules fit 32k tokens; 5 files over 12k; 65% of code is typed (< 70%))"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (90% of modules fit 32k tokens; 5 files over 12k; 66% of code is typed (< 70%))"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1814,7 +1822,7 @@
          },
          {
           "path": "apis/backup_test.go",
-          "detail": "195 test files"
+          "detail": "197 test files"
          }
         ],
         "note": ""
@@ -1842,7 +1850,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "90% of modules fit 32k tokens; 5 files over 12k; 65% of code is typed (< 70%)"
+        "note": "90% of modules fit 32k tokens; 5 files over 12k; 66% of code is typed (< 70%)"
        },
        {
         "level": 4,
@@ -1863,7 +1871,7 @@
    "integrability_index": 2.1,
    "assessed_dimensions": 10,
    "not_applicable": [],
-   "retrofit_person_days": 34.8,
+   "retrofit_person_days": 34.9,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 1.9,
@@ -1874,23 +1882,23 @@
     "embeddability": 0.0,
     "extensibility": 11.6,
     "observability": 3.9,
-    "legibility": 7.7
+    "legibility": 7.8
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.93,
+    "size_factor": 1.94,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 75.44,
+   "ksloc": 75.84,
    "classic": {
-    "person_months": 224.76,
+    "person_months": 226.01,
     "schedule_months": 19.6,
-    "cost": 2530158
+    "cost": 2544280
    },
    "capture": {
     "tests": 1.0,
@@ -1899,21 +1907,21 @@
     "capture": 0.77
    },
    "agent_factor": 0.2,
-   "reproduce_pm": 45.74,
+   "reproduce_pm": 45.99,
    "history": {
-    "commits": 2420,
-    "fix_commits": 375,
+    "commits": 2432,
+    "fix_commits": 378,
     "authors": 45,
-    "age_months": 51.1,
+    "age_months": 51.6,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 19.6,
-   "rediscover_pm": 4.51,
-   "replacement_pm": 50.25,
+   "knowledge_pm": 19.72,
+   "rediscover_pm": 4.54,
+   "replacement_pm": 50.53,
    "leverage": 1.01,
    "obsolescence": 0.95,
-   "value_pm": 48.33,
-   "value_cost": 544070,
+   "value_pm": 48.6,
+   "value_cost": 547133,
    "knowledge_at_risk": 0.09,
    "assumptions": {
     "salary": 56286,
@@ -1927,26 +1935,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 257.1443,
+   "make_buy_ratio": 258.5691,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 35475.62,
+   "break_even_price_per_year": 35672.96,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 4359191,
-     "input": 108979775,
-     "cached_input": 92632808
+     "output": 4372618,
+     "input": 109315450,
+     "cached_input": 92918132
     },
-    "final_tokens": 1453063,
-    "model_cost": 171.1,
-    "agent_hours": 48.44,
-    "human_days": 137.14,
-    "review_days": 42.43,
-    "rediscover_days": 94.71,
-    "calendar_days": 137.14,
-    "build_cost": 73684.38,
-    "yearly_cost": 11052.66,
-    "total_cost": 106842.36
+    "final_tokens": 1457539,
+    "model_cost": 171.63,
+    "agent_hours": 48.58,
+    "human_days": 137.9,
+    "review_days": 42.56,
+    "rediscover_days": 95.34,
+    "calendar_days": 137.9,
+    "build_cost": 74092.68,
+    "yearly_cost": 11113.9,
+    "total_cost": 107434.38
    },
    "buy": {
     "via": {

@@ -4,20 +4,20 @@
   "url": "https://github.com/lysine-dev/okhttp",
   "slug": "lysine-dev-okhttp",
   "host": "github.com",
-  "commit": "aab431214cd0da8b74f6a288b6a2bb137a8d982e",
-  "committed_at": "2026-10-17T18:49:42+01:00",
-  "evaluated_at": "2026-10-19T09:57:58+00:00",
+  "commit": "c3179301fc7d0266c5bf154870c2b0b9da01e7e7",
+  "committed_at": "2026-10-22T13:26:52-04:00",
+  "evaluated_at": "2026-10-26T10:11:40+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/lysine-dev/okhttp",
   "inventory": {
-   "files": 841,
-   "source_files": 358,
-   "source_tokens": 478691,
+   "files": 843,
+   "source_files": 359,
+   "source_tokens": 479223,
    "languages": {
-    "kotlin": 476471,
+    "kotlin": 477003,
     "java": 1460,
     "shell": 760
    },
@@ -241,10 +241,10 @@
      }
     ],
     "metrics": {
-     "source_files": 358,
-     "source_tokens": 478691,
-     "test_files": 215,
-     "test_tokens": 624822,
+     "source_files": 359,
+     "source_tokens": 479223,
+     "test_files": 216,
+     "test_tokens": 626860,
      "test_ratio": 1.31,
      "modules": 92,
      "modules_within_budget": 0.97,
@@ -254,7 +254,7 @@
      ],
      "largest_module": {
       "path": "okhttp/src/commonJvmAndroid/kotlin/okhttp3",
-      "tokens": 118893
+      "tokens": 118894
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -265,7 +265,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "kotlin": 476471,
+      "kotlin": 477003,
       "java": 1460,
       "shell": 760
      }
@@ -292,7 +292,7 @@
          },
          {
           "path": "android-test-app/src/androidTest/kotlin/okhttp/android/testapp/IdnaTest.kt",
-          "detail": "215 test files"
+          "detail": "216 test files"
          }
         ],
         "note": ""
@@ -373,11 +373,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 38.13,
+   "ksloc": 38.16,
    "classic": {
-    "person_months": 109.79,
+    "person_months": 109.88,
     "schedule_months": 14.9,
-    "cost": 1235969
+    "cost": 1236922
    },
    "capture": {
     "tests": 1.0,
@@ -386,21 +386,21 @@
     "capture": 0.75
    },
    "agent_factor": 0.21,
-   "reproduce_pm": 23.33,
+   "reproduce_pm": 23.35,
    "history": {
-    "commits": 4584,
+    "commits": 4595,
     "fix_commits": 509,
-    "authors": 368,
-    "age_months": 184.8,
+    "authors": 369,
+    "age_months": 184.9,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 33.1,
-   "rediscover_pm": 8.28,
-   "replacement_pm": 31.61,
+   "knowledge_pm": 33.16,
+   "rediscover_pm": 8.29,
+   "replacement_pm": 31.64,
    "leverage": 0.83,
    "obsolescence": 0.95,
-   "value_pm": 25.02,
-   "value_cost": 281672,
+   "value_pm": 25.05,
+   "value_cost": 281955,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -414,26 +414,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 41.9902,
+   "make_buy_ratio": 42.0259,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 52503.41,
+   "break_even_price_per_year": 52577.35,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3346440,
-     "input": 83661000,
-     "cached_input": 71111850
+     "output": 3354190,
+     "input": 83854750,
+     "cached_input": 71276537
     },
-    "final_tokens": 1115480,
-    "model_cost": 131.35,
-    "agent_hours": 37.18,
-    "human_days": 207.34,
-    "review_days": 33.46,
-    "rediscover_days": 173.88,
-    "calendar_days": 207.34,
-    "build_cost": 111277.82,
-    "yearly_cost": 16691.67,
-    "total_cost": 161352.84
+    "final_tokens": 1118063,
+    "model_cost": 131.65,
+    "agent_hours": 37.27,
+    "human_days": 207.63,
+    "review_days": 33.54,
+    "rediscover_days": 174.09,
+    "calendar_days": 207.63,
+    "build_cost": 111432.24,
+    "yearly_cost": 16714.84,
+    "total_cost": 161576.75
    },
    "buy": {
     "via": {
@@ -442,21 +442,21 @@
     },
     "adoption_minutes": {
      "install": 60,
-     "first_use": 3321.0,
-     "total": 3381.0
+     "first_use": 3322.84,
+     "total": 3382.84
     },
     "tokens": {
-     "output": 422624,
-     "input": 10565600,
-     "cached_input": 8980760
+     "output": 422855,
+     "input": 10571375,
+     "cached_input": 8985668
     },
-    "model_cost": 16.59,
+    "model_cost": 16.6,
     "upgrade_minutes_per_year": 15,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 3792.37,
+    "fixed_cost": 3794.44,
     "yearly_cost": 16.75,
-    "total_cost": 3842.63
+    "total_cost": 3844.7
    },
    "assumptions": {
     "day_rate": 536.05,

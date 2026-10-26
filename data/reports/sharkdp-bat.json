@@ -4,16 +4,16 @@
   "url": "https://github.com/sharkdp/bat",
   "slug": "sharkdp-bat",
   "host": "github.com",
-  "commit": "f748c1a467ae161682849949a7d036ab8362f9ba",
-  "committed_at": "2026-10-17T14:57:57+03:00",
-  "evaluated_at": "2026-10-19T09:57:19+00:00",
+  "commit": "a9aa73d215455a479f072da75dd39f19826acfea",
+  "committed_at": "2026-10-20T22:18:09+03:00",
+  "evaluated_at": "2026-10-26T10:10:50+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/sharkdp/bat",
   "inventory": {
-   "files": 909,
+   "files": 911,
    "source_files": 43,
    "source_tokens": 106006,
    "languages": {
@@ -544,8 +544,8 @@
     "metrics": {
      "source_files": 43,
      "source_tokens": 106006,
-     "test_files": 87,
-     "test_tokens": 341718,
+     "test_files": 89,
+     "test_tokens": 341817,
      "test_ratio": 3.22,
      "modules": 7,
      "modules_within_budget": 0.86,
@@ -589,7 +589,7 @@
          },
          {
           "path": "tests/assets.rs",
-          "detail": "87 test files"
+          "detail": "89 test files"
          }
         ],
         "note": ""
@@ -681,19 +681,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 3.29,
    "history": {
-    "commits": 3515,
-    "fix_commits": 424,
-    "authors": 518,
-    "age_months": 101.9,
-    "months_since_last": 0.1
+    "commits": 3519,
+    "fix_commits": 426,
+    "authors": 520,
+    "age_months": 102.0,
+    "months_since_last": 0.2
    },
-   "knowledge_pm": 26.05,
-   "rediscover_pm": 1.56,
+   "knowledge_pm": 26.12,
+   "rediscover_pm": 1.57,
    "replacement_pm": 4.85,
    "leverage": 0.95,
    "obsolescence": 0.95,
    "value_pm": 4.36,
-   "value_cost": 49076,
+   "value_cost": 49112,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,
@@ -707,26 +707,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 744.4464,
+   "make_buy_ratio": 748.1292,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 11100.47,
+   "break_even_price_per_year": 11155.46,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1345080,
-     "input": 33627000,
-     "cached_input": 28582950
+     "output": 1345377,
+     "input": 33634425,
+     "cached_input": 28589261
     },
-    "final_tokens": 448360,
-    "model_cost": 52.79,
+    "final_tokens": 448459,
+    "model_cost": 52.81,
     "agent_hours": 14.95,
-    "human_days": 42.8,
-    "review_days": 10.04,
-    "rediscover_days": 32.76,
-    "calendar_days": 42.8,
-    "build_cost": 22997.38,
-    "yearly_cost": 3449.61,
-    "total_cost": 33346.2
+    "human_days": 43.02,
+    "review_days": 10.05,
+    "rediscover_days": 32.97,
+    "calendar_days": 43.02,
+    "build_cost": 23111.15,
+    "yearly_cost": 3466.67,
+    "total_cost": 33511.17
    },
    "buy": {
     "via": {

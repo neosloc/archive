@@ -4,9 +4,9 @@
   "url": "https://github.com/jqlang/jq",
   "slug": "jqlang-jq",
   "host": "github.com",
-  "commit": "633ae6058a05b0240c798f6b7b60d3b0a87cab8e",
-  "committed_at": "2026-10-16T21:50:47+09:00",
-  "evaluated_at": "2026-10-19T09:57:55+00:00",
+  "commit": "ac35c7dcbb991fa0f3c3196dd00ca479211e9847",
+  "committed_at": "2026-10-25T14:40:52+09:00",
+  "evaluated_at": "2026-10-26T10:11:39+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 401,
    "source_files": 46,
-   "source_tokens": 195002,
+   "source_tokens": 195438,
    "languages": {
-    "c": 193945,
+    "c": 194381,
     "shell": 807,
     "python": 250
    },
@@ -242,7 +242,7 @@
     ],
     "metrics": {
      "source_files": 46,
-     "source_tokens": 195002,
+     "source_tokens": 195438,
      "test_files": 8,
      "test_tokens": 3372,
      "test_ratio": 0.02,
@@ -257,7 +257,7 @@
      ],
      "largest_module": {
       "path": "src",
-      "tokens": 193945
+      "tokens": 194381
      },
      "typed_ratio": 0.99,
      "python_functions": 2,
@@ -268,7 +268,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "c": 193945,
+      "c": 194381,
       "shell": 807,
       "python": 250
      }
@@ -380,9 +380,9 @@
     "embeddability",
     "observability"
    ],
-   "retrofit_person_days": 16.7,
+   "retrofit_person_days": 16.8,
    "retrofit_by_dimension": {
-    "interface": 7.9,
+    "interface": 8.0,
     "extensibility": 5.3,
     "legibility": 3.5
    },
@@ -396,11 +396,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 18.59,
+   "ksloc": 18.62,
    "classic": {
-    "person_months": 51.63,
+    "person_months": 51.74,
     "schedule_months": 11.2,
-    "cost": 581247
+    "cost": 582429
    },
    "capture": {
     "tests": 0.04,
@@ -409,21 +409,21 @@
     "capture": 0.27
    },
    "agent_factor": 0.43,
-   "reproduce_pm": 22.12,
+   "reproduce_pm": 22.17,
    "history": {
-    "commits": 1878,
-    "fix_commits": 580,
-    "authors": 271,
-    "age_months": 170.9,
-    "months_since_last": 0.1
+    "commits": 1891,
+    "fix_commits": 582,
+    "authors": 278,
+    "age_months": 171.2,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 20.99,
-   "rediscover_pm": 15.32,
-   "replacement_pm": 37.45,
+   "knowledge_pm": 21.09,
+   "rediscover_pm": 15.4,
+   "replacement_pm": 37.57,
    "leverage": 0.83,
    "obsolescence": 0.95,
-   "value_pm": 29.65,
-   "value_cost": 333731,
+   "value_pm": 29.74,
+   "value_cost": 334815,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -437,26 +437,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 104.344,
+   "make_buy_ratio": 104.765,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 85950.78,
+   "break_even_price_per_year": 86392.83,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 803213,
-     "input": 20080325,
-     "cached_input": 17068276
+     "output": 805009,
+     "input": 20125225,
+     "cached_input": 17106441
     },
-    "final_tokens": 267737,
-    "model_cost": 31.53,
-    "agent_hours": 8.92,
-    "human_days": 334.89,
-    "review_days": 13.17,
-    "rediscover_days": 321.72,
-    "calendar_days": 334.89,
-    "build_cost": 179549.96,
-    "yearly_cost": 26932.49,
-    "total_cost": 260347.44
+    "final_tokens": 268336,
+    "model_cost": 31.6,
+    "agent_hours": 8.94,
+    "human_days": 336.6,
+    "review_days": 13.2,
+    "rediscover_days": 323.4,
+    "calendar_days": 336.6,
+    "build_cost": 180466.38,
+    "yearly_cost": 27069.96,
+    "total_cost": 261676.25
    },
    "buy": {
     "via": {
@@ -465,21 +465,21 @@
     },
     "adoption_minutes": {
      "install": 60,
-     "first_use": 2119.63,
-     "total": 2179.63
+     "first_use": 2122.0,
+     "total": 2182.0
     },
     "tokens": {
-     "output": 272454,
-     "input": 6811350,
-     "cached_input": 5789647
+     "output": 272750,
+     "input": 6818750,
+     "cached_input": 5795937
     },
-    "model_cost": 10.69,
+    "model_cost": 10.71,
     "upgrade_minutes_per_year": 15,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 2444.83,
+    "fixed_cost": 2447.49,
     "yearly_cost": 16.75,
-    "total_cost": 2495.09
+    "total_cost": 2497.75
    },
    "assumptions": {
     "day_rate": 536.05,

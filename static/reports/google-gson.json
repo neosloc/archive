@@ -4,9 +4,9 @@
   "url": "https://github.com/google/gson",
   "slug": "google-gson",
   "host": "github.com",
-  "commit": "e2292f9c9f2e07a4791827e8eea34aa7d80545d6",
-  "committed_at": "2026-10-11T14:06:38-07:00",
-  "evaluated_at": "2026-10-12T12:02:53+00:00",
+  "commit": "57731049da3e415be3d5d34db1ca3b80f3c73810",
+  "committed_at": "2026-10-24T05:10:10-07:00",
+  "evaluated_at": "2026-10-26T10:11:29+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 313,
    "source_files": 122,
-   "source_tokens": 208980,
+   "source_tokens": 208985,
    "languages": {
-    "java": 208980
+    "java": 208985
    },
    "git": true
   },
@@ -234,7 +234,7 @@
     ],
     "metrics": {
      "source_files": 122,
-     "source_tokens": 208980,
+     "source_tokens": 208985,
      "test_files": 142,
      "test_tokens": 296430,
      "test_ratio": 1.42,
@@ -258,7 +258,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "java": 208980
+      "java": 208985
      }
     },
     "gaps": [
@@ -362,19 +362,19 @@
    "agent_factor": 0.24,
    "reproduce_pm": 8.77,
    "history": {
-    "commits": 2107,
-    "fix_commits": 317,
+    "commits": 2113,
+    "fix_commits": 318,
     "authors": 202,
-    "age_months": 217.3,
-    "months_since_last": 0.0
+    "age_months": 217.7,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 16.88,
-   "rediscover_pm": 5.4,
-   "replacement_pm": 14.17,
+   "knowledge_pm": 16.93,
+   "rediscover_pm": 5.42,
+   "replacement_pm": 14.19,
    "leverage": 0.79,
    "obsolescence": 0.9,
-   "value_pm": 10.1,
-   "value_cost": 113687,
+   "value_pm": 10.11,
+   "value_cost": 113815,
    "knowledge_at_risk": 0.38,
    "assumptions": {
     "salary": 56286,
@@ -388,26 +388,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 39.2758,
+   "make_buy_ratio": 39.402,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 32902.18,
+   "break_even_price_per_year": 33011.03,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1536292,
-     "input": 38407300,
-     "cached_input": 32646205
+     "output": 1536307,
+     "input": 38407675,
+     "cached_input": 32646523
     },
-    "final_tokens": 512097,
+    "final_tokens": 512102,
     "model_cost": 60.3,
     "agent_hours": 17.07,
-    "human_days": 130.2,
+    "human_days": 130.62,
     "review_days": 16.8,
-    "rediscover_days": 113.4,
-    "calendar_days": 130.2,
-    "build_cost": 69851.98,
-    "yearly_cost": 10477.8,
-    "total_cost": 101285.37
+    "rediscover_days": 113.82,
+    "calendar_days": 130.62,
+    "build_cost": 70077.21,
+    "yearly_cost": 10511.58,
+    "total_cost": 101611.96
    },
    "buy": {
     "via": {
@@ -416,21 +416,21 @@
     },
     "adoption_minutes": {
      "install": 60,
-     "first_use": 2194.29,
-     "total": 2254.29
+     "first_use": 2194.31,
+     "total": 2254.31
     },
     "tokens": {
-     "output": 281785,
-     "input": 7044625,
-     "cached_input": 5987931
+     "output": 281789,
+     "input": 7044725,
+     "cached_input": 5988016
     },
     "model_cost": 11.06,
     "upgrade_minutes_per_year": 15,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 2528.57,
+    "fixed_cost": 2528.6,
     "yearly_cost": 16.75,
-    "total_cost": 2578.83
+    "total_cost": 2578.86
    },
    "assumptions": {
     "day_rate": 536.05,

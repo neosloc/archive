@@ -4,9 +4,9 @@
   "url": "https://github.com/nats-io/nats-server",
   "slug": "nats-io-nats-server",
   "host": "github.com",
-  "commit": "b55d969381aa05a7a59c563797b454d1b6b5fa37",
-  "committed_at": "2026-10-15T15:16:27+09:00",
-  "evaluated_at": "2026-10-19T09:58:03+00:00",
+  "commit": "3c1afc6e52b9ded734d487fdd9caf6109a0dc9d6",
+  "committed_at": "2026-10-26T09:28:55Z",
+  "evaluated_at": "2026-10-26T10:11:32+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 599,
    "source_files": 130,
-   "source_tokens": 1149200,
+   "source_tokens": 1151087,
    "languages": {
-    "go": 1146658,
+    "go": 1148545,
     "shell": 2542
    },
    "git": true
@@ -1445,10 +1445,10 @@
     ],
     "metrics": {
      "source_files": 130,
-     "source_tokens": 1149200,
+     "source_tokens": 1151087,
      "test_files": 135,
-     "test_tokens": 2379081,
-     "test_ratio": 2.07,
+     "test_tokens": 2394501,
+     "test_ratio": 2.08,
      "modules": 21,
      "modules_within_budget": 0.95,
      "oversized_files": [
@@ -1477,7 +1477,7 @@
      ],
      "largest_module": {
       "path": "server",
-      "tokens": 1075464
+      "tokens": 1077351
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -1488,7 +1488,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 1146658,
+      "go": 1148545,
       "shell": 2542
      }
     },
@@ -1616,18 +1616,18 @@
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.14,
+    "size_factor": 2.15,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 113.5,
+   "ksloc": 113.73,
    "classic": {
-    "person_months": 345.09,
-    "schedule_months": 23.0,
-    "cost": 3884787
+    "person_months": 345.86,
+    "schedule_months": 23.1,
+    "cost": 3893413
    },
    "capture": {
     "tests": 1.0,
@@ -1636,21 +1636,21 @@
     "capture": 0.7
    },
    "agent_factor": 0.24,
-   "reproduce_pm": 81.1,
+   "reproduce_pm": 81.28,
    "history": {
-    "commits": 8642,
-    "fix_commits": 2519,
-    "authors": 284,
-    "age_months": 167.5,
+    "commits": 8678,
+    "fix_commits": 2530,
+    "authors": 290,
+    "age_months": 167.7,
     "months_since_last": 0.2
    },
-   "knowledge_pm": 93.59,
-   "rediscover_pm": 28.08,
-   "replacement_pm": 109.17,
+   "knowledge_pm": 93.99,
+   "rediscover_pm": 28.2,
+   "replacement_pm": 109.47,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 99.39,
-   "value_cost": 1118896,
+   "value_pm": 99.67,
+   "value_cost": 1121971,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -1664,26 +1664,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 669.7765,
+   "make_buy_ratio": 672.7043,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 182248.61,
+   "break_even_price_per_year": 183046.47,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 10688271,
-     "input": 267206775,
-     "cached_input": 227125758
+     "output": 10740361,
+     "input": 268509025,
+     "cached_input": 228232671
     },
-    "final_tokens": 3562757,
-    "model_cost": 419.51,
-    "agent_hours": 118.76,
-    "human_days": 703.69,
-    "review_days": 114.01,
-    "rediscover_days": 589.68,
-    "calendar_days": 703.69,
-    "build_cost": 377629.91,
-    "yearly_cost": 56644.49,
-    "total_cost": 547563.37
+    "final_tokens": 3580120,
+    "model_cost": 421.56,
+    "agent_hours": 119.34,
+    "human_days": 706.76,
+    "review_days": 114.56,
+    "rediscover_days": 592.2,
+    "calendar_days": 706.76,
+    "build_cost": 379280.64,
+    "yearly_cost": 56892.1,
+    "total_cost": 549956.93
    },
    "buy": {
     "via": {

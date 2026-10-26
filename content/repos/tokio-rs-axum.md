@@ -1,7 +1,7 @@
 {
  "title": "tokio-rs/axum",
  "slug": "tokio-rs-axum",
- "date": "2026-10-19T09:57:30+00:00",
+ "date": "2026-10-26T10:11:06+00:00",
  "repo_url": "https://github.com/tokio-rs/axum",
  "index": 1.4,
  "assessed": 10,
@@ -11,13 +11,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 129.0727,
+ "make_buy_ratio": 129.2721,
  "languages": [
   "rust",
   "javascript"
  ],
- "cocomo_cost": 669572,
- "cocomo_pm": 59.48,
- "value_cost": 215312,
+ "cocomo_cost": 669638,
+ "cocomo_pm": 59.49,
+ "value_cost": 215346,
  "value_pm": 19.13
 }

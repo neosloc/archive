@@ -4,9 +4,9 @@
   "url": "https://github.com/tokio-rs/axum",
   "slug": "tokio-rs-axum",
   "host": "github.com",
-  "commit": "fc78d5bcdb276bd6fb53cf2db55e91757eabb469",
-  "committed_at": "2026-10-15T14:07:14+02:00",
-  "evaluated_at": "2026-10-19T09:57:30+00:00",
+  "commit": "86aa6153e47b7862737acdcfe3a0eb3a162b939a",
+  "committed_at": "2026-10-20T01:20:00+09:00",
+  "evaluated_at": "2026-10-26T10:11:06+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 505,
    "source_files": 113,
-   "source_tokens": 268680,
+   "source_tokens": 268706,
    "languages": {
-    "rust": 268676,
+    "rust": 268702,
     "javascript": 4
    },
    "git": true
@@ -1748,7 +1748,7 @@
     ],
     "metrics": {
      "source_files": 113,
-     "source_tokens": 268680,
+     "source_tokens": 268706,
      "test_files": 130,
      "test_tokens": 35930,
      "test_ratio": 0.13,
@@ -1771,7 +1771,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 268676,
+      "rust": 268702,
       "javascript": 4
      }
     },
@@ -1875,9 +1875,9 @@
   "value": {
    "ksloc": 21.27,
    "classic": {
-    "person_months": 59.48,
+    "person_months": 59.49,
     "schedule_months": 11.8,
-    "cost": 669572
+    "cost": 669638
    },
    "capture": {
     "tests": 0.26,
@@ -1888,19 +1888,19 @@
    "agent_factor": 0.27,
    "reproduce_pm": 15.85,
    "history": {
-    "commits": 2009,
+    "commits": 2010,
     "fix_commits": 297,
-    "authors": 470,
-    "age_months": 64.5,
-    "months_since_last": 0.1
+    "authors": 471,
+    "age_months": 64.7,
+    "months_since_last": 0.2
    },
    "knowledge_pm": 15.99,
-   "rediscover_pm": 5.91,
+   "rediscover_pm": 5.92,
    "replacement_pm": 21.77,
    "leverage": 0.93,
    "obsolescence": 0.95,
    "value_pm": 19.13,
-   "value_cost": 215312,
+   "value_cost": 215346,
    "knowledge_at_risk": 0.27,
    "assumptions": {
     "salary": 56286,
@@ -1914,26 +1914,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 129.0727,
+   "make_buy_ratio": 129.2721,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 35140.57,
+   "break_even_price_per_year": 35195.3,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1077675,
-     "input": 26941875,
-     "cached_input": 22900593
+     "output": 1077779,
+     "input": 26944475,
+     "cached_input": 22902803
     },
-    "final_tokens": 359225,
+    "final_tokens": 359259,
     "model_cost": 42.3,
-    "agent_hours": 11.97,
-    "human_days": 136.61,
+    "agent_hours": 11.98,
+    "human_days": 136.82,
     "review_days": 12.5,
-    "rediscover_days": 124.11,
-    "calendar_days": 136.61,
-    "build_cost": 73272.32,
-    "yearly_cost": 10990.85,
-    "total_cost": 106244.86
+    "rediscover_days": 124.32,
+    "calendar_days": 136.82,
+    "build_cost": 73385.54,
+    "yearly_cost": 11007.83,
+    "total_cost": 106409.04
    },
    "buy": {
     "via": {

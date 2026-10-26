@@ -1,7 +1,7 @@
 {
  "title": "vapor/vapor",
  "slug": "vapor-vapor",
- "date": "2026-10-19T09:57:44+00:00",
+ "date": "2026-10-26T10:11:23+00:00",
  "repo_url": "https://github.com/vapor/vapor",
  "index": 1.44,
  "assessed": 9,

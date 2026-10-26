@@ -1,7 +1,7 @@
 {
  "title": "axios/axios",
  "slug": "axios-axios",
- "date": "2026-10-19T09:55:37+00:00",
+ "date": "2026-10-26T10:09:05+00:00",
  "repo_url": "https://github.com/axios/axios",
  "index": 1.33,
  "assessed": 9,
@@ -17,6 +17,6 @@
  ],
  "cocomo_cost": 233938,
  "cocomo_pm": 20.78,
- "value_cost": 37827,
+ "value_cost": 37839,
  "value_pm": 3.36
 }

@@ -4,20 +4,20 @@
   "url": "https://github.com/p0deje/Maccy",
   "slug": "p0deje-maccy",
   "host": "github.com",
-  "commit": "7e14eb8d4578f1509f9a02e7bfd5c465550695cd",
-  "committed_at": "2026-10-15T16:51:02-07:00",
-  "evaluated_at": "2026-10-19T09:57:43+00:00",
+  "commit": "54fb9f00b828a4ec367e706c0e276df90febe76a",
+  "committed_at": "2026-10-23T10:59:04-07:00",
+  "evaluated_at": "2026-10-26T10:11:27+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/p0deje/Maccy",
   "inventory": {
-   "files": 561,
+   "files": 562,
    "source_files": 120,
-   "source_tokens": 69740,
+   "source_tokens": 69843,
    "languages": {
-    "swift": 69740
+    "swift": 69843
    },
    "git": true
   },
@@ -591,10 +591,10 @@
     ],
     "metrics": {
      "source_files": 120,
-     "source_tokens": 69740,
-     "test_files": 11,
-     "test_tokens": 20294,
-     "test_ratio": 0.29,
+     "source_tokens": 69843,
+     "test_files": 12,
+     "test_tokens": 21419,
+     "test_ratio": 0.31,
      "modules": 8,
      "modules_within_budget": 1.0,
      "oversized_files": [],
@@ -611,7 +611,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 69740
+      "swift": 69843
      }
     },
     "gaps": [
@@ -636,7 +636,7 @@
          },
          {
           "path": "MaccyTests/ClipboardTests.swift",
-          "detail": "11 test files"
+          "detail": "12 test files"
          }
         ],
         "note": ""
@@ -653,9 +653,14 @@
         "level": 3,
         "id": "fits-and-verified",
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
-        "met": false,
-        "evidence": [],
-        "note": "test/source token ratio 0.29 < 0.3"
+        "met": true,
+        "evidence": [
+         {
+          "path": "MaccyTests/ClipboardTests.swift",
+          "detail": "test ratio 0.31, 100% typed, modules fit"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 4,
@@ -700,34 +705,34 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 7.84,
+   "ksloc": 7.85,
    "classic": {
-    "person_months": 20.85,
+    "person_months": 20.87,
     "schedule_months": 7.9,
-    "cost": 234724
+    "cost": 234975
    },
    "capture": {
-    "tests": 0.58,
+    "tests": 0.62,
     "contract": 0.5,
     "docs": 0.21,
-    "capture": 0.47
+    "capture": 0.49
    },
-   "agent_factor": 0.34,
-   "reproduce_pm": 7.06,
+   "agent_factor": 0.33,
+   "reproduce_pm": 6.88,
    "history": {
-    "commits": 1146,
-    "fix_commits": 194,
+    "commits": 1148,
+    "fix_commits": 195,
     "authors": 99,
-    "age_months": 104.5,
+    "age_months": 104.7,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 9.61,
-   "rediscover_pm": 5.09,
-   "replacement_pm": 12.15,
+   "knowledge_pm": 9.64,
+   "rediscover_pm": 4.92,
+   "replacement_pm": 11.79,
    "leverage": 0.84,
    "obsolescence": 0.9,
-   "value_pm": 9.23,
-   "value_cost": 103875,
+   "value_pm": 8.96,
+   "value_cost": 100822,
    "knowledge_at_risk": 0.42,
    "assumptions": {
     "salary": 56286,
@@ -741,26 +746,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 91.2018,
+   "make_buy_ratio": 88.2167,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 28391.93,
+   "break_even_price_per_year": 27452.33,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 283074,
-     "input": 7076850,
-     "cached_input": 6015322
+     "output": 284471,
+     "input": 7111775,
+     "cached_input": 6045008
     },
-    "final_tokens": 94358,
-    "model_cost": 11.11,
-    "agent_hours": 3.15,
-    "human_days": 110.78,
-    "review_days": 3.89,
-    "rediscover_days": 106.89,
-    "calendar_days": 110.78,
-    "build_cost": 59393.16,
-    "yearly_cost": 8908.97,
-    "total_cost": 86120.08
+    "final_tokens": 94823,
+    "model_cost": 11.17,
+    "agent_hours": 3.16,
+    "human_days": 107.15,
+    "review_days": 3.83,
+    "rediscover_days": 103.32,
+    "calendar_days": 107.15,
+    "build_cost": 57449.14,
+    "yearly_cost": 8617.37,
+    "total_cost": 83301.26
    },
    "buy": {
     "via": {

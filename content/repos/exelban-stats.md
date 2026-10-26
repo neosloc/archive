@@ -1,7 +1,7 @@
 {
  "title": "exelban/stats",
  "slug": "exelban-stats",
- "date": "2026-10-19T09:57:58+00:00",
+ "date": "2026-10-26T10:11:40+00:00",
  "repo_url": "https://github.com/exelban/stats",
  "index": 0.88,
  "assessed": 8,
@@ -9,15 +9,15 @@
   "desktop"
  ],
  "verdict": "buy",
- "make_buy_ratio": 509.627,
+ "make_buy_ratio": 512.5039,
  "languages": [
   "swift",
   "c",
   "python",
   "shell"
  ],
- "cocomo_cost": 1260075,
- "cocomo_pm": 111.94,
- "value_cost": 697277,
- "value_pm": 61.94
+ "cocomo_cost": 1282840,
+ "cocomo_pm": 113.96,
+ "value_cost": 707187,
+ "value_pm": 62.82
 }

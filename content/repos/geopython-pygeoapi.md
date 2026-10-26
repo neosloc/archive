@@ -1,7 +1,7 @@
 {
  "title": "geopython/pygeoapi",
  "slug": "geopython-pygeoapi",
- "date": "2026-10-19T09:55:29+00:00",
+ "date": "2026-10-26T10:08:56+00:00",
  "repo_url": "https://github.com/geopython/pygeoapi",
  "index": 1.3,
  "assessed": 10,

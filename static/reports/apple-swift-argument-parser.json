@@ -4,20 +4,20 @@
   "url": "https://github.com/apple/swift-argument-parser",
   "slug": "apple-swift-argument-parser",
   "host": "github.com",
-  "commit": "efd239f0055b3d6b6cc122a786c46a0ea8d0235b",
-  "committed_at": "2026-10-05T04:25:17+00:00",
-  "evaluated_at": "2026-10-07T14:29:26+00:00",
+  "commit": "38ca4eceb349155836701b88da3e0986eb9d1e1c",
+  "committed_at": "2026-10-24T11:11:36-05:00",
+  "evaluated_at": "2026-10-26T10:11:16+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/apple/swift-argument-parser",
   "inventory": {
-   "files": 281,
-   "source_files": 107,
-   "source_tokens": 155857,
+   "files": 283,
+   "source_files": 108,
+   "source_tokens": 156406,
    "languages": {
-    "swift": 155324,
+    "swift": 155873,
     "shell": 533
    },
    "git": true
@@ -844,10 +844,10 @@
      }
     ],
     "metrics": {
-     "source_files": 107,
-     "source_tokens": 155857,
+     "source_files": 108,
+     "source_tokens": 156406,
      "test_files": 65,
-     "test_tokens": 113152,
+     "test_tokens": 113846,
      "test_ratio": 0.73,
      "modules": 28,
      "modules_within_budget": 0.96,
@@ -865,7 +865,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 155324,
+      "swift": 155873,
       "shell": 533
      }
     },
@@ -973,11 +973,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 12.12,
+   "ksloc": 12.17,
    "classic": {
-    "person_months": 32.96,
+    "person_months": 33.08,
     "schedule_months": 9.4,
-    "cost": 371082
+    "cost": 372432
    },
    "capture": {
     "tests": 1.0,
@@ -986,21 +986,21 @@
     "capture": 1.0
    },
    "agent_factor": 0.1,
-   "reproduce_pm": 3.3,
+   "reproduce_pm": 3.31,
    "history": {
-    "commits": 538,
+    "commits": 542,
     "fix_commits": 87,
-    "authors": 133,
-    "age_months": 79.2,
+    "authors": 136,
+    "age_months": 79.9,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 4.43,
+   "knowledge_pm": 4.45,
    "rediscover_pm": 0.0,
-   "replacement_pm": 3.3,
+   "replacement_pm": 3.31,
    "leverage": 1.02,
    "obsolescence": 1.0,
-   "value_pm": 3.36,
-   "value_cost": 37771,
+   "value_pm": 3.37,
+   "value_cost": 37908,
    "knowledge_at_risk": 0.0,
    "assumptions": {
     "salary": 56286,
@@ -1014,26 +1014,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 199.065,
+   "make_buy_ratio": 199.9848,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 1402.18,
+   "break_even_price_per_year": 1408.69,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 807027,
-     "input": 20175675,
-     "cached_input": 17149323
+     "output": 810756,
+     "input": 20268900,
+     "cached_input": 17228565
     },
-    "final_tokens": 269009,
-    "model_cost": 31.68,
-    "agent_hours": 8.97,
-    "human_days": 5.38,
-    "review_days": 5.38,
+    "final_tokens": 270252,
+    "model_cost": 31.82,
+    "agent_hours": 9.01,
+    "human_days": 5.41,
+    "review_days": 5.41,
     "rediscover_days": 0.0,
-    "calendar_days": 5.38,
-    "build_cost": 2915.71,
-    "yearly_cost": 437.36,
-    "total_cost": 4227.78
+    "calendar_days": 5.41,
+    "build_cost": 2929.18,
+    "yearly_cost": 439.38,
+    "total_cost": 4247.31
    },
    "buy": {
     "via": {

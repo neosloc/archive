@@ -4,20 +4,20 @@
   "url": "https://github.com/caddyserver/caddy",
   "slug": "caddyserver-caddy",
   "host": "github.com",
-  "commit": "0e392c89baa50f558bc24440482c5d57fff4499f",
-  "committed_at": "2026-10-19T19:19:28+10:00",
-  "evaluated_at": "2026-10-19T09:57:03+00:00",
+  "commit": "258863f6f6485863f7a12bc9fa02a29472b29ed5",
+  "committed_at": "2026-10-26T09:21:29Z",
+  "evaluated_at": "2026-10-26T10:10:31+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/caddyserver/caddy",
   "inventory": {
-   "files": 737,
+   "files": 741,
    "source_files": 229,
-   "source_tokens": 601316,
+   "source_tokens": 603519,
    "languages": {
-    "go": 601215,
+    "go": 603418,
     "shell": 101
    },
    "git": true
@@ -1647,6 +1647,10 @@
           "detail": "5 matches"
          },
          {
+          "path": "modules/caddyhttp/reverseproxy/reverseproxy.go",
+          "detail": "3 matches"
+         },
+         {
           "path": "modules/caddyhttp/tracing/tracerprovider.go",
           "detail": "1 match"
          },
@@ -2240,6 +2244,10 @@
           "detail": "5 matches"
          },
          {
+          "path": "modules/caddyhttp/reverseproxy/reverseproxy.go",
+          "detail": "3 matches"
+         },
+         {
           "path": "modules/caddyhttp/tracing/tracerprovider.go",
           "detail": "1 match"
          },
@@ -2298,6 +2306,10 @@
          {
           "path": "modules/caddyhttp/metrics.go",
           "detail": "5 matches"
+         },
+         {
+          "path": "modules/caddyhttp/reverseproxy/reverseproxy.go",
+          "detail": "3 matches"
          },
          {
           "path": "modules/caddyhttp/tracing/tracerprovider.go",
@@ -2378,10 +2390,10 @@
     ],
     "metrics": {
      "source_files": 229,
-     "source_tokens": 601316,
-     "test_files": 171,
-     "test_tokens": 372612,
-     "test_ratio": 0.62,
+     "source_tokens": 603519,
+     "test_files": 175,
+     "test_tokens": 381705,
+     "test_ratio": 0.63,
      "modules": 48,
      "modules_within_budget": 0.9,
      "oversized_files": [
@@ -2393,7 +2405,7 @@
      ],
      "largest_module": {
       "path": "modules/caddyhttp",
-      "tokens": 105025
+      "tokens": 105620
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -2404,7 +2416,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 601215,
+      "go": 603418,
       "shell": 101
      }
     },
@@ -2430,7 +2442,7 @@
          },
          {
           "path": "admin_checkhost_case_test.go",
-          "detail": "171 test files"
+          "detail": "175 test files"
          }
         ],
         "note": ""
@@ -2536,11 +2548,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 49.14,
+   "ksloc": 49.31,
    "classic": {
-    "person_months": 143.28,
+    "person_months": 143.81,
     "schedule_months": 16.5,
-    "cost": 1612949
+    "cost": 1618844
    },
    "capture": {
     "tests": 1.0,
@@ -2549,21 +2561,21 @@
     "capture": 0.72
    },
    "agent_factor": 0.23,
-   "reproduce_pm": 32.38,
+   "reproduce_pm": 32.5,
    "history": {
-    "commits": 2759,
+    "commits": 2768,
     "fix_commits": 572,
-    "authors": 485,
-    "age_months": 90.8,
+    "authors": 489,
+    "age_months": 91.0,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 25.23,
-   "rediscover_pm": 7.07,
-   "replacement_pm": 39.45,
+   "knowledge_pm": 25.28,
+   "rediscover_pm": 7.08,
+   "replacement_pm": 39.58,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 35.91,
-   "value_cost": 404287,
+   "value_pm": 36.03,
+   "value_cost": 405629,
    "knowledge_at_risk": 0.18,
    "assumptions": {
     "salary": 56286,
@@ -2577,26 +2589,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 170.989,
+   "make_buy_ratio": 171.5287,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 46260.24,
+   "break_even_price_per_year": 46407.11,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 2972294,
-     "input": 74307350,
-     "cached_input": 63161247
+     "output": 3006367,
+     "input": 75159175,
+     "cached_input": 63885298
     },
-    "final_tokens": 990764,
-    "model_cost": 116.66,
-    "agent_hours": 33.03,
-    "human_days": 179.38,
-    "review_days": 30.91,
-    "rediscover_days": 148.47,
-    "calendar_days": 179.38,
-    "build_cost": 96273.88,
-    "yearly_cost": 14441.08,
-    "total_cost": 139597.13
+    "final_tokens": 1002122,
+    "model_cost": 118.0,
+    "agent_hours": 33.4,
+    "human_days": 179.95,
+    "review_days": 31.27,
+    "rediscover_days": 148.68,
+    "calendar_days": 179.95,
+    "build_cost": 96577.74,
+    "yearly_cost": 14486.66,
+    "total_cost": 140037.73
    },
    "buy": {
     "via": {

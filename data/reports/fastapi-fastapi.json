@@ -4,20 +4,20 @@
   "url": "https://github.com/fastapi/fastapi",
   "slug": "fastapi-fastapi",
   "host": "github.com",
-  "commit": "f63265848ef3caa5be5deba05ec6eabb169d9fb2",
-  "committed_at": "2026-10-19T11:46:01+02:00",
-  "evaluated_at": "2026-10-19T09:55:46+00:00",
+  "commit": "23e0908a3e80773353ed8ce2fe8c8eaf0c418c9f",
+  "committed_at": "2026-10-26T09:59:41Z",
+  "evaluated_at": "2026-10-26T10:09:11+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/fastapi/fastapi",
   "inventory": {
-   "files": 3191,
-   "source_files": 541,
-   "source_tokens": 287550,
+   "files": 3232,
+   "source_files": 559,
+   "source_tokens": 291402,
    "languages": {
-    "python": 287143,
+    "python": 290995,
     "javascript": 266,
     "shell": 141
    },
@@ -33,7 +33,7 @@
     "service": [
      {
       "path": "docs_src/stream_data/tutorial001_py310.py",
-      "detail": "fastapi/flask: 441 route declarations"
+      "detail": "fastapi/flask: 461 route declarations"
      },
      {
       "path": "docs_src/debugging/tutorial001_py310.py",
@@ -74,7 +74,7 @@
     "evidence": [
      {
       "signal": "L1 routes",
-      "detail": "fastapi/flask: 441 route declarations",
+      "detail": "fastapi/flask: 461 route declarations",
       "path": "docs_src/stream_data/tutorial001_py310.py",
       "weight": 1
      },
@@ -92,9 +92,9 @@
      }
     ],
     "metrics": {
-     "route_declarations": 441,
+     "route_declarations": 461,
      "routes_by_framework": {
-      "fastapi/flask": 441
+      "fastapi/flask": 461
      },
      "spec_files": 0,
      "spec_operations": 0,
@@ -120,7 +120,7 @@
         "evidence": [
          {
           "path": "docs_src/stream_data/tutorial001_py310.py",
-          "detail": "fastapi/flask: 441 route declarations"
+          "detail": "fastapi/flask: 461 route declarations"
          }
         ],
         "note": ""
@@ -295,7 +295,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "320 semver tags, latest 0.147.0",
+      "detail": "347 semver tags, latest 0.162.0",
       "path": null,
       "weight": 1
      }
@@ -319,7 +319,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "320 semver tags, latest 0.147.0"
+          "detail": "347 semver tags, latest 0.162.0"
          }
         ],
         "note": ""
@@ -884,7 +884,7 @@
     "gaps": [
      "[service] L3 Typed errors (RFC 9457 over HTTP, or a standard protocol's typed error codes), idempotent writes (Idempotency-Key), and rate-limit signals. (no typed errors)",
      "[cli] L3 Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY. (exit statuses aren't documented)",
-     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (library code exits the process: scripts/add_latest_release_date.py, scripts/notify_translations.py)"
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (library code exits the process: scripts/add_latest_release_date.py)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
     "best_surface": "service",
@@ -1328,6 +1328,14 @@
           "detail": "1 match"
          },
          {
+          "path": "docs_src/cookie_param_models/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
           "path": "docs_src/cookie_params/tutorial001_an_py310.py",
           "detail": "1 match"
          },
@@ -1624,6 +1632,14 @@
           "detail": "1 match"
          },
          {
+          "path": "docs_src/header_param_models/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
           "path": "docs_src/header_params/tutorial001_an_py310.py",
           "detail": "1 match"
          },
@@ -1848,6 +1864,22 @@
           "detail": "1 match"
          },
          {
+          "path": "docs_src/query_param_models/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
           "path": "docs_src/query_params/tutorial001_py310.py",
           "detail": "1 match"
          },
@@ -2048,11 +2080,59 @@
           "detail": "1 match"
          },
          {
+          "path": "docs_src/request_form_models/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial006_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial007_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial007_py310.py",
+          "detail": "1 match"
+         },
+         {
           "path": "docs_src/request_forms/tutorial001_an_py310.py",
           "detail": "1 match"
          },
          {
           "path": "docs_src/request_forms/tutorial001_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_forms/tutorial002_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_forms/tutorial002_py310.py",
           "detail": "1 match"
          },
          {
@@ -2493,6 +2573,14 @@
           "detail": "1 match"
          },
          {
+          "path": "docs_src/cookie_param_models/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/cookie_param_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
           "path": "docs_src/dataclasses_/tutorial003_py310.py",
           "detail": "1 match"
          },
@@ -2554,6 +2642,14 @@
          },
          {
           "path": "docs_src/header_param_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/header_param_models/tutorial004_py310.py",
           "detail": "1 match"
          },
          {
@@ -2629,6 +2725,22 @@
           "detail": "1 match"
          },
          {
+          "path": "docs_src/query_param_models/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
           "path": "docs_src/query_params_str_validations/tutorial015_an_py310.py",
           "detail": "1 match"
          },
@@ -2646,6 +2758,46 @@
          },
          {
           "path": "docs_src/request_form_models/tutorial002_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial003_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial003_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial004_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial004_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial005_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial005_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial006_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial006_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial007_an_py310.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "docs_src/request_form_models/tutorial007_py310.py",
           "detail": "1 match"
          },
          {
@@ -2789,10 +2941,6 @@
           "detail": "1 match"
          },
          {
-          "path": "fastapi/openapi/utils.py",
-          "detail": "1 match"
-         },
-         {
           "path": "fastapi/param_functions.py",
           "detail": "1 match"
          },
@@ -2813,14 +2961,6 @@
           "detail": "1 match"
          },
          {
-          "path": "scripts/label_approved.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "scripts/notify_translations.py",
-          "detail": "1 match"
-         },
-         {
           "path": "scripts/sponsors.py",
           "detail": "1 match"
          },
@@ -2833,7 +2973,11 @@
           "detail": "12 matches"
          },
          {
-          "path": "scripts/notify_translations.py",
+          "path": "docs_src/query_param_models/tutorial003_an_py310.py",
+          "detail": "3 matches"
+         },
+         {
+          "path": "docs_src/query_param_models/tutorial003_py310.py",
           "detail": "3 matches"
          },
          {
@@ -2885,20 +3029,12 @@
         "met": true,
         "evidence": [
          {
-          "path": "scripts/notify_translations.py",
-          "detail": "29 matches"
-         },
-         {
           "path": "scripts/sponsors.py",
           "detail": "19 matches"
          },
          {
           "path": "scripts/topic_repos.py",
           "detail": "12 matches"
-         },
-         {
-          "path": "scripts/label_approved.py",
-          "detail": "11 matches"
          },
          {
           "path": "scripts/docs.py",
@@ -2951,7 +3087,7 @@
         "text": "Errors are specific exception types, and library code never calls sys.exit.",
         "met": false,
         "evidence": [],
-        "note": "library code exits the process: scripts/add_latest_release_date.py, scripts/notify_translations.py"
+        "note": "library code exits the process: scripts/add_latest_release_date.py"
        },
        {
         "level": 2,
@@ -2974,10 +3110,6 @@
          {
           "path": "fastapi/sse.py",
           "detail": "3 matches"
-         },
-         {
-          "path": "scripts/notify_translations.py",
-          "detail": "2 matches"
          },
          {
           "path": "docs_src/dependencies/tutorial008c_an_py310.py",
@@ -3024,10 +3156,6 @@
         "text": "Timeouts and retries are configurable.",
         "met": true,
         "evidence": [
-         {
-          "path": "scripts/notify_translations.py",
-          "detail": "1 match"
-         },
          {
           "path": "scripts/sponsors.py",
           "detail": "1 match"
@@ -3320,8 +3448,8 @@
     "evidence": [
      {
       "signal": "L1 exit-and-stderr",
-      "detail": "29 matches",
-      "path": "scripts/notify_translations.py",
+      "detail": "19 matches",
+      "path": "scripts/sponsors.py",
       "weight": 1
      }
     ],
@@ -3404,20 +3532,12 @@
         "met": true,
         "evidence": [
          {
-          "path": "scripts/notify_translations.py",
-          "detail": "29 matches"
-         },
-         {
           "path": "scripts/sponsors.py",
           "detail": "19 matches"
          },
          {
           "path": "scripts/topic_repos.py",
           "detail": "12 matches"
-         },
-         {
-          "path": "scripts/label_approved.py",
-          "detail": "11 matches"
          },
          {
           "path": "scripts/docs.py",
@@ -3509,7 +3629,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "levels: debug, error, exception, info, warning"
+          "detail": "levels: error, exception, info, warning"
          }
         ],
         "note": ""
@@ -3578,26 +3698,27 @@
      }
     ],
     "metrics": {
-     "source_files": 541,
-     "source_tokens": 287550,
-     "test_files": 641,
-     "test_tokens": 781326,
-     "test_ratio": 2.72,
+     "source_files": 559,
+     "source_tokens": 291402,
+     "test_files": 666,
+     "test_tokens": 865160,
+     "test_ratio": 2.97,
      "modules": 107,
      "modules_within_budget": 0.99,
      "oversized_files": [
       "fastapi/routing.py",
       "fastapi/applications.py",
-      "fastapi/param_functions.py"
+      "fastapi/param_functions.py",
+      "fastapi/dependencies/utils.py"
      ],
      "largest_module": {
       "path": "fastapi",
-      "tokens": 147165
+      "tokens": 149166
      },
      "typed_ratio": 0.83,
-     "python_functions": 1191,
-     "python_annotated": 988,
-     "import_edges": 583,
+     "python_functions": 1219,
+     "python_annotated": 1016,
+     "import_edges": 603,
      "import_graph": true,
      "max_fan_out": 15,
      "import_cycles": 2,
@@ -3612,13 +3733,13 @@
       "fastapi/utils.py"
      ],
      "languages": {
-      "python": 287143,
+      "python": 290995,
       "javascript": 266,
       "shell": 141
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 3 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 4 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -3639,7 +3760,7 @@
          },
          {
           "path": "docs_src/app_testing/app_a_py310/test_main.py",
-          "detail": "641 test files"
+          "detail": "666 test files"
          }
         ],
         "note": ""
@@ -3680,14 +3801,6 @@
          },
          {
           "path": ".github/workflows/issue-manager.yml",
-          "detail": ""
-         },
-         {
-          "path": ".github/workflows/label-approved.yml",
-          "detail": ""
-         },
-         {
-          "path": ".github/workflows/notify-translations.yml",
           "detail": ""
          },
          {
@@ -3743,7 +3856,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "99% of modules fit 32k tokens; 3 files over 12k"
+        "note": "99% of modules fit 32k tokens; 4 files over 12k"
        },
        {
         "level": 4,
@@ -3766,33 +3879,33 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 18.6,
+   "retrofit_person_days": 19.0,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 2.1,
-    "events": 2.1,
+    "stability": 2.2,
+    "events": 2.2,
     "identity": 0.0,
     "ergonomics": 1.6,
     "embeddability": 0.0,
-    "extensibility": 6.4,
-    "observability": 2.1,
+    "extensibility": 6.5,
+    "observability": 2.2,
     "legibility": 4.3
    },
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.07,
+    "size_factor": 1.08,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 28.28,
+   "ksloc": 28.67,
    "classic": {
-    "person_months": 80.23,
-    "schedule_months": 13.2,
-    "cost": 903149
+    "person_months": 81.38,
+    "schedule_months": 13.3,
+    "cost": 916095
    },
    "capture": {
     "tests": 1.0,
@@ -3801,21 +3914,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 10.19,
+   "reproduce_pm": 10.34,
    "history": {
-    "commits": 7841,
-    "fix_commits": 557,
+    "commits": 7938,
+    "fix_commits": 565,
     "authors": 920,
-    "age_months": 94.5,
+    "age_months": 94.7,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 50.34,
-   "rediscover_pm": 3.02,
-   "replacement_pm": 13.21,
+   "knowledge_pm": 50.99,
+   "rediscover_pm": 3.06,
+   "replacement_pm": 13.39,
    "leverage": 1.0,
    "obsolescence": 0.95,
-   "value_pm": 12.55,
-   "value_cost": 141269,
+   "value_pm": 12.72,
+   "value_cost": 143245,
    "knowledge_at_risk": 0.23,
    "assumptions": {
     "salary": 56286,
@@ -3829,26 +3942,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 83.4351,
+   "make_buy_ratio": 86.1237,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 22433.61,
+   "break_even_price_per_year": 23165.27,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3211803,
-     "input": 80295075,
-     "cached_input": 68250813
+     "output": 3474931,
+     "input": 86873275,
+     "cached_input": 73842283
     },
-    "final_tokens": 1070601,
-    "model_cost": 126.06,
-    "agent_hours": 35.69,
-    "human_days": 87.4,
-    "review_days": 23.98,
-    "rediscover_days": 63.42,
-    "calendar_days": 87.4,
-    "build_cost": 46977.41,
-    "yearly_cost": 7046.61,
-    "total_cost": 68117.25
+    "final_tokens": 1158310,
+    "model_cost": 136.39,
+    "agent_hours": 38.61,
+    "human_days": 90.21,
+    "review_days": 25.95,
+    "rediscover_days": 64.26,
+    "calendar_days": 90.21,
+    "build_cost": 48491.18,
+    "yearly_cost": 7273.68,
+    "total_cost": 70312.22
    },
    "buy": {
     "via": {

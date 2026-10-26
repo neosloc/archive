@@ -4,20 +4,20 @@
   "url": "https://github.com/sirmmo/aiproxy",
   "slug": "sirmmo-aiproxy",
   "host": "github.com",
-  "commit": "b002c6eb98f47a896a06be37b44559204c899aa1",
-  "committed_at": "2026-09-15T19:39:01+02:00",
-  "evaluated_at": "2026-10-07T14:27:13+00:00",
+  "commit": "9eea4e5ffcc21b6d7ce90b998b0846cfdf78b60a",
+  "committed_at": "2026-10-24T08:21:54+02:00",
+  "evaluated_at": "2026-10-26T10:08:37+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/sirmmo/aiproxy",
   "inventory": {
-   "files": 61,
-   "source_files": 22,
-   "source_tokens": 26412,
+   "files": 63,
+   "source_files": 23,
+   "source_tokens": 31057,
    "languages": {
-    "python": 26412
+    "python": 31057
    },
    "git": true
   },
@@ -752,28 +752,28 @@
      }
     ],
     "metrics": {
-     "source_files": 22,
-     "source_tokens": 26412,
-     "test_files": 2,
-     "test_tokens": 5490,
-     "test_ratio": 0.21,
+     "source_files": 23,
+     "source_tokens": 31057,
+     "test_files": 3,
+     "test_tokens": 8556,
+     "test_ratio": 0.28,
      "modules": 4,
      "modules_within_budget": 1.0,
      "oversized_files": [],
      "largest_module": {
       "path": "app",
-      "tokens": 14186
+      "tokens": 14914
      },
-     "typed_ratio": 0.93,
-     "python_functions": 138,
-     "python_annotated": 129,
-     "import_edges": 30,
+     "typed_ratio": 0.95,
+     "python_functions": 165,
+     "python_annotated": 156,
+     "import_edges": 33,
      "import_graph": true,
-     "max_fan_out": 4,
+     "max_fan_out": 5,
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "python": 26412
+      "python": 31057
      }
     },
     "gaps": [
@@ -798,7 +798,7 @@
          },
          {
           "path": "scripts/smoke_test.py",
-          "detail": "2 test files"
+          "detail": "3 test files"
          }
         ],
         "note": ""
@@ -817,7 +817,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "test/source token ratio 0.21 < 0.3"
+        "note": "test/source token ratio 0.28 < 0.3"
        },
        {
         "level": 4,
@@ -862,35 +862,35 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 2.07,
+   "ksloc": 2.42,
    "classic": {
-    "person_months": 5.14,
-    "schedule_months": 4.7,
-    "cost": 57909
+    "person_months": 6.08,
+    "schedule_months": 5.0,
+    "cost": 68395
    },
    "capture": {
-    "tests": 0.42,
+    "tests": 0.56,
     "contract": 0.75,
     "docs": 1.0,
-    "capture": 0.65
+    "capture": 0.72
    },
-   "agent_factor": 0.26,
-   "reproduce_pm": 1.32,
+   "agent_factor": 0.23,
+   "reproduce_pm": 1.37,
    "history": {
-    "commits": 20,
+    "commits": 21,
     "fix_commits": 2,
     "authors": 1,
-    "age_months": 2.5,
-    "months_since_last": 0.7
+    "age_months": 3.7,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 0.14,
-   "rediscover_pm": 0.05,
-   "replacement_pm": 1.37,
+   "knowledge_pm": 0.15,
+   "rediscover_pm": 0.04,
+   "replacement_pm": 1.41,
    "leverage": 0.94,
    "obsolescence": 0.9,
-   "value_pm": 1.17,
-   "value_cost": 13144,
-   "knowledge_at_risk": 0.04,
+   "value_pm": 1.2,
+   "value_cost": 13527,
+   "knowledge_at_risk": 0.03,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -903,26 +903,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 2.1367,
+   "make_buy_ratio": 2.0224,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 311.03,
+   "break_even_price_per_year": 279.75,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 105780,
-     "input": 2644500,
-     "cached_input": 2247825
+     "output": 123731,
+     "input": 3093275,
+     "cached_input": 2629283
     },
-    "final_tokens": 35260,
-    "model_cost": 4.15,
-    "agent_hours": 1.18,
-    "human_days": 2.25,
-    "review_days": 1.2,
-    "rediscover_days": 1.05,
-    "calendar_days": 2.25,
-    "build_cost": 1209.64,
-    "yearly_cost": 181.45,
-    "total_cost": 1753.97
+    "final_tokens": 41243,
+    "model_cost": 4.86,
+    "agent_hours": 1.37,
+    "human_days": 2.13,
+    "review_days": 1.29,
+    "rediscover_days": 0.84,
+    "calendar_days": 2.13,
+    "build_cost": 1144.92,
+    "yearly_cost": 171.74,
+    "total_cost": 1660.14
    },
    "buy": {
     "via": {

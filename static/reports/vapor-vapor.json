@@ -4,9 +4,9 @@
   "url": "https://github.com/vapor/vapor",
   "slug": "vapor-vapor",
   "host": "github.com",
-  "commit": "3966c26927d27a7b950229375820fd084e1897f6",
-  "committed_at": "2026-10-19T10:53:48+01:00",
-  "evaluated_at": "2026-10-19T09:57:44+00:00",
+  "commit": "1ccd882a17841f7ae1202b80795259c2c0082354",
+  "committed_at": "2026-10-22T10:12:18+01:00",
+  "evaluated_at": "2026-10-26T10:11:23+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -281,7 +281,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "636 semver tags, latest 5.0.0-beta.4",
+      "detail": "637 semver tags, latest 4.122.3",
       "path": null,
       "weight": 1
      }
@@ -305,7 +305,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "636 semver tags, latest 5.0.0-beta.4"
+          "detail": "637 semver tags, latest 4.122.3"
          }
         ],
         "note": ""
@@ -1340,13 +1340,13 @@
    "agent_factor": 0.1,
    "reproduce_pm": 4.36,
    "history": {
-    "commits": 4718,
+    "commits": 4719,
     "fix_commits": 799,
     "authors": 295,
-    "age_months": 129.0,
-    "months_since_last": 0.0
+    "age_months": 129.1,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 39.57,
+   "knowledge_pm": 39.58,
    "rediscover_pm": 0.0,
    "replacement_pm": 4.36,
    "leverage": 0.93,

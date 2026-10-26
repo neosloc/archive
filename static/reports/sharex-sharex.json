@@ -4,20 +4,20 @@
   "url": "https://github.com/ShareX/ShareX",
   "slug": "sharex-sharex",
   "host": "github.com",
-  "commit": "82f892ef7a85a64230ecdb8c33acc9845f006626",
-  "committed_at": "2026-10-19T00:45:52+03:00",
-  "evaluated_at": "2026-10-19T09:58:35+00:00",
+  "commit": "f3ae963af1c03c242f58adf162d3dffc1d45c657",
+  "committed_at": "2026-10-26T12:26:02+03:00",
+  "evaluated_at": "2026-10-26T10:12:15+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/ShareX/ShareX",
   "inventory": {
-   "files": 1800,
-   "source_files": 1227,
-   "source_tokens": 2165543,
+   "files": 1804,
+   "source_files": 1231,
+   "source_tokens": 2177907,
    "languages": {
-    "csharp": 2165543
+    "csharp": 2177907
    },
    "git": true
   },
@@ -124,7 +124,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "94 semver tags, latest v21.0.0",
+      "detail": "95 semver tags, latest v22.0.0",
       "path": null,
       "weight": 1
      }
@@ -148,7 +148,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "94 semver tags, latest v21.0.0"
+          "detail": "95 semver tags, latest v22.0.0"
          }
         ],
         "note": ""
@@ -493,8 +493,8 @@
     "rationale": "Not yet: A README and some tests.",
     "evidence": [],
     "metrics": {
-     "source_files": 1227,
-     "source_tokens": 2165543,
+     "source_files": 1231,
+     "source_tokens": 2177907,
      "test_files": 0,
      "test_tokens": 0,
      "test_ratio": 0.0,
@@ -529,7 +529,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "csharp": 2165543
+      "csharp": 2177907
      }
     },
     "gaps": [
@@ -589,31 +589,31 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 222.9,
+   "retrofit_person_days": 223.5,
    "retrofit_by_dimension": {
-    "interface": 66.2,
-    "stability": 14.7,
-    "ergonomics": 33.1,
+    "interface": 66.4,
+    "stability": 14.8,
+    "ergonomics": 33.2,
     "embeddability": 22.1,
-    "extensibility": 29.4,
+    "extensibility": 29.5,
     "observability": 22.1,
-    "legibility": 35.3
+    "legibility": 35.4
    },
    "wrappability": "replace or wrap externally",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.94,
+    "size_factor": 2.95,
     "legibility_multiplier": 2.5,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 177.57,
+   "ksloc": 178.46,
    "classic": {
-    "person_months": 552.14,
-    "schedule_months": 27.5,
-    "cost": 6215515
+    "person_months": 555.04,
+    "schedule_months": 27.6,
+    "cost": 6248156
    },
    "capture": {
     "tests": 0.0,
@@ -622,21 +622,21 @@
     "capture": 0.04
    },
    "agent_factor": 0.53,
-   "reproduce_pm": 293.74,
+   "reproduce_pm": 295.28,
    "history": {
-    "commits": 8709,
-    "fix_commits": 1338,
+    "commits": 8732,
+    "fix_commits": 1344,
     "authors": 313,
-    "age_months": 156.3,
+    "age_months": 156.6,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 70.31,
-   "rediscover_pm": 67.49,
-   "replacement_pm": 361.23,
+   "knowledge_pm": 70.54,
+   "rediscover_pm": 67.72,
+   "replacement_pm": 363.0,
    "leverage": 0.79,
    "obsolescence": 0.85,
-   "value_pm": 241.25,
-   "value_cost": 2715797,
+   "value_pm": 242.43,
+   "value_cost": 2729091,
    "knowledge_at_risk": 0.19,
    "assumptions": {
     "salary": 56286,
@@ -650,26 +650,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 919.3487,
+   "make_buy_ratio": 922.7169,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 412669.91,
+   "break_even_price_per_year": 414183.46,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 9069294,
-     "input": 226732350,
-     "cached_input": 192722497
+     "output": 9121074,
+     "input": 228026850,
+     "cached_input": 193822822
     },
-    "final_tokens": 3023098,
-    "model_cost": 355.97,
-    "agent_hours": 100.77,
-    "human_days": 1593.84,
-    "review_days": 176.55,
-    "rediscover_days": 1417.29,
-    "calendar_days": 1593.84,
-    "build_cost": 854729.53,
-    "yearly_cost": 128209.43,
-    "total_cost": 1239357.82
+    "final_tokens": 3040358,
+    "model_cost": 358.0,
+    "agent_hours": 101.35,
+    "human_days": 1599.68,
+    "review_days": 177.56,
+    "rediscover_days": 1422.12,
+    "calendar_days": 1599.68,
+    "build_cost": 857861.0,
+    "yearly_cost": 128679.15,
+    "total_cost": 1243898.46
    },
    "buy": {
     "via": {

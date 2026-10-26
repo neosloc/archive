@@ -4,20 +4,20 @@
   "url": "https://github.com/Leaflet/Leaflet",
   "slug": "leaflet-leaflet",
   "host": "github.com",
-  "commit": "e643bd3282c0414d553f84585a2fabb25a596eca",
-  "committed_at": "2026-10-18T23:31:45+03:00",
-  "evaluated_at": "2026-10-19T09:55:57+00:00",
+  "commit": "9c52abfa1a086dac80d64eb611e9942f655f2aa8",
+  "committed_at": "2026-10-26T11:53:39+02:00",
+  "evaluated_at": "2026-10-26T10:09:25+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/Leaflet/Leaflet",
   "inventory": {
-   "files": 1002,
+   "files": 1011,
    "source_files": 86,
-   "source_tokens": 133792,
+   "source_tokens": 133356,
    "languages": {
-    "javascript": 133792
+    "javascript": 133356
    },
    "git": true
   },
@@ -280,10 +280,18 @@
         "evidence": [
          {
           "path": "src/map/Map.js",
-          "detail": "5 matches"
+          "detail": "6 matches"
+         },
+         {
+          "path": "src/core/Class.js",
+          "detail": "1 match"
          },
          {
           "path": "src/core/Util.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/dom/Draggable.js",
           "detail": "1 match"
          },
          {
@@ -299,19 +307,11 @@
           "detail": "1 match"
          },
          {
-          "path": "src/geometry/PolyUtil.js",
-          "detail": "1 match"
-         },
-         {
           "path": "src/layer/DivOverlay.js",
           "detail": "1 match"
          },
          {
           "path": "src/layer/GeoJSON.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "src/layer/Layer.js",
           "detail": "1 match"
          },
          {
@@ -583,10 +583,10 @@
     ],
     "metrics": {
      "source_files": 86,
-     "source_tokens": 133792,
-     "test_files": 52,
-     "test_tokens": 110908,
-     "test_ratio": 0.83,
+     "source_tokens": 133356,
+     "test_files": 57,
+     "test_tokens": 126487,
+     "test_ratio": 0.95,
      "modules": 16,
      "modules_within_budget": 1.0,
      "oversized_files": [
@@ -600,18 +600,16 @@
      "typed_ratio": 0.0,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 258,
+     "import_edges": 242,
      "import_graph": true,
-     "max_fan_out": 12,
-     "import_cycles": 3,
+     "max_fan_out": 22,
+     "import_cycles": 2,
      "largest_cycle": [
-      "src/geo/LatLng.js",
-      "src/geo/LatLngBounds.js",
-      "src/geo/crs/CRS.js",
-      "src/geo/crs/EarthCRS.js"
+      "src/dom/DomEvent.js",
+      "src/dom/DomUtil.js"
      ],
      "languages": {
-      "javascript": 133792
+      "javascript": 133356
      }
     },
     "gaps": [
@@ -635,8 +633,8 @@
           "detail": ""
          },
          {
-          "path": "spec/setup.js",
-          "detail": "52 test files"
+          "path": "spec/dist.js",
+          "detail": "57 test files"
          }
         ],
         "note": ""
@@ -672,7 +670,7 @@
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
         "met": false,
         "evidence": [],
-        "note": "3 import cycles (largest: src/geo/LatLng.js, src/geo/LatLngBounds.js, src/geo/crs/CRS.js)"
+        "note": "2 import cycles (largest: src/dom/DomEvent.js, src/dom/DomUtil.js)"
        }
       ]
      }
@@ -709,11 +707,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 12.57,
+   "ksloc": 12.38,
    "classic": {
-    "person_months": 34.24,
-    "schedule_months": 9.6,
-    "cost": 385461
+    "person_months": 33.69,
+    "schedule_months": 9.5,
+    "cost": 379249
    },
    "capture": {
     "tests": 1.0,
@@ -722,22 +720,22 @@
     "capture": 0.88
    },
    "agent_factor": 0.15,
-   "reproduce_pm": 5.27,
+   "reproduce_pm": 5.19,
    "history": {
-    "commits": 6696,
-    "fix_commits": 1469,
-    "authors": 1032,
-    "age_months": 193.5,
+    "commits": 6781,
+    "fix_commits": 1500,
+    "authors": 1055,
+    "age_months": 193.8,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 62.86,
-   "rediscover_pm": 7.54,
-   "replacement_pm": 12.82,
+   "knowledge_pm": 63.91,
+   "rediscover_pm": 7.67,
+   "replacement_pm": 12.86,
    "leverage": 0.91,
    "obsolescence": 0.95,
-   "value_pm": 11.09,
-   "value_cost": 124825,
-   "knowledge_at_risk": 0.59,
+   "value_pm": 11.12,
+   "value_cost": 125218,
+   "knowledge_at_risk": 0.6,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -750,26 +748,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 271.1371,
+   "make_buy_ratio": 276.261,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 42463.7,
+   "break_even_price_per_year": 43269.15,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 738916,
-     "input": 18472900,
-     "cached_input": 15701965
+     "output": 784329,
+     "input": 19608225,
+     "cached_input": 16666991
     },
-    "final_tokens": 246305,
-    "model_cost": 29.0,
-    "agent_hours": 8.21,
-    "human_days": 164.45,
-    "review_days": 6.11,
-    "rediscover_days": 158.34,
-    "calendar_days": 164.45,
-    "build_cost": 88181.16,
-    "yearly_cost": 13227.17,
-    "total_cost": 127862.69
+    "final_tokens": 261443,
+    "model_cost": 30.78,
+    "agent_hours": 8.71,
+    "human_days": 167.55,
+    "review_days": 6.48,
+    "rediscover_days": 161.07,
+    "calendar_days": 167.55,
+    "build_cost": 89847.6,
+    "yearly_cost": 13477.14,
+    "total_cost": 130279.02
    },
    "buy": {
     "via": {

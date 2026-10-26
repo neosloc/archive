@@ -4,9 +4,9 @@
   "url": "https://github.com/honojs/hono",
   "slug": "honojs-hono",
   "host": "github.com",
-  "commit": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
-  "committed_at": "2026-10-17T22:08:26+09:00",
-  "evaluated_at": "2026-10-19T09:55:50+00:00",
+  "commit": "bac5c4a8bcd76b165428ce757e1185753c7935bd",
+  "committed_at": "2026-10-25T16:17:34+09:00",
+  "evaluated_at": "2026-10-26T10:09:17+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 571,
    "source_files": 241,
-   "source_tokens": 218069,
+   "source_tokens": 218269,
    "languages": {
-    "typescript": 218069
+    "typescript": 218269
    },
    "git": true
   },
@@ -311,7 +311,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "456 semver tags, latest v5.0.0-rc.1",
+      "detail": "457 semver tags, latest v4.13.14",
       "path": null,
       "weight": 1
      }
@@ -335,7 +335,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "456 semver tags, latest v5.0.0-rc.1"
+          "detail": "457 semver tags, latest v4.13.14"
          }
         ],
         "note": ""
@@ -748,7 +748,7 @@
          },
          {
           "path": "src/middleware/bearer-auth/index.ts",
-          "detail": "6 matches"
+          "detail": "7 matches"
          },
          {
           "path": "src/middleware/timeout/index.ts",
@@ -1420,9 +1420,9 @@
     ],
     "metrics": {
      "source_files": 241,
-     "source_tokens": 218069,
+     "source_tokens": 218269,
      "test_files": 163,
-     "test_tokens": 492068,
+     "test_tokens": 492928,
      "test_ratio": 2.26,
      "modules": 91,
      "modules_within_budget": 0.99,
@@ -1450,7 +1450,7 @@
       "src/jsx/types.ts"
      ],
      "languages": {
-      "typescript": 218069
+      "typescript": 218269
      }
     },
     "gaps": [
@@ -1568,11 +1568,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 21.53,
+   "ksloc": 21.55,
    "classic": {
-    "person_months": 60.25,
+    "person_months": 60.31,
     "schedule_months": 11.9,
-    "cost": 678235
+    "cost": 678930
    },
    "capture": {
     "tests": 1.0,
@@ -1581,21 +1581,21 @@
     "capture": 0.73
    },
    "agent_factor": 0.22,
-   "reproduce_pm": 13.35,
+   "reproduce_pm": 13.36,
    "history": {
-    "commits": 2803,
-    "fix_commits": 904,
-    "authors": 385,
-    "age_months": 58.1,
-    "months_since_last": 0.1
+    "commits": 2806,
+    "fix_commits": 905,
+    "authors": 387,
+    "age_months": 58.3,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 32.09,
-   "rediscover_pm": 8.67,
-   "replacement_pm": 22.01,
+   "knowledge_pm": 32.13,
+   "rediscover_pm": 8.68,
+   "replacement_pm": 22.03,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 19.75,
-   "value_cost": 222314,
+   "value_pm": 19.77,
+   "value_cost": 222547,
    "knowledge_at_risk": 0.39,
    "assumptions": {
     "salary": 56286,
@@ -1609,26 +1609,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 190.8168,
+   "make_buy_ratio": 191.0438,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 52649.69,
+   "break_even_price_per_year": 52712.66,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 2148074,
-     "input": 53701850,
-     "cached_input": 45646572
+     "output": 2151270,
+     "input": 53781750,
+     "cached_input": 45714487
     },
-    "final_tokens": 716024,
-    "model_cost": 84.31,
-    "agent_hours": 23.87,
-    "human_days": 204.12,
-    "review_days": 22.05,
-    "rediscover_days": 182.07,
-    "calendar_days": 204.12,
-    "build_cost": 109504.26,
-    "yearly_cost": 16425.64,
-    "total_cost": 158781.18
+    "final_tokens": 717090,
+    "model_cost": 84.44,
+    "agent_hours": 23.9,
+    "human_days": 204.37,
+    "review_days": 22.09,
+    "rediscover_days": 182.28,
+    "calendar_days": 204.37,
+    "build_cost": 109634.55,
+    "yearly_cost": 16445.18,
+    "total_cost": 158970.1
    },
    "buy": {
     "via": {

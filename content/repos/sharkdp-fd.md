@@ -1,7 +1,7 @@
 {
  "title": "sharkdp/fd",
  "slug": "sharkdp-fd",
- "date": "2026-10-19T09:57:16+00:00",
+ "date": "2026-10-26T10:10:53+00:00",
  "repo_url": "https://github.com/sharkdp/fd",
  "index": 1.71,
  "assessed": 7,
@@ -9,13 +9,13 @@
   "cli"
  ],
  "verdict": "buy",
- "make_buy_ratio": 52.8562,
+ "make_buy_ratio": 53.5492,
  "languages": [
   "rust",
   "shell"
  ],
- "cocomo_cost": 112271,
- "cocomo_pm": 9.97,
- "value_cost": 32877,
- "value_pm": 2.92
+ "cocomo_cost": 113850,
+ "cocomo_pm": 10.11,
+ "value_cost": 33333,
+ "value_pm": 2.96
 }

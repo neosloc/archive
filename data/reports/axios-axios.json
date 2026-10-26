@@ -4,9 +4,9 @@
   "url": "https://github.com/axios/axios",
   "slug": "axios-axios",
   "host": "github.com",
-  "commit": "8d8e84401d38c2a9c62acd18b3df17478a0caf6b",
-  "committed_at": "2026-10-19T11:47:20+02:00",
-  "evaluated_at": "2026-10-19T09:55:37+00:00",
+  "commit": "aa54a5e1e0e50cd1a2561b854ae5490ff589d065",
+  "committed_at": "2026-10-23T09:29:58+02:00",
+  "evaluated_at": "2026-10-26T10:09:05+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -188,7 +188,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "147 semver tags, latest v0.34.0",
+      "detail": "148 semver tags, latest v1.21.0",
       "path": null,
       "weight": 1
      },
@@ -218,7 +218,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "147 semver tags, latest v0.34.0"
+          "detail": "148 semver tags, latest v1.21.0"
          }
         ],
         "note": ""
@@ -1025,19 +1025,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 2.64,
    "history": {
-    "commits": 2033,
+    "commits": 2037,
     "fix_commits": 508,
     "authors": 696,
-    "age_months": 146.0,
-    "months_since_last": 0.0
+    "age_months": 146.1,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 20.33,
+   "knowledge_pm": 20.35,
    "rediscover_pm": 1.22,
    "replacement_pm": 3.86,
    "leverage": 0.92,
    "obsolescence": 0.95,
    "value_pm": 3.36,
-   "value_cost": 37827,
+   "value_cost": 37839,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,

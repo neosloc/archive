@@ -4,22 +4,22 @@
   "url": "https://github.com/cli/cli",
   "slug": "cli-cli",
   "host": "github.com",
-  "commit": "fa92838bef95fe4a29c1587693885d5e9bdb6cf1",
-  "committed_at": "2026-10-16T14:43:26-07:00",
-  "evaluated_at": "2026-10-19T09:57:12+00:00",
+  "commit": "4f2cfe92e3499f8581bf39db77e0a1431fa7b55c",
+  "committed_at": "2026-10-23T14:08:01-06:00",
+  "evaluated_at": "2026-10-26T10:10:31+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/cli/cli",
   "inventory": {
-   "files": 1511,
-   "source_files": 583,
-   "source_tokens": 900654,
+   "files": 1530,
+   "source_files": 593,
+   "source_tokens": 942922,
    "languages": {
-    "go": 872188,
-    "javascript": 17066,
-    "shell": 11400
+    "go": 900281,
+    "shell": 25575,
+    "javascript": 17066
    },
    "git": true
   },
@@ -358,7 +358,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "205 semver tags, latest v2.102.0",
+      "detail": "209 semver tags, latest v2.103.2",
       "path": null,
       "weight": 1
      }
@@ -382,7 +382,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "205 semver tags, latest v2.102.0"
+          "detail": "209 semver tags, latest v2.103.2"
          }
         ],
         "note": ""
@@ -587,7 +587,7 @@
          },
          {
           "path": "pkg/cmd/auth/shared/git_credential.go",
-          "detail": "3 matches"
+          "detail": "4 matches"
          },
          {
           "path": "pkg/cmd/auth/status/status.go",
@@ -1045,6 +1045,10 @@
          },
          {
           "path": "script/api-host-gateway/test.sh",
+          "detail": "1 match"
+         },
+         {
+          "path": "script/refreshable-token-gitcredential-e2e.sh",
           "detail": "1 match"
          }
         ],
@@ -1683,6 +1687,10 @@
          {
           "path": "script/api-host-gateway/test.sh",
           "detail": "1 match"
+         },
+         {
+          "path": "script/refreshable-token-gitcredential-e2e.sh",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -1775,12 +1783,12 @@
      }
     ],
     "metrics": {
-     "source_files": 583,
-     "source_tokens": 900654,
-     "test_files": 449,
-     "test_tokens": 1376814,
-     "test_ratio": 1.53,
-     "modules": 325,
+     "source_files": 593,
+     "source_tokens": 942922,
+     "test_files": 456,
+     "test_tokens": 1413816,
+     "test_ratio": 1.5,
+     "modules": 328,
      "modules_within_budget": 1.0,
      "oversized_files": [
       "pkg/cmd/project/shared/queries/queries.go",
@@ -1788,9 +1796,9 @@
      ],
      "largest_module": {
       "path": "api",
-      "tokens": 45531
+      "tokens": 46522
      },
-     "typed_ratio": 0.97,
+     "typed_ratio": 0.95,
      "python_functions": 0,
      "python_annotated": 0,
      "import_edges": 1,
@@ -1799,9 +1807,9 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 872188,
-      "javascript": 17066,
-      "shell": 11400
+      "go": 900281,
+      "shell": 25575,
+      "javascript": 17066
      }
     },
     "gaps": [
@@ -1826,7 +1834,7 @@
          },
          {
           "path": ".github/codeql/tests/unsanitized-response-to-terminal/hits_base64_after_json.go",
-          "detail": "449 test files"
+          "detail": "456 test files"
          }
         ],
         "note": ""
@@ -1855,6 +1863,10 @@
          },
          {
           "path": ".github/workflows/copilot-setup-steps.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/dependabot-triage-schedule.yml",
           "detail": ""
          },
          {
@@ -1934,57 +1946,57 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 30.4,
+   "retrofit_person_days": 31.2,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 3.8,
-    "events": 3.8,
+    "stability": 3.9,
+    "events": 3.9,
     "identity": 0.0,
     "ergonomics": 0.0,
     "embeddability": 0.0,
-    "extensibility": 11.4,
-    "observability": 3.8,
-    "legibility": 7.6
+    "extensibility": 11.7,
+    "observability": 3.9,
+    "legibility": 7.8
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.9,
+    "size_factor": 1.94,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 97.86,
+   "ksloc": 100.05,
    "classic": {
-    "person_months": 295.34,
-    "schedule_months": 21.7,
-    "cost": 3324710
+    "person_months": 302.3,
+    "schedule_months": 21.9,
+    "cost": 3403024
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.89,
-    "capture": 0.97
+    "docs": 0.84,
+    "capture": 0.96
    },
-   "agent_factor": 0.11,
-   "reproduce_pm": 33.52,
+   "agent_factor": 0.12,
+   "reproduce_pm": 35.67,
    "history": {
-    "commits": 9058,
-    "fix_commits": 1233,
-    "authors": 722,
-    "age_months": 84.4,
+    "commits": 9156,
+    "fix_commits": 1280,
+    "authors": 723,
+    "age_months": 84.6,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 69.95,
-   "rediscover_pm": 2.1,
-   "replacement_pm": 35.62,
+   "knowledge_pm": 71.38,
+   "rediscover_pm": 2.86,
+   "replacement_pm": 38.53,
    "leverage": 1.01,
    "obsolescence": 0.95,
-   "value_pm": 34.31,
-   "value_cost": 386220,
-   "knowledge_at_risk": 0.06,
+   "value_pm": 37.11,
+   "value_cost": 417736,
+   "knowledge_at_risk": 0.07,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -1997,26 +2009,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 89.3439,
+   "make_buy_ratio": 107.2482,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 23810.4,
+   "break_even_price_per_year": 28635.96,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 6840509,
-     "input": 171012725,
-     "cached_input": 145360816
+     "output": 7081529,
+     "input": 177038225,
+     "cached_input": 150482491
     },
-    "final_tokens": 2280169,
-    "model_cost": 268.49,
-    "agent_hours": 76.01,
-    "human_days": 92.44,
-    "review_days": 48.34,
-    "rediscover_days": 44.1,
-    "calendar_days": 92.44,
-    "build_cost": 49820.52,
-    "yearly_cost": 7473.08,
-    "total_cost": 72239.75
+    "final_tokens": 2360509,
+    "model_cost": 277.95,
+    "agent_hours": 78.68,
+    "human_days": 111.05,
+    "review_days": 50.99,
+    "rediscover_days": 60.06,
+    "calendar_days": 111.05,
+    "build_cost": 59804.43,
+    "yearly_cost": 8970.67,
+    "total_cost": 86716.43
    },
    "buy": {
     "via": {

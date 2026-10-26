@@ -4,16 +4,16 @@
   "url": "https://github.com/expressjs/express",
   "slug": "expressjs-express",
   "host": "github.com",
-  "commit": "0dee2c52c7c873498f8ed7d8ee4ddd0a04d3ada8",
-  "committed_at": "2026-10-17T11:42:03-05:00",
-  "evaluated_at": "2026-10-19T09:55:27+00:00",
+  "commit": "1c6f1b0fe4000977b9a7b4f34097e4d527dd9824",
+  "committed_at": "2026-10-23T16:21:08-05:00",
+  "evaluated_at": "2026-10-26T10:08:55+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/expressjs/express",
   "inventory": {
-   "files": 214,
+   "files": 216,
    "source_files": 7,
    "source_tokens": 15570,
    "languages": {
@@ -830,9 +830,9 @@
     "metrics": {
      "source_files": 7,
      "source_tokens": 15570,
-     "test_files": 91,
-     "test_tokens": 109289,
-     "test_ratio": 7.02,
+     "test_files": 92,
+     "test_tokens": 113231,
+     "test_ratio": 7.27,
      "modules": 2,
      "modules_within_budget": 1.0,
      "oversized_files": [],
@@ -874,7 +874,7 @@
          },
          {
           "path": "test/Route.js",
-          "detail": "91 test files"
+          "detail": "92 test files"
          }
         ],
         "note": ""
@@ -978,10 +978,10 @@
    "agent_factor": 0.15,
    "reproduce_pm": 0.42,
    "history": {
-    "commits": 5697,
+    "commits": 5698,
     "fix_commits": 649,
     "authors": 400,
-    "age_months": 207.7,
+    "age_months": 207.9,
     "months_since_last": 0.1
    },
    "knowledge_pm": 41.47,
@@ -990,7 +990,7 @@
    "leverage": 0.89,
    "obsolescence": 0.95,
    "value_pm": 4.56,
-   "value_cost": 51336,
+   "value_cost": 51341,
    "knowledge_at_risk": 0.92,
    "assumptions": {
     "salary": 56286,
@@ -1004,26 +1004,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 172.2033,
+   "make_buy_ratio": 172.361,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 27744.13,
+   "break_even_price_per_year": 27769.69,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 375137,
-     "input": 9378425,
-     "cached_input": 7971661
+     "output": 386963,
+     "input": 9674075,
+     "cached_input": 8222963
     },
-    "final_tokens": 125045,
-    "model_cost": 14.72,
-    "agent_hours": 4.17,
-    "human_days": 107.68,
-    "review_days": 3.1,
+    "final_tokens": 128987,
+    "model_cost": 15.19,
+    "agent_hours": 4.3,
+    "human_days": 107.78,
+    "review_days": 3.2,
     "rediscover_days": 104.58,
-    "calendar_days": 107.68,
-    "build_cost": 57736.94,
-    "yearly_cost": 8660.54,
-    "total_cost": 83718.56
+    "calendar_days": 107.78,
+    "build_cost": 57789.81,
+    "yearly_cost": 8668.47,
+    "total_cost": 83795.22
    },
    "buy": {
     "via": {
