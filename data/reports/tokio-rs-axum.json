@@ -4,20 +4,20 @@
   "url": "https://github.com/tokio-rs/axum",
   "slug": "tokio-rs-axum",
   "host": "github.com",
-  "commit": "86aa6153e47b7862737acdcfe3a0eb3a162b939a",
-  "committed_at": "2026-10-20T01:20:00+09:00",
-  "evaluated_at": "2026-10-26T10:11:06+00:00",
+  "commit": "40d061fdacd468217c7a609bede16357276b6c40",
+  "committed_at": "2026-11-01T23:06:18+01:00",
+  "evaluated_at": "2026-11-02T12:28:01+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/tokio-rs/axum",
   "inventory": {
-   "files": 505,
-   "source_files": 113,
-   "source_tokens": 268706,
+   "files": 508,
+   "source_files": 115,
+   "source_tokens": 275350,
    "languages": {
-    "rust": 268702,
+    "rust": 275346,
     "javascript": 4
    },
    "git": true
@@ -32,7 +32,7 @@
     "service": [
      {
       "path": "axum/src/extract/path/mod.rs",
-      "detail": "rust-axum/actix: 198 route declarations"
+      "detail": "rust-axum/actix: 197 route declarations"
      },
      {
       "path": "axum/benches/benches.rs",
@@ -118,9 +118,9 @@
      }
     ],
     "metrics": {
-     "route_declarations": 198,
+     "route_declarations": 197,
      "routes_by_framework": {
-      "rust-axum/actix": 198
+      "rust-axum/actix": 197
      },
      "spec_files": 0,
      "spec_operations": 0,
@@ -145,7 +145,7 @@
         "evidence": [
          {
           "path": "axum/src/extract/path/mod.rs",
-          "detail": "rust-axum/actix: 198 route declarations"
+          "detail": "rust-axum/actix: 197 route declarations"
          }
         ],
         "note": ""
@@ -818,6 +818,10 @@
          },
          {
           "path": "axum-extra/src/response/error_response.rs",
+          "detail": "1 match"
+         },
+         {
+          "path": "axum-extra/src/response/file_stream/range.rs",
           "detail": "1 match"
          },
          {
@@ -1747,12 +1751,12 @@
      }
     ],
     "metrics": {
-     "source_files": 113,
-     "source_tokens": 268706,
-     "test_files": 130,
-     "test_tokens": 35930,
+     "source_files": 115,
+     "source_tokens": 275350,
+     "test_files": 131,
+     "test_tokens": 35997,
      "test_ratio": 0.13,
-     "modules": 27,
+     "modules": 28,
      "modules_within_budget": 0.96,
      "oversized_files": [
       "axum/src/serve/mod.rs",
@@ -1771,7 +1775,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 268702,
+      "rust": 275346,
       "javascript": 4
      }
     },
@@ -1797,7 +1801,7 @@
          },
          {
           "path": "axum-macros/tests/debug_handler/fail/argument_not_extractor.rs",
-          "detail": "130 test files"
+          "detail": "131 test files"
          }
         ],
         "note": ""
@@ -1850,34 +1854,34 @@
    "integrability_index": 1.4,
    "assessed_dimensions": 10,
    "not_applicable": [],
-   "retrofit_person_days": 29.9,
+   "retrofit_person_days": 30.3,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 2.1,
     "events": 2.1,
-    "identity": 4.1,
-    "portability": 4.1,
+    "identity": 4.2,
+    "portability": 4.2,
     "ergonomics": 3.1,
     "embeddability": 1.0,
-    "extensibility": 6.2,
+    "extensibility": 6.3,
     "observability": 3.1,
-    "legibility": 4.1
+    "legibility": 4.2
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.04,
+    "size_factor": 1.05,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 21.27,
+   "ksloc": 21.87,
    "classic": {
-    "person_months": 59.49,
-    "schedule_months": 11.8,
-    "cost": 669638
+    "person_months": 61.24,
+    "schedule_months": 11.9,
+    "cost": 689385
    },
    "capture": {
     "tests": 0.26,
@@ -1886,21 +1890,21 @@
     "capture": 0.63
    },
    "agent_factor": 0.27,
-   "reproduce_pm": 15.85,
+   "reproduce_pm": 16.32,
    "history": {
-    "commits": 2010,
-    "fix_commits": 297,
-    "authors": 471,
-    "age_months": 64.7,
-    "months_since_last": 0.2
+    "commits": 2015,
+    "fix_commits": 298,
+    "authors": 475,
+    "age_months": 65.1,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 15.99,
-   "rediscover_pm": 5.92,
-   "replacement_pm": 21.77,
+   "knowledge_pm": 16.04,
+   "rediscover_pm": 5.93,
+   "replacement_pm": 22.25,
    "leverage": 0.93,
    "obsolescence": 0.95,
-   "value_pm": 19.13,
-   "value_cost": 215346,
+   "value_pm": 19.56,
+   "value_cost": 220135,
    "knowledge_at_risk": 0.27,
    "assumptions": {
     "salary": 56286,
@@ -1914,26 +1918,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 129.2721,
+   "make_buy_ratio": 129.7642,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 35195.3,
+   "break_even_price_per_year": 35330.31,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1077779,
-     "input": 26944475,
-     "cached_input": 22902803
+     "output": 1104428,
+     "input": 27610700,
+     "cached_input": 23469095
     },
-    "final_tokens": 359259,
-    "model_cost": 42.3,
-    "agent_hours": 11.98,
-    "human_days": 136.82,
-    "review_days": 12.5,
-    "rediscover_days": 124.32,
-    "calendar_days": 136.82,
-    "build_cost": 73385.54,
-    "yearly_cost": 11007.83,
-    "total_cost": 106409.04
+    "final_tokens": 368142,
+    "model_cost": 43.35,
+    "agent_hours": 12.27,
+    "human_days": 137.34,
+    "review_days": 12.81,
+    "rediscover_days": 124.53,
+    "calendar_days": 137.34,
+    "build_cost": 73664.87,
+    "yearly_cost": 11049.73,
+    "total_cost": 106814.06
    },
    "buy": {
     "via": {

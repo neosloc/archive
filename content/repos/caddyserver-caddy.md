@@ -1,7 +1,7 @@
 {
  "title": "caddyserver/caddy",
  "slug": "caddyserver-caddy",
- "date": "2026-10-26T10:10:31+00:00",
+ "date": "2026-11-02T12:27:19+00:00",
  "repo_url": "https://github.com/caddyserver/caddy",
  "index": 1.67,
  "assessed": 9,
@@ -11,13 +11,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 171.5287,
+ "make_buy_ratio": 172.7203,
  "languages": [
   "go",
   "shell"
  ],
- "cocomo_cost": 1618844,
- "cocomo_pm": 143.81,
- "value_cost": 405629,
- "value_pm": 36.03
+ "cocomo_cost": 1627497,
+ "cocomo_pm": 144.57,
+ "value_cost": 407782,
+ "value_pm": 36.22
 }

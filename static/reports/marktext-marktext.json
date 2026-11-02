@@ -4,22 +4,22 @@
   "url": "https://github.com/marktext/marktext",
   "slug": "marktext-marktext",
   "host": "github.com",
-  "commit": "85ac77a71e21d7954a434f454bd17b42c4defee3",
-  "committed_at": "2026-10-26T16:40:54+08:00",
-  "evaluated_at": "2026-10-26T10:10:44+00:00",
+  "commit": "dae649140e478d7324331c381e106d34ee503986",
+  "committed_at": "2026-11-02T18:48:13+08:00",
+  "evaluated_at": "2026-11-02T12:27:44+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/marktext/marktext",
   "inventory": {
-   "files": 1866,
-   "source_files": 604,
-   "source_tokens": 794209,
+   "files": 2026,
+   "source_files": 664,
+   "source_tokens": 864310,
    "languages": {
-    "typescript": 666905,
-    "vue": 106972,
-    "javascript": 19196,
+    "typescript": 739732,
+    "vue": 104277,
+    "javascript": 19165,
     "python": 1136
    },
    "git": true
@@ -532,14 +532,14 @@
      },
      {
       "signal": "L2 streams-and-status",
-      "detail": "12 matches",
+      "detail": "9 matches",
       "path": "packages/desktop/src/renderer/src/store/editor.ts",
       "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
-     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)",
+     "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (library code exits the process: packages/desktop/src/main/exceptionHandler.ts, scripts/thirdPartyChecker.ts)",
      "[desktop] L3 Documented exit statuses distinguish error classes, and headless output is machine-readable (JSON). (exit statuses aren't documented)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
@@ -555,7 +555,7 @@
         "text": "Errors are specific exception types, and library code never calls sys.exit.",
         "met": false,
         "evidence": [],
-        "note": "no exception classes"
+        "note": "library code exits the process: packages/desktop/src/main/exceptionHandler.ts, scripts/thirdPartyChecker.ts"
        },
        {
         "level": 2,
@@ -564,8 +564,24 @@
         "met": true,
         "evidence": [
          {
+          "path": "packages/desktop/src/main/applicationState/sessionHost.ts",
+          "detail": "21 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/applicationState/checkpointService.ts",
+          "detail": "19 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/applicationState/documentRegistry.ts",
+          "detail": "18 matches"
+         },
+         {
           "path": "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js",
           "detail": "11 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/applicationState/codec.ts",
+          "detail": "7 matches"
          },
          {
           "path": "packages/desktop/src/renderer/src/util/diagramExport.ts",
@@ -576,19 +592,27 @@
           "detail": "5 matches"
          },
          {
+          "path": "packages/desktop/src/main/filesystem/sidebarMove.ts",
+          "detail": "5 matches"
+         },
+         {
+          "path": "packages/website/scripts/fetch-project-info.ts",
+          "detail": "5 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/applicationState/storage.ts",
+          "detail": "4 matches"
+         },
+         {
           "path": "packages/desktop/src/main/menu/actions/file.ts",
           "detail": "4 matches"
          },
          {
-          "path": "packages/website/scripts/fetch-project-info.ts",
+          "path": "packages/desktop/src/renderer/src/util/clipboard.ts",
           "detail": "4 matches"
          },
          {
           "path": "packages/desktop/src/main/ipc/uploader.ts",
-          "detail": "3 matches"
-         },
-         {
-          "path": "packages/desktop/src/main/windows/editor.ts",
           "detail": "3 matches"
          },
          {
@@ -600,15 +624,27 @@
           "detail": "3 matches"
          },
          {
+          "path": "packages/desktop/src/main/applicationState/atomicJsonFile.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/main/applicationState/closeCoordinator.ts",
+          "detail": "2 matches"
+         },
+         {
           "path": "packages/desktop/src/main/commands/index.ts",
           "detail": "2 matches"
          },
          {
-          "path": "packages/desktop/src/main/editorBufferStore/index.ts",
+          "path": "packages/desktop/src/main/menu/lookup.ts",
           "detail": "2 matches"
          },
          {
           "path": "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/services/windowSession.ts",
           "detail": "2 matches"
          },
          {
@@ -628,7 +664,19 @@
           "detail": "1 match"
          },
          {
+          "path": "packages/desktop/src/main/applicationState/identity.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/applicationState/windowGeometry.ts",
+          "detail": "1 match"
+         },
+         {
           "path": "packages/desktop/src/main/filesystem/markdown.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/main/ipc/fs.ts",
           "detail": "1 match"
          },
          {
@@ -640,7 +688,7 @@
           "detail": "1 match"
          },
          {
-          "path": "packages/desktop/src/main/preferences/index.ts",
+          "path": "packages/desktop/src/main/preferences/preferenceFile.ts",
           "detail": "1 match"
          },
          {
@@ -668,15 +716,19 @@
           "detail": "1 match"
          },
          {
+          "path": "packages/desktop/src/renderer/src/prefComponents/image/components/uploader/index.vue",
+          "detail": "1 match"
+         },
+         {
           "path": "packages/desktop/src/renderer/src/spellchecker/index.ts",
           "detail": "1 match"
          },
          {
-          "path": "packages/desktop/src/renderer/src/store/bufferedState.ts",
+          "path": "packages/desktop/src/renderer/src/store/commandCenter.ts",
           "detail": "1 match"
          },
          {
-          "path": "packages/desktop/src/renderer/src/store/commandCenter.ts",
+          "path": "packages/desktop/src/renderer/src/store/keybindings.ts",
           "detail": "1 match"
          },
          {
@@ -689,6 +741,10 @@
          },
          {
           "path": "packages/muya/src/block/extra/math/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/editor/dragDropText.ts",
           "detail": "1 match"
          },
          {
@@ -753,6 +809,10 @@
           "detail": "3 matches"
          },
          {
+          "path": "packages/desktop/src/main/applicationState/sessionHost.ts",
+          "detail": "2 matches"
+         },
+         {
           "path": "packages/desktop/playwright.config.ts",
           "detail": "1 match"
          },
@@ -787,6 +847,10 @@
          },
          {
           "path": "packages/desktop/test/e2e/crash-range-offset.spec.ts",
+          "detail": "doctest"
+         },
+         {
+          "path": "packages/muya/src/inlineRenderer/__tests__/inlineCode.spec.ts",
           "detail": "doctest"
          },
          {
@@ -843,15 +907,7 @@
         "evidence": [
          {
           "path": "packages/desktop/src/renderer/src/store/editor.ts",
-          "detail": "12 matches"
-         },
-         {
-          "path": "packages/desktop/src/renderer/src/prefComponents/image/components/uploader/index.vue",
-          "detail": "6 matches"
-         },
-         {
-          "path": "packages/desktop/src/main/editorBufferStore/index.ts",
-          "detail": "3 matches"
+          "detail": "9 matches"
          },
          {
           "path": "packages/desktop/src/main/keyboard/shortcutHandler.ts",
@@ -914,10 +970,6 @@
           "detail": "1 match"
          },
          {
-          "path": "packages/desktop/src/renderer/src/components/editorWithTabs/tabs.vue",
-          "detail": "1 match"
-         },
-         {
           "path": "packages/desktop/src/renderer/src/components/exportSettings/index.vue",
           "detail": "1 match"
          },
@@ -930,7 +982,11 @@
           "detail": "1 match"
          },
          {
-          "path": "packages/desktop/src/renderer/src/store/bufferedState.ts",
+          "path": "packages/desktop/src/renderer/src/services/imageDrop.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/services/windowSession.ts",
           "detail": "1 match"
          },
          {
@@ -993,8 +1049,8 @@
    {
     "key": "embeddability",
     "title": "Embeddability",
-    "level": 3,
-    "rationale": "[desktop] Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI.",
+    "level": 4,
+    "rationale": "[desktop] Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies.",
     "evidence": [
      {
       "signal": "L1 build-documented",
@@ -1013,12 +1069,17 @@
       "detail": "2 matches",
       "path": ".github/workflows/release.yml",
       "weight": 1
+     },
+     {
+      "signal": "L4 managed-settings",
+      "detail": "2 of 4 environment variables named in the docs",
+      "path": null,
+      "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
-     "[library] L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)",
-     "[desktop] L4 Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies. (settings only change through the GUI)"
+     "[library] L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
     ],
     "question": "Can another system run and compose it without a human?",
     "best_surface": "desktop",
@@ -1080,8 +1141,8 @@
       ]
      },
      "desktop": {
-      "level": 3,
-      "first_missing": "managed-settings",
+      "level": 4,
+      "first_missing": null,
       "requirements": [
        {
         "level": 1,
@@ -1202,14 +1263,19 @@
         "level": 4,
         "id": "managed-settings",
         "text": "Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies.",
-        "met": false,
-        "evidence": [],
-        "note": "settings only change through the GUI"
+        "met": true,
+        "evidence": [
+         {
+          "path": null,
+          "detail": "2 of 4 environment variables named in the docs"
+         }
+        ],
+        "note": ""
        }
       ]
      }
     },
-    "level_name": "solid",
+    "level_name": "exemplary",
     "applicable": true
    },
    {
@@ -1220,8 +1286,8 @@
     "evidence": [
      {
       "signal": "L1 seams",
-      "detail": "2 matches",
-      "path": "packages/muya/src/utils/dompurify.ts",
+      "detail": "3 matches",
+      "path": "packages/muya/src/utils/sanitizeExportHtml.ts",
       "weight": 1
      }
     ],
@@ -1243,12 +1309,16 @@
         "met": true,
         "evidence": [
          {
+          "path": "packages/muya/src/utils/sanitizeExportHtml.ts",
+          "detail": "3 matches"
+         },
+         {
           "path": "packages/muya/src/utils/dompurify.ts",
           "detail": "2 matches"
          },
          {
-          "path": "packages/muya/src/utils/sanitizeExportHtml.ts",
-          "detail": "2 matches"
+          "path": "packages/desktop/src/main/applicationState/documentRegistry.ts",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -1378,6 +1448,10 @@
           "detail": "1 match"
          },
          {
+          "path": "packages/desktop/src/main/applicationState/sessionHost.ts",
+          "detail": "1 match"
+         },
+         {
           "path": "packages/desktop/src/main/contextMenu/editor/spellcheck.ts",
           "detail": "1 match"
          },
@@ -1490,15 +1564,15 @@
           "detail": "1 match"
          },
          {
-          "path": "packages/desktop/src/renderer/src/prefComponents/keybindings/index.vue",
-          "detail": "1 match"
-         },
-         {
           "path": "packages/desktop/src/renderer/src/prefComponents/spellchecker/index.vue",
           "detail": "1 match"
          },
          {
           "path": "packages/desktop/src/renderer/src/store/commandCenter.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/desktop/src/renderer/src/store/keybindings.ts",
           "detail": "1 match"
          },
          {
@@ -1600,29 +1674,30 @@
      }
     ],
     "metrics": {
-     "source_files": 604,
-     "source_tokens": 794209,
-     "test_files": 722,
-     "test_tokens": 894778,
-     "test_ratio": 1.13,
-     "modules": 172,
+     "source_files": 664,
+     "source_tokens": 864310,
+     "test_files": 819,
+     "test_tokens": 1067516,
+     "test_ratio": 1.24,
+     "modules": 174,
      "modules_within_budget": 0.99,
      "oversized_files": [
       "packages/muya/src/config/emojis.ts",
-      "packages/desktop/src/renderer/src/store/editor.ts",
       "packages/muya/src/block/base/format.ts",
       "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
       "packages/muya/src/muya.ts",
-      "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js"
+      "packages/desktop/src/main/applicationState/sessionHost.ts",
+      "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js",
+      "packages/desktop/src/renderer/src/store/editor.ts"
      ],
      "largest_module": {
       "path": "packages/muya/src/config",
-      "tokens": 80091
+      "tokens": 80119
      },
-     "typed_ratio": 0.84,
+     "typed_ratio": 0.86,
      "python_functions": 2,
      "python_annotated": 2,
-     "import_edges": 1691,
+     "import_edges": 1818,
      "import_graph": true,
      "max_fan_out": 42,
      "import_cycles": 4,
@@ -1679,12 +1754,15 @@
       "packages/muya/src/block/gfm/taskListItem/index.ts",
       "packages/muya/src/block/githubAlerts.ts",
       "packages/muya/src/block/index.ts",
+      "packages/muya/src/block/listOperations.ts",
       "packages/muya/src/block/mixins/containerQueryBlock.ts",
       "packages/muya/src/block/mixins/leafQueryBlock.ts",
+      "packages/muya/src/block/paragraphIndentation.ts",
       "packages/muya/src/block/scrollPage/index.ts",
       "packages/muya/src/block/types.ts",
       "packages/muya/src/clipboard/copyData.ts",
       "packages/muya/src/clipboard/cut.ts",
+      "packages/muya/src/clipboard/image.ts",
       "packages/muya/src/clipboard/index.ts",
       "packages/muya/src/clipboard/mergePasteIntoHeading.ts",
       "packages/muya/src/clipboard/paste.ts",
@@ -1692,16 +1770,18 @@
       "packages/muya/src/clipboard/pasteUrl.ts",
       "packages/muya/src/config/emptyStates.ts",
       "packages/muya/src/editor/dragDropImage.ts",
+      "packages/muya/src/editor/dragDropText.ts",
       "packages/muya/src/editor/index.ts",
       "packages/muya/src/editor/linkMouseEvents.ts",
       "packages/muya/src/editor/readOnly.ts",
+      "packages/muya/src/editor/tab.ts",
       "packages/muya/src/editor/transactions/index.ts",
       "packages/muya/src/editor/transactions/listLooseness.ts",
       "packages/muya/src/event/index.ts",
       "packages/muya/src/event/types.ts",
       "packages/muya/src/history/index.ts",
       "packages/muya/src/i18n/index.ts",
-      "packages/muya/src/inlineRenderer/emphasis.ts",
+      "packages/muya/src/inlineRenderer/delimiters.ts",
       "packages/muya/src/inlineRenderer/index.ts",
       "packages/muya/src/inlineRenderer/lexer.ts",
       "packages/muya/src/inlineRenderer/renderer/autoLink.ts",
@@ -1781,14 +1861,14 @@
       "packages/muya/src/utils/turndownService/index.ts"
      ],
      "languages": {
-      "typescript": 666905,
-      "vue": 106972,
-      "javascript": 19196,
+      "typescript": 739732,
+      "vue": 104277,
+      "javascript": 19165,
       "python": 1136
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 6 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 7 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1809,7 +1889,7 @@
          },
          {
           "path": "packages/desktop/test/e2e/all-blocks-roundtrip.spec.ts",
-          "detail": "722 test files"
+          "detail": "819 test files"
          }
         ],
         "note": ""
@@ -1889,7 +1969,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "99% of modules fit 32k tokens; 6 files over 12k"
+        "note": "99% of modules fit 32k tokens; 7 files over 12k"
        },
        {
         "level": 4,
@@ -1907,62 +1987,62 @@
    }
   ],
   "estimate": {
-   "integrability_index": 2.38,
+   "integrability_index": 2.5,
    "assessed_dimensions": 8,
    "not_applicable": [
     "events",
     "portability"
    ],
-   "retrofit_person_days": 20.5,
+   "retrofit_person_days": 21.3,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 3.6,
+    "stability": 3.7,
     "identity": 0.0,
-    "ergonomics": 2.7,
+    "ergonomics": 2.8,
     "embeddability": 0.0,
-    "extensibility": 7.1,
+    "extensibility": 7.4,
     "observability": 0.0,
-    "legibility": 7.1
+    "legibility": 7.4
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.78,
+    "size_factor": 1.86,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 88.74,
+   "ksloc": 94.57,
    "classic": {
-    "person_months": 266.52,
-    "schedule_months": 20.9,
-    "cost": 3000316
+    "person_months": 284.93,
+    "schedule_months": 21.4,
+    "cost": 3207511
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.78,
-    "capture": 0.94
+    "docs": 0.68,
+    "capture": 0.92
    },
-   "agent_factor": 0.13,
-   "reproduce_pm": 33.85,
+   "agent_factor": 0.14,
+   "reproduce_pm": 38.75,
    "history": {
-    "commits": 2345,
-    "fix_commits": 1074,
-    "authors": 228,
-    "age_months": 107.4,
+    "commits": 2402,
+    "fix_commits": 1100,
+    "authors": 230,
+    "age_months": 107.6,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 33.2,
-   "rediscover_pm": 1.99,
-   "replacement_pm": 35.84,
-   "leverage": 1.05,
+   "knowledge_pm": 34.01,
+   "rediscover_pm": 2.72,
+   "replacement_pm": 41.47,
+   "leverage": 1.06,
    "obsolescence": 0.95,
-   "value_pm": 35.64,
-   "value_cost": 401261,
-   "knowledge_at_risk": 0.06,
+   "value_pm": 41.86,
+   "value_cost": 471227,
+   "knowledge_at_risk": 0.07,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -1975,26 +2055,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 77.0024,
+   "make_buy_ratio": 98.5572,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 20484.11,
+   "break_even_price_per_year": 26293.56,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5081256,
-     "input": 127031400,
-     "cached_input": 107976690
+     "output": 5816221,
+     "input": 145405525,
+     "cached_input": 123594696
     },
-    "final_tokens": 1693752,
-    "model_cost": 199.44,
-    "agent_hours": 56.46,
-    "human_days": 79.73,
-    "review_days": 37.94,
-    "rediscover_days": 41.79,
-    "calendar_days": 79.73,
-    "build_cost": 42938.54,
-    "yearly_cost": 6440.78,
-    "total_cost": 62260.89
+    "final_tokens": 1938740,
+    "model_cost": 228.29,
+    "agent_hours": 64.62,
+    "human_days": 102.1,
+    "review_days": 44.98,
+    "rediscover_days": 57.12,
+    "calendar_days": 102.1,
+    "build_cost": 54958.09,
+    "yearly_cost": 8243.71,
+    "total_cost": 79689.24
    },
    "buy": {
     "via": {

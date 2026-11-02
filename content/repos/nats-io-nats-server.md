@@ -1,7 +1,7 @@
 {
  "title": "nats-io/nats-server",
  "slug": "nats-io-nats-server",
- "date": "2026-10-26T10:11:32+00:00",
+ "date": "2026-11-02T12:28:14+00:00",
  "repo_url": "https://github.com/nats-io/nats-server",
  "index": 1.67,
  "assessed": 9,
@@ -11,13 +11,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 672.7043,
+ "make_buy_ratio": 678.6261,
  "languages": [
   "go",
   "shell"
  ],
- "cocomo_cost": 3893413,
- "cocomo_pm": 345.86,
- "value_cost": 1121971,
- "value_pm": 99.67
+ "cocomo_cost": 3915737,
+ "cocomo_pm": 347.84,
+ "value_cost": 1129192,
+ "value_pm": 100.31
 }

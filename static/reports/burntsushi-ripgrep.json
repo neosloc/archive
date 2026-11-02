@@ -4,9 +4,9 @@
   "url": "https://github.com/BurntSushi/ripgrep",
   "slug": "burntsushi-ripgrep",
   "host": "github.com",
-  "commit": "6892bc2b7efe5909cbbeec8f757ed2c4c76b1d30",
-  "committed_at": "2026-10-23T16:00:21-04:00",
-  "evaluated_at": "2026-10-26T10:10:58+00:00",
+  "commit": "91f5d22ef48bde459d90a8c7dbeab416e97d0f2b",
+  "committed_at": "2026-10-27T14:31:24-04:00",
+  "evaluated_at": "2026-11-02T12:27:50+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 225,
    "source_files": 88,
-   "source_tokens": 416113,
+   "source_tokens": 417607,
    "languages": {
-    "rust": 415011,
+    "rust": 416505,
     "shell": 853,
     "ruby": 201,
     "lua": 48
@@ -1082,7 +1082,7 @@
     ],
     "metrics": {
      "source_files": 88,
-     "source_tokens": 416113,
+     "source_tokens": 417607,
      "test_files": 15,
      "test_tokens": 52267,
      "test_ratio": 0.13,
@@ -1111,7 +1111,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 415011,
+      "rust": 416505,
       "shell": 853,
       "ruby": 201,
       "lua": 48
@@ -1196,13 +1196,13 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 18.7,
+   "retrofit_person_days": 18.8,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.0,
     "ergonomics": 1.9,
     "embeddability": 1.3,
-    "extensibility": 7.7,
+    "extensibility": 7.8,
     "observability": 2.6,
     "legibility": 5.2
    },
@@ -1216,11 +1216,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 34.03,
+   "ksloc": 34.17,
    "classic": {
-    "person_months": 97.43,
-    "schedule_months": 14.2,
-    "cost": 1096824
+    "person_months": 97.84,
+    "schedule_months": 14.3,
+    "cost": 1101393
    },
    "capture": {
     "tests": 0.26,
@@ -1229,21 +1229,21 @@
     "capture": 0.63
    },
    "agent_factor": 0.27,
-   "reproduce_pm": 25.97,
+   "reproduce_pm": 26.07,
    "history": {
-    "commits": 2236,
+    "commits": 2241,
     "fix_commits": 302,
-    "authors": 501,
-    "age_months": 127.8,
-    "months_since_last": 0.1
+    "authors": 502,
+    "age_months": 128.0,
+    "months_since_last": 0.2
    },
-   "knowledge_pm": 17.22,
-   "rediscover_pm": 6.37,
-   "replacement_pm": 32.34,
+   "knowledge_pm": 17.25,
+   "rediscover_pm": 6.38,
+   "replacement_pm": 32.45,
    "leverage": 1.02,
    "obsolescence": 0.95,
-   "value_pm": 31.27,
-   "value_cost": 352002,
+   "value_pm": 31.38,
+   "value_cost": 353280,
    "knowledge_at_risk": 0.2,
    "assumptions": {
     "salary": 56286,
@@ -1257,26 +1257,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 3325.4901,
+   "make_buy_ratio": 3331.5648,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 39694.32,
+   "break_even_price_per_year": 39766.85,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1669029,
-     "input": 41725725,
-     "cached_input": 35466866
+     "output": 1675021,
+     "input": 41875525,
+     "cached_input": 35594196
     },
-    "final_tokens": 556343,
-    "model_cost": 65.51,
-    "agent_hours": 18.54,
-    "human_days": 153.13,
-    "review_days": 19.36,
-    "rediscover_days": 133.77,
-    "calendar_days": 153.13,
-    "build_cost": 82150.88,
-    "yearly_cost": 12322.63,
-    "total_cost": 119118.77
+    "final_tokens": 558340,
+    "model_cost": 65.74,
+    "agent_hours": 18.61,
+    "human_days": 153.41,
+    "review_days": 19.43,
+    "rediscover_days": 133.98,
+    "calendar_days": 153.41,
+    "build_cost": 82300.94,
+    "yearly_cost": 12345.14,
+    "total_cost": 119336.37
    },
    "buy": {
     "via": {

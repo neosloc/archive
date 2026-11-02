@@ -4,20 +4,20 @@
   "url": "https://github.com/ShareX/ShareX",
   "slug": "sharex-sharex",
   "host": "github.com",
-  "commit": "f3ae963af1c03c242f58adf162d3dffc1d45c657",
-  "committed_at": "2026-10-26T12:26:02+03:00",
-  "evaluated_at": "2026-10-26T10:12:15+00:00",
+  "commit": "40ec95feb5543ace43b4faa3bf7b0fd2ef1b7d7f",
+  "committed_at": "2026-11-02T08:36:11+03:00",
+  "evaluated_at": "2026-11-02T12:29:00+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/ShareX/ShareX",
   "inventory": {
-   "files": 1804,
-   "source_files": 1231,
-   "source_tokens": 2177907,
+   "files": 1938,
+   "source_files": 1357,
+   "source_tokens": 2535831,
    "languages": {
-    "csharp": 2177907
+    "csharp": 2535831
    },
    "git": true
   },
@@ -392,6 +392,14 @@
          {
           "path": "ShareX.ImageEditor/Presentation/Views/Dialogs/EffectDialogRegistry.cs",
           "detail": "1 match"
+         },
+         {
+          "path": "ShareX.PhotoEditor/Tools/ToolRegistry.cs",
+          "detail": "1 match"
+         },
+         {
+          "path": "ShareX.PhotoEditor/UI/Commands/CommandRegistry.cs",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -468,9 +476,18 @@
         "level": 3,
         "id": "crash-reports",
         "text": "Crashes are reported (Sentry, Crashpad/Breakpad, Crashlytics, MetricKit).",
-        "met": false,
-        "evidence": [],
-        "note": "no crash reporting"
+        "met": true,
+        "evidence": [
+         {
+          "path": "ShareX.HistoryLib/Models/HistoryStats.cs",
+          "detail": "8 matches"
+         },
+         {
+          "path": "ShareX.HistoryLib/Views/StatsWindow.axaml.cs",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 4,
@@ -493,13 +510,13 @@
     "rationale": "Not yet: A README and some tests.",
     "evidence": [],
     "metrics": {
-     "source_files": 1231,
-     "source_tokens": 2177907,
+     "source_files": 1357,
+     "source_tokens": 2535831,
      "test_files": 0,
      "test_tokens": 0,
      "test_ratio": 0.0,
-     "modules": 172,
-     "modules_within_budget": 0.92,
+     "modules": 181,
+     "modules_within_budget": 0.88,
      "oversized_files": [
       "ShareX.HelpersLib/Native/NativeEnums.cs",
       "ShareX/TaskHelpers.cs",
@@ -508,13 +525,14 @@
       "ShareX.ImageEditor/Presentation/Views/EditorView.axaml.cs",
       "ShareX.HelpersLib/Helpers/SkiaImageHelpers.Operations.cs",
       "ShareX/Presentation/MainWindow/MainWindow.axaml.cs",
-      "ShareX.ImageEditor/Presentation/Controllers/EditorInputController.cs",
       "ShareX.ImageEditor/Presentation/Controllers/EditorSelectionController.cs",
+      "ShareX.ImageEditor/Presentation/Controllers/EditorInputController.cs",
       "ShareX.ScreenCaptureLib/Presentation/RegionCapture/RegionCaptureWindow.axaml.cs",
       "ShareX.ImageEditor/Presentation/ViewModels/MainViewModel.ToolOptions.cs",
       "ShareX.HelpersLib/MimeTypes.cs",
       "ShareX.UploadersLib/Presentation/DestinationSettings/DestinationSettingsPageBuilder.cs",
-      "ShareX.ImageEditor/Core/Editor/EditorCore.cs"
+      "ShareX.ImageEditor/Core/Editor/EditorCore.cs",
+      "ShareX.PhotoEditor/Imaging/Filters.cs"
      ],
      "largest_module": {
       "path": "ShareX.ImageEditor/Core/ImageEffects/Filters",
@@ -529,7 +547,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "csharp": 2177907
+      "csharp": 2535831
      }
     },
     "gaps": [
@@ -564,7 +582,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "92% of modules fit 32k tokens; 14 files over 12k; test/source token ratio 0.00 < 0.3"
+        "note": "88% of modules fit 32k tokens; 15 files over 12k; test/source token ratio 0.00 < 0.3"
        },
        {
         "level": 4,
@@ -589,55 +607,55 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 223.5,
+   "retrofit_person_days": 241.2,
    "retrofit_by_dimension": {
-    "interface": 66.4,
-    "stability": 14.8,
-    "ergonomics": 33.2,
-    "embeddability": 22.1,
-    "extensibility": 29.5,
-    "observability": 22.1,
-    "legibility": 35.4
+    "interface": 71.7,
+    "stability": 15.9,
+    "ergonomics": 35.8,
+    "embeddability": 23.9,
+    "extensibility": 31.8,
+    "observability": 23.9,
+    "legibility": 38.2
    },
    "wrappability": "replace or wrap externally",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.95,
+    "size_factor": 3.18,
     "legibility_multiplier": 2.5,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 178.46,
+   "ksloc": 206.34,
    "classic": {
-    "person_months": 555.04,
-    "schedule_months": 27.6,
-    "cost": 6248156
+    "person_months": 646.42,
+    "schedule_months": 29.2,
+    "cost": 7276846
    },
    "capture": {
     "tests": 0.0,
     "contract": 0.0,
-    "docs": 0.16,
+    "docs": 0.15,
     "capture": 0.04
    },
    "agent_factor": 0.53,
-   "reproduce_pm": 295.28,
+   "reproduce_pm": 343.89,
    "history": {
-    "commits": 8732,
-    "fix_commits": 1344,
+    "commits": 8829,
+    "fix_commits": 1359,
     "authors": 313,
-    "age_months": 156.6,
+    "age_months": 156.8,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 70.54,
-   "rediscover_pm": 67.72,
-   "replacement_pm": 363.0,
+   "knowledge_pm": 71.33,
+   "rediscover_pm": 68.47,
+   "replacement_pm": 412.37,
    "leverage": 0.79,
    "obsolescence": 0.85,
-   "value_pm": 242.43,
-   "value_cost": 2729091,
-   "knowledge_at_risk": 0.19,
+   "value_pm": 275.4,
+   "value_cost": 3100250,
+   "knowledge_at_risk": 0.17,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -650,26 +668,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 922.7169,
+   "make_buy_ratio": 948.6858,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 414183.46,
+   "break_even_price_per_year": 425852.86,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 9121074,
-     "input": 228026850,
-     "cached_input": 193822822
+     "output": 10620060,
+     "input": 265501500,
+     "cached_input": 225676275
     },
-    "final_tokens": 3040358,
-    "model_cost": 358.0,
-    "agent_hours": 101.35,
-    "human_days": 1599.68,
-    "review_days": 177.56,
-    "rediscover_days": 1422.12,
-    "calendar_days": 1599.68,
-    "build_cost": 857861.0,
-    "yearly_cost": 128679.15,
-    "total_cost": 1243898.46
+    "final_tokens": 3540020,
+    "model_cost": 416.84,
+    "agent_hours": 118.0,
+    "human_days": 1644.61,
+    "review_days": 206.74,
+    "rediscover_days": 1437.87,
+    "calendar_days": 1644.61,
+    "build_cost": 882004.6,
+    "yearly_cost": 132300.69,
+    "total_cost": 1278906.66
    },
    "buy": {
     "via": {

@@ -4,21 +4,21 @@
   "url": "https://github.com/axios/axios",
   "slug": "axios-axios",
   "host": "github.com",
-  "commit": "aa54a5e1e0e50cd1a2561b854ae5490ff589d065",
-  "committed_at": "2026-10-23T09:29:58+02:00",
-  "evaluated_at": "2026-10-26T10:09:05+00:00",
+  "commit": "6f5950a920153b0da89be0acee7f24bf095fd1d5",
+  "committed_at": "2026-11-02T14:17:58+02:00",
+  "evaluated_at": "2026-11-02T12:26:33+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/axios/axios",
   "inventory": {
-   "files": 503,
+   "files": 519,
    "source_files": 81,
-   "source_tokens": 80509,
+   "source_tokens": 80770,
    "languages": {
-    "javascript": 74462,
-    "typescript": 6047
+    "javascript": 74617,
+    "typescript": 6153
    },
    "git": true
   },
@@ -852,9 +852,9 @@
     ],
     "metrics": {
      "source_files": 81,
-     "source_tokens": 80509,
+     "source_tokens": 80770,
      "test_files": 182,
-     "test_tokens": 284289,
+     "test_tokens": 285072,
      "test_ratio": 3.53,
      "modules": 15,
      "modules_within_budget": 1.0,
@@ -874,8 +874,8 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "javascript": 74462,
-      "typescript": 6047
+      "javascript": 74617,
+      "typescript": 6153
      }
     },
     "gaps": [
@@ -1010,11 +1010,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 7.81,
+   "ksloc": 7.82,
    "classic": {
-    "person_months": 20.78,
+    "person_months": 20.8,
     "schedule_months": 7.9,
-    "cost": 233938
+    "cost": 234158
    },
    "capture": {
     "tests": 1.0,
@@ -1025,19 +1025,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 2.64,
    "history": {
-    "commits": 2037,
-    "fix_commits": 508,
-    "authors": 696,
-    "age_months": 146.1,
-    "months_since_last": 0.1
+    "commits": 2058,
+    "fix_commits": 513,
+    "authors": 700,
+    "age_months": 146.5,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 20.35,
-   "rediscover_pm": 1.22,
-   "replacement_pm": 3.86,
+   "knowledge_pm": 20.55,
+   "rediscover_pm": 1.23,
+   "replacement_pm": 3.87,
    "leverage": 0.92,
    "obsolescence": 0.95,
-   "value_pm": 3.36,
-   "value_cost": 37839,
+   "value_pm": 3.37,
+   "value_cost": 37984,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,
@@ -1051,26 +1051,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 61.2351,
+   "make_buy_ratio": 61.6574,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 8635.26,
+   "break_even_price_per_year": 8695.79,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1095843,
-     "input": 27396075,
-     "cached_input": 23286663
+     "output": 1098979,
+     "input": 27474475,
+     "cached_input": 23353303
     },
-    "final_tokens": 365281,
-    "model_cost": 43.01,
-    "agent_hours": 12.18,
-    "human_days": 33.8,
-    "review_days": 8.18,
-    "rediscover_days": 25.62,
-    "calendar_days": 33.8,
-    "build_cost": 18162.65,
-    "yearly_cost": 2724.4,
-    "total_cost": 26335.85
+    "final_tokens": 366326,
+    "model_cost": 43.13,
+    "agent_hours": 12.21,
+    "human_days": 34.04,
+    "review_days": 8.21,
+    "rediscover_days": 25.83,
+    "calendar_days": 34.04,
+    "build_cost": 18287.9,
+    "yearly_cost": 2743.18,
+    "total_cost": 26517.45
    },
    "buy": {
     "via": {

@@ -4,20 +4,20 @@
   "url": "https://github.com/caddyserver/caddy",
   "slug": "caddyserver-caddy",
   "host": "github.com",
-  "commit": "258863f6f6485863f7a12bc9fa02a29472b29ed5",
-  "committed_at": "2026-10-26T09:21:29Z",
-  "evaluated_at": "2026-10-26T10:10:31+00:00",
+  "commit": "98b0bbd4774611c133463420d4cd047aa4622a51",
+  "committed_at": "2026-11-02T13:48:05+03:00",
+  "evaluated_at": "2026-11-02T12:27:19+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/caddyserver/caddy",
   "inventory": {
-   "files": 741,
+   "files": 745,
    "source_files": 229,
-   "source_tokens": 603519,
+   "source_tokens": 607464,
    "languages": {
-    "go": 603418,
+    "go": 607363,
     "shell": 101
    },
    "git": true
@@ -32,7 +32,7 @@
     "service": [
      {
       "path": "admin.go",
-      "detail": "go-http: 57 route declarations"
+      "detail": "go-http: 45 route declarations"
      }
     ],
     "cli": [
@@ -88,9 +88,9 @@
      }
     ],
     "metrics": {
-     "route_declarations": 57,
+     "route_declarations": 45,
      "routes_by_framework": {
-      "go-http": 57
+      "go-http": 45
      },
      "spec_files": 0,
      "spec_operations": 0,
@@ -116,7 +116,7 @@
         "evidence": [
          {
           "path": "admin.go",
-          "detail": "go-http: 57 route declarations"
+          "detail": "go-http: 45 route declarations"
          }
         ],
         "note": ""
@@ -790,12 +790,12 @@
           "detail": "22 matches"
          },
          {
-          "path": "modules/caddyhttp/caddyauth/command.go",
+          "path": "modules/caddypki/command.go",
           "detail": "12 matches"
          },
          {
-          "path": "modules/caddypki/command.go",
-          "detail": "12 matches"
+          "path": "modules/caddyhttp/caddyauth/command.go",
+          "detail": "11 matches"
          },
          {
           "path": "modules/caddyhttp/reverseproxy/command.go",
@@ -1786,12 +1786,12 @@
           "detail": "22 matches"
          },
          {
-          "path": "modules/caddyhttp/caddyauth/command.go",
+          "path": "modules/caddypki/command.go",
           "detail": "12 matches"
          },
          {
-          "path": "modules/caddypki/command.go",
-          "detail": "12 matches"
+          "path": "modules/caddyhttp/caddyauth/command.go",
+          "detail": "11 matches"
          },
          {
           "path": "modules/caddyhttp/reverseproxy/command.go",
@@ -2390,10 +2390,10 @@
     ],
     "metrics": {
      "source_files": 229,
-     "source_tokens": 603519,
-     "test_files": 175,
-     "test_tokens": 381705,
-     "test_ratio": 0.63,
+     "source_tokens": 607464,
+     "test_files": 177,
+     "test_tokens": 397433,
+     "test_ratio": 0.65,
      "modules": 48,
      "modules_within_budget": 0.9,
      "oversized_files": [
@@ -2401,11 +2401,12 @@
       "modules/caddyhttp/server.go",
       "caddyconfig/httpcaddyfile/httptype.go",
       "modules/caddyhttp/matchers.go",
-      "admin.go"
+      "admin.go",
+      "caddyconfig/httpcaddyfile/tlsapp.go"
      ],
      "largest_module": {
       "path": "modules/caddyhttp",
-      "tokens": 105620
+      "tokens": 106649
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -2416,12 +2417,12 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 603418,
+      "go": 607363,
       "shell": 101
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (90% of modules fit 32k tokens; 5 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (90% of modules fit 32k tokens; 6 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -2442,7 +2443,7 @@
          },
          {
           "path": "admin_checkhost_case_test.go",
-          "detail": "175 test files"
+          "detail": "177 test files"
          }
         ],
         "note": ""
@@ -2498,7 +2499,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "90% of modules fit 32k tokens; 5 files over 12k"
+        "note": "90% of modules fit 32k tokens; 6 files over 12k"
        },
        {
         "level": 4,
@@ -2526,33 +2527,33 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 36.4,
+   "retrofit_person_days": 36.6,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 3.1,
     "events": 3.1,
-    "identity": 9.3,
+    "identity": 9.4,
     "ergonomics": 2.3,
     "embeddability": 0.0,
-    "extensibility": 9.3,
+    "extensibility": 9.4,
     "observability": 3.1,
     "legibility": 6.2
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.55,
+    "size_factor": 1.56,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 49.31,
+   "ksloc": 49.56,
    "classic": {
-    "person_months": 143.81,
+    "person_months": 144.57,
     "schedule_months": 16.5,
-    "cost": 1618844
+    "cost": 1627497
    },
    "capture": {
     "tests": 1.0,
@@ -2561,21 +2562,21 @@
     "capture": 0.72
    },
    "agent_factor": 0.23,
-   "reproduce_pm": 32.5,
+   "reproduce_pm": 32.67,
    "history": {
-    "commits": 2768,
-    "fix_commits": 572,
-    "authors": 489,
-    "age_months": 91.0,
+    "commits": 2790,
+    "fix_commits": 573,
+    "authors": 497,
+    "age_months": 91.3,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 25.28,
-   "rediscover_pm": 7.08,
-   "replacement_pm": 39.58,
+   "knowledge_pm": 25.41,
+   "rediscover_pm": 7.11,
+   "replacement_pm": 39.79,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 36.03,
-   "value_cost": 405629,
+   "value_pm": 36.22,
+   "value_cost": 407782,
    "knowledge_at_risk": 0.18,
    "assumptions": {
     "salary": 56286,
@@ -2589,26 +2590,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 171.5287,
+   "make_buy_ratio": 172.7203,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 46407.11,
+   "break_even_price_per_year": 46731.38,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3006367,
-     "input": 75159175,
-     "cached_input": 63885298
+     "output": 3065717,
+     "input": 76642925,
+     "cached_input": 65146486
     },
-    "final_tokens": 1002122,
-    "model_cost": 118.0,
-    "agent_hours": 33.4,
-    "human_days": 179.95,
-    "review_days": 31.27,
-    "rediscover_days": 148.68,
-    "calendar_days": 179.95,
-    "build_cost": 96577.74,
-    "yearly_cost": 14486.66,
-    "total_cost": 140037.73
+    "final_tokens": 1021905,
+    "model_cost": 120.33,
+    "agent_hours": 34.06,
+    "human_days": 181.19,
+    "review_days": 31.88,
+    "rediscover_days": 149.31,
+    "calendar_days": 181.19,
+    "build_cost": 97248.66,
+    "yearly_cost": 14587.3,
+    "total_cost": 141010.55
    },
    "buy": {
     "via": {

@@ -1,7 +1,7 @@
 {
  "title": "Leaflet/Leaflet",
  "slug": "leaflet-leaflet",
- "date": "2026-10-26T10:09:25+00:00",
+ "date": "2026-11-02T12:26:43+00:00",
  "repo_url": "https://github.com/Leaflet/Leaflet",
  "index": 1.29,
  "assessed": 7,
@@ -9,12 +9,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 276.261,
+ "make_buy_ratio": 159.9707,
  "languages": [
-  "javascript"
+  "javascript",
+  "typescript"
  ],
- "cocomo_cost": 379249,
- "cocomo_pm": 33.69,
- "value_cost": 125218,
- "value_pm": 11.12
+ "cocomo_cost": 388359,
+ "cocomo_pm": 34.5,
+ "value_cost": 80697,
+ "value_pm": 7.17
 }

@@ -4,9 +4,9 @@
   "url": "https://github.com/rxhanson/Rectangle",
   "slug": "rxhanson-rectangle",
   "host": "github.com",
-  "commit": "6db89eb47627cfa0edd31b84845f0b0968513ef9",
-  "committed_at": "2026-10-25T15:26:16-04:00",
-  "evaluated_at": "2026-10-26T10:11:25+00:00",
+  "commit": "39466aea1a6c942eb3bbdd4a7b5d6da8662106f5",
+  "committed_at": "2026-10-28T21:55:04-04:00",
+  "evaluated_at": "2026-11-02T12:28:20+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 486,
    "source_files": 215,
-   "source_tokens": 310571,
+   "source_tokens": 311037,
    "languages": {
-    "swift": 310519,
+    "swift": 310985,
     "c": 52
    },
    "git": true
@@ -532,10 +532,10 @@
     ],
     "metrics": {
      "source_files": 215,
-     "source_tokens": 310571,
+     "source_tokens": 311037,
      "test_files": 5,
-     "test_tokens": 136993,
-     "test_ratio": 0.44,
+     "test_tokens": 138936,
+     "test_ratio": 0.45,
      "modules": 15,
      "modules_within_budget": 0.8,
      "oversized_files": [
@@ -546,7 +546,7 @@
      ],
      "largest_module": {
       "path": "Rectangle",
-      "tokens": 109740
+      "tokens": 110206
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -557,7 +557,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 310519,
+      "swift": 310985,
       "c": 52
      }
     },
@@ -640,41 +640,41 @@
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.11,
+    "size_factor": 1.12,
     "legibility_multiplier": 1.6,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 23.16,
+   "ksloc": 23.18,
    "classic": {
-    "person_months": 65.03,
+    "person_months": 65.1,
     "schedule_months": 12.2,
-    "cost": 732046
+    "cost": 732809
    },
    "capture": {
-    "tests": 0.88,
+    "tests": 0.9,
     "contract": 0.25,
     "docs": 0.29,
-    "capture": 0.58
+    "capture": 0.59
    },
-   "agent_factor": 0.29,
-   "reproduce_pm": 18.79,
+   "agent_factor": 0.28,
+   "reproduce_pm": 18.52,
    "history": {
-    "commits": 1235,
+    "commits": 1239,
     "fix_commits": 172,
-    "authors": 207,
-    "age_months": 88.1,
-    "months_since_last": 0.0
+    "authors": 208,
+    "age_months": 88.2,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 9.62,
-   "rediscover_pm": 4.04,
-   "replacement_pm": 22.83,
+   "knowledge_pm": 9.63,
+   "rediscover_pm": 3.95,
+   "replacement_pm": 22.47,
    "leverage": 0.89,
    "obsolescence": 0.9,
-   "value_pm": 18.35,
-   "value_cost": 206535,
+   "value_pm": 18.06,
+   "value_cost": 203267,
    "knowledge_at_risk": 0.18,
    "assumptions": {
     "salary": 56286,
@@ -688,26 +688,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 97.5427,
+   "make_buy_ratio": 95.6312,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 26128.41,
+   "break_even_price_per_year": 25611.08,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1381823,
-     "input": 34545575,
-     "cached_input": 29363738
+     "output": 1388176,
+     "input": 34704400,
+     "cached_input": 29498740
     },
-    "final_tokens": 460607,
-    "model_cost": 54.24,
-    "agent_hours": 15.35,
-    "human_days": 101.79,
-    "review_days": 16.95,
-    "rediscover_days": 84.84,
-    "calendar_days": 101.79,
-    "build_cost": 54618.72,
-    "yearly_cost": 8192.81,
-    "total_cost": 79197.15
+    "final_tokens": 462725,
+    "model_cost": 54.49,
+    "agent_hours": 15.42,
+    "human_days": 99.79,
+    "review_days": 16.84,
+    "rediscover_days": 82.95,
+    "calendar_days": 99.79,
+    "build_cost": 53548.4,
+    "yearly_cost": 8032.26,
+    "total_cost": 77645.18
    },
    "buy": {
     "via": {

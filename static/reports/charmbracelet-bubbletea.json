@@ -4,9 +4,9 @@
   "url": "https://github.com/charmbracelet/bubbletea",
   "slug": "charmbracelet-bubbletea",
   "host": "github.com",
-  "commit": "f9df43c4f2c021d8740a2628d59cd810a862eb98",
-  "committed_at": "2026-10-08T21:38:55+04:00",
-  "evaluated_at": "2026-10-12T12:01:57+00:00",
+  "commit": "67b4c7a8a2b34a0b1ce15261b0c705bc7e1a04b7",
+  "committed_at": "2026-10-28T14:18:02+04:00",
+  "evaluated_at": "2026-11-02T12:27:22+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 233,
    "source_files": 36,
-   "source_tokens": 34443,
+   "source_tokens": 34545,
    "languages": {
-    "go": 34443
+    "go": 34545
    },
    "git": true
   },
@@ -141,7 +141,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "109 semver tags, latest v2.1.0",
+      "detail": "110 semver tags, latest v2.1.1",
       "path": null,
       "weight": 1
      }
@@ -165,7 +165,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "109 semver tags, latest v2.1.0"
+          "detail": "110 semver tags, latest v2.1.1"
          }
         ],
         "note": ""
@@ -526,16 +526,16 @@
     ],
     "metrics": {
      "source_files": 36,
-     "source_tokens": 34443,
+     "source_tokens": 34545,
      "test_files": 11,
-     "test_tokens": 11256,
+     "test_tokens": 11374,
      "test_ratio": 0.33,
      "modules": 3,
      "modules_within_budget": 0.67,
      "oversized_files": [],
      "largest_module": {
       "path": ".",
-      "tokens": 33679
+      "tokens": 33781
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -546,7 +546,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 34443
+      "go": 34545
      }
     },
     "gaps": [
@@ -668,11 +668,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 2.64,
+   "ksloc": 2.66,
    "classic": {
-    "person_months": 6.65,
+    "person_months": 6.7,
     "schedule_months": 5.1,
-    "cost": 74903
+    "cost": 75379
    },
    "capture": {
     "tests": 0.66,
@@ -681,21 +681,21 @@
     "capture": 0.77
    },
    "agent_factor": 0.2,
-   "reproduce_pm": 1.35,
+   "reproduce_pm": 1.36,
    "history": {
-    "commits": 1796,
-    "fix_commits": 533,
+    "commits": 1798,
+    "fix_commits": 534,
     "authors": 178,
-    "age_months": 80.9,
-    "months_since_last": 0.1
+    "age_months": 81.6,
+    "months_since_last": 0.2
    },
-   "knowledge_pm": 19.64,
+   "knowledge_pm": 19.67,
    "rediscover_pm": 4.52,
-   "replacement_pm": 5.87,
+   "replacement_pm": 5.89,
    "leverage": 0.91,
    "obsolescence": 0.95,
-   "value_pm": 5.08,
-   "value_cost": 57183,
+   "value_pm": 5.09,
+   "value_cost": 57334,
    "knowledge_at_risk": 0.77,
    "assumptions": {
     "salary": 56286,
@@ -709,26 +709,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 91.5457,
+   "make_buy_ratio": 91.5519,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 24674.65,
+   "break_even_price_per_year": 24676.35,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 139473,
-     "input": 3486825,
-     "cached_input": 2963801
+     "output": 140140,
+     "input": 3503500,
+     "cached_input": 2977975
     },
-    "final_tokens": 46491,
-    "model_cost": 5.47,
-    "agent_hours": 1.55,
+    "final_tokens": 46713,
+    "model_cost": 5.5,
+    "agent_hours": 1.56,
     "human_days": 96.28,
     "review_days": 1.36,
     "rediscover_days": 94.92,
     "calendar_days": 96.28,
-    "build_cost": 51614.82,
-    "yearly_cost": 7742.22,
-    "total_cost": 74841.49
+    "build_cost": 51618.33,
+    "yearly_cost": 7742.75,
+    "total_cost": 74846.58
    },
    "buy": {
     "via": {

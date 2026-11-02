@@ -4,16 +4,16 @@
   "url": "https://github.com/fastapi/fastapi",
   "slug": "fastapi-fastapi",
   "host": "github.com",
-  "commit": "23e0908a3e80773353ed8ce2fe8c8eaf0c418c9f",
-  "committed_at": "2026-10-26T09:59:41Z",
-  "evaluated_at": "2026-10-26T10:09:11+00:00",
+  "commit": "5cb6272ed7e3e07eaf6978e1e65b94aca76fa8e0",
+  "committed_at": "2026-11-02T11:54:46Z",
+  "evaluated_at": "2026-11-02T12:26:32+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/fastapi/fastapi",
   "inventory": {
-   "files": 3232,
+   "files": 3234,
    "source_files": 559,
    "source_tokens": 291402,
    "languages": {
@@ -3916,19 +3916,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 10.34,
    "history": {
-    "commits": 7938,
+    "commits": 7976,
     "fix_commits": 565,
     "authors": 920,
-    "age_months": 94.7,
+    "age_months": 94.9,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 50.99,
-   "rediscover_pm": 3.06,
-   "replacement_pm": 13.39,
+   "knowledge_pm": 51.18,
+   "rediscover_pm": 3.07,
+   "replacement_pm": 13.41,
    "leverage": 1.0,
    "obsolescence": 0.95,
-   "value_pm": 12.72,
-   "value_cost": 143245,
+   "value_pm": 12.74,
+   "value_cost": 143367,
    "knowledge_at_risk": 0.23,
    "assumptions": {
     "salary": 56286,
@@ -3942,9 +3942,9 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 86.1237,
+   "make_buy_ratio": 86.3236,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 23165.27,
+   "break_even_price_per_year": 23219.68,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
@@ -3955,13 +3955,13 @@
     "final_tokens": 1158310,
     "model_cost": 136.39,
     "agent_hours": 38.61,
-    "human_days": 90.21,
+    "human_days": 90.42,
     "review_days": 25.95,
-    "rediscover_days": 64.26,
-    "calendar_days": 90.21,
-    "build_cost": 48491.18,
-    "yearly_cost": 7273.68,
-    "total_cost": 70312.22
+    "rediscover_days": 64.47,
+    "calendar_days": 90.42,
+    "build_cost": 48603.75,
+    "yearly_cost": 7290.56,
+    "total_cost": 70475.44
    },
    "buy": {
     "via": {

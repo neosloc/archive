@@ -4,9 +4,9 @@
   "url": "https://github.com/pocketbase/pocketbase",
   "slug": "pocketbase-pocketbase",
   "host": "github.com",
-  "commit": "9d281ccaba65f2686eb7b0b614ccda72d1116a1b",
-  "committed_at": "2026-10-23T13:44:14+03:00",
-  "evaluated_at": "2026-10-26T10:11:21+00:00",
+  "commit": "7f2773ec234b62d0b80ca47c508397cb3d0da3ea",
+  "committed_at": "2026-10-26T20:07:11+02:00",
+  "evaluated_at": "2026-11-02T12:28:04+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -1909,19 +1909,19 @@
    "agent_factor": 0.2,
    "reproduce_pm": 45.99,
    "history": {
-    "commits": 2432,
+    "commits": 2433,
     "fix_commits": 378,
-    "authors": 45,
-    "age_months": 51.6,
-    "months_since_last": 0.1
+    "authors": 46,
+    "age_months": 51.7,
+    "months_since_last": 0.2
    },
-   "knowledge_pm": 19.72,
+   "knowledge_pm": 19.73,
    "rediscover_pm": 4.54,
    "replacement_pm": 50.53,
    "leverage": 1.01,
    "obsolescence": 0.95,
    "value_pm": 48.6,
-   "value_cost": 547133,
+   "value_cost": 547145,
    "knowledge_at_risk": 0.09,
    "assumptions": {
     "salary": 56286,

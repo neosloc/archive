@@ -1,7 +1,7 @@
 {
  "title": "Alamofire/Alamofire",
  "slug": "alamofire-alamofire",
- "date": "2026-10-07T14:29:33+00:00",
+ "date": "2026-11-02T12:28:14+00:00",
  "repo_url": "https://github.com/Alamofire/Alamofire",
  "index": 2.0,
  "assessed": 7,
@@ -10,7 +10,7 @@
   "desktop"
  ],
  "verdict": "buy",
- "make_buy_ratio": 336.1518,
+ "make_buy_ratio": 336.1503,
  "languages": [
   "swift"
  ],

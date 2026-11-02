@@ -4,20 +4,20 @@
   "url": "https://github.com/honojs/hono",
   "slug": "honojs-hono",
   "host": "github.com",
-  "commit": "bac5c4a8bcd76b165428ce757e1185753c7935bd",
-  "committed_at": "2026-10-25T16:17:34+09:00",
-  "evaluated_at": "2026-10-26T10:09:17+00:00",
+  "commit": "c91b60a251186fb024557c6d55a11d8e388f179c",
+  "committed_at": "2026-11-01T11:52:12+09:00",
+  "evaluated_at": "2026-11-02T12:26:42+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/honojs/hono",
   "inventory": {
-   "files": 571,
-   "source_files": 241,
-   "source_tokens": 218269,
+   "files": 572,
+   "source_files": 242,
+   "source_tokens": 218966,
    "languages": {
-    "typescript": 218269
+    "typescript": 218966
    },
    "git": true
   },
@@ -311,7 +311,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "457 semver tags, latest v4.13.14",
+      "detail": "459 semver tags, latest v4.13.16",
       "path": null,
       "weight": 1
      }
@@ -335,7 +335,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "457 semver tags, latest v4.13.14"
+          "detail": "459 semver tags, latest v4.13.16"
          }
         ],
         "note": ""
@@ -915,6 +915,10 @@
           "detail": "2 matches"
          },
          {
+          "path": "src/utils/mount.ts",
+          "detail": "2 matches"
+         },
+         {
           "path": "adapters/bun/src/websocket.ts",
           "detail": "1 match"
          },
@@ -1419,11 +1423,11 @@
      }
     ],
     "metrics": {
-     "source_files": 241,
-     "source_tokens": 218269,
+     "source_files": 242,
+     "source_tokens": 218966,
      "test_files": 163,
-     "test_tokens": 492928,
-     "test_ratio": 2.26,
+     "test_tokens": 500627,
+     "test_ratio": 2.29,
      "modules": 91,
      "modules_within_budget": 0.99,
      "oversized_files": [
@@ -1431,26 +1435,26 @@
      ],
      "largest_module": {
       "path": "src",
-      "tokens": 38327
+      "tokens": 38341
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 452,
+     "import_edges": 457,
      "import_graph": true,
      "max_fan_out": 10,
      "import_cycles": 5,
      "largest_cycle": [
-      "src/jsx/base.ts",
-      "src/jsx/children.ts",
-      "src/jsx/context.ts",
-      "src/jsx/dom/context.ts",
-      "src/jsx/intrinsic-element/common.ts",
-      "src/jsx/intrinsic-element/components.ts",
-      "src/jsx/types.ts"
+      "src/compose.ts",
+      "src/context.ts",
+      "src/hono-base.ts",
+      "src/request.ts",
+      "src/types.ts",
+      "src/utils/body.ts",
+      "src/utils/mount.ts"
      ],
      "languages": {
-      "typescript": 218269
+      "typescript": 218966
      }
     },
     "gaps": [
@@ -1531,7 +1535,7 @@
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
         "met": false,
         "evidence": [],
-        "note": "5 import cycles (largest: src/jsx/base.ts, src/jsx/children.ts, src/jsx/context.ts)"
+        "note": "5 import cycles (largest: src/compose.ts, src/context.ts, src/hono-base.ts)"
        }
       ]
      }
@@ -1561,18 +1565,18 @@
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 0.93,
+    "size_factor": 0.94,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 21.55,
+   "ksloc": 21.59,
    "classic": {
-    "person_months": 60.31,
+    "person_months": 60.42,
     "schedule_months": 11.9,
-    "cost": 678930
+    "cost": 680153
    },
    "capture": {
     "tests": 1.0,
@@ -1581,21 +1585,21 @@
     "capture": 0.73
    },
    "agent_factor": 0.22,
-   "reproduce_pm": 13.36,
+   "reproduce_pm": 13.38,
    "history": {
-    "commits": 2806,
-    "fix_commits": 905,
+    "commits": 2817,
+    "fix_commits": 908,
     "authors": 387,
-    "age_months": 58.3,
+    "age_months": 58.6,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 32.13,
-   "rediscover_pm": 8.68,
-   "replacement_pm": 22.03,
+   "knowledge_pm": 32.25,
+   "rediscover_pm": 8.71,
+   "replacement_pm": 22.09,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 19.77,
-   "value_cost": 222547,
+   "value_pm": 19.82,
+   "value_cost": 223104,
    "knowledge_at_risk": 0.39,
    "assumptions": {
     "salary": 56286,
@@ -1609,26 +1613,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 191.0438,
+   "make_buy_ratio": 191.8761,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 52712.66,
+   "break_even_price_per_year": 52943.52,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 2151270,
-     "input": 53781750,
-     "cached_input": 45714487
+     "output": 2176515,
+     "input": 54412875,
+     "cached_input": 46250943
     },
-    "final_tokens": 717090,
-    "model_cost": 84.44,
-    "agent_hours": 23.9,
-    "human_days": 204.37,
-    "review_days": 22.09,
-    "rediscover_days": 182.28,
-    "calendar_days": 204.37,
-    "build_cost": 109634.55,
-    "yearly_cost": 16445.18,
-    "total_cost": 158970.1
+    "final_tokens": 725505,
+    "model_cost": 85.43,
+    "agent_hours": 24.18,
+    "human_days": 205.26,
+    "review_days": 22.35,
+    "rediscover_days": 182.91,
+    "calendar_days": 205.26,
+    "build_cost": 110112.18,
+    "yearly_cost": 16516.83,
+    "total_cost": 159662.66
    },
    "buy": {
     "via": {

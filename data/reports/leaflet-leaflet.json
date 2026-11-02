@@ -4,20 +4,21 @@
   "url": "https://github.com/Leaflet/Leaflet",
   "slug": "leaflet-leaflet",
   "host": "github.com",
-  "commit": "9c52abfa1a086dac80d64eb611e9942f655f2aa8",
-  "committed_at": "2026-10-26T11:53:39+02:00",
-  "evaluated_at": "2026-10-26T10:09:25+00:00",
+  "commit": "6d1f3f9b1f3c3d5586d737d3aaadea0c0ef95e5c",
+  "committed_at": "2026-11-02T14:17:01+02:00",
+  "evaluated_at": "2026-11-02T12:26:43+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/Leaflet/Leaflet",
   "inventory": {
-   "files": 1011,
-   "source_files": 86,
-   "source_tokens": 133356,
+   "files": 998,
+   "source_files": 75,
+   "source_tokens": 156852,
    "languages": {
-    "javascript": 133356
+    "javascript": 151054,
+    "typescript": 5798
    },
    "git": true
   },
@@ -41,8 +42,8 @@
    {
     "key": "interface",
     "title": "Interface surface",
-    "level": 2,
-    "rationale": "The public API is delimited (__all__, an exports map, exported identifiers).",
+    "level": 3,
+    "rationale": "The public API is statically typed (py.typed, type declarations, a typed language).",
     "evidence": [
      {
       "signal": "L1 importable",
@@ -55,6 +56,12 @@
       "detail": "package entry point",
       "path": "package.json",
       "weight": 1
+     },
+     {
+      "signal": "L3 typed",
+      "detail": "TypeScript types",
+      "path": "package.json",
+      "weight": 1
      }
     ],
     "metrics": {
@@ -65,14 +72,14 @@
      "spec_coverage": null
     },
     "gaps": [
-     "L3 The public API is statically typed (py.typed, type declarations, a typed language). (no py.typed or type declarations)"
+     "L4 An API reference is generated from the code (autodoc, mkdocstrings, typedoc, \u2026). (no generated API reference)"
     ],
     "question": "Can another program use it through a documented, machine-readable surface?",
     "best_surface": "library",
     "surfaces": {
      "library": {
-      "level": 2,
-      "first_missing": "typed",
+      "level": 3,
+      "first_missing": "api-reference",
       "requirements": [
        {
         "level": 1,
@@ -104,9 +111,14 @@
         "level": 3,
         "id": "typed",
         "text": "The public API is statically typed (py.typed, type declarations, a typed language).",
-        "met": false,
-        "evidence": [],
-        "note": "no py.typed or type declarations"
+        "met": true,
+        "evidence": [
+         {
+          "path": "package.json",
+          "detail": "TypeScript types"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 4,
@@ -119,7 +131,7 @@
       ]
      }
     },
-    "level_name": "partial",
+    "level_name": "solid",
     "applicable": true
    },
    {
@@ -283,6 +295,10 @@
           "detail": "6 matches"
          },
          {
+          "path": "src/layer/vector/Circle.js",
+          "detail": "2 matches"
+         },
+         {
           "path": "src/core/Class.js",
           "detail": "1 match"
          },
@@ -323,10 +339,6 @@
           "detail": "1 match"
          },
          {
-          "path": "src/layer/vector/Circle.js",
-          "detail": "1 match"
-         },
-         {
           "path": "src/layer/vector/Polygon.js",
           "detail": "1 match"
          },
@@ -362,8 +374,8 @@
    {
     "key": "embeddability",
     "title": "Embeddability",
-    "level": 3,
-    "rationale": "Published to a public registry, with at most 10 runtime dependencies.",
+    "level": 2,
+    "rationale": "Installable as a package (a package manifest).",
     "evidence": [
      {
       "signal": "L1 importable",
@@ -376,24 +388,18 @@
       "detail": "package manifest",
       "path": "package.json",
       "weight": 1
-     },
-     {
-      "signal": "L3 published-minimal",
-      "detail": "1 match",
-      "path": ".github/workflows/main.yml",
-      "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
-     "L4 Optional features behind extras/features. (no optional extras)"
+     "L3 Published to a public registry, with at most 10 runtime dependencies. (not published to a registry)"
     ],
     "question": "Can another system run and compose it without a human?",
     "best_surface": "library",
     "surfaces": {
      "library": {
-      "level": 3,
-      "first_missing": "optional-features",
+      "level": 2,
+      "first_missing": "published-minimal",
       "requirements": [
        {
         "level": 1,
@@ -425,18 +431,9 @@
         "level": 3,
         "id": "published-minimal",
         "text": "Published to a public registry, with at most 10 runtime dependencies.",
-        "met": true,
-        "evidence": [
-         {
-          "path": ".github/workflows/main.yml",
-          "detail": "1 match"
-         },
-         {
-          "path": null,
-          "detail": "0 runtime dependencies"
-         }
-        ],
-        "note": ""
+        "met": false,
+        "evidence": [],
+        "note": "not published to a registry"
        },
        {
         "level": 4,
@@ -449,7 +446,7 @@
       ]
      }
     },
-    "level_name": "solid",
+    "level_name": "partial",
     "applicable": true
    },
    {
@@ -582,11 +579,11 @@
      }
     ],
     "metrics": {
-     "source_files": 86,
-     "source_tokens": 133356,
-     "test_files": 57,
-     "test_tokens": 126487,
-     "test_ratio": 0.95,
+     "source_files": 75,
+     "source_tokens": 156852,
+     "test_files": 60,
+     "test_tokens": 134643,
+     "test_ratio": 0.86,
      "modules": 16,
      "modules_within_budget": 1.0,
      "oversized_files": [
@@ -597,23 +594,48 @@
       "path": "debug/vector",
       "tokens": 31031
      },
-     "typed_ratio": 0.0,
+     "typed_ratio": 0.04,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 242,
+     "import_edges": 352,
      "import_graph": true,
-     "max_fan_out": 22,
-     "import_cycles": 2,
+     "max_fan_out": 41,
+     "import_cycles": 3,
      "largest_cycle": [
-      "src/dom/DomEvent.js",
-      "src/dom/DomUtil.js"
+      "src/control/AttributionControl.js",
+      "src/control/Control.js",
+      "src/control/ZoomControl.js",
+      "src/core/Handler.js",
+      "src/layer/BlanketOverlay.js",
+      "src/layer/DivOverlay.js",
+      "src/layer/Layer.js",
+      "src/layer/LayerBase.js",
+      "src/layer/Popup.js",
+      "src/layer/Tooltip.js",
+      "src/layer/marker/Marker.Drag.js",
+      "src/layer/marker/Marker.js",
+      "src/layer/tile/GridLayer.js",
+      "src/layer/vector/CircleMarker.js",
+      "src/layer/vector/Path.js",
+      "src/layer/vector/Polyline.js",
+      "src/layer/vector/Renderer.js",
+      "src/layer/vector/SVG.js",
+      "src/map/Map.js",
+      "src/map/handler/BoxZoomHandler.js",
+      "src/map/handler/DoubleClickZoomHandler.js",
+      "src/map/handler/DragHandler.js",
+      "src/map/handler/KeyboardHandler.js",
+      "src/map/handler/PinchZoomHandler.js",
+      "src/map/handler/ScrollWheelZoomHandler.js",
+      "src/map/handler/TapHoldHandler.js"
      ],
      "languages": {
-      "javascript": 133356
+      "javascript": 151054,
+      "typescript": 5798
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (100% of modules fit 32k tokens; 2 files over 12k; 0% of code is typed (< 70%))"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (100% of modules fit 32k tokens; 2 files over 12k; 4% of code is typed (< 70%))"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -634,7 +656,7 @@
          },
          {
           "path": "spec/dist.js",
-          "detail": "57 test files"
+          "detail": "60 test files"
          }
         ],
         "note": ""
@@ -662,7 +684,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "100% of modules fit 32k tokens; 2 files over 12k; 0% of code is typed (< 70%)"
+        "note": "100% of modules fit 32k tokens; 2 files over 12k; 4% of code is typed (< 70%)"
        },
        {
         "level": 4,
@@ -670,7 +692,7 @@
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
         "met": false,
         "evidence": [],
-        "note": "2 import cycles (largest: src/dom/DomEvent.js, src/dom/DomUtil.js)"
+        "note": "3 import cycles (largest: src/control/AttributionControl.js, src/control/Control.js, src/control/ZoomControl.js)"
        }
       ]
      }
@@ -687,55 +709,55 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 15.7,
+   "retrofit_person_days": 15.6,
    "retrofit_by_dimension": {
-    "interface": 2.2,
-    "stability": 0.7,
-    "ergonomics": 3.3,
-    "embeddability": 0.0,
-    "extensibility": 4.4,
-    "observability": 2.2,
-    "legibility": 2.9
+    "interface": 0.0,
+    "stability": 0.8,
+    "ergonomics": 3.6,
+    "embeddability": 0.8,
+    "extensibility": 4.8,
+    "observability": 2.4,
+    "legibility": 3.2
    },
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 0.73,
+    "size_factor": 0.79,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 12.38,
+   "ksloc": 12.66,
    "classic": {
-    "person_months": 33.69,
-    "schedule_months": 9.5,
-    "cost": 379249
+    "person_months": 34.5,
+    "schedule_months": 9.6,
+    "cost": 388359
    },
    "capture": {
     "tests": 1.0,
-    "contract": 0.5,
+    "contract": 0.75,
     "docs": 1.0,
-    "capture": 0.88
+    "capture": 0.94
    },
-   "agent_factor": 0.15,
-   "reproduce_pm": 5.19,
+   "agent_factor": 0.13,
+   "reproduce_pm": 4.38,
    "history": {
-    "commits": 6781,
-    "fix_commits": 1500,
-    "authors": 1055,
-    "age_months": 193.8,
+    "commits": 6898,
+    "fix_commits": 1529,
+    "authors": 1062,
+    "age_months": 194.0,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 63.91,
-   "rediscover_pm": 7.67,
-   "replacement_pm": 12.86,
+   "knowledge_pm": 65.07,
+   "rediscover_pm": 3.9,
+   "replacement_pm": 8.29,
    "leverage": 0.91,
    "obsolescence": 0.95,
-   "value_pm": 11.12,
-   "value_cost": 125218,
-   "knowledge_at_risk": 0.6,
+   "value_pm": 7.17,
+   "value_cost": 80697,
+   "knowledge_at_risk": 0.47,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -748,26 +770,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 276.261,
+   "make_buy_ratio": 159.9707,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 43269.15,
+   "break_even_price_per_year": 22789.91,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 784329,
-     "input": 19608225,
-     "cached_input": 16666991
+     "output": 877308,
+     "input": 21932700,
+     "cached_input": 18642795
     },
-    "final_tokens": 261443,
-    "model_cost": 30.78,
-    "agent_hours": 8.71,
-    "human_days": 167.55,
-    "review_days": 6.48,
-    "rediscover_days": 161.07,
-    "calendar_days": 167.55,
-    "build_cost": 89847.6,
-    "yearly_cost": 13477.14,
-    "total_cost": 130279.02
+    "final_tokens": 292436,
+    "model_cost": 34.43,
+    "agent_hours": 9.75,
+    "human_days": 88.45,
+    "review_days": 6.55,
+    "rediscover_days": 81.9,
+    "calendar_days": 88.45,
+    "build_cost": 47448.15,
+    "yearly_cost": 7117.22,
+    "total_cost": 68799.82
    },
    "buy": {
     "via": {
@@ -775,22 +797,22 @@
      "use": "library"
     },
     "adoption_minutes": {
-     "install": 2,
-     "first_use": 60.0,
-     "total": 62.0
+     "install": 15,
+     "first_use": 10.0,
+     "total": 25.0
     },
     "tokens": {
-     "output": 7750,
-     "input": 193750,
-     "cached_input": 164687
+     "output": 3125,
+     "input": 78125,
+     "cached_input": 66406
     },
-    "model_cost": 0.3,
+    "model_cost": 0.12,
     "upgrade_minutes_per_year": 120,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 69.54,
+    "fixed_cost": 28.04,
     "yearly_cost": 134.01,
-    "total_cost": 471.58
+    "total_cost": 430.08
    },
    "assumptions": {
     "day_rate": 536.05,

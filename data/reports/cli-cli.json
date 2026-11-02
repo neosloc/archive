@@ -4,20 +4,20 @@
   "url": "https://github.com/cli/cli",
   "slug": "cli-cli",
   "host": "github.com",
-  "commit": "4f2cfe92e3499f8581bf39db77e0a1431fa7b55c",
-  "committed_at": "2026-10-23T14:08:01-06:00",
-  "evaluated_at": "2026-10-26T10:10:31+00:00",
+  "commit": "9490d204a2ba95434153dedce99898ce9f281426",
+  "committed_at": "2026-10-30T19:24:31+01:00",
+  "evaluated_at": "2026-11-02T12:27:33+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/cli/cli",
   "inventory": {
-   "files": 1530,
-   "source_files": 593,
-   "source_tokens": 942922,
+   "files": 1536,
+   "source_files": 594,
+   "source_tokens": 944956,
    "languages": {
-    "go": 900281,
+    "go": 902315,
     "shell": 25575,
     "javascript": 17066
    },
@@ -358,7 +358,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "209 semver tags, latest v2.103.2",
+      "detail": "210 semver tags, latest v2.103.3",
       "path": null,
       "weight": 1
      }
@@ -382,7 +382,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "209 semver tags, latest v2.103.2"
+          "detail": "210 semver tags, latest v2.103.3"
          }
         ],
         "note": ""
@@ -1783,10 +1783,10 @@
      }
     ],
     "metrics": {
-     "source_files": 593,
-     "source_tokens": 942922,
-     "test_files": 456,
-     "test_tokens": 1413816,
+     "source_files": 594,
+     "source_tokens": 944956,
+     "test_files": 458,
+     "test_tokens": 1420685,
      "test_ratio": 1.5,
      "modules": 328,
      "modules_within_budget": 1.0,
@@ -1796,7 +1796,7 @@
      ],
      "largest_module": {
       "path": "api",
-      "tokens": 46522
+      "tokens": 46852
      },
      "typed_ratio": 0.95,
      "python_functions": 0,
@@ -1807,7 +1807,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 900281,
+      "go": 902315,
       "shell": 25575,
       "javascript": 17066
      }
@@ -1834,7 +1834,7 @@
          },
          {
           "path": ".github/codeql/tests/unsanitized-response-to-terminal/hits_base64_after_json.go",
-          "detail": "456 test files"
+          "detail": "458 test files"
          }
         ],
         "note": ""
@@ -1968,11 +1968,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 100.05,
+   "ksloc": 100.18,
    "classic": {
-    "person_months": 302.3,
+    "person_months": 302.7,
     "schedule_months": 21.9,
-    "cost": 3403024
+    "cost": 3407560
    },
    "capture": {
     "tests": 1.0,
@@ -1981,21 +1981,21 @@
     "capture": 0.96
    },
    "agent_factor": 0.12,
-   "reproduce_pm": 35.67,
+   "reproduce_pm": 35.72,
    "history": {
-    "commits": 9156,
-    "fix_commits": 1280,
-    "authors": 723,
-    "age_months": 84.6,
+    "commits": 9177,
+    "fix_commits": 1283,
+    "authors": 725,
+    "age_months": 84.9,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 71.38,
+   "knowledge_pm": 71.55,
    "rediscover_pm": 2.86,
-   "replacement_pm": 38.53,
+   "replacement_pm": 38.58,
    "leverage": 1.01,
    "obsolescence": 0.95,
-   "value_pm": 37.11,
-   "value_cost": 417736,
+   "value_pm": 37.16,
+   "value_cost": 418323,
    "knowledge_at_risk": 0.07,
    "assumptions": {
     "salary": 56286,
@@ -2009,26 +2009,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 107.2482,
+   "make_buy_ratio": 107.4351,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 28635.96,
+   "break_even_price_per_year": 28686.33,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 7081529,
-     "input": 177038225,
-     "cached_input": 150482491
+     "output": 7108262,
+     "input": 177706550,
+     "cached_input": 151050567
     },
-    "final_tokens": 2360509,
-    "model_cost": 277.95,
-    "agent_hours": 78.68,
-    "human_days": 111.05,
-    "review_days": 50.99,
+    "final_tokens": 2369420,
+    "model_cost": 279.0,
+    "agent_hours": 78.98,
+    "human_days": 111.24,
+    "review_days": 51.18,
     "rediscover_days": 60.06,
-    "calendar_days": 111.05,
-    "build_cost": 59804.43,
-    "yearly_cost": 8970.67,
-    "total_cost": 86716.43
+    "calendar_days": 111.24,
+    "build_cost": 59908.66,
+    "yearly_cost": 8986.3,
+    "total_cost": 86867.56
    },
    "buy": {
     "via": {

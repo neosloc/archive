@@ -4,9 +4,9 @@
   "url": "https://github.com/fastify/fastify",
   "slug": "fastify-fastify",
   "host": "github.com",
-  "commit": "5df959f3af698823dd582f1c3661f3e80df0b5da",
-  "committed_at": "2026-10-25T16:47:46+01:00",
-  "evaluated_at": "2026-10-26T10:09:06+00:00",
+  "commit": "8c0f699144187dab3b600a626829c31368762256",
+  "committed_at": "2026-11-02T11:25:22+01:00",
+  "evaluated_at": "2026-11-02T12:26:32+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 392,
    "source_files": 53,
-   "source_tokens": 113684,
+   "source_tokens": 114409,
    "languages": {
-    "javascript": 73616,
+    "javascript": 74341,
     "typescript": 39841,
     "shell": 227
    },
@@ -198,7 +198,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "336 semver tags, latest v5.12.7",
+      "detail": "338 semver tags, latest v5.12.8",
       "path": null,
       "weight": 1
      }
@@ -222,7 +222,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "336 semver tags, latest v5.12.7"
+          "detail": "338 semver tags, latest v5.12.8"
          }
         ],
         "note": ""
@@ -998,10 +998,10 @@
     ],
     "metrics": {
      "source_files": 53,
-     "source_tokens": 113684,
+     "source_tokens": 114409,
      "test_files": 228,
-     "test_tokens": 448432,
-     "test_ratio": 3.94,
+     "test_tokens": 451553,
+     "test_ratio": 3.95,
      "modules": 6,
      "modules_within_budget": 0.67,
      "oversized_files": [
@@ -1009,7 +1009,7 @@
      ],
      "largest_module": {
       "path": "lib",
-      "tokens": 62493
+      "tokens": 63218
      },
      "typed_ratio": 0.35,
      "python_functions": 0,
@@ -1028,7 +1028,7 @@
       "lib/route.js"
      ],
      "languages": {
-      "javascript": 73616,
+      "javascript": 74341,
       "typescript": 39841,
       "shell": 227
      }
@@ -1182,10 +1182,10 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 15.5,
+   "retrofit_person_days": 15.6,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 1.3,
+    "stability": 1.4,
     "events": 2.7,
     "identity": 2.7,
     "ergonomics": 2.0,
@@ -1197,18 +1197,18 @@
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 0.67,
+    "size_factor": 0.68,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 10.33,
+   "ksloc": 10.34,
    "classic": {
-    "person_months": 27.85,
+    "person_months": 27.89,
     "schedule_months": 8.9,
-    "cost": 313524
+    "cost": 313938
    },
    "capture": {
     "tests": 1.0,
@@ -1219,19 +1219,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 3.54,
    "history": {
-    "commits": 4482,
+    "commits": 4488,
     "fix_commits": 892,
     "authors": 966,
-    "age_months": 120.9,
+    "age_months": 121.1,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 40.25,
+   "knowledge_pm": 40.28,
    "rediscover_pm": 2.42,
-   "replacement_pm": 5.95,
+   "replacement_pm": 5.96,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 5.34,
-   "value_cost": 60117,
+   "value_pm": 5.35,
+   "value_cost": 60183,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -1245,26 +1245,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 59.3617,
+   "make_buy_ratio": 59.4431,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 16187.86,
+   "break_even_price_per_year": 16210.42,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1688394,
-     "input": 42209850,
-     "cached_input": 35878372
+     "output": 1699945,
+     "input": 42498625,
+     "cached_input": 36123831
     },
-    "final_tokens": 562798,
-    "model_cost": 66.27,
-    "agent_hours": 18.76,
-    "human_days": 63.43,
-    "review_days": 12.61,
+    "final_tokens": 566648,
+    "model_cost": 66.72,
+    "agent_hours": 18.89,
+    "human_days": 63.51,
+    "review_days": 12.69,
     "rediscover_days": 50.82,
-    "calendar_days": 63.43,
-    "build_cost": 34065.99,
-    "yearly_cost": 5109.9,
-    "total_cost": 49395.68
+    "calendar_days": 63.51,
+    "build_cost": 34112.68,
+    "yearly_cost": 5116.9,
+    "total_cost": 49463.38
    },
    "buy": {
     "via": {

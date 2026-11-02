@@ -1,7 +1,7 @@
 {
  "title": "pallets/flask",
  "slug": "pallets-flask",
- "date": "2026-10-07T14:27:22+00:00",
+ "date": "2026-11-02T12:26:15+00:00",
  "repo_url": "https://github.com/pallets/flask",
  "index": 1.3,
  "assessed": 10,
@@ -11,13 +11,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 303.7991,
+ "make_buy_ratio": 303.8358,
  "languages": [
   "python",
   "shell"
  ],
- "cocomo_cost": 206477,
- "cocomo_pm": 18.34,
- "value_cost": 98663,
- "value_pm": 8.76
+ "cocomo_cost": 207852,
+ "cocomo_pm": 18.46,
+ "value_cost": 98949,
+ "value_pm": 8.79
 }

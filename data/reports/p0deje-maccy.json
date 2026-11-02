@@ -4,9 +4,9 @@
   "url": "https://github.com/p0deje/Maccy",
   "slug": "p0deje-maccy",
   "host": "github.com",
-  "commit": "54fb9f00b828a4ec367e706c0e276df90febe76a",
-  "committed_at": "2026-10-23T10:59:04-07:00",
-  "evaluated_at": "2026-10-26T10:11:27+00:00",
+  "commit": "f0b571e32e4031d7b91ba811f50d0f33e8e5548b",
+  "committed_at": "2026-10-26T12:41:30-07:00",
+  "evaluated_at": "2026-11-02T12:28:19+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 562,
    "source_files": 120,
-   "source_tokens": 69843,
+   "source_tokens": 69884,
    "languages": {
-    "swift": 69843
+    "swift": 69884
    },
    "git": true
   },
@@ -176,7 +176,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "92 semver tags, latest 2.7.1",
+      "detail": "93 semver tags, latest 2.8.0",
       "path": null,
       "weight": 1
      }
@@ -200,7 +200,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "92 semver tags, latest 2.7.1"
+          "detail": "93 semver tags, latest 2.8.0"
          }
         ],
         "note": ""
@@ -591,9 +591,9 @@
     ],
     "metrics": {
      "source_files": 120,
-     "source_tokens": 69843,
+     "source_tokens": 69884,
      "test_files": 12,
-     "test_tokens": 21419,
+     "test_tokens": 21474,
      "test_ratio": 0.31,
      "modules": 8,
      "modules_within_budget": 1.0,
@@ -611,7 +611,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 69843
+      "swift": 69884
      }
     },
     "gaps": [
@@ -720,19 +720,19 @@
    "agent_factor": 0.33,
    "reproduce_pm": 6.88,
    "history": {
-    "commits": 1148,
+    "commits": 1150,
     "fix_commits": 195,
-    "authors": 99,
-    "age_months": 104.7,
-    "months_since_last": 0.1
+    "authors": 100,
+    "age_months": 104.8,
+    "months_since_last": 0.2
    },
-   "knowledge_pm": 9.64,
+   "knowledge_pm": 9.65,
    "rediscover_pm": 4.92,
-   "replacement_pm": 11.79,
+   "replacement_pm": 11.8,
    "leverage": 0.84,
    "obsolescence": 0.9,
    "value_pm": 8.96,
-   "value_cost": 100822,
+   "value_cost": 100865,
    "knowledge_at_risk": 0.42,
    "assumptions": {
     "salary": 56286,
@@ -746,26 +746,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 88.2167,
+   "make_buy_ratio": 88.2199,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 27452.33,
+   "break_even_price_per_year": 27453.36,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 284471,
-     "input": 7111775,
-     "cached_input": 6045008
+     "output": 284766,
+     "input": 7119150,
+     "cached_input": 6051277
     },
-    "final_tokens": 94823,
-    "model_cost": 11.17,
+    "final_tokens": 94922,
+    "model_cost": 11.18,
     "agent_hours": 3.16,
     "human_days": 107.15,
     "review_days": 3.83,
     "rediscover_days": 103.32,
     "calendar_days": 107.15,
-    "build_cost": 57449.14,
-    "yearly_cost": 8617.37,
-    "total_cost": 83301.26
+    "build_cost": 57451.28,
+    "yearly_cost": 8617.69,
+    "total_cost": 83304.36
    },
    "buy": {
     "via": {

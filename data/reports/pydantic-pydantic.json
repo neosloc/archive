@@ -4,23 +4,23 @@
   "url": "https://github.com/pydantic/pydantic",
   "slug": "pydantic-pydantic",
   "host": "github.com",
-  "commit": "2d39ff8c492c8aa71851b2df3989c9752e5c0f81",
-  "committed_at": "2026-10-26T10:57:37+01:00",
-  "evaluated_at": "2026-10-26T10:09:37+00:00",
+  "commit": "b09325b0a41d9a957df9a530e5c6a7836799df1e",
+  "committed_at": "2026-11-02T09:36:44+01:00",
+  "evaluated_at": "2026-11-02T12:26:58+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/pydantic/pydantic",
   "inventory": {
-   "files": 850,
-   "source_files": 261,
-   "source_tokens": 956774,
+   "files": 3572,
+   "source_files": 210,
+   "source_tokens": 809532,
    "languages": {
-    "python": 623122,
-    "rust": 332085,
+    "python": 465522,
+    "rust": 342631,
     "javascript": 1092,
-    "shell": 475
+    "shell": 287
    },
    "git": true
   },
@@ -145,10 +145,6 @@
           "detail": "py.typed"
          },
          {
-          "path": "pydantic/v1/py.typed",
-          "detail": "py.typed"
-         },
-         {
           "path": "pydantic-core/src/lib.rs",
           "detail": "statically typed language"
          }
@@ -190,7 +186,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "196 semver tags, latest v2.14.1",
+      "detail": "198 semver tags, latest v2.14.2",
       "path": null,
       "weight": 1
      },
@@ -202,8 +198,8 @@
      },
      {
       "signal": "L3 deprecation",
-      "detail": "25 matches",
-      "path": "pydantic-core/python/pydantic_core/core_schema.py",
+      "detail": "9 matches",
+      "path": "pydantic/_internal/_generate_schema.py",
       "weight": 1
      }
     ],
@@ -226,7 +222,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "196 semver tags, latest v2.14.1"
+          "detail": "198 semver tags, latest v2.14.2"
          }
         ],
         "note": ""
@@ -251,75 +247,19 @@
         "met": true,
         "evidence": [
          {
-          "path": "pydantic-core/python/pydantic_core/core_schema.py",
-          "detail": "25 matches"
-         },
-         {
-          "path": "pydantic/main.py",
-          "detail": "20 matches"
-         },
-         {
           "path": "pydantic/_internal/_generate_schema.py",
-          "detail": "11 matches"
-         },
-         {
-          "path": "pydantic/deprecated/config.py",
-          "detail": "11 matches"
-         },
-         {
-          "path": "pydantic/deprecated/tools.py",
-          "detail": "11 matches"
-         },
-         {
-          "path": "pydantic/warnings.py",
-          "detail": "10 matches"
-         },
-         {
-          "path": "pydantic/json_schema.py",
           "detail": "9 matches"
          },
          {
-          "path": "pydantic/v1/main.py",
-          "detail": "8 matches"
-         },
-         {
           "path": "pydantic/_internal/_model_construction.py",
-          "detail": "7 matches"
-         },
-         {
-          "path": "pydantic/deprecated/class_validators.py",
-          "detail": "7 matches"
-         },
-         {
-          "path": "pydantic/deprecated/json.py",
-          "detail": "7 matches"
-         },
-         {
-          "path": "pydantic/deprecated/parse.py",
           "detail": "5 matches"
          },
          {
-          "path": "pydantic/v1/env_settings.py",
-          "detail": "4 matches"
-         },
-         {
-          "path": "pydantic/v1/types.py",
-          "detail": "4 matches"
+          "path": "pydantic/warnings.py",
+          "detail": "5 matches"
          },
          {
           "path": "pydantic/__init__.py",
-          "detail": "3 matches"
-         },
-         {
-          "path": "pydantic/_internal/_config.py",
-          "detail": "3 matches"
-         },
-         {
-          "path": "pydantic/_internal/_fields.py",
-          "detail": "3 matches"
-         },
-         {
-          "path": "pydantic/deprecated/decorator.py",
           "detail": "3 matches"
          },
          {
@@ -327,47 +267,15 @@
           "detail": "3 matches"
          },
          {
-          "path": "pydantic/_internal/_utils.py",
+          "path": "pydantic/_internal/_fields.py",
           "detail": "2 matches"
          },
          {
-          "path": "pydantic/_migration.py",
+          "path": "pydantic/main.py",
           "detail": "2 matches"
          },
          {
-          "path": "pydantic/config.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic/v1/class_validators.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic/v1/utils.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic-core/src/errors/validation_exception.rs",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/_internal/_dataclasses.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/_internal/_typing_extra.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/color.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/experimental/missing_sentinel.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/functional_validators.py",
+          "path": "pydantic/json_schema.py",
           "detail": "1 match"
          },
          {
@@ -376,18 +284,6 @@
          },
          {
           "path": "pydantic/plugin/_loader.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/types.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/v1/mypy.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/v1/schema.py",
           "detail": "1 match"
          }
         ],
@@ -527,38 +423,22 @@
          },
          {
           "path": "pydantic/_internal/_generate_schema.py",
-          "detail": "25 matches"
+          "detail": "23 matches"
          },
          {
           "path": "pydantic/main.py",
-          "detail": "21 matches"
-         },
-         {
-          "path": "pydantic/types.py",
           "detail": "17 matches"
          },
          {
+          "path": "pydantic/types.py",
+          "detail": "14 matches"
+         },
+         {
           "path": "pydantic/_internal/_fields.py",
-          "detail": "12 matches"
-         },
-         {
-          "path": "pydantic/v1/main.py",
-          "detail": "12 matches"
-         },
-         {
-          "path": "pydantic/v1/utils.py",
-          "detail": "12 matches"
+          "detail": "11 matches"
          },
          {
           "path": "pydantic/json_schema.py",
-          "detail": "10 matches"
-         },
-         {
-          "path": "pydantic/v1/class_validators.py",
-          "detail": "10 matches"
-         },
-         {
-          "path": "pydantic/v1/fields.py",
           "detail": "10 matches"
          },
          {
@@ -574,14 +454,6 @@
           "detail": "8 matches"
          },
          {
-          "path": "pydantic/color.py",
-          "detail": "8 matches"
-         },
-         {
-          "path": "pydantic/fields.py",
-          "detail": "8 matches"
-         },
-         {
           "path": "pydantic/_internal/_known_annotated_metadata.py",
           "detail": "7 matches"
          },
@@ -590,11 +462,7 @@
           "detail": "7 matches"
          },
          {
-          "path": "pydantic/deprecated/decorator.py",
-          "detail": "6 matches"
-         },
-         {
-          "path": "pydantic/v1/decorator.py",
+          "path": "pydantic/fields.py",
           "detail": "6 matches"
          },
          {
@@ -602,47 +470,19 @@
           "detail": "5 matches"
          },
          {
-          "path": "pydantic/deprecated/class_validators.py",
-          "detail": "5 matches"
-         },
-         {
-          "path": "pydantic/v1/env_settings.py",
-          "detail": "5 matches"
-         },
-         {
-          "path": "pydantic/v1/generics.py",
-          "detail": "5 matches"
-         },
-         {
-          "path": "pydantic/_internal/_model_construction.py",
-          "detail": "4 matches"
-         },
-         {
-          "path": "pydantic/_internal/_utils.py",
-          "detail": "4 matches"
-         },
-         {
-          "path": "pydantic/_migration.py",
-          "detail": "4 matches"
-         },
-         {
           "path": "pydantic/functional_validators.py",
-          "detail": "4 matches"
+          "detail": "5 matches"
          },
          {
           "path": "pydantic/type_adapter.py",
           "detail": "4 matches"
          },
          {
-          "path": "pydantic/_internal/_config.py",
-          "detail": "3 matches"
-         },
-         {
           "path": "pydantic/_internal/_generics.py",
           "detail": "3 matches"
          },
          {
-          "path": "pydantic/deprecated/parse.py",
+          "path": "pydantic/_internal/_model_construction.py",
           "detail": "3 matches"
          },
          {
@@ -650,11 +490,7 @@
           "detail": "3 matches"
          },
          {
-          "path": "pydantic/v1/parse.py",
-          "detail": "3 matches"
-         },
-         {
-          "path": "pydantic/_internal/_decorators_v1.py",
+          "path": "pydantic/_internal/_config.py",
           "detail": "2 matches"
          },
          {
@@ -682,51 +518,19 @@
           "detail": "2 matches"
          },
          {
-          "path": "pydantic/v1/_hypothesis_plugin.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic/v1/annotated_types.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic/v1/config.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic/v1/datetime_parse.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic/v1/schema.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic/v1/validators.py",
-          "detail": "2 matches"
-         },
-         {
           "path": "release/push.py",
           "detail": "2 matches"
          },
          {
-          "path": "pydantic-core/python/pydantic_core/core_schema.py",
+          "path": "pydantic/__init__.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/_internal/_utils.py",
           "detail": "1 match"
          },
          {
           "path": "pydantic/aliases.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/deprecated/config.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/deprecated/json.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/experimental/missing_sentinel.py",
           "detail": "1 match"
          },
          {
@@ -739,26 +543,6 @@
          },
          {
           "path": "pydantic/plugin/_schema_validator.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/v1/color.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/v1/error_wrappers.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/v1/json.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/v1/mypy.py",
-          "detail": "1 match"
-         },
-         {
-          "path": "pydantic/v1/networks.py",
           "detail": "1 match"
          },
          {
@@ -782,7 +566,7 @@
         "text": "Agent docs, and examples that run as tests (doctests).",
         "met": false,
         "evidence": [],
-        "note": "no agent docs"
+        "note": "examples don't run as tests"
        }
       ]
      }
@@ -1035,36 +819,35 @@
      }
     ],
     "metrics": {
-     "source_files": 261,
-     "source_tokens": 956774,
-     "test_files": 339,
-     "test_tokens": 964245,
-     "test_ratio": 1.01,
-     "modules": 22,
-     "modules_within_budget": 0.59,
+     "source_files": 210,
+     "source_tokens": 809532,
+     "test_files": 3087,
+     "test_tokens": 1683392,
+     "test_ratio": 2.08,
+     "modules": 20,
+     "modules_within_budget": 0.6,
      "oversized_files": [
       "pydantic-core/src/self_schema.py",
       "pydantic-core/python/pydantic_core/core_schema.py",
       "pydantic/json_schema.py",
       "pydantic/_internal/_generate_schema.py",
       "pydantic/types.py",
-      "pydantic/main.py",
       "pydantic/fields.py",
+      "pydantic/main.py",
       "pydantic/mypy.py",
-      "pydantic/v1/fields.py",
       "pydantic-core/python/pydantic_core/_pydantic_core/__init__.pyi"
      ],
      "largest_module": {
       "path": "pydantic",
-      "tokens": 196520
+      "tokens": 177365
      },
      "typed_ratio": 0.99,
-     "python_functions": 2132,
-     "python_annotated": 2105,
-     "import_edges": 588,
+     "python_functions": 1341,
+     "python_annotated": 1329,
+     "import_edges": 297,
      "import_graph": true,
-     "max_fan_out": 32,
-     "import_cycles": 3,
+     "max_fan_out": 31,
+     "import_cycles": 1,
      "largest_cycle": [
       "pydantic/_internal/_config.py",
       "pydantic/_internal/_dataclasses.py",
@@ -1076,7 +859,6 @@
       "pydantic/_internal/_generics.py",
       "pydantic/_internal/_known_annotated_metadata.py",
       "pydantic/_internal/_mock_val_ser.py",
-      "pydantic/_internal/_model_construction.py",
       "pydantic/_internal/_namespace_utils.py",
       "pydantic/_internal/_repr.py",
       "pydantic/_internal/_signature.py",
@@ -1085,45 +867,23 @@
       "pydantic/_internal/_utils.py",
       "pydantic/_internal/_validators.py",
       "pydantic/aliases.py",
-      "pydantic/color.py",
       "pydantic/config.py",
       "pydantic/dataclasses.py",
-      "pydantic/deprecated/json.py",
       "pydantic/errors.py",
       "pydantic/fields.py",
       "pydantic/functional_validators.py",
       "pydantic/json_schema.py",
-      "pydantic/main.py",
-      "pydantic/networks.py",
-      "pydantic/type_adapter.py",
-      "pydantic/types.py",
-      "pydantic/v1/annotated_types.py",
-      "pydantic/v1/class_validators.py",
-      "pydantic/v1/color.py",
-      "pydantic/v1/config.py",
-      "pydantic/v1/datetime_parse.py",
-      "pydantic/v1/error_wrappers.py",
-      "pydantic/v1/errors.py",
-      "pydantic/v1/fields.py",
-      "pydantic/v1/json.py",
-      "pydantic/v1/main.py",
-      "pydantic/v1/networks.py",
-      "pydantic/v1/parse.py",
-      "pydantic/v1/schema.py",
-      "pydantic/v1/types.py",
-      "pydantic/v1/typing.py",
-      "pydantic/v1/utils.py",
-      "pydantic/v1/validators.py"
+      "pydantic/types.py"
      ],
      "languages": {
-      "python": 623122,
-      "rust": 332085,
+      "python": 465522,
+      "rust": 342631,
       "javascript": 1092,
-      "shell": 475
+      "shell": 287
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (59% of modules fit 32k tokens; 10 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (60% of modules fit 32k tokens; 9 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1144,7 +904,7 @@
          },
          {
           "path": "pydantic-core/tests/benchmarks/complete_schema.py",
-          "detail": "339 test files"
+          "detail": "3087 test files"
          }
         ],
         "note": ""
@@ -1204,7 +964,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "59% of modules fit 32k tokens; 10 files over 12k"
+        "note": "60% of modules fit 32k tokens; 9 files over 12k"
        },
        {
         "level": 4,
@@ -1212,7 +972,7 @@
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
         "met": false,
         "evidence": [],
-        "note": "3 import cycles (largest: pydantic/_internal/_config.py, pydantic/_internal/_dataclasses.py, pydantic/_internal/_decorators.py)"
+        "note": "1 import cycles (largest: pydantic/_internal/_config.py, pydantic/_internal/_dataclasses.py, pydantic/_internal/_decorators.py)"
        }
       ]
      }
@@ -1228,32 +988,32 @@
     "events",
     "identity"
    ],
-   "retrofit_person_days": 45.9,
+   "retrofit_person_days": 42.3,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.0,
-    "portability": 11.7,
-    "ergonomics": 8.8,
+    "portability": 10.8,
+    "ergonomics": 8.1,
     "embeddability": 0.0,
-    "extensibility": 11.7,
-    "observability": 5.9,
-    "legibility": 7.8
+    "extensibility": 10.8,
+    "observability": 5.4,
+    "legibility": 7.2
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.96,
+    "size_factor": 1.8,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 79.89,
+   "ksloc": 67.02,
    "classic": {
-    "person_months": 238.68,
-    "schedule_months": 20.0,
-    "cost": 2686838
+    "person_months": 198.48,
+    "schedule_months": 18.7,
+    "cost": 2234341
    },
    "capture": {
     "tests": 1.0,
@@ -1262,21 +1022,21 @@
     "capture": 1.0
    },
    "agent_factor": 0.1,
-   "reproduce_pm": 23.87,
+   "reproduce_pm": 19.85,
    "history": {
-    "commits": 5825,
-    "fix_commits": 1230,
-    "authors": 841,
-    "age_months": 113.7,
+    "commits": 5880,
+    "fix_commits": 1239,
+    "authors": 843,
+    "age_months": 114.0,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 53.73,
+   "knowledge_pm": 54.18,
    "rediscover_pm": 0.0,
-   "replacement_pm": 23.87,
+   "replacement_pm": 19.85,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 21.61,
-   "value_cost": 243285,
+   "value_pm": 17.97,
+   "value_cost": 202313,
    "knowledge_at_risk": 0.0,
    "assumptions": {
     "salary": 56286,
@@ -1290,26 +1050,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 290.65,
+   "make_buy_ratio": 377.1792,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 10029.03,
+   "break_even_price_per_year": 13025.07,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5763057,
-     "input": 144076425,
-     "cached_input": 122464961
+     "output": 7478772,
+     "input": 186969300,
+     "cached_input": 158923905
     },
-    "final_tokens": 1921019,
-    "model_cost": 226.2,
-    "agent_hours": 64.03,
-    "human_days": 38.42,
-    "review_days": 38.42,
+    "final_tokens": 2492924,
+    "model_cost": 293.54,
+    "agent_hours": 83.1,
+    "human_days": 49.86,
+    "review_days": 49.86,
     "rediscover_days": 0.0,
-    "calendar_days": 38.42,
-    "build_cost": 20821.35,
-    "yearly_cost": 3123.2,
-    "total_cost": 30190.96
+    "calendar_days": 49.86,
+    "build_cost": 27020.06,
+    "yearly_cost": 4053.01,
+    "total_cost": 39179.09
    },
    "buy": {
     "via": {

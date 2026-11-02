@@ -4,9 +4,9 @@
   "url": "https://github.com/nats-io/nats-server",
   "slug": "nats-io-nats-server",
   "host": "github.com",
-  "commit": "3c1afc6e52b9ded734d487fdd9caf6109a0dc9d6",
-  "committed_at": "2026-10-26T09:28:55Z",
-  "evaluated_at": "2026-10-26T10:11:32+00:00",
+  "commit": "0a6de601d7874d6fa2310439ccfd9f571ae29d84",
+  "committed_at": "2026-11-02T11:30:10Z",
+  "evaluated_at": "2026-11-02T12:28:14+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 599,
    "source_files": 130,
-   "source_tokens": 1151087,
+   "source_tokens": 1159549,
    "languages": {
-    "go": 1148545,
+    "go": 1157007,
     "shell": 2542
    },
    "git": true
@@ -259,7 +259,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "312 semver tags, latest v2.15.1",
+      "detail": "314 semver tags, latest v2.14.9",
       "path": null,
       "weight": 1
      }
@@ -283,7 +283,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "312 semver tags, latest v2.15.1"
+          "detail": "314 semver tags, latest v2.14.9"
          }
         ],
         "note": ""
@@ -790,6 +790,10 @@
          },
          {
           "path": "server/store.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "server/sublist.go",
           "detail": "1 match"
          }
         ],
@@ -1352,6 +1356,10 @@
          {
           "path": "server/store.go",
           "detail": "1 match"
+         },
+         {
+          "path": "server/sublist.go",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -1445,26 +1453,26 @@
     ],
     "metrics": {
      "source_files": 130,
-     "source_tokens": 1151087,
+     "source_tokens": 1159549,
      "test_files": 135,
-     "test_tokens": 2394501,
-     "test_ratio": 2.08,
+     "test_tokens": 2422674,
+     "test_ratio": 2.09,
      "modules": 21,
      "modules_within_budget": 0.95,
      "oversized_files": [
       "server/jetstream_cluster.go",
       "server/filestore.go",
       "server/stream.go",
-      "server/mqtt.go",
       "server/client.go",
       "server/consumer.go",
+      "server/mqtt.go",
       "server/opts.go",
       "server/raft.go",
       "server/jetstream_api.go",
       "server/monitor.go",
       "server/jetstream_errors_generated.go",
-      "server/server.go",
       "server/accounts.go",
+      "server/server.go",
       "server/leafnode.go",
       "server/events.go",
       "server/gateway.go",
@@ -1477,7 +1485,7 @@
      ],
      "largest_module": {
       "path": "server",
-      "tokens": 1077351
+      "tokens": 1085535
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -1488,7 +1496,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 1148545,
+      "go": 1157007,
       "shell": 2542
      }
     },
@@ -1623,11 +1631,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 113.73,
+   "ksloc": 114.36,
    "classic": {
-    "person_months": 345.86,
+    "person_months": 347.84,
     "schedule_months": 23.1,
-    "cost": 3893413
+    "cost": 3915737
    },
    "capture": {
     "tests": 1.0,
@@ -1636,21 +1644,21 @@
     "capture": 0.7
    },
    "agent_factor": 0.24,
-   "reproduce_pm": 81.28,
+   "reproduce_pm": 81.74,
    "history": {
-    "commits": 8678,
-    "fix_commits": 2530,
-    "authors": 290,
-    "age_months": 167.7,
-    "months_since_last": 0.2
+    "commits": 8729,
+    "fix_commits": 2557,
+    "authors": 295,
+    "age_months": 168.0,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 93.99,
-   "rediscover_pm": 28.2,
-   "replacement_pm": 109.47,
+   "knowledge_pm": 94.78,
+   "rediscover_pm": 28.44,
+   "replacement_pm": 110.18,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 99.67,
-   "value_cost": 1121971,
+   "value_pm": 100.31,
+   "value_cost": 1129192,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -1664,26 +1672,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 672.7043,
+   "make_buy_ratio": 678.6261,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 183046.47,
+   "break_even_price_per_year": 184660.22,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 10740361,
-     "input": 268509025,
-     "cached_input": 228232671
+     "output": 10851028,
+     "input": 271275700,
+     "cached_input": 230584345
     },
-    "final_tokens": 3580120,
-    "model_cost": 421.56,
-    "agent_hours": 119.34,
-    "human_days": 706.76,
-    "review_days": 114.56,
-    "rediscover_days": 592.2,
-    "calendar_days": 706.76,
-    "build_cost": 379280.64,
-    "yearly_cost": 56892.1,
-    "total_cost": 549956.93
+    "final_tokens": 3617009,
+    "model_cost": 425.9,
+    "agent_hours": 120.57,
+    "human_days": 712.98,
+    "review_days": 115.74,
+    "rediscover_days": 597.24,
+    "calendar_days": 712.98,
+    "build_cost": 382619.44,
+    "yearly_cost": 57392.92,
+    "total_cost": 554798.19
    },
    "buy": {
     "via": {

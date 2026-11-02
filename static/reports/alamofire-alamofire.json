@@ -4,9 +4,9 @@
   "url": "https://github.com/Alamofire/Alamofire",
   "slug": "alamofire-alamofire",
   "host": "github.com",
-  "commit": "bda9ed57d72988a3a2ada33d824583541f86eac6",
-  "committed_at": "2026-09-09T21:24:49-04:00",
-  "evaluated_at": "2026-10-07T14:29:33+00:00",
+  "commit": "6c2892ea5adb5a03fa81c510933dd782c5ddd9cb",
+  "committed_at": "2026-10-30T19:19:16-04:00",
+  "evaluated_at": "2026-11-02T12:28:14+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 571,
    "source_files": 56,
-   "source_tokens": 210770,
+   "source_tokens": 210768,
    "languages": {
-    "swift": 210770
+    "swift": 210768
    },
    "git": true
   },
@@ -799,7 +799,7 @@
     ],
     "metrics": {
      "source_files": 56,
-     "source_tokens": 210770,
+     "source_tokens": 210768,
      "test_files": 45,
      "test_tokens": 243493,
      "test_ratio": 1.16,
@@ -813,7 +813,7 @@
      ],
      "largest_module": {
       "path": "Source/Core",
-      "tokens": 99064
+      "tokens": 99062
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -824,7 +824,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 210770
+      "swift": 210768
      }
     },
     "gaps": [
@@ -937,13 +937,13 @@
    "agent_factor": 0.1,
    "reproduce_pm": 2.61,
    "history": {
-    "commits": 1525,
-    "fix_commits": 264,
-    "authors": 292,
-    "age_months": 145.3,
-    "months_since_last": 0.9
+    "commits": 1527,
+    "fix_commits": 265,
+    "authors": 293,
+    "age_months": 147.0,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 12.91,
+   "knowledge_pm": 12.94,
    "rediscover_pm": 0.0,
    "replacement_pm": 2.61,
    "leverage": 1.0,
@@ -963,26 +963,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 336.1518,
+   "make_buy_ratio": 336.1503,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 2372.67,
+   "break_even_price_per_year": 2372.66,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1362789,
-     "input": 34069725,
-     "cached_input": 28959266
+     "output": 1362783,
+     "input": 34069575,
+     "cached_input": 28959138
     },
-    "final_tokens": 454263,
+    "final_tokens": 454261,
     "model_cost": 53.49,
     "agent_hours": 15.14,
     "human_days": 9.09,
     "review_days": 9.09,
     "rediscover_days": 0.0,
     "calendar_days": 9.09,
-    "build_cost": 4923.62,
+    "build_cost": 4923.6,
     "yearly_cost": 738.54,
-    "total_cost": 7139.25
+    "total_cost": 7139.22
    },
    "buy": {
     "via": {
