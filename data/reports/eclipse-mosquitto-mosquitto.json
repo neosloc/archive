@@ -4,16 +4,16 @@
   "url": "https://github.com/eclipse-mosquitto/mosquitto",
   "slug": "eclipse-mosquitto-mosquitto",
   "host": "github.com",
-  "commit": "83f2620f0b955b89aadce32cceb96a8e81950f5e",
-  "committed_at": "2026-10-04T10:31:29+01:00",
-  "evaluated_at": "2026-10-07T14:29:48+00:00",
+  "commit": "fda14f2c196d9d2fcdd07d6c5d31a673524f7368",
+  "committed_at": "2026-11-05T22:26:50Z",
+  "evaluated_at": "2026-11-09T12:55:23+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/eclipse-mosquitto/mosquitto",
   "inventory": {
-   "files": 1942,
+   "files": 1944,
    "source_files": 352,
    "source_tokens": 641059,
    "languages": {
@@ -292,7 +292,7 @@
      "source_files": 352,
      "source_tokens": 641059,
      "test_files": 687,
-     "test_tokens": 532183,
+     "test_tokens": 532240,
      "test_ratio": 0.83,
      "modules": 43,
      "modules_within_budget": 0.84,
@@ -426,19 +426,19 @@
    "agent_factor": 0.21,
    "reproduce_pm": 36.1,
    "history": {
-    "commits": 4599,
-    "fix_commits": 1601,
+    "commits": 4604,
+    "fix_commits": 1602,
     "authors": 195,
-    "age_months": 148.9,
+    "age_months": 150.0,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 55.02,
-   "rediscover_pm": 13.75,
-   "replacement_pm": 49.85,
+   "knowledge_pm": 55.06,
+   "rediscover_pm": 13.77,
+   "replacement_pm": 49.86,
    "leverage": 0.78,
    "obsolescence": 0.9,
-   "value_pm": 35.05,
-   "value_cost": 394598,
+   "value_pm": 35.06,
+   "value_cost": 394687,
    "knowledge_at_risk": 0.28,
    "assumptions": {
     "salary": 56286,
@@ -452,26 +452,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 56.99,
+   "make_buy_ratio": 57.064,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 82647.53,
+   "break_even_price_per_year": 82756.8,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3567805,
-     "input": 89195125,
-     "cached_input": 75815856
+     "output": 3567976,
+     "input": 89199400,
+     "cached_input": 75819490
     },
-    "final_tokens": 1189268,
+    "final_tokens": 1189325,
     "model_cost": 140.04,
     "agent_hours": 39.64,
-    "human_days": 324.43,
+    "human_days": 324.85,
     "review_days": 35.68,
-    "rediscover_days": 288.75,
-    "calendar_days": 324.43,
-    "build_cost": 174048.92,
-    "yearly_cost": 26107.34,
-    "total_cost": 252370.94
+    "rediscover_days": 289.17,
+    "calendar_days": 324.85,
+    "build_cost": 174274.99,
+    "yearly_cost": 26141.25,
+    "total_cost": 252698.73
    },
    "buy": {
     "via": {

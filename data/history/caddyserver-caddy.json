@@ -167,6 +167,27 @@
    },
    "verdict": "buy",
    "make_buy_ratio": 172.7203
+  },
+  {
+   "evaluated_at": "2026-11-09T12:54:47+00:00",
+   "commit": "9ea3108377d2abec102866808133c40ac9582162",
+   "neosloc": "0.8.0",
+   "index": 1.56,
+   "assessed": 9,
+   "levels": {
+    "interface": 3,
+    "stability": 1,
+    "events": 2,
+    "identity": 0,
+    "portability": null,
+    "ergonomics": 2,
+    "embeddability": 3,
+    "extensibility": 0,
+    "observability": 1,
+    "legibility": 2
+   },
+   "verdict": "buy",
+   "make_buy_ratio": 175.104
   }
  ]
 }

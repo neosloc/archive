@@ -1,7 +1,7 @@
 {
  "title": "pallets/click",
  "slug": "pallets-click",
- "date": "2026-10-07T14:27:23+00:00",
+ "date": "2026-11-09T12:53:19+00:00",
  "repo_url": "https://github.com/pallets/click",
  "index": 1.43,
  "assessed": 7,
@@ -9,13 +9,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 228.5145,
+ "make_buy_ratio": 229.1554,
  "languages": [
   "python",
   "shell"
  ],
- "cocomo_cost": 291214,
- "cocomo_pm": 25.87,
- "value_cost": 84484,
- "value_pm": 7.5
+ "cocomo_cost": 292040,
+ "cocomo_pm": 25.94,
+ "value_cost": 84779,
+ "value_pm": 7.53
 }

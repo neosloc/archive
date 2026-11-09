@@ -4,9 +4,9 @@
   "url": "https://github.com/developmentseed/titiler",
   "slug": "developmentseed-titiler",
   "host": "github.com",
-  "commit": "0bcf1829877ac595d344f76377381042a2acee22",
-  "committed_at": "2026-10-31T17:57:22+01:00",
-  "evaluated_at": "2026-11-02T12:26:24+00:00",
+  "commit": "cc9b45b01f597c170df1ad101e688c241e3e7066",
+  "committed_at": "2026-11-09T08:36:38+01:00",
+  "evaluated_at": "2026-11-09T12:53:29+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -1076,19 +1076,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 3.23,
    "history": {
-    "commits": 1057,
+    "commits": 1062,
     "fix_commits": 154,
     "authors": 98,
-    "age_months": 82.9,
-    "months_since_last": 0.1
+    "age_months": 83.1,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 8.37,
+   "knowledge_pm": 8.39,
    "rediscover_pm": 0.5,
    "replacement_pm": 3.74,
    "leverage": 0.95,
    "obsolescence": 0.95,
    "value_pm": 3.37,
-   "value_cost": 37964,
+   "value_cost": 37979,
    "knowledge_at_risk": 0.13,
    "assumptions": {
     "salary": 56286,

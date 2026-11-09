@@ -4,21 +4,21 @@
   "url": "https://github.com/Leaflet/Leaflet",
   "slug": "leaflet-leaflet",
   "host": "github.com",
-  "commit": "6d1f3f9b1f3c3d5586d737d3aaadea0c0ef95e5c",
-  "committed_at": "2026-11-02T14:17:01+02:00",
-  "evaluated_at": "2026-11-02T12:26:43+00:00",
+  "commit": "68c14509db2d12c2a2cec6df5705ae1ac6f7b464",
+  "committed_at": "2026-11-09T14:50:07+02:00",
+  "evaluated_at": "2026-11-09T12:53:46+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/Leaflet/Leaflet",
   "inventory": {
-   "files": 998,
-   "source_files": 75,
-   "source_tokens": 156852,
+   "files": 880,
+   "source_files": 76,
+   "source_tokens": 160587,
    "languages": {
-    "javascript": 151054,
-    "typescript": 5798
+    "javascript": 154183,
+    "typescript": 6404
    },
    "git": true
   },
@@ -142,7 +142,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "60 semver tags, latest v2.0.0-alpha.1",
+      "detail": "62 semver tags, latest v2.0.0-beta.2",
       "path": null,
       "weight": 1
      },
@@ -172,7 +172,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "60 semver tags, latest v2.0.0-alpha.1"
+          "detail": "62 semver tags, latest v2.0.0-beta.2"
          }
         ],
         "note": ""
@@ -363,7 +363,7 @@
         "text": "Agent docs, and examples that run as tests (doctests).",
         "met": false,
         "evidence": [],
-        "note": "no agent docs"
+        "note": "examples don't run as tests"
        }
       ]
      }
@@ -579,11 +579,11 @@
      }
     ],
     "metrics": {
-     "source_files": 75,
-     "source_tokens": 156852,
-     "test_files": 60,
-     "test_tokens": 134643,
-     "test_ratio": 0.86,
+     "source_files": 76,
+     "source_tokens": 160587,
+     "test_files": 61,
+     "test_tokens": 146372,
+     "test_ratio": 0.91,
      "modules": 16,
      "modules_within_budget": 1.0,
      "oversized_files": [
@@ -597,10 +597,10 @@
      "typed_ratio": 0.04,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 352,
+     "import_edges": 361,
      "import_graph": true,
-     "max_fan_out": 41,
-     "import_cycles": 3,
+     "max_fan_out": 42,
+     "import_cycles": 4,
      "largest_cycle": [
       "src/control/AttributionControl.js",
       "src/control/Control.js",
@@ -612,9 +612,8 @@
       "src/layer/LayerBase.js",
       "src/layer/Popup.js",
       "src/layer/Tooltip.js",
-      "src/layer/marker/Marker.Drag.js",
-      "src/layer/marker/Marker.js",
       "src/layer/tile/GridLayer.js",
+      "src/layer/vector/Canvas.js",
       "src/layer/vector/CircleMarker.js",
       "src/layer/vector/Path.js",
       "src/layer/vector/Polyline.js",
@@ -630,8 +629,8 @@
       "src/map/handler/TapHoldHandler.js"
      ],
      "languages": {
-      "javascript": 151054,
-      "typescript": 5798
+      "javascript": 154183,
+      "typescript": 6404
      }
     },
     "gaps": [
@@ -656,7 +655,7 @@
          },
          {
           "path": "spec/dist.js",
-          "detail": "60 test files"
+          "detail": "61 test files"
          }
         ],
         "note": ""
@@ -669,6 +668,10 @@
         "evidence": [
          {
           "path": ".github/workflows/main.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/site.yml",
           "detail": ""
          },
          {
@@ -692,7 +695,7 @@
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
         "met": false,
         "evidence": [],
-        "note": "3 import cycles (largest: src/control/AttributionControl.js, src/control/Control.js, src/control/ZoomControl.js)"
+        "note": "4 import cycles (largest: src/control/AttributionControl.js, src/control/Control.js, src/control/ZoomControl.js)"
        }
       ]
      }
@@ -722,18 +725,18 @@
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 0.79,
+    "size_factor": 0.8,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 12.66,
+   "ksloc": 12.6,
    "classic": {
-    "person_months": 34.5,
+    "person_months": 34.34,
     "schedule_months": 9.6,
-    "cost": 388359
+    "cost": 386523
    },
    "capture": {
     "tests": 1.0,
@@ -742,22 +745,22 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 4.38,
+   "reproduce_pm": 4.36,
    "history": {
-    "commits": 6898,
-    "fix_commits": 1529,
-    "authors": 1062,
-    "age_months": 194.0,
+    "commits": 6996,
+    "fix_commits": 1560,
+    "authors": 1067,
+    "age_months": 194.2,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 65.07,
-   "rediscover_pm": 3.9,
-   "replacement_pm": 8.29,
+   "knowledge_pm": 66.18,
+   "rediscover_pm": 3.97,
+   "replacement_pm": 8.33,
    "leverage": 0.91,
    "obsolescence": 0.95,
-   "value_pm": 7.17,
-   "value_cost": 80697,
-   "knowledge_at_risk": 0.47,
+   "value_pm": 7.21,
+   "value_cost": 81144,
+   "knowledge_at_risk": 0.48,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -770,26 +773,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 159.9707,
+   "make_buy_ratio": 163.2605,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 22789.91,
+   "break_even_price_per_year": 23261.53,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 877308,
-     "input": 21932700,
-     "cached_input": 18642795
+     "output": 923767,
+     "input": 23094175,
+     "cached_input": 19630048
     },
-    "final_tokens": 292436,
-    "model_cost": 34.43,
-    "agent_hours": 9.75,
-    "human_days": 88.45,
-    "review_days": 6.55,
-    "rediscover_days": 81.9,
-    "calendar_days": 88.45,
-    "build_cost": 47448.15,
-    "yearly_cost": 7117.22,
-    "total_cost": 68799.82
+    "final_tokens": 307922,
+    "model_cost": 36.26,
+    "agent_hours": 10.26,
+    "human_days": 90.27,
+    "review_days": 6.9,
+    "rediscover_days": 83.37,
+    "calendar_days": 90.27,
+    "build_cost": 48423.92,
+    "yearly_cost": 7263.59,
+    "total_cost": 70214.68
    },
    "buy": {
     "via": {

@@ -4,9 +4,9 @@
   "url": "https://github.com/fastify/fastify",
   "slug": "fastify-fastify",
   "host": "github.com",
-  "commit": "8c0f699144187dab3b600a626829c31368762256",
-  "committed_at": "2026-11-02T11:25:22+01:00",
-  "evaluated_at": "2026-11-02T12:26:32+00:00",
+  "commit": "0b076ca595d19951c536daf515c778b38cf6ba69",
+  "committed_at": "2026-11-07T16:57:48+01:00",
+  "evaluated_at": "2026-11-09T12:53:36+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,10 +15,10 @@
   "inventory": {
    "files": 392,
    "source_files": 53,
-   "source_tokens": 114409,
+   "source_tokens": 114622,
    "languages": {
-    "javascript": 74341,
-    "typescript": 39841,
+    "javascript": 74546,
+    "typescript": 39849,
     "shell": 227
    },
    "git": true
@@ -998,9 +998,9 @@
     ],
     "metrics": {
      "source_files": 53,
-     "source_tokens": 114409,
+     "source_tokens": 114622,
      "test_files": 228,
-     "test_tokens": 451553,
+     "test_tokens": 452745,
      "test_ratio": 3.95,
      "modules": 6,
      "modules_within_budget": 0.67,
@@ -1009,7 +1009,7 @@
      ],
      "largest_module": {
       "path": "lib",
-      "tokens": 63218
+      "tokens": 63423
      },
      "typed_ratio": 0.35,
      "python_functions": 0,
@@ -1028,8 +1028,8 @@
       "lib/route.js"
      ],
      "languages": {
-      "javascript": 74341,
-      "typescript": 39841,
+      "javascript": 74546,
+      "typescript": 39849,
       "shell": 227
      }
     },
@@ -1206,9 +1206,9 @@
   "value": {
    "ksloc": 10.34,
    "classic": {
-    "person_months": 27.89,
+    "person_months": 27.9,
     "schedule_months": 8.9,
-    "cost": 313938
+    "cost": 314034
    },
    "capture": {
     "tests": 1.0,
@@ -1219,19 +1219,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 3.54,
    "history": {
-    "commits": 4488,
-    "fix_commits": 892,
-    "authors": 966,
-    "age_months": 121.1,
-    "months_since_last": 0.0
+    "commits": 4492,
+    "fix_commits": 894,
+    "authors": 967,
+    "age_months": 121.3,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 40.28,
+   "knowledge_pm": 40.34,
    "rediscover_pm": 2.42,
    "replacement_pm": 5.96,
    "leverage": 0.94,
    "obsolescence": 0.95,
    "value_pm": 5.35,
-   "value_cost": 60183,
+   "value_cost": 60230,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -1245,26 +1245,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 59.4431,
+   "make_buy_ratio": 59.4728,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 16210.42,
+   "break_even_price_per_year": 16218.66,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1699945,
-     "input": 42498625,
-     "cached_input": 36123831
+     "output": 1704164,
+     "input": 42604100,
+     "cached_input": 36213485
     },
-    "final_tokens": 566648,
-    "model_cost": 66.72,
-    "agent_hours": 18.89,
-    "human_days": 63.51,
-    "review_days": 12.69,
+    "final_tokens": 568054,
+    "model_cost": 66.89,
+    "agent_hours": 18.94,
+    "human_days": 63.54,
+    "review_days": 12.72,
     "rediscover_days": 50.82,
-    "calendar_days": 63.51,
-    "build_cost": 34112.68,
-    "yearly_cost": 5116.9,
-    "total_cost": 49463.38
+    "calendar_days": 63.54,
+    "build_cost": 34129.73,
+    "yearly_cost": 5119.46,
+    "total_cost": 49488.1
    },
    "buy": {
     "via": {

@@ -4,20 +4,20 @@
   "url": "https://github.com/fastapi/fastapi",
   "slug": "fastapi-fastapi",
   "host": "github.com",
-  "commit": "5cb6272ed7e3e07eaf6978e1e65b94aca76fa8e0",
-  "committed_at": "2026-11-02T11:54:46Z",
-  "evaluated_at": "2026-11-02T12:26:32+00:00",
+  "commit": "ba47d6d71b3e806900c8471f2f661781b8c43ec4",
+  "committed_at": "2026-11-08T17:59:44Z",
+  "evaluated_at": "2026-11-09T12:53:36+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/fastapi/fastapi",
   "inventory": {
-   "files": 3234,
+   "files": 3238,
    "source_files": 559,
-   "source_tokens": 291402,
+   "source_tokens": 291792,
    "languages": {
-    "python": 290995,
+    "python": 291385,
     "javascript": 266,
     "shell": 141
    },
@@ -295,7 +295,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "347 semver tags, latest 0.162.0",
+      "detail": "349 semver tags, latest 0.162.2",
       "path": null,
       "weight": 1
      }
@@ -319,7 +319,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "347 semver tags, latest 0.162.0"
+          "detail": "349 semver tags, latest 0.162.2"
          }
         ],
         "note": ""
@@ -3699,9 +3699,9 @@
     ],
     "metrics": {
      "source_files": 559,
-     "source_tokens": 291402,
+     "source_tokens": 291792,
      "test_files": 666,
-     "test_tokens": 865160,
+     "test_tokens": 865287,
      "test_ratio": 2.97,
      "modules": 107,
      "modules_within_budget": 0.99,
@@ -3733,7 +3733,7 @@
       "fastapi/utils.py"
      ],
      "languages": {
-      "python": 290995,
+      "python": 291385,
       "javascript": 266,
       "shell": 141
      }
@@ -3901,11 +3901,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 28.67,
+   "ksloc": 28.69,
    "classic": {
-    "person_months": 81.38,
+    "person_months": 81.45,
     "schedule_months": 13.3,
-    "cost": 916095
+    "cost": 916901
    },
    "capture": {
     "tests": 1.0,
@@ -3916,19 +3916,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 10.34,
    "history": {
-    "commits": 7976,
-    "fix_commits": 565,
+    "commits": 8028,
+    "fix_commits": 566,
     "authors": 920,
-    "age_months": 94.9,
+    "age_months": 95.1,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 51.18,
-   "rediscover_pm": 3.07,
-   "replacement_pm": 13.41,
+   "knowledge_pm": 51.46,
+   "rediscover_pm": 3.09,
+   "replacement_pm": 13.43,
    "leverage": 1.0,
    "obsolescence": 0.95,
-   "value_pm": 12.74,
-   "value_cost": 143367,
+   "value_pm": 12.76,
+   "value_cost": 143644,
    "knowledge_at_risk": 0.23,
    "assumptions": {
     "salary": 56286,
@@ -3942,26 +3942,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 86.3236,
+   "make_buy_ratio": 86.7347,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 23219.68,
+   "break_even_price_per_year": 23331.54,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3474931,
-     "input": 86873275,
-     "cached_input": 73842283
+     "output": 3476489,
+     "input": 86912225,
+     "cached_input": 73875391
     },
-    "final_tokens": 1158310,
-    "model_cost": 136.39,
-    "agent_hours": 38.61,
-    "human_days": 90.42,
-    "review_days": 25.95,
-    "rediscover_days": 64.47,
-    "calendar_days": 90.42,
-    "build_cost": 48603.75,
-    "yearly_cost": 7290.56,
-    "total_cost": 70475.44
+    "final_tokens": 1158829,
+    "model_cost": 136.45,
+    "agent_hours": 38.63,
+    "human_days": 90.85,
+    "review_days": 25.96,
+    "rediscover_days": 64.89,
+    "calendar_days": 90.85,
+    "build_cost": 48835.19,
+    "yearly_cost": 7325.28,
+    "total_cost": 70811.03
    },
    "buy": {
     "via": {

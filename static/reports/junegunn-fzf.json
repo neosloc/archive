@@ -4,20 +4,20 @@
   "url": "https://github.com/junegunn/fzf",
   "slug": "junegunn-fzf",
   "host": "github.com",
-  "commit": "26ff936df038b6a62ec42cf18db27b2ea2bb8ec3",
-  "committed_at": "2026-10-25T22:33:38+09:00",
-  "evaluated_at": "2026-10-26T10:10:21+00:00",
+  "commit": "c7bf2b8eea25952dd257a466c0afa72faae206fb",
+  "committed_at": "2026-11-07T20:58:45+09:00",
+  "evaluated_at": "2026-11-09T12:54:26+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/junegunn/fzf",
   "inventory": {
-   "files": 163,
+   "files": 164,
    "source_files": 61,
-   "source_tokens": 183150,
+   "source_tokens": 183468,
    "languages": {
-    "go": 181600,
+    "go": 181918,
     "shell": 1550
    },
    "git": true
@@ -211,7 +211,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "180 semver tags, latest v0.74.5",
+      "detail": "181 semver tags, latest v0.75.0",
       "path": null,
       "weight": 1
      },
@@ -241,7 +241,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "180 semver tags, latest v0.74.5"
+          "detail": "181 semver tags, latest v0.75.0"
          }
         ],
         "note": ""
@@ -724,6 +724,10 @@
          {
           "path": ".github/workflows/macos.yml",
           "detail": "1 match"
+         },
+         {
+          "path": ".github/workflows/release.yml",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -1042,9 +1046,9 @@
     ],
     "metrics": {
      "source_files": 61,
-     "source_tokens": 183150,
+     "source_tokens": 183468,
      "test_files": 43,
-     "test_tokens": 136869,
+     "test_tokens": 137314,
      "test_ratio": 0.75,
      "modules": 8,
      "modules_within_budget": 0.75,
@@ -1054,7 +1058,7 @@
      ],
      "largest_module": {
       "path": "src",
-      "tokens": 124455
+      "tokens": 124773
      },
      "typed_ratio": 0.99,
      "python_functions": 0,
@@ -1065,7 +1069,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 181600,
+      "go": 181918,
       "shell": 1550
      }
     },
@@ -1192,11 +1196,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 22.97,
+   "ksloc": 23.01,
    "classic": {
-    "person_months": 64.48,
+    "person_months": 64.59,
     "schedule_months": 12.2,
-    "cost": 725840
+    "cost": 727068
    },
    "capture": {
     "tests": 1.0,
@@ -1205,21 +1209,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 8.19,
+   "reproduce_pm": 8.2,
    "history": {
-    "commits": 3660,
-    "fix_commits": 739,
+    "commits": 3664,
+    "fix_commits": 740,
     "authors": 349,
-    "age_months": 156.0,
-    "months_since_last": 0.0
+    "age_months": 156.5,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 33.08,
-   "rediscover_pm": 1.98,
-   "replacement_pm": 10.17,
+   "knowledge_pm": 33.12,
+   "rediscover_pm": 1.99,
+   "replacement_pm": 10.19,
    "leverage": 1.02,
    "obsolescence": 0.95,
-   "value_pm": 9.82,
-   "value_cost": 110499,
+   "value_pm": 9.83,
+   "value_cost": 110675,
    "knowledge_at_risk": 0.2,
    "assumptions": {
     "salary": 56286,
@@ -1233,26 +1237,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 91.6191,
+   "make_buy_ratio": 92.0455,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 12516.74,
+   "break_even_price_per_year": 12575.63,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 963353,
-     "input": 24083825,
-     "cached_input": 20471251
+     "output": 965648,
+     "input": 24141200,
+     "cached_input": 20520020
     },
-    "final_tokens": 321117,
-    "model_cost": 37.81,
-    "agent_hours": 10.7,
-    "human_days": 48.77,
-    "review_days": 7.19,
-    "rediscover_days": 41.58,
-    "calendar_days": 48.77,
-    "build_cost": 26182.48,
-    "yearly_cost": 3927.37,
-    "total_cost": 37964.6
+    "final_tokens": 321882,
+    "model_cost": 37.9,
+    "agent_hours": 10.73,
+    "human_days": 49.0,
+    "review_days": 7.21,
+    "rediscover_days": 41.79,
+    "calendar_days": 49.0,
+    "build_cost": 26304.33,
+    "yearly_cost": 3945.65,
+    "total_cost": 38141.28
    },
    "buy": {
     "via": {

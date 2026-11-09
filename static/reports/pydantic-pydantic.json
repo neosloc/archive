@@ -4,21 +4,21 @@
   "url": "https://github.com/pydantic/pydantic",
   "slug": "pydantic-pydantic",
   "host": "github.com",
-  "commit": "b09325b0a41d9a957df9a530e5c6a7836799df1e",
-  "committed_at": "2026-11-02T09:36:44+01:00",
-  "evaluated_at": "2026-11-02T12:26:58+00:00",
+  "commit": "fe5b5ce5581f10626a16dc7ff4159cf3cb6ddbec",
+  "committed_at": "2026-11-09T09:46:16+01:00",
+  "evaluated_at": "2026-11-09T12:53:59+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/pydantic/pydantic",
   "inventory": {
-   "files": 3572,
-   "source_files": 210,
-   "source_tokens": 809532,
+   "files": 3578,
+   "source_files": 211,
+   "source_tokens": 812228,
    "languages": {
-    "python": 465522,
-    "rust": 342631,
+    "python": 467268,
+    "rust": 343581,
     "javascript": 1092,
     "shell": 287
    },
@@ -186,7 +186,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "198 semver tags, latest v2.14.2",
+      "detail": "199 semver tags, latest v2.14.3",
       "path": null,
       "weight": 1
      },
@@ -222,7 +222,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "198 semver tags, latest v2.14.2"
+          "detail": "199 semver tags, latest v2.14.3"
          }
         ],
         "note": ""
@@ -267,6 +267,10 @@
           "detail": "3 matches"
          },
          {
+          "path": "pydantic-core/python/pydantic_core/core_schema.py",
+          "detail": "2 matches"
+         },
+         {
           "path": "pydantic/_internal/_fields.py",
           "detail": "2 matches"
          },
@@ -275,11 +279,11 @@
           "detail": "2 matches"
          },
          {
-          "path": "pydantic/json_schema.py",
+          "path": "pydantic/experimental/arguments_schema.py",
           "detail": "1 match"
          },
          {
-          "path": "pydantic/mypy.py",
+          "path": "pydantic/json_schema.py",
           "detail": "1 match"
          },
          {
@@ -478,6 +482,10 @@
           "detail": "4 matches"
          },
          {
+          "path": "pydantic/_internal/_contextlib.py",
+          "detail": "3 matches"
+         },
+         {
           "path": "pydantic/_internal/_generics.py",
           "detail": "3 matches"
          },
@@ -498,15 +506,7 @@
           "detail": "2 matches"
          },
          {
-          "path": "pydantic/_internal/_typing_extra.py",
-          "detail": "2 matches"
-         },
-         {
           "path": "pydantic/config.py",
-          "detail": "2 matches"
-         },
-         {
-          "path": "pydantic/dataclasses.py",
           "detail": "2 matches"
          },
          {
@@ -526,11 +526,19 @@
           "detail": "1 match"
          },
          {
+          "path": "pydantic/_internal/_typing_extra.py",
+          "detail": "1 match"
+         },
+         {
           "path": "pydantic/_internal/_utils.py",
           "detail": "1 match"
          },
          {
           "path": "pydantic/aliases.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "pydantic/dataclasses.py",
           "detail": "1 match"
          },
          {
@@ -721,9 +729,14 @@
         "level": 3,
         "id": "out-of-tree",
         "text": "Out-of-tree extensions are discovered (entry points, a plugin directory, configuration) without editing the package.",
-        "met": false,
-        "evidence": [],
-        "note": "extensions must be added inside the package"
+        "met": true,
+        "evidence": [
+         {
+          "path": "pydantic/plugin/_loader.py",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 4,
@@ -819,10 +832,10 @@
      }
     ],
     "metrics": {
-     "source_files": 210,
-     "source_tokens": 809532,
-     "test_files": 3087,
-     "test_tokens": 1683392,
+     "source_files": 211,
+     "source_tokens": 812228,
+     "test_files": 3092,
+     "test_tokens": 1689714,
      "test_ratio": 2.08,
      "modules": 20,
      "modules_within_budget": 0.6,
@@ -839,17 +852,18 @@
      ],
      "largest_module": {
       "path": "pydantic",
-      "tokens": 177365
+      "tokens": 177710
      },
      "typed_ratio": 0.99,
-     "python_functions": 1341,
-     "python_annotated": 1329,
-     "import_edges": 297,
+     "python_functions": 1350,
+     "python_annotated": 1338,
+     "import_edges": 304,
      "import_graph": true,
-     "max_fan_out": 31,
+     "max_fan_out": 32,
      "import_cycles": 1,
      "largest_cycle": [
       "pydantic/_internal/_config.py",
+      "pydantic/_internal/_contextlib.py",
       "pydantic/_internal/_dataclasses.py",
       "pydantic/_internal/_decorators.py",
       "pydantic/_internal/_discriminated_union.py",
@@ -876,8 +890,8 @@
       "pydantic/types.py"
      ],
      "languages": {
-      "python": 465522,
-      "rust": 342631,
+      "python": 467268,
+      "rust": 343581,
       "javascript": 1092,
       "shell": 287
      }
@@ -904,7 +918,7 @@
          },
          {
           "path": "pydantic-core/tests/benchmarks/complete_schema.py",
-          "detail": "3087 test files"
+          "detail": "3092 test files"
          }
         ],
         "note": ""
@@ -972,7 +986,7 @@
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
         "met": false,
         "evidence": [],
-        "note": "1 import cycles (largest: pydantic/_internal/_config.py, pydantic/_internal/_dataclasses.py, pydantic/_internal/_decorators.py)"
+        "note": "1 import cycles (largest: pydantic/_internal/_config.py, pydantic/_internal/_contextlib.py, pydantic/_internal/_dataclasses.py)"
        }
       ]
      }
@@ -1009,11 +1023,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 67.02,
+   "ksloc": 67.19,
    "classic": {
-    "person_months": 198.48,
+    "person_months": 199.0,
     "schedule_months": 18.7,
-    "cost": 2234341
+    "cost": 2240152
    },
    "capture": {
     "tests": 1.0,
@@ -1022,21 +1036,21 @@
     "capture": 1.0
    },
    "agent_factor": 0.1,
-   "reproduce_pm": 19.85,
+   "reproduce_pm": 19.9,
    "history": {
-    "commits": 5880,
-    "fix_commits": 1239,
-    "authors": 843,
-    "age_months": 114.0,
+    "commits": 5914,
+    "fix_commits": 1247,
+    "authors": 849,
+    "age_months": 114.2,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 54.18,
+   "knowledge_pm": 54.51,
    "rediscover_pm": 0.0,
-   "replacement_pm": 19.85,
+   "replacement_pm": 19.9,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 17.97,
-   "value_cost": 202313,
+   "value_pm": 18.02,
+   "value_cost": 202839,
    "knowledge_at_risk": 0.0,
    "assumptions": {
     "salary": 56286,
@@ -1050,26 +1064,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 377.1792,
+   "make_buy_ratio": 378.5436,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 13025.07,
+   "break_even_price_per_year": 13072.31,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 7478772,
-     "input": 186969300,
-     "cached_input": 158923905
+     "output": 7505826,
+     "input": 187645650,
+     "cached_input": 159498802
     },
-    "final_tokens": 2492924,
-    "model_cost": 293.54,
-    "agent_hours": 83.1,
-    "human_days": 49.86,
-    "review_days": 49.86,
+    "final_tokens": 2501942,
+    "model_cost": 294.6,
+    "agent_hours": 83.4,
+    "human_days": 50.04,
+    "review_days": 50.04,
     "rediscover_days": 0.0,
-    "calendar_days": 49.86,
-    "build_cost": 27020.06,
-    "yearly_cost": 4053.01,
-    "total_cost": 39179.09
+    "calendar_days": 50.04,
+    "build_cost": 27117.8,
+    "yearly_cost": 4067.67,
+    "total_cost": 39320.82
    },
    "buy": {
     "via": {

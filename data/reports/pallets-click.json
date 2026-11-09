@@ -4,20 +4,20 @@
   "url": "https://github.com/pallets/click",
   "slug": "pallets-click",
   "host": "github.com",
-  "commit": "2247b35ea1c47c727d7a06e51fa280e12a863ff6",
-  "committed_at": "2026-10-04T15:19:53-07:00",
-  "evaluated_at": "2026-10-07T14:27:23+00:00",
+  "commit": "8abb77a8432e03ed14a95f972b44f905279415a7",
+  "committed_at": "2026-11-06T09:58:14-08:00",
+  "evaluated_at": "2026-11-09T12:53:19+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/pallets/click",
   "inventory": {
-   "files": 178,
+   "files": 179,
    "source_files": 18,
-   "source_tokens": 113085,
+   "source_tokens": 113344,
    "languages": {
-    "python": 113044,
+    "python": 113303,
     "shell": 41
    },
    "git": true
@@ -130,7 +130,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "64 semver tags, latest 8.5.0",
+      "detail": "65 semver tags, latest 8.5.1",
       "path": null,
       "weight": 1
      },
@@ -170,7 +170,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "64 semver tags, latest 8.5.0"
+          "detail": "65 semver tags, latest 8.5.1"
          }
         ],
         "note": ""
@@ -602,9 +602,9 @@
     ],
     "metrics": {
      "source_files": 18,
-     "source_tokens": 113085,
+     "source_tokens": 113344,
      "test_files": 59,
-     "test_tokens": 129870,
+     "test_tokens": 130600,
      "test_ratio": 1.15,
      "modules": 2,
      "modules_within_budget": 0.5,
@@ -613,7 +613,7 @@
      ],
      "largest_module": {
       "path": "src/click",
-      "tokens": 113044
+      "tokens": 113303
      },
      "typed_ratio": 1.0,
      "python_functions": 590,
@@ -630,7 +630,7 @@
       "src/click/utils.py"
      ],
      "languages": {
-      "python": 113044,
+      "python": 113303,
       "shell": 41
      }
     },
@@ -749,11 +749,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 9.62,
+   "ksloc": 9.65,
    "classic": {
-    "person_months": 25.87,
+    "person_months": 25.94,
     "schedule_months": 8.6,
-    "cost": 291214
+    "cost": 292040
    },
    "capture": {
     "tests": 1.0,
@@ -762,21 +762,21 @@
     "capture": 0.81
    },
    "agent_factor": 0.19,
-   "reproduce_pm": 4.8,
+   "reproduce_pm": 4.81,
    "history": {
-    "commits": 2172,
-    "fix_commits": 433,
+    "commits": 2185,
+    "fix_commits": 434,
     "authors": 468,
-    "age_months": 149.0,
-    "months_since_last": 0.5
+    "age_months": 150.4,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 19.52,
-   "rediscover_pm": 3.71,
-   "replacement_pm": 8.51,
+   "knowledge_pm": 19.61,
+   "rediscover_pm": 3.72,
+   "replacement_pm": 8.54,
    "leverage": 0.93,
    "obsolescence": 0.95,
-   "value_pm": 7.5,
-   "value_cost": 84484,
+   "value_pm": 7.53,
+   "value_cost": 84779,
    "knowledge_at_risk": 0.44,
    "assumptions": {
     "salary": 56286,
@@ -790,26 +790,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 228.5145,
+   "make_buy_ratio": 229.1554,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 21856.27,
+   "break_even_price_per_year": 21917.84,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 735310,
-     "input": 18382750,
-     "cached_input": 15625337
+     "output": 738292,
+     "input": 18457300,
+     "cached_input": 15688705
     },
-    "final_tokens": 245103,
-    "model_cost": 28.86,
-    "agent_hours": 8.17,
-    "human_days": 84.67,
-    "review_days": 6.76,
-    "rediscover_days": 77.91,
-    "calendar_days": 84.67,
-    "build_cost": 45418.62,
-    "yearly_cost": 6812.79,
-    "total_cost": 65857.0
+    "final_tokens": 246097,
+    "model_cost": 28.98,
+    "agent_hours": 8.2,
+    "human_days": 84.91,
+    "review_days": 6.79,
+    "rediscover_days": 78.12,
+    "calendar_days": 84.91,
+    "build_cost": 45546.01,
+    "yearly_cost": 6831.9,
+    "total_cost": 66041.71
    },
    "buy": {
     "via": {

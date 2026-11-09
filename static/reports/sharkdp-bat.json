@@ -4,20 +4,20 @@
   "url": "https://github.com/sharkdp/bat",
   "slug": "sharkdp-bat",
   "host": "github.com",
-  "commit": "6ca658c80a3198233ab6137b29f671762dd94773",
-  "committed_at": "2026-11-02T13:08:25+02:00",
-  "evaluated_at": "2026-11-02T12:27:49+00:00",
+  "commit": "6561174ab86c5ad59cf246758010034166e950a0",
+  "committed_at": "2026-11-08T10:24:11+02:00",
+  "evaluated_at": "2026-11-09T12:54:53+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/sharkdp/bat",
   "inventory": {
-   "files": 911,
+   "files": 915,
    "source_files": 43,
-   "source_tokens": 106149,
+   "source_tokens": 109055,
    "languages": {
-    "rust": 104114,
+    "rust": 107020,
     "shell": 2035
    },
    "git": true
@@ -543,16 +543,16 @@
     ],
     "metrics": {
      "source_files": 43,
-     "source_tokens": 106149,
+     "source_tokens": 109055,
      "test_files": 89,
-     "test_tokens": 342403,
-     "test_ratio": 3.23,
+     "test_tokens": 348228,
+     "test_ratio": 3.19,
      "modules": 7,
      "modules_within_budget": 0.86,
      "oversized_files": [],
      "largest_module": {
       "path": "src",
-      "tokens": 74400
+      "tokens": 76832
      },
      "typed_ratio": 0.98,
      "python_functions": 0,
@@ -563,7 +563,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 104114,
+      "rust": 107020,
       "shell": 2035
      }
     },
@@ -646,31 +646,31 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 12.1,
+   "retrofit_person_days": 12.3,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.0,
-    "ergonomics": 2.9,
+    "ergonomics": 3.0,
     "embeddability": 0.7,
-    "extensibility": 3.9,
+    "extensibility": 4.0,
     "observability": 2.0,
     "legibility": 2.6
    },
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 0.65,
+    "size_factor": 0.66,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 9.63,
+   "ksloc": 9.9,
    "classic": {
-    "person_months": 25.89,
-    "schedule_months": 8.6,
-    "cost": 291500
+    "person_months": 26.64,
+    "schedule_months": 8.7,
+    "cost": 299861
    },
    "capture": {
     "tests": 1.0,
@@ -679,21 +679,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 3.29,
+   "reproduce_pm": 3.38,
    "history": {
-    "commits": 3526,
-    "fix_commits": 428,
-    "authors": 523,
-    "age_months": 102.4,
+    "commits": 3563,
+    "fix_commits": 436,
+    "authors": 535,
+    "age_months": 102.6,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 26.19,
-   "rediscover_pm": 1.57,
-   "replacement_pm": 4.86,
+   "knowledge_pm": 26.54,
+   "rediscover_pm": 1.59,
+   "replacement_pm": 4.98,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 4.37,
-   "value_cost": 49190,
+   "value_pm": 4.47,
+   "value_cost": 50354,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,
@@ -707,26 +707,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 748.4157,
+   "make_buy_ratio": 759.1375,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 11159.74,
+   "break_even_price_per_year": 11319.82,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1347566,
-     "input": 33689150,
-     "cached_input": 28635777
+     "output": 1373811,
+     "input": 34345275,
+     "cached_input": 29193483
     },
-    "final_tokens": 449188,
-    "model_cost": 52.89,
-    "agent_hours": 14.97,
-    "human_days": 43.03,
-    "review_days": 10.06,
-    "rediscover_days": 32.97,
-    "calendar_days": 43.03,
-    "build_cost": 23120.0,
-    "yearly_cost": 3468.0,
-    "total_cost": 33524.0
+    "final_tokens": 457937,
+    "model_cost": 53.92,
+    "agent_hours": 15.26,
+    "human_days": 43.65,
+    "review_days": 10.26,
+    "rediscover_days": 33.39,
+    "calendar_days": 43.65,
+    "build_cost": 23451.22,
+    "yearly_cost": 3517.68,
+    "total_cost": 34004.27
    },
    "buy": {
     "via": {

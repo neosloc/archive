@@ -1,7 +1,7 @@
 {
  "title": "sharkdp/bat",
  "slug": "sharkdp-bat",
- "date": "2026-11-02T12:27:49+00:00",
+ "date": "2026-11-09T12:54:53+00:00",
  "repo_url": "https://github.com/sharkdp/bat",
  "index": 1.57,
  "assessed": 7,
@@ -9,13 +9,13 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 748.4157,
+ "make_buy_ratio": 759.1375,
  "languages": [
   "rust",
   "shell"
  ],
- "cocomo_cost": 291500,
- "cocomo_pm": 25.89,
- "value_cost": 49190,
- "value_pm": 4.37
+ "cocomo_cost": 299861,
+ "cocomo_pm": 26.64,
+ "value_cost": 50354,
+ "value_pm": 4.47
 }

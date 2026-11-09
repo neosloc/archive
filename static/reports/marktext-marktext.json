@@ -4,21 +4,21 @@
   "url": "https://github.com/marktext/marktext",
   "slug": "marktext-marktext",
   "host": "github.com",
-  "commit": "dae649140e478d7324331c381e106d34ee503986",
-  "committed_at": "2026-11-02T18:48:13+08:00",
-  "evaluated_at": "2026-11-02T12:27:44+00:00",
+  "commit": "a520befde7ec8ea911e738d53cb26bba64b28694",
+  "committed_at": "2026-11-06T16:00:22+08:00",
+  "evaluated_at": "2026-11-09T12:54:51+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/marktext/marktext",
   "inventory": {
-   "files": 2026,
-   "source_files": 664,
-   "source_tokens": 864310,
+   "files": 2098,
+   "source_files": 694,
+   "source_tokens": 873664,
    "languages": {
-    "typescript": 739732,
-    "vue": 104277,
+    "typescript": 747655,
+    "vue": 105708,
     "javascript": 19165,
     "python": 1136
    },
@@ -263,7 +263,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "59 semver tags, latest v0.23.0",
+      "detail": "60 semver tags, latest v0.24.0-rc.1",
       "path": null,
       "weight": 1
      }
@@ -287,7 +287,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "59 semver tags, latest v0.23.0"
+          "detail": "60 semver tags, latest v0.24.0-rc.1"
          }
         ],
         "note": ""
@@ -708,10 +708,6 @@
           "detail": "1 match"
          },
          {
-          "path": "packages/desktop/src/renderer/src/components/search/index.vue",
-          "detail": "1 match"
-         },
-         {
           "path": "packages/desktop/src/renderer/src/node/paths.ts",
           "detail": "1 match"
          },
@@ -753,6 +749,10 @@
          },
          {
           "path": "packages/muya/src/editor/transactions/index.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/inline/renderer/index.ts",
           "detail": "1 match"
          },
          {
@@ -850,7 +850,7 @@
           "detail": "doctest"
          },
          {
-          "path": "packages/muya/src/inlineRenderer/__tests__/inlineCode.spec.ts",
+          "path": "packages/muya/src/inline/__tests__/inlineCode.spec.ts",
           "detail": "doctest"
          },
          {
@@ -890,6 +890,10 @@
          },
          {
           "path": "packages/desktop/src/renderer/src/util/zoomPan.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/search/index.ts",
           "detail": "1 match"
          },
          {
@@ -1015,6 +1019,10 @@
          },
          {
           "path": "packages/desktop/src/renderer/src/util/zoomPan.ts",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/muya/src/search/index.ts",
           "detail": "1 match"
          },
          {
@@ -1674,17 +1682,17 @@
      }
     ],
     "metrics": {
-     "source_files": 664,
-     "source_tokens": 864310,
-     "test_files": 819,
-     "test_tokens": 1067516,
-     "test_ratio": 1.24,
-     "modules": 174,
+     "source_files": 694,
+     "source_tokens": 873664,
+     "test_files": 859,
+     "test_tokens": 1117399,
+     "test_ratio": 1.28,
+     "modules": 177,
      "modules_within_budget": 0.99,
      "oversized_files": [
       "packages/muya/src/config/emojis.ts",
-      "packages/muya/src/block/base/format.ts",
       "packages/desktop/src/renderer/src/components/editorWithTabs/editor.vue",
+      "packages/muya/src/block/base/format.ts",
       "packages/muya/src/muya.ts",
       "packages/desktop/src/main/applicationState/sessionHost.ts",
       "packages/muya/src/utils/diagram/sequence/sequence-diagram-snap.js",
@@ -1692,14 +1700,14 @@
      ],
      "largest_module": {
       "path": "packages/muya/src/config",
-      "tokens": 80119
+      "tokens": 78458
      },
      "typed_ratio": 0.86,
      "python_functions": 2,
      "python_annotated": 2,
-     "import_edges": 1818,
+     "import_edges": 1958,
      "import_graph": true,
-     "max_fan_out": 42,
+     "max_fan_out": 43,
      "import_cycles": 4,
      "largest_cycle": [
       "packages/muya/src/block/base/content.ts",
@@ -1781,47 +1789,58 @@
       "packages/muya/src/event/types.ts",
       "packages/muya/src/history/index.ts",
       "packages/muya/src/i18n/index.ts",
-      "packages/muya/src/inlineRenderer/delimiters.ts",
-      "packages/muya/src/inlineRenderer/index.ts",
-      "packages/muya/src/inlineRenderer/lexer.ts",
-      "packages/muya/src/inlineRenderer/renderer/autoLink.ts",
-      "packages/muya/src/inlineRenderer/renderer/autoLinkExtension.ts",
-      "packages/muya/src/inlineRenderer/renderer/backlash.ts",
-      "packages/muya/src/inlineRenderer/renderer/backlashInToken.ts",
-      "packages/muya/src/inlineRenderer/renderer/codeFence.ts",
-      "packages/muya/src/inlineRenderer/renderer/del.ts",
-      "packages/muya/src/inlineRenderer/renderer/delEmStrongFactory.ts",
-      "packages/muya/src/inlineRenderer/renderer/em.ts",
-      "packages/muya/src/inlineRenderer/renderer/emoji.ts",
-      "packages/muya/src/inlineRenderer/renderer/footnoteIdentifier.ts",
-      "packages/muya/src/inlineRenderer/renderer/hardLineBreak.ts",
-      "packages/muya/src/inlineRenderer/renderer/header.ts",
-      "packages/muya/src/inlineRenderer/renderer/highlight.ts",
-      "packages/muya/src/inlineRenderer/renderer/hr.ts",
-      "packages/muya/src/inlineRenderer/renderer/htmlEscape.ts",
-      "packages/muya/src/inlineRenderer/renderer/htmlRuby.ts",
-      "packages/muya/src/inlineRenderer/renderer/htmlTag.ts",
-      "packages/muya/src/inlineRenderer/renderer/image.ts",
-      "packages/muya/src/inlineRenderer/renderer/index.ts",
-      "packages/muya/src/inlineRenderer/renderer/inlineCode.ts",
-      "packages/muya/src/inlineRenderer/renderer/inlineDiff.ts",
-      "packages/muya/src/inlineRenderer/renderer/inlineMath.ts",
-      "packages/muya/src/inlineRenderer/renderer/lineBreakHighlights.ts",
-      "packages/muya/src/inlineRenderer/renderer/link.ts",
-      "packages/muya/src/inlineRenderer/renderer/loadImageAsync.ts",
-      "packages/muya/src/inlineRenderer/renderer/mark.ts",
-      "packages/muya/src/inlineRenderer/renderer/multipleMath.ts",
-      "packages/muya/src/inlineRenderer/renderer/referenceDefinition.ts",
-      "packages/muya/src/inlineRenderer/renderer/referenceImage.ts",
-      "packages/muya/src/inlineRenderer/renderer/referenceLink.ts",
-      "packages/muya/src/inlineRenderer/renderer/softLineBreak.ts",
-      "packages/muya/src/inlineRenderer/renderer/strong.ts",
-      "packages/muya/src/inlineRenderer/renderer/superSubScript.ts",
-      "packages/muya/src/inlineRenderer/renderer/tailHeader.ts",
-      "packages/muya/src/inlineRenderer/renderer/text.ts",
-      "packages/muya/src/inlineRenderer/searchHighlights.ts",
-      "packages/muya/src/inlineRenderer/types.ts",
-      "packages/muya/src/inlineRenderer/utils.ts",
+      "packages/muya/src/inline/index.ts",
+      "packages/muya/src/inline/lexer.ts",
+      "packages/muya/src/inline/model/ranges.ts",
+      "packages/muya/src/inline/parser/atomicExtension.ts",
+      "packages/muya/src/inline/parser/brackets.ts",
+      "packages/muya/src/inline/parser/consume.ts",
+      "packages/muya/src/inline/parser/delimiters.ts",
+      "packages/muya/src/inline/parser/frame.ts",
+      "packages/muya/src/inline/parser/lexer.ts",
+      "packages/muya/src/inline/parser/prefix.ts",
+      "packages/muya/src/inline/projection.ts",
+      "packages/muya/src/inline/referenceDefinitions.ts",
+      "packages/muya/src/inline/renderer/autoLink.ts",
+      "packages/muya/src/inline/renderer/autoLinkExtension.ts",
+      "packages/muya/src/inline/renderer/backlash.ts",
+      "packages/muya/src/inline/renderer/backlashInToken.ts",
+      "packages/muya/src/inline/renderer/codeFence.ts",
+      "packages/muya/src/inline/renderer/del.ts",
+      "packages/muya/src/inline/renderer/delEmStrongFactory.ts",
+      "packages/muya/src/inline/renderer/delimitedParts.ts",
+      "packages/muya/src/inline/renderer/em.ts",
+      "packages/muya/src/inline/renderer/emoji.ts",
+      "packages/muya/src/inline/renderer/footnoteIdentifier.ts",
+      "packages/muya/src/inline/renderer/hardLineBreak.ts",
+      "packages/muya/src/inline/renderer/header.ts",
+      "packages/muya/src/inline/renderer/highlight.ts",
+      "packages/muya/src/inline/renderer/hr.ts",
+      "packages/muya/src/inline/renderer/htmlEscape.ts",
+      "packages/muya/src/inline/renderer/htmlRuby.ts",
+      "packages/muya/src/inline/renderer/htmlTag.ts",
+      "packages/muya/src/inline/renderer/image.ts",
+      "packages/muya/src/inline/renderer/index.ts",
+      "packages/muya/src/inline/renderer/inlineCode.ts",
+      "packages/muya/src/inline/renderer/inlineDiff.ts",
+      "packages/muya/src/inline/renderer/inlineMath.ts",
+      "packages/muya/src/inline/renderer/lineBreakHighlights.ts",
+      "packages/muya/src/inline/renderer/link.ts",
+      "packages/muya/src/inline/renderer/loadImageAsync.ts",
+      "packages/muya/src/inline/renderer/mark.ts",
+      "packages/muya/src/inline/renderer/multipleMath.ts",
+      "packages/muya/src/inline/renderer/referenceDefinition.ts",
+      "packages/muya/src/inline/renderer/referenceImage.ts",
+      "packages/muya/src/inline/renderer/referenceLink.ts",
+      "packages/muya/src/inline/renderer/softLineBreak.ts",
+      "packages/muya/src/inline/renderer/strong.ts",
+      "packages/muya/src/inline/renderer/superSubScript.ts",
+      "packages/muya/src/inline/renderer/tailHeader.ts",
+      "packages/muya/src/inline/renderer/text.ts",
+      "packages/muya/src/inline/resources/imageMounts.ts",
+      "packages/muya/src/inline/resources/images.ts",
+      "packages/muya/src/inline/resources/mountImage.ts",
+      "packages/muya/src/inline/searchHighlights.ts",
       "packages/muya/src/muya.ts",
       "packages/muya/src/search/index.ts",
       "packages/muya/src/search/types.ts",
@@ -1861,8 +1880,8 @@
       "packages/muya/src/utils/turndownService/index.ts"
      ],
      "languages": {
-      "typescript": 739732,
-      "vue": 104277,
+      "typescript": 747655,
+      "vue": 105708,
       "javascript": 19165,
       "python": 1136
      }
@@ -1889,7 +1908,7 @@
          },
          {
           "path": "packages/desktop/test/e2e/all-blocks-roundtrip.spec.ts",
-          "detail": "819 test files"
+          "detail": "859 test files"
          }
         ],
         "note": ""
@@ -1993,55 +2012,55 @@
     "events",
     "portability"
    ],
-   "retrofit_person_days": 21.3,
+   "retrofit_person_days": 21.5,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 3.7,
     "identity": 0.0,
     "ergonomics": 2.8,
     "embeddability": 0.0,
-    "extensibility": 7.4,
+    "extensibility": 7.5,
     "observability": 0.0,
-    "legibility": 7.4
+    "legibility": 7.5
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.86,
+    "size_factor": 1.87,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 94.57,
+   "ksloc": 94.91,
    "classic": {
-    "person_months": 284.93,
+    "person_months": 286.03,
     "schedule_months": 21.4,
-    "cost": 3207511
+    "cost": 3219871
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.68,
+    "docs": 0.67,
     "capture": 0.92
    },
    "agent_factor": 0.14,
-   "reproduce_pm": 38.75,
+   "reproduce_pm": 38.9,
    "history": {
-    "commits": 2402,
-    "fix_commits": 1100,
-    "authors": 230,
-    "age_months": 107.6,
-    "months_since_last": 0.0
+    "commits": 2420,
+    "fix_commits": 1113,
+    "authors": 233,
+    "age_months": 107.8,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 34.01,
-   "rediscover_pm": 2.72,
-   "replacement_pm": 41.47,
+   "knowledge_pm": 34.36,
+   "rediscover_pm": 2.75,
+   "replacement_pm": 41.65,
    "leverage": 1.06,
    "obsolescence": 0.95,
-   "value_pm": 41.86,
-   "value_cost": 471227,
+   "value_pm": 42.04,
+   "value_cost": 473242,
    "knowledge_at_risk": 0.07,
    "assumptions": {
     "salary": 56286,
@@ -2055,26 +2074,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 98.5572,
+   "make_buy_ratio": 100.4981,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 26293.56,
+   "break_even_price_per_year": 26816.68,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5816221,
-     "input": 145405525,
-     "cached_input": 123594696
+     "output": 5994156,
+     "input": 149853900,
+     "cached_input": 127375815
     },
-    "final_tokens": 1938740,
-    "model_cost": 228.29,
-    "agent_hours": 64.62,
-    "human_days": 102.1,
-    "review_days": 44.98,
-    "rediscover_days": 57.12,
-    "calendar_days": 102.1,
-    "build_cost": 54958.09,
-    "yearly_cost": 8243.71,
-    "total_cost": 79689.24
+    "final_tokens": 1998052,
+    "model_cost": 235.27,
+    "agent_hours": 66.6,
+    "human_days": 104.1,
+    "review_days": 46.35,
+    "rediscover_days": 57.75,
+    "calendar_days": 104.1,
+    "build_cost": 56040.41,
+    "yearly_cost": 8406.06,
+    "total_cost": 81258.59
    },
    "buy": {
     "via": {

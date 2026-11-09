@@ -4,22 +4,22 @@
   "url": "https://github.com/cli/cli",
   "slug": "cli-cli",
   "host": "github.com",
-  "commit": "9490d204a2ba95434153dedce99898ce9f281426",
-  "committed_at": "2026-10-30T19:24:31+01:00",
-  "evaluated_at": "2026-11-02T12:27:33+00:00",
+  "commit": "736c68f674113337685e3eb1f908602a03b8f99b",
+  "committed_at": "2026-11-06T19:48:46-06:00",
+  "evaluated_at": "2026-11-09T12:54:38+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/cli/cli",
   "inventory": {
-   "files": 1536,
-   "source_files": 594,
-   "source_tokens": 944956,
+   "files": 1588,
+   "source_files": 627,
+   "source_tokens": 1024786,
    "languages": {
-    "go": 902315,
-    "shell": 25575,
-    "javascript": 17066
+    "go": 962820,
+    "javascript": 35045,
+    "shell": 26921
    },
    "git": true
   },
@@ -33,7 +33,7 @@
     "service": [
      {
       "path": "api/client.go",
-      "detail": "go-http: 27 route declarations"
+      "detail": "go-http: 34 route declarations"
      },
      {
       "path": ".github/extensions/terminal-mockup/extension.mjs",
@@ -87,7 +87,7 @@
     "evidence": [
      {
       "signal": "L1 routes",
-      "detail": "go-http: 27 route declarations",
+      "detail": "go-http: 34 route declarations",
       "path": "api/client.go",
       "weight": 1
      },
@@ -111,9 +111,9 @@
      }
     ],
     "metrics": {
-     "route_declarations": 27,
+     "route_declarations": 34,
      "routes_by_framework": {
-      "go-http": 27
+      "go-http": 34
      },
      "spec_files": 3,
      "spec_operations": 0,
@@ -138,7 +138,7 @@
         "evidence": [
          {
           "path": "api/client.go",
-          "detail": "go-http: 27 route declarations"
+          "detail": "go-http: 34 route declarations"
          },
          {
           "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
@@ -227,8 +227,20 @@
         "met": true,
         "evidence": [
          {
-          "path": null,
-          "detail": "no interactive prompts"
+          "path": "internal/update/update.go",
+          "detail": "6 matches"
+         },
+         {
+          "path": "pkg/cmd/codespace/common.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/preflight/probe.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/iostreams/iostreams.go",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -257,6 +269,10 @@
           "detail": "1 match"
          },
          {
+          "path": ".github/workflows/issue-triage.md",
+          "detail": "2 matches"
+         },
+         {
           "path": ".github/skills/cli-exercise/references/examples.md",
           "detail": "1 match"
          },
@@ -278,6 +294,10 @@
          },
          {
           "path": "pkg/cmd/root/help_topic.go",
+          "detail": "help text"
+         },
+         {
+          "path": "script/ghmock/export.go",
           "detail": "help text"
          }
         ],
@@ -786,13 +806,13 @@
    {
     "key": "ergonomics",
     "title": "Agent ergonomics",
-    "level": 3,
-    "rationale": "[cli] Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
+    "level": 4,
+    "rationale": "[cli] --dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
     "evidence": [
      {
       "signal": "L1 never-blocks",
-      "detail": "no interactive prompts",
-      "path": null,
+      "detail": "6 matches",
+      "path": "internal/update/update.go",
       "weight": 1
      },
      {
@@ -803,15 +823,20 @@
      },
      {
       "signal": "L3 typed-failures",
+      "detail": "2 matches",
+      "path": ".github/workflows/issue-triage.md",
+      "weight": 1
+     },
+     {
+      "signal": "L4 agent-ready",
       "detail": "1 match",
-      "path": ".github/skills/cli-exercise/references/examples.md",
+      "path": "pkg/cmd/extension/command.go",
       "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
      "[service] L2 Field-level validation errors, and paginated lists. (no request validation)",
-     "[cli] L4 --dry-run, limits for long or costly operations (timeouts, budgets), and agent docs. (no timeout/budget options)",
      "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
@@ -865,8 +890,8 @@
       ]
      },
      "cli": {
-      "level": 3,
-      "first_missing": "agent-ready",
+      "level": 4,
+      "first_missing": null,
       "requirements": [
        {
         "level": 1,
@@ -875,8 +900,20 @@
         "met": true,
         "evidence": [
          {
-          "path": null,
-          "detail": "no interactive prompts"
+          "path": "internal/update/update.go",
+          "detail": "6 matches"
+         },
+         {
+          "path": "pkg/cmd/codespace/common.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": ".github/skills/cli-exercise/tool/internal/preflight/probe.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/iostreams/iostreams.go",
+          "detail": "1 match"
          }
         ],
         "note": ""
@@ -932,6 +969,10 @@
           "detail": "1 match"
          },
          {
+          "path": "script/ghmock/main.go",
+          "detail": "1 match"
+         },
+         {
           "path": ".github/skills/cli-exercise/tool/internal/execution/cli.go",
           "detail": "32 matches"
          },
@@ -944,12 +985,20 @@
           "detail": "10 matches"
          },
          {
+          "path": "script/ghmock/gittransport.go",
+          "detail": "8 matches"
+         },
+         {
           "path": "git/command.go",
           "detail": "7 matches"
          },
          {
           "path": "pkg/cmd/repo/create/create.go",
           "detail": "7 matches"
+         },
+         {
+          "path": ".github/scripts/issue-triage-ghmock.sh",
+          "detail": "5 matches"
          },
          {
           "path": ".github/skills/cli-exercise/tool/internal/evidence/main.go",
@@ -980,6 +1029,10 @@
           "detail": "4 matches"
          },
          {
+          "path": "script/ghmock/main.go",
+          "detail": "4 matches"
+         },
+         {
           "path": ".github/skills/cli-exercise/tool/internal/terminal/adapter.go",
           "detail": "3 matches"
          },
@@ -996,11 +1049,19 @@
           "detail": "3 matches"
          },
          {
+          "path": "script/ghmock/gitcmd.go",
+          "detail": "3 matches"
+         },
+         {
           "path": ".github/skills/cli-exercise/tool/internal/fontutil/font.go",
           "detail": "2 matches"
          },
          {
           "path": "script/build.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "script/ghmock/run.go",
           "detail": "2 matches"
          },
          {
@@ -1048,6 +1109,18 @@
           "detail": "1 match"
          },
          {
+          "path": "script/ghmock/gqlscaffold.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "script/ghmock/report.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "script/ghmock/store.go",
+          "detail": "1 match"
+         },
+         {
           "path": "script/refreshable-token-gitcredential-e2e.sh",
           "detail": "1 match"
          }
@@ -1060,6 +1133,10 @@
         "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
         "met": true,
         "evidence": [
+         {
+          "path": ".github/workflows/issue-triage.md",
+          "detail": "2 matches"
+         },
          {
           "path": ".github/skills/cli-exercise/references/examples.md",
           "detail": "1 match"
@@ -1085,8 +1162,12 @@
           "detail": "help text"
          },
          {
+          "path": "script/ghmock/export.go",
+          "detail": "help text"
+         },
+         {
           "path": null,
-          "detail": "4 documented exit statuses"
+          "detail": "5 documented exit statuses"
          },
          {
           "path": ".github/skills/cli-exercise/tool/internal/execution/cli.go",
@@ -1119,9 +1200,34 @@
         "level": 4,
         "id": "agent-ready",
         "text": "--dry-run, limits for long or costly operations (timeouts, budgets), and agent docs.",
-        "met": false,
-        "evidence": [],
-        "note": "no timeout/budget options"
+        "met": true,
+        "evidence": [
+         {
+          "path": "pkg/cmd/extension/command.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/pr/create/create.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/skills/publish/publish.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "pkg/cmd/skills/update/update.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "script/ghmock/run.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "AGENTS.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
        }
       ]
      },
@@ -1148,7 +1254,15 @@
           "detail": "5 matches"
          },
          {
+          "path": ".github/scripts/issue-triage-report.test.cjs",
+          "detail": "3 matches"
+         },
+         {
           "path": ".github/extensions/terminal-mockup/extension.mjs",
+          "detail": "2 matches"
+         },
+         {
+          "path": ".github/scripts/issue-triage-report.cjs",
           "detail": "2 matches"
          }
         ],
@@ -1173,42 +1287,47 @@
       ]
      }
     },
-    "level_name": "solid",
+    "level_name": "exemplary",
     "applicable": true
    },
    {
     "key": "embeddability",
     "title": "Embeddability",
-    "level": 3,
-    "rationale": "[library] Published to a public registry, with at most 10 runtime dependencies.",
+    "level": 4,
+    "rationale": "[cli] Also shipped as a container image or a single binary.",
     "evidence": [
      {
-      "signal": "L1 importable",
-      "detail": "Go module with exported packages",
-      "path": "go.mod",
+      "signal": "L1 runnable",
+      "detail": "go main",
+      "path": ".github/skills/cli-exercise/tool/main.go",
       "weight": 1
      },
      {
       "signal": "L2 installable",
-      "detail": "package manifest",
-      "path": "go.mod",
+      "detail": "go main",
+      "path": ".github/skills/cli-exercise/tool/main.go",
       "weight": 1
      },
      {
-      "signal": "L3 published-minimal",
+      "signal": "L3 published",
       "detail": "6 matches",
       "path": ".github/workflows/deployment.yml",
+      "weight": 1
+     },
+     {
+      "signal": "L4 container-or-binary",
+      "detail": "",
+      "path": ".goreleaser.yml",
       "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
      "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (the environment variables aren't documented)",
-     "[cli] L3 Published to a public registry and run non-interactively in CI. (the command isn't run in CI)",
      "[library] L4 Optional features behind extras/features. (no optional extras)"
     ],
     "question": "Can another system run and compose it without a human?",
-    "best_surface": "library",
+    "best_surface": "cli",
     "surfaces": {
      "service": {
       "level": 1,
@@ -1254,8 +1373,8 @@
       ]
      },
      "cli": {
-      "level": 2,
-      "first_missing": "published",
+      "level": 4,
+      "first_missing": null,
       "requirements": [
        {
         "level": 1,
@@ -1281,6 +1400,10 @@
          },
          {
           "path": "script/build.go",
+          "detail": "go main"
+         },
+         {
+          "path": "script/ghmock/main.go",
           "detail": "go main"
          }
         ],
@@ -1311,6 +1434,10 @@
          {
           "path": "script/build.go",
           "detail": "go main"
+         },
+         {
+          "path": "script/ghmock/main.go",
+          "detail": "go main"
          }
         ],
         "note": ""
@@ -1319,9 +1446,22 @@
         "level": 3,
         "id": "published",
         "text": "Published to a public registry and run non-interactively in CI.",
-        "met": false,
-        "evidence": [],
-        "note": "the command isn't run in CI"
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/workflows/deployment.yml",
+          "detail": "6 matches"
+         },
+         {
+          "path": ".github/workflows/dependabot-triage.lock.yml",
+          "detail": "1 match"
+         },
+         {
+          "path": ".github/workflows/issue-triage.lock.yml",
+          "detail": "2 matches"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 4,
@@ -1400,7 +1540,7 @@
       ]
      }
     },
-    "level_name": "solid",
+    "level_name": "exemplary",
     "applicable": true
    },
    {
@@ -1461,20 +1601,26 @@
    {
     "key": "observability",
     "title": "Observability",
-    "level": 1,
-    "rationale": "[cli] Meaningful exit statuses, and errors on stderr.",
+    "level": 2,
+    "rationale": "[cli] Verbosity control for diagnostics (--quiet, --log-level, --debug).",
     "evidence": [
      {
       "signal": "L1 exit-and-stderr",
       "detail": "9 matches",
       "path": "internal/codespaces/connection/tunnels_api_server_mock.go",
       "weight": 1
+     },
+     {
+      "signal": "L2 verbosity",
+      "detail": "1 match",
+      "path": "script/ghmock/gitcmd.go",
+      "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
      "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
-     "[cli] L2 Verbosity control for diagnostics (--quiet, --log-level, --debug). (no --quiet or log-level control)",
+     "[cli] L3 Structured logs (e.g. --log-format json) or a machine-readable run summary. (no structured diagnostics)",
      "[library] L1 Logs through a standard logger namespace and never prints from library code. (no standard logger)"
     ],
     "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
@@ -1519,8 +1665,8 @@
       ]
      },
      "cli": {
-      "level": 1,
-      "first_missing": "verbosity",
+      "level": 2,
+      "first_missing": "structured-diagnostics",
       "requirements": [
        {
         "level": 1,
@@ -1573,6 +1719,10 @@
           "detail": "1 match"
          },
          {
+          "path": "script/ghmock/main.go",
+          "detail": "1 match"
+         },
+         {
           "path": ".github/skills/cli-exercise/tool/internal/execution/cli.go",
           "detail": "32 matches"
          },
@@ -1585,12 +1735,20 @@
           "detail": "10 matches"
          },
          {
+          "path": "script/ghmock/gittransport.go",
+          "detail": "8 matches"
+         },
+         {
           "path": "git/command.go",
           "detail": "7 matches"
          },
          {
           "path": "pkg/cmd/repo/create/create.go",
           "detail": "7 matches"
+         },
+         {
+          "path": ".github/scripts/issue-triage-ghmock.sh",
+          "detail": "5 matches"
          },
          {
           "path": ".github/skills/cli-exercise/tool/internal/evidence/main.go",
@@ -1621,6 +1779,10 @@
           "detail": "4 matches"
          },
          {
+          "path": "script/ghmock/main.go",
+          "detail": "4 matches"
+         },
+         {
           "path": ".github/skills/cli-exercise/tool/internal/terminal/adapter.go",
           "detail": "3 matches"
          },
@@ -1637,11 +1799,19 @@
           "detail": "3 matches"
          },
          {
+          "path": "script/ghmock/gitcmd.go",
+          "detail": "3 matches"
+         },
+         {
           "path": ".github/skills/cli-exercise/tool/internal/fontutil/font.go",
           "detail": "2 matches"
          },
          {
           "path": "script/build.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "script/ghmock/run.go",
           "detail": "2 matches"
          },
          {
@@ -1689,6 +1859,18 @@
           "detail": "1 match"
          },
          {
+          "path": "script/ghmock/gqlscaffold.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "script/ghmock/report.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "script/ghmock/store.go",
+          "detail": "1 match"
+         },
+         {
           "path": "script/refreshable-token-gitcredential-e2e.sh",
           "detail": "1 match"
          }
@@ -1699,9 +1881,14 @@
         "level": 2,
         "id": "verbosity",
         "text": "Verbosity control for diagnostics (--quiet, --log-level, --debug).",
-        "met": false,
-        "evidence": [],
-        "note": "no --quiet or log-level control"
+        "met": true,
+        "evidence": [
+         {
+          "path": "script/ghmock/gitcmd.go",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 3,
@@ -1760,7 +1947,7 @@
       ]
      }
     },
-    "level_name": "ad hoc",
+    "level_name": "partial",
     "applicable": true
    },
    {
@@ -1783,37 +1970,37 @@
      }
     ],
     "metrics": {
-     "source_files": 594,
-     "source_tokens": 944956,
-     "test_files": 458,
-     "test_tokens": 1420685,
-     "test_ratio": 1.5,
-     "modules": 328,
-     "modules_within_budget": 1.0,
+     "source_files": 627,
+     "source_tokens": 1024786,
+     "test_files": 471,
+     "test_tokens": 1478020,
+     "test_ratio": 1.44,
+     "modules": 329,
+     "modules_within_budget": 0.99,
      "oversized_files": [
       "pkg/cmd/project/shared/queries/queries.go",
       "pkg/cmd/pr/create/create.go"
      ],
      "largest_module": {
-      "path": "api",
-      "tokens": 46852
+      "path": "script/ghmock",
+      "tokens": 60397
      },
-     "typed_ratio": 0.95,
+     "typed_ratio": 0.94,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 1,
+     "import_edges": 2,
      "import_graph": true,
      "max_fan_out": 1,
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 902315,
-      "shell": 25575,
-      "javascript": 17066
+      "go": 962820,
+      "javascript": 35045,
+      "shell": 26921
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (100% of modules fit 32k tokens; 2 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 2 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1834,7 +2021,7 @@
          },
          {
           "path": ".github/codeql/tests/unsanitized-response-to-terminal/hits_base64_after_json.go",
-          "detail": "458 test files"
+          "detail": "471 test files"
          }
         ],
         "note": ""
@@ -1918,7 +2105,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "100% of modules fit 32k tokens; 2 files over 12k"
+        "note": "99% of modules fit 32k tokens; 2 files over 12k"
        },
        {
         "level": 4,
@@ -1941,61 +2128,61 @@
    }
   ],
   "estimate": {
-   "integrability_index": 2.11,
+   "integrability_index": 2.44,
    "assessed_dimensions": 9,
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 31.2,
+   "retrofit_person_days": 30.2,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 3.9,
-    "events": 3.9,
+    "stability": 4.0,
+    "events": 4.0,
     "identity": 0.0,
     "ergonomics": 0.0,
     "embeddability": 0.0,
-    "extensibility": 11.7,
-    "observability": 3.9,
-    "legibility": 7.8
+    "extensibility": 12.1,
+    "observability": 2.0,
+    "legibility": 8.1
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.94,
+    "size_factor": 2.02,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 100.18,
+   "ksloc": 108.99,
    "classic": {
-    "person_months": 302.7,
-    "schedule_months": 21.9,
-    "cost": 3407560
+    "person_months": 330.73,
+    "schedule_months": 22.7,
+    "cost": 3723147
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.84,
+    "docs": 0.82,
     "capture": 0.96
    },
    "agent_factor": 0.12,
-   "reproduce_pm": 35.72,
+   "reproduce_pm": 39.03,
    "history": {
-    "commits": 9177,
-    "fix_commits": 1283,
+    "commits": 9210,
+    "fix_commits": 1285,
     "authors": 725,
-    "age_months": 84.9,
+    "age_months": 85.1,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 71.55,
-   "rediscover_pm": 2.86,
-   "replacement_pm": 38.58,
-   "leverage": 1.01,
+   "knowledge_pm": 71.75,
+   "rediscover_pm": 2.87,
+   "replacement_pm": 41.9,
+   "leverage": 1.06,
    "obsolescence": 0.95,
-   "value_pm": 37.16,
-   "value_cost": 418323,
+   "value_pm": 42.01,
+   "value_cost": 472950,
    "knowledge_at_risk": 0.07,
    "assumptions": {
     "salary": 56286,
@@ -2009,49 +2196,49 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 107.4351,
+   "make_buy_ratio": 110.6743,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 28686.33,
+   "break_even_price_per_year": 29518.35,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 7108262,
-     "input": 177706550,
-     "cached_input": 151050567
+     "output": 7520715,
+     "input": 188017875,
+     "cached_input": 159815193
     },
-    "final_tokens": 2369420,
-    "model_cost": 279.0,
-    "agent_hours": 78.98,
-    "human_days": 111.24,
-    "review_days": 51.18,
-    "rediscover_days": 60.06,
-    "calendar_days": 111.24,
-    "build_cost": 59908.66,
-    "yearly_cost": 8986.3,
-    "total_cost": 86867.56
+    "final_tokens": 2506905,
+    "model_cost": 295.19,
+    "agent_hours": 83.56,
+    "human_days": 114.42,
+    "review_days": 54.15,
+    "rediscover_days": 60.27,
+    "calendar_days": 114.42,
+    "build_cost": 61629.3,
+    "yearly_cost": 9244.4,
+    "total_cost": 89362.49
    },
    "buy": {
     "via": {
-     "install": "library",
+     "install": "cli",
      "use": "service"
     },
     "adoption_minutes": {
-     "install": 2,
+     "install": 1,
      "first_use": 2.0,
-     "total": 4.0
+     "total": 3.0
     },
     "tokens": {
-     "output": 500,
-     "input": 12500,
-     "cached_input": 10625
+     "output": 375,
+     "input": 9375,
+     "cached_input": 7968
     },
-    "model_cost": 0.02,
+    "model_cost": 0.01,
     "upgrade_minutes_per_year": 240,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 4.49,
+    "fixed_cost": 3.37,
     "yearly_cost": 268.02,
-    "total_cost": 808.56
+    "total_cost": 807.44
    },
    "assumptions": {
     "day_rate": 536.05,

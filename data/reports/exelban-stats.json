@@ -4,9 +4,9 @@
   "url": "https://github.com/exelban/stats",
   "slug": "exelban-stats",
   "host": "github.com",
-  "commit": "58c21fcca1797bf9c1072c6ccb9aa3ed1537b487",
-  "committed_at": "2026-11-01T13:01:04+01:00",
-  "evaluated_at": "2026-11-02T12:28:28+00:00",
+  "commit": "1a4a9a6079196cf1ba87124eca2b6ba4e674024a",
+  "committed_at": "2026-11-08T12:43:43+01:00",
+  "evaluated_at": "2026-11-09T12:55:23+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,11 +15,11 @@
   "inventory": {
    "files": 306,
    "source_files": 148,
-   "source_tokens": 494871,
+   "source_tokens": 497705,
    "languages": {
-    "swift": 454306,
+    "swift": 457106,
     "c": 20320,
-    "python": 15047,
+    "python": 15081,
     "shell": 5198
    },
    "git": true
@@ -142,7 +142,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "362 semver tags, latest v3.0.24",
+      "detail": "364 semver tags, latest v3.0.26",
       "path": null,
       "weight": 1
      }
@@ -166,7 +166,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "362 semver tags, latest v3.0.24"
+          "detail": "364 semver tags, latest v3.0.26"
          }
         ],
         "note": ""
@@ -369,8 +369,8 @@
    {
     "key": "embeddability",
     "title": "Embeddability",
-    "level": 3,
-    "rationale": "Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI.",
+    "level": 2,
+    "rationale": "Packaged as an installer (dmg/pkg, MSI/MSIX, AppImage/Flatpak/Snap, electron-builder, Tauri bundle, PyInstaller).",
     "evidence": [
      {
       "signal": "L1 build-documented",
@@ -383,24 +383,18 @@
       "detail": "7 matches",
       "path": "Kit/plugins/Updater.swift",
       "weight": 1
-     },
-     {
-      "signal": "L3 unattended-install",
-      "detail": "1 match",
-      "path": ".github/workflows/release.yaml",
-      "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
-     "L4 Settings can be managed without the GUI: documented environment variables or config file, macOS defaults/MDM profiles, or Windows policies. (settings only change through the GUI)"
+     "L3 Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI. (no package-manager distribution or CI releases)"
     ],
     "question": "Can another system run and compose it without a human?",
     "best_surface": "desktop",
     "surfaces": {
      "desktop": {
-      "level": 3,
-      "first_missing": "managed-settings",
+      "level": 2,
+      "first_missing": "unattended-install",
       "requirements": [
        {
         "level": 1,
@@ -452,14 +446,9 @@
         "level": 3,
         "id": "unattended-install",
         "text": "Distributed for unattended installation: a package manager (Homebrew cask, winget, Chocolatey, Flathub, Snap) or release artifacts built in CI.",
-        "met": true,
-        "evidence": [
-         {
-          "path": ".github/workflows/release.yaml",
-          "detail": "1 match"
-         }
-        ],
-        "note": ""
+        "met": false,
+        "evidence": [],
+        "note": "no package-manager distribution or CI releases"
        },
        {
         "level": 4,
@@ -472,7 +461,7 @@
       ]
      }
     },
-    "level_name": "solid",
+    "level_name": "partial",
     "applicable": true
    },
    {
@@ -605,7 +594,7 @@
     ],
     "metrics": {
      "source_files": 148,
-     "source_tokens": 494871,
+     "source_tokens": 497705,
      "test_files": 5,
      "test_tokens": 14470,
      "test_ratio": 0.03,
@@ -621,7 +610,7 @@
      ],
      "largest_module": {
       "path": "Kit/plugins",
-      "tokens": 53459
+      "tokens": 55366
      },
      "typed_ratio": 0.96,
      "python_functions": 53,
@@ -632,9 +621,9 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 454306,
+      "swift": 457106,
       "c": 20320,
-      "python": 15047,
+      "python": 15081,
       "shell": 5198
      }
     },
@@ -697,19 +686,19 @@
    }
   ],
   "estimate": {
-   "integrability_index": 0.88,
+   "integrability_index": 0.75,
    "assessed_dimensions": 8,
    "not_applicable": [
     "events",
     "portability"
    ],
-   "retrofit_person_days": 68.7,
+   "retrofit_person_days": 71.1,
    "retrofit_by_dimension": {
     "interface": 13.5,
     "stability": 4.5,
     "identity": 9.0,
-    "ergonomics": 10.1,
-    "embeddability": 0.0,
+    "ergonomics": 10.2,
+    "embeddability": 2.3,
     "extensibility": 13.5,
     "observability": 6.8,
     "legibility": 11.3
@@ -724,11 +713,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 39.89,
+   "ksloc": 40.08,
    "classic": {
-    "person_months": 115.12,
+    "person_months": 115.69,
     "schedule_months": 15.2,
-    "cost": 1295935
+    "cost": 1302382
    },
    "capture": {
     "tests": 0.06,
@@ -737,21 +726,21 @@
     "capture": 0.1
    },
    "agent_factor": 0.51,
-   "reproduce_pm": 58.14,
+   "reproduce_pm": 58.43,
    "history": {
-    "commits": 2485,
-    "fix_commits": 703,
+    "commits": 2498,
+    "fix_commits": 711,
     "authors": 205,
-    "age_months": 89.1,
+    "age_months": 89.3,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 26.48,
-   "rediscover_pm": 23.84,
-   "replacement_pm": 81.97,
-   "leverage": 0.86,
+   "knowledge_pm": 26.71,
+   "rediscover_pm": 24.04,
+   "replacement_pm": 82.46,
+   "leverage": 0.84,
    "obsolescence": 0.9,
-   "value_pm": 63.4,
-   "value_cost": 713712,
+   "value_pm": 62.62,
+   "value_cost": 704939,
    "knowledge_at_risk": 0.29,
    "assumptions": {
     "salary": 56286,
@@ -765,26 +754,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 516.2932,
+   "make_buy_ratio": 514.836,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 139459.5,
+   "break_even_price_per_year": 140602.06,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 2063612,
-     "input": 51590300,
-     "cached_input": 43851755
+     "output": 2075429,
+     "input": 51885725,
+     "cached_input": 44102866
     },
-    "final_tokens": 687870,
-    "model_cost": 81.0,
-    "agent_hours": 22.93,
-    "human_days": 539.16,
-    "review_days": 38.52,
-    "rediscover_days": 500.64,
-    "calendar_days": 539.16,
-    "build_cost": 289096.84,
-    "yearly_cost": 43364.53,
-    "total_cost": 419190.41
+    "final_tokens": 691809,
+    "model_cost": 81.46,
+    "agent_hours": 23.06,
+    "human_days": 543.58,
+    "review_days": 38.74,
+    "rediscover_days": 504.84,
+    "calendar_days": 543.58,
+    "build_cost": 291466.95,
+    "yearly_cost": 43720.04,
+    "total_cost": 422627.08
    },
    "buy": {
     "via": {
@@ -792,22 +781,22 @@
      "use": "desktop UI"
     },
     "adoption_minutes": {
-     "install": 2,
+     "install": 10,
      "first_use": 5,
-     "total": 7
+     "total": 15
     },
     "tokens": {
-     "output": 875,
-     "input": 21875,
-     "cached_input": 18593
+     "output": 1875,
+     "input": 46875,
+     "cached_input": 39843
     },
-    "model_cost": 0.03,
+    "model_cost": 0.07,
     "upgrade_minutes_per_year": 240,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 7.85,
+    "fixed_cost": 16.83,
     "yearly_cost": 268.02,
-    "total_cost": 811.92
+    "total_cost": 820.9
    },
    "assumptions": {
     "day_rate": 536.05,

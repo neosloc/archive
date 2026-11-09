@@ -4,9 +4,9 @@
   "url": "https://github.com/lysine-dev/okhttp",
   "slug": "lysine-dev-okhttp",
   "host": "github.com",
-  "commit": "16fb6aef3aee1c4645fc8d24af01f8a4dc128ebf",
-  "committed_at": "2026-10-29T19:29:53-04:00",
-  "evaluated_at": "2026-11-02T12:28:28+00:00",
+  "commit": "91ec7788ef3ecf0fd0abe5bc515348a1015a5464",
+  "committed_at": "2026-11-07T10:25:01-05:00",
+  "evaluated_at": "2026-11-09T12:55:22+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -388,19 +388,19 @@
    "agent_factor": 0.21,
    "reproduce_pm": 23.35,
    "history": {
-    "commits": 4601,
-    "fix_commits": 510,
+    "commits": 4609,
+    "fix_commits": 511,
     "authors": 369,
-    "age_months": 185.2,
+    "age_months": 185.5,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 33.2,
-   "rediscover_pm": 8.3,
-   "replacement_pm": 31.65,
+   "knowledge_pm": 33.27,
+   "rediscover_pm": 8.32,
+   "replacement_pm": 31.67,
    "leverage": 0.83,
    "obsolescence": 0.95,
-   "value_pm": 25.06,
-   "value_cost": 282084,
+   "value_pm": 25.07,
+   "value_cost": 282218,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -414,9 +414,9 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 42.0703,
+   "make_buy_ratio": 42.1552,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 52635.54,
+   "break_even_price_per_year": 52744.36,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
@@ -427,13 +427,13 @@
     "final_tokens": 1118550,
     "model_cost": 131.71,
     "agent_hours": 37.28,
-    "human_days": 207.86,
+    "human_days": 208.28,
     "review_days": 33.56,
-    "rediscover_days": 174.3,
-    "calendar_days": 207.86,
-    "build_cost": 111552.69,
-    "yearly_cost": 16732.9,
-    "total_cost": 161751.41
+    "rediscover_days": 174.72,
+    "calendar_days": 208.28,
+    "build_cost": 111777.83,
+    "yearly_cost": 16766.68,
+    "total_cost": 162077.86
    },
    "buy": {
     "via": {

@@ -4,16 +4,16 @@
   "url": "https://github.com/axios/axios",
   "slug": "axios-axios",
   "host": "github.com",
-  "commit": "6f5950a920153b0da89be0acee7f24bf095fd1d5",
-  "committed_at": "2026-11-02T14:17:58+02:00",
-  "evaluated_at": "2026-11-02T12:26:33+00:00",
+  "commit": "335e2f8464f58a3ab485486b8d6964fea3e3f30a",
+  "committed_at": "2026-11-09T13:04:29+02:00",
+  "evaluated_at": "2026-11-09T12:53:38+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/axios/axios",
   "inventory": {
-   "files": 519,
+   "files": 526,
    "source_files": 81,
    "source_tokens": 80770,
    "languages": {
@@ -188,7 +188,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "148 semver tags, latest v1.21.0",
+      "detail": "150 semver tags, latest v1.21.1",
       "path": null,
       "weight": 1
      },
@@ -218,7 +218,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "148 semver tags, latest v1.21.0"
+          "detail": "150 semver tags, latest v1.21.1"
          }
         ],
         "note": ""
@@ -853,9 +853,9 @@
     "metrics": {
      "source_files": 81,
      "source_tokens": 80770,
-     "test_files": 182,
-     "test_tokens": 285072,
-     "test_ratio": 3.53,
+     "test_files": 183,
+     "test_tokens": 287962,
+     "test_ratio": 3.57,
      "modules": 15,
      "modules_within_budget": 1.0,
      "oversized_files": [
@@ -900,7 +900,7 @@
          },
          {
           "path": "docs/.vitepress/tokenizeSearchText.test.js",
-          "detail": "182 test files"
+          "detail": "183 test files"
          }
         ],
         "note": ""
@@ -1025,19 +1025,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 2.64,
    "history": {
-    "commits": 2058,
-    "fix_commits": 513,
-    "authors": 700,
-    "age_months": 146.5,
+    "commits": 2070,
+    "fix_commits": 514,
+    "authors": 705,
+    "age_months": 146.7,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 20.55,
-   "rediscover_pm": 1.23,
-   "replacement_pm": 3.87,
+   "knowledge_pm": 20.63,
+   "rediscover_pm": 1.24,
+   "replacement_pm": 3.88,
    "leverage": 0.92,
    "obsolescence": 0.95,
-   "value_pm": 3.37,
-   "value_cost": 37984,
+   "value_pm": 3.38,
+   "value_cost": 38031,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,
@@ -1051,26 +1051,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 61.6574,
+   "make_buy_ratio": 62.1551,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 8695.79,
+   "break_even_price_per_year": 8767.14,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1098979,
-     "input": 27474475,
-     "cached_input": 23353303
+     "output": 1107649,
+     "input": 27691225,
+     "cached_input": 23537541
     },
-    "final_tokens": 366326,
-    "model_cost": 43.13,
-    "agent_hours": 12.21,
-    "human_days": 34.04,
-    "review_days": 8.21,
-    "rediscover_days": 25.83,
-    "calendar_days": 34.04,
-    "build_cost": 18287.9,
-    "yearly_cost": 2743.18,
-    "total_cost": 26517.45
+    "final_tokens": 369216,
+    "model_cost": 43.48,
+    "agent_hours": 12.31,
+    "human_days": 34.31,
+    "review_days": 8.27,
+    "rediscover_days": 26.04,
+    "calendar_days": 34.31,
+    "build_cost": 18435.51,
+    "yearly_cost": 2765.33,
+    "total_cost": 26731.49
    },
    "buy": {
     "via": {

@@ -4,9 +4,9 @@
   "url": "https://github.com/expressjs/express",
   "slug": "expressjs-express",
   "host": "github.com",
-  "commit": "bcc0551cb7a785b7772f77cb59ce55a2bc94975a",
-  "committed_at": "2026-11-02T07:25:45+01:00",
-  "evaluated_at": "2026-11-02T12:26:26+00:00",
+  "commit": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+  "committed_at": "2026-11-02T15:15:26-05:00",
+  "evaluated_at": "2026-11-09T12:53:32+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -978,11 +978,11 @@
    "agent_factor": 0.15,
    "reproduce_pm": 0.42,
    "history": {
-    "commits": 5699,
+    "commits": 5701,
     "fix_commits": 649,
     "authors": 400,
     "age_months": 208.2,
-    "months_since_last": 0.0
+    "months_since_last": 0.2
    },
    "knowledge_pm": 41.48,
    "rediscover_pm": 4.98,
@@ -990,7 +990,7 @@
    "leverage": 0.89,
    "obsolescence": 0.95,
    "value_pm": 4.56,
-   "value_cost": 51347,
+   "value_cost": 51359,
    "knowledge_at_risk": 0.92,
    "assumptions": {
     "salary": 56286,

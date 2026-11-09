@@ -4,9 +4,9 @@
   "url": "https://github.com/alacritty/alacritty",
   "slug": "alacritty-alacritty",
   "host": "github.com",
-  "commit": "aecf0f600fa840a415b55da5cf34fbeaec39ac32",
-  "committed_at": "2026-11-02T06:42:36+01:00",
-  "evaluated_at": "2026-11-02T12:28:16+00:00",
+  "commit": "aa5d942f46c40184a3f214830ff5f7989f4733a1",
+  "committed_at": "2026-11-06T22:34:25+01:00",
+  "evaluated_at": "2026-11-09T12:55:07+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 334,
    "source_files": 91,
-   "source_tokens": 286129,
+   "source_tokens": 286156,
    "languages": {
-    "rust": 284003,
+    "rust": 284030,
     "shell": 2126
    },
    "git": true
@@ -1006,7 +1006,7 @@
     ],
     "metrics": {
      "source_files": 91,
-     "source_tokens": 286129,
+     "source_tokens": 286156,
      "test_files": 2,
      "test_tokens": 2498,
      "test_ratio": 0.01,
@@ -1032,7 +1032,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 284003,
+      "rust": 284030,
       "shell": 2126
      }
     },
@@ -1150,19 +1150,19 @@
    "agent_factor": 0.38,
    "reproduce_pm": 25.24,
    "history": {
-    "commits": 2458,
+    "commits": 2459,
     "fix_commits": 773,
-    "authors": 498,
-    "age_months": 128.3,
-    "months_since_last": 0.0
+    "authors": 499,
+    "age_months": 128.5,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 27.75,
-   "rediscover_pm": 17.48,
+   "knowledge_pm": 27.76,
+   "rediscover_pm": 17.49,
    "replacement_pm": 42.72,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 38.68,
-   "value_cost": 435456,
+   "value_pm": 38.69,
+   "value_cost": 435488,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -1176,26 +1176,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 695.4281,
+   "make_buy_ratio": 695.8106,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 99552.64,
+   "break_even_price_per_year": 99607.48,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1169981,
-     "input": 29249525,
-     "cached_input": 24862096
+     "output": 1170091,
+     "input": 29252275,
+     "cached_input": 24864433
     },
-    "final_tokens": 389993,
-    "model_cost": 45.92,
+    "final_tokens": 390030,
+    "model_cost": 45.93,
     "agent_hours": 13.0,
-    "human_days": 384.71,
+    "human_days": 384.92,
     "review_days": 17.63,
-    "rediscover_days": 367.08,
-    "calendar_days": 384.71,
-    "build_cost": 206267.58,
-    "yearly_cost": 30940.14,
-    "total_cost": 299087.99
+    "rediscover_days": 367.29,
+    "calendar_days": 384.92,
+    "build_cost": 206381.05,
+    "yearly_cost": 30957.16,
+    "total_cost": 299252.52
    },
    "buy": {
     "via": {

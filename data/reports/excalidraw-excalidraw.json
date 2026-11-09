@@ -4,9 +4,9 @@
   "url": "https://github.com/excalidraw/excalidraw",
   "slug": "excalidraw-excalidraw",
   "host": "github.com",
-  "commit": "8bcdca4526867433f99fdfcb55a063668db0c9dc",
-  "committed_at": "2026-10-31T17:48:47+01:00",
-  "evaluated_at": "2026-11-02T12:27:26+00:00",
+  "commit": "701b901a0f1ba3d0b390d9cdf63d112e25abac4b",
+  "committed_at": "2026-11-05T18:10:20+01:00",
+  "evaluated_at": "2026-11-09T12:54:26+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 1327,
    "source_files": 542,
-   "source_tokens": 1146307,
+   "source_tokens": 1148209,
    "languages": {
-    "typescript": 1114701,
+    "typescript": 1116603,
     "javascript": 31606
    },
    "git": true
@@ -1264,9 +1264,9 @@
     ],
     "metrics": {
      "source_files": 542,
-     "source_tokens": 1146307,
+     "source_tokens": 1148209,
      "test_files": 161,
-     "test_tokens": 580002,
+     "test_tokens": 583629,
      "test_ratio": 0.51,
      "modules": 79,
      "modules_within_budget": 0.92,
@@ -1283,17 +1283,17 @@
       "packages/element/src/bucketFill.ts",
       "packages/excalidraw/renderer/interactiveScene.ts",
       "packages/excalidraw/types.ts",
-      "packages/element/src/bounds.ts",
-      "packages/excalidraw/components/App.selectionTool.ts"
+      "packages/excalidraw/components/App.selectionTool.ts",
+      "packages/element/src/bounds.ts"
      ],
      "largest_module": {
       "path": "packages/excalidraw/components",
-      "tokens": 283963
+      "tokens": 284115
      },
      "typed_ratio": 0.97,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 2086,
+     "import_edges": 2087,
      "import_graph": true,
      "max_fan_out": 210,
      "import_cycles": 6,
@@ -1491,7 +1491,7 @@
       "packages/excalidraw/wysiwyg/textWysiwyg.tsx"
      ],
      "languages": {
-      "typescript": 1114701,
+      "typescript": 1116603,
       "javascript": 31606
      }
     },
@@ -1612,7 +1612,7 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 50.3,
+   "retrofit_person_days": 50.4,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 2.1,
@@ -1620,7 +1620,7 @@
     "identity": 8.6,
     "ergonomics": 9.6,
     "embeddability": 0.0,
-    "extensibility": 12.8,
+    "extensibility": 12.9,
     "observability": 4.3,
     "legibility": 8.6
    },
@@ -1634,11 +1634,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 124.48,
+   "ksloc": 124.62,
    "classic": {
-    "person_months": 380.24,
+    "person_months": 380.7,
     "schedule_months": 23.9,
-    "cost": 4280480
+    "cost": 4285644
    },
    "capture": {
     "tests": 1.0,
@@ -1647,21 +1647,21 @@
     "capture": 0.78
    },
    "agent_factor": 0.2,
-   "reproduce_pm": 75.67,
+   "reproduce_pm": 75.76,
    "history": {
-    "commits": 4108,
-    "fix_commits": 1299,
+    "commits": 4112,
+    "fix_commits": 1300,
     "authors": 401,
-    "age_months": 82.0,
+    "age_months": 82.1,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 46.52,
-   "rediscover_pm": 10.23,
-   "replacement_pm": 85.9,
+   "knowledge_pm": 46.56,
+   "rediscover_pm": 10.24,
+   "replacement_pm": 86.0,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 78.21,
-   "value_cost": 880397,
+   "value_pm": 78.3,
+   "value_cost": 881423,
    "knowledge_at_risk": 0.12,
    "assumptions": {
     "salary": 56286,
@@ -1675,26 +1675,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 492.976,
+   "make_buy_ratio": 493.6657,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 68689.82,
+   "break_even_price_per_year": 68786.11,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5254583,
-     "input": 131364575,
-     "cached_input": 111659888
+     "output": 5271295,
+     "input": 131782375,
+     "cached_input": 112015018
     },
-    "final_tokens": 1751527,
-    "model_cost": 206.24,
-    "agent_hours": 58.38,
-    "human_days": 265.27,
-    "review_days": 50.44,
-    "rediscover_days": 214.83,
-    "calendar_days": 265.27,
-    "build_cost": 142405.74,
-    "yearly_cost": 21360.86,
-    "total_cost": 206488.32
+    "final_tokens": 1757098,
+    "model_cost": 206.9,
+    "agent_hours": 58.57,
+    "human_days": 265.64,
+    "review_days": 50.6,
+    "rediscover_days": 215.04,
+    "calendar_days": 265.64,
+    "build_cost": 142604.97,
+    "yearly_cost": 21390.75,
+    "total_cost": 206777.2
    },
    "buy": {
     "via": {

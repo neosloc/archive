@@ -4,20 +4,20 @@
   "url": "https://github.com/ShareX/ShareX",
   "slug": "sharex-sharex",
   "host": "github.com",
-  "commit": "40ec95feb5543ace43b4faa3bf7b0fd2ef1b7d7f",
-  "committed_at": "2026-11-02T08:36:11+03:00",
-  "evaluated_at": "2026-11-02T12:29:00+00:00",
+  "commit": "3c4d9ce70b179878ca3ce7912301b2fca6e4844d",
+  "committed_at": "2026-11-09T09:00:02+03:00",
+  "evaluated_at": "2026-11-09T12:55:59+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/ShareX/ShareX",
   "inventory": {
-   "files": 1938,
-   "source_files": 1357,
-   "source_tokens": 2535831,
+   "files": 2430,
+   "source_files": 1402,
+   "source_tokens": 2660161,
    "languages": {
-    "csharp": 2535831
+    "csharp": 2660161
    },
    "git": true
   },
@@ -28,7 +28,7 @@
    "evidence": {
     "desktop": [
      {
-      "path": "ShareX.ImageEditor/ShareX.ImageEditor.csproj",
+      "path": "ShareX/ShareX.csproj",
       "detail": "Avalonia"
      }
     ]
@@ -124,7 +124,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "95 semver tags, latest v22.0.0",
+      "detail": "99 semver tags, latest v22.4.0",
       "path": null,
       "weight": 1
      }
@@ -148,7 +148,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "95 semver tags, latest v22.0.0"
+          "detail": "99 semver tags, latest v22.4.0"
          }
         ],
         "note": ""
@@ -510,33 +510,34 @@
     "rationale": "Not yet: A README and some tests.",
     "evidence": [],
     "metrics": {
-     "source_files": 1357,
-     "source_tokens": 2535831,
+     "source_files": 1402,
+     "source_tokens": 2660161,
      "test_files": 0,
      "test_tokens": 0,
      "test_ratio": 0.0,
-     "modules": 181,
+     "modules": 186,
      "modules_within_budget": 0.88,
      "oversized_files": [
       "ShareX.HelpersLib/Native/NativeEnums.cs",
       "ShareX/TaskHelpers.cs",
       "ShareX/Presentation/TaskSettings/TaskSettingsPageBuilder.cs",
-      "ShareX.Avalonia/Theming/LucideIcons.cs",
       "ShareX.ImageEditor/Presentation/Views/EditorView.axaml.cs",
-      "ShareX.HelpersLib/Helpers/SkiaImageHelpers.Operations.cs",
       "ShareX/Presentation/MainWindow/MainWindow.axaml.cs",
+      "ShareX.HelpersLib/Helpers/SkiaImageHelpers.Operations.cs",
       "ShareX.ImageEditor/Presentation/Controllers/EditorSelectionController.cs",
       "ShareX.ImageEditor/Presentation/Controllers/EditorInputController.cs",
       "ShareX.ScreenCaptureLib/Presentation/RegionCapture/RegionCaptureWindow.axaml.cs",
+      "ShareX.ImageEditor/Core/Editor/EditorCore.cs",
       "ShareX.ImageEditor/Presentation/ViewModels/MainViewModel.ToolOptions.cs",
       "ShareX.HelpersLib/MimeTypes.cs",
+      "ShareX.PhotoEditor/Imaging/Filters.cs",
       "ShareX.UploadersLib/Presentation/DestinationSettings/DestinationSettingsPageBuilder.cs",
-      "ShareX.ImageEditor/Core/Editor/EditorCore.cs",
-      "ShareX.PhotoEditor/Imaging/Filters.cs"
+      "ShareX/Presentation/ApplicationSettings/ApplicationSettingsViewModel.cs",
+      "ShareX.ImageEditor/Presentation/ViewModels/MainViewModel.cs"
      ],
      "largest_module": {
       "path": "ShareX.ImageEditor/Core/ImageEffects/Filters",
-      "tokens": 257591
+      "tokens": 257131
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -547,7 +548,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "csharp": 2535831
+      "csharp": 2660161
      }
     },
     "gaps": [
@@ -582,7 +583,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "88% of modules fit 32k tokens; 15 files over 12k; test/source token ratio 0.00 < 0.3"
+        "note": "88% of modules fit 32k tokens; 16 files over 12k; test/source token ratio 0.00 < 0.3"
        },
        {
         "level": 4,
@@ -607,55 +608,55 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 241.2,
+   "retrofit_person_days": 247.1,
    "retrofit_by_dimension": {
-    "interface": 71.7,
-    "stability": 15.9,
-    "ergonomics": 35.8,
-    "embeddability": 23.9,
-    "extensibility": 31.8,
-    "observability": 23.9,
-    "legibility": 38.2
+    "interface": 73.4,
+    "stability": 16.3,
+    "ergonomics": 36.7,
+    "embeddability": 24.5,
+    "extensibility": 32.6,
+    "observability": 24.5,
+    "legibility": 39.1
    },
    "wrappability": "replace or wrap externally",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 3.18,
+    "size_factor": 3.26,
     "legibility_multiplier": 2.5,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 206.34,
+   "ksloc": 215.96,
    "classic": {
-    "person_months": 646.42,
-    "schedule_months": 29.2,
-    "cost": 7276846
+    "person_months": 678.1,
+    "schedule_months": 29.8,
+    "cost": 7633488
    },
    "capture": {
     "tests": 0.0,
     "contract": 0.0,
-    "docs": 0.15,
+    "docs": 0.16,
     "capture": 0.04
    },
    "agent_factor": 0.53,
-   "reproduce_pm": 343.89,
+   "reproduce_pm": 360.75,
    "history": {
-    "commits": 8829,
-    "fix_commits": 1359,
-    "authors": 313,
-    "age_months": 156.8,
+    "commits": 8987,
+    "fix_commits": 1390,
+    "authors": 316,
+    "age_months": 157.0,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 71.33,
-   "rediscover_pm": 68.47,
-   "replacement_pm": 412.37,
+   "knowledge_pm": 72.73,
+   "rediscover_pm": 69.83,
+   "replacement_pm": 430.57,
    "leverage": 0.79,
    "obsolescence": 0.85,
-   "value_pm": 275.4,
-   "value_cost": 3100250,
-   "knowledge_at_risk": 0.17,
+   "value_pm": 287.56,
+   "value_cost": 3237141,
+   "knowledge_at_risk": 0.16,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -668,26 +669,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 948.6858,
+   "make_buy_ratio": 971.019,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 425852.86,
+   "break_even_price_per_year": 435888.52,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 10620060,
-     "input": 265501500,
-     "cached_input": 225676275
+     "output": 11140754,
+     "input": 278518850,
+     "cached_input": 236741022
     },
-    "final_tokens": 3540020,
-    "model_cost": 416.84,
-    "agent_hours": 118.0,
-    "human_days": 1644.61,
-    "review_days": 206.74,
-    "rediscover_days": 1437.87,
-    "calendar_days": 1644.61,
-    "build_cost": 882004.6,
-    "yearly_cost": 132300.69,
-    "total_cost": 1278906.66
+    "final_tokens": 3713584,
+    "model_cost": 437.27,
+    "agent_hours": 123.79,
+    "human_days": 1683.3,
+    "review_days": 216.87,
+    "rediscover_days": 1466.43,
+    "calendar_days": 1683.3,
+    "build_cost": 902768.03,
+    "yearly_cost": 135415.2,
+    "total_cost": 1309013.64
    },
    "buy": {
     "via": {

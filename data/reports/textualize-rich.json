@@ -4,9 +4,9 @@
   "url": "https://github.com/Textualize/rich",
   "slug": "textualize-rich",
   "host": "github.com",
-  "commit": "9d8f9a372cc5916fd4781fec207ced7ddac2f08f",
-  "committed_at": "2026-06-23T10:10:17+07:00",
-  "evaluated_at": "2026-10-07T14:27:32+00:00",
+  "commit": "3a109ccdffe5b2d0e30684a304fbd388e99ce57b",
+  "committed_at": "2026-11-07T11:26:07Z",
+  "evaluated_at": "2026-11-09T12:53:23+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -14,10 +14,10 @@
   "target": "https://github.com/Textualize/rich",
   "inventory": {
    "files": 548,
-   "source_files": 106,
-   "source_tokens": 296649,
+   "source_files": 105,
+   "source_tokens": 295346,
    "languages": {
-    "python": 296649
+    "python": 295346
    },
    "git": true
   },
@@ -544,9 +544,14 @@
         "level": 4,
         "id": "optional-features",
         "text": "Optional features behind extras/features.",
-        "met": false,
-        "evidence": [],
-        "note": "no optional extras"
+        "met": true,
+        "evidence": [
+         {
+          "path": "pyproject.toml",
+          "detail": "1 match"
+         }
+        ],
+        "note": ""
        }
       ]
      }
@@ -689,13 +694,13 @@
      }
     ],
     "metrics": {
-     "source_files": 106,
-     "source_tokens": 296649,
+     "source_files": 105,
+     "source_tokens": 295346,
      "test_files": 66,
-     "test_tokens": 103182,
+     "test_tokens": 103157,
      "test_ratio": 0.35,
-     "modules": 4,
-     "modules_within_budget": 0.5,
+     "modules": 3,
+     "modules_within_budget": 0.33,
      "oversized_files": [
       "rich/_emoji_codes.py",
       "rich/console.py",
@@ -703,7 +708,7 @@
      ],
      "largest_module": {
       "path": "rich",
-      "tokens": 228340
+      "tokens": 227116
      },
      "typed_ratio": 1.0,
      "python_functions": 912,
@@ -751,11 +756,11 @@
       "rich/themes.py"
      ],
      "languages": {
-      "python": 296649
+      "python": 295346
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (50% of modules fit 32k tokens; 3 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (33% of modules fit 32k tokens; 3 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -824,7 +829,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "50% of modules fit 32k tokens; 3 files over 12k"
+        "note": "33% of modules fit 32k tokens; 3 files over 12k"
        },
        {
         "level": 4,
@@ -849,7 +854,7 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 16.9,
+   "retrofit_person_days": 16.8,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.0,
@@ -857,7 +862,7 @@
     "embeddability": 1.1,
     "extensibility": 6.5,
     "observability": 3.3,
-    "legibility": 4.4
+    "legibility": 4.3
    },
    "wrappability": "moderate retrofit",
    "assumptions": {
@@ -869,11 +874,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 34.84,
+   "ksloc": 34.68,
    "classic": {
-    "person_months": 99.85,
+    "person_months": 99.38,
     "schedule_months": 14.4,
-    "cost": 1124047
+    "cost": 1118695
    },
    "capture": {
     "tests": 0.7,
@@ -882,21 +887,21 @@
     "capture": 0.85
    },
    "agent_factor": 0.17,
-   "reproduce_pm": 16.73,
+   "reproduce_pm": 16.65,
    "history": {
-    "commits": 3387,
+    "commits": 3394,
     "fix_commits": 598,
     "authors": 303,
-    "age_months": 79.4,
-    "months_since_last": 3.5
+    "age_months": 83.9,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 28.9,
-   "rediscover_pm": 4.33,
-   "replacement_pm": 21.06,
+   "knowledge_pm": 28.93,
+   "rediscover_pm": 4.34,
+   "replacement_pm": 20.98,
    "leverage": 1.0,
    "obsolescence": 0.95,
-   "value_pm": 20.01,
-   "value_cost": 225216,
+   "value_pm": 19.94,
+   "value_cost": 224420,
    "knowledge_at_risk": 0.21,
    "assumptions": {
     "salary": 56286,
@@ -910,26 +915,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 2203.1378,
+   "make_buy_ratio": 2206.9279,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 26293.46,
+   "break_even_price_per_year": 26338.72,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1212842,
-     "input": 30321050,
-     "cached_input": 25772892
+     "output": 1208799,
+     "input": 30219975,
+     "cached_input": 25686978
     },
-    "final_tokens": 404280,
-    "model_cost": 47.6,
-    "agent_hours": 13.48,
-    "human_days": 101.44,
-    "review_days": 10.51,
-    "rediscover_days": 90.93,
-    "calendar_days": 101.44,
-    "build_cost": 54424.97,
-    "yearly_cost": 8163.75,
-    "total_cost": 78916.21
+    "final_tokens": 402933,
+    "model_cost": 47.45,
+    "agent_hours": 13.43,
+    "human_days": 101.62,
+    "review_days": 10.48,
+    "rediscover_days": 91.14,
+    "calendar_days": 101.62,
+    "build_cost": 54518.6,
+    "yearly_cost": 8177.79,
+    "total_cost": 79051.97
    },
    "buy": {
     "via": {

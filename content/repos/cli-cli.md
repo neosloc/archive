@@ -1,9 +1,9 @@
 {
  "title": "cli/cli",
  "slug": "cli-cli",
- "date": "2026-11-02T12:27:33+00:00",
+ "date": "2026-11-09T12:54:38+00:00",
  "repo_url": "https://github.com/cli/cli",
- "index": 2.11,
+ "index": 2.44,
  "assessed": 9,
  "surfaces": [
   "service",
@@ -11,14 +11,14 @@
   "library"
  ],
  "verdict": "buy",
- "make_buy_ratio": 107.4351,
+ "make_buy_ratio": 110.6743,
  "languages": [
   "go",
-  "shell",
-  "javascript"
+  "javascript",
+  "shell"
  ],
- "cocomo_cost": 3407560,
- "cocomo_pm": 302.7,
- "value_cost": 418323,
- "value_pm": 37.16
+ "cocomo_cost": 3723147,
+ "cocomo_pm": 330.73,
+ "value_cost": 472950,
+ "value_pm": 42.01
 }

@@ -4,21 +4,22 @@
   "url": "https://github.com/caddyserver/caddy",
   "slug": "caddyserver-caddy",
   "host": "github.com",
-  "commit": "98b0bbd4774611c133463420d4cd047aa4622a51",
-  "committed_at": "2026-11-02T13:48:05+03:00",
-  "evaluated_at": "2026-11-02T12:27:19+00:00",
+  "commit": "9ea3108377d2abec102866808133c40ac9582162",
+  "committed_at": "2026-11-09T13:29:48+10:00",
+  "evaluated_at": "2026-11-09T12:54:47+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/caddyserver/caddy",
   "inventory": {
-   "files": 745,
-   "source_files": 229,
-   "source_tokens": 607464,
+   "files": 765,
+   "source_files": 235,
+   "source_tokens": 616343,
    "languages": {
-    "go": 607363,
-    "shell": 101
+    "go": 613613,
+    "shell": 1606,
+    "javascript": 1124
    },
    "git": true
   },
@@ -32,7 +33,7 @@
     "service": [
      {
       "path": "admin.go",
-      "detail": "go-http: 45 route declarations"
+      "detail": "go-http: 43 route declarations"
      }
     ],
     "cli": [
@@ -88,9 +89,9 @@
      }
     ],
     "metrics": {
-     "route_declarations": 45,
+     "route_declarations": 43,
      "routes_by_framework": {
-      "go-http": 45
+      "go-http": 43
      },
      "spec_files": 0,
      "spec_operations": 0,
@@ -116,7 +117,7 @@
         "evidence": [
          {
           "path": "admin.go",
-          "detail": "go-http: 45 route declarations"
+          "detail": "go-http: 43 route declarations"
          }
         ],
         "note": ""
@@ -269,7 +270,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "157 semver tags, latest v2.11.7",
+      "detail": "159 semver tags, latest v2.11.9",
       "path": null,
       "weight": 1
      }
@@ -293,7 +294,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "157 semver tags, latest v2.11.7"
+          "detail": "159 semver tags, latest v2.11.9"
          }
         ],
         "note": ""
@@ -346,13 +347,13 @@
     "evidence": [
      {
       "signal": "L1 internal-events",
-      "detail": "20 matches",
+      "detail": "21 matches",
       "path": "modules/caddyhttp/reverseproxy/reverseproxy.go",
       "weight": 1
      },
      {
       "signal": "L2 outbound",
-      "detail": "20 matches",
+      "detail": "21 matches",
       "path": "modules/caddyhttp/reverseproxy/reverseproxy.go",
       "weight": 1
      }
@@ -377,7 +378,7 @@
         "evidence": [
          {
           "path": "modules/caddyhttp/reverseproxy/reverseproxy.go",
-          "detail": "20 matches"
+          "detail": "21 matches"
          },
          {
           "path": "modules/caddyhttp/reverseproxy/streaming.go",
@@ -402,7 +403,7 @@
         "evidence": [
          {
           "path": "modules/caddyhttp/reverseproxy/reverseproxy.go",
-          "detail": "20 matches"
+          "detail": "21 matches"
          },
          {
           "path": "modules/caddyhttp/reverseproxy/streaming.go",
@@ -842,6 +843,10 @@
           "detail": "2 matches"
          },
          {
+          "path": ".github/scripts/changelog-commits.sh",
+          "detail": "1 match"
+         },
+         {
           "path": "caddyconfig/caddyfile/formatter_fuzz.go",
           "detail": "1 match"
          },
@@ -910,9 +915,14 @@
         "level": 2,
         "id": "validation",
         "text": "Inputs are validated with messages naming the bad argument.",
-        "met": false,
-        "evidence": [],
-        "note": "no input validation errors"
+        "met": true,
+        "evidence": [
+         {
+          "path": ".github/scripts/release-proposal.js",
+          "detail": "4 matches"
+         }
+        ],
+        "note": ""
        },
        {
         "level": 3,
@@ -939,41 +949,36 @@
    {
     "key": "embeddability",
     "title": "Embeddability",
-    "level": 4,
-    "rationale": "[cli] Also shipped as a container image or a single binary.",
+    "level": 3,
+    "rationale": "[library] Published to a public registry, with at most 10 runtime dependencies.",
     "evidence": [
      {
-      "signal": "L1 runnable",
-      "detail": "go main",
-      "path": "cmd/caddy/main.go",
+      "signal": "L1 importable",
+      "detail": "Go module with exported packages",
+      "path": "go.mod",
       "weight": 1
      },
      {
       "signal": "L2 installable",
-      "detail": "go main",
-      "path": "cmd/caddy/main.go",
+      "detail": "package manifest",
+      "path": "go.mod",
       "weight": 1
      },
      {
-      "signal": "L3 published",
+      "signal": "L3 published-minimal",
       "detail": "5 matches",
       "path": ".github/workflows/ci.yml",
-      "weight": 1
-     },
-     {
-      "signal": "L4 container-or-binary",
-      "detail": "",
-      "path": ".goreleaser.yml",
       "weight": 1
      }
     ],
     "metrics": {},
     "gaps": [
      "[service] L2 Configured through environment variables, documented: a .env example, a config schema, or docs naming at least half of the variables the code reads. (configuration isn't read from the environment)",
+     "[cli] L3 Published to a public registry and run non-interactively in CI. (the command isn't run in CI)",
      "[library] L4 Optional features behind extras/features. (no optional extras)"
     ],
     "question": "Can another system run and compose it without a human?",
-    "best_surface": "cli",
+    "best_surface": "library",
     "surfaces": {
      "service": {
       "level": 1,
@@ -1019,8 +1024,8 @@
       ]
      },
      "cli": {
-      "level": 4,
-      "first_missing": null,
+      "level": 2,
+      "first_missing": "published",
       "requirements": [
        {
         "level": 1,
@@ -1052,22 +1057,9 @@
         "level": 3,
         "id": "published",
         "text": "Published to a public registry and run non-interactively in CI.",
-        "met": true,
-        "evidence": [
-         {
-          "path": ".github/workflows/ci.yml",
-          "detail": "5 matches"
-         },
-         {
-          "path": ".github/workflows/release.yml",
-          "detail": "2 matches"
-         },
-         {
-          "path": ".github/workflows/release.yml",
-          "detail": "1 match"
-         }
-        ],
-        "note": ""
+        "met": false,
+        "evidence": [],
+        "note": "the command isn't run in CI"
        },
        {
         "level": 4,
@@ -1146,7 +1138,7 @@
       ]
      }
     },
-    "level_name": "exemplary",
+    "level_name": "solid",
     "applicable": true
    },
    {
@@ -1390,6 +1382,10 @@
          },
          {
           "path": "modules/caddytls/tls.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "modules/internal/network/cache.go",
           "detail": "2 matches"
          },
          {
@@ -1838,6 +1834,10 @@
           "detail": "2 matches"
          },
          {
+          "path": ".github/scripts/changelog-commits.sh",
+          "detail": "1 match"
+         },
+         {
           "path": "caddyconfig/caddyfile/formatter_fuzz.go",
           "detail": "1 match"
          },
@@ -2032,6 +2032,10 @@
          },
          {
           "path": "modules/caddytls/tls.go",
+          "detail": "2 matches"
+         },
+         {
+          "path": "modules/internal/network/cache.go",
           "detail": "2 matches"
          },
          {
@@ -2389,12 +2393,12 @@
      }
     ],
     "metrics": {
-     "source_files": 229,
-     "source_tokens": 607464,
-     "test_files": 177,
-     "test_tokens": 397433,
-     "test_ratio": 0.65,
-     "modules": 48,
+     "source_files": 235,
+     "source_tokens": 616343,
+     "test_files": 187,
+     "test_tokens": 422566,
+     "test_ratio": 0.69,
+     "modules": 50,
      "modules_within_budget": 0.9,
      "oversized_files": [
       "modules/caddyhttp/reverseproxy/reverseproxy.go",
@@ -2406,19 +2410,20 @@
      ],
      "largest_module": {
       "path": "modules/caddyhttp",
-      "tokens": 106649
+      "tokens": 107401
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
      "python_annotated": 0,
      "import_edges": 0,
-     "import_graph": false,
+     "import_graph": true,
      "max_fan_out": 0,
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 607363,
-      "shell": 101
+      "go": 613613,
+      "shell": 1606,
+      "javascript": 1124
      }
     },
     "gaps": [
@@ -2443,7 +2448,7 @@
          },
          {
           "path": "admin_checkhost_case_test.go",
-          "detail": "177 test files"
+          "detail": "187 test files"
          }
         ],
         "note": ""
@@ -2522,38 +2527,38 @@
    }
   ],
   "estimate": {
-   "integrability_index": 1.67,
+   "integrability_index": 1.56,
    "assessed_dimensions": 9,
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 36.6,
+   "retrofit_person_days": 36.8,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 3.1,
     "events": 3.1,
     "identity": 9.4,
-    "ergonomics": 2.3,
+    "ergonomics": 2.4,
     "embeddability": 0.0,
     "extensibility": 9.4,
     "observability": 3.1,
-    "legibility": 6.2
+    "legibility": 6.3
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.56,
+    "size_factor": 1.57,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 49.56,
+   "ksloc": 50.12,
    "classic": {
-    "person_months": 144.57,
-    "schedule_months": 16.5,
-    "cost": 1627497
+    "person_months": 146.28,
+    "schedule_months": 16.6,
+    "cost": 1646709
    },
    "capture": {
     "tests": 1.0,
@@ -2562,21 +2567,21 @@
     "capture": 0.72
    },
    "agent_factor": 0.23,
-   "reproduce_pm": 32.67,
+   "reproduce_pm": 33.06,
    "history": {
-    "commits": 2790,
-    "fix_commits": 573,
-    "authors": 497,
-    "age_months": 91.3,
+    "commits": 2838,
+    "fix_commits": 574,
+    "authors": 505,
+    "age_months": 91.5,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 25.41,
-   "rediscover_pm": 7.11,
-   "replacement_pm": 39.79,
-   "leverage": 0.96,
+   "knowledge_pm": 25.67,
+   "rediscover_pm": 7.19,
+   "replacement_pm": 40.25,
+   "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 36.22,
-   "value_cost": 407782,
+   "value_pm": 36.11,
+   "value_cost": 406503,
    "knowledge_at_risk": 0.18,
    "assumptions": {
     "salary": 56286,
@@ -2590,49 +2595,49 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 172.7203,
+   "make_buy_ratio": 175.104,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 46731.38,
+   "break_even_price_per_year": 47445.18,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3065717,
-     "input": 76642925,
-     "cached_input": 65146486
+     "output": 3168499,
+     "input": 79212475,
+     "cached_input": 67330603
     },
-    "final_tokens": 1021905,
-    "model_cost": 120.33,
-    "agent_hours": 34.06,
-    "human_days": 181.19,
-    "review_days": 31.88,
-    "rediscover_days": 149.31,
-    "calendar_days": 181.19,
-    "build_cost": 97248.66,
-    "yearly_cost": 14587.3,
-    "total_cost": 141010.55
+    "final_tokens": 1056166,
+    "model_cost": 124.36,
+    "agent_hours": 35.21,
+    "human_days": 183.94,
+    "review_days": 32.95,
+    "rediscover_days": 150.99,
+    "calendar_days": 183.94,
+    "build_cost": 98726.25,
+    "yearly_cost": 14808.94,
+    "total_cost": 143153.06
    },
    "buy": {
     "via": {
-     "install": "cli",
+     "install": "library",
      "use": "library"
     },
     "adoption_minutes": {
-     "install": 1,
+     "install": 2,
      "first_use": 10.0,
-     "total": 11.0
+     "total": 12.0
     },
     "tokens": {
-     "output": 1375,
-     "input": 34375,
-     "cached_input": 29218
+     "output": 1500,
+     "input": 37500,
+     "cached_input": 31875
     },
-    "model_cost": 0.05,
+    "model_cost": 0.06,
     "upgrade_minutes_per_year": 240,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 12.34,
+    "fixed_cost": 13.46,
     "yearly_cost": 268.02,
-    "total_cost": 816.41
+    "total_cost": 817.53
    },
    "assumptions": {
     "day_rate": 536.05,

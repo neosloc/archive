@@ -4,20 +4,20 @@
   "url": "https://github.com/nats-io/nats-server",
   "slug": "nats-io-nats-server",
   "host": "github.com",
-  "commit": "0a6de601d7874d6fa2310439ccfd9f571ae29d84",
-  "committed_at": "2026-11-02T11:30:10Z",
-  "evaluated_at": "2026-11-02T12:28:14+00:00",
+  "commit": "fe585f47297443fc2679051bb4fcb848d4b87460",
+  "committed_at": "2026-11-09T12:42:40Z",
+  "evaluated_at": "2026-11-09T12:55:20+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/nats-io/nats-server",
   "inventory": {
-   "files": 599,
+   "files": 600,
    "source_files": 130,
-   "source_tokens": 1159549,
+   "source_tokens": 1171084,
    "languages": {
-    "go": 1157007,
+    "go": 1168542,
     "shell": 2542
    },
    "git": true
@@ -259,7 +259,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "314 semver tags, latest v2.14.9",
+      "detail": "318 semver tags, latest v2.14.10-RC.2",
       "path": null,
       "weight": 1
      }
@@ -283,7 +283,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "314 semver tags, latest v2.14.9"
+          "detail": "318 semver tags, latest v2.14.10-RC.2"
          }
         ],
         "note": ""
@@ -415,7 +415,7 @@
          },
          {
           "path": "server/reload.go",
-          "detail": "13 matches"
+          "detail": "11 matches"
          },
          {
           "path": "server/mqtt.go",
@@ -472,7 +472,7 @@
          },
          {
           "path": "server/reload.go",
-          "detail": "13 matches"
+          "detail": "11 matches"
          },
          {
           "path": "server/mqtt.go",
@@ -557,7 +557,7 @@
         "evidence": [
          {
           "path": "server/jetstream_cluster.go",
-          "detail": "74 matches"
+          "detail": "75 matches"
          },
          {
           "path": "server/client.go",
@@ -641,7 +641,7 @@
     "metrics": {},
     "gaps": [
      "[service] L1 Errors are machine-readable: consistent JSON over HTTP, or a standard protocol's native error replies (RESP errors, MQTT reason codes, gRPC status, SQLSTATE). (no machine-readable errors)",
-     "[cli] L3 Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY. (exit statuses aren't documented)",
+     "[cli] L3 Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY. (documented exit statuses don't distinguish error classes)",
      "[library] L1 Errors are specific exception types, and library code never calls sys.exit. (no exception classes)"
     ],
     "question": "Can an automated caller use it without guessing, and recover from failure?",
@@ -729,12 +729,12 @@
           "detail": "3 matches"
          },
          {
-          "path": "server/client.go",
-          "detail": "2 matches"
+          "path": "main.go",
+          "detail": "3 matches"
          },
          {
-          "path": "main.go",
-          "detail": "1 match"
+          "path": "server/client.go",
+          "detail": "2 matches"
          },
          {
           "path": "server/errors_gen.go",
@@ -773,6 +773,10 @@
           "detail": "1 match"
          },
          {
+          "path": "main.go",
+          "detail": "1 match"
+         },
+         {
           "path": "server/memstore.go",
           "detail": "1 match"
          },
@@ -805,7 +809,7 @@
         "text": "Documented exit statuses distinguish error classes, errors are JSON in JSON mode, and color is off when not a TTY.",
         "met": false,
         "evidence": [],
-        "note": "exit statuses aren't documented"
+        "note": "documented exit statuses don't distinguish error classes"
        },
        {
         "level": 4,
@@ -932,7 +936,7 @@
         "text": "Agent docs, and examples that run as tests (doctests).",
         "met": false,
         "evidence": [],
-        "note": "no agent docs"
+        "note": "examples don't run as tests"
        }
       ]
      }
@@ -1294,12 +1298,12 @@
           "detail": "3 matches"
          },
          {
-          "path": "server/client.go",
-          "detail": "2 matches"
+          "path": "main.go",
+          "detail": "3 matches"
          },
          {
-          "path": "main.go",
-          "detail": "1 match"
+          "path": "server/client.go",
+          "detail": "2 matches"
          },
          {
           "path": "server/errors_gen.go",
@@ -1335,6 +1339,10 @@
          },
          {
           "path": "conf/fuzz.go",
+          "detail": "1 match"
+         },
+         {
+          "path": "main.go",
           "detail": "1 match"
          },
          {
@@ -1453,20 +1461,20 @@
     ],
     "metrics": {
      "source_files": 130,
-     "source_tokens": 1159549,
+     "source_tokens": 1171084,
      "test_files": 135,
-     "test_tokens": 2422674,
-     "test_ratio": 2.09,
+     "test_tokens": 2457046,
+     "test_ratio": 2.1,
      "modules": 21,
      "modules_within_budget": 0.95,
      "oversized_files": [
       "server/jetstream_cluster.go",
       "server/filestore.go",
       "server/stream.go",
-      "server/client.go",
       "server/consumer.go",
-      "server/mqtt.go",
       "server/opts.go",
+      "server/client.go",
+      "server/mqtt.go",
       "server/raft.go",
       "server/jetstream_api.go",
       "server/monitor.go",
@@ -1485,7 +1493,7 @@
      ],
      "largest_module": {
       "path": "server",
-      "tokens": 1085535
+      "tokens": 1096864
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -1496,7 +1504,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 1157007,
+      "go": 1168542,
       "shell": 2542
      }
     },
@@ -1592,9 +1600,14 @@
         "level": 4,
         "id": "acyclic-documented",
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
-        "met": false,
-        "evidence": [],
-        "note": "no agent docs (AGENTS.md, CLAUDE.md, llms.txt)"
+        "met": true,
+        "evidence": [
+         {
+          "path": "AGENTS.md",
+          "detail": ""
+         }
+        ],
+        "note": ""
        }
       ]
      }
@@ -1609,33 +1622,33 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 46.2,
+   "retrofit_person_days": 46.5,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 4.3,
     "events": 0.0,
-    "identity": 12.9,
+    "identity": 13.0,
     "ergonomics": 3.2,
     "embeddability": 0.0,
-    "extensibility": 12.9,
+    "extensibility": 13.0,
     "observability": 4.3,
-    "legibility": 8.6
+    "legibility": 8.7
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.15,
+    "size_factor": 2.16,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 114.36,
+   "ksloc": 115.25,
    "classic": {
-    "person_months": 347.84,
-    "schedule_months": 23.1,
-    "cost": 3915737
+    "person_months": 350.7,
+    "schedule_months": 23.2,
+    "cost": 3947886
    },
    "capture": {
     "tests": 1.0,
@@ -1644,21 +1657,21 @@
     "capture": 0.7
    },
    "agent_factor": 0.24,
-   "reproduce_pm": 81.74,
+   "reproduce_pm": 82.41,
    "history": {
-    "commits": 8729,
-    "fix_commits": 2557,
-    "authors": 295,
-    "age_months": 168.0,
-    "months_since_last": 0.1
+    "commits": 8772,
+    "fix_commits": 2576,
+    "authors": 300,
+    "age_months": 168.3,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 94.78,
-   "rediscover_pm": 28.44,
-   "replacement_pm": 110.18,
+   "knowledge_pm": 95.38,
+   "rediscover_pm": 28.61,
+   "replacement_pm": 111.03,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 100.31,
-   "value_cost": 1129192,
+   "value_pm": 101.08,
+   "value_cost": 1137900,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -1672,26 +1685,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 678.6261,
+   "make_buy_ratio": 683.4371,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 184660.22,
+   "break_even_price_per_year": 185971.28,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 10851028,
-     "input": 271275700,
-     "cached_input": 230584345
+     "output": 10989787,
+     "input": 274744675,
+     "cached_input": 233532973
     },
-    "final_tokens": 3617009,
-    "model_cost": 425.9,
-    "agent_hours": 120.57,
-    "human_days": 712.98,
-    "review_days": 115.74,
-    "rediscover_days": 597.24,
-    "calendar_days": 712.98,
-    "build_cost": 382619.44,
-    "yearly_cost": 57392.92,
-    "total_cost": 554798.19
+    "final_tokens": 3663262,
+    "model_cost": 431.35,
+    "agent_hours": 122.11,
+    "human_days": 718.03,
+    "review_days": 117.22,
+    "rediscover_days": 600.81,
+    "calendar_days": 718.03,
+    "build_cost": 385331.98,
+    "yearly_cost": 57799.8,
+    "total_cost": 558731.37
    },
    "buy": {
     "via": {

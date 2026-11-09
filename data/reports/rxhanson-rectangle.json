@@ -4,20 +4,20 @@
   "url": "https://github.com/rxhanson/Rectangle",
   "slug": "rxhanson-rectangle",
   "host": "github.com",
-  "commit": "39466aea1a6c942eb3bbdd4a7b5d6da8662106f5",
-  "committed_at": "2026-10-28T21:55:04-04:00",
-  "evaluated_at": "2026-11-02T12:28:20+00:00",
+  "commit": "451ab711b5c669dd49e14212c23b60db884f7a00",
+  "committed_at": "2026-11-06T16:42:46-05:00",
+  "evaluated_at": "2026-11-09T12:55:10+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/rxhanson/Rectangle",
   "inventory": {
-   "files": 486,
-   "source_files": 215,
-   "source_tokens": 311037,
+   "files": 488,
+   "source_files": 216,
+   "source_tokens": 321483,
    "languages": {
-    "swift": 310985,
+    "swift": 321431,
     "c": 52
    },
    "git": true
@@ -307,7 +307,7 @@
      },
      {
       "signal": "L4 managed-settings",
-      "detail": "80 matches",
+      "detail": "82 matches",
       "path": "TerminalCommands.md",
       "weight": 1
      }
@@ -376,7 +376,7 @@
         "evidence": [
          {
           "path": "TerminalCommands.md",
-          "detail": "80 matches"
+          "detail": "82 matches"
          },
          {
           "path": "README.md",
@@ -459,7 +459,7 @@
      {
       "signal": "L1 logs",
       "detail": "1 match",
-      "path": "Rectangle/LaunchOnLogin.swift",
+      "path": "Rectangle/General/LaunchOnLogin.swift",
       "weight": 1
      }
     ],
@@ -481,7 +481,7 @@
         "met": true,
         "evidence": [
          {
-          "path": "Rectangle/LaunchOnLogin.swift",
+          "path": "Rectangle/General/LaunchOnLogin.swift",
           "detail": "1 match"
          }
         ],
@@ -531,22 +531,22 @@
      }
     ],
     "metrics": {
-     "source_files": 215,
-     "source_tokens": 311037,
-     "test_files": 5,
-     "test_tokens": 138936,
-     "test_ratio": 0.45,
-     "modules": 15,
-     "modules_within_budget": 0.8,
+     "source_files": 216,
+     "source_tokens": 321483,
+     "test_files": 6,
+     "test_tokens": 161455,
+     "test_ratio": 0.5,
+     "modules": 20,
+     "modules_within_budget": 0.85,
      "oversized_files": [
-      "Rectangle/WindowManager+CooperativeCornerResize.swift",
-      "Rectangle/CooperativeCornerResize.swift",
-      "Rectangle/WindowAction.swift",
+      "Rectangle/CooperativeCornerResize/CooperativeResizeCoordinator.swift",
+      "Rectangle/CooperativeCornerResize/CooperativeCornerResize.swift",
+      "Rectangle/WindowAction/WindowAction.swift",
       "Rectangle/WindowAnimation/DirectWindowAnimator.swift"
      ],
      "largest_module": {
-      "path": "Rectangle",
-      "tokens": 110206
+      "path": "Rectangle/WindowCalculation",
+      "tokens": 71013
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -557,7 +557,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 310985,
+      "swift": 321431,
       "c": 52
      }
     },
@@ -582,8 +582,8 @@
           "detail": ""
          },
          {
-          "path": "RectangleTests/DisplayTransferTests.swift",
-          "detail": "5 test files"
+          "path": "RectangleTests/CooperativeResizeExecutionTests.swift",
+          "detail": "6 test files"
          }
         ],
         "note": ""
@@ -602,7 +602,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "80% of modules fit 32k tokens; 4 files over 12k"
+        "note": "85% of modules fit 32k tokens; 4 files over 12k"
        },
        {
         "level": 4,
@@ -627,55 +627,55 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 45.5,
+   "retrofit_person_days": 46.3,
    "retrofit_by_dimension": {
-    "interface": 10.7,
+    "interface": 10.9,
     "stability": 3.6,
-    "ergonomics": 8.0,
+    "ergonomics": 8.2,
     "embeddability": 0.0,
-    "extensibility": 10.7,
+    "extensibility": 10.9,
     "observability": 3.6,
-    "legibility": 8.9
+    "legibility": 9.1
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.12,
+    "size_factor": 1.13,
     "legibility_multiplier": 1.6,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 23.18,
+   "ksloc": 23.79,
    "classic": {
-    "person_months": 65.1,
-    "schedule_months": 12.2,
-    "cost": 732809
+    "person_months": 66.89,
+    "schedule_months": 12.3,
+    "cost": 752972
    },
    "capture": {
-    "tests": 0.9,
+    "tests": 1.0,
     "contract": 0.25,
     "docs": 0.29,
-    "capture": 0.59
+    "capture": 0.64
    },
-   "agent_factor": 0.28,
-   "reproduce_pm": 18.52,
+   "agent_factor": 0.26,
+   "reproduce_pm": 17.52,
    "history": {
-    "commits": 1239,
-    "fix_commits": 172,
-    "authors": 208,
-    "age_months": 88.2,
+    "commits": 1256,
+    "fix_commits": 174,
+    "authors": 211,
+    "age_months": 88.5,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 9.63,
-   "rediscover_pm": 3.95,
-   "replacement_pm": 22.47,
+   "knowledge_pm": 9.76,
+   "rediscover_pm": 3.51,
+   "replacement_pm": 21.04,
    "leverage": 0.89,
    "obsolescence": 0.9,
-   "value_pm": 18.06,
-   "value_cost": 203267,
-   "knowledge_at_risk": 0.18,
+   "value_pm": 16.91,
+   "value_cost": 190312,
+   "knowledge_at_risk": 0.17,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -688,26 +688,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 95.6312,
+   "make_buy_ratio": 86.9531,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 25611.08,
+   "break_even_price_per_year": 23262.43,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1388176,
-     "input": 34704400,
-     "cached_input": 29498740
+     "output": 1483534,
+     "input": 37088350,
+     "cached_input": 31525097
     },
-    "final_tokens": 462725,
-    "model_cost": 54.49,
-    "agent_hours": 15.42,
-    "human_days": 99.79,
-    "review_days": 16.84,
-    "rediscover_days": 82.95,
-    "calendar_days": 99.79,
-    "build_cost": 53548.4,
-    "yearly_cost": 8032.26,
-    "total_cost": 77645.18
+    "final_tokens": 494511,
+    "model_cost": 58.23,
+    "agent_hours": 16.48,
+    "human_days": 90.72,
+    "review_days": 17.01,
+    "rediscover_days": 73.71,
+    "calendar_days": 90.72,
+    "build_cost": 48689.11,
+    "yearly_cost": 7303.37,
+    "total_cost": 70599.21
    },
    "buy": {
     "via": {

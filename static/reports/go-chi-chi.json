@@ -4,16 +4,16 @@
   "url": "https://github.com/go-chi/chi",
   "slug": "go-chi-chi",
   "host": "github.com",
-  "commit": "9f8adb1aabaa8a91180a821111d3f8e668d1c0bf",
-  "committed_at": "2026-10-18T15:50:22+02:00",
-  "evaluated_at": "2026-10-19T09:56:51+00:00",
+  "commit": "c64ed7d6635f33a8b2feaff7dcfa55677023ac7d",
+  "committed_at": "2026-11-07T16:51:20+01:00",
+  "evaluated_at": "2026-11-09T12:54:28+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/go-chi/chi",
   "inventory": {
-   "files": 110,
+   "files": 111,
    "source_files": 55,
    "source_tokens": 41330,
    "languages": {
@@ -1136,7 +1136,7 @@
      },
      {
       "signal": "L3 fits-and-verified",
-      "detail": "test ratio 1.28, 100% typed, modules fit",
+      "detail": "test ratio 1.29, 100% typed, modules fit",
       "path": "context_test.go",
       "weight": 1
      }
@@ -1144,9 +1144,9 @@
     "metrics": {
      "source_files": 55,
      "source_tokens": 41330,
-     "test_files": 34,
-     "test_tokens": 53066,
-     "test_ratio": 1.28,
+     "test_files": 35,
+     "test_tokens": 53427,
+     "test_ratio": 1.29,
      "modules": 18,
      "modules_within_budget": 1.0,
      "oversized_files": [],
@@ -1188,7 +1188,7 @@
          },
          {
           "path": "context_test.go",
-          "detail": "34 test files"
+          "detail": "35 test files"
          }
         ],
         "note": ""
@@ -1218,7 +1218,7 @@
         "evidence": [
          {
           "path": "context_test.go",
-          "detail": "test ratio 1.28, 100% typed, modules fit"
+          "detail": "test ratio 1.29, 100% typed, modules fit"
          }
         ],
         "note": ""
@@ -1281,11 +1281,11 @@
    "agent_factor": 0.13,
    "reproduce_pm": 1.23,
    "history": {
-    "commits": 773,
+    "commits": 774,
     "fix_commits": 117,
-    "authors": 189,
-    "age_months": 132.1,
-    "months_since_last": 0.0
+    "authors": 190,
+    "age_months": 132.7,
+    "months_since_last": 0.1
    },
    "knowledge_pm": 6.21,
    "rediscover_pm": 0.37,
@@ -1293,7 +1293,7 @@
    "leverage": 0.94,
    "obsolescence": 1.0,
    "value_pm": 1.51,
-   "value_cost": 17010,
+   "value_cost": 17013,
    "knowledge_at_risk": 0.23,
    "assumptions": {
     "salary": 56286,
@@ -1307,26 +1307,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 171.976,
+   "make_buy_ratio": 172.1177,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 2552.86,
+   "break_even_price_per_year": 2554.97,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 283931,
-     "input": 7098275,
-     "cached_input": 6033533
+     "output": 285014,
+     "input": 7125350,
+     "cached_input": 6056547
     },
-    "final_tokens": 94643,
-    "model_cost": 11.14,
-    "agent_hours": 3.15,
-    "human_days": 9.89,
-    "review_days": 2.12,
+    "final_tokens": 95004,
+    "model_cost": 11.19,
+    "agent_hours": 3.17,
+    "human_days": 9.9,
+    "review_days": 2.13,
     "rediscover_days": 7.77,
-    "calendar_days": 9.89,
-    "build_cost": 5312.67,
-    "yearly_cost": 796.9,
-    "total_cost": 7703.37
+    "calendar_days": 9.9,
+    "build_cost": 5317.05,
+    "yearly_cost": 797.56,
+    "total_cost": 7709.72
    },
    "buy": {
     "via": {
