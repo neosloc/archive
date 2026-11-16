@@ -4,9 +4,9 @@
   "url": "https://github.com/clap-rs/clap",
   "slug": "clap-rs-clap",
   "host": "github.com",
-  "commit": "ec93e71255c0b833a34f50662a3fdb22f53f6ded",
-  "committed_at": "2026-11-02T13:25:22-06:00",
-  "evaluated_at": "2026-11-09T12:55:01+00:00",
+  "commit": "54605ceeee4d932f169546a708444062f2b7cf4b",
+  "committed_at": "2026-11-14T22:51:36-06:00",
+  "evaluated_at": "2026-11-16T12:48:37+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -949,13 +949,13 @@
    "agent_factor": 0.1,
    "reproduce_pm": 6.76,
    "history": {
-    "commits": 6948,
+    "commits": 6949,
     "fix_commits": 1832,
     "authors": 628,
-    "age_months": 140.2,
-    "months_since_last": 0.3
+    "age_months": 140.6,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 71.38,
+   "knowledge_pm": 71.39,
    "rediscover_pm": 0.0,
    "replacement_pm": 6.76,
    "leverage": 0.98,

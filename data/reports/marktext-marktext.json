@@ -4,22 +4,22 @@
   "url": "https://github.com/marktext/marktext",
   "slug": "marktext-marktext",
   "host": "github.com",
-  "commit": "a520befde7ec8ea911e738d53cb26bba64b28694",
-  "committed_at": "2026-11-06T16:00:22+08:00",
-  "evaluated_at": "2026-11-09T12:54:51+00:00",
+  "commit": "10363a3af3f934ad068fa356628d9ca1bb802e17",
+  "committed_at": "2026-11-14T10:27:31+08:00",
+  "evaluated_at": "2026-11-16T12:48:14+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/marktext/marktext",
   "inventory": {
-   "files": 2098,
+   "files": 2105,
    "source_files": 694,
-   "source_tokens": 873664,
+   "source_tokens": 874637,
    "languages": {
-    "typescript": 747655,
-    "vue": 105708,
-    "javascript": 19165,
+    "typescript": 748410,
+    "vue": 105893,
+    "javascript": 19198,
     "python": 1136
    },
    "git": true
@@ -263,7 +263,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "60 semver tags, latest v0.24.0-rc.1",
+      "detail": "61 semver tags, latest v0.24.0-rc.2",
       "path": null,
       "weight": 1
      }
@@ -287,7 +287,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "60 semver tags, latest v0.24.0-rc.1"
+          "detail": "61 semver tags, latest v0.24.0-rc.2"
          }
         ],
         "note": ""
@@ -802,7 +802,7 @@
         "evidence": [
          {
           "path": "packages/muya/src/utils/index.ts",
-          "detail": "4 matches"
+          "detail": "5 matches"
          },
          {
           "path": "packages/muya/e2e/playwright.config.ts",
@@ -1683,9 +1683,9 @@
     ],
     "metrics": {
      "source_files": 694,
-     "source_tokens": 873664,
-     "test_files": 859,
-     "test_tokens": 1117399,
+     "source_tokens": 874637,
+     "test_files": 866,
+     "test_tokens": 1123770,
      "test_ratio": 1.28,
      "modules": 177,
      "modules_within_budget": 0.99,
@@ -1705,7 +1705,7 @@
      "typed_ratio": 0.86,
      "python_functions": 2,
      "python_annotated": 2,
-     "import_edges": 1958,
+     "import_edges": 1960,
      "import_graph": true,
      "max_fan_out": 43,
      "import_cycles": 4,
@@ -1880,9 +1880,9 @@
       "packages/muya/src/utils/turndownService/index.ts"
      ],
      "languages": {
-      "typescript": 747655,
-      "vue": 105708,
-      "javascript": 19165,
+      "typescript": 748410,
+      "vue": 105893,
+      "javascript": 19198,
       "python": 1136
      }
     },
@@ -1908,7 +1908,7 @@
          },
          {
           "path": "packages/desktop/test/e2e/all-blocks-roundtrip.spec.ts",
-          "detail": "859 test files"
+          "detail": "866 test files"
          }
         ],
         "note": ""
@@ -2033,34 +2033,34 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 94.91,
+   "ksloc": 94.99,
    "classic": {
-    "person_months": 286.03,
-    "schedule_months": 21.4,
-    "cost": 3219871
+    "person_months": 286.27,
+    "schedule_months": 21.5,
+    "cost": 3222649
    },
    "capture": {
     "tests": 1.0,
     "contract": 1.0,
-    "docs": 0.67,
+    "docs": 0.66,
     "capture": 0.92
    },
    "agent_factor": 0.14,
-   "reproduce_pm": 38.9,
+   "reproduce_pm": 38.93,
    "history": {
-    "commits": 2420,
-    "fix_commits": 1113,
-    "authors": 233,
-    "age_months": 107.8,
+    "commits": 2430,
+    "fix_commits": 1118,
+    "authors": 234,
+    "age_months": 108.0,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 34.36,
-   "rediscover_pm": 2.75,
-   "replacement_pm": 41.65,
+   "knowledge_pm": 34.51,
+   "rediscover_pm": 2.76,
+   "replacement_pm": 41.69,
    "leverage": 1.06,
    "obsolescence": 0.95,
-   "value_pm": 42.04,
-   "value_cost": 473242,
+   "value_pm": 42.09,
+   "value_cost": 473759,
    "knowledge_at_risk": 0.07,
    "assumptions": {
     "salary": 56286,
@@ -2074,26 +2074,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 100.4981,
+   "make_buy_ratio": 100.8655,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 26816.68,
+   "break_even_price_per_year": 26915.7,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5994156,
-     "input": 149853900,
-     "cached_input": 127375815
+     "output": 6016212,
+     "input": 150405300,
+     "cached_input": 127844505
     },
-    "final_tokens": 1998052,
-    "model_cost": 235.27,
-    "agent_hours": 66.6,
-    "human_days": 104.1,
-    "review_days": 46.35,
-    "rediscover_days": 57.75,
-    "calendar_days": 104.1,
-    "build_cost": 56040.41,
-    "yearly_cost": 8406.06,
-    "total_cost": 81258.59
+    "final_tokens": 2005404,
+    "model_cost": 236.14,
+    "agent_hours": 66.85,
+    "human_days": 104.49,
+    "review_days": 46.53,
+    "rediscover_days": 57.96,
+    "calendar_days": 104.49,
+    "build_cost": 56245.27,
+    "yearly_cost": 8436.79,
+    "total_cost": 81555.65
    },
    "buy": {
     "via": {

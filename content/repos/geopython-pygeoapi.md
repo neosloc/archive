@@ -1,7 +1,7 @@
 {
  "title": "geopython/pygeoapi",
  "slug": "geopython-pygeoapi",
- "date": "2026-11-09T12:53:29+00:00",
+ "date": "2026-11-16T12:46:28+00:00",
  "repo_url": "https://github.com/geopython/pygeoapi",
  "index": 1.3,
  "assessed": 10,
@@ -10,7 +10,7 @@
   "cli"
  ],
  "verdict": "buy",
- "make_buy_ratio": 8.628,
+ "make_buy_ratio": 8.6283,
  "languages": [
   "python",
   "shell",

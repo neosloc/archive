@@ -4,21 +4,21 @@
   "url": "https://github.com/axios/axios",
   "slug": "axios-axios",
   "host": "github.com",
-  "commit": "335e2f8464f58a3ab485486b8d6964fea3e3f30a",
-  "committed_at": "2026-11-09T13:04:29+02:00",
-  "evaluated_at": "2026-11-09T12:53:38+00:00",
+  "commit": "85ffbafab1a3f4385b6a4118692a6995ce71d9d8",
+  "committed_at": "2026-11-15T14:50:46+02:00",
+  "evaluated_at": "2026-11-16T12:46:33+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/axios/axios",
   "inventory": {
-   "files": 526,
-   "source_files": 81,
-   "source_tokens": 80770,
+   "files": 530,
+   "source_files": 82,
+   "source_tokens": 82272,
    "languages": {
-    "javascript": 74617,
-    "typescript": 6153
+    "javascript": 75999,
+    "typescript": 6273
    },
    "git": true
   },
@@ -851,11 +851,11 @@
      }
     ],
     "metrics": {
-     "source_files": 81,
-     "source_tokens": 80770,
-     "test_files": 183,
-     "test_tokens": 287962,
-     "test_ratio": 3.57,
+     "source_files": 82,
+     "source_tokens": 82272,
+     "test_files": 186,
+     "test_tokens": 295241,
+     "test_ratio": 3.59,
      "modules": 15,
      "modules_within_budget": 1.0,
      "oversized_files": [
@@ -863,19 +863,19 @@
      ],
      "largest_module": {
       "path": "lib/adapters",
-      "tokens": 24284
+      "tokens": 24937
      },
      "typed_ratio": 0.08,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 178,
+     "import_edges": 185,
      "import_graph": true,
      "max_fan_out": 22,
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "javascript": 74617,
-      "typescript": 6153
+      "javascript": 75999,
+      "typescript": 6273
      }
     },
     "gaps": [
@@ -900,7 +900,7 @@
          },
          {
           "path": "docs/.vitepress/tokenizeSearchText.test.js",
-          "detail": "183 test files"
+          "detail": "186 test files"
          }
         ],
         "note": ""
@@ -1010,11 +1010,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 7.82,
+   "ksloc": 7.91,
    "classic": {
-    "person_months": 20.8,
-    "schedule_months": 7.9,
-    "cost": 234158
+    "person_months": 21.05,
+    "schedule_months": 8.0,
+    "cost": 236925
    },
    "capture": {
     "tests": 1.0,
@@ -1023,21 +1023,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 2.64,
+   "reproduce_pm": 2.67,
    "history": {
-    "commits": 2070,
-    "fix_commits": 514,
-    "authors": 705,
-    "age_months": 146.7,
+    "commits": 2078,
+    "fix_commits": 519,
+    "authors": 709,
+    "age_months": 146.9,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 20.63,
-   "rediscover_pm": 1.24,
-   "replacement_pm": 3.88,
+   "knowledge_pm": 20.77,
+   "rediscover_pm": 1.25,
+   "replacement_pm": 3.92,
    "leverage": 0.92,
    "obsolescence": 0.95,
-   "value_pm": 3.38,
-   "value_cost": 38031,
+   "value_pm": 3.41,
+   "value_cost": 38420,
    "knowledge_at_risk": 0.32,
    "assumptions": {
     "salary": 56286,
@@ -1051,26 +1051,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 62.1551,
+   "make_buy_ratio": 62.8939,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 8767.14,
+   "break_even_price_per_year": 8873.06,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1107649,
-     "input": 27691225,
-     "cached_input": 23537541
+     "output": 1134019,
+     "input": 28350475,
+     "cached_input": 24097903
     },
-    "final_tokens": 369216,
-    "model_cost": 43.48,
-    "agent_hours": 12.31,
-    "human_days": 34.31,
-    "review_days": 8.27,
-    "rediscover_days": 26.04,
-    "calendar_days": 34.31,
-    "build_cost": 18435.51,
-    "yearly_cost": 2765.33,
-    "total_cost": 26731.49
+    "final_tokens": 378006,
+    "model_cost": 44.51,
+    "agent_hours": 12.6,
+    "human_days": 34.72,
+    "review_days": 8.47,
+    "rediscover_days": 26.25,
+    "calendar_days": 34.72,
+    "build_cost": 18654.66,
+    "yearly_cost": 2798.2,
+    "total_cost": 27049.26
    },
    "buy": {
     "via": {

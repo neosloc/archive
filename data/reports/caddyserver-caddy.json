@@ -4,20 +4,20 @@
   "url": "https://github.com/caddyserver/caddy",
   "slug": "caddyserver-caddy",
   "host": "github.com",
-  "commit": "9ea3108377d2abec102866808133c40ac9582162",
-  "committed_at": "2026-11-09T13:29:48+10:00",
-  "evaluated_at": "2026-11-09T12:54:47+00:00",
+  "commit": "7ce9f0823762109fc67911f95f6af1a697345ab7",
+  "committed_at": "2026-11-14T11:45:12-05:00",
+  "evaluated_at": "2026-11-16T12:48:12+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/caddyserver/caddy",
   "inventory": {
-   "files": 765,
+   "files": 780,
    "source_files": 235,
-   "source_tokens": 616343,
+   "source_tokens": 622649,
    "languages": {
-    "go": 613613,
+    "go": 619919,
     "shell": 1606,
     "javascript": 1124
    },
@@ -33,7 +33,7 @@
     "service": [
      {
       "path": "admin.go",
-      "detail": "go-http: 43 route declarations"
+      "detail": "go-http: 41 route declarations"
      }
     ],
     "cli": [
@@ -89,9 +89,9 @@
      }
     ],
     "metrics": {
-     "route_declarations": 43,
+     "route_declarations": 41,
      "routes_by_framework": {
-      "go-http": 43
+      "go-http": 41
      },
      "spec_files": 0,
      "spec_operations": 0,
@@ -117,7 +117,7 @@
         "evidence": [
          {
           "path": "admin.go",
-          "detail": "go-http: 43 route declarations"
+          "detail": "go-http: 41 route declarations"
          }
         ],
         "note": ""
@@ -594,7 +594,7 @@
      },
      {
       "signal": "L2 streams-and-status",
-      "detail": "24 matches",
+      "detail": "30 matches",
       "path": "logging.go",
       "weight": 1
      }
@@ -680,7 +680,7 @@
         "evidence": [
          {
           "path": "logging.go",
-          "detail": "24 matches"
+          "detail": "30 matches"
          },
          {
           "path": "modules/logging/filters.go",
@@ -784,7 +784,7 @@
          },
          {
           "path": "cmd/storagefuncs.go",
-          "detail": "23 matches"
+          "detail": "26 matches"
          },
          {
           "path": "cmd/packagesfuncs.go",
@@ -1204,7 +1204,7 @@
     "evidence": [
      {
       "signal": "L1 exit-and-stderr",
-      "detail": "24 matches",
+      "detail": "30 matches",
       "path": "logging.go",
       "weight": 1
      }
@@ -1671,7 +1671,7 @@
         "evidence": [
          {
           "path": "logging.go",
-          "detail": "24 matches"
+          "detail": "30 matches"
          },
          {
           "path": "modules/logging/filters.go",
@@ -1775,7 +1775,7 @@
          },
          {
           "path": "cmd/storagefuncs.go",
-          "detail": "23 matches"
+          "detail": "26 matches"
          },
          {
           "path": "cmd/packagesfuncs.go",
@@ -2394,10 +2394,10 @@
     ],
     "metrics": {
      "source_files": 235,
-     "source_tokens": 616343,
-     "test_files": 187,
-     "test_tokens": 422566,
-     "test_ratio": 0.69,
+     "source_tokens": 622649,
+     "test_files": 202,
+     "test_tokens": 451463,
+     "test_ratio": 0.73,
      "modules": 50,
      "modules_within_budget": 0.9,
      "oversized_files": [
@@ -2410,7 +2410,7 @@
      ],
      "largest_module": {
       "path": "modules/caddyhttp",
-      "tokens": 107401
+      "tokens": 110430
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -2421,7 +2421,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 613613,
+      "go": 619919,
       "shell": 1606,
       "javascript": 1124
      }
@@ -2448,7 +2448,7 @@
          },
          {
           "path": "admin_checkhost_case_test.go",
-          "detail": "187 test files"
+          "detail": "202 test files"
          }
         ],
         "note": ""
@@ -2532,33 +2532,33 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 36.8,
+   "retrofit_person_days": 37.3,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 3.1,
-    "events": 3.1,
-    "identity": 9.4,
+    "stability": 3.2,
+    "events": 3.2,
+    "identity": 9.5,
     "ergonomics": 2.4,
     "embeddability": 0.0,
-    "extensibility": 9.4,
-    "observability": 3.1,
+    "extensibility": 9.5,
+    "observability": 3.2,
     "legibility": 6.3
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.57,
+    "size_factor": 1.58,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 50.12,
+   "ksloc": 50.84,
    "classic": {
-    "person_months": 146.28,
-    "schedule_months": 16.6,
-    "cost": 1646709
+    "person_months": 148.51,
+    "schedule_months": 16.7,
+    "cost": 1671800
    },
    "capture": {
     "tests": 1.0,
@@ -2567,21 +2567,21 @@
     "capture": 0.72
    },
    "agent_factor": 0.23,
-   "reproduce_pm": 33.06,
+   "reproduce_pm": 33.56,
    "history": {
-    "commits": 2838,
-    "fix_commits": 574,
-    "authors": 505,
-    "age_months": 91.5,
-    "months_since_last": 0.0
+    "commits": 2873,
+    "fix_commits": 576,
+    "authors": 507,
+    "age_months": 91.7,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 25.67,
-   "rediscover_pm": 7.19,
-   "replacement_pm": 40.25,
+   "knowledge_pm": 25.88,
+   "rediscover_pm": 7.25,
+   "replacement_pm": 40.81,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 36.11,
-   "value_cost": 406503,
+   "value_pm": 36.62,
+   "value_cost": 412199,
    "knowledge_at_risk": 0.18,
    "assumptions": {
     "salary": 56286,
@@ -2595,26 +2595,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 175.104,
+   "make_buy_ratio": 177.3588,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 47445.18,
+   "break_even_price_per_year": 48059.64,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3168499,
-     "input": 79212475,
-     "cached_input": 67330603
+     "output": 3274638,
+     "input": 81865950,
+     "cached_input": 69586057
     },
-    "final_tokens": 1056166,
-    "model_cost": 124.36,
-    "agent_hours": 35.21,
-    "human_days": 183.94,
-    "review_days": 32.95,
-    "rediscover_days": 150.99,
-    "calendar_days": 183.94,
-    "build_cost": 98726.25,
-    "yearly_cost": 14808.94,
-    "total_cost": 143153.06
+    "final_tokens": 1091546,
+    "model_cost": 128.53,
+    "agent_hours": 36.38,
+    "human_days": 186.31,
+    "review_days": 34.06,
+    "rediscover_days": 152.25,
+    "calendar_days": 186.31,
+    "build_cost": 99997.55,
+    "yearly_cost": 14999.63,
+    "total_cost": 144996.44
    },
    "buy": {
     "via": {

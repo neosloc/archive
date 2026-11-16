@@ -4,9 +4,9 @@
   "url": "https://github.com/slimphp/Slim",
   "slug": "slimphp-slim",
   "host": "github.com",
-  "commit": "3675bf6baac66b07032575b7bef4200b60b7974b",
-  "committed_at": "2026-09-01T18:11:05+01:00",
-  "evaluated_at": "2026-10-07T14:29:48+00:00",
+  "commit": "8d872ae0a146bba4ce750094b21754f9c9f21d00",
+  "committed_at": "2026-11-15T15:19:36Z",
+  "evaluated_at": "2026-11-16T12:49:06+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 145,
    "source_files": 72,
-   "source_tokens": 41078,
+   "source_tokens": 41093,
    "languages": {
-    "php": 41078
+    "php": 41093
    },
    "git": true
   },
@@ -234,10 +234,10 @@
     ],
     "metrics": {
      "source_files": 72,
-     "source_tokens": 41078,
+     "source_tokens": 41093,
      "test_files": 53,
-     "test_tokens": 96025,
-     "test_ratio": 2.34,
+     "test_tokens": 96719,
+     "test_ratio": 2.35,
      "modules": 11,
      "modules_within_budget": 1.0,
      "oversized_files": [],
@@ -254,7 +254,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "php": 41078
+      "php": 41093
      }
     },
     "gaps": [
@@ -347,7 +347,7 @@
    "classic": {
     "person_months": 8.0,
     "schedule_months": 5.5,
-    "cost": 90100
+    "cost": 90040
    },
    "capture": {
     "tests": 1.0,
@@ -358,19 +358,19 @@
    "agent_factor": 0.21,
    "reproduce_pm": 1.7,
    "history": {
-    "commits": 3326,
+    "commits": 3336,
     "fix_commits": 436,
-    "authors": 299,
-    "age_months": 191.3,
-    "months_since_last": 1.2
+    "authors": 300,
+    "age_months": 193.8,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 25.35,
-   "rediscover_pm": 6.34,
-   "replacement_pm": 8.04,
+   "knowledge_pm": 25.4,
+   "rediscover_pm": 6.35,
+   "replacement_pm": 8.05,
    "leverage": 0.79,
    "obsolescence": 0.9,
-   "value_pm": 5.73,
-   "value_cost": 64473,
+   "value_pm": 5.74,
+   "value_cost": 64564,
    "knowledge_at_risk": 0.79,
    "assumptions": {
     "salary": 56286,
@@ -384,26 +384,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 72.9249,
+   "make_buy_ratio": 73.0478,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 35088.85,
+   "break_even_price_per_year": 35148.81,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 414389,
-     "input": 10359725,
-     "cached_input": 8805766
+     "output": 416517,
+     "input": 10412925,
+     "cached_input": 8850986
     },
-    "final_tokens": 138129,
-    "model_cost": 16.26,
-    "agent_hours": 4.6,
-    "human_days": 137.28,
-    "review_days": 4.14,
-    "rediscover_days": 133.14,
-    "calendar_days": 137.28,
-    "build_cost": 73606.97,
-    "yearly_cost": 11041.05,
-    "total_cost": 106730.11
+    "final_tokens": 138839,
+    "model_cost": 16.35,
+    "agent_hours": 4.63,
+    "human_days": 137.52,
+    "review_days": 4.17,
+    "rediscover_days": 133.35,
+    "calendar_days": 137.52,
+    "build_cost": 73731.03,
+    "yearly_cost": 11059.65,
+    "total_cost": 106910.0
    },
    "buy": {
     "via": {

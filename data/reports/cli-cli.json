@@ -4,22 +4,22 @@
   "url": "https://github.com/cli/cli",
   "slug": "cli-cli",
   "host": "github.com",
-  "commit": "736c68f674113337685e3eb1f908602a03b8f99b",
-  "committed_at": "2026-11-06T19:48:46-06:00",
-  "evaluated_at": "2026-11-09T12:54:38+00:00",
+  "commit": "da064e10918e720fcdb81faef9fc0da86bab5476",
+  "committed_at": "2026-11-16T12:40:40Z",
+  "evaluated_at": "2026-11-16T12:48:14+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/cli/cli",
   "inventory": {
-   "files": 1588,
-   "source_files": 627,
-   "source_tokens": 1024786,
+   "files": 1590,
+   "source_files": 629,
+   "source_tokens": 1031816,
    "languages": {
-    "go": 962820,
-    "javascript": 35045,
-    "shell": 26921
+    "go": 964075,
+    "javascript": 40516,
+    "shell": 27225
    },
    "git": true
   },
@@ -378,7 +378,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "210 semver tags, latest v2.103.3",
+      "detail": "211 semver tags, latest v2.104.0",
       "path": null,
       "weight": 1
      }
@@ -402,7 +402,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "210 semver tags, latest v2.103.3"
+          "detail": "211 semver tags, latest v2.104.0"
          }
         ],
         "note": ""
@@ -985,6 +985,10 @@
           "detail": "10 matches"
          },
          {
+          "path": ".github/scripts/issue-triage-ghmock.sh",
+          "detail": "9 matches"
+         },
+         {
           "path": "script/ghmock/gittransport.go",
           "detail": "8 matches"
          },
@@ -995,10 +999,6 @@
          {
           "path": "pkg/cmd/repo/create/create.go",
           "detail": "7 matches"
-         },
-         {
-          "path": ".github/scripts/issue-triage-ghmock.sh",
-          "detail": "5 matches"
          },
          {
           "path": ".github/skills/cli-exercise/tool/internal/evidence/main.go",
@@ -1735,6 +1735,10 @@
           "detail": "10 matches"
          },
          {
+          "path": ".github/scripts/issue-triage-ghmock.sh",
+          "detail": "9 matches"
+         },
+         {
           "path": "script/ghmock/gittransport.go",
           "detail": "8 matches"
          },
@@ -1745,10 +1749,6 @@
          {
           "path": "pkg/cmd/repo/create/create.go",
           "detail": "7 matches"
-         },
-         {
-          "path": ".github/scripts/issue-triage-ghmock.sh",
-          "detail": "5 matches"
          },
          {
           "path": ".github/skills/cli-exercise/tool/internal/evidence/main.go",
@@ -1970,14 +1970,15 @@
      }
     ],
     "metrics": {
-     "source_files": 627,
-     "source_tokens": 1024786,
+     "source_files": 629,
+     "source_tokens": 1031816,
      "test_files": 471,
-     "test_tokens": 1478020,
-     "test_ratio": 1.44,
+     "test_tokens": 1480094,
+     "test_ratio": 1.43,
      "modules": 329,
      "modules_within_budget": 0.99,
      "oversized_files": [
+      ".github/scripts/issue-triage-report.test.cjs",
       "pkg/cmd/project/shared/queries/queries.go",
       "pkg/cmd/pr/create/create.go"
      ],
@@ -1985,7 +1986,7 @@
       "path": "script/ghmock",
       "tokens": 60397
      },
-     "typed_ratio": 0.94,
+     "typed_ratio": 0.93,
      "python_functions": 0,
      "python_annotated": 0,
      "import_edges": 2,
@@ -1994,13 +1995,13 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 962820,
-      "javascript": 35045,
-      "shell": 26921
+      "go": 964075,
+      "javascript": 40516,
+      "shell": 27225
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 2 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (99% of modules fit 32k tokens; 3 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -2105,7 +2106,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "99% of modules fit 32k tokens; 2 files over 12k"
+        "note": "99% of modules fit 32k tokens; 3 files over 12k"
        },
        {
         "level": 4,
@@ -2133,33 +2134,33 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 30.2,
+   "retrofit_person_days": 30.5,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 4.0,
-    "events": 4.0,
+    "stability": 4.1,
+    "events": 4.1,
     "identity": 0.0,
     "ergonomics": 0.0,
     "embeddability": 0.0,
-    "extensibility": 12.1,
+    "extensibility": 12.2,
     "observability": 2.0,
     "legibility": 8.1
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.02,
+    "size_factor": 2.03,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 108.99,
+   "ksloc": 109.48,
    "classic": {
-    "person_months": 330.73,
+    "person_months": 332.3,
     "schedule_months": 22.7,
-    "cost": 3723147
+    "cost": 3740760
    },
    "capture": {
     "tests": 1.0,
@@ -2168,21 +2169,21 @@
     "capture": 0.96
    },
    "agent_factor": 0.12,
-   "reproduce_pm": 39.03,
+   "reproduce_pm": 39.21,
    "history": {
-    "commits": 9210,
-    "fix_commits": 1285,
+    "commits": 9229,
+    "fix_commits": 1289,
     "authors": 725,
-    "age_months": 85.1,
-    "months_since_last": 0.1
+    "age_months": 85.4,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 71.75,
-   "rediscover_pm": 2.87,
-   "replacement_pm": 41.9,
+   "knowledge_pm": 71.93,
+   "rediscover_pm": 2.88,
+   "replacement_pm": 42.09,
    "leverage": 1.06,
    "obsolescence": 0.95,
-   "value_pm": 42.01,
-   "value_cost": 472950,
+   "value_pm": 42.21,
+   "value_cost": 475113,
    "knowledge_at_risk": 0.07,
    "assumptions": {
     "salary": 56286,
@@ -2196,26 +2197,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 110.6743,
+   "make_buy_ratio": 111.0683,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 29518.35,
+   "break_even_price_per_year": 29624.39,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 7520715,
-     "input": 188017875,
-     "cached_input": 159815193
+     "output": 7548111,
+     "input": 188702775,
+     "cached_input": 160397358
     },
-    "final_tokens": 2506905,
-    "model_cost": 295.19,
-    "agent_hours": 83.56,
-    "human_days": 114.42,
-    "review_days": 54.15,
-    "rediscover_days": 60.27,
-    "calendar_days": 114.42,
-    "build_cost": 61629.3,
-    "yearly_cost": 9244.4,
-    "total_cost": 89362.49
+    "final_tokens": 2516037,
+    "model_cost": 296.26,
+    "agent_hours": 83.87,
+    "human_days": 114.83,
+    "review_days": 54.35,
+    "rediscover_days": 60.48,
+    "calendar_days": 114.83,
+    "build_cost": 61848.68,
+    "yearly_cost": 9277.3,
+    "total_cost": 89680.59
    },
    "buy": {
     "via": {

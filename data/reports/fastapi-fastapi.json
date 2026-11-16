@@ -4,20 +4,20 @@
   "url": "https://github.com/fastapi/fastapi",
   "slug": "fastapi-fastapi",
   "host": "github.com",
-  "commit": "ba47d6d71b3e806900c8471f2f661781b8c43ec4",
-  "committed_at": "2026-11-08T17:59:44Z",
-  "evaluated_at": "2026-11-09T12:53:36+00:00",
+  "commit": "a1b3be01aadc61c67edc09eed4f6cc1fcc3d3b8f",
+  "committed_at": "2026-11-16T09:50:07Z",
+  "evaluated_at": "2026-11-16T12:46:43+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/fastapi/fastapi",
   "inventory": {
-   "files": 3238,
+   "files": 3267,
    "source_files": 559,
-   "source_tokens": 291792,
+   "source_tokens": 291790,
    "languages": {
-    "python": 291385,
+    "python": 291383,
     "javascript": 266,
     "shell": 141
    },
@@ -32,15 +32,15 @@
    "evidence": {
     "service": [
      {
-      "path": "docs_src/stream_data/tutorial001_py310.py",
+      "path": "docs_src/stream_data/tutorial001.py",
       "detail": "fastapi/flask: 461 route declarations"
      },
      {
-      "path": "docs_src/debugging/tutorial001_py310.py",
+      "path": "docs_src/debugging/tutorial001.py",
       "detail": "2 matches"
      },
      {
-      "path": "docs_src/sub_applications/tutorial001_py310.py",
+      "path": "docs_src/sub_applications/tutorial001.py",
       "detail": "2 matches"
      }
     ],
@@ -75,19 +75,19 @@
      {
       "signal": "L1 routes",
       "detail": "fastapi/flask: 461 route declarations",
-      "path": "docs_src/stream_data/tutorial001_py310.py",
+      "path": "docs_src/stream_data/tutorial001.py",
       "weight": 1
      },
      {
       "signal": "L2 contract",
       "detail": "FastAPI (auto OpenAPI)",
-      "path": "docs_src/sub_applications/tutorial001_py310.py",
+      "path": "docs_src/sub_applications/tutorial001.py",
       "weight": 1
      },
      {
       "signal": "L3 coverage",
       "detail": "generated from code: FastAPI (auto OpenAPI)",
-      "path": "docs_src/sub_applications/tutorial001_py310.py",
+      "path": "docs_src/sub_applications/tutorial001.py",
       "weight": 1
      }
     ],
@@ -119,7 +119,7 @@
         "met": true,
         "evidence": [
          {
-          "path": "docs_src/stream_data/tutorial001_py310.py",
+          "path": "docs_src/stream_data/tutorial001.py",
           "detail": "fastapi/flask: 461 route declarations"
          }
         ],
@@ -132,7 +132,7 @@
         "met": true,
         "evidence": [
          {
-          "path": "docs_src/sub_applications/tutorial001_py310.py",
+          "path": "docs_src/sub_applications/tutorial001.py",
           "detail": "FastAPI (auto OpenAPI)"
          },
          {
@@ -149,7 +149,7 @@
         "met": true,
         "evidence": [
          {
-          "path": "docs_src/sub_applications/tutorial001_py310.py",
+          "path": "docs_src/sub_applications/tutorial001.py",
           "detail": "generated from code: FastAPI (auto OpenAPI)"
          },
          {
@@ -295,7 +295,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "349 semver tags, latest 0.162.2",
+      "detail": "356 semver tags, latest 0.163.1",
       "path": null,
       "weight": 1
      }
@@ -319,7 +319,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "349 semver tags, latest 0.162.2"
+          "detail": "356 semver tags, latest 0.163.1"
          }
         ],
         "note": ""
@@ -363,15 +363,15 @@
           "detail": "2 matches"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial006_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial010_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial010.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial010_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial010_non_an.py",
           "detail": "1 match"
          },
          {
@@ -379,15 +379,15 @@
           "detail": "1 match"
          },
          {
-          "path": "docs_src/wsgi/tutorial001_py310.py",
+          "path": "docs_src/wsgi/tutorial001.py",
           "detail": "2 matches"
          },
          {
-          "path": "docs_src/behind_a_proxy/tutorial002_py310.py",
+          "path": "docs_src/behind_a_proxy/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/metadata/tutorial002_py310.py",
+          "path": "docs_src/metadata/tutorial002.py",
           "detail": "1 match"
          }
         ],
@@ -421,7 +421,7 @@
      {
       "signal": "L1 internal-events",
       "detail": "1 match",
-      "path": "docs_src/websockets_/tutorial003_py310.py",
+      "path": "docs_src/websockets_/tutorial003.py",
       "weight": 1
      },
      {
@@ -449,7 +449,7 @@
         "met": true,
         "evidence": [
          {
-          "path": "docs_src/websockets_/tutorial003_py310.py",
+          "path": "docs_src/websockets_/tutorial003.py",
           "detail": "1 match"
          },
          {
@@ -465,7 +465,7 @@
           "detail": "43 matches"
          },
          {
-          "path": "docs_src/websockets_/tutorial003_py310.py",
+          "path": "docs_src/websockets_/tutorial003.py",
           "detail": "22 matches"
          },
          {
@@ -473,15 +473,15 @@
           "detail": "20 matches"
          },
          {
-          "path": "docs_src/websockets_/tutorial002_an_py310.py",
+          "path": "docs_src/websockets_/tutorial002.py",
           "detail": "16 matches"
          },
          {
-          "path": "docs_src/websockets_/tutorial002_py310.py",
+          "path": "docs_src/websockets_/tutorial002_non_an.py",
           "detail": "16 matches"
          },
          {
-          "path": "docs_src/app_testing/tutorial002_py310.py",
+          "path": "docs_src/app_testing/tutorial002.py",
           "detail": "15 matches"
          },
          {
@@ -493,12 +493,12 @@
           "detail": "12 matches"
          },
          {
-          "path": "docs_src/websockets_/tutorial001_py310.py",
+          "path": "docs_src/websockets_/tutorial001.py",
           "detail": "10 matches"
          },
          {
           "path": "fastapi/dependencies/utils.py",
-          "detail": "9 matches"
+          "detail": "10 matches"
          },
          {
           "path": "fastapi/websockets.py",
@@ -517,23 +517,23 @@
           "detail": "7 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "path": "docs_src/server_sent_events/tutorial002.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial005_py310.py",
+          "path": "docs_src/server_sent_events/tutorial005.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial001_py310.py",
+          "path": "docs_src/server_sent_events/tutorial001.py",
           "detail": "5 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial003_py310.py",
+          "path": "docs_src/server_sent_events/tutorial003.py",
           "detail": "5 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial004_py310.py",
+          "path": "docs_src/server_sent_events/tutorial004.py",
           "detail": "5 matches"
          },
          {
@@ -566,7 +566,7 @@
           "detail": "43 matches"
          },
          {
-          "path": "docs_src/websockets_/tutorial003_py310.py",
+          "path": "docs_src/websockets_/tutorial003.py",
           "detail": "22 matches"
          },
          {
@@ -574,15 +574,15 @@
           "detail": "20 matches"
          },
          {
-          "path": "docs_src/websockets_/tutorial002_an_py310.py",
+          "path": "docs_src/websockets_/tutorial002.py",
           "detail": "16 matches"
          },
          {
-          "path": "docs_src/websockets_/tutorial002_py310.py",
+          "path": "docs_src/websockets_/tutorial002_non_an.py",
           "detail": "16 matches"
          },
          {
-          "path": "docs_src/app_testing/tutorial002_py310.py",
+          "path": "docs_src/app_testing/tutorial002.py",
           "detail": "15 matches"
          },
          {
@@ -594,12 +594,12 @@
           "detail": "12 matches"
          },
          {
-          "path": "docs_src/websockets_/tutorial001_py310.py",
+          "path": "docs_src/websockets_/tutorial001.py",
           "detail": "10 matches"
          },
          {
           "path": "fastapi/dependencies/utils.py",
-          "detail": "9 matches"
+          "detail": "10 matches"
          },
          {
           "path": "fastapi/websockets.py",
@@ -618,23 +618,23 @@
           "detail": "7 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "path": "docs_src/server_sent_events/tutorial002.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial005_py310.py",
+          "path": "docs_src/server_sent_events/tutorial005.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial001_py310.py",
+          "path": "docs_src/server_sent_events/tutorial001.py",
           "detail": "5 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial003_py310.py",
+          "path": "docs_src/server_sent_events/tutorial003.py",
           "detail": "5 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial004_py310.py",
+          "path": "docs_src/server_sent_events/tutorial004.py",
           "detail": "5 matches"
          },
          {
@@ -729,7 +729,7 @@
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/authentication_error_status_code/tutorial001_an_py310.py",
+          "path": "docs_src/authentication_error_status_code/tutorial001.py",
           "detail": "2 matches"
          },
          {
@@ -779,15 +779,15 @@
           "detail": "12 matches"
          },
          {
-          "path": "docs_src/security/tutorial005_an_py310.py",
-          "detail": "10 matches"
-         },
-         {
-          "path": "docs_src/security/tutorial005_py310.py",
-          "detail": "10 matches"
-         },
-         {
           "path": "fastapi/dependencies/utils.py",
+          "detail": "11 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial005.py",
+          "detail": "10 matches"
+         },
+         {
+          "path": "docs_src/security/tutorial005_non_an.py",
           "detail": "10 matches"
          },
          {
@@ -811,11 +811,11 @@
           "detail": "2 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial008e_an_py310.py",
+          "path": "docs_src/dependencies/tutorial008e.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial008e_py310.py",
+          "path": "docs_src/dependencies/tutorial008e_non_an.py",
           "detail": "1 match"
          },
          {
@@ -904,7 +904,7 @@
           "detail": "23 matches"
          },
          {
-          "path": "docs_src/handling_errors/tutorial006_py310.py",
+          "path": "docs_src/handling_errors/tutorial006.py",
           "detail": "15 matches"
          },
          {
@@ -912,47 +912,47 @@
           "detail": "12 matches"
          },
          {
-          "path": "docs_src/handling_errors/tutorial004_py310.py",
+          "path": "docs_src/handling_errors/tutorial004.py",
           "detail": "10 matches"
          },
          {
-          "path": "docs_src/app_testing/app_b_an_py310/main.py",
+          "path": "docs_src/app_testing/app_b/main.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/app_testing/app_b_py310/main.py",
+          "path": "docs_src/app_testing/app_b_non_an/main.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/security/tutorial003_an_py310.py",
+          "path": "docs_src/security/tutorial003.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/security/tutorial003_py310.py",
+          "path": "docs_src/security/tutorial003_non_an.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/security/tutorial005_an_py310.py",
+          "path": "docs_src/security/tutorial005.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/security/tutorial005_py310.py",
+          "path": "docs_src/security/tutorial005_non_an.py",
           "detail": "6 matches"
          },
          {
-          "path": "docs_src/security/tutorial004_an_py310.py",
+          "path": "docs_src/security/tutorial004.py",
           "detail": "5 matches"
          },
          {
-          "path": "docs_src/security/tutorial004_py310.py",
+          "path": "docs_src/security/tutorial004_non_an.py",
           "detail": "5 matches"
          },
          {
-          "path": "docs_src/sql_databases/tutorial002_an_py310.py",
+          "path": "docs_src/sql_databases/tutorial002.py",
           "detail": "5 matches"
          },
          {
-          "path": "docs_src/sql_databases/tutorial002_py310.py",
+          "path": "docs_src/sql_databases/tutorial002_non_an.py",
           "detail": "5 matches"
          },
          {
@@ -960,43 +960,43 @@
           "detail": "5 matches"
          },
          {
-          "path": "docs_src/authentication_error_status_code/tutorial001_an_py310.py",
+          "path": "docs_src/authentication_error_status_code/tutorial001.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial006_an_py310.py",
+          "path": "docs_src/dependencies/tutorial006.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial006_py310.py",
+          "path": "docs_src/dependencies/tutorial006_non_an.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial008b_an_py310.py",
+          "path": "docs_src/dependencies/tutorial008b.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial008b_py310.py",
+          "path": "docs_src/dependencies/tutorial008b_non_an.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial012_an_py310.py",
+          "path": "docs_src/dependencies/tutorial012.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial012_py310.py",
+          "path": "docs_src/dependencies/tutorial012_non_an.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial007_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial007.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/sql_databases/tutorial001_an_py310.py",
+          "path": "docs_src/sql_databases/tutorial001.py",
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/sql_databases/tutorial001_py310.py",
+          "path": "docs_src/sql_databases/tutorial001_non_an.py",
           "detail": "4 matches"
          },
          {
@@ -1004,67 +1004,67 @@
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/bigger_applications/app_an_py310/dependencies.py",
+          "path": "docs_src/bigger_applications/app/dependencies.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/bigger_applications/app_an_py310/routers/items.py",
+          "path": "docs_src/bigger_applications/app/routers/items.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/custom_request_and_route/tutorial002_an_py310.py",
+          "path": "docs_src/custom_request_and_route/tutorial002.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/custom_request_and_route/tutorial002_py310.py",
+          "path": "docs_src/custom_request_and_route/tutorial002_non_an.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial008c_an_py310.py",
+          "path": "docs_src/dependencies/tutorial008c.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial008c_py310.py",
+          "path": "docs_src/dependencies/tutorial008c_non_an.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial008d_an_py310.py",
+          "path": "docs_src/dependencies/tutorial008d.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial008d_py310.py",
+          "path": "docs_src/dependencies/tutorial008d_non_an.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial013_an_py310.py",
+          "path": "docs_src/dependencies/tutorial013.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial014_an_py310.py",
+          "path": "docs_src/dependencies/tutorial014.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/handling_errors/tutorial001_py310.py",
+          "path": "docs_src/handling_errors/tutorial001.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/handling_errors/tutorial002_py310.py",
+          "path": "docs_src/handling_errors/tutorial002.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/handling_errors/tutorial003_py310.py",
+          "path": "docs_src/handling_errors/tutorial003.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/handling_errors/tutorial005_py310.py",
+          "path": "docs_src/handling_errors/tutorial005.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/security/tutorial007_an_py310.py",
+          "path": "docs_src/security/tutorial007.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/security/tutorial007_py310.py",
+          "path": "docs_src/security/tutorial007_non_an.py",
           "detail": "3 matches"
          },
          {
@@ -1084,7 +1084,7 @@
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/sub_applications/tutorial001_py310.py",
+          "path": "docs_src/sub_applications/tutorial001.py",
           "detail": "2 matches"
          },
          {
@@ -1096,1295 +1096,1295 @@
           "detail": "2 matches"
          },
          {
-          "path": "docs_src/additional_responses/tutorial001_py310.py",
+          "path": "docs_src/additional_responses/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/additional_responses/tutorial002_py310.py",
+          "path": "docs_src/additional_responses/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/additional_responses/tutorial003_py310.py",
+          "path": "docs_src/additional_responses/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/additional_responses/tutorial004_py310.py",
+          "path": "docs_src/additional_responses/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/additional_status_codes/tutorial001_an_py310.py",
+          "path": "docs_src/additional_status_codes/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/additional_status_codes/tutorial001_py310.py",
+          "path": "docs_src/additional_status_codes/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/advanced_middleware/tutorial001_py310.py",
+          "path": "docs_src/advanced_middleware/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/advanced_middleware/tutorial002_py310.py",
+          "path": "docs_src/advanced_middleware/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/advanced_middleware/tutorial003_py310.py",
+          "path": "docs_src/advanced_middleware/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/app_testing/app_a_py310/main.py",
+          "path": "docs_src/app_testing/app_a/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/app_testing/tutorial001_py310.py",
+          "path": "docs_src/app_testing/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/app_testing/tutorial002_py310.py",
+          "path": "docs_src/app_testing/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/app_testing/tutorial003_py310.py",
+          "path": "docs_src/app_testing/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/app_testing/tutorial004_py310.py",
+          "path": "docs_src/app_testing/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/async_tests/app_a_py310/main.py",
+          "path": "docs_src/async_tests/app_a/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/background_tasks/tutorial001_py310.py",
+          "path": "docs_src/background_tasks/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/background_tasks/tutorial002_an_py310.py",
+          "path": "docs_src/background_tasks/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/background_tasks/tutorial002_py310.py",
+          "path": "docs_src/background_tasks/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/behind_a_proxy/tutorial001_01_py310.py",
+          "path": "docs_src/behind_a_proxy/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/behind_a_proxy/tutorial001_py310.py",
+          "path": "docs_src/behind_a_proxy/tutorial001_01.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/behind_a_proxy/tutorial002_py310.py",
+          "path": "docs_src/behind_a_proxy/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/behind_a_proxy/tutorial003_py310.py",
+          "path": "docs_src/behind_a_proxy/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/behind_a_proxy/tutorial004_py310.py",
+          "path": "docs_src/behind_a_proxy/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/bigger_applications/app_an_py310/main.py",
+          "path": "docs_src/bigger_applications/app/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body/tutorial001_py310.py",
+          "path": "docs_src/body/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body/tutorial002_py310.py",
+          "path": "docs_src/body/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body/tutorial003_py310.py",
+          "path": "docs_src/body/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body/tutorial004_py310.py",
+          "path": "docs_src/body/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_fields/tutorial001_an_py310.py",
+          "path": "docs_src/body_fields/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_fields/tutorial001_py310.py",
+          "path": "docs_src/body_fields/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial001_an_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial001_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial002_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial003_an_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial003_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial004_an_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial004_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial005_an_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial005_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial001_py310.py",
+          "path": "docs_src/body_nested_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial002_py310.py",
+          "path": "docs_src/body_nested_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial003_py310.py",
+          "path": "docs_src/body_nested_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial004_py310.py",
+          "path": "docs_src/body_nested_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial005_py310.py",
+          "path": "docs_src/body_nested_models/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial006_py310.py",
+          "path": "docs_src/body_nested_models/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial007_py310.py",
+          "path": "docs_src/body_nested_models/tutorial007.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial008_py310.py",
+          "path": "docs_src/body_nested_models/tutorial008.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial009_py310.py",
+          "path": "docs_src/body_nested_models/tutorial009.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_updates/tutorial001_py310.py",
+          "path": "docs_src/body_updates/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_updates/tutorial002_py310.py",
+          "path": "docs_src/body_updates/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/conditional_openapi/tutorial001_py310.py",
+          "path": "docs_src/conditional_openapi/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/configure_swagger_ui/tutorial001_py310.py",
+          "path": "docs_src/configure_swagger_ui/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/configure_swagger_ui/tutorial002_py310.py",
+          "path": "docs_src/configure_swagger_ui/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/configure_swagger_ui/tutorial003_py310.py",
+          "path": "docs_src/configure_swagger_ui/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial001_an_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial001_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial002_an_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial002_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial003_an_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial003_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_params/tutorial001_an_py310.py",
+          "path": "docs_src/cookie_params/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_params/tutorial001_py310.py",
+          "path": "docs_src/cookie_params/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cors/tutorial001_py310.py",
+          "path": "docs_src/cors/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_docs_ui/tutorial001_py310.py",
+          "path": "docs_src/custom_docs_ui/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_docs_ui/tutorial002_py310.py",
+          "path": "docs_src/custom_docs_ui/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_request_and_route/tutorial001_an_py310.py",
+          "path": "docs_src/custom_request_and_route/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_request_and_route/tutorial001_py310.py",
+          "path": "docs_src/custom_request_and_route/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_request_and_route/tutorial003_py310.py",
+          "path": "docs_src/custom_request_and_route/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial001_py310.py",
+          "path": "docs_src/custom_response/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial001b_py310.py",
+          "path": "docs_src/custom_response/tutorial001b.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial002_py310.py",
+          "path": "docs_src/custom_response/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial003_py310.py",
+          "path": "docs_src/custom_response/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial004_py310.py",
+          "path": "docs_src/custom_response/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial005_py310.py",
+          "path": "docs_src/custom_response/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial006_py310.py",
+          "path": "docs_src/custom_response/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial006b_py310.py",
+          "path": "docs_src/custom_response/tutorial006b.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial006c_py310.py",
+          "path": "docs_src/custom_response/tutorial006c.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial007_py310.py",
+          "path": "docs_src/custom_response/tutorial007.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial008_py310.py",
+          "path": "docs_src/custom_response/tutorial008.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial009_py310.py",
+          "path": "docs_src/custom_response/tutorial009.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial009b_py310.py",
+          "path": "docs_src/custom_response/tutorial009b.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial009c_py310.py",
+          "path": "docs_src/custom_response/tutorial009c.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/custom_response/tutorial010_py310.py",
+          "path": "docs_src/custom_response/tutorial010.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dataclasses_/tutorial001_py310.py",
+          "path": "docs_src/dataclasses_/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dataclasses_/tutorial002_py310.py",
+          "path": "docs_src/dataclasses_/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dataclasses_/tutorial003_py310.py",
+          "path": "docs_src/dataclasses_/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/debugging/tutorial001_py310.py",
+          "path": "docs_src/debugging/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial001_02_an_py310.py",
+          "path": "docs_src/dependencies/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial001_an_py310.py",
+          "path": "docs_src/dependencies/tutorial001_02.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial001_py310.py",
+          "path": "docs_src/dependencies/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial002_an_py310.py",
+          "path": "docs_src/dependencies/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial002_py310.py",
+          "path": "docs_src/dependencies/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial003_an_py310.py",
+          "path": "docs_src/dependencies/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial003_py310.py",
+          "path": "docs_src/dependencies/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial004_an_py310.py",
+          "path": "docs_src/dependencies/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial004_py310.py",
+          "path": "docs_src/dependencies/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial005_an_py310.py",
+          "path": "docs_src/dependencies/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial005_py310.py",
+          "path": "docs_src/dependencies/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial008e_an_py310.py",
+          "path": "docs_src/dependencies/tutorial008e.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial008e_py310.py",
+          "path": "docs_src/dependencies/tutorial008e_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial011_an_py310.py",
+          "path": "docs_src/dependencies/tutorial011.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial011_py310.py",
+          "path": "docs_src/dependencies/tutorial011_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependency_testing/tutorial001_an_py310.py",
+          "path": "docs_src/dependency_testing/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependency_testing/tutorial001_py310.py",
+          "path": "docs_src/dependency_testing/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/encoder/tutorial001_py310.py",
+          "path": "docs_src/encoder/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/events/tutorial001_py310.py",
+          "path": "docs_src/events/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/events/tutorial002_py310.py",
+          "path": "docs_src/events/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/events/tutorial003_py310.py",
+          "path": "docs_src/events/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extending_openapi/tutorial001_py310.py",
+          "path": "docs_src/extending_openapi/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_data_types/tutorial001_an_py310.py",
+          "path": "docs_src/extra_data_types/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_data_types/tutorial001_py310.py",
+          "path": "docs_src/extra_data_types/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial001_py310.py",
+          "path": "docs_src/extra_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial002_py310.py",
+          "path": "docs_src/extra_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial003_py310.py",
+          "path": "docs_src/extra_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial004_py310.py",
+          "path": "docs_src/extra_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial005_py310.py",
+          "path": "docs_src/extra_models/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/first_steps/tutorial001_py310.py",
+          "path": "docs_src/first_steps/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/first_steps/tutorial003_py310.py",
+          "path": "docs_src/first_steps/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/frontend/tutorial001_py310.py",
+          "path": "docs_src/frontend/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/frontend/tutorial002_py310.py",
+          "path": "docs_src/frontend/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/frontend/tutorial003_py310.py",
+          "path": "docs_src/frontend/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/frontend/tutorial004_py310.py",
+          "path": "docs_src/frontend/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/frontend/tutorial005_py310.py",
+          "path": "docs_src/frontend/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/frontend/tutorial006_py310.py",
+          "path": "docs_src/frontend/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/generate_clients/tutorial001_py310.py",
+          "path": "docs_src/generate_clients/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/generate_clients/tutorial002_py310.py",
+          "path": "docs_src/generate_clients/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/generate_clients/tutorial003_py310.py",
+          "path": "docs_src/generate_clients/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/graphql_/tutorial001_py310.py",
+          "path": "docs_src/graphql_/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial001_an_py310.py",
+          "path": "docs_src/header_param_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial001_py310.py",
+          "path": "docs_src/header_param_models/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial002_an_py310.py",
+          "path": "docs_src/header_param_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial002_py310.py",
+          "path": "docs_src/header_param_models/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial003_an_py310.py",
+          "path": "docs_src/header_param_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial003_py310.py",
+          "path": "docs_src/header_param_models/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial004_an_py310.py",
+          "path": "docs_src/header_param_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial004_py310.py",
+          "path": "docs_src/header_param_models/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_params/tutorial001_an_py310.py",
+          "path": "docs_src/header_params/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_params/tutorial001_py310.py",
+          "path": "docs_src/header_params/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_params/tutorial002_an_py310.py",
+          "path": "docs_src/header_params/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_params/tutorial002_py310.py",
+          "path": "docs_src/header_params/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_params/tutorial003_an_py310.py",
+          "path": "docs_src/header_params/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_params/tutorial003_py310.py",
+          "path": "docs_src/header_params/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/json_base64_bytes/tutorial001_py310.py",
+          "path": "docs_src/json_base64_bytes/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/metadata/tutorial001_1_py310.py",
+          "path": "docs_src/metadata/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/metadata/tutorial001_py310.py",
+          "path": "docs_src/metadata/tutorial001_1.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/metadata/tutorial002_py310.py",
+          "path": "docs_src/metadata/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/metadata/tutorial003_py310.py",
+          "path": "docs_src/metadata/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/metadata/tutorial004_py310.py",
+          "path": "docs_src/metadata/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/middleware/tutorial001_py310.py",
+          "path": "docs_src/middleware/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/openapi_callbacks/tutorial001_py310.py",
+          "path": "docs_src/openapi_callbacks/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/openapi_webhooks/tutorial001_py310.py",
+          "path": "docs_src/openapi_webhooks/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/opentelemetry/tutorial001_py310.py",
+          "path": "docs_src/opentelemetry/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/opentelemetry/tutorial002_py310.py",
+          "path": "docs_src/opentelemetry/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/opentelemetry/tutorial003_py310.py",
+          "path": "docs_src/opentelemetry/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial001_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial002_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial003_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial004_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial005_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial006_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial001_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial002_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial002b_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial002b.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial003_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial004_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial005_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial006_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params/tutorial001_py310.py",
+          "path": "docs_src/path_params/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params/tutorial002_py310.py",
+          "path": "docs_src/path_params/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params/tutorial003_py310.py",
+          "path": "docs_src/path_params/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params/tutorial003b_py310.py",
+          "path": "docs_src/path_params/tutorial003b.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params/tutorial004_py310.py",
+          "path": "docs_src/path_params/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params/tutorial005_py310.py",
+          "path": "docs_src/path_params/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial001_an_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial001_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial002_an_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial002_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial003_an_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial003_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial004_an_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial004_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial005_an_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial005_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial006_an_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_params_numeric_validations/tutorial006_py310.py",
+          "path": "docs_src/path_params_numeric_validations/tutorial006_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/pydantic_v1_in_v2/tutorial002_an_py310.py",
+          "path": "docs_src/pydantic_v1_in_v2/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/pydantic_v1_in_v2/tutorial003_an_py310.py",
+          "path": "docs_src/pydantic_v1_in_v2/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/pydantic_v1_in_v2/tutorial004_an_py310.py",
+          "path": "docs_src/pydantic_v1_in_v2/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial001_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial001_py310.py",
+          "path": "docs_src/query_param_models/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial002_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial002_py310.py",
+          "path": "docs_src/query_param_models/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial003_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial003_py310.py",
+          "path": "docs_src/query_param_models/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial004_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial004_py310.py",
+          "path": "docs_src/query_param_models/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params/tutorial001_py310.py",
+          "path": "docs_src/query_params/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params/tutorial002_py310.py",
+          "path": "docs_src/query_params/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params/tutorial003_py310.py",
+          "path": "docs_src/query_params/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params/tutorial004_py310.py",
+          "path": "docs_src/query_params/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params/tutorial005_py310.py",
+          "path": "docs_src/query_params/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params/tutorial006_py310.py",
+          "path": "docs_src/query_params/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial001_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial002_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial002_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial003_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial003_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial004_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial004_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial005_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial005_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial006_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial006_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial006_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial006c_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial006c.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial006c_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial006c_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial007_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial007.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial007_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial007_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial008_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial008.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial008_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial008_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial009_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial009.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial009_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial009_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial010_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial010.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial010_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial010_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial011_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial011.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial011_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial011_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial012_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial012.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial012_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial012_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial013_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial013.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial013_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial013_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial014_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial014.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial014_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial014_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial015_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial015.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial001_02_an_py310.py",
+          "path": "docs_src/request_files/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial001_02_py310.py",
+          "path": "docs_src/request_files/tutorial001_02.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial001_03_an_py310.py",
+          "path": "docs_src/request_files/tutorial001_02_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial001_03_py310.py",
+          "path": "docs_src/request_files/tutorial001_03.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial001_an_py310.py",
+          "path": "docs_src/request_files/tutorial001_03_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial001_py310.py",
+          "path": "docs_src/request_files/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial002_an_py310.py",
+          "path": "docs_src/request_files/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial002_py310.py",
+          "path": "docs_src/request_files/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial003_an_py310.py",
+          "path": "docs_src/request_files/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_files/tutorial003_py310.py",
+          "path": "docs_src/request_files/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial001_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial001_py310.py",
+          "path": "docs_src/request_form_models/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial002_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial002_py310.py",
+          "path": "docs_src/request_form_models/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial003_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial003_py310.py",
+          "path": "docs_src/request_form_models/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial004_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial004_py310.py",
+          "path": "docs_src/request_form_models/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial005_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial005_py310.py",
+          "path": "docs_src/request_form_models/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial006_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial006_py310.py",
+          "path": "docs_src/request_form_models/tutorial006_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial007_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial007.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial007_py310.py",
+          "path": "docs_src/request_form_models/tutorial007_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_forms/tutorial001_an_py310.py",
+          "path": "docs_src/request_forms/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_forms/tutorial001_py310.py",
+          "path": "docs_src/request_forms/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_forms/tutorial002_an_py310.py",
+          "path": "docs_src/request_forms/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_forms/tutorial002_py310.py",
+          "path": "docs_src/request_forms/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_forms_and_files/tutorial001_an_py310.py",
+          "path": "docs_src/request_forms_and_files/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_forms_and_files/tutorial001_py310.py",
+          "path": "docs_src/request_forms_and_files/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_change_status_code/tutorial001_py310.py",
+          "path": "docs_src/response_change_status_code/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_cookies/tutorial001_py310.py",
+          "path": "docs_src/response_cookies/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_cookies/tutorial002_py310.py",
+          "path": "docs_src/response_cookies/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_directly/tutorial001_py310.py",
+          "path": "docs_src/response_directly/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_directly/tutorial002_py310.py",
+          "path": "docs_src/response_directly/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_headers/tutorial001_py310.py",
+          "path": "docs_src/response_headers/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_headers/tutorial002_py310.py",
+          "path": "docs_src/response_headers/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial001_01_py310.py",
+          "path": "docs_src/response_model/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial001_py310.py",
+          "path": "docs_src/response_model/tutorial001_01.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial002_py310.py",
+          "path": "docs_src/response_model/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial003_01_py310.py",
+          "path": "docs_src/response_model/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial003_02_py310.py",
+          "path": "docs_src/response_model/tutorial003_01.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial003_03_py310.py",
+          "path": "docs_src/response_model/tutorial003_02.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial003_04_py310.py",
+          "path": "docs_src/response_model/tutorial003_03.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial003_05_py310.py",
+          "path": "docs_src/response_model/tutorial003_04.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial003_py310.py",
+          "path": "docs_src/response_model/tutorial003_05.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial004_py310.py",
+          "path": "docs_src/response_model/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial005_py310.py",
+          "path": "docs_src/response_model/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial006_py310.py",
+          "path": "docs_src/response_model/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_status_code/tutorial001_py310.py",
+          "path": "docs_src/response_status_code/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_status_code/tutorial002_py310.py",
+          "path": "docs_src/response_status_code/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial001_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial002_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial003_an_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial003_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial004_an_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial004_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial005_an_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial005_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial001_an_py310.py",
+          "path": "docs_src/security/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial001_py310.py",
+          "path": "docs_src/security/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial002_an_py310.py",
+          "path": "docs_src/security/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial002_py310.py",
+          "path": "docs_src/security/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial006_an_py310.py",
+          "path": "docs_src/security/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial006_py310.py",
+          "path": "docs_src/security/tutorial006_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/separate_openapi_schemas/tutorial001_py310.py",
+          "path": "docs_src/separate_openapi_schemas/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/separate_openapi_schemas/tutorial002_py310.py",
+          "path": "docs_src/separate_openapi_schemas/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial001_py310.py",
+          "path": "docs_src/server_sent_events/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "path": "docs_src/server_sent_events/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial003_py310.py",
+          "path": "docs_src/server_sent_events/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial004_py310.py",
+          "path": "docs_src/server_sent_events/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial005_py310.py",
+          "path": "docs_src/server_sent_events/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/settings/app01_py310/main.py",
+          "path": "docs_src/settings/app01/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/settings/app02_an_py310/main.py",
+          "path": "docs_src/settings/app02/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/settings/app02_py310/main.py",
+          "path": "docs_src/settings/app02_non_an/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/settings/app03_an_py310/main.py",
+          "path": "docs_src/settings/app03/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/settings/app03_py310/main.py",
+          "path": "docs_src/settings/app03_non_an/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/settings/tutorial001_py310.py",
+          "path": "docs_src/settings/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/static_files/tutorial001_py310.py",
+          "path": "docs_src/static_files/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/stream_data/tutorial001_py310.py",
+          "path": "docs_src/stream_data/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/stream_data/tutorial002_py310.py",
+          "path": "docs_src/stream_data/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/stream_json_lines/tutorial001_py310.py",
+          "path": "docs_src/stream_json_lines/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/strict_content_type/tutorial001_py310.py",
+          "path": "docs_src/strict_content_type/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/templates/tutorial001_py310.py",
+          "path": "docs_src/templates/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/templates/tutorial002_py310.py",
+          "path": "docs_src/templates/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/using_request_directly/tutorial001_py310.py",
+          "path": "docs_src/using_request_directly/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/websockets_/tutorial001_py310.py",
+          "path": "docs_src/websockets_/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/websockets_/tutorial002_an_py310.py",
+          "path": "docs_src/websockets_/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/websockets_/tutorial002_py310.py",
+          "path": "docs_src/websockets_/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/websockets_/tutorial003_py310.py",
+          "path": "docs_src/websockets_/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/wsgi/tutorial001_py310.py",
+          "path": "docs_src/wsgi/tutorial001.py",
           "detail": "1 match"
          }
         ],
@@ -2409,11 +2409,11 @@
           "detail": "4 matches"
          },
          {
-          "path": "docs_src/custom_response/tutorial006c_py310.py",
+          "path": "docs_src/custom_response/tutorial006c.py",
           "detail": "2 matches"
          },
          {
-          "path": "docs_src/pydantic_v1_in_v2/tutorial003_an_py310.py",
+          "path": "docs_src/pydantic_v1_in_v2/tutorial003.py",
           "detail": "2 matches"
          },
          {
@@ -2433,503 +2433,503 @@
           "detail": "2 matches"
          },
          {
-          "path": "docs_src/additional_responses/tutorial001_py310.py",
+          "path": "docs_src/additional_responses/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/additional_responses/tutorial002_py310.py",
+          "path": "docs_src/additional_responses/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/additional_responses/tutorial003_py310.py",
+          "path": "docs_src/additional_responses/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/additional_responses/tutorial004_py310.py",
+          "path": "docs_src/additional_responses/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/app_testing/app_b_an_py310/main.py",
+          "path": "docs_src/app_testing/app_b/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/app_testing/app_b_py310/main.py",
+          "path": "docs_src/app_testing/app_b_non_an/main.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body/tutorial001_py310.py",
+          "path": "docs_src/body/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body/tutorial002_py310.py",
+          "path": "docs_src/body/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body/tutorial003_py310.py",
+          "path": "docs_src/body/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body/tutorial004_py310.py",
+          "path": "docs_src/body/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_fields/tutorial001_an_py310.py",
+          "path": "docs_src/body_fields/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_fields/tutorial001_py310.py",
+          "path": "docs_src/body_fields/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial001_an_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial001_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial002_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial003_an_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial003_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial004_an_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial004_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial005_an_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_multiple_params/tutorial005_py310.py",
+          "path": "docs_src/body_multiple_params/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial001_py310.py",
+          "path": "docs_src/body_nested_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial002_py310.py",
+          "path": "docs_src/body_nested_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial003_py310.py",
+          "path": "docs_src/body_nested_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial004_py310.py",
+          "path": "docs_src/body_nested_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial005_py310.py",
+          "path": "docs_src/body_nested_models/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial006_py310.py",
+          "path": "docs_src/body_nested_models/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial007_py310.py",
+          "path": "docs_src/body_nested_models/tutorial007.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_nested_models/tutorial008_py310.py",
+          "path": "docs_src/body_nested_models/tutorial008.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_updates/tutorial001_py310.py",
+          "path": "docs_src/body_updates/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/body_updates/tutorial002_py310.py",
+          "path": "docs_src/body_updates/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial001_an_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial001_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial002_an_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial002_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial003_an_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/cookie_param_models/tutorial003_py310.py",
+          "path": "docs_src/cookie_param_models/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dataclasses_/tutorial003_py310.py",
+          "path": "docs_src/dataclasses_/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/encoder/tutorial001_py310.py",
+          "path": "docs_src/encoder/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial001_py310.py",
+          "path": "docs_src/extra_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial002_py310.py",
+          "path": "docs_src/extra_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial003_py310.py",
+          "path": "docs_src/extra_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/extra_models/tutorial004_py310.py",
+          "path": "docs_src/extra_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/generate_clients/tutorial001_py310.py",
+          "path": "docs_src/generate_clients/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/generate_clients/tutorial002_py310.py",
+          "path": "docs_src/generate_clients/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/generate_clients/tutorial003_py310.py",
+          "path": "docs_src/generate_clients/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/handling_errors/tutorial005_py310.py",
+          "path": "docs_src/handling_errors/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial001_an_py310.py",
+          "path": "docs_src/header_param_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial001_py310.py",
+          "path": "docs_src/header_param_models/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial002_an_py310.py",
+          "path": "docs_src/header_param_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial002_py310.py",
+          "path": "docs_src/header_param_models/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial003_an_py310.py",
+          "path": "docs_src/header_param_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial003_py310.py",
+          "path": "docs_src/header_param_models/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial004_an_py310.py",
+          "path": "docs_src/header_param_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/header_param_models/tutorial004_py310.py",
+          "path": "docs_src/header_param_models/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/json_base64_bytes/tutorial001_py310.py",
+          "path": "docs_src/json_base64_bytes/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/openapi_callbacks/tutorial001_py310.py",
+          "path": "docs_src/openapi_callbacks/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/openapi_webhooks/tutorial001_py310.py",
+          "path": "docs_src/openapi_webhooks/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial004_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_advanced_configuration/tutorial007_py310.py",
+          "path": "docs_src/path_operation_advanced_configuration/tutorial007.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial001_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial002_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial003_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial004_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/path_operation_configuration/tutorial005_py310.py",
+          "path": "docs_src/path_operation_configuration/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/pydantic_v1_in_v2/tutorial001_an_py310.py",
+          "path": "docs_src/pydantic_v1_in_v2/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/pydantic_v1_in_v2/tutorial002_an_py310.py",
+          "path": "docs_src/pydantic_v1_in_v2/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/pydantic_v1_in_v2/tutorial004_an_py310.py",
+          "path": "docs_src/pydantic_v1_in_v2/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/python_types/tutorial011_py310.py",
+          "path": "docs_src/python_types/tutorial011.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial001_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial001_py310.py",
+          "path": "docs_src/query_param_models/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial002_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial002_py310.py",
+          "path": "docs_src/query_param_models/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial003_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial003_py310.py",
+          "path": "docs_src/query_param_models/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial004_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_param_models/tutorial004_py310.py",
+          "path": "docs_src/query_param_models/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial015_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial015.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial001_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial001_py310.py",
+          "path": "docs_src/request_form_models/tutorial001_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial002_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial002_py310.py",
+          "path": "docs_src/request_form_models/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial003_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial003_py310.py",
+          "path": "docs_src/request_form_models/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial004_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial004_py310.py",
+          "path": "docs_src/request_form_models/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial005_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial005_py310.py",
+          "path": "docs_src/request_form_models/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial006_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial006_py310.py",
+          "path": "docs_src/request_form_models/tutorial006_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial007_an_py310.py",
+          "path": "docs_src/request_form_models/tutorial007.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/request_form_models/tutorial007_py310.py",
+          "path": "docs_src/request_form_models/tutorial007_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_directly/tutorial001_py310.py",
+          "path": "docs_src/response_directly/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial001_01_py310.py",
+          "path": "docs_src/response_model/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial001_py310.py",
+          "path": "docs_src/response_model/tutorial001_01.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial002_py310.py",
+          "path": "docs_src/response_model/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial003_01_py310.py",
+          "path": "docs_src/response_model/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial003_py310.py",
+          "path": "docs_src/response_model/tutorial003_01.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial004_py310.py",
+          "path": "docs_src/response_model/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial005_py310.py",
+          "path": "docs_src/response_model/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/response_model/tutorial006_py310.py",
+          "path": "docs_src/response_model/tutorial006.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial001_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial002_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial003_an_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial003_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial004_an_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial004_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial005_an_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/schema_extra_example/tutorial005_py310.py",
+          "path": "docs_src/schema_extra_example/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial002_an_py310.py",
+          "path": "docs_src/security/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial002_py310.py",
+          "path": "docs_src/security/tutorial002_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial003_an_py310.py",
+          "path": "docs_src/security/tutorial003.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial003_py310.py",
+          "path": "docs_src/security/tutorial003_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial004_an_py310.py",
+          "path": "docs_src/security/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial004_py310.py",
+          "path": "docs_src/security/tutorial004_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial005_an_py310.py",
+          "path": "docs_src/security/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/security/tutorial005_py310.py",
+          "path": "docs_src/security/tutorial005_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/separate_openapi_schemas/tutorial001_py310.py",
+          "path": "docs_src/separate_openapi_schemas/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/separate_openapi_schemas/tutorial002_py310.py",
+          "path": "docs_src/separate_openapi_schemas/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial001_py310.py",
+          "path": "docs_src/server_sent_events/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "path": "docs_src/server_sent_events/tutorial002.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial004_py310.py",
+          "path": "docs_src/server_sent_events/tutorial004.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial005_py310.py",
+          "path": "docs_src/server_sent_events/tutorial005.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/stream_json_lines/tutorial001_py310.py",
+          "path": "docs_src/stream_json_lines/tutorial001.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/strict_content_type/tutorial001_py310.py",
+          "path": "docs_src/strict_content_type/tutorial001.py",
           "detail": "1 match"
          },
          {
@@ -2973,11 +2973,11 @@
           "detail": "12 matches"
          },
          {
-          "path": "docs_src/query_param_models/tutorial003_an_py310.py",
+          "path": "docs_src/query_param_models/tutorial003.py",
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/query_param_models/tutorial003_py310.py",
+          "path": "docs_src/query_param_models/tutorial003_non_an.py",
           "detail": "3 matches"
          },
          {
@@ -3037,12 +3037,12 @@
           "detail": "12 matches"
          },
          {
-          "path": "scripts/docs.py",
-          "detail": "9 matches"
-         },
-         {
           "path": "scripts/deploy_docs_status.py",
           "detail": "8 matches"
+         },
+         {
+          "path": "scripts/docs.py",
+          "detail": "4 matches"
          },
          {
           "path": "fastapi/logger.py",
@@ -3112,23 +3112,23 @@
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/dependencies/tutorial008c_an_py310.py",
+          "path": "docs_src/dependencies/tutorial008c.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial008c_py310.py",
+          "path": "docs_src/dependencies/tutorial008c_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial008d_an_py310.py",
+          "path": "docs_src/dependencies/tutorial008d.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/dependencies/tutorial008d_py310.py",
+          "path": "docs_src/dependencies/tutorial008d_non_an.py",
           "detail": "1 match"
          },
          {
-          "path": "docs_src/query_params_str_validations/tutorial015_an_py310.py",
+          "path": "docs_src/query_params_str_validations/tutorial015.py",
           "detail": "1 match"
          },
          {
@@ -3141,6 +3141,10 @@
          },
          {
           "path": "fastapi/encoders.py",
+          "detail": "1 match"
+         },
+         {
+          "path": "fastapi/params.py",
           "detail": "1 match"
          },
          {
@@ -3165,7 +3169,7 @@
           "detail": "3 matches"
          },
          {
-          "path": "docs_src/server_sent_events/tutorial002_py310.py",
+          "path": "docs_src/server_sent_events/tutorial002.py",
           "detail": "1 match"
          },
          {
@@ -3361,7 +3365,7 @@
          },
          {
           "path": null,
-          "detail": "6 runtime dependencies"
+          "detail": "7 runtime dependencies"
          }
         ],
         "note": ""
@@ -3457,7 +3461,7 @@
     "gaps": [
      "[service] L1 A health or readiness endpoint, or a container healthcheck. (no health endpoint or healthcheck)",
      "[cli] L2 Verbosity control for diagnostics (--quiet, --log-level, --debug). (no --quiet or log-level control)",
-     "[library] L1 Logs through a standard logger namespace and never prints from library code. (library code prints: scripts/doc_parsing_utils.py, scripts/translation_git.py, docs_src/custom_request_and_route/tutorial003_py310.py)"
+     "[library] L1 Logs through a standard logger namespace and never prints from library code. (library code prints: scripts/doc_parsing_utils.py, scripts/translation_git.py, docs_src/custom_request_and_route/tutorial003.py)"
     ],
     "question": "Can an operator, or an orchestrating agent, tell whether it works and why not?",
     "best_surface": "cli",
@@ -3509,7 +3513,7 @@
           "detail": "8 matches"
          },
          {
-          "path": "docs_src/opentelemetry/tutorial002_py310.py",
+          "path": "docs_src/opentelemetry/tutorial002.py",
           "detail": "2 matches"
          },
          {
@@ -3540,12 +3544,12 @@
           "detail": "12 matches"
          },
          {
-          "path": "scripts/docs.py",
-          "detail": "9 matches"
-         },
-         {
           "path": "scripts/deploy_docs_status.py",
           "detail": "8 matches"
+         },
+         {
+          "path": "scripts/docs.py",
+          "detail": "4 matches"
          },
          {
           "path": "fastapi/logger.py",
@@ -3597,7 +3601,7 @@
           "detail": "8 matches"
          },
          {
-          "path": "docs_src/opentelemetry/tutorial002_py310.py",
+          "path": "docs_src/opentelemetry/tutorial002.py",
           "detail": "2 matches"
          },
          {
@@ -3619,7 +3623,7 @@
         "text": "Logs through a standard logger namespace and never prints from library code.",
         "met": false,
         "evidence": [],
-        "note": "library code prints: scripts/doc_parsing_utils.py, scripts/translation_git.py, docs_src/custom_request_and_route/tutorial003_py310.py"
+        "note": "library code prints: scripts/doc_parsing_utils.py, scripts/translation_git.py, docs_src/custom_request_and_route/tutorial003.py"
        },
        {
         "level": 2,
@@ -3653,7 +3657,7 @@
           "detail": "8 matches"
          },
          {
-          "path": "docs_src/opentelemetry/tutorial002_py310.py",
+          "path": "docs_src/opentelemetry/tutorial002.py",
           "detail": "2 matches"
          }
         ],
@@ -3699,10 +3703,10 @@
     ],
     "metrics": {
      "source_files": 559,
-     "source_tokens": 291792,
-     "test_files": 666,
-     "test_tokens": 865287,
-     "test_ratio": 2.97,
+     "source_tokens": 291790,
+     "test_files": 670,
+     "test_tokens": 884104,
+     "test_ratio": 3.03,
      "modules": 107,
      "modules_within_budget": 0.99,
      "oversized_files": [
@@ -3713,12 +3717,12 @@
      ],
      "largest_module": {
       "path": "fastapi",
-      "tokens": 149166
+      "tokens": 150351
      },
      "typed_ratio": 0.83,
-     "python_functions": 1219,
-     "python_annotated": 1016,
-     "import_edges": 603,
+     "python_functions": 1222,
+     "python_annotated": 1019,
+     "import_edges": 605,
      "import_graph": true,
      "max_fan_out": 15,
      "import_cycles": 2,
@@ -3733,7 +3737,7 @@
       "fastapi/utils.py"
      ],
      "languages": {
-      "python": 291385,
+      "python": 291383,
       "javascript": 266,
       "shell": 141
      }
@@ -3759,8 +3763,8 @@
           "detail": ""
          },
          {
-          "path": "docs_src/app_testing/app_a_py310/test_main.py",
-          "detail": "666 test files"
+          "path": "docs_src/app_testing/app_a/test_main.py",
+          "detail": "670 test files"
          }
         ],
         "note": ""
@@ -3903,9 +3907,9 @@
   "value": {
    "ksloc": 28.69,
    "classic": {
-    "person_months": 81.45,
+    "person_months": 81.44,
     "schedule_months": 13.3,
-    "cost": 916901
+    "cost": 916766
    },
    "capture": {
     "tests": 1.0,
@@ -3916,19 +3920,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 10.34,
    "history": {
-    "commits": 8028,
-    "fix_commits": 566,
+    "commits": 8112,
+    "fix_commits": 569,
     "authors": 920,
-    "age_months": 95.1,
+    "age_months": 95.4,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 51.46,
-   "rediscover_pm": 3.09,
-   "replacement_pm": 13.43,
+   "knowledge_pm": 51.94,
+   "rediscover_pm": 3.12,
+   "replacement_pm": 13.46,
    "leverage": 1.0,
    "obsolescence": 0.95,
-   "value_pm": 12.76,
-   "value_cost": 143644,
+   "value_pm": 12.79,
+   "value_cost": 143936,
    "knowledge_at_risk": 0.23,
    "assumptions": {
     "salary": 56286,
@@ -3942,26 +3946,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 86.7347,
+   "make_buy_ratio": 87.7396,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 23331.54,
+   "break_even_price_per_year": 23605.03,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3476489,
-     "input": 86912225,
-     "cached_input": 73875391
+     "output": 3532934,
+     "input": 88323350,
+     "cached_input": 75074847
     },
-    "final_tokens": 1158829,
-    "model_cost": 136.45,
-    "agent_hours": 38.63,
-    "human_days": 90.85,
-    "review_days": 25.96,
-    "rediscover_days": 64.89,
-    "calendar_days": 90.85,
-    "build_cost": 48835.19,
-    "yearly_cost": 7325.28,
-    "total_cost": 70811.03
+    "final_tokens": 1177644,
+    "model_cost": 138.67,
+    "agent_hours": 39.25,
+    "human_days": 91.9,
+    "review_days": 26.38,
+    "rediscover_days": 65.52,
+    "calendar_days": 91.9,
+    "build_cost": 49401.04,
+    "yearly_cost": 7410.16,
+    "total_cost": 71631.5
    },
    "buy": {
     "via": {

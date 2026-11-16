@@ -4,20 +4,20 @@
   "url": "https://github.com/nats-io/nats-server",
   "slug": "nats-io-nats-server",
   "host": "github.com",
-  "commit": "fe585f47297443fc2679051bb4fcb848d4b87460",
-  "committed_at": "2026-11-09T12:42:40Z",
-  "evaluated_at": "2026-11-09T12:55:20+00:00",
+  "commit": "6993500ca20a02d1f42be713ceac3887b3bf819c",
+  "committed_at": "2026-11-13T14:32:18Z",
+  "evaluated_at": "2026-11-16T12:48:59+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/nats-io/nats-server",
   "inventory": {
-   "files": 600,
+   "files": 601,
    "source_files": 130,
-   "source_tokens": 1171084,
+   "source_tokens": 1176318,
    "languages": {
-    "go": 1168542,
+    "go": 1173776,
     "shell": 2542
    },
    "git": true
@@ -259,7 +259,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "318 semver tags, latest v2.14.10-RC.2",
+      "detail": "320 semver tags, latest v2.14.10",
       "path": null,
       "weight": 1
      }
@@ -283,7 +283,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "318 semver tags, latest v2.14.10-RC.2"
+          "detail": "320 semver tags, latest v2.14.10"
          }
         ],
         "note": ""
@@ -1461,19 +1461,19 @@
     ],
     "metrics": {
      "source_files": 130,
-     "source_tokens": 1171084,
+     "source_tokens": 1176318,
      "test_files": 135,
-     "test_tokens": 2457046,
-     "test_ratio": 2.1,
+     "test_tokens": 2477192,
+     "test_ratio": 2.11,
      "modules": 21,
      "modules_within_budget": 0.95,
      "oversized_files": [
       "server/jetstream_cluster.go",
       "server/filestore.go",
       "server/stream.go",
+      "server/client.go",
       "server/consumer.go",
       "server/opts.go",
-      "server/client.go",
       "server/mqtt.go",
       "server/raft.go",
       "server/jetstream_api.go",
@@ -1493,7 +1493,7 @@
      ],
      "largest_module": {
       "path": "server",
-      "tokens": 1096864
+      "tokens": 1102098
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -1504,7 +1504,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "go": 1168542,
+      "go": 1173776,
       "shell": 2542
      }
     },
@@ -1622,13 +1622,13 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 46.5,
+   "retrofit_person_days": 46.6,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 4.3,
     "events": 0.0,
     "identity": 13.0,
-    "ergonomics": 3.2,
+    "ergonomics": 3.3,
     "embeddability": 0.0,
     "extensibility": 13.0,
     "observability": 4.3,
@@ -1637,18 +1637,18 @@
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.16,
+    "size_factor": 2.17,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 115.25,
+   "ksloc": 115.59,
    "classic": {
-    "person_months": 350.7,
+    "person_months": 351.79,
     "schedule_months": 23.2,
-    "cost": 3947886
+    "cost": 3960116
    },
    "capture": {
     "tests": 1.0,
@@ -1657,21 +1657,21 @@
     "capture": 0.7
    },
    "agent_factor": 0.24,
-   "reproduce_pm": 82.41,
+   "reproduce_pm": 82.67,
    "history": {
-    "commits": 8772,
-    "fix_commits": 2576,
-    "authors": 300,
-    "age_months": 168.3,
-    "months_since_last": 0.0
+    "commits": 8812,
+    "fix_commits": 2600,
+    "authors": 301,
+    "age_months": 168.4,
+    "months_since_last": 0.1
    },
-   "knowledge_pm": 95.38,
-   "rediscover_pm": 28.61,
-   "replacement_pm": 111.03,
+   "knowledge_pm": 96.06,
+   "rediscover_pm": 28.82,
+   "replacement_pm": 111.49,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 101.08,
-   "value_cost": 1137900,
+   "value_pm": 101.5,
+   "value_cost": 1142607,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -1685,26 +1685,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 683.4371,
+   "make_buy_ratio": 688.4122,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 185971.28,
+   "break_even_price_per_year": 187327.04,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 10989787,
-     "input": 274744675,
-     "cached_input": 233532973
+     "output": 11066398,
+     "input": 276659950,
+     "cached_input": 235160957
     },
-    "final_tokens": 3663262,
-    "model_cost": 431.35,
-    "agent_hours": 122.11,
-    "human_days": 718.03,
-    "review_days": 117.22,
-    "rediscover_days": 600.81,
-    "calendar_days": 718.03,
-    "build_cost": 385331.98,
-    "yearly_cost": 57799.8,
-    "total_cost": 558731.37
+    "final_tokens": 3688799,
+    "model_cost": 434.36,
+    "agent_hours": 122.96,
+    "human_days": 723.26,
+    "review_days": 118.04,
+    "rediscover_days": 605.22,
+    "calendar_days": 723.26,
+    "build_cost": 388137.01,
+    "yearly_cost": 58220.55,
+    "total_cost": 562798.66
    },
    "buy": {
     "via": {

@@ -4,20 +4,20 @@
   "url": "https://github.com/lysine-dev/okhttp",
   "slug": "lysine-dev-okhttp",
   "host": "github.com",
-  "commit": "91ec7788ef3ecf0fd0abe5bc515348a1015a5464",
-  "committed_at": "2026-11-07T10:25:01-05:00",
-  "evaluated_at": "2026-11-09T12:55:22+00:00",
+  "commit": "1bd972a016c1a9c0c9921185412963ce4248a123",
+  "committed_at": "2026-11-15T12:03:21Z",
+  "evaluated_at": "2026-11-16T12:49:10+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/lysine-dev/okhttp",
   "inventory": {
-   "files": 843,
+   "files": 844,
    "source_files": 359,
-   "source_tokens": 479246,
+   "source_tokens": 480916,
    "languages": {
-    "kotlin": 477026,
+    "kotlin": 478696,
     "java": 1460,
     "shell": 760
    },
@@ -242,10 +242,10 @@
     ],
     "metrics": {
      "source_files": 359,
-     "source_tokens": 479246,
-     "test_files": 216,
-     "test_tokens": 627323,
-     "test_ratio": 1.31,
+     "source_tokens": 480916,
+     "test_files": 217,
+     "test_tokens": 632990,
+     "test_ratio": 1.32,
      "modules": 92,
      "modules_within_budget": 0.97,
      "oversized_files": [
@@ -254,7 +254,7 @@
      ],
      "largest_module": {
       "path": "okhttp/src/commonJvmAndroid/kotlin/okhttp3",
-      "tokens": 118894
+      "tokens": 119686
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -265,7 +265,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "kotlin": 477026,
+      "kotlin": 478696,
       "java": 1460,
       "shell": 760
      }
@@ -292,7 +292,7 @@
          },
          {
           "path": "android-test-app/src/androidTest/kotlin/okhttp/android/testapp/IdnaTest.kt",
-          "detail": "216 test files"
+          "detail": "217 test files"
          }
         ],
         "note": ""
@@ -366,18 +366,18 @@
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 1.38,
+    "size_factor": 1.39,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 38.16,
+   "ksloc": 38.29,
    "classic": {
-    "person_months": 109.89,
+    "person_months": 110.27,
     "schedule_months": 14.9,
-    "cost": 1237024
+    "cost": 1241381
    },
    "capture": {
     "tests": 1.0,
@@ -386,21 +386,21 @@
     "capture": 0.75
    },
    "agent_factor": 0.21,
-   "reproduce_pm": 23.35,
+   "reproduce_pm": 23.43,
    "history": {
-    "commits": 4609,
-    "fix_commits": 511,
-    "authors": 369,
-    "age_months": 185.5,
-    "months_since_last": 0.1
+    "commits": 4646,
+    "fix_commits": 514,
+    "authors": 377,
+    "age_months": 185.7,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 33.27,
-   "rediscover_pm": 8.32,
-   "replacement_pm": 31.67,
+   "knowledge_pm": 33.51,
+   "rediscover_pm": 8.38,
+   "replacement_pm": 31.81,
    "leverage": 0.83,
    "obsolescence": 0.95,
-   "value_pm": 25.07,
-   "value_cost": 282218,
+   "value_pm": 25.18,
+   "value_cost": 283496,
    "knowledge_at_risk": 0.26,
    "assumptions": {
     "salary": 56286,
@@ -414,26 +414,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 42.1552,
+   "make_buy_ratio": 42.3835,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 52744.36,
+   "break_even_price_per_year": 53126.42,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 3355650,
-     "input": 83891250,
-     "cached_input": 71307562
+     "output": 3377786,
+     "input": 84444650,
+     "cached_input": 71777952
     },
-    "final_tokens": 1118550,
-    "model_cost": 131.71,
-    "agent_hours": 37.28,
-    "human_days": 208.28,
-    "review_days": 33.56,
-    "rediscover_days": 174.72,
-    "calendar_days": 208.28,
-    "build_cost": 111777.83,
-    "yearly_cost": 16766.68,
-    "total_cost": 162077.86
+    "final_tokens": 1125928,
+    "model_cost": 132.58,
+    "agent_hours": 37.53,
+    "human_days": 209.76,
+    "review_days": 33.78,
+    "rediscover_days": 175.98,
+    "calendar_days": 209.76,
+    "build_cost": 112572.78,
+    "yearly_cost": 16885.92,
+    "total_cost": 163230.54
    },
    "buy": {
     "via": {
@@ -442,21 +442,21 @@
     },
     "adoption_minutes": {
      "install": 60,
-     "first_use": 3322.92,
-     "total": 3382.92
+     "first_use": 3328.71,
+     "total": 3388.71
     },
     "tokens": {
-     "output": 422865,
-     "input": 10571625,
-     "cached_input": 8985881
+     "output": 423588,
+     "input": 10589700,
+     "cached_input": 9001245
     },
-    "model_cost": 16.6,
+    "model_cost": 16.63,
     "upgrade_minutes_per_year": 15,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 3794.53,
+    "fixed_cost": 3801.02,
     "yearly_cost": 16.75,
-    "total_cost": 3844.79
+    "total_cost": 3851.28
    },
    "assumptions": {
     "day_rate": 536.05,

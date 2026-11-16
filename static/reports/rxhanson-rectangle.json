@@ -4,9 +4,9 @@
   "url": "https://github.com/rxhanson/Rectangle",
   "slug": "rxhanson-rectangle",
   "host": "github.com",
-  "commit": "451ab711b5c669dd49e14212c23b60db884f7a00",
-  "committed_at": "2026-11-06T16:42:46-05:00",
-  "evaluated_at": "2026-11-09T12:55:10+00:00",
+  "commit": "875182d2690e4b8fdf485467b31a3233d630581f",
+  "committed_at": "2026-11-10T21:22:21-05:00",
+  "evaluated_at": "2026-11-16T12:48:59+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -301,8 +301,8 @@
      },
      {
       "signal": "L3 unattended-install",
-      "detail": "1 match",
-      "path": "README.md",
+      "detail": "2 matches",
+      "path": "README.zh-Hans.md",
       "weight": 1
      },
      {
@@ -358,11 +358,11 @@
         "met": true,
         "evidence": [
          {
-          "path": "README.md",
-          "detail": "1 match"
+          "path": "README.zh-Hans.md",
+          "detail": "2 matches"
          },
          {
-          "path": "README.zh-Hans.md",
+          "path": "README.md",
           "detail": "1 match"
          }
         ],
@@ -656,25 +656,25 @@
    "capture": {
     "tests": 1.0,
     "contract": 0.25,
-    "docs": 0.29,
+    "docs": 0.3,
     "capture": 0.64
    },
    "agent_factor": 0.26,
    "reproduce_pm": 17.52,
    "history": {
-    "commits": 1256,
+    "commits": 1257,
     "fix_commits": 174,
     "authors": 211,
-    "age_months": 88.5,
-    "months_since_last": 0.1
+    "age_months": 88.7,
+    "months_since_last": 0.2
    },
-   "knowledge_pm": 9.76,
-   "rediscover_pm": 3.51,
+   "knowledge_pm": 9.77,
+   "rediscover_pm": 3.52,
    "replacement_pm": 21.04,
    "leverage": 0.89,
    "obsolescence": 0.9,
    "value_pm": 16.91,
-   "value_cost": 190312,
+   "value_cost": 190328,
    "knowledge_at_risk": 0.17,
    "assumptions": {
     "salary": 56286,
@@ -688,9 +688,9 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 86.9531,
+   "make_buy_ratio": 87.1541,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 23262.43,
+   "break_even_price_per_year": 23316.84,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
@@ -701,13 +701,13 @@
     "final_tokens": 494511,
     "model_cost": 58.23,
     "agent_hours": 16.48,
-    "human_days": 90.72,
+    "human_days": 90.93,
     "review_days": 17.01,
-    "rediscover_days": 73.71,
-    "calendar_days": 90.72,
-    "build_cost": 48689.11,
-    "yearly_cost": 7303.37,
-    "total_cost": 70599.21
+    "rediscover_days": 73.92,
+    "calendar_days": 90.93,
+    "build_cost": 48801.68,
+    "yearly_cost": 7320.25,
+    "total_cost": 70762.43
    },
    "buy": {
     "via": {

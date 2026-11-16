@@ -4,9 +4,9 @@
   "url": "https://github.com/apple/swift-argument-parser",
   "slug": "apple-swift-argument-parser",
   "host": "github.com",
-  "commit": "38ca4eceb349155836701b88da3e0986eb9d1e1c",
-  "committed_at": "2026-10-24T11:11:36-05:00",
-  "evaluated_at": "2026-10-26T10:11:16+00:00",
+  "commit": "d7b6cebecb27311771a3249275259edaccf61972",
+  "committed_at": "2026-11-13T11:56:47-08:00",
+  "evaluated_at": "2026-11-16T12:48:48+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -988,13 +988,13 @@
    "agent_factor": 0.1,
    "reproduce_pm": 3.31,
    "history": {
-    "commits": 542,
+    "commits": 543,
     "fix_commits": 87,
-    "authors": 136,
-    "age_months": 79.9,
+    "authors": 137,
+    "age_months": 80.5,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 4.45,
+   "knowledge_pm": 4.46,
    "rediscover_pm": 0.0,
    "replacement_pm": 3.31,
    "leverage": 1.02,

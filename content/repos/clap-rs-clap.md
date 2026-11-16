@@ -1,7 +1,7 @@
 {
  "title": "clap-rs/clap",
  "slug": "clap-rs-clap",
- "date": "2026-11-09T12:55:01+00:00",
+ "date": "2026-11-16T12:48:37+00:00",
  "repo_url": "https://github.com/clap-rs/clap",
  "index": 1.86,
  "assessed": 7,

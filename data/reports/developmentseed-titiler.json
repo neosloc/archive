@@ -4,9 +4,9 @@
   "url": "https://github.com/developmentseed/titiler",
   "slug": "developmentseed-titiler",
   "host": "github.com",
-  "commit": "cc9b45b01f597c170df1ad101e688c241e3e7066",
-  "committed_at": "2026-11-09T08:36:38+01:00",
-  "evaluated_at": "2026-11-09T12:53:29+00:00",
+  "commit": "92f9afbf614f190898d8a605433ffa5e877b15eb",
+  "committed_at": "2026-11-16T10:11:06+01:00",
+  "evaluated_at": "2026-11-16T12:46:23+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 526,
    "source_files": 52,
-   "source_tokens": 102578,
+   "source_tokens": 102700,
    "languages": {
-    "python": 102578
+    "python": 102700
    },
    "git": true
   },
@@ -160,7 +160,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "141 semver tags, latest 2.4.0",
+      "detail": "142 semver tags, latest 2.4.1",
       "path": null,
       "weight": 1
      },
@@ -200,7 +200,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "141 semver tags, latest 2.4.0"
+          "detail": "142 semver tags, latest 2.4.1"
          }
         ],
         "note": ""
@@ -897,10 +897,10 @@
     ],
     "metrics": {
      "source_files": 52,
-     "source_tokens": 102578,
+     "source_tokens": 102700,
      "test_files": 43,
-     "test_tokens": 70563,
-     "test_ratio": 0.69,
+     "test_tokens": 71798,
+     "test_ratio": 0.7,
      "modules": 14,
      "modules_within_budget": 0.93,
      "oversized_files": [
@@ -924,7 +924,7 @@
       "src/titiler/core/titiler/core/telemetry.py"
      ],
      "languages": {
-      "python": 102578
+      "python": 102700
      }
     },
     "gaps": [
@@ -1061,11 +1061,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 9.48,
+   "ksloc": 9.49,
    "classic": {
-    "person_months": 25.47,
+    "person_months": 25.5,
     "schedule_months": 8.6,
-    "cost": 286736
+    "cost": 287086
    },
    "capture": {
     "tests": 1.0,
@@ -1074,22 +1074,22 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 3.23,
+   "reproduce_pm": 3.24,
    "history": {
-    "commits": 1062,
-    "fix_commits": 154,
+    "commits": 1072,
+    "fix_commits": 155,
     "authors": 98,
-    "age_months": 83.1,
+    "age_months": 83.4,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 8.39,
-   "rediscover_pm": 0.5,
-   "replacement_pm": 3.74,
+   "knowledge_pm": 8.46,
+   "rediscover_pm": 0.51,
+   "replacement_pm": 3.75,
    "leverage": 0.95,
    "obsolescence": 0.95,
-   "value_pm": 3.37,
-   "value_cost": 37979,
-   "knowledge_at_risk": 0.13,
+   "value_pm": 3.38,
+   "value_cost": 38062,
+   "knowledge_at_risk": 0.14,
    "assumptions": {
     "salary": 56286,
     "overhead": 2.4,
@@ -1102,26 +1102,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 334.0494,
+   "make_buy_ratio": 339.6217,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 3727.55,
+   "break_even_price_per_year": 3789.92,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 521269,
-     "input": 13031725,
-     "cached_input": 11076966
+     "output": 525342,
+     "input": 13133550,
+     "cached_input": 11163517
     },
-    "final_tokens": 173756,
-    "model_cost": 20.46,
-    "agent_hours": 5.79,
-    "human_days": 14.39,
-    "review_days": 3.89,
-    "rediscover_days": 10.5,
-    "calendar_days": 14.39,
-    "build_cost": 7735.33,
-    "yearly_cost": 1160.3,
-    "total_cost": 11216.24
+    "final_tokens": 175114,
+    "model_cost": 20.62,
+    "agent_hours": 5.84,
+    "human_days": 14.63,
+    "review_days": 3.92,
+    "rediscover_days": 10.71,
+    "calendar_days": 14.63,
+    "build_cost": 7864.37,
+    "yearly_cost": 1179.66,
+    "total_cost": 11403.33
    },
    "buy": {
     "via": {

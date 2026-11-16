@@ -4,9 +4,9 @@
   "url": "https://github.com/pallets/click",
   "slug": "pallets-click",
   "host": "github.com",
-  "commit": "8abb77a8432e03ed14a95f972b44f905279415a7",
-  "committed_at": "2026-11-06T09:58:14-08:00",
-  "evaluated_at": "2026-11-09T12:53:19+00:00",
+  "commit": "e38188e9e205005d5af5f9e59df51904c984586a",
+  "committed_at": "2026-11-12T08:38:08-08:00",
+  "evaluated_at": "2026-11-16T12:46:17+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 179,
    "source_files": 18,
-   "source_tokens": 113344,
+   "source_tokens": 112489,
    "languages": {
-    "python": 113303,
+    "python": 112448,
     "shell": 41
    },
    "git": true
@@ -334,12 +334,12 @@
           "detail": "3 matches"
          },
          {
-          "path": "src/click/_textwrap.py",
+          "path": "src/click/parser.py",
           "detail": "2 matches"
          },
          {
-          "path": "src/click/parser.py",
-          "detail": "2 matches"
+          "path": "src/click/_textwrap.py",
+          "detail": "1 match"
          },
          {
           "path": "src/click/_winconsole.py",
@@ -602,10 +602,10 @@
     ],
     "metrics": {
      "source_files": 18,
-     "source_tokens": 113344,
+     "source_tokens": 112489,
      "test_files": 59,
-     "test_tokens": 130600,
-     "test_ratio": 1.15,
+     "test_tokens": 131588,
+     "test_ratio": 1.17,
      "modules": 2,
      "modules_within_budget": 0.5,
      "oversized_files": [
@@ -613,11 +613,11 @@
      ],
      "largest_module": {
       "path": "src/click",
-      "tokens": 113303
+      "tokens": 112448
      },
      "typed_ratio": 1.0,
-     "python_functions": 590,
-     "python_annotated": 590,
+     "python_functions": 588,
+     "python_annotated": 588,
      "import_edges": 52,
      "import_graph": true,
      "max_fan_out": 8,
@@ -630,7 +630,7 @@
       "src/click/utils.py"
      ],
      "languages": {
-      "python": 113303,
+      "python": 112448,
       "shell": 41
      }
     },
@@ -749,11 +749,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 9.65,
+   "ksloc": 9.55,
    "classic": {
-    "person_months": 25.94,
+    "person_months": 25.66,
     "schedule_months": 8.6,
-    "cost": 292040
+    "cost": 288895
    },
    "capture": {
     "tests": 1.0,
@@ -762,21 +762,21 @@
     "capture": 0.81
    },
    "agent_factor": 0.19,
-   "reproduce_pm": 4.81,
+   "reproduce_pm": 4.76,
    "history": {
-    "commits": 2185,
+    "commits": 2188,
     "fix_commits": 434,
     "authors": 468,
-    "age_months": 150.4,
+    "age_months": 150.6,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 19.61,
-   "rediscover_pm": 3.72,
-   "replacement_pm": 8.54,
+   "knowledge_pm": 19.62,
+   "rediscover_pm": 3.73,
+   "replacement_pm": 8.49,
    "leverage": 0.93,
    "obsolescence": 0.95,
-   "value_pm": 7.53,
-   "value_cost": 84779,
+   "value_pm": 7.49,
+   "value_cost": 84293,
    "knowledge_at_risk": 0.44,
    "assumptions": {
     "salary": 56286,
@@ -790,26 +790,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 229.1554,
+   "make_buy_ratio": 229.7306,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 21917.84,
+   "break_even_price_per_year": 21973.09,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 738292,
-     "input": 18457300,
-     "cached_input": 15688705
+     "output": 738642,
+     "input": 18466050,
+     "cached_input": 15696142
     },
-    "final_tokens": 246097,
-    "model_cost": 28.98,
-    "agent_hours": 8.2,
-    "human_days": 84.91,
-    "review_days": 6.79,
-    "rediscover_days": 78.12,
-    "calendar_days": 84.91,
-    "build_cost": 45546.01,
-    "yearly_cost": 6831.9,
-    "total_cost": 66041.71
+    "final_tokens": 246214,
+    "model_cost": 28.99,
+    "agent_hours": 8.21,
+    "human_days": 85.13,
+    "review_days": 6.8,
+    "rediscover_days": 78.33,
+    "calendar_days": 85.13,
+    "build_cost": 45660.32,
+    "yearly_cost": 6849.05,
+    "total_cost": 66207.47
    },
    "buy": {
     "via": {

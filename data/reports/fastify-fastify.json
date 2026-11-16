@@ -4,9 +4,9 @@
   "url": "https://github.com/fastify/fastify",
   "slug": "fastify-fastify",
   "host": "github.com",
-  "commit": "0b076ca595d19951c536daf515c778b38cf6ba69",
-  "committed_at": "2026-11-07T16:57:48+01:00",
-  "evaluated_at": "2026-11-09T12:53:36+00:00",
+  "commit": "467972380963813755ac99f68fae228e30ac748f",
+  "committed_at": "2026-11-15T23:36:52+01:00",
+  "evaluated_at": "2026-11-16T12:46:30+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 392,
    "source_files": 53,
-   "source_tokens": 114622,
+   "source_tokens": 114644,
    "languages": {
-    "javascript": 74546,
+    "javascript": 74568,
     "typescript": 39849,
     "shell": 227
    },
@@ -998,9 +998,9 @@
     ],
     "metrics": {
      "source_files": 53,
-     "source_tokens": 114622,
+     "source_tokens": 114644,
      "test_files": 228,
-     "test_tokens": 452745,
+     "test_tokens": 453255,
      "test_ratio": 3.95,
      "modules": 6,
      "modules_within_budget": 0.67,
@@ -1009,7 +1009,7 @@
      ],
      "largest_module": {
       "path": "lib",
-      "tokens": 63423
+      "tokens": 63445
      },
      "typed_ratio": 0.35,
      "python_functions": 0,
@@ -1028,7 +1028,7 @@
       "lib/route.js"
      ],
      "languages": {
-      "javascript": 74546,
+      "javascript": 74568,
       "typescript": 39849,
       "shell": 227
      }
@@ -1219,19 +1219,19 @@
    "agent_factor": 0.13,
    "reproduce_pm": 3.54,
    "history": {
-    "commits": 4492,
-    "fix_commits": 894,
-    "authors": 967,
-    "age_months": 121.3,
-    "months_since_last": 0.1
+    "commits": 4494,
+    "fix_commits": 895,
+    "authors": 968,
+    "age_months": 121.6,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 40.34,
+   "knowledge_pm": 40.37,
    "rediscover_pm": 2.42,
-   "replacement_pm": 5.96,
+   "replacement_pm": 5.97,
    "leverage": 0.94,
    "obsolescence": 0.95,
    "value_pm": 5.35,
-   "value_cost": 60230,
+   "value_cost": 60248,
    "knowledge_at_risk": 0.41,
    "assumptions": {
     "salary": 56286,
@@ -1245,26 +1245,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 59.4728,
+   "make_buy_ratio": 59.484,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 16218.66,
+   "break_even_price_per_year": 16221.78,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1704164,
-     "input": 42604100,
-     "cached_input": 36213485
+     "output": 1705760,
+     "input": 42644000,
+     "cached_input": 36247400
     },
-    "final_tokens": 568054,
-    "model_cost": 66.89,
-    "agent_hours": 18.94,
-    "human_days": 63.54,
-    "review_days": 12.72,
+    "final_tokens": 568586,
+    "model_cost": 66.95,
+    "agent_hours": 18.95,
+    "human_days": 63.56,
+    "review_days": 12.74,
     "rediscover_days": 50.82,
-    "calendar_days": 63.54,
-    "build_cost": 34129.73,
-    "yearly_cost": 5119.46,
-    "total_cost": 49488.1
+    "calendar_days": 63.56,
+    "build_cost": 34136.18,
+    "yearly_cost": 5120.43,
+    "total_cost": 49497.46
    },
    "buy": {
     "via": {

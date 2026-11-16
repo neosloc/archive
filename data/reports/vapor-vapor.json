@@ -4,20 +4,20 @@
   "url": "https://github.com/vapor/vapor",
   "slug": "vapor-vapor",
   "host": "github.com",
-  "commit": "80a47681c6adaeabee4434f36e398b40c8fb89c5",
-  "committed_at": "2026-11-06T14:54:24Z",
-  "evaluated_at": "2026-11-09T12:55:11+00:00",
+  "commit": "e4a5b7050f5e9e5793be3ebdeb687eac92fd9965",
+  "committed_at": "2026-11-13T12:50:30Z",
+  "evaluated_at": "2026-11-16T12:48:57+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/vapor/vapor",
   "inventory": {
-   "files": 894,
+   "files": 898,
    "source_files": 224,
-   "source_tokens": 229704,
+   "source_tokens": 229700,
    "languages": {
-    "swift": 229096,
+    "swift": 229092,
     "shell": 608
    },
    "git": true
@@ -1183,7 +1183,7 @@
     ],
     "metrics": {
      "source_files": 224,
-     "source_tokens": 229704,
+     "source_tokens": 229700,
      "test_files": 55,
      "test_tokens": 218032,
      "test_ratio": 0.95,
@@ -1205,7 +1205,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "swift": 229096,
+      "swift": 229092,
       "shell": 608
      }
     },
@@ -1252,6 +1252,14 @@
          },
          {
           "path": ".github/workflows/codeql.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/sbom-generator.yml",
+          "detail": ""
+         },
+         {
+          "path": ".github/workflows/sbom-release.yml",
           "detail": ""
          },
          {
@@ -1340,13 +1348,13 @@
    "agent_factor": 0.1,
    "reproduce_pm": 4.37,
    "history": {
-    "commits": 4723,
-    "fix_commits": 799,
+    "commits": 4733,
+    "fix_commits": 800,
     "authors": 295,
-    "age_months": 129.6,
+    "age_months": 129.8,
     "months_since_last": 0.1
    },
-   "knowledge_pm": 39.59,
+   "knowledge_pm": 39.66,
    "rediscover_pm": 0.0,
    "replacement_pm": 4.37,
    "leverage": 0.93,
@@ -1368,24 +1376,24 @@
    "verdict": "buy",
    "make_buy_ratio": 8.7027,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 2076.04,
+   "break_even_price_per_year": 2076.02,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1343208,
-     "input": 33580200,
-     "cached_input": 28543170
+     "output": 1343196,
+     "input": 33579900,
+     "cached_input": 28542915
     },
-    "final_tokens": 447736,
+    "final_tokens": 447732,
     "model_cost": 52.72,
     "agent_hours": 14.92,
     "human_days": 8.95,
     "review_days": 8.95,
     "rediscover_days": 0.0,
     "calendar_days": 8.95,
-    "build_cost": 4852.88,
+    "build_cost": 4852.83,
     "yearly_cost": 727.93,
-    "total_cost": 7036.67
+    "total_cost": 7036.61
    },
    "buy": {
     "via": {

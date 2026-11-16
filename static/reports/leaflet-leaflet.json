@@ -4,21 +4,21 @@
   "url": "https://github.com/Leaflet/Leaflet",
   "slug": "leaflet-leaflet",
   "host": "github.com",
-  "commit": "68c14509db2d12c2a2cec6df5705ae1ac6f7b464",
-  "committed_at": "2026-11-09T14:50:07+02:00",
-  "evaluated_at": "2026-11-09T12:53:46+00:00",
+  "commit": "3ffd3e1f331a919106be149070140cfa1a73bedf",
+  "committed_at": "2026-11-16T14:26:58+02:00",
+  "evaluated_at": "2026-11-16T12:46:55+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/Leaflet/Leaflet",
   "inventory": {
-   "files": 880,
-   "source_files": 76,
-   "source_tokens": 160587,
+   "files": 888,
+   "source_files": 77,
+   "source_tokens": 164477,
    "languages": {
-    "javascript": 154183,
-    "typescript": 6404
+    "javascript": 157930,
+    "typescript": 6547
    },
    "git": true
   },
@@ -142,7 +142,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "62 semver tags, latest v2.0.0-beta.2",
+      "detail": "64 semver tags, latest v2.0.0-beta.4",
       "path": null,
       "weight": 1
      },
@@ -172,7 +172,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "62 semver tags, latest v2.0.0-beta.2"
+          "detail": "64 semver tags, latest v2.0.0-beta.4"
          }
         ],
         "note": ""
@@ -295,7 +295,7 @@
           "detail": "6 matches"
          },
          {
-          "path": "src/layer/vector/Circle.js",
+          "path": "src/geo/LatLng.js",
           "detail": "2 matches"
          },
          {
@@ -308,10 +308,6 @@
          },
          {
           "path": "src/dom/Draggable.js",
-          "detail": "1 match"
-         },
-         {
-          "path": "src/geo/LatLng.js",
           "detail": "1 match"
          },
          {
@@ -336,6 +332,14 @@
          },
          {
           "path": "src/layer/tile/GridLayer.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/layer/vector/Circle.js",
+          "detail": "1 match"
+         },
+         {
+          "path": "src/layer/vector/CircleMarker.js",
           "detail": "1 match"
          },
          {
@@ -579,11 +583,11 @@
      }
     ],
     "metrics": {
-     "source_files": 76,
-     "source_tokens": 160587,
+     "source_files": 77,
+     "source_tokens": 164477,
      "test_files": 61,
-     "test_tokens": 146372,
-     "test_ratio": 0.91,
+     "test_tokens": 159073,
+     "test_ratio": 0.97,
      "modules": 16,
      "modules_within_budget": 1.0,
      "oversized_files": [
@@ -597,7 +601,7 @@
      "typed_ratio": 0.04,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 361,
+     "import_edges": 363,
      "import_graph": true,
      "max_fan_out": 42,
      "import_cycles": 4,
@@ -629,8 +633,8 @@
       "src/map/handler/TapHoldHandler.js"
      ],
      "languages": {
-      "javascript": 154183,
-      "typescript": 6404
+      "javascript": 157930,
+      "typescript": 6547
      }
     },
     "gaps": [
@@ -712,31 +716,31 @@
     "identity",
     "portability"
    ],
-   "retrofit_person_days": 15.6,
+   "retrofit_person_days": 15.8,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 0.8,
-    "ergonomics": 3.6,
+    "ergonomics": 3.7,
     "embeddability": 0.8,
-    "extensibility": 4.8,
+    "extensibility": 4.9,
     "observability": 2.4,
     "legibility": 3.2
    },
    "wrappability": "moderate retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 0.8,
+    "size_factor": 0.81,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 12.6,
+   "ksloc": 12.74,
    "classic": {
-    "person_months": 34.34,
+    "person_months": 34.74,
     "schedule_months": 9.6,
-    "cost": 386523
+    "cost": 391065
    },
    "capture": {
     "tests": 1.0,
@@ -745,21 +749,21 @@
     "capture": 0.94
    },
    "agent_factor": 0.13,
-   "reproduce_pm": 4.36,
+   "reproduce_pm": 4.41,
    "history": {
-    "commits": 6996,
-    "fix_commits": 1560,
-    "authors": 1067,
-    "age_months": 194.2,
+    "commits": 7075,
+    "fix_commits": 1578,
+    "authors": 1076,
+    "age_months": 194.5,
     "months_since_last": 0.0
    },
-   "knowledge_pm": 66.18,
-   "rediscover_pm": 3.97,
-   "replacement_pm": 8.33,
+   "knowledge_pm": 66.94,
+   "rediscover_pm": 4.02,
+   "replacement_pm": 8.43,
    "leverage": 0.91,
    "obsolescence": 0.95,
-   "value_pm": 7.21,
-   "value_cost": 81144,
+   "value_pm": 7.29,
+   "value_cost": 82084,
    "knowledge_at_risk": 0.48,
    "assumptions": {
     "salary": 56286,
@@ -773,26 +777,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 163.2605,
+   "make_buy_ratio": 165.8374,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 23261.53,
+   "break_even_price_per_year": 23630.95,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 923767,
-     "input": 23094175,
-     "cached_input": 19630048
+     "output": 973610,
+     "input": 24340250,
+     "cached_input": 20689212
     },
-    "final_tokens": 307922,
-    "model_cost": 36.26,
-    "agent_hours": 10.26,
-    "human_days": 90.27,
-    "review_days": 6.9,
-    "rediscover_days": 83.37,
-    "calendar_days": 90.27,
-    "build_cost": 48423.92,
-    "yearly_cost": 7263.59,
-    "total_cost": 70214.68
+    "final_tokens": 324536,
+    "model_cost": 38.21,
+    "agent_hours": 10.82,
+    "human_days": 91.69,
+    "review_days": 7.27,
+    "rediscover_days": 84.42,
+    "calendar_days": 91.69,
+    "build_cost": 49188.22,
+    "yearly_cost": 7378.23,
+    "total_cost": 71322.92
    },
    "buy": {
     "via": {

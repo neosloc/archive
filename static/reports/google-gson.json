@@ -4,20 +4,20 @@
   "url": "https://github.com/google/gson",
   "slug": "google-gson",
   "host": "github.com",
-  "commit": "65df6e5a99747f73d386f3a61d887a0257255e0f",
-  "committed_at": "2026-11-04T10:52:10-08:00",
-  "evaluated_at": "2026-11-09T12:55:13+00:00",
+  "commit": "6c06cbc679fc088fbc36117c9e45244b6b1fe9c4",
+  "committed_at": "2026-11-15T18:28:23-08:00",
+  "evaluated_at": "2026-11-16T12:49:01+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/google/gson",
   "inventory": {
-   "files": 315,
+   "files": 317,
    "source_files": 123,
-   "source_tokens": 210868,
+   "source_tokens": 212242,
    "languages": {
-    "java": 210868
+    "java": 212242
    },
    "git": true
   },
@@ -234,9 +234,9 @@
     ],
     "metrics": {
      "source_files": 123,
-     "source_tokens": 210868,
-     "test_files": 143,
-     "test_tokens": 299164,
+     "source_tokens": 212242,
+     "test_files": 145,
+     "test_tokens": 302110,
      "test_ratio": 1.42,
      "modules": 18,
      "modules_within_budget": 0.89,
@@ -247,7 +247,7 @@
      ],
      "largest_module": {
       "path": "gson/src/main/java/com/google/gson",
-      "tokens": 63537
+      "tokens": 63562
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
@@ -258,7 +258,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "java": 210868
+      "java": 212242
      }
     },
     "gaps": [
@@ -283,7 +283,7 @@
          },
          {
           "path": "extras/src/test/java/com/google/gson/interceptors/InterceptorTest.java",
-          "detail": "143 test files"
+          "detail": "145 test files"
          }
         ],
         "note": ""
@@ -331,11 +331,11 @@
     "embeddability",
     "observability"
    ],
-   "retrofit_person_days": 29.3,
+   "retrofit_person_days": 29.5,
    "retrofit_by_dimension": {
-    "interface": 13.2,
+    "interface": 13.3,
     "extensibility": 8.8,
-    "legibility": 7.3
+    "legibility": 7.4
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
@@ -347,11 +347,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 13.35,
+   "ksloc": 13.37,
    "classic": {
-    "person_months": 36.47,
+    "person_months": 36.53,
     "schedule_months": 9.8,
-    "cost": 410547
+    "cost": 411225
    },
    "capture": {
     "tests": 1.0,
@@ -360,21 +360,21 @@
     "capture": 0.68
    },
    "agent_factor": 0.24,
-   "reproduce_pm": 8.9,
+   "reproduce_pm": 8.91,
    "history": {
-    "commits": 2116,
-    "fix_commits": 318,
-    "authors": 203,
-    "age_months": 218.1,
-    "months_since_last": 0.2
+    "commits": 2127,
+    "fix_commits": 319,
+    "authors": 206,
+    "age_months": 218.5,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 16.94,
-   "rediscover_pm": 5.42,
-   "replacement_pm": 14.32,
+   "knowledge_pm": 17.02,
+   "rediscover_pm": 5.44,
+   "replacement_pm": 14.36,
    "leverage": 0.79,
    "obsolescence": 0.9,
-   "value_pm": 10.2,
-   "value_cost": 114852,
+   "value_pm": 10.23,
+   "value_cost": 115163,
    "knowledge_at_risk": 0.38,
    "assumptions": {
     "salary": 56286,
@@ -388,26 +388,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 39.28,
+   "make_buy_ratio": 39.3272,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 33047.36,
+   "break_even_price_per_year": 33190.83,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1550339,
-     "input": 38758475,
-     "cached_input": 32944703
+     "output": 1563431,
+     "input": 39085775,
+     "cached_input": 33222908
     },
-    "final_tokens": 516779,
-    "model_cost": 60.85,
-    "agent_hours": 17.23,
-    "human_days": 130.77,
-    "review_days": 16.95,
-    "rediscover_days": 113.82,
-    "calendar_days": 130.77,
-    "build_cost": 70160.0,
-    "yearly_cost": 10524.0,
-    "total_cost": 101732.0
+    "final_tokens": 521143,
+    "model_cost": 61.36,
+    "agent_hours": 17.37,
+    "human_days": 131.33,
+    "review_days": 17.09,
+    "rediscover_days": 114.24,
+    "calendar_days": 131.33,
+    "build_cost": 70462.38,
+    "yearly_cost": 10569.36,
+    "total_cost": 102170.45
    },
    "buy": {
     "via": {
@@ -416,21 +416,21 @@
     },
     "adoption_minutes": {
      "install": 60,
-     "first_use": 2204.18,
-     "total": 2264.18
+     "first_use": 2211.35,
+     "total": 2271.35
     },
     "tokens": {
-     "output": 283022,
-     "input": 7075550,
-     "cached_input": 6014217
+     "output": 283918,
+     "input": 7097950,
+     "cached_input": 6033257
     },
-    "model_cost": 11.11,
+    "model_cost": 11.14,
     "upgrade_minutes_per_year": 15,
     "measured": null,
     "price_per_year": 0.0,
-    "fixed_cost": 2539.66,
+    "fixed_cost": 2547.71,
     "yearly_cost": 16.75,
-    "total_cost": 2589.92
+    "total_cost": 2597.96
    },
    "assumptions": {
     "day_rate": 536.05,

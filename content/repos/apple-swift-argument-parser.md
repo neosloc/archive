@@ -1,7 +1,7 @@
 {
  "title": "apple/swift-argument-parser",
  "slug": "apple-swift-argument-parser",
- "date": "2026-10-26T10:11:16+00:00",
+ "date": "2026-11-16T12:48:48+00:00",
  "repo_url": "https://github.com/apple/swift-argument-parser",
  "index": 2.14,
  "assessed": 7,

@@ -4,20 +4,20 @@
   "url": "https://github.com/honojs/hono",
   "slug": "honojs-hono",
   "host": "github.com",
-  "commit": "61f7c59e50244ab4d2dd83c151928cf7ea448510",
-  "committed_at": "2026-11-07T13:44:54+09:00",
-  "evaluated_at": "2026-11-09T12:53:45+00:00",
+  "commit": "399e7c92071b4f717f532087ff67cd2843ffd01b",
+  "committed_at": "2026-11-16T21:38:00+09:00",
+  "evaluated_at": "2026-11-16T12:46:44+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/honojs/hono",
   "inventory": {
-   "files": 572,
+   "files": 573,
    "source_files": 242,
-   "source_tokens": 219561,
+   "source_tokens": 221479,
    "languages": {
-    "typescript": 219561
+    "typescript": 221479
    },
    "git": true
   },
@@ -311,7 +311,7 @@
     "evidence": [
      {
       "signal": "L1 versioned-releases",
-      "detail": "460 semver tags, latest v4.13.17",
+      "detail": "461 semver tags, latest v4.13.18",
       "path": null,
       "weight": 1
      }
@@ -335,7 +335,7 @@
         "evidence": [
          {
           "path": null,
-          "detail": "460 semver tags, latest v4.13.17"
+          "detail": "461 semver tags, latest v4.13.18"
          }
         ],
         "note": ""
@@ -383,13 +383,13 @@
     "evidence": [
      {
       "signal": "L1 internal-events",
-      "detail": "39 matches",
+      "detail": "41 matches",
       "path": "src/adapter/bun/websocket.ts",
       "weight": 1
      },
      {
       "signal": "L2 outbound",
-      "detail": "39 matches",
+      "detail": "41 matches",
       "path": "src/adapter/bun/websocket.ts",
       "weight": 1
      }
@@ -413,11 +413,11 @@
         "evidence": [
          {
           "path": "src/adapter/bun/websocket.ts",
-          "detail": "39 matches"
+          "detail": "41 matches"
          },
          {
           "path": "adapters/bun/src/websocket.ts",
-          "detail": "37 matches"
+          "detail": "39 matches"
          },
          {
           "path": "src/adapter/cloudflare-workers/websocket.ts",
@@ -502,11 +502,11 @@
         "evidence": [
          {
           "path": "src/adapter/bun/websocket.ts",
-          "detail": "39 matches"
+          "detail": "41 matches"
          },
          {
           "path": "adapters/bun/src/websocket.ts",
-          "detail": "37 matches"
+          "detail": "39 matches"
          },
          {
           "path": "src/adapter/cloudflare-workers/websocket.ts",
@@ -740,7 +740,7 @@
         "evidence": [
          {
           "path": "src/jsx/dom/render.ts",
-          "detail": "15 matches"
+          "detail": "16 matches"
          },
          {
           "path": "src/hono-base.ts",
@@ -753,6 +753,10 @@
          {
           "path": "src/middleware/timeout/index.ts",
           "detail": "6 matches"
+         },
+         {
+          "path": "src/utils/mount.ts",
+          "detail": "5 matches"
          },
          {
           "path": "src/middleware/jwk/jwk.ts",
@@ -899,6 +903,10 @@
           "detail": "3 matches"
          },
          {
+          "path": "src/utils/mount.ts",
+          "detail": "3 matches"
+         },
+         {
           "path": "adapters/bun/src/conninfo.ts",
           "detail": "2 matches"
          },
@@ -912,10 +920,6 @@
          },
          {
           "path": "src/middleware/serve-static/index.ts",
-          "detail": "2 matches"
-         },
-         {
-          "path": "src/utils/mount.ts",
           "detail": "2 matches"
          },
          {
@@ -1424,10 +1428,10 @@
     ],
     "metrics": {
      "source_files": 242,
-     "source_tokens": 219561,
-     "test_files": 163,
-     "test_tokens": 507298,
-     "test_ratio": 2.31,
+     "source_tokens": 221479,
+     "test_files": 164,
+     "test_tokens": 517888,
+     "test_ratio": 2.34,
      "modules": 91,
      "modules_within_budget": 0.99,
      "oversized_files": [
@@ -1435,18 +1439,19 @@
      ],
      "largest_module": {
       "path": "src",
-      "tokens": 38341
+      "tokens": 38417
      },
      "typed_ratio": 1.0,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 459,
+     "import_edges": 461,
      "import_graph": true,
      "max_fan_out": 10,
      "import_cycles": 5,
      "largest_cycle": [
       "src/compose.ts",
       "src/context.ts",
+      "src/helper/route/index.ts",
       "src/hono-base.ts",
       "src/request.ts",
       "src/types.ts",
@@ -1454,7 +1459,7 @@
       "src/utils/mount.ts"
      ],
      "languages": {
-      "typescript": 219561
+      "typescript": 221479
      }
     },
     "gaps": [
@@ -1479,7 +1484,7 @@
          },
          {
           "path": "adapters/aws-lambda/src/conninfo.test.ts",
-          "detail": "163 test files"
+          "detail": "164 test files"
          }
         ],
         "note": ""
@@ -1535,7 +1540,7 @@
         "text": "No import cycles, and agent docs (AGENTS.md, CLAUDE.md, llms.txt).",
         "met": false,
         "evidence": [],
-        "note": "5 import cycles (largest: src/compose.ts, src/context.ts, src/hono-base.ts)"
+        "note": "5 import cycles (largest: src/compose.ts, src/context.ts, src/helper/route/index.ts)"
        }
       ]
      }
@@ -1550,17 +1555,17 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 20.5,
+   "retrofit_person_days": 20.7,
    "retrofit_by_dimension": {
     "interface": 0.0,
     "stability": 1.9,
     "events": 1.9,
-    "identity": 3.7,
+    "identity": 3.8,
     "ergonomics": 0.0,
     "embeddability": 0.9,
     "extensibility": 5.6,
     "observability": 2.8,
-    "legibility": 3.7
+    "legibility": 3.8
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
@@ -1572,11 +1577,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 21.65,
+   "ksloc": 21.79,
    "classic": {
-    "person_months": 60.6,
+    "person_months": 61.01,
     "schedule_months": 11.9,
-    "cost": 682204
+    "cost": 686837
    },
    "capture": {
     "tests": 1.0,
@@ -1585,21 +1590,21 @@
     "capture": 0.73
    },
    "agent_factor": 0.22,
-   "reproduce_pm": 13.42,
+   "reproduce_pm": 13.51,
    "history": {
-    "commits": 2835,
-    "fix_commits": 924,
-    "authors": 395,
-    "age_months": 58.8,
-    "months_since_last": 0.1
+    "commits": 2854,
+    "fix_commits": 938,
+    "authors": 397,
+    "age_months": 59.1,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 32.66,
-   "rediscover_pm": 8.82,
-   "replacement_pm": 22.24,
+   "knowledge_pm": 33.03,
+   "rediscover_pm": 8.92,
+   "replacement_pm": 22.43,
    "leverage": 0.94,
    "obsolescence": 0.95,
-   "value_pm": 19.95,
-   "value_cost": 224630,
+   "value_pm": 20.13,
+   "value_cost": 226573,
    "knowledge_at_risk": 0.4,
    "assumptions": {
     "salary": 56286,
@@ -1613,26 +1618,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 194.2449,
+   "make_buy_ratio": 196.5704,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 53600.54,
+   "break_even_price_per_year": 54245.57,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 2198361,
-     "input": 54959025,
-     "cached_input": 46715171
+     "output": 2236040,
+     "input": 55901000,
+     "cached_input": 47515850
     },
-    "final_tokens": 732787,
-    "model_cost": 86.29,
-    "agent_hours": 24.43,
-    "human_days": 207.79,
-    "review_days": 22.57,
-    "rediscover_days": 185.22,
-    "calendar_days": 207.79,
-    "build_cost": 111471.54,
-    "yearly_cost": 16720.73,
-    "total_cost": 161633.73
+    "final_tokens": 745346,
+    "model_cost": 87.76,
+    "agent_hours": 24.84,
+    "human_days": 210.28,
+    "review_days": 22.96,
+    "rediscover_days": 187.32,
+    "calendar_days": 210.28,
+    "build_cost": 112806.08,
+    "yearly_cost": 16920.91,
+    "total_cost": 163568.82
    },
    "buy": {
     "via": {

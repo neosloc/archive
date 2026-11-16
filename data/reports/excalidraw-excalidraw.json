@@ -4,20 +4,20 @@
   "url": "https://github.com/excalidraw/excalidraw",
   "slug": "excalidraw-excalidraw",
   "host": "github.com",
-  "commit": "701b901a0f1ba3d0b390d9cdf63d112e25abac4b",
-  "committed_at": "2026-11-05T18:10:20+01:00",
-  "evaluated_at": "2026-11-09T12:54:26+00:00",
+  "commit": "82190fb28f58070b34b4017e70c0e2e83701a8e3",
+  "committed_at": "2026-11-15T17:23:19+01:00",
+  "evaluated_at": "2026-11-16T12:47:43+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
   "schema_version": 2,
   "target": "https://github.com/excalidraw/excalidraw",
   "inventory": {
-   "files": 1327,
-   "source_files": 542,
-   "source_tokens": 1148209,
+   "files": 1336,
+   "source_files": 548,
+   "source_tokens": 1168437,
    "languages": {
-    "typescript": 1116603,
+    "typescript": 1136831,
     "javascript": 31606
    },
    "git": true
@@ -706,10 +706,6 @@
           "detail": "3 matches"
          },
          {
-          "path": "packages/element/src/Scene.ts",
-          "detail": "3 matches"
-         },
-         {
           "path": "packages/element/src/elbowArrow.ts",
           "detail": "3 matches"
          },
@@ -739,6 +735,10 @@
          },
          {
           "path": "packages/common/src/utils.ts",
+          "detail": "2 matches"
+         },
+         {
+          "path": "packages/element/src/Scene.ts",
           "detail": "2 matches"
          },
          {
@@ -799,6 +799,10 @@
          },
          {
           "path": "packages/excalidraw/components/ImageExportDialog.tsx",
+          "detail": "1 match"
+         },
+         {
+          "path": "packages/excalidraw/components/Minimap/minimap-controller.chunk.ts",
           "detail": "1 match"
          },
          {
@@ -1263,13 +1267,13 @@
      }
     ],
     "metrics": {
-     "source_files": 542,
-     "source_tokens": 1148209,
-     "test_files": 161,
-     "test_tokens": 583629,
+     "source_files": 548,
+     "source_tokens": 1168437,
+     "test_files": 163,
+     "test_tokens": 593203,
      "test_ratio": 0.51,
-     "modules": 79,
-     "modules_within_budget": 0.92,
+     "modules": 80,
+     "modules_within_budget": 0.93,
      "oversized_files": [
       "packages/excalidraw/components/App.tsx",
       "packages/excalidraw/subset/woff2/woff2-bindings.ts",
@@ -1277,8 +1281,8 @@
       "packages/element/src/binding.ts",
       "packages/excalidraw/components/icons.tsx",
       "packages/element/src/linearElementEditor.ts",
-      "packages/excalidraw/actions/actionProperties.tsx",
       "packages/element/src/delta.ts",
+      "packages/excalidraw/actions/actionProperties.tsx",
       "packages/element/src/elbowArrow.ts",
       "packages/element/src/bucketFill.ts",
       "packages/excalidraw/renderer/interactiveScene.ts",
@@ -1288,12 +1292,12 @@
      ],
      "largest_module": {
       "path": "packages/excalidraw/components",
-      "tokens": 284115
+      "tokens": 288556
      },
      "typed_ratio": 0.97,
      "python_functions": 0,
      "python_annotated": 0,
-     "import_edges": 2087,
+     "import_edges": 2112,
      "import_graph": true,
      "max_fan_out": 210,
      "import_cycles": 6,
@@ -1373,6 +1377,8 @@
       "packages/excalidraw/components/LibraryMenuItems.tsx",
       "packages/excalidraw/components/LibraryMenuSection.tsx",
       "packages/excalidraw/components/LibraryUnit.tsx",
+      "packages/excalidraw/components/Minimap/Minimap.tsx",
+      "packages/excalidraw/components/Minimap/minimap-controller.chunk.ts",
       "packages/excalidraw/components/MobileMenu.tsx",
       "packages/excalidraw/components/MobileToolbar.tsx",
       "packages/excalidraw/components/Modal.tsx",
@@ -1491,12 +1497,12 @@
       "packages/excalidraw/wysiwyg/textWysiwyg.tsx"
      ],
      "languages": {
-      "typescript": 1116603,
+      "typescript": 1136831,
       "javascript": 31606
      }
     },
     "gaps": [
-     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (92% of modules fit 32k tokens; 14 files over 12k)"
+     "L3 At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed. (93% of modules fit 32k tokens; 14 files over 12k)"
     ],
     "question": "Can an agent change it safely with limited context?",
     "best_surface": "all",
@@ -1517,7 +1523,7 @@
          },
          {
           "path": "excalidraw-app/tests/LanguageList.test.tsx",
-          "detail": "161 test files"
+          "detail": "163 test files"
          }
         ],
         "note": ""
@@ -1589,7 +1595,7 @@
         "text": "At least 90% of modules fit 32k tokens and no file exceeds 12k; test/source token ratio at least 0.3; at least 70% of the code is typed.",
         "met": false,
         "evidence": [],
-        "note": "92% of modules fit 32k tokens; 14 files over 12k"
+        "note": "93% of modules fit 32k tokens; 14 files over 12k"
        },
        {
         "level": 4,
@@ -1612,33 +1618,33 @@
    "not_applicable": [
     "portability"
    ],
-   "retrofit_person_days": 50.4,
+   "retrofit_person_days": 50.7,
    "retrofit_by_dimension": {
     "interface": 0.0,
-    "stability": 2.1,
+    "stability": 2.2,
     "events": 4.3,
     "identity": 8.6,
-    "ergonomics": 9.6,
+    "ergonomics": 9.7,
     "embeddability": 0.0,
-    "extensibility": 12.9,
+    "extensibility": 13.0,
     "observability": 4.3,
     "legibility": 8.6
    },
    "wrappability": "expensive retrofit",
    "assumptions": {
     "target_level": 3,
-    "size_factor": 2.14,
+    "size_factor": 2.16,
     "legibility_multiplier": 1.0,
     "reference_tokens": 250000
    }
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 124.62,
+   "ksloc": 126.51,
    "classic": {
-    "person_months": 380.7,
-    "schedule_months": 23.9,
-    "cost": 4285644
+    "person_months": 386.75,
+    "schedule_months": 24.1,
+    "cost": 4353734
    },
    "capture": {
     "tests": 1.0,
@@ -1647,21 +1653,21 @@
     "capture": 0.78
    },
    "agent_factor": 0.2,
-   "reproduce_pm": 75.76,
+   "reproduce_pm": 76.96,
    "history": {
-    "commits": 4112,
-    "fix_commits": 1300,
-    "authors": 401,
-    "age_months": 82.1,
-    "months_since_last": 0.1
+    "commits": 4119,
+    "fix_commits": 1301,
+    "authors": 402,
+    "age_months": 82.4,
+    "months_since_last": 0.0
    },
-   "knowledge_pm": 46.56,
-   "rediscover_pm": 10.24,
-   "replacement_pm": 86.0,
+   "knowledge_pm": 46.61,
+   "rediscover_pm": 10.26,
+   "replacement_pm": 87.22,
    "leverage": 0.96,
    "obsolescence": 0.95,
-   "value_pm": 78.3,
-   "value_cost": 881423,
+   "value_pm": 79.41,
+   "value_cost": 893883,
    "knowledge_at_risk": 0.12,
    "assumptions": {
     "salary": 56286,
@@ -1675,26 +1681,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 493.6657,
+   "make_buy_ratio": 496.0739,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 68786.11,
+   "break_even_price_per_year": 69122.35,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 5271295,
-     "input": 131782375,
-     "cached_input": 112015018
+     "output": 5362036,
+     "input": 134050900,
+     "cached_input": 113943265
     },
-    "final_tokens": 1757098,
-    "model_cost": 206.9,
-    "agent_hours": 58.57,
-    "human_days": 265.64,
-    "review_days": 50.6,
-    "rediscover_days": 215.04,
-    "calendar_days": 265.64,
-    "build_cost": 142604.97,
-    "yearly_cost": 21390.75,
-    "total_cost": 206777.2
+    "final_tokens": 1787345,
+    "model_cost": 210.46,
+    "agent_hours": 59.58,
+    "human_days": 266.94,
+    "review_days": 51.48,
+    "rediscover_days": 215.46,
+    "calendar_days": 266.94,
+    "build_cost": 143300.63,
+    "yearly_cost": 21495.09,
+    "total_cost": 207785.91
    },
    "buy": {
     "via": {

@@ -4,9 +4,9 @@
   "url": "https://github.com/BurntSushi/ripgrep",
   "slug": "burntsushi-ripgrep",
   "host": "github.com",
-  "commit": "91f5d22ef48bde459d90a8c7dbeab416e97d0f2b",
-  "committed_at": "2026-10-27T14:31:24-04:00",
-  "evaluated_at": "2026-11-02T12:27:50+00:00",
+  "commit": "178cc027e283fd965cb72d0a7395b219eada170c",
+  "committed_at": "2026-11-09T15:53:12-05:00",
+  "evaluated_at": "2026-11-16T12:48:37+00:00",
   "neosloc": "0.8.0"
  },
  "report": {
@@ -15,9 +15,9 @@
   "inventory": {
    "files": 225,
    "source_files": 88,
-   "source_tokens": 417607,
+   "source_tokens": 417891,
    "languages": {
-    "rust": 416505,
+    "rust": 416789,
     "shell": 853,
     "ruby": 201,
     "lua": 48
@@ -1082,7 +1082,7 @@
     ],
     "metrics": {
      "source_files": 88,
-     "source_tokens": 417607,
+     "source_tokens": 417891,
      "test_files": 15,
      "test_tokens": 52267,
      "test_ratio": 0.13,
@@ -1111,7 +1111,7 @@
      "import_cycles": 0,
      "largest_cycle": [],
      "languages": {
-      "rust": 416505,
+      "rust": 416789,
       "shell": 853,
       "ruby": 201,
       "lua": 48
@@ -1216,11 +1216,11 @@
   },
   "not_implemented": [],
   "value": {
-   "ksloc": 34.17,
+   "ksloc": 34.2,
    "classic": {
-    "person_months": 97.84,
+    "person_months": 97.94,
     "schedule_months": 14.3,
-    "cost": 1101393
+    "cost": 1102476
    },
    "capture": {
     "tests": 0.26,
@@ -1229,21 +1229,21 @@
     "capture": 0.63
    },
    "agent_factor": 0.27,
-   "reproduce_pm": 26.07,
+   "reproduce_pm": 26.1,
    "history": {
-    "commits": 2241,
+    "commits": 2242,
     "fix_commits": 302,
-    "authors": 502,
-    "age_months": 128.0,
+    "authors": 503,
+    "age_months": 128.4,
     "months_since_last": 0.2
    },
    "knowledge_pm": 17.25,
    "rediscover_pm": 6.38,
-   "replacement_pm": 32.45,
+   "replacement_pm": 32.48,
    "leverage": 1.02,
    "obsolescence": 0.95,
-   "value_pm": 31.38,
-   "value_cost": 353280,
+   "value_pm": 31.41,
+   "value_cost": 353579,
    "knowledge_at_risk": 0.2,
    "assumptions": {
     "salary": 56286,
@@ -1257,26 +1257,26 @@
   },
   "make_or_buy": {
    "verdict": "buy",
-   "make_buy_ratio": 3331.5648,
+   "make_buy_ratio": 3331.8534,
    "horizon_years": 3.0,
-   "break_even_price_per_year": 39766.85,
+   "break_even_price_per_year": 39770.3,
    "make": {
     "model": "anthropic:claude-opus-5-5",
     "tokens": {
-     "output": 1675021,
-     "input": 41875525,
-     "cached_input": 35594196
+     "output": 1676160,
+     "input": 41904000,
+     "cached_input": 35618400
     },
-    "final_tokens": 558340,
-    "model_cost": 65.74,
-    "agent_hours": 18.61,
-    "human_days": 153.41,
-    "review_days": 19.43,
+    "final_tokens": 558720,
+    "model_cost": 65.79,
+    "agent_hours": 18.62,
+    "human_days": 153.42,
+    "review_days": 19.44,
     "rediscover_days": 133.98,
-    "calendar_days": 153.41,
-    "build_cost": 82300.94,
-    "yearly_cost": 12345.14,
-    "total_cost": 119336.37
+    "calendar_days": 153.42,
+    "build_cost": 82308.07,
+    "yearly_cost": 12346.21,
+    "total_cost": 119346.71
    },
    "buy": {
     "via": {
